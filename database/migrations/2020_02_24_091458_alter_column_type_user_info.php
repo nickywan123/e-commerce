@@ -13,7 +13,7 @@ class AlterColumnTypeUserInfo extends Migration
      */
     public function up()
     {
-        Schema::table('user_info', function (Blueprint $table) {
+        Schema::table('user_infos', function (Blueprint $table) {
             $table->integer('dealer_id')->nullable()->change();
         });
     }
