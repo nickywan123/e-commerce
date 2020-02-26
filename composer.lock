@@ -2,7 +2,6 @@
     "_readme": [
         "This file locks the dependencies of your project to a known state",
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
->>>>>>> Laravel Installed
         "This file is @generated automatically"
     ],
     "content-hash": "b4bbef74e9128a9cf2439e61085f7fdd",
@@ -172,28 +171,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
+                "reference": "5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6"
             },
             "dist": {
                 "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6",
+                "reference": "5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6",
                 "shasum": ""
             },
             "require": {
+                "php": "^7.2"
             },
             "require-dev": {
-                "reference": "5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6"
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6",
-                "reference": "5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6",
-                "php": "^7.2"
                 "doctrine/coding-standard": "^6.0",
                 "phpstan/phpstan": "^0.11.8",
                 "phpunit/phpunit": "^8.2"
->>>>>>> Laravel Installed
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.2.x-dev"
->>>>>>> Laravel Installed
                 }
             },
             "autoload": {
@@ -207,18 +204,14 @@
             ],
             "authors": [
                 {
->>>>>>> Laravel Installed
                     "name": "Guilherme Blanco",
                     "email": "guilhermeblanco@gmail.com"
                 },
                 {
-<<<<<<< HEAD
-=======
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
->>>>>>> Laravel Installed
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com"
                 }
@@ -233,7 +226,6 @@
                 "php"
             ],
             "time": "2019-10-30T14:39:59+00:00"
->>>>>>> Laravel Installed
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -439,70 +431,24 @@
         },
         {
             "name": "fideloper/proxy",
-<<<<<<< HEAD
-            "version": "4.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facade/ignition-contracts.git",
-                "reference": "f445db0fb86f48e205787b2592840dd9c80ded28"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition-contracts/zipball/f445db0fb86f48e205787b2592840dd9c80ded28",
-                "reference": "f445db0fb86f48e205787b2592840dd9c80ded28",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Facade\\IgnitionContracts\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://flareapp.io",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Solution contracts for Ignition",
-            "homepage": "https://github.com/facade/ignition-contracts",
-            "keywords": [
-                "contracts",
-                "flare",
-                "ignition"
-            ],
-            "time": "2019-08-30T14:06:08+00:00"
-        },
-        {
-            "name": "fideloper/proxy",
             "version": "4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fideloper/TrustedProxy.git",
+                "reference": "790194d5d3da89a713478875d2e2d05855a90a81"
             },
             "dist": {
                 "type": "zip",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/790194d5d3da89a713478875d2e2d05855a90a81",
+                "reference": "790194d5d3da89a713478875d2e2d05855a90a81",
                 "shasum": ""
             },
             "require": {
+                "illuminate/contracts": "^5.0|^6.0|^7.0",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "reference": "790194d5d3da89a713478875d2e2d05855a90a81"
-                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/790194d5d3da89a713478875d2e2d05855a90a81",
-                "reference": "790194d5d3da89a713478875d2e2d05855a90a81",
-                "illuminate/contracts": "^5.0|^6.0|^7.0",
                 "illuminate/http": "^5.0|^6.0|^7.0",
->>>>>>> Laravel Installed
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^6.0"
             },
@@ -536,7 +482,6 @@
                 "trusted proxy"
             ],
             "time": "2019-12-20T13:11:11+00:00"
->>>>>>> Laravel Installed
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1506,13 +1451,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
+                "reference": "7779489a47d443f845271badbdcedfe4df8e06fb"
             },
             "dist": {
                 "type": "zip",
-                "reference": "7779489a47d443f845271badbdcedfe4df8e06fb"
                 "url": "https://api.github.com/repos/ramsey/uuid/zipball/7779489a47d443f845271badbdcedfe4df8e06fb",
                 "reference": "7779489a47d443f845271badbdcedfe4df8e06fb",
->>>>>>> Laravel Installed
                 "shasum": ""
             },
             "require": {
@@ -1587,7 +1531,6 @@
                 "uuid"
             ],
             "time": "2019-12-17T08:18:51+00:00"
->>>>>>> Laravel Installed
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1743,13 +1686,11 @@
             },
             "require": {
                 "php": "^7.2.5"
->>>>>>> Laravel Installed
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "5.0-dev"
->>>>>>> Laravel Installed
                 }
             },
             "autoload": {
@@ -1781,7 +1722,6 @@
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
             "time": "2020-01-04T14:08:26+00:00"
->>>>>>> Laravel Installed
         },
         {
             "name": "symfony/debug",
@@ -2223,17 +2163,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
+                "reference": "2a3c7fee1f1a0961fa9cf360d5da553d05095e59"
             },
             "dist": {
                 "type": "zip",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/2a3c7fee1f1a0961fa9cf360d5da553d05095e59",
+                "reference": "2a3c7fee1f1a0961fa9cf360d5da553d05095e59",
                 "shasum": ""
             },
             "require": {
-                "reference": "2a3c7fee1f1a0961fa9cf360d5da553d05095e59"
-                "url": "https://api.github.com/repos/symfony/mime/zipball/2a3c7fee1f1a0961fa9cf360d5da553d05095e59",
-                "reference": "2a3c7fee1f1a0961fa9cf360d5da553d05095e59",
                 "php": "^7.2.5",
->>>>>>> Laravel Installed
                 "symfony/polyfill-intl-idn": "^1.10",
                 "symfony/polyfill-mbstring": "^1.0"
             },
@@ -2243,13 +2182,11 @@
             "require-dev": {
                 "egulias/email-validator": "^2.1.10",
                 "symfony/dependency-injection": "^4.4|^5.0"
->>>>>>> Laravel Installed
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "5.0-dev"
->>>>>>> Laravel Installed
                 }
             },
             "autoload": {
@@ -2281,7 +2218,6 @@
                 "mime-type"
             ],
             "time": "2020-01-04T14:08:26+00:00"
->>>>>>> Laravel Installed
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2775,7 +2711,6 @@
             },
             "require": {
                 "php": "^7.2.5",
->>>>>>> Laravel Installed
                 "psr/container": "^1.0"
             },
             "suggest": {
@@ -2785,7 +2720,6 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.0-dev"
->>>>>>> Laravel Installed
                 }
             },
             "autoload": {
@@ -2818,7 +2752,6 @@
                 "standards"
             ],
             "time": "2019-11-18T17:27:11+00:00"
->>>>>>> Laravel Installed
         },
         {
             "name": "symfony/translation",
@@ -2902,17 +2835,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation-contracts.git",
+                "reference": "8cc682ac458d75557203b2f2f14b0b92e1c744ed"
             },
             "dist": {
                 "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/8cc682ac458d75557203b2f2f14b0b92e1c744ed",
+                "reference": "8cc682ac458d75557203b2f2f14b0b92e1c744ed",
                 "shasum": ""
             },
             "require": {
-                "reference": "8cc682ac458d75557203b2f2f14b0b92e1c744ed"
-                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/8cc682ac458d75557203b2f2f14b0b92e1c744ed",
-                "reference": "8cc682ac458d75557203b2f2f14b0b92e1c744ed",
                 "php": "^7.2.5"
->>>>>>> Laravel Installed
             },
             "suggest": {
                 "symfony/translation-implementation": ""
@@ -2921,7 +2853,6 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.0-dev"
->>>>>>> Laravel Installed
                 }
             },
             "autoload": {
@@ -2954,7 +2885,6 @@
                 "standards"
             ],
             "time": "2019-11-18T17:27:11+00:00"
->>>>>>> Laravel Installed
         },
         {
             "name": "symfony/var-dumper",
@@ -3771,19 +3701,16 @@
             "require-dev": {
                 "doctrine/instantiator": "^1",
                 "mockery/mockery": "^1"
->>>>>>> Laravel Installed
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "5.x-dev"
->>>>>>> Laravel Installed
                 }
             },
             "autoload": {
                 "psr-4": {
                     "phpDocumentor\\Reflection\\": "src"
->>>>>>> Laravel Installed
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3802,7 +3729,6 @@
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "time": "2020-02-09T09:16:15+00:00"
->>>>>>> Laravel Installed
         },
         {
             "name": "phpdocumentor/type-resolver",
