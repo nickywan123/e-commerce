@@ -13,7 +13,7 @@ class CreateUserAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_address', function (Blueprint $table) {
+        Schema::create('user_addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('user_id');
             $table->string('address_1');
@@ -34,6 +34,6 @@ class CreateUserAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_address');
+        Schema::dropIfExists('user_addresses');
     }
 }

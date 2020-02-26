@@ -13,11 +13,11 @@ class CreateUserInfo extends Migration
      */
     public function up()
     {
-        Schema::create('user_info', function (Blueprint $table) {
+        Schema::create('user_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 300);
-            $table ->string('NRIC', 100);
-            $table ->integer('dealer_id')->nullable();
+            $table->string('NRIC', 100);
+            $table->integer('dealer_id')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateUserInfo extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_info');
+        Schema::dropIfExists('user_infos');
     }
 }
