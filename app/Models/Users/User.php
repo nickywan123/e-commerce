@@ -66,4 +66,11 @@ class User extends Authenticatable
 
         return $this->hasMany('App\Models\Users\UserContact', 'id');
     }
+
+
+    public function orders()
+    {
+
+        return $this->hasMany('App\Models\Orders\Orders', 'id');
+    }
 }
