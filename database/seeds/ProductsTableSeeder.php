@@ -27,8 +27,8 @@ class ProductsTableSeeder extends Seeder
         ]);
 
         $product->images()->createMany([
-            ['url' => 'https://via.placeholder.com/512'],
-            ['url' => 'https://via.placeholder.com/512']
+            ['url' => 'https://www.ikea.com/my/en/images/products/vardagen-frying-pan-cast-iron__0740605_PE742088_S5.JPG?f=xs'],
+            ['url' => 'https://www.ikea.com/my/en/images/products/grimsbu-bed-frame__0749249_PE747240_S5.JPG?f=xs']
         ]);
 
         $product->categories()->attach(
@@ -90,9 +90,9 @@ class ProductsTableSeeder extends Seeder
         ]);
 
         $product->images()->createMany([
-            ['url' => 'https://via.placeholder.com/512'],
-            ['url' => 'https://via.placeholder.com/512'],
-            ['url' => 'https://via.placeholder.com/512']
+            ['url' => 'https://www.ikea.com/my/en/images/products/leirvik-bed-frame__0637552_PE704561_S5.JPG?f=xs'],
+            ['url' => 'https://www.ikea.com/my/en/images/products/kullen-chest-of-2-drawers__0651179_PE706791_S5.JPG?f=xs'],
+            ['url' => 'https://www.ikea.com/my/en/images/products/kivik-4-seat-sofa__0784363_PE761731_S5.JPG?f=xs']
         ]);
 
         $product->categories()->attach(
@@ -127,7 +127,7 @@ class ProductsTableSeeder extends Seeder
         ]);
 
         $product->images()->createMany([
-            ['url' => 'https://via.placeholder.com/512']
+            ['url' => 'https://www.ikea.com/my/en/images/products/kivik-4-seat-sofa__0784363_PE761731_S5.JPG?f=xs']
         ]);
 
         $product->categories()->attach(

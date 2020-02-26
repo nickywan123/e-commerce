@@ -17,35 +17,35 @@ class CategoriesTableSeeder extends Seeder
             'name' => 'electrical',
             'slug' => 'electrical'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'electrical.jpg'
         ]);
 
         Category::create([
             'name' => 'construction',
             'slug' => 'construction'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'concrete.jpg'
         ]);
 
         Category::create([
             'name' => 'interior design',
             'slug' => 'interior-design'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'others.jpg'
         ]);
 
         Category::create([
             'name' => 'ironworks',
             'slug' => 'ironworks'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'others.jpg'
         ]);
 
         Category::create([
             'name' => 'external works',
             'slug' => 'external-works'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'others.jpg'
         ]);
     }
 }
