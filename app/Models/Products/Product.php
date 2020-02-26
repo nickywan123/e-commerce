@@ -31,11 +31,11 @@ class Product extends Model
      * Example Create = $product->images()->create(['key' => 'value']);
      * Example Retrieve = $product->images;
      */
+    // TODO: Add default_image column.
     public function images()
     {
         return $this->morphMany('App\Models\Globals\Image', 'imageable');
     }
-
 
     /**
      * Get product's seller/panel.
@@ -48,6 +48,7 @@ class Product extends Model
     /**
      *  Get product's categories.
      */
+    // TODO: Change to belongsTo
     public function categories()
     {
         return $this->belongsToMany('App\Models\Categories\Category', 'category_product', 'product_id', 'category_id');
@@ -56,6 +57,7 @@ class Product extends Model
     /**
      * Get product's sub categories.
      */
+    // TODO: Change to belongsTo
     public function subCategories()
     {
         return $this->belongsToMany('App\Models\Categories\SubCategory', 'product_subcategory', 'product_id', 'subcategory_id');

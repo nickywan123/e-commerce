@@ -30,6 +30,6 @@ class CreateDimensionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dimensions');
+        Schema::dropIfExists('global_dimensions');
     }
 }

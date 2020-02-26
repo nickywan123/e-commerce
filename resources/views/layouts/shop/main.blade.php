@@ -34,6 +34,35 @@
 
     <!-- TODO: Styles should be in it's respective scss file that will be compiled by Mix -->
     @stack('style')
+    <!-- TODO: Use SCSS -->
+    <style>
+        .top-header .content .right-content .list li .sell-btn {
+            font-size: 13px;
+            font-weight: 600;
+            color: #000000;
+            border: 1px solid #000000;
+        }
+
+        ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #FFDF00;
+            font-size: 1rem;
+            opacity: 1;
+            /* Firefox */
+        }
+
+        :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #FFDF00;
+            font-size: 1rem;
+        }
+
+        ::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: #FFDF00;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 
 <body>

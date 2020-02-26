@@ -52,13 +52,14 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <img src="https://via.placeholder.com/512" alt="">
+                                    <img src="{{ $product->images[0]->url }}" alt="">
                                 </div>
                                 <div class="info">
-                                    <a href="" class="price text-capitalize">{{ $product->name }}</a>
+                                    <a href="/shop/product/{{ $product->slug }}" class="price text-capitalize">{{ $product->name }}</a>
                                     <h5 class="name">${{ $product->price }}</h5>
                                     <div class="item-cart-area">
-                                        <a id="addToCartBtn" href="#exampleModal" data-toggle="modal" data-target="#exampleModal">Add to cart</a>
+                                        <!-- <a id="addToCartBtn" href="#exampleModal" data-toggle="modal" data-target="#exampleModal">Add to cart</a> -->
+                                        <a class="btn btn-primary" href="/shop/add-to-cart/{{ $product->id }}">Add to cart</a>
                                     </div>
                                 </div>
                             </div>
