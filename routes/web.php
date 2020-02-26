@@ -10,17 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// View Test Routes
-Route::prefix('view')->group(function () {
-    Route::get('/', function () {
-        return view('shop.index');
-    });
-
-Route::get('/', function () {
-
-
-    return view('welcome');
-});
 
 Auth::routes();
 
