@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-12">
+            <div class="card bg-secondary">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name (Per IC)') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -24,6 +24,89 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="homeaddress1" class="col-md-4 col-form-label text-md-right">{{ __('Home Address 1') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="homeaddress1" type="text" class="form-control @error('homeaddress1') is-invalid @enderror" name="homeaddress1" value="{{ old('homeaddress1') }}" required autocomplete="homeaddress1" autofocus>
+
+                                @error('homeaddress1')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="homeaddress2" class="col-md-4 col-form-label text-md-right">{{ __('Home Address 2') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="homeaddress2" type="text" class="form-control @error('homeaddress2') is-invalid @enderror" name="homeaddress2" value="{{ old('homeaddress2') }}" required autocomplete="homeaddress2" autofocus>
+
+                                @error('homeaddress2')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="homeaddress3" class="col-md-4 col-form-label text-md-right">{{ __('Home Address 3') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="homeaddress3" type="text" class="form-control @error('homeaddress3') is-invalid @enderror" name="homeaddress3" value="{{ old('homeaddress3') }}" required autocomplete="homeaddress3" autofocus>
+
+                                @error('homeaddress3')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="postcode" class="col-md-4 col-form-label text-md-right">{{ __('Post Code ') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="postcode" type="text" class="form-control @error('postcode') is-invalid @enderror" name="postcode" value="{{ old('postcode') }}" required autocomplete="postcode" autofocus>
+
+                                @error('postcode')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="shippingaddress" class="col-md-4 col-form-label text-md-right">{{ __('Shipping Address ') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="shippingaddress" type="text" class="form-control @error('shippingaddress') is-invalid @enderror" name="shippingaddress" value="{{ old('shippingaddress') }}" required autocomplete="shippingaddress" autofocus>
+
+                                @error('shippingaddress')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dealerID" class="col-md-4 col-form-label text-md-right">{{ __('Dealer ID ') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="dealerID" type="text" placeholder="optional" class="form-control @error('dealerID') is-invalid @enderror" name="dealerID" value="{{ old('dealerID') }}"  autocomplete="dealerID" autofocus>
+
+                                @error('dealerID')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

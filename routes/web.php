@@ -16,10 +16,33 @@ Route::prefix('view')->group(function () {
         return view('shop.index');
     });
 
-    Route::get('/category', function () {
-        return view('app.category');
+Route::get('/', function () {
+
+
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('dashboard')->group(function () {
+    Route::prefix('dealer')->group(function () {
+        Route::get('/', function () {
+            return view('dealer.dealer');
+        });
+
+        Route::get('/statement', function () {
+            return view('dealer.dealerStatement');
+        });
+    });
+
+    Route::prefix('panel')->group(function () {
     });
 });
+
+
+Route::resource('/dashboard/dealer', 'DashBoardDealerController');
 
 // Shop Routes
 Route::prefix('shop')->group(function () {

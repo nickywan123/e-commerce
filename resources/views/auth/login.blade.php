@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<body>
+<div class="container py-5" >
+       {{-- <img src="{{ asset('images/homepage.jpg') }}" width="100%" height="100%" alt="No Logo">  --}}
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header bg-light">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -70,4 +72,5 @@
         </div>
     </div>
 </div>
+</body>
 @endsection
