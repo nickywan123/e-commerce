@@ -3,7 +3,7 @@
 @section('content')
 <div class="container pl-0 pr-0">
     <div>
-        <img class="w-100" src="https://via.placeholder.com/1920x800" alt="">
+        <img class="w-100" src="https://ww8.ikea.com/seaapp3/banners/carousel/wk7/my/en/LaunchThreeHomePage_carousel.jpg" style="height: 600px; width: 1920px;" alt="">
     </div>
     <div class="pt-1">
         @foreach ($categories as $category)
@@ -14,7 +14,7 @@
             @foreach($category->childCategory as $childCategory)
             <div class="col-lg-2 col-6">
                 <a href="/shop/category/{{ $childCategory->slug }}">
-                    <img src="{{ $childCategory->image->url }}" alt="{{ $childCategory->name }}" class="w-100 rounded">
+                    <img src="{{ asset('assets/images/category-icons/'.$childCategory->image->url) }}" alt="{{ $childCategory->name }}" class="w-100 rounded">
                     <p class="text-center pt-1 text-capitalize" style="font-size: 1.2rem;">{{ $childCategory->name }}</p>
                 </a>
             </div>

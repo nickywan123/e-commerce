@@ -1,5 +1,5 @@
 <!-- Top Header Area Start -->
-<section class="top-header">
+<section class="top-header" style="background-color: #FFDF00;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 remove-padding">
@@ -36,8 +36,8 @@
                                 <li class="login">
                                     <a href="#" class="sign-log">
                                         <div class="links">
-                                            <span class="sign-in">Sign in</span> <span>|</span>
-                                            <span class="join">Join</span>
+                                            <span class="sign-in" style="color: #000000;">Sign in</span> <span style="color: #000000;">|</span>
+                                            <span class="join" style="color: #000000;">Join</span>
                                         </div>
                                     </a>
                                 </li>
@@ -55,7 +55,7 @@
 <!-- Top Header Area End -->
 
 <!-- Logo Header Area Start -->
-<section class="logo-header">
+<section class="logo-header" style="background-color: #000000;">
     <div class="container">
         <div class="row ">
             <div class="col-lg-2 col-sm-6 col-5 remove-padding">
@@ -67,22 +67,22 @@
             </div>
             <div class="col-lg-8 col-sm-12 remove-padding order-last order-sm-2 order-md-2">
                 <div class="search-box-wrapper">
-                    <div class="search-box">
-                        <div class="categori-container" id="catSelectForm">
+                    <div class="search-box" style="border: 1px solid #FFDF00;">
+                        <div class="categori-container" id="catSelectForm" style="background-color: #FFDF00;">
                             <select name="category" id="category_select" class="categoris">
-                                <option value="">Categories</option>
-                                <option value="#">Category 1</option>
-                                <option value="#">Category 1</option>
+                                <option value="" style="background-color: #FFDF00;">Categories</option>
+                                <option value="#" style="background-color: #FFDF00;">Category 1</option>
+                                <option value="#" style="background-color: #FFDF00;">Category 1</option>
                             </select>
                         </div>
 
                         <form id="searchForm" class="search-form">
-                            <input type="text" id="prod_name" name="search" placeholder="Search" value="" autocomplete="off">
+                            <input type="text" id="prod_name" name="search" placeholder="Search" value="" autocomplete="off" style="color: #FFDF00;">
                             <div class="autocomplete">
                                 <div id="myInputautocomplete-list" class="autocomplete-items">
                                 </div>
                             </div>
-                            <button type="submit"><i class="icofont-search-1"></i></button>
+                            <button type="submit" style="background-color: #FFDF00;"><i class="icofont-search-1" style="color: #000000;"></i></button>
                         </form>
                     </div>
                 </div>
@@ -95,8 +95,10 @@
                         <li class="my-dropdown" data-toggle="tooltip" data-placement="top" title="Cart">
                             <a href="javascript:;" class="cart carticon">
                                 <div class="icon">
-                                    <i class="icofont-cart"></i>
-                                    <span class="cart-quantity" id="cart-count">0</span>
+                                    <i class="icofont-cart" style="color: #FFDF00;"></i>
+                                    <span class="cart-quantity" id="cart-count">
+                                        {{ ($cart != null) ? $cart->count() : '0' }}
+                                    </span>
                                 </div>
 
                             </a>
@@ -106,7 +108,7 @@
                         </li>
                         <li class="wishlist" data-toggle="tooltip" data-placement="top" title="Wishlist">
                             <a href="javascript:;" data-toggle="modal" id="wish-btn" data-target="#comment-log-reg" class="wish">
-                                <i class="icofont-favourite"></i>
+                                <i class="icofont-favourite" style="color: #FFDF00;"></i>
                                 <span id="wishlist-count">0</span>
                             </a>
                         </li>
@@ -119,27 +121,27 @@
 <!-- Logo Header Area End -->
 
 <!-- Main Menu Area Start -->
-<div class="mainmenu-area mainmenu-bb">
+<div class="mainmenu-area mainmenu-bb" style="background-color: #e6c700">
     <div class="container">
         <div class="row align-items-center mainmenu-area-innner">
             <div class="col-lg-3 col-md-6 categorimenu-wrapper remove-padding">
                 <!--categorie menu start-->
                 <div class="categories_menu">
-                    <div class="categories_title">
-                        <h2 class="categori_toggle"><i class="fa fa-bars"></i> Category <i class="fa fa-angle-down arrow-down"></i></h2>
+                    <div class="categories_title" style="background-color: #FFDF00;">
+                        <h2 class="categori_toggle" style="color: #000000;"><i class="fa fa-bars"></i> Category <i class="fa fa-angle-down arrow-down" style="color: #000000;"></i></h2>
                     </div>
                     <div class="categories_menu_inner">
                         <ul>
                             @foreach($categories as $category)
                             @if($category->childCategory->isEmpty())
                             <li class="text-capitalize">
-                                <a href="/shop/category/{{ $category->slug }}"><img src="{{ $category->image->url }}"> {{ $category->name }}</a>
+                                <a href="/shop/category/{{ $category->slug }}"><img src="{{ asset('assets/images/category-icons/'.$category->image->url) }}"> {{ $category->name }}</a>
                             </li>
 
                             @else
                             <li class="dropdown_list text-capitalize">
                                 <div class="img">
-                                    <img src="{{ $category->image->url }}" alt="{{ $category->name }}">
+                                    <img src="{{ asset('assets/images/category-icons/'.$category->image->url) }}" alt="{{ $category->name }}">
                                 </div>
                                 <div class="link-area">
                                     <span><a href="/shop/category/{{ $category->slug }}">{{ $category->name }}</a></span>

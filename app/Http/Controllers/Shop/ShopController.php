@@ -5,11 +5,34 @@ namespace App\Http\Controllers\Shop;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Auth;
 use App\Models\Categories\Category;
 use App\Models\Categories\SubCategory;
+use App\Models\Products\Product;
+use Illuminate\Support\Facades\View;
 
 class ShopController extends Controller
 {
+    protected $cart = null;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            if (Auth::check()) {
+                $this->cart = Auth::user()->cartItems;
+            }
+
+            View::share('cart', $this->cart);
+
+            return $next($request);
+        });
+    }
+
     /**
      * Handles /shop
      */
@@ -42,8 +65,6 @@ class ShopController extends Controller
             $relatedCategories = $parentCategory->childCategory;
         }
 
-
-
         // return $category;
         return view('shop.category')->with('category', $category)->with('relatedCategories', $relatedCategories);
     }
@@ -53,6 +74,8 @@ class ShopController extends Controller
      */
     public function product($slug)
     {
-        return 'Product page here';
+        $product = Product::where('slug', $slug)->with('images')->first();
+        // return $product;
+        return view('shop.product')->with('product', $product);
     }
 }

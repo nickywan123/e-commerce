@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 
 use Illuminate\Support\Facades\View;
 
+use Auth;
+use App\User;
 use App\Models\Categories\Category;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,6 +31,5 @@ class AppServiceProvider extends ServiceProvider
     {
         $categories = Category::with('image')->with('childCategory.image')->get();
         View::share('categories', $categories);
-        //
     }
 }

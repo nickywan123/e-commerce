@@ -28,6 +28,6 @@ class CreateLengthsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lengths');
+        Schema::dropIfExists('global_lengths');
     }
 }
