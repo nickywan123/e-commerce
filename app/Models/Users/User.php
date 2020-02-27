@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'password'
     ];
 
     /**
@@ -25,8 +25,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token'
     ];
+
+    /* Attribute to set primary user */
+    protected $primaryKey = 'user_id';
 
     /**
      * The attributes that should be cast to native types.
@@ -34,7 +37,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime'
     ];
 
     /**
@@ -43,7 +46,7 @@ class User extends Authenticatable
      */
     public function userInfo()
     {
-        return $this->hasOne('App\Models\Users\UserInfo', 'id');
+        return $this->hasOne('App\Models\Users\UserInfo', 'user_id');
     }
 
     /**
@@ -52,7 +55,7 @@ class User extends Authenticatable
 
     public function userAddresses()
     {
-        return $this->hasMany('App\Models\Users\UserAddress', 'id');
+        return $this->hasMany('App\Models\Users\UserAddress', 'user_id');
     }
 
 
@@ -64,13 +67,13 @@ class User extends Authenticatable
     public function userContacts()
     {
 
-        return $this->hasMany('App\Models\Users\UserContact', 'id');
+        return $this->hasMany('App\Models\Users\UserContact', 'user_id');
     }
 
 
     public function orders()
     {
 
-        return $this->hasMany('App\Models\Orders\Orders', 'id');
+        return $this->hasMany('App\Models\Orders\Orders', 'user_id');
     }
 }

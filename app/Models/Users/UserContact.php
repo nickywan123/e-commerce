@@ -28,6 +28,6 @@ class UserContact extends Model
     public function user()
     {
 
-        return $this->belongsTo('App\Models\Users\User', 'id');
+        return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 }

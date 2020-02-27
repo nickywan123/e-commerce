@@ -11,9 +11,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-
-
+        App\Models\Users\User::create([
+            'user_id' => '23',
+            'email' => 'nicholaswan21@hotmail.com',
+            'password' => '12345678'
+        ]);
     }
 }

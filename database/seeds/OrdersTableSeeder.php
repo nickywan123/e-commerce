@@ -13,7 +13,8 @@ class OrdersTableSeeder extends Seeder
     {
         App\Models\Orders\Orders::create([
 
-            'user_id' => '2',
+            'order_id' => '98682',
+            'user_id' => '23',
             'dealer_id' => '191203',
             'product_code' => 'ABC',
             'product_name' => 'BCD',
@@ -23,13 +24,15 @@ class OrdersTableSeeder extends Seeder
             'product_dimension' => '7cmx8cmx8cm',
             'product_length' => '10cm',
             'delivery_date' => '2020-05-02',
+            'order_date' => '2020-03-02',
             'order_status' => 'received',
             'order_details' => 'aha',
         ]);
 
         App\Models\Orders\Orders::create([
 
-            'user_id' => '3',
+            'order_id' => '62342',
+            'user_id' => '40',
             'dealer_id' => '191673',
             'product_code' => 'LSC',
             'product_name' => 'PWD',
@@ -38,7 +41,8 @@ class OrdersTableSeeder extends Seeder
             'product_desc' => 'product b',
             'product_dimension' => '6cmx8cmx8cm',
             'product_length' => '20cm',
-            'delivery_date' => '2020-03-02',
+            'order_date' => '2020-02-02',
+            'delivery_date' => '2020-07-02',
             'order_status' => 'received',
             'order_details' => 'LALAL',
         ]);

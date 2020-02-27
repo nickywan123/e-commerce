@@ -16,7 +16,7 @@ class Orders extends Model
     public $timestamps = false;
 
     // Set primary key
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'order_id';
 
     // Set mass assignable columns
     protected $fillable = [];
@@ -25,6 +25,6 @@ class Orders extends Model
 
     public function users()
     {
-        return $this->belongsTo('App\Models\Users\User', 'id');
+        return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 }

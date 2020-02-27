@@ -21,26 +21,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('dashboard')->group(function () {
-    Route::prefix('dealer')->group(function () {
-        Route::get('/', function () {
-            return view('dealer.dealer');
-        });
 
-        Route::get('/statement', function () {
-            return view('dealer.dealerStatement');
-        });
-    });
-
-    Route::prefix('panel')->group(function () {
-    });
-});
-
-
+// controller to return view for dealer home page
 Route::resource('/dashboard/dealer', 'DashBoardDealerController');
 
 
-// Route::get('/dashboard/dealer', function () {
 
-//     return view('dealer.dealer');
-// });
+Route::get('/dashboard/panel', function () {
+
+    return view('panel.panel');
+});
