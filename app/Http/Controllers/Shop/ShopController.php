@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use App\Models\Categories\Category;
+use App\Models\Categories\ProductType;
 use App\Models\Categories\SubCategory;
 use App\Models\Products\Product;
 use Illuminate\Support\Facades\View;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\View;
 class ShopController extends Controller
 {
     protected $cart = null;
+    protected $categories = null;
 
     /**
      * Create a new controller instance.
@@ -23,10 +25,16 @@ class ShopController extends Controller
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
+            // Check if user is authenticated or not.
             if (Auth::check()) {
+                // If authenticated, then get their cart.
                 $this->cart = Auth::user()->cartItems;
             }
+            // Get all categories, with subcategories and its images.
+            $categories = Category::with('image')->with('childCategory.image')->get();
 
+            // Share the above variable with all views in this controller.
+            View::share('categories', $categories);
             View::share('cart', $this->cart);
 
             return $next($request);
@@ -62,11 +70,28 @@ class ShopController extends Controller
             // Get above category's parent.
             $parentCategory = Category::find($category->parentCategory->id);
 
+            // Get parent category's subcategory.
             $relatedCategories = $parentCategory->childCategory;
         }
 
         // return $category;
         return view('shop.category')->with('category', $category)->with('relatedCategories', $relatedCategories);
+    }
+
+    /**
+     * Handles /shop/product/{category-slug}/{product-type-slug}
+     */
+    public function productType($categorySlug, $productType)
+    {
+        $category = Category::where('slug', $categorySlug)->first();
+        if ($category == null) {
+            $category = SubCategory::where('slug', $categorySlug)->first();
+            $parentCategory = Category::find($category->parentCategory->id);
+            $relatedCategories = $parentCategory->childCategory;
+            $productType = ProductType::where('slug', $productType)->with('products.images')->first();
+        }
+
+        return view('shop.category')->with('category', $productType)->with('relatedCategories', $relatedCategories);
     }
 
     /**

@@ -4,10 +4,10 @@ namespace App\Models\Categories;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class ProductType extends Model
 {
     // Set table
-    protected $table = 'categories';
+    protected $table = 'product_types';
 
     // Set timestamps
     public $timestamps = true;
@@ -18,11 +18,12 @@ class Category extends Model
     // Set mass assignable columns
     protected $fillable = [
         'name',
-        'slug'
+        'slug',
+        'parent_subcategory_id'
     ];
 
     /**
-     * Get the category's image.
+     * Get the product type's image.
      */
     public function image()
     {
@@ -30,18 +31,18 @@ class Category extends Model
     }
 
     /**
-     * Get all of the category's childs.
+     * Get the product type's parent.
      */
-    public function childCategory()
+    public function subcategory()
     {
-        return $this->hasMany('App\Models\Categories\SubCategory', 'parent_category_id');
+        return $this->belongsTo('App\Models\Categories\SubCategory', 'parent_subcategory_id');
     }
 
     /**
-     * Get all products belonging to a category.
+     * Get all products that belongs to the product type.
      */
     public function products()
     {
-        return $this->belongsToMany('App\Models\Products\Product', 'piv_category_product', 'category_id', 'product_id');
+        return $this->belongsToMany('App\Models\Products\Product', 'piv_product_type', 'product_type_id', 'product_id');
     }
 }

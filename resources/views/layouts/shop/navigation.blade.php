@@ -121,7 +121,7 @@
 <!-- Logo Header Area End -->
 
 <!-- Main Menu Area Start -->
-<div class="mainmenu-area mainmenu-bb" style="background-color: #e6c700">
+<div class="mainmenu-area mainmenu-bb" style="background: rgb(153,102,0); background: linear-gradient(90deg, rgba(153,102,0,1) 0%, rgba(255,249,204,1) 30%, rgba(192,144,46,1) 55%, rgba(236,213,135,1) 80%, rgba(255,249,204,1) 100%);">
     <div class="container">
         <div class="row align-items-center mainmenu-area-innner">
             <div class="col-lg-3 col-md-6 categorimenu-wrapper remove-padding">

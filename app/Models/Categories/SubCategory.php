@@ -43,6 +43,6 @@ class SubCategory extends Model
      */
     public function products()
     {
-        return $this->belongsToMany('App\Models\Products\Product', 'product_subcategory', 'subcategory_id', 'product_id');
+        return $this->belongsToMany('App\Models\Products\Product', 'piv_product_subcategory', 'subcategory_id', 'product_id');
     }
 }
