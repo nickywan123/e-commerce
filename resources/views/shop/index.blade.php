@@ -13,7 +13,7 @@
         <div class="row pt-3">
             @foreach($category->subcategories as $childCategory)
             <div class="col-lg-2 col-6">
-                <a href="/shop/category/{{ $childCategory->slug }}">
+                <a href="/shop/category/{{ $childCategory->parentCategory->slug }}/{{ $childCategory->slug }}">
                     <img src="{{ asset('assets/images/category-icons/'.$childCategory->image->url) }}" alt="{{ $childCategory->name }}" class="w-100 rounded">
                     <p class="text-center pt-1 text-capitalize" style="font-size: 1.2rem;">{{ $childCategory->name }}</p>
                 </a>
