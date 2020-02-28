@@ -32,7 +32,7 @@ class Category extends Model
     /**
      * Get all of the category's childs.
      */
-    public function childCategory()
+    public function subcategories()
     {
         return $this->hasMany('App\Models\Categories\SubCategory', 'parent_category_id');
     }

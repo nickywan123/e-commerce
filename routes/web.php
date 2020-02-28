@@ -10,16 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// View Test Routes
-Route::prefix('view')->group(function () {
-    Route::get('/', function () {
-        return view('shop.index');
-    });
-
-    Route::get('/category', function () {
-        return view('app.category');
-    });
-});
 
 // Shop Routes
 Route::prefix('shop')->group(function () {
@@ -28,10 +18,19 @@ Route::prefix('shop')->group(function () {
 
     // Category page for shop. Displays products related to selected category.
     // Accepts slugged category name or slugged subcategory name.
-    Route::get('/category/{categoryNameSlug}', 'Shop\ShopController@category')->name('shop.category');
+    Route::get('/category/{categorySlug}', 'Shop\ShopController@category')->name('shop.category');
+
+    // Subcategory page for shop. Displays products related to the selected product type.
+    Route::get(
+        '/category/{categorySlug}/{subcategorySlug}',
+        'Shop\ShopController@subcategory'
+    )->name('shop.category.subcategory');
 
     // Product type page for shop. Displays products related to the selected product type.
-    Route::get('/category/{categorySlug}/{productType}', 'Shop\ShopController@productType')->name('shop.product-type');
+    Route::get(
+        '/category/{categorySlug}/{subcategorySlug}/{productTypeSlug}',
+        'Shop\ShopController@productType'
+    )->name('shop.category.subcategory.type');
 
     // Product page for shop. Display detailed info of the product.
     Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
@@ -43,13 +42,4 @@ Route::prefix('shop')->group(function () {
     Route::get('/add-to-cart/{id}', 'Product\CartController@create')->name('shop.addtocart');
 });
 
-
-// Route::get('/', 'Product\ProductController@index')->name('shop.index');
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

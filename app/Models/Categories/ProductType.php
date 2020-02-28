@@ -33,7 +33,7 @@ class ProductType extends Model
     /**
      * Get the product type's parent.
      */
-    public function subcategory()
+    public function parentSubcategory()
     {
         return $this->belongsTo('App\Models\Categories\SubCategory', 'parent_subcategory_id');
     }

@@ -31,12 +31,13 @@ class ShopController extends Controller
                 $this->cart = Auth::user()->cartItems;
             }
             // Get all categories, with subcategories and its images.
-            $categories = Category::with('image')->with('childCategory.image')->get();
+            $categories = Category::with('image')->with('subcategories.image')->get();
 
             // Share the above variable with all views in this controller.
             View::share('categories', $categories);
             View::share('cart', $this->cart);
 
+            // Return the request.
             return $next($request);
         });
     }
@@ -46,52 +47,70 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $categories = Category::with('image')->with('childCategory.image')->get();
-        // return $categories;
+        // Get all categories and subcategories with its image.
+        $categories = Category::with('image')->with('subcategories.image')->get();
         return view('shop.index')->with('categories', $categories);
     }
 
     /**
      * Handles /shop/category/{category-slug}
      */
-    public function category($slug)
+    public function category($categorySlug)
     {
-        // Initialize category variable.
-        $category = null;
-        $relatedCategory = null;
+        // Get matching category with related products and their images.
+        $category = Category::where('slug', $categorySlug)->with('products.images')->first();
 
-        // Check if it's in Category..
-        $category = Category::where('slug', $slug)->with('products.images')->first();
-        $relatedCategories = Category::where('slug', '!=', $slug)->get();
-        if ($category == null) {
-            // ..or it's in SubCategory
-            $category = SubCategory::where('slug', $slug)->with('products.images')->first();
+        // Get all categories for tree view.
+        $allCategories = Category::all();
 
-            // Get above category's parent.
-            $parentCategory = Category::find($category->parentCategory->id);
+        return view('shop.catalog.category')
+            ->with('category', $category)
+            ->with('allCategories', $allCategories);
+    }
 
-            // Get parent category's subcategory.
-            $relatedCategories = $parentCategory->childCategory;
-        }
+    /**
+     * Handles /shop/category/{category-slug}/{subcategory-slug}
+     */
+    public function subcategory($categorySlug, $subcategorySlug)
+    {
+        // Get matching category with related products and their images.
+        $subcategory = SubCategory::where('slug', $subcategorySlug)->with('products.images')->first();
 
-        // return $category;
-        return view('shop.category')->with('category', $category)->with('relatedCategories', $relatedCategories);
+        // Get parent category of the subcategory.
+        $category = $subcategory->parentCategory;
+
+        // Get all categories for tree view.
+        $allCategories = Category::all();
+
+        return view('shop.catalog.subcategory')
+            ->with('subcategory', $subcategory)
+            ->with('category', $category)
+            ->with('allCategories', $allCategories);
     }
 
     /**
      * Handles /shop/product/{category-slug}/{product-type-slug}
      */
-    public function productType($categorySlug, $productType)
+    // /category/{categorySlug}/{subcategorySlug}/{productTypeSlug}
+    public function productType($categorySlug, $subcategorySlug, $productTypeSlug)
     {
-        $category = Category::where('slug', $categorySlug)->first();
-        if ($category == null) {
-            $category = SubCategory::where('slug', $categorySlug)->first();
-            $parentCategory = Category::find($category->parentCategory->id);
-            $relatedCategories = $parentCategory->childCategory;
-            $productType = ProductType::where('slug', $productType)->with('products.images')->first();
-        }
+        // Get matching product type with related products and their images.
+        $type = ProductType::where('slug', $productTypeSlug)->with('products.images')->first();
 
-        return view('shop.category')->with('category', $productType)->with('relatedCategories', $relatedCategories);
+        // Get parent subcategory of the product type.
+        $subcategory = $type->parentSubcategory;
+
+        // Get parent category of the product type.
+        $category = $subcategory->parentCategory;
+
+        // Get all categories for tree view.
+        $allCategories = Category::all();
+
+        return view('shop.catalog.type')
+            ->with('type', $type)
+            ->with('subcategory', $subcategory)
+            ->with('category', $category)
+            ->with('allCategories', $allCategories);
     }
 
     /**
@@ -99,8 +118,9 @@ class ShopController extends Controller
      */
     public function product($slug)
     {
+        // Get matching product.
         $product = Product::where('slug', $slug)->with('images')->first();
-        // return $product;
+
         return view('shop.product')->with('product', $product);
     }
 }

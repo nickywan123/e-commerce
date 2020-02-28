@@ -39,7 +39,15 @@ class SubCategory extends Model
     }
 
     /**
-     * Get all products belonging to a sub category.
+     * Get all product types belonging to the subcategory.
+     */
+    public function types()
+    {
+        return $this->hasMany('App\Models\Categories\ProductType', 'parent_subcategory_id');
+    }
+
+    /**
+     * Get all products belonging to the subcategory.
      */
     public function products()
     {
