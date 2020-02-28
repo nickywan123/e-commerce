@@ -22,8 +22,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-// controller to return view for dealer home page
-Route::resource('/dashboard/dealer', 'DashBoardDealerController');
+// return view for dealer home page
+Route::get('/dashboard/dealer', 'Dealer\DashboardController@dashboard');
+
+Route::get('/dashboard/dealer/statements', 'Dealer\DashboardController@statements');
+
+Route::get('/dashboard/dealer/statements/invoice', 'Dealer\DashboardController@viewInvoice');
+
+Route::get('/dashboard/dealer/purchase_order', 'Dealer\DashboardController@viewPurchaseOrder');
+
+
 
 
 

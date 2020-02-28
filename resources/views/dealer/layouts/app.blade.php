@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Bujitsu Dealer</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -46,7 +46,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-bar-block">
    
     <a href="/dashboard/dealer" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Customer Order</a>
-    <a href="/dashboard/dealer/statement" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Statements</a>
+    <a href="/dashboard/dealer/statements" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Statements</a>
     
    
 

@@ -3,17 +3,31 @@
 <title>Panel Dashboard</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<head>
+
+
+
 
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
+
+
+
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<script src="{{ asset('js/app.js') }}" defer></script>
-<script src="{{ asset('js/bootstrap.js') }}" defer></script>
+<script src="{{ asset('js/app.js') }}"></script>
+
+<!-- Jquery for Date Picker UI-->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+
+
+</head>
 
 
 
@@ -95,8 +109,23 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       mySidebar.style.display = "none";
       overlayBg.style.display = "none";
     }
-    </script>
+
     
+
+
+    
+
+</script>
+
+<script>
+  $( function() {
+      $( ".date" ).datepicker({
+         
+        dateFormat: 'yy-mm-dd'
+          
+      });
+  });
+</script>
 
 
     </body>
