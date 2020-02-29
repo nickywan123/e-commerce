@@ -100,10 +100,9 @@
                                         {{ ($cart != null) ? $cart->count() : '0' }}
                                     </span>
                                 </div>
-
                             </a>
                             <div class="my-dropdown-menu" id="cart-items">
-                                <p>Card view here</p>
+                                @include('layouts.shop.partials.cart-preview')
                             </div>
                         </li>
                         <li class="wishlist" data-toggle="tooltip" data-placement="top" title="Wishlist">
