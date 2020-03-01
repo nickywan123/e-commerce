@@ -15,8 +15,19 @@
                         <p style="font-size: 1.5rem; font-weight: 550;">RM {{ $product->price }}</p>
                     </div>
                 </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-12 text-md-left text-center">
+                        <p>{{ $product->summary }}</p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-12 pt-2">
+                        <div class="w-100-sm w-50-md float-left-md pt-4 text-md-left text-center">
+                            <p>Quantity</p>
+                        </div>
+
                         <div class="w-100-sm w-50-md float-right-md pt-4">
                             <div class="input-group ">
                                 <span class="input-group-btn">
@@ -46,6 +57,18 @@
 </div>
 @endsection
 
+@push('script')
+<script>
+    fetch('https://jsonplaceholder.typicode.com/posts').then(function(response) {
+        // The API call was successful!
+        console.log('success!', response);
+    }).catch(function(err) {
+        // There was an error
+        console.warn('Something went wrong.', err);
+    });
+</script>
+@endpush
+
 @push('style')
 <style>
     @media (max-width: 576px) {
@@ -65,6 +88,10 @@
 
         .float-right-md {
             float: right;
+        }
+
+        .float-left-md {
+            float: left;
         }
 
         .w-50-md {

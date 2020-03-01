@@ -110,4 +110,9 @@ class Product extends Model
     {
         return $this->hasMany('App\Models\Products\ProductLength', 'product_id', 'id');
     }
+
+    public function getDefaultColor()
+    {
+        return $this->colors->where('is_default', 1)->first();
+    }
 }

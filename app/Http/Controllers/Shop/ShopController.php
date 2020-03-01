@@ -116,11 +116,24 @@ class ShopController extends Controller
     /**
      * Handles /shop/product/{product-slug}
      */
-    public function product($slug)
+    public function product(Request $request, $slug)
     {
-        // Get matching product.
-        $product = Product::where('slug', $slug)->with('images')->first();
+        if ($request->has('color')) {
+            // TODO: Change image and other related info if color is specified.
+            return 'Work in progress.';
+        } else {
+            // Get matching product.
+            $product = Product::where('slug', $slug)->with('images')->first();
+        }
 
         return view('shop.product')->with('product', $product);
+    }
+
+    /**
+     * Handles /shop/shopping-cart
+     */
+    public function shoppingCart()
+    {
+        return view('shop.shopping-cart');
     }
 }

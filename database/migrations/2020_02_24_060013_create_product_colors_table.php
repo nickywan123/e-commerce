@@ -17,7 +17,9 @@ class CreateProductColorsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('product_id');
             $table->string('color_name');
+            $table->string('name_slug');
             $table->string('color_hex');
+            $table->integer('is_default')->default(0);
             $table->timestamps();
         });
     }

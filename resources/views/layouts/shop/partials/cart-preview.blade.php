@@ -39,7 +39,16 @@
         <span>Total</span>
 
         <span class="cart-total-price">
-            <span class="cart-total">0.00
+            <span class="cart-total">
+                <?php
+                $totalPrice = 0.00;
+                foreach ($cart as $cartItem) {
+                    $total = $cartItem->unit_price * $cartItem->quantity;
+                    $totalPrice = $total;
+                }
+
+                echo 'RM' . $totalPrice;
+                ?>
             </span>
         </span>
     </div><!-- End .dropdown-cart-total -->

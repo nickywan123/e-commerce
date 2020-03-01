@@ -18,6 +18,7 @@ class CreateProductLengthsTable extends Migration
             $table->bigInteger('product_id');
             $table->integer('length');
             $table->string('measurement_unit');
+            $table->integer('is_default')->default(0);
             $table->timestamps();
         });
     }

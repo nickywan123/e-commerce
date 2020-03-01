@@ -19,4 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('shop')->group(function () {
     Route::get('/get-cart', 'APIControllers\CartController@index');
+
+    Route::prefix('cart')->group(function () {
+        Route::delete('/delete/{id}', 'APIControllers\CartController@destroy');
+    });
 });

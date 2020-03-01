@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use App\User;
+use App\Models\Users\Cart;
 
 class CartController extends Controller
 {
@@ -84,6 +85,8 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cartItem = Cart::find($id);
+
+        return $cartItem;
     }
 }

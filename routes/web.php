@@ -36,7 +36,7 @@ Route::prefix('shop')->group(function () {
     Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 
     // Shopping cart page.
-    Route::get('/shopping-cart', 'Product\CartController@index')->name('shop.cart');
+    Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');
 
     // Add item to shopping cart (1 click/tap on category page)
     Route::get('/add-to-cart/{id}', 'Product\CartController@create')->name('shop.addtocart');
