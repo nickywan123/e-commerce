@@ -11,6 +11,7 @@ use App\Models\Categories\ProductType;
 use App\Models\Categories\SubCategory;
 use App\Models\Products\Product;
 use Illuminate\Support\Facades\View;
+use App\User;
 
 class ShopController extends Controller
 {
@@ -131,9 +132,22 @@ class ShopController extends Controller
 
     /**
      * Handles /shop/shopping-cart
+     * An empty view will be returned first. The view will then submit an AJAX request.
      */
-    public function shoppingCart()
+    public function shoppingCart(Request $request)
     {
+        // If ajax request..
+        if ($request->ajax()) {
+            // Find user
+            $user = User::find(Auth::user()->id);
+            // Get items in user's cart.
+            $cartItems = $user->cartItems;
+            // Return a partial view (can be treated as a component), the view will loop through all the items.
+            return view('shop.cart.partials.shopping-cart-item')->with('cartItems', $cartItems);
+        }
+
+        // Return view.
+        // After finished loading, the view will submit an AJAX request that will be handled by the statement above.
         return view('shop.shopping-cart');
     }
 }

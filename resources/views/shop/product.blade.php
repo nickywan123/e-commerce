@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-7 pt-1 pl-1 pr-1">
-                <img src="{{ $product->images[0]->url }}" alt="" style="width: 100%; height: 450px">
+                <img src="{{ asset('storage/' . $product->images[0]->path . $product->images[0]->filename) }}" alt="" style="height: 450px; width: auto;">
             </div>
             <div class="col-12 col-md-5 pt-1 pl-1 pr-1">
                 <div class="row">

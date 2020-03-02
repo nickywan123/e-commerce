@@ -6,7 +6,7 @@
                 {{$cart->count()}}
             </span> Items in cart
         </span>
-        <a class="view-cart" href="#">
+        <a class="view-cart" href="/shop/shopping-cart">
             Manage Cart
         </a>
     </div>

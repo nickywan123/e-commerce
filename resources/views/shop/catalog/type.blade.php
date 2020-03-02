@@ -68,6 +68,9 @@
                         <div class="col-md-4 col-6 pb-3 pl-1 pr-1">
                             <div class="item">
                                 <div class="item-img">
+                                    <div class="sell-area">
+                                        <span class="sale" style="background-color: #000000;">Standard</span>
+                                    </div>
                                     <div class="extra-list">
                                         <ul>
                                             <li>

@@ -18,8 +18,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        // $user = User::find(Auth::user()->id);
-        return Auth::user();
+        $user = User::find(Auth::user()->id);
+        return $user;
     }
 
     /**
@@ -86,6 +86,7 @@ class CartController extends Controller
     public function destroy($id)
     {
         $cartItem = Cart::find($id);
+        $cartItem->delete();
 
         return $cartItem;
     }
