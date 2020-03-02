@@ -20,8 +20,13 @@ class DatabaseSeeder extends Seeder
             // UsersAddressTableSeeder::class,
             // UsersContactsTableSeeder::class,
             // UsersInfoTableSeeder::class,
-            //UsersTableSeeder::class
-            PermissionsSeeder::class
+            // UsersTableSeeder::class
+            // UsersTableSeeder::class,
+            CategoriesTableSeeder::class,
+            SubCategoriesTableSeeder::class,
+            ProductTypesTableSeeder::class,
+            ProductsTableSeeder::class,
+            //PermissionsSeeder::class
         ]);
     }
 }

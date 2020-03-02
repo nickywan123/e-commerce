@@ -14,9 +14,6 @@
 
 Route::resource('/dashboard/dealer', 'DashBoardDealerController');
 
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -46,6 +43,7 @@ Route::get('/dashboard/panel', function () {
 
     return view('panel.panel');
 })->name('panel');
+
 // Shop Routes
 Route::prefix('shop')->group(function () {
     // Home/Index page for shop.
