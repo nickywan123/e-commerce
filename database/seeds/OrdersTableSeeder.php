@@ -29,7 +29,7 @@ class OrdersTableSeeder extends Seeder
             'order_details' => 'aha',
         ]);
 
-        App\Models\Orders\Orders::create([
+        App\Models\Orders\Order::create([
 
             'order_id' => '62342',
             'user_id' => '40',

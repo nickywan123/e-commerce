@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Select your account to view:</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,21 @@
                         </div>
                     @endif
 
-                    You are logged in!
+              
+
+ <br>  
+
+                    @can('view shop')
+                    <a href="https://www.w3schools.com">Visit Shop</a>
+                    @endcan
+                    <br>
+                    @can('view dealer')
+                    <a href="/dashboard/dealer">Visit Dealer Dashboard</a>
+                    @endcan
+                    <br>
+                    @can('view panel')
+                    <a href="/dashboard/panel">Visit Panel Dashboard</a>
+                    @endcan
                 </div>
             </div>
         </div>

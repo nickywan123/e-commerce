@@ -18,7 +18,11 @@ class UserInfo extends Model
     protected $primaryKey = 'user_id';
 
     // Set mass assignable columns
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'NRIC',
+        'dealer_id'
+    ];
 
 
 

@@ -23,10 +23,8 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-
     // Allow any field to be inserted
     protected $guarded = ['email', 'password'];
-
 
     /**
      * Where to redirect users after registration.
@@ -66,13 +64,45 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\Users\User
      */
-    protected function create(array $data)
+    protected function create(array $data) // 
     {
-        return User::create([
-
+        // $user->create($data);
+        $user = User::create([
+            // Users table
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
+        ]);
+
+        $user->userInfo()->create([
+            'name' => $data['name'],
+            'NRIC' => $data['nric'], // Create NRIC field.
+        ]);
+
+        $user->userAddresses()->create([
+            'address_1' => $data['homeaddress1'],
+            'address_2' => $data['homeaddress2'],
+            'address_3' => $data['homeaddress3'],
+            'zipcode' => $data['postcode'],
+
+            'shipping_address' => $data['shippingaddress']
+        ]);
+
+        $user->userContacts()->create([
+
+            'mobile_num' => $data['number'],
+            'emergency_num' => $data['emergency']
 
         ]);
+
+        // check if dealer form is registered, assign dealer role or otherwise
+
+        if ($data['isDealerForm'] == 1) {
+
+            $user->assignRole('2');
+        } else {
+            $user->assignRole('1');
+        }
+
+        return $user;
     }
 }
