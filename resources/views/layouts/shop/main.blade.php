@@ -62,6 +62,25 @@
             color: #FFDF00;
             font-size: 1rem;
         }
+
+        .logo-header .helpful-links ul li.my-dropdown .my-dropdown-menu {
+            width: 300px;
+            position: absolute;
+            top: 70%;
+            right: 0%;
+            border: 0px;
+            padding: 0px;
+            border-radius: 0px;
+            -webkit-box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.15);
+            background: #fff;
+            z-index: 10;
+            display: none;
+        }
+
+        .logo-header .search-box .categori-container {
+            z-index: 9;
+        }
     </style>
 </head>
 

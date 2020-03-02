@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 
-use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -13,22 +12,38 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'Store 1',
-            'email' => 'store1@email.com',
-            'password' => bcrypt('password'),
-        ]);
 
-        User::create([
-            'name' => 'Store 2',
-            'email' => 'store2@email.com',
-            'password' => bcrypt('password'),
-        ]);
+        // create demo users
+        $user = Factory(App\Models\Users\User::class)->create([
 
-        User::create([
-            'name' => 'Store 3',
-            'email' => 'store3@email.com',
-            'password' => bcrypt('password'),
+
+            'name' => 'Alex The Customer',
+            'email' => 'customer@example.com',
+            'role' => 1
+
+            // factory default password is 'secret'
         ]);
+        $user->assignRole('customer');
+
+        $user = Factory(App\Models\Users\User::class)->create([
+
+
+            'name' => 'James The Dealer',
+            'email' => 'dealer@example.com',
+            'role' => 2
+
+            // factory default password is 'secret'
+        ]);
+        $user->assignRole('dealer');
+
+        $user = Factory(App\Models\Users\User::class)->create([
+
+            'name' => 'Tony The Panel',
+            'email' => 'panel@example.com',
+            'role' => 3
+
+            // factory default password is 'secret'
+        ]);
+        $user->assignRole('panel');
     }
 }

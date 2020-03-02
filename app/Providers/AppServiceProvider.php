@@ -29,7 +29,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $categories = Category::with('image')->with('childCategory.image')->get();
-        View::share('categories', $categories);
+        //
     }
 }

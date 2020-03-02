@@ -26,6 +26,47 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('IC') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="nric" type="text" class="form-control @error('nric') is-invalid @enderror" name="nric" value="{{ old('nric') }}" required autocomplete="nric" autofocus>
+
+                                @error('nric')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('Mobile Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="number" type="text" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}" required autocomplete="number" autofocus>
+
+                                @error('number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="emergency" class="col-md-4 col-form-label text-md-right">{{ __('Emergency Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="nric" type="text" class="form-control @error('emergency') is-invalid @enderror" name="emergency" value="{{ old('emergency') }}" required autocomplete="emergency" autofocus>
+
+                                @error('emergency')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="homeaddress1" class="col-md-4 col-form-label text-md-right">{{ __('Home Address 1') }}</label>
 
                             <div class="col-md-6">

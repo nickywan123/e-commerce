@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RenameColumnUserContactsTable extends Migration
+class CreateProductTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class RenameColumnUserContactsTable extends Migration
      */
     public function up()
     {
-        Schema::table('user_contacts', function (Blueprint $table) {
-            $table->renameColumn('emergency_numb', 'emergency_num');
+        Schema::create('product_types', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('slug');
+            $table->integer('parent_subcategory_id');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +29,6 @@ class RenameColumnUserContactsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('product_types');
     }
 }

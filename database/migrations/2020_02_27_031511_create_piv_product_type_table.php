@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RenameUserTable extends Migration
+class CreatePivProductTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,13 @@ class RenameUserTable extends Migration
      * @return void
      */
     public function up()
-    
     {
-        Schema::rename('user_info', 'user_infos');
-        Schema::rename('user_address', 'user_addresses');
-        Schema::rename('user_contact', 'user_contacts');
+        Schema::create('piv_product_type', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('product_id');
+            $table->bigInteger('product_type_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -26,6 +28,6 @@ class RenameUserTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('piv_product_type');
     }
 }

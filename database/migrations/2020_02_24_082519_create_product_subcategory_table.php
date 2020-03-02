@@ -13,7 +13,7 @@ class CreateProductSubcategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_subcategory', function (Blueprint $table) {
+        Schema::create('piv_product_subcategory', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('product_id');
             $table->bigInteger('subcategory_id');
@@ -28,6 +28,6 @@ class CreateProductSubcategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_subcategory');
+        Schema::dropIfExists('piv_product_subcategory');
     }
 }

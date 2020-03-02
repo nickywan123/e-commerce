@@ -18,6 +18,13 @@ class ProductColor extends Model
     // Set mass assignable columns
     protected $fillable = [
         'color_name',
-        'color_hex'
+        'name_slug',
+        'color_hex',
+        'is_default'
     ];
+
+    public function image()
+    {
+        return $this->morphOne('App\Models\Globals\Image', 'imageable');
+    }
 }

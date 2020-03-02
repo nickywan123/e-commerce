@@ -60,12 +60,12 @@
         <div class="row ">
             <div class="col-lg-2 col-sm-6 col-5 remove-padding">
                 <div class="logo">
-                    <a href="#">
-                        <img src="https://via.placeholder.com/156x44" alt="">
+                    <a href="/shop">
+                        <img style="width: 156px; height: auto;" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-8 col-sm-12 remove-padding order-last order-sm-2 order-md-2">
+            <div class="col-lg-8 col-sm-12 remove-padding order-last order-sm-2 order-md-2 my-auto">
                 <div class="search-box-wrapper">
                     <div class="search-box" style="border: 1px solid #FFDF00;">
                         <div class="categori-container" id="catSelectForm" style="background-color: #FFDF00;">
@@ -89,26 +89,25 @@
             </div>
 
 
-            <div class="col-lg-2 col-sm-6 col-7 remove-padding order-lg-last">
-                <div class="helpful-links">
+            <div class="col-lg-2 col-sm-6 col-7 remove-padding order-lg-last my-auto">
+                <div class="helpful-links" style="display: block; padding-bottom: 20px; padding-top: 0;">
                     <ul class="helpful-links-inner">
                         <li class="my-dropdown" data-toggle="tooltip" data-placement="top" title="Cart">
                             <a href="javascript:;" class="cart carticon">
                                 <div class="icon">
-                                    <i class="icofont-cart" style="color: #FFDF00;"></i>
+                                    <i class="icofont-cart" style="color: #FFDF00; font-size: 25px; font-weight: 0;"></i>
                                     <span class="cart-quantity" id="cart-count">
                                         {{ ($cart != null) ? $cart->count() : '0' }}
                                     </span>
                                 </div>
-
                             </a>
                             <div class="my-dropdown-menu" id="cart-items">
-                                <p>Card view here</p>
+                                @include('layouts.shop.partials.cart-preview')
                             </div>
                         </li>
                         <li class="wishlist" data-toggle="tooltip" data-placement="top" title="Wishlist">
                             <a href="javascript:;" data-toggle="modal" id="wish-btn" data-target="#comment-log-reg" class="wish">
-                                <i class="icofont-favourite" style="color: #FFDF00;"></i>
+                                <i class="icofont-favourite" style="color: #FFDF00; font-size: 25px; font-weight: 0;"></i>
                                 <span id="wishlist-count">0</span>
                             </a>
                         </li>
@@ -121,7 +120,7 @@
 <!-- Logo Header Area End -->
 
 <!-- Main Menu Area Start -->
-<div class="mainmenu-area mainmenu-bb" style="background-color: #e6c700">
+<div class="mainmenu-area mainmenu-bb" style="background: rgb(153,102,0); background: linear-gradient(90deg, rgba(153,102,0,1) 0%, rgba(255,249,204,1) 30%, rgba(192,144,46,1) 55%, rgba(236,213,135,1) 80%, rgba(255,249,204,1) 100%);">
     <div class="container">
         <div class="row align-items-center mainmenu-area-innner">
             <div class="col-lg-3 col-md-6 categorimenu-wrapper remove-padding">
@@ -133,7 +132,7 @@
                     <div class="categories_menu_inner">
                         <ul>
                             @foreach($categories as $category)
-                            @if($category->childCategory->isEmpty())
+                            @if($category->subcategories->isEmpty())
                             <li class="text-capitalize">
                                 <a href="/shop/category/{{ $category->slug }}"><img src="{{ asset('assets/images/category-icons/'.$category->image->url) }}"> {{ $category->name }}</a>
                             </li>
@@ -150,9 +149,9 @@
                                     </a>
                                 </div>
                                 <ul class="categories_mega_menu column_1">
-                                    @foreach($category->childCategory as $childCategory)
+                                    @foreach($category->subcategories as $subcategory)
                                     <li>
-                                        <a href="/shop/category/{{ $childCategory->slug }}">{{ $childCategory->name }}</a>
+                                        <a href="/shop/category/{{ $subcategory->slug }}">{{ $subcategory->name }}</a>
                                     </li>
                                     @endforeach
                                 </ul>

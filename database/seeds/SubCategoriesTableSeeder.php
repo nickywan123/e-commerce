@@ -18,7 +18,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'wiring',
             'parent_category_id' => '1'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'electrical.jpg'
         ]);
 
         SubCategory::create([
@@ -26,7 +26,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'lamp',
             'parent_category_id' => '1'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'lamp.jpg'
         ]);
 
         SubCategory::create([
@@ -34,7 +34,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'lighting',
             'parent_category_id' => '1'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'lighting.jpg'
         ]);
 
         SubCategory::create([
@@ -42,7 +42,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'plaster-ceilling',
             'parent_category_id' => '2'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'plaster-ceiling.jpg'
         ]);
 
         SubCategory::create([
@@ -50,7 +50,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'cabinet',
             'parent_category_id' => '3'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'build-in-cabinets.jpg'
         ]);
 
         SubCategory::create([
@@ -58,7 +58,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'sofa',
             'parent_category_id' => '3'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'sofa.jpg'
         ]);
 
         SubCategory::create([
@@ -66,7 +66,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'dining-set',
             'parent_category_id' => '3'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'dining-set.jpg'
         ]);
 
         SubCategory::create([
@@ -74,7 +74,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'curtain-bedsheet',
             'parent_category_id' => '3'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'curtain.jpg'
         ]);
 
         SubCategory::create([
@@ -82,7 +82,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'clock',
             'parent_category_id' => '3'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'clock.jpg'
         ]);
 
         SubCategory::create([
@@ -90,7 +90,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'wallpaper',
             'parent_category_id' => '3'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'wallpaper.jpg'
         ]);
 
         SubCategory::create([
@@ -98,7 +98,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'carpet',
             'parent_category_id' => '3'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'carpet.jpg'
         ]);
 
         SubCategory::create([
@@ -106,7 +106,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'gate',
             'parent_category_id' => '4'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'gate.jpg'
         ]);
 
         SubCategory::create([
@@ -114,7 +114,7 @@ class SubCategoriesTableSeeder extends Seeder
             'slug' => 'paint',
             'parent_category_id' => '5'
         ])->image()->create([
-            'url' => 'https://via.placeholder.com/512'
+            'url' => 'paint.jpg'
         ]);
     }
 }

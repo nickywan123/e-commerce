@@ -17,7 +17,16 @@ class UserAddress extends Model
     protected $primaryKey = 'id';
 
     // Set mass assignable columns
-    protected $fillable = [];
+    protected $fillable = [
+        'address_1',
+        'address_2',
+        'address_3',
+        'zipcode',
+        'state',
+        'shipping_address'
+
+
+    ];
 
 
     /**
@@ -27,6 +36,6 @@ class UserAddress extends Model
     public function user()
     {
 
-        return $this->belongsTo('App\Models\Users\User', 'id');
+        return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 }

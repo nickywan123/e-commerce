@@ -20,6 +20,7 @@ class CreateProductDimensionsTable extends Migration
             $table->integer('height');
             $table->integer('depth');
             $table->string('measurement_unit');
+            $table->integer('is_default')->default(0);
             $table->timestamps();
         });
     }

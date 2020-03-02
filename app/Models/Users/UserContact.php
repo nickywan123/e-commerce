@@ -16,7 +16,12 @@ class UserContact extends Model
     protected $primaryKey = 'id';
 
     // Set mass assignable columns
-    protected $fillable = [];
+    protected $fillable = [
+
+        'mobile_num',
+        'emergency_num'
+
+    ];
 
 
 
@@ -28,6 +33,6 @@ class UserContact extends Model
     public function user()
     {
 
-        return $this->belongsTo('App\Models\Users\User', 'id');
+        return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 }
