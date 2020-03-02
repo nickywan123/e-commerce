@@ -13,7 +13,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <script src="{{ asset('js/app.js') }}" defer></script>
-<script src="{{ asset('js/bootstrap.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap.js') }}" ></script>
 
 
 

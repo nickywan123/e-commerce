@@ -102,7 +102,7 @@ class RegisterController extends Controller
         } else {
             $user->assignRole('1');
         }
-
+        // $user->assignRole('1');
         return $user;
     }
 }

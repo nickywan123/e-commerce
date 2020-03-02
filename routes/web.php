@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::resource('/dashboard/dealer', 'DashBoardDealerController');
 

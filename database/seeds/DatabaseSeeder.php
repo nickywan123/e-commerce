@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             SubCategoriesTableSeeder::class,
             ProductTypesTableSeeder::class,
             ProductsTableSeeder::class,
-            //PermissionsSeeder::class
+            PermissionsSeeder::class
         ]);
     }
 }

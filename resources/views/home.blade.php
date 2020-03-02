@@ -19,7 +19,7 @@
  <br>  
 
                     @can('view shop')
-                    <a href="https://www.w3schools.com">Visit Shop</a>
+                    <a href="/shop">Visit Shop</a>
                     @endcan
                     <br>
                     @can('view dealer')
