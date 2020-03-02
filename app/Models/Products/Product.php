@@ -17,10 +17,13 @@ class Product extends Model
 
     // Set mass assignable columns
     protected $fillable = [
+        'unique_id',
         'name',
         'price',
-        'sku',
         'slug',
+        'summary',
+        'description',
+        'quality',
         'panel_id',
         'amount_sold'
     ];
@@ -48,19 +51,40 @@ class Product extends Model
     /**
      *  Get product's categories.
      */
-    // TODO: Change to belongsTo
     public function categories()
     {
-        return $this->belongsToMany('App\Models\Categories\Category', 'category_product', 'product_id', 'category_id');
+        return $this->belongsToMany(
+            'App\Models\Categories\Category',
+            'piv_category_product',
+            'product_id',
+            'category_id'
+        );
     }
 
     /**
      * Get product's sub categories.
      */
-    // TODO: Change to belongsTo
     public function subCategories()
     {
-        return $this->belongsToMany('App\Models\Categories\SubCategory', 'product_subcategory', 'product_id', 'subcategory_id');
+        return $this->belongsToMany(
+            'App\Models\Categories\SubCategory',
+            'piv_product_subcategory',
+            'product_id',
+            'subcategory_id'
+        );
+    }
+
+    /**
+     * get product's product type.
+     */
+    public function productTypes()
+    {
+        return $this->belongsToMany(
+            'App\Models\Categories\ProductType',
+            'piv_product_type',
+            'product_id',
+            'product_type_id'
+        );
     }
 
     /**
@@ -85,5 +109,10 @@ class Product extends Model
     public function lengths()
     {
         return $this->hasMany('App\Models\Products\ProductLength', 'product_id', 'id');
+    }
+
+    public function getDefaultColor()
+    {
+        return $this->colors->where('is_default', 1)->first();
     }
 }

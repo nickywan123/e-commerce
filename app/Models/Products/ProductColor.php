@@ -20,4 +20,9 @@ class ProductColor extends Model
         'color_name',
         'color_hex'
     ];
+
+    public function image()
+    {
+        return $this->morphOne('App\Models\Globals\Image', 'imageable');
+    }
 }

@@ -52,7 +52,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <img src="{{ $product->images[0]->url }}" alt="">
+                                    <img src="{{ asset('storage/' . $product->images[0]->path . $product->images[0]->filename) }}" alt="">
                                 </div>
                                 <div class="info">
                                     <a href="/shop/product/{{ $product->slug }}" class="price text-capitalize">{{ $product->name }}</a>

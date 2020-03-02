@@ -32,7 +32,7 @@ class Category extends Model
     /**
      * Get all of the category's childs.
      */
-    public function childCategory()
+    public function subcategories()
     {
         return $this->hasMany('App\Models\Categories\SubCategory', 'parent_category_id');
     }
@@ -42,6 +42,6 @@ class Category extends Model
      */
     public function products()
     {
-        return $this->belongsToMany('App\Models\Products\Product', 'category_product', 'category_id', 'product_id');
+        return $this->belongsToMany('App\Models\Products\Product', 'piv_category_product', 'category_id', 'product_id');
     }
 }
