@@ -6,25 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 // Model to handle Orders table
 
-class Orders extends Model
+class Order extends Model
 {
 
     // Set table
     protected $table = 'orders';
 
     // Set timestamps
-    public $timestamps = false;
+    public $timestamps = true;
 
     // Set primary key
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'order_id';
 
     // Set mass assignable columns
     protected $fillable = [];
 
-    // Manys orders can belong to one customer
+    // Manys orders can belong to one user
 
-    public function users()
+    public function user()
     {
-        return $this->belongsTo('App\Models\Users\User', 'id');
+        return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 }

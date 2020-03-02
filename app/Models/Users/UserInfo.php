@@ -15,10 +15,14 @@ class UserInfo extends Model
     public $timestamps = true;
 
     // Set primary key
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'user_id';
 
     // Set mass assignable columns
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'NRIC',
+        'dealer_id'
+    ];
 
 
 
@@ -30,6 +34,6 @@ class UserInfo extends Model
     public function user()
     {
 
-        return $this->belongsTo('App\Models\Users\User', 'id');
+        return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 }

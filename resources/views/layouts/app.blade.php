@@ -79,6 +79,11 @@
                                             <a class="nav-link" style="color:#f8f9fa; font-size:1.5rem;" href="{{ route('register') }}">{{ __('Register') }}</a>
                                         </li>
                                     @endif
+                                    @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" style="color:#f8f9fa; font-size:1.5rem;" href="{{ url('/registrations/dealer') }}">{{ __('Be a Dealer!') }}</a>
+                                    </li>
+                                @endif
                                 
                             @else
                                 <li class="nav-item dropdown">

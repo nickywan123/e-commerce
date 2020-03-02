@@ -14,7 +14,7 @@ class CreateUserInfo extends Migration
     public function up()
     {
         Schema::create('user_infos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('user_id')->unique();
             $table->string('name', 300);
             $table->string('NRIC', 100);
             $table->integer('dealer_id')->nullable();
