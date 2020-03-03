@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/dashboard/dealer', 'DashBoardDealerController');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -35,7 +33,6 @@ Route::get('/dashboard/dealer/purchase_order', 'Dealer\DashboardController@viewP
 // return registration form for dealer
 
 Route::get('/registrations/dealer', function () {
-
     return view('registrations.dealer');
 });
 
@@ -43,7 +40,6 @@ Route::get('/registrations/dealer', function () {
 //return panel dashboard
 
 Route::get('/dashboard/panel', function () {
-
     return view('panel.panel');
 })->name('panel');
 
@@ -74,8 +70,14 @@ Route::prefix('shop')->group(function () {
     // Shopping cart page.
     Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');
 
-    // Add item to shopping cart (1 click/tap on category page)
-    Route::get('/add-to-cart/{id}', 'Product\CartController@create')->name('shop.addtocart');
+    Route::prefix('cart')->group(function () {
+        Route::post('/add-item', 'Shop\CartController@store')->name('shop.cart.add-item');
+    });
+
+    Route::prefix('order')->group(function () {
+        Route::get('/', 'Shop\OrderController@index')->name('shop.order');
+        Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
+    });
 });
 
 Auth::routes();

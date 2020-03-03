@@ -34,7 +34,7 @@
             <div class="row">
 
                 <div class="col-4">
-                    <img class="responsive-img" src="https://via.placeholder.com/520" alt="">
+                    <img class="responsive-img" src="{{ asset('storage/' . $cartItem->product->images[0]->path . $cartItem->product->images[0]->filename) }}" alt="">
                 </div>
 
                 <div class="col-8">
@@ -74,11 +74,27 @@
                 </div>
 
                 <div class="col-6 text-right my-auto">
-                    <h4 class="my-auto">RM 20</h4>
+                    <h4 class="my-auto">RM
+                        <?php
+                        $totalPrice = 0;
+                        foreach ($cartItems as $cartItem) {
+                            $totalPrice = $totalPrice + $cartItem->total_price;
+                        }
+                        echo $totalPrice;
+                        ?>
+                    </h4>
                 </div>
             </div>
             <div class="text-right">
-                <button class="btn btn-primary">Checkout</button>
+                <form method="POST" action="/shop/order/checkout">
+                    @csrf
+                    <?php
+                    foreach ($cartItems as $cartItem) {
+                        echo '<input type="hidden" name="cartItemId[]" value="' . $cartItem->id . '">';
+                    }
+                    ?>
+                    <button class="btn btn-primary" type="submit">Checkout</button>
+                </form>
             </div>
         </div>
     </div>

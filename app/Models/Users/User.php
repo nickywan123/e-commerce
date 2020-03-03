@@ -79,4 +79,12 @@ class User extends Authenticatable
 
         return $this->hasMany('App\Models\Orders\Order', 'user_id');
     }
+
+    /**
+     * Get all items in customer's cart.
+     */
+    public function cartItems()
+    {
+        return $this->hasMany('App\Models\Users\Cart', 'user_id', 'user_id');
+    }
 }

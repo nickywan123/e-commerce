@@ -28,7 +28,6 @@ class UserAddress extends Model
 
     ];
 
-
     /**
      * Get the user address associated with the user.
      */

@@ -18,8 +18,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $user = User::find(Auth::user()->id);
-        return $user;
+        //
     }
 
     /**

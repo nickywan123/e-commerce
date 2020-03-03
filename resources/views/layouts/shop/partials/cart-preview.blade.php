@@ -28,7 +28,7 @@
 
             <figure class="product-image-container">
                 <a href="" class="product-image">
-                    <img src="https://via.placeholder.com/512" alt="product">
+                    <img src="{{ asset('storage/' . $cartItem->product->images[0]->path . $cartItem->product->images[0]->filename) }}" alt="product">
                 </a>
             </figure>
         </li><!-- End .product -->
