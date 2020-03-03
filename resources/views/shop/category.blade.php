@@ -40,7 +40,7 @@
                     <!-- Product cards -->
                     <div class="row">
                         @foreach($category->products as $product)
-                        <div class="col-md-4 col-6 pb-3 pl-1 pr-1">
+                        <div class="col-md-4 col-6 pb-3 pl-1 pr-1" id="test">
                             <div class="item">
                                 <div class="item-img">
                                     <div class="extra-list">

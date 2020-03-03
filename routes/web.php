@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::view('CusStatus', 'CusStatus');
 
 // return view for dealer home page
 Route::get('/dashboard/dealer', 'Dealer\DashboardController@dashboard')->name('dealer');
