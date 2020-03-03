@@ -17,7 +17,7 @@
       
       <tr>
         <th scope="col">Order ID</th>
-        <th scope="col">Delivery Date</th>
+        <th scope="col">Delivery Date </th>
         <th scope="col">Order Info</th>
         <th scope="col">Order Status</th>
         <th scope="col">Purchase Order</th>
@@ -29,9 +29,20 @@
       <tr>
         
         <td>454542</td>
-        <td><input class="date form-control" type="text"></td>
+        <td><input class="date form-control" type="text" placeholder="select delivery date">
+           <button onclick="myFunction()" id="myBtn">Submit Date</button>
+          </td>
         <td>Chair</td>
-        <td>Received</td>
+        <td>
+          <select id="status" name="status">
+          <option value="inProgress">In Progress</option>
+          <option value="shipped">Order Shipped</option>
+          <option value="cancelled">Cancelled</option>
+         {{-- <input type="submit" value="Submit" > --}}
+         
+        </select>
+        <button>Update Status </button>
+      </td>
         <td>xxxx</td>                 
       
       </tr>
@@ -42,7 +53,7 @@
         <td>121213</td>
         <td><input class="date form-control" type="text"></td>
         <td>Table</td>
-        <td>Purchase Order</td>
+        <td></td>
         <td>yyyyyy</td>                 
       
       </tr>
@@ -51,7 +62,11 @@
   </table>
 
 
-
+  <script>
+    function myFunction() {
+      document.getElementById("myBtn").disabled = true;
+    }
+    </script>
 
 
  

@@ -16,12 +16,26 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<script src="{{ asset('js/app.js') }}"></script>
+
+
+
+
 
 <!-- Jquery for Date Picker UI-->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
+
+<!-- Style for sidebar and navbar template-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+<!--Bootstrap style for table form -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 
 
 
@@ -36,7 +50,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top  w3-large "  style="z-index:10; background-color:FFCC00 ">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right">Bujishu</span>
+  <span class="w3-bar-item w3-left">Bujishu</span>
 </div>
 
 
@@ -86,7 +100,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 
-<script>
+{{-- <script>
     // Get the Sidebar
     var mySidebar = document.getElementById("mySidebar");
     
@@ -115,13 +129,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     
 
-</script>
+</script> --}}
 
 <script>
   $( function() {
       $( ".date" ).datepicker({
          
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'yy-mm-dd',
+        minDate:0
           
       });
   });

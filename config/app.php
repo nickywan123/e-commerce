@@ -178,6 +178,9 @@ return [
         // Permission Spatie provider
         Spatie\Permission\PermissionServiceProvider::class,
 
+        // Captcha provider
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class
+
     ],
 
     /*
@@ -228,6 +231,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
 
     ],
 
