@@ -19,9 +19,11 @@ Route::resource('/dashboard/dealer', 'DashBoardDealerController');
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('CusStatus', 'CusStatus');
+Route::get('/home', 'UserInfo\orderconfirmation@home')->name('user_info');
 
 // return view for dealer home page
 Route::get('/dashboard/dealer', 'Dealer\DashboardController@dashboard')->name('dealer');
@@ -32,6 +34,7 @@ Route::get('/dashboard/dealer/statements/invoice', 'Dealer\DashboardController@v
 
 Route::get('/dashboard/dealer/purchase_order', 'Dealer\DashboardController@viewPurchaseOrder');
 
+Route::get('/', 'User\CustomerInfo@viewUser');
 
 // return registration form for dealer
 
