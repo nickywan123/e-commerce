@@ -8,6 +8,12 @@ use App\Models\Orders\Order;
 
 use Illuminate\Http\Request;
 
+
+
+/**
+ *  Controller to handle dashboard for dealer
+ */
+
 class DashboardController extends Controller
 {
     /**

@@ -1,14 +1,33 @@
 @extends('panel.layouts.app');
 
 
-
 @section('content')
     
 
 
-{{-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
+@if(Session::has('successful_message'))
+<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+{{ Session::get('successful_message') }}
+</div>
+@endif
 
+@if(Session::has('error_message'))
+<div class="alert alert-danger">
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+{{ Session::get('error_message') }}
+</div>
+@endif
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 
 
@@ -25,50 +44,50 @@
     </thead>
     <tbody>
      
-      
+      @foreach ($customerOrders as $customerOrder)
+    
+    
       <tr>
+        <form action="{{ route('update.order',['id'=>$customerOrder->order_id]) }}" method="POST" > 
+          <input type="hidden" name="_method" value="PUT">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
         
-        <td>454542</td>
-        <td><input class="date form-control" type="text" placeholder="select delivery date">
-           <button onclick="myFunction()" id="myBtn">Submit Date</button>
-          </td>
-        <td>Chair</td>
+
+        <td>{{$customerOrder->order_id}}</td>
         <td>
-          <select id="status" name="status">
-          <option value="inProgress">In Progress</option>
-          <option value="shipped">Order Shipped</option>
-          <option value="cancelled">Cancelled</option>
-         {{-- <input type="submit" value="Submit" > --}}
+          
+            <input  name='delivery_date' value="{{$customerOrder->delivery_date}}" class="date form-control" type="text" placeholder="Select delivery date" required autocomplete="off">
+          
          
-        </select>
-        <button>Update Status </button>
-      </td>
-        <td>xxxx</td>                 
+          </td>
+        <td>{{$customerOrder->product_name}}</td>
+        <td>
+          {{$customerOrder->order_status}}
+          <br>
+          <br>
+          <select name="status">
+          <option value="In Progress">In Progress</option>
+          <option value="Order Shipped">Order Shipped</option>
+          <option value="Cancelled">Cancelled</option>
+         
       
+        </select>
+       
+      </td>
+        <td>{{$customerOrder->purchase_order}}
+         <hr>
+          <input type="submit" value="Update Order"> 
+        </td>                 
+        
+    
+      </form>
       </tr>
  
 
-      <tr>
-        
-        <td>121213</td>
-        <td><input class="date form-control" type="text"></td>
-        <td>Table</td>
-        <td></td>
-        <td>yyyyyy</td>                 
-      
-      </tr>
+      @endforeach
  
     </tbody>
   </table>
 
-
-  <script>
-    function myFunction() {
-      document.getElementById("myBtn").disabled = true;
-    }
-    </script>
-
-
- 
 
 @endsection

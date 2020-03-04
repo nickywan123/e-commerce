@@ -24,10 +24,10 @@ class CreateOrdersTable extends Migration
             $table->string('product_price');
             $table->string('product_length');
             $table->string('product_dimension');
-            $table->timestamp('delivery_date');
+            $table->date('delivery_date')->nullable();
             $table->string('order_details');
             $table->string('order_status');
-            $table->timestamp('order_date');
+            $table->date('order_date');
             $table->string('purchase_order');
         });
     }

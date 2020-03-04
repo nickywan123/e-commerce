@@ -13,7 +13,7 @@ class Order extends Model
     protected $table = 'orders';
 
     // Set timestamps
-    public $timestamps = true;
+    public $timestamps = false;
 
     // Set primary key
     protected $primaryKey = 'order_id';
