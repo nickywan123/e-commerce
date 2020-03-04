@@ -30,36 +30,5 @@ class PermissionsSeeder extends Seeder
 
         $role3 = Role::create(['name' => 'panel']);
         $role3->givePermissionTo('view panel');
-
-
-        // // create demo users
-        // $user = Factory(App\Models\Users\User::class)->create([
-
-
-        //     'name' => 'Alex The Customer',
-        //     'email' => 'customer@example.com'
-
-        //     // factory default password is 'secret'
-        // ]);
-        // $user->assignRole($role1);
-
-        // $user = Factory(App\Models\Users\User::class)->create([
-
-
-        //     'name' => 'James The Dealer',
-        //     'email' => 'dealer@example.com'
-
-        //     // factory default password is 'secret'
-        // ]);
-        // $user->assignRole($role2);
-
-        // $user = Factory(App\Models\Users\User::class)->create([
-
-        //     'name' => 'Tony The Panel',
-        //     'email' => 'panel@example.com',
-
-        //     // factory default password is 'secret'
-        // ]);
-        // $user->assignRole($role3);
     }
 }

@@ -43,4 +43,10 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\Products\Product', 'product_id');
     }
+
+    // Get order's status.
+    public function status()
+    {
+        return $this->belongsTo('App\Models\Globals\Status', 'status_id');
+    }
 }

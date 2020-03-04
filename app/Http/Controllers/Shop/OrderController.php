@@ -15,6 +15,11 @@ use App\Models\Orders\Order;
 use App\Models\Users\Cart;
 use App\Models\Users\User;
 
+use App\Jobs\Emails\Orders\NewOrderSendEmail;
+
+use App\Jobs\Orders\ProcessOrderEmail;
+use Carbon\Carbon;
+
 class OrderController extends Controller
 {
     /**
@@ -79,38 +84,68 @@ class OrderController extends Controller
         // Variables initialization.
         $user = User::find(Auth::user()->user_id);
         $productInformation = array();
+        $orderId = null;
 
         // Get cart items based on array of id provided in request.
         $cartItems = Cart::whereIn('id', $request->input('cartItemId'))->get();
 
         foreach ($cartItems as $cartItem) {
-            // Create a new order.
-            $newOrder = new Order;
-            $newOrder->order_id = 'Order ID Here, Generate! New ' . $cartItem->id;
-            $newOrder->user_id = $user->user_id;
-            $newOrder->dealer_id = 10; // Get dealer ID from user info.
-            $newOrder->panel_id = $cartItem->product->panel->user_id;
-            $newOrder->product_id = $cartItem->product->id;
-            // Create an array of product information..
-            $productInformation = array(
-                "product_color_id" => $cartItem->product_color_id,
-                "product_color_name" => $cartItem->product_color,
-                "product_dimension_id" => $cartItem->product_dimension_id,
-                "product_dimension" => $cartItem->product_dimension,
-                "product_length_id" => $cartItem->product_length_id,
-                "product_length" => $cartItem->product_length
-            );
-            // Product information will be stored as an array. See attribute casting on Laravel documentation.
-            // protected $casts = [ 'product_information' => 'array']
-            $newOrder->product_information = $productInformation;
-            $newOrder->product_quantity = $cartItem->quantity;
-            $newOrder->order_price = $cartItem->total_price;
-            $newOrder->order_status = 1;
-            $newOrder->save();
+            // Order ID setup.
+            $now = Carbon::now();
+            $year = $now->format('Y');
+            $month = $now->format('m');
+            $randomInteger = mt_rand(10000000000, 99999999999);
 
-            if ($newOrder->save()) {
-                $cartItem->status = 2003;
-                $cartItem->save();
+            $orderId = $year . '-' . $month . '-' . $randomInteger;
+            // Check if the order id already exist.
+            $order = Order::where('order_id', $orderId)->first();
+
+            // If order id exist..
+            if ($order != null) {
+                // Generate another order id.
+                $randomInteger = mt_rand(10000000000, 99999999999);
+                $orderId = $year . '-' . $month . '-' . $randomInteger;
+            } else {
+                // If not, the create a new order.
+                // Create a new order.
+                $newOrder = new Order;
+                $newOrder->order_id = $orderId;
+                $newOrder->user_id = $user->user_id;
+                $newOrder->dealer_id = 10; // Get dealer ID from user info.
+                $newOrder->panel_id = $cartItem->product->panel->user_id;
+                $newOrder->product_id = $cartItem->product->id;
+                // Create an array of product information..
+                $productInformation = array(
+                    "product_color_id" => $cartItem->product_color_id,
+                    "product_color_name" => $cartItem->product_color,
+                    "product_dimension_id" => $cartItem->product_dimension_id,
+                    "product_dimension" => $cartItem->product_dimension,
+                    "product_length_id" => $cartItem->product_length_id,
+                    "product_length" => $cartItem->product_length
+                );
+                // Product information will be stored as an array. See attribute casting on Laravel documentation.
+                // protected $casts = [ 'product_information' => 'array']
+                $newOrder->product_information = $productInformation;
+                $newOrder->product_quantity = $cartItem->quantity;
+                $newOrder->order_price = $cartItem->total_price;
+                $newOrder->status_id = 1001;
+                $newOrder->save();
+
+                // If the order is saved..
+                if ($newOrder->save()) {
+                    // Change the cart item status.
+                    $cartItem->status = 2003;
+                    $cartItem->save();
+
+                    // Set customer details for email..
+                    $customerEmailDetails = [
+                        'toEmail' => $user->email,
+                        'orderId' => $newOrder->order_id
+                    ];
+
+                    // Dispatch a queue job for email..
+                    dispatch(new NewOrderSendEmail($newOrder, $customerEmailDetails));
+                }
             }
         }
 

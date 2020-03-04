@@ -1,5 +1,10 @@
 <?php
 
+use App\Mail\OrderShipped;
+use App\Jobs\Emails\Order\SendEmailOrderShipped;
+use App\Jobs\Emails\Orders\NewOrderSendEmail;
+use Carbon\Carbon;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,14 +36,12 @@ Route::get('/dashboard/dealer/purchase_order', 'Dealer\DashboardController@viewP
 
 
 // return registration form for dealer
-
 Route::get('/registrations/dealer', function () {
     return view('registrations.dealer');
 });
 
 
 //return panel dashboard
-
 Route::get('/dashboard/panel', function () {
     return view('panel.panel');
 })->name('panel');
@@ -71,11 +74,15 @@ Route::prefix('shop')->group(function () {
     Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');
 
     Route::prefix('cart')->group(function () {
+        // POST route for adding item to cart.
         Route::post('/add-item', 'Shop\CartController@store')->name('shop.cart.add-item');
     });
 
     Route::prefix('order')->group(function () {
+        // Order history page.
         Route::get('/', 'Shop\OrderController@index')->name('shop.order');
+
+        // POST route for checking out cart item and placing order.
         Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
     });
 });

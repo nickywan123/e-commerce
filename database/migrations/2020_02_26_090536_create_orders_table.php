@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->text('product_information');
             $table->integer('product_quantity');
             $table->decimal('order_price', 10, 2);
-            $table->integer('order_status');
+            $table->integer('status_id');
             $table->timestamps();
         });
     }

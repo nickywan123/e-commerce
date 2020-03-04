@@ -22,8 +22,6 @@ class DashboardController extends Controller
         // Read value from Model method
         $customerOrders = Order::all();
 
-
-
         return view('dealer.dealer')->with('customerOrders', $customerOrders);
     }
     /**
@@ -50,7 +48,6 @@ class DashboardController extends Controller
      */
     public function viewPurchaseOrder()
     {
-
         return view('dashboard_receipts.purchase_order');
     }
 }

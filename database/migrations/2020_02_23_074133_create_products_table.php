@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->text('summary');
             $table->text('description');
-            $table->integer('quality')->default(1);
+            $table->integer('quality_id')->default(1);
             $table->bigInteger('panel_id');
             $table->integer('amount_sold')->default(0);
             $table->timestamps();

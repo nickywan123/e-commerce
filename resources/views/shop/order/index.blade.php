@@ -37,15 +37,7 @@
                         </td>
                         <td class="align-middle">{{ $order->product_quantity }} Pcs</td>
                         <td class="align-middle">RM {{ $order->order_price }}</td>
-                        <td class="align-middle">
-                            @if($order->order_status == 1)
-                            Order Placed
-                            @elseif($order->order_status == 2)
-                            Order Shipped
-                            @elseif($order->order_status == 3)
-                            Order Delivered
-                            @endif
-                        </td>
+                        <td class="align-middle"> {{ $order->status->name }}</td>
                     </tr>
                     @endforeach
                 </table>

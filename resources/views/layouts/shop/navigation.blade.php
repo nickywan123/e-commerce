@@ -48,7 +48,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="sell-btn">Sell</a>
+                                    <a href="/registrations/dealer" class="sell-btn">Sell</a>
                                 </li>
                             </ul>
                             @else
