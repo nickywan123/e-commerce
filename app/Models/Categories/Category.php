@@ -30,12 +30,29 @@ class Category extends Model
     }
 
     /**
+     * Get all of the category's child if any.
+     */
+    public function childCategories()
+    {
+        return $this->hasMany('App\Models\Categories\Category', 'parent_category_id');
+    }
+
+    /**
+     * Get the category's parent if any.
+     */
+    public function parentCategory()
+    {
+        return $this->belongsTo('App\Models\Categories\Category', 'parent_category_id');
+    }
+
+    // TODO: Confirm then delete this block of code.
+    /**
      * Get all of the category's childs.
      */
-    public function subcategories()
-    {
-        return $this->hasMany('App\Models\Categories\SubCategory', 'parent_category_id');
-    }
+    // public function subcategories()
+    // {
+    //     return $this->hasMany('App\Models\Categories\SubCategory', 'parent_category_id');
+    // }
 
     /**
      * Get all products belonging to a category.
