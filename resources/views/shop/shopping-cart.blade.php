@@ -28,7 +28,6 @@
                 url: '/shop/shopping-cart',
                 type: "get",
                 success: function(result) {
-                    console.log(result)
                     ItemContainer.html(result);
                 },
                 error: function(result) {
@@ -52,11 +51,13 @@
 
         ItemContainer.on('click', '#DeleteCartItem', function() {
             $.ajax({
-                url: '/api/shop/cart/delete/' + this.value,
-                type: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '/shop/cart/delete-item/' + this.value,
+                type: 'PUT',
                 contentType: 'application/json',
                 success: function(result) {
-                    console.log(result);
                     onPageLoad();
                 },
                 error: function(result) {

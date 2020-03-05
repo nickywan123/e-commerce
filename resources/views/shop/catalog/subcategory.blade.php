@@ -85,7 +85,13 @@
                                     <h5 class="name">${{ $product->price }}</h5>
                                     <div class="item-cart-area">
                                         <!-- <a id="addToCartBtn" href="#exampleModal" data-toggle="modal" data-target="#exampleModal">Add to cart</a> -->
-                                        <a class="btn btn-primary" href="/shop/add-to-cart/{{ $product->id }}">Add to cart</a>
+                                        <form method="POST" action="{{ route('shop.cart.add-item') }}">
+                                            @method('POST')
+                                            @csrf
+                                            <input type="hidden" name="productId" value="{{ $product->id }}">
+                                            <input type="hidden" name="productQuantity" value="1">
+                                            <button type="submit" class="btn btn-primary float-right-md w-100-sm">Add to cart</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

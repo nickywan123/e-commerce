@@ -17,7 +17,7 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
     }
@@ -60,7 +60,18 @@ class CartController extends Controller
 
             // Set color id for checking purposes.
             $colorId = $color->id;
+        } else {
+            // Check if there's any default color specified.
+            if ($product->getDefaultColor() != null) {
+                // If default color is specified..
+                $color = $product->getDefaultColor();
+                $colorId = $color->id;
+            } else {
+                // If no default color is specified
+                $color = null;
+            }
         }
+
         // If the post request has product dimension id value in it..
         if ($request->has('productDimensionId')) {
             // Get selected product dimension.
@@ -68,7 +79,18 @@ class CartController extends Controller
 
             // Set dimension id for checking purposes.
             $dimensionId = $dimension->id;
+        } else {
+            // Check if there's any default dimension specified.
+            if ($product->getDefaultDimension() != null) {
+                // If default dimension is specified..
+                $dimension = $product->getDefaultDimension();
+                $dimensionId = $dimension->id;
+            } else {
+                // If no default dimension is specified.
+                $dimension = null;
+            }
         }
+
         // If the post request has product length id value in it..
         if ($request->has('productLengthId')) {
             // Get selected product length.
@@ -76,6 +98,16 @@ class CartController extends Controller
 
             // Set length id for checking purposes.
             $lengthId = $length->id;
+        } else {
+            // Check if there's any default length specified.
+            if ($product->getDefaultLength() != null) {
+                // If default length is specified..
+                $length = $product->getDefaultLength();
+                $lengthId = $length->id;
+            } else {
+                // If no default length is specified.
+                $length = null;
+            }
         }
 
         // Check if the exact item already is in the card..
@@ -95,19 +127,19 @@ class CartController extends Controller
             $newCartItem->product_id = $product->id;
 
             // Check if the post request has product color id in it..
-            if ($request->has('productColorId')) {
+            if ($color != null) {
                 // If yes, assign the color id and name
                 $newCartItem->product_color_id = $color->id;
                 $newCartItem->product_color = $color->color_name;
             }
             // Check if the post request has product dimension id in it..
-            if ($request->has('productDimensionId')) {
+            if ($dimension != null) {
                 // If yes, assign the dimension id and concate the width, height, depth and measurement unit.
                 $newCartItem->product_dimension_id = $dimension->id;
                 $newCartItem->product_dimension = $dimension->width . 'x' . $dimension->height . 'x' . $dimension->depth . 'x' . $dimension->measurement_unit;
             }
             // Check if the post request has product length id in it..
-            if ($request->has('productLengthId')) {
+            if ($length != null) {
                 // If yes, assign the length id and concate the length and measurement unit.
                 $newCartItem->product_length_id = $length->id;
                 $newCartItem->product_length = $length->length . ' ' . $length->measurement_unit;
@@ -174,6 +206,10 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        // Change status to 2002
+        $cartItem = Cart::find($id);
+        $cartItem->status = 2002;
+        $cartItem->save();
+
+        return $cartItem;
     }
 }

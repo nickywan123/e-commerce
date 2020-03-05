@@ -105,11 +105,19 @@ Route::prefix('shop')->group(function () {
     // Shopping cart page.
     Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');
 
+    // Cart prefix.
     Route::prefix('cart')->group(function () {
+        // Shopping cart page.
+        Route::get('/', 'Shop\CartController@index')->name('shop.cart');
+
         // POST route for adding item to cart.
         Route::post('/add-item', 'Shop\CartController@store')->name('shop.cart.add-item');
+
+        // DELETE route for deleting cart item.
+        Route::put('/delete-item/{id}', 'Shop\CartController@destroy')->name('shop.cart.delete-item');
     });
 
+    // Order prefix.
     Route::prefix('order')->group(function () {
         // Order history page.
         Route::get('/', 'Shop\OrderController@index')->name('shop.order');
@@ -119,4 +127,12 @@ Route::prefix('shop')->group(function () {
     });
 });
 
-Auth::routes();
+/**
+ * Any routes that needs a user to be logged in with a verified account, 
+ * place under this group.
+ */
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    //
+});
+
+Auth::routes(['verify' => true]);
