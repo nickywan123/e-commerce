@@ -17,13 +17,13 @@ Route::get('/', function () {
 
 Route::resource('/dashboard/dealer', 'DashBoardDealerController');
 
-Auth::routes();
+
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::view('Interface_login', 'Interface_login');
 Route::view('CusStatus', 'CusStatus');
-Route::get('/home', 'UserInfo\orderconfirmation@home')->name('user_info');
+//Route::get('/home', 'UserInfo\orderconfirmation@home')->name('user_info');
 
 // return view for dealer home page
 Route::get('/dashboard/dealer', 'Dealer\DashboardController@dashboard')->name('dealer');

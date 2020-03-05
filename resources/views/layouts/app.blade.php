@@ -48,7 +48,7 @@
 
     <body class="backgroundImage">
         <div>
-            <!-- <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:white;  opacity: 0.3">
+            <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:white;  opacity: 1">
                 <div class="container-fluid">
                     <a class="navbar-brand " href="{{ url('/') }}">
                         {{-- {{ config('app.name', 'Laravel') }} --}}
@@ -59,31 +59,29 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse " id="navbarSupportedContent"-->
-            <!-- Left Side Of Navbar -->
-            <!--<ul class="navbar-nav mr-auto">
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
 
-                        </ul-->
+                        </ul>
 
-            <!-- Right Side Of Navbar -->
-            <!--ul class="navbar-nav ml-auto"-->
-            <!-- Authentication Links -->
-            <!-- @guest
-
-                            @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link " style="color:#f8f9fa; font-size:1.5rem;" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                            @guest
+                            @if (Route::has('login')) <li class="nav-item">
+                                <a class="nav-link " style="color:black; font-size:1.5rem;" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @endif
 
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" style="color:#f8f9fa; font-size:1.5rem;" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" style="color:black; font-size:1.5rem;" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                             @endif
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" style="color:#f8f9fa; font-size:1.5rem;" href="{{ url('/registrations/dealer') }}">{{ __('Be a Dealer!') }}</a>
+                                <a class="nav-link" style="color:black; font-size:1.5rem;" href="{{ url('/registrations/dealer') }}">{{ __('Be a Dealer!') }}</a>
                             </li>
                             @endif
 
@@ -106,62 +104,13 @@
                             </li>
                             @endguest
                         </ul>
+
+
                     </div>
                 </div>
-            </nav-->
-
-            <div class="">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-6">
-
-                        <form class="form-horizontal">
-                            <div class="header">Your Details</div>
-
-                            <div class="form-content">
+            </nav>
 
 
-                                <div class="form-group">
-                                    <div class="col-sm-6">
-                                        <label class="control-label" for="exampleInputName2"><i class="fa fa-user"></i></label>
-                                        <input class="form-control" value="{{ $user->userInfo->name }}" id="" placeholder=" " type="text" disabled>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <label class="control-label" for="exampleInputName2"><i class="fa fa-user"></i></label>
-                                        <input class="form-control" value="{{ $user->userAddresses[0]->address_1 }}" id="" placeholder="" type="text" disabled>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <label class="control-label" for="exampleInputName2"><i class="fa fa-envelope-o"></i></label>
-                                        <input class="form-control" value="{{ $user->userContacts[0]->mobile_num }}" id="exampleInputName2" placeholder="" type="email" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-6">
-                                            <label class="control-label" for="exampleInputName2"><i class="fa fa-lock"></i></label>
-                                            @if($user->orders != null)
-                                            <input class="form-control" value="123" id="exampleInputName2" placeholder="" type="text" disabled>
-                                            @else
-                                            <input class="form-control" value="No data" id="exampleInputName2" placeholder="" type="text" disabled>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-
-
-
-                                <div class="clearfix"></div>
-
-
-
-                                <div class="clearfix">
-                                    <a href="/shop" type="submit" class="btn btn-default btnmk"> Close</a>
-                                </div>
-                            </div>
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
 
             <main class="py">
                 {{-- <img src="{{ asset('images/homepage.jpg') }}" class="responsive" alt="No Logo"> --}}
