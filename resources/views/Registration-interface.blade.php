@@ -1,40 +1,47 @@
-@extends('layouts.shop.main')
-
-@section('content')
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4 mx-auto my-auto col-12">
+        <h2>Fancy Login / Registration form</h2>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
             <div class="form-body">
                 <ul class="nav nav-tabs final-login">
-                    <li><a data-toggle="tab" href="#sectionA">LOGIN</a></li>
-                    <li><a data-toggle="tab" href="#sectionB">REGISTER</a></li>
+                    <li class="active"><a data-toggle="tab" href="#sectionA">Sign In</a></li>
+                    <li><a data-toggle="tab" href="#sectionB">Join us!</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="sectionA" class="tab-pane fade in active">
-                        <div class="innter-form" style="margin-top:-10px;">
-
-                            <form class="sa-innate-form" method="POST" action="{{ route('login') }}">
-                                @csrf
+                        <div class="innter-form">
+                            <form class="sa-innate-form" method="post">
                                 <label>Email Address</label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input type="text" name="username">
                                 <label>Password</label>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
+                                <input type="password" name="password">
+                                <button type="submit">Sign In</button>
                                 <a href="">Forgot Password?</a>
-                                <br>
-                                <center><button type="submit">LOGIN</button></center>
                             </form>
                         </div>
-
+                        <div class="social-login">
+                            <p>- - - - - - - - - - - - - Sign In With - - - - - - - - - - - - - </p>
+                            <ul>
+                                <li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>
+                                <li><a href=""><i class="fa fa-google-plus"></i> Google+</a></li>
+                                <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
+                            </ul>
+                        </div>
                         <div class="clearfix"></div>
                     </div>
                     <div id="sectionB" class="tab-pane fade">
-                        <div class="innter-form" style="margin-top:-10px;">
+                        <div class="innter-form">
                             <form class="sa-innate-form" method="post">
                                 <label>Name</label>
                                 <input type="text" name="username">
@@ -42,13 +49,18 @@
                                 <input type="text" name="username">
                                 <label>Password</label>
                                 <input type="password" name="password">
-                                <a href="">Forgot Password?</a>
-                                <br>
-                                <center><button type="submit">REGISTER</button></center>
-
+                                <button type="submit">Join now</button>
+                                <p>By clicking Join now, you agree to hifriends's User Agreement, Privacy Policy, and Cookie Policy.</p>
                             </form>
                         </div>
-
+                        <div class="social-login">
+                            <p>- - - - - - - - - - - - - Register With - - - - - - - - - - - - - </p>
+                            <ul>
+                                <li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>
+                                <li><a href=""><i class="fa fa-google-plus"></i> Google+</a></li>
+                                <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,40 +68,15 @@
     </div>
 </div>
 
-
-</body>
-@endsection
-
-@push('style')
-<STYLE>
+<style>
     /* form */
     body {
-        background: #FFCC00;
-    }
-
-    /* Medium devices (tablets, 768px and up) */
-    @media (min-width: 768px) {
-        .form-body {
-            width: 100%;
-        }
-    }
-
-    // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) {
-        .form-body {
-            max-width: 500px;
-        }
-    }
-
-    // Extra large devices (large desktops, 1200px and up)
-    @media (min-width: 1200px) {
-        ...
+        background: #efefef;
     }
 
     .form-body {
-        background: #FFCC00;
+        background: #fff;
         padding: 20px;
-        margin-top: 300px;
     }
 
     .login-form {
@@ -100,7 +87,6 @@
 
     .innter-form {
         padding-top: 20px;
-
     }
 
     .final-login li {
@@ -112,14 +98,14 @@
     }
 
     .nav-tabs>li {
-        color: black;
+        color: #222 !important;
     }
 
     .nav-tabs>li.active>a,
     .nav-tabs>li.active>a:hover,
     .nav-tabs>li.active>a:focus {
-        color: #FFCC00;
-        background-color: BLACK;
+        color: #fff;
+        background-color: #d14d42;
         border: none !important;
         border-bottom-color: transparent;
         border-radius: none !important;
@@ -132,11 +118,48 @@
         border-radius: none !important;
         text-transform: uppercase;
         font-size: 16px;
-        color: #FFCC00;
-        background-color: black;
     }
 
+    .social-login {
+        text-align: center;
+        font-size: 12px;
+    }
 
+    .social-login p {
+        margin: 15px 0;
+    }
+
+    .social-login ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .social-login ul li {
+        width: 33%;
+        float: left;
+        clear: fix;
+    }
+
+    .social-login ul li a {
+        font-size: 13px;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 0;
+        display: block;
+    }
+
+    .social-login ul li:nth-child(1) a {
+        background: #3b5998;
+    }
+
+    .social-login ul li:nth-child(2) a {
+        background: #e74c3d;
+    }
+
+    .social-login ul li:nth-child(3) a {
+        background: #3698d9;
+    }
 
     .sa-innate-form input[type=text],
     input[type=password],
@@ -169,23 +192,22 @@
     }
 
     .sa-innate-form button {
-        border: 1px solid;
-        background: WHITE;
-        color: BLACK;
-        padding: 10px 35px;
+        border: 1px solid#e64b3b;
+        background: #e64b3b;
+        color: #fff;
+        padding: 10px 25px;
         font-size: 14px;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .sa-innate-form button:hover {
-        border: 1px solid;
-        background: BLACK;
-        color: #FFCC00;
+        border: 1px solid#db3b2b;
+        background: #db3b2b;
+        color: #fff;
     }
 
     .sa-innate-form p {
         font-size: 13px;
         padding-top: 10px;
     }
-</STYLE>
-@endpush
+</style>

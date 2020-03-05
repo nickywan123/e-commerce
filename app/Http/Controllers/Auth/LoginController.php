@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Http\Request;
+
+use App\Models\Categories\Category;
+
 class LoginController extends Controller
 {
     /*
@@ -20,6 +24,21 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+
+    public function showLoginForm()
+    {
+        // Check if user is authenticated or not.
+        if (Auth::check()) {
+            // If authenticated, then get their cart.
+            $cart = Auth::user()->cartItems->where('status', 2001);
+        } else {
+            $cart = null;
+        }
+        // Get all categories, with subcategories and its images.
+        $categories = Category::with('image')->with('subcategories.image')->get();
+
+        return view('auth.login')->with('cart', $cart)->with('categories', $categories);
+    }
 
     /**
      * Where to redirect users after login.
@@ -47,9 +66,16 @@ class LoginController extends Controller
                 return $this->redirectTo;
                 break;
             default:
-                $this->redirectTo = '/home';
+                $this->redirectTo = '/shop';
                 return $this->redirectTo;
         }
+    }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->invalidate();
+        return $this->loggedOut($request) ?: redirect('/login');
     }
 
     /**

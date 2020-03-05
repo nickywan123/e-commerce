@@ -21,12 +21,13 @@ Route::get('/', function () {
 });
 
 
+Route::view('login', 'login');
 
+Route::view('register', 'register');
+//Route::get('/login', 'LoginController@index')->name('login');
 
-
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::view('Interface_login', 'Interface_login');
+Route::view('Interface-login', 'Interface-login');
+Route::view('Registration-interface', 'Registration-interface');
 Route::view('CusStatus', 'CusStatus');
 //Route::get('/home', 'UserInfo\orderconfirmation@home')->name('user_info');
 

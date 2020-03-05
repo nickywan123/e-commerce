@@ -47,5 +47,5 @@ class CategoriesTableSeeder extends Seeder
         ])->image()->create([
             'url' => 'others.jpg'
         ]);
-        
+    }
 }

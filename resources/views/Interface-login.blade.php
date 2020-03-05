@@ -29,18 +29,8 @@
 
             background-image: url(/images/homepage.jpg);
             background-repeat: no-repeat;
-
-            background-size: relative;
-
-            /* //background-size:contain;
-            
-            //background-position: center center; */
-            width: 100%;
-            /* min-height: 100%; */
-            height: auto;
-            /* margin: 10% 10% 10% 10%; */
-
-
+            background-size: cover;
+            background-position: center;
         }
     </style>
 
@@ -52,9 +42,13 @@
 
         <center>
             <div class="container-fluid margin">
-                <a href="https://www.behance.net/sakiran" target="_blank" class="themeBtn4">Follow @ Behance</a>
-                <a class="nav-link " style="color:black; font-size:1.5rem;" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <i>
+                    <h1 style="color: white; opacity:0.8;   margin-bottom: 300px;">A home is made of hopes and dreams. Let us inspire you to build the perfect home!</h1>
+                </i>
+                <a href="/login#sectionA" class="themeBtn4">{{ __('Login') }}</a>
+                <a href="/login#sectionB" class="themeBtn5">{{ __('Signup') }}</a>
             </div>
+
         </center>
     </div>
 </body>
@@ -63,8 +57,8 @@
 
 <style>
     .margin {
-        margin-top: 500px;
-        margin-bottom: 20px;
+        margin-top: 400px;
+        margin-bottom: 80px;
     }
 
     .themeBtn {
@@ -79,7 +73,7 @@
         text-transform: capitalize;
         border-radius: 1px;
         letter-spacing: 0.5px;
-        border: 0px !important;
+        border: 1px !important;
         cursor: pointer;
         border-radius: 100px;
 
@@ -91,8 +85,8 @@
     }
 
     .themeBtn4 {
-        background: #006eff;
-        color: #ffffff !important;
+
+        color: #FFCC00;
         display: inline-block;
         font-size: 15px;
         font-weight: 500;
@@ -102,17 +96,33 @@
         text-transform: capitalize;
         border-radius: 1px;
         letter-spacing: 0.5px;
-        border: 0px !important;
+        border: 2px solid #FFCC00;
+        cursor: pointer;
+        border-radius: 100px;
+        margin-right: 30px;
+    }
+
+
+
+    .themeBtn5 {
+
+        color: #FFCC00;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 500;
+        height: 50px;
+        line-height: 0.8;
+        padding: 18px 25px;
+        text-transform: capitalize;
+        border-radius: 1px;
+        letter-spacing: 0.5px;
+        border: 2px solid #FFCC00;
         cursor: pointer;
         border-radius: 100px;
 
     }
 
-    .themeBtn4:hover {
-        background: rgb(0, 110, 255);
-        color: #ffffff;
-        box-shadow: 0 10px 25px -2px rgba(0, 110, 255, 0.6);
-    }
+
 
     :root {
         --color_0: #FFDF00;
