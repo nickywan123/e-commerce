@@ -18,7 +18,8 @@ class Category extends Model
     // Set mass assignable columns
     protected $fillable = [
         'name',
-        'slug'
+        'slug',
+        'parent_category_id'
     ];
 
     /**
