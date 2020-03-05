@@ -20,25 +20,57 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-// return view for dealer home page
-Route::get('/dashboard/dealer', 'Dealer\DashboardController@dashboard')->name('dealer');
 
-Route::get('/dashboard/dealer/statements', 'Dealer\DashboardController@statements');
 
-Route::get('/dashboard/dealer/statements/invoice', 'Dealer\DashboardController@viewInvoice');
 
-Route::get('/dashboard/dealer/purchase_order', 'Dealer\DashboardController@viewPurchaseOrder');
 
 
 // return registration form for dealer
 Route::get('/registrations/dealer', function () {
     return view('registrations.dealer');
 });
+
+
+
+
+
+
+Route::prefix('dashboard')->group(function () {
+
+    // Route for panel.
+    Route::prefix('panel')->group(function () {
+        // Return index home page for panel.
+        Route::get('/', 'Panel\DashboardController@index');
+        // Update order information (delivery date and order status)
+        Route::put('/update-order-information/{id}', 'Order\OrderController@update')->name('update.order');
+
+        // Return product upload page for panel
+        Route::get('/product', 'Panel\DashboardController@productForm')->name('upload.product');
+    });
+
+    Route::prefix('dealer')->group(function () {
+
+        Route::get('/', 'Dealer\DashboardController@dashboard')->name('dealer');
+
+        Route::get('/statements', 'Dealer\DashboardController@statements');
+
+        Route::get('/invoice', 'Dealer\DashboardController@viewInvoice');
+
+        Route::get('/purchase_order', 'Dealer\DashboardController@viewPurchaseOrder');
+    });
+
+    Route::prefix('admin')->group(function () {
+    });
+});
+
+
 
 
 //return panel dashboard
