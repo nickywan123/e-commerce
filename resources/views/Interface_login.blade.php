@@ -50,9 +50,12 @@
     <div>
 
 
-        <div class="container-fluid margin">
-            <a href="https://www.behance.net/sakiran" target="_blank" class="themeBtn4">Follow @ Behance</a>
-        </div>
+        <center>
+            <div class="container-fluid margin">
+                <a href="https://www.behance.net/sakiran" target="_blank" class="themeBtn4">Follow @ Behance</a>
+                <a class="nav-link " style="color:black; font-size:1.5rem;" href="{{ route('login') }}">{{ __('Login') }}</a>
+            </div>
+        </center>
     </div>
 </body>
 
@@ -60,7 +63,7 @@
 
 <style>
     .margin {
-        margin-top: 20px;
+        margin-top: 500px;
         margin-bottom: 20px;
     }
 

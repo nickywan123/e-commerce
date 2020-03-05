@@ -68,8 +68,7 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
-                            @guest
-                            @if (Route::has('login')) <li class="nav-item">
+                            @guest @if (Route::has('login')) <li class="nav-item">
                                 <a class="nav-link " style="color:black; font-size:1.5rem;" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @endif
