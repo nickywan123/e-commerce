@@ -19,16 +19,18 @@
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
         <!-- Styles -->
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
         <style>
             .backgroundImage {
 
                 background-image: url(/images/homepage.jpg);
                 background-repeat: no-repeat;
+                background-size: 100%;
 
                 background-size: relative;
 
@@ -44,10 +46,18 @@
             }
         </style>
 
+            }
+        </style>
+
+        {!! NoCaptcha::renderJs() !!}
     </head>
 
     <body class="backgroundImage">
         <div>
+            <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+                <div class="container-fluid">
+                    <a class="navbar-brand " href="{{ url('/') }}">
+
             <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:white;  opacity: 1">
                 <div class="container-fluid">
                     <a class="navbar-brand " href="{{ url('/') }}">
@@ -66,8 +76,13 @@
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-auto ">
                             <!-- Authentication Links -->
+                            @guest
+
+                            @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link " style="color:#f8f9fa; font-size:1.5rem;" href="{{ route('login') }}">{{ __('Login') }}</a>
                             @guest @if (Route::has('login')) <li class="nav-item">
                                 <a class="nav-link " style="color:black; font-size:1.5rem;" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -75,11 +90,13 @@
 
                             @if (Route::has('register'))
                             <li class="nav-item">
+                                <a class="nav-link" style="color:#f8f9fa; font-size:1.5rem;" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 <a class="nav-link" style="color:black; font-size:1.5rem;" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                             @endif
                             @if (Route::has('register'))
                             <li class="nav-item">
+                                <a class="nav-link" style="color:#f8f9fa; font-size:1.5rem;" href="{{ url('/registrations/dealer') }}">{{ __('Be a Dealer!') }}</a>
                                 <a class="nav-link" style="color:black; font-size:1.5rem;" href="{{ url('/registrations/dealer') }}">{{ __('Be a Dealer!') }}</a>
                             </li>
                             @endif
@@ -112,6 +129,7 @@
 
 
             <main class="py">
+                {{-- <img src="{{ asset('images/homepage.jpg') }}" width="100%" height="100%" alt="No Logo"> --}}
                 {{-- <img src="{{ asset('images/homepage.jpg') }}" class="responsive" alt="No Logo"> --}}
                 @yield('content')
 
@@ -120,6 +138,7 @@
         </div>
     </body>
 
+    </html>
     </html>
 
     <style>
@@ -227,4 +246,5 @@
             margin: 0 auto;
 
         }
+    </style>
     </style>

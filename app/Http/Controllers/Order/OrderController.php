@@ -1,15 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\APIControllers;
+namespace App\Http\Controllers\Order;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Orders\Order;
 
-use Auth;
-use App\User;
-use App\Models\Users\Cart;
-
-class CartController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -73,7 +70,17 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $order = new Order();
+        $order = Order::findOrFail($id);
+        $order->delivery_date = $request->input('delivery_date');
+        $order->order_status = $request->input('status');
+        $order->save();
+        if ($order) {
+            return back()->with(['successful_message' => 'Order updated successfully']);
+        } else {
+            return back()->with(['error_message' => 'Failed to update order']);
+        }
     }
 
     /**
@@ -84,9 +91,6 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        $cartItem = Cart::find($id);
-        $cartItem->delete();
-
-        return $cartItem;
+        //
     }
 }

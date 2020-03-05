@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'g-recaptcha-response' => 'required|captcha',
         ]);
     }
 
@@ -64,11 +65,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\Users\User
      */
-    protected function create(array $data) // 
+    protected function create(array $data)
     {
-        // $user->create($data);
+
         $user = User::create([
             // Users table
+
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
@@ -97,12 +99,18 @@ class RegisterController extends Controller
         // check if dealer form is registered, assign dealer role or otherwise
 
         if ($data['isDealerForm'] == 1) {
-
+            //assign track id code to dealer
+            $user->track_id = 1911000000 + $user->user_id;
+            $user->save();
             $user->assignRole('2');
         } else {
+
+            //assign track id code to customer
+            $user->track_id = 1913000000 + $user->user_id;
+            $user->save();
             $user->assignRole('1');
         }
-        // $user->assignRole('1');
+
         return $user;
     }
 }

@@ -14,21 +14,17 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->integer('order_id')->unique();
-            $table->integer('user_id');
-            $table->integer('dealer_id');
-            $table->string('product_code');
-            $table->string('product_name');
-            $table->string('product_desc');
-            $table->string('product_image');
-            $table->string('product_price');
-            $table->string('product_length');
-            $table->string('product_dimension');
-            $table->timestamp('delivery_date');
-            $table->string('order_details');
-            $table->string('order_status');
-            $table->timestamp('order_date');
-            $table->string('purchase_order');
+            $table->bigIncrements('id');
+            $table->string('order_id')->unique();
+            $table->bigInteger('user_id');
+            $table->bigInteger('dealer_id');
+            $table->bigInteger('panel_id');
+            $table->bigInteger('product_id');
+            $table->text('product_information');
+            $table->integer('product_quantity');
+            $table->decimal('order_price', 10, 2);
+            $table->integer('status_id');
+            $table->timestamps();
         });
     }
 

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Auth;
-use App\User;
+use App\Models\Users\User;
 use App\Models\Products\Product;
 use App\Models\Users\Cart;
 
@@ -36,7 +36,7 @@ class CartController extends Controller
     public function create(Request $request, $id)
     {
         // Get current user.
-        $user = User::find(Auth::user()->id);
+        $user = User::find(Auth::user()->user_id);
 
         // Get product.
         $product = Product::where('id', $id)->with('colors')->with('dimensions')->with('lengths')->first();
@@ -63,7 +63,7 @@ class CartController extends Controller
         } else {
             // Create new item in cart.
             $newProduct = new Cart;
-            $newProduct->user_id = $user->id;
+            $newProduct->user_id = $user->user_id;
             $newProduct->product_id = $product->id;
             $newProduct->product_color_id = null; // TODO: Insert id of product's default color here.
             $newProduct->product_color = null; // TODO: Insert name of product's default color here.

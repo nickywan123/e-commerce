@@ -3,16 +3,16 @@
 @section('content')
 
 <body>
-    <div class="container py-5">
-        {{-- <img src="{{ asset('images/homepage.jpg') }}" width="100%" height="100%" alt="No Logo"> --}}
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header bg-light">{{ __('Login') }}</div>
+<div class="container py-5" >
 
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
+    <div class="row justify-content-center" >
+        <div class="col-md-12">
+            <div class="card" >
+                <div class="card-header bg-light">{{ __('Login') }}</div>
+
+                <div class="card-body ">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

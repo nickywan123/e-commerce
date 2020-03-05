@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserAddressTable extends Migration
+class CreateQualitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateUserAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_addresses', function (Blueprint $table) {
+        Schema::create('qualities', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->string('address_1');
-            $table->string('address_2');
-            $table->string('address_3');
-            $table->integer('zipcode');
-            $table->string('shipping_address');
+            $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateUserAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_addresses');
+        Schema::dropIfExists('qualities');
     }
 }

@@ -32,19 +32,43 @@
 
                     <div class="right-content">
                         <div class="list">
+                            @guest
                             <ul>
                                 <li class="login">
                                     <a href="#" class="sign-log">
                                         <div class="links">
-                                            <span class="sign-in" style="color: #000000;">Sign in</span> <span style="color: #000000;">|</span>
-                                            <span class="join" style="color: #000000;">Join</span>
+                                            <span class="sign-in" style="color: #000000;">
+                                                <a href="/login">Sign in</a>
+                                            </span>
+                                            <span style="color: #000000;">|</span>
+                                            <span class="join" style="color: #000000;">
+                                                <a href="/register">Join</a>
+                                            </span>
                                         </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="sell-btn">Sell</a>
+                                    <a href="/registrations/dealer" class="sell-btn">Sell</a>
                                 </li>
                             </ul>
+                            @else
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ Auth::user()->userInfo->name }}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a href="/shop/order" class="dropdown-item">View Order History</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </div>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -240,7 +264,7 @@
                                 <ul class="categories_mega_menu column_1">
                                     @foreach($category->subcategories as $subcategory)
                                     <li>
-                                        <a href="/shop/category/{{ $subcategory->slug }}">{{ $subcategory->name }}</a>
+                                        <a href="/shop/category/{{ $subcategory->parentCategory->name }}/{{ $subcategory->slug }}">{{ $subcategory->name }}</a>
                                     </li>
                                     @endforeach
                                 </ul>

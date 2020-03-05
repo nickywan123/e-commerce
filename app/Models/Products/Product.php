@@ -45,7 +45,7 @@ class Product extends Model
      */
     public function panel()
     {
-        return $this->belongsTo('App\User', 'panel_id'); // TODO: Change to hasOne.
+        return $this->belongsTo('App\Models\Users\User', 'panel_id'); // TODO: Change to hasOne.
     }
 
     /**
@@ -111,8 +111,35 @@ class Product extends Model
         return $this->hasMany('App\Models\Products\ProductLength', 'product_id', 'id');
     }
 
+    /**
+     * Get the product's quality.
+     */
+    public function quality()
+    {
+        return $this->belongsTo('App\Models\Categories\Quality', 'quality_id');
+    }
+
+    /**
+     * Get the product's default color.
+     */
     public function getDefaultColor()
     {
         return $this->colors->where('is_default', 1)->first();
+    }
+
+    /**
+     * Get the product's default dimension.
+     */
+    public function getDefaultDimension()
+    {
+        return $this->dimensions->where('is_default', 1)->first();
+    }
+
+    /**
+     * Get the product's default length.
+     */
+    public function getDefaultLength()
+    {
+        return $this->lengths->where('is_default', 1)->first();
     }
 }

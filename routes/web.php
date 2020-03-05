@@ -1,5 +1,10 @@
 <?php
 
+use App\Mail\OrderShipped;
+use App\Jobs\Emails\Order\SendEmailOrderShipped;
+use App\Jobs\Emails\Orders\NewOrderSendEmail;
+use Carbon\Carbon;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/dashboard/dealer', 'DashBoardDealerController');
+
 
 
 
@@ -28,26 +33,54 @@ Route::view('CusStatus', 'CusStatus');
 // return view for dealer home page
 Route::get('/dashboard/dealer', 'Dealer\DashboardController@dashboard')->name('dealer');
 
-Route::get('/dashboard/dealer/statements', 'Dealer\DashboardController@statements');
 
-Route::get('/dashboard/dealer/statements/invoice', 'Dealer\DashboardController@viewInvoice');
 
-Route::get('/dashboard/dealer/purchase_order', 'Dealer\DashboardController@viewPurchaseOrder');
 
 Route::get('/', 'User\CustomerInfo@viewUser');
 
 // return registration form for dealer
-
 Route::get('/registrations/dealer', function () {
-
     return view('registrations.dealer');
 });
 
 
+
+
+
+
+Route::prefix('dashboard')->group(function () {
+
+    // Route for panel.
+    Route::prefix('panel')->group(function () {
+        // Return index home page for panel.
+        Route::get('/', 'Panel\DashboardController@index');
+        // Update order information (delivery date and order status)
+        Route::put('/update-order-information/{id}', 'Order\OrderController@update')->name('update.order');
+
+        // Return product upload page for panel
+        Route::get('/product', 'Panel\DashboardController@productForm')->name('upload.product');
+    });
+
+    Route::prefix('dealer')->group(function () {
+
+        Route::get('/', 'Dealer\DashboardController@dashboard')->name('dealer');
+
+        Route::get('/statements', 'Dealer\DashboardController@statements');
+
+        Route::get('/invoice', 'Dealer\DashboardController@viewInvoice');
+
+        Route::get('/purchase_order', 'Dealer\DashboardController@viewPurchaseOrder');
+    });
+
+    Route::prefix('admin')->group(function () {
+    });
+});
+
+
+
+
 //return panel dashboard
-
 Route::get('/dashboard/panel', function () {
-
     return view('panel.panel');
 })->name('panel');
 
@@ -78,8 +111,18 @@ Route::prefix('shop')->group(function () {
     // Shopping cart page.
     Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');
 
-    // Add item to shopping cart (1 click/tap on category page)
-    Route::get('/add-to-cart/{id}', 'Product\CartController@create')->name('shop.addtocart');
+    Route::prefix('cart')->group(function () {
+        // POST route for adding item to cart.
+        Route::post('/add-item', 'Shop\CartController@store')->name('shop.cart.add-item');
+    });
+
+    Route::prefix('order')->group(function () {
+        // Order history page.
+        Route::get('/', 'Shop\OrderController@index')->name('shop.order');
+
+        // POST route for checking out cart item and placing order.
+        Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
+    });
 });
 
 Auth::routes();

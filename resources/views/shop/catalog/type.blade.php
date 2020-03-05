@@ -69,7 +69,7 @@
                             <div class="item">
                                 <div class="item-img">
                                     <div class="sell-area">
-                                        <span class="sale" style="background-color: #000000;">Standard</span>
+                                        <span class="sale" style="background-color: #000000;">{{ $product->quality->name }}</span>
                                     </div>
                                     <div class="extra-list">
                                         <ul>

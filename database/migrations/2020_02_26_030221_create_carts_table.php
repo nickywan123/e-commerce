@@ -27,6 +27,7 @@ class CreateCartsTable extends Migration
             $table->decimal('unit_price', 10, 2);
             $table->decimal('total_price', 10, 2);
             $table->decimal('shipping_fee', 10, 2);
+            $table->integer('status')->default(2001);
             $table->timestamps();
         });
     }

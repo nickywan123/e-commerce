@@ -35,7 +35,7 @@
                                         <span class="fa fa-minus"></span>
                                     </button>
                                 </span>
-                                <input type=" text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                                <input type=" text" name="quant[1]" class="form-control input-number" value="1" min="1" max="50">
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
                                         <span class="fa fa-plus"></span>
@@ -47,7 +47,24 @@
                 </div>
                 <div class="row">
                     <div class="col-12 pt-3 pb-3">
-                        <a href="/shop/add-to-cart/{{ $product->id }}" class="btn btn-primary d-block">Add to cart</a>
+
+                        <!-- <a href="/shop/add-to-cart/{{ $product->id }}" class="btn btn-primary d-block">Add to cart</a> -->
+                        <form method="POST" action="{{ route('shop.cart.add-item') }}">
+                            @method('POST')
+                            @csrf
+                            <input type="hidden" name="productId" value="{{ $product->id }}">
+                            @if(!$product->colors->isEmpty())
+                            <input type="hidden" name="productColorId" value="{{ $product->getDefaultColor()->id }}">
+                            @endif
+                            @if(!$product->dimensions->isEmpty())
+                            <input type="hidden" name="productDimensionId" value="{{ $product->getDefaultDimension()->id }}">
+                            @endif
+                            @if(!$product->lengths->isEmpty())
+                            <input type="hidden" name="productLengthId" value="{{ $product->getDefaultLength()->id }}">
+                            @endif
+                            <input type="hidden" name="productQuantity" value="1">
+                            <button type="submit" class="btn btn-primary float-right-md w-100-sm">Add to cart</button>
+                        </form>
                     </div>
                 </div>
 
@@ -59,12 +76,23 @@
 
 @push('script')
 <script>
-    fetch('https://jsonplaceholder.typicode.com/posts').then(function(response) {
-        // The API call was successful!
-        console.log('success!', response);
-    }).catch(function(err) {
-        // There was an error
-        console.warn('Something went wrong.', err);
+    // fetch('https://jsonplaceholder.typicode.com/posts').then(function(response) {
+    //     // The API call was successful!
+    //     console.log('success!', response);
+    // }).catch(function(err) {
+    //     // There was an error
+    //     console.warn('Something went wrong.', err);
+    // });
+
+    // Assign a varibale to element with the class input-number.
+    const productQuantity = $('.input-number');
+    // Assign a variable to input with the name productQuantity.
+    const postProductQuantity = $('input[name$="productQuantity"]')
+
+    // On change event of productQuantity..
+    productQuantity.on('change', function() {
+        // change the value of postProductQuantity to match productQuantity.
+        postProductQuantity.val(productQuantity.val());
     });
 </script>
 @endpush
