@@ -31,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/shop';
 
     /**
      * Create a new controller instance.
@@ -98,10 +98,11 @@ class RegisterController extends Controller
 
         // check if dealer form is registered, assign dealer role or otherwise
 
-        if ($data['isDealerForm'] == 1) {
+        if ($data['RegistrationForm'] == 2) {
             //assign track id code to dealer
             $user->track_id = 1911000000 + $user->user_id;
             $user->save();
+            $user->assignRole('1');
             $user->assignRole('2');
         } else {
 

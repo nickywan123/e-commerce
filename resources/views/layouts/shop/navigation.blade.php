@@ -42,7 +42,24 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="sell-btn">Sell</a>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->userInfo->name }} <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                </li>
+                                <li class="dealer"> 
+                                    <a href="/dashboard/dealer" > Switch To Dealer Account</a>
+
                                 </li>
                             </ul>
                         </div>

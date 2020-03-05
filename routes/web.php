@@ -50,11 +50,14 @@ Route::prefix('dashboard')->group(function () {
 
         // Return product upload page for panel
         Route::get('/product', 'Panel\DashboardController@productForm')->name('upload.product');
+
+        // Return product uploaded by panel
+        Route::post('/update-product-information', 'Product\ProductController@store')->name('post_upload.product');
     });
 
     Route::prefix('dealer')->group(function () {
 
-        Route::get('/', 'Dealer\DashboardController@dashboard')->name('dealer');
+        Route::get('/', 'Dealer\DashboardController@index')->name('dealer');
 
         Route::get('/statements', 'Dealer\DashboardController@statements');
 
