@@ -10,7 +10,7 @@ class Order extends Model
 {
 
     // Set table
-    protected $table = 'orders';
+    protected $table = 'old_orders';
 
     // Set timestamps
     public $timestamps = false;
@@ -48,5 +48,13 @@ class Order extends Model
     public function status()
     {
         return $this->belongsTo('App\Models\Globals\Status', 'status_id');
+    }
+
+    /**
+     * Get order's price formatted with 2 decimal points.
+     */
+    public function getDecimalPrice()
+    {
+        return number_format(($this->order_price / 100), 2);
     }
 }

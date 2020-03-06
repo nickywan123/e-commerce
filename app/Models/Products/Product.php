@@ -142,4 +142,12 @@ class Product extends Model
     {
         return $this->lengths->where('is_default', 1)->first();
     }
+
+    /**
+     * Get product's price formatted with 2 decimal points.
+     */
+    public function getDecimalPrice()
+    {
+        return number_format(($this->price / 100), 2);
+    }
 }
