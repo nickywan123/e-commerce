@@ -17,7 +17,12 @@ class CreateUserInfo extends Migration
             $table->integer('user_id')->unique();
             $table->string('name', 300);
             $table->string('NRIC', 100);
+            $table->string('ethnicity')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('date_of_birth')->nullable();
+            $table->string('occupation')->nullable();
             $table->integer('dealer_id')->nullable();
+
             $table->timestamps();
         });
     }

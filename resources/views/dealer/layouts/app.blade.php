@@ -6,13 +6,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/app.js') }}" ></script>
 <script src="{{ asset('js/bootstrap.js') }}" ></script>
 
 
@@ -22,7 +22,20 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right">Bujishu</span>
+  <span class="w3-bar-item w3-left">Bujishu</span>
+  
+  <span class="w3-bar-item w3-right">
+    <a href="{{ route('logout') }}"
+    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+  </span>
+  <span class="w3-bar-item w3-right"> <a href="/shop" > Switch To Customer Account</a> </span>
 </div>
 
 
@@ -33,7 +46,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
     </div>
     <div class="w3-col s8 w3-bar">
-      <span>Welcome, <strong>Dealer</strong></span><br>
+      <span>Welcome, <strong> {{ Auth::user()->userInfo->name }}</strong></span><br>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
@@ -72,7 +85,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 
-<script>
+{{-- <script>
     // Get the Sidebar
     var mySidebar = document.getElementById("mySidebar");
     
@@ -96,7 +109,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       overlayBg.style.display = "none";
     }
     </script>
-    
+     --}}
 
 
     </body>
