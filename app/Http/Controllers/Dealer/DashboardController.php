@@ -23,7 +23,7 @@ class DashboardController extends Controller
      */
 
 
-    public function dashboard()
+    public function index()
     {
         // Read value from Model method
         $customerOrders = Order::all();
