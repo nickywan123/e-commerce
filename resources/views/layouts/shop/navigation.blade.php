@@ -33,15 +33,31 @@
                     <div class="right-content">
                         <div class="list">
                             <ul>
-                           
+                                @guest
+                                <li class="login">
+                                    <a href="#" class="sign-log">
+                                        <div class="links">
+                                            <span class="sign-in" style="color: #000000;">
+                                                <a href="/login">Sign in</a>
+                                            </span>
+                                            <span style="color: #000000;">|</span>
+                                            <span class="join" style="color: #000000;">
+                                                <a href="/register">Join</a>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/registrations/dealer" class="sell-btn">Sell</a>
+                                </li>
+                                @else
                                 <li>
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->userInfo->name }} <span class="caret"></span>
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
@@ -51,13 +67,12 @@
                                         </form>
                                 </li>
                                 @can('view dealer')
-
-
-                                <li class="dealer"> 
-                                    <a href="/dashboard/dealer" > Switch To Dealer Account</a>
+                                <li class="dealer">
+                                    <a href="/dashboard/dealer"> Switch To Dealer Account</a>
 
                                 </li>
                                 @endcan
+                                @endguest
                             </ul>
                         </div>
                     </div>
