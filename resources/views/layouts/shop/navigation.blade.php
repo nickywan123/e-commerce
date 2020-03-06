@@ -34,6 +34,7 @@
                         <div class="list">
                             @guest
                             <ul>
+                                @guest
                                 <li class="login">
                                     <a href="#" class="sign-log">
                                         <div class="links">
@@ -48,13 +49,16 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="/registrations/dealer" class="sell-btn">Sell</a>
+                                </li>
+                                @else
+                                <li>
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->userInfo->name }} <span class="caret"></span>
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
@@ -63,10 +67,13 @@
                                             @csrf
                                         </form>
                                 </li>
-                                <li class="dealer"> 
-                                    <a href="/dashboard/dealer" > Switch To Dealer Account</a>
+                                @can('view dealer')
+                                <li class="dealer">
+                                    <a href="/dashboard/dealer"> Switch To Dealer Account</a>
 
                                 </li>
+                                @endcan
+                                @endguest
                             </ul>
                             @else
                             <div class="dropdown">

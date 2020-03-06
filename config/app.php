@@ -179,7 +179,10 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
 
         // Captcha provider
-        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+
+        // PDF Download for invoice.
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -232,6 +235,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
