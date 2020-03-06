@@ -1,60 +1,57 @@
-@extends('layouts.shop.main')
+@extends('shopv2.layouts.main')
 
 @section('content')
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 mx-auto my-auto col-12">
-            <div class="form-body">
-                <ul class="nav nav-tabs final-login">
-                    <li><a data-toggle="tab" href="#sectionA">LOGIN</a></li>
-                    <li><a data-toggle="tab" href="#sectionB">REGISTER</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div id="sectionA" class="tab-pane fade in active">
-                        <div class="innter-form" style="margin-top:-10px;">
+<body class=>
+    <div class="backgroundImage">
+        <div class="row">
+            <div class="col-md-4 mx-auto my-auto col-12">
+                <div class="form-body">
+                    <ul class="nav nav-tabs final-login">
+                        <li><a data-toggle="tab" href="#sectionA">LOGIN</a></li>
+                        <li><a data-toggle="tab" href="#sectionB">REGISTER</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="sectionA" class="tab-pane fade show active">
+                            <div class="innter-form" style="margin-top:-10px;">
 
-                            <form class="sa-innate-form" method="POST" action="{{ route('login') }}">
-                                @csrf
-                                <label>Email Address</label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                <label>Password</label>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <form class="sa-innate-form" method="POST" action="{{ route('login') }}">
+                                    @csrf
+                                    <label>Email Address</label>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <label>Password</label>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                                <a href="">Forgot Password?</a>
-                                <br>
-                                <center><button type="submit">LOGIN</button></center>
-                            </form>
+                                    <a href="">Forgot Password?</a>
+                                    <br>
+                                    <center><button type="submit">LOGIN</button></center>
+                                </form>
+                            </div>
+
+                            <div class="clearfix"></div>
                         </div>
+                        <div id="sectionB" class="tab-pane fade">
+                            <div class="innter-form" style="margin-top:-10px;">
+                                <form class="sa-innate-form" method="post">
+                                    <label>Name</label>
+                                    <input type="text" name="username">
+                                    <label>Email Address</label>
+                                    <input type="text" name="username">
+                                    <label>Password</label>
+                                    <input type="password" name="password">
+                                    <a href="">Forgot Password?</a>
+                                    <br>
+                                    <center><button type="submit">REGISTER</button></center>
 
-                        <div class="clearfix"></div>
-                    </div>
-                    <div id="sectionB" class="tab-pane fade">
-                        <div class="innter-form" style="margin-top:-10px;">
-                            <form class="sa-innate-form" method="post">
-                                <label>Name</label>
-                                <input type="text" name="username">
-                                <label>Email Address</label>
-                                <input type="text" name="username">
-                                <label>Password</label>
-                                <input type="password" name="password">
-                                <a href="">Forgot Password?</a>
-                                <br>
-                                <center><button type="submit">REGISTER</button></center>
+                                </form>
+                            </div>
 
-                            </form>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
 </body>
@@ -63,8 +60,13 @@
 @push('style')
 <STYLE>
     /* form */
-    body {
-        background: #FFCC00;
+    .backgroundImage {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(/images/homepage.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 
     /* Medium devices (tablets, 768px and up) */
@@ -74,20 +76,18 @@
         }
     }
 
-    // Large devices (desktops, 992px and up)
+    /* Medium devices (tablets, 768px and up) */
     @media (min-width: 992px) {
         .form-body {
             max-width: 500px;
         }
     }
 
-    // Extra large devices (large desktops, 1200px and up)
-    @media (min-width: 1200px) {
-        ...
-    }
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 1200px) {}
 
     .form-body {
-        background: #FFCC00;
+        background: #fbcc34;
         padding: 20px;
         margin-top: 300px;
     }

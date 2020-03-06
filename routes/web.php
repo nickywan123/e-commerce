@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 
-Route::view('login', 'login');
+Route::get('/login', 'HomeController@testlogin');
 
 Route::view('register', 'register');
 //Route::get('/login', 'LoginController@index')->name('login');
@@ -43,11 +43,6 @@ Route::get('/', 'User\CustomerInfo@viewUser');
 Route::get('/registrations/dealer', function () {
     return view('registrations.dealer');
 });
-
-
-
-
-
 
 Route::prefix('dashboard')->group(function () {
 
@@ -76,9 +71,6 @@ Route::prefix('dashboard')->group(function () {
     Route::prefix('admin')->group(function () {
     });
 });
-
-
-
 
 //return panel dashboard
 Route::get('/dashboard/panel', function () {
@@ -123,6 +115,24 @@ Route::prefix('shop')->group(function () {
 
         // POST route for checking out cart item and placing order.
         Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
+    });
+    Route::prefix('shopv2')->group(function () {
+        // Order history page.
+        Route::get('/')->name('/shopv2');
+
+        // POST route for checking out cart item and placing order.
+        // Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
+    });
+});
+
+
+Route::prefix('view')->group(function () {
+    Route::get('/login', function () {
+        return view('shopv2.login');
+    });
+
+    Route::get('/register', function () {
+        return view('shopv2.register');
     });
 });
 

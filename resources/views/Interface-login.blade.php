@@ -23,33 +23,31 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
     <style>
         .backgroundImage {
 
             background-image: url(/images/homepage.jpg);
             background-repeat: no-repeat;
-            background-size: cover;
             background-position: center;
+            background-size: cover;
         }
     </style>
 
 </head>
 
-<body class="backgroundImage">
-    <div>
-
-
-        <center>
-            <div class="container-fluid margin">
-                <i>
-                    <h1 style="color: white; opacity:0.8;   margin-bottom: 300px;">A home is made of hopes and dreams. Let us inspire you to build the perfect home!</h1>
-                </i>
-                <a href="/login#sectionA" class="themeBtn4">{{ __('Login') }}</a>
-                <a href="/login#sectionB" class="themeBtn5">{{ __('Signup') }}</a>
-            </div>
-
-        </center>
+<body>
+    <div style="width: 100vw; height: 100vh;" class="backgroundImage">
+        <div class="container-fluid" style="position: relative; top: 50%;">
+            <center>
+                <h1 style="color: white; opacity:0.8; margin-bottom: 40px; font-size:40px;">Welcome to a world of <i>
+                        <p style="display:inline; font-family: 'Pacifico', cursive;">Inspiration</p>
+                    </i> for your home</h1>
+                <a href="/login " class="btn success" style="color:black; margin-right:20px; font-size:25px;"><b>{{ __('LOGIN') }}</b></a>
+                <a href="/register  " class="btn success" style="color:black;  margin-left:20px; font-size:25px;"><b>{{ __('SIGN UP') }}</b></a>
+            </center>
+        </div>
     </div>
 </body>
 
@@ -61,65 +59,22 @@
         margin-bottom: 80px;
     }
 
-    .themeBtn {
-        background: #ff5c00;
-        color: #ffffff !important;
-        display: inline-block;
-        font-size: 15px;
-        font-weight: 500;
-        height: 50px;
-        line-height: 0.8;
-        padding: 18px 30px;
-        text-transform: capitalize;
-        border-radius: 1px;
-        letter-spacing: 0.5px;
-        border: 1px !important;
+    .btn {
+        border: 3px solid black;
+        background-color: #fbcc34;
+        color: black;
+        padding: 4px 24px;
+        font-size: 16px;
         cursor: pointer;
-        border-radius: 100px;
-
-    }
-
-    a:hover {
-        color: #ffffff;
-        text-decoration: none;
-    }
-
-    .themeBtn4 {
-
-        color: #FFCC00;
-        display: inline-block;
-        font-size: 15px;
-        font-weight: 500;
-        height: 50px;
-        line-height: 0.8;
-        padding: 18px 30px;
-        text-transform: capitalize;
-        border-radius: 1px;
-        letter-spacing: 0.5px;
-        border: 2px solid #FFCC00;
-        cursor: pointer;
-        border-radius: 100px;
-        margin-right: 30px;
+        margin-right: 20px;
     }
 
 
-
-    .themeBtn5 {
-
-        color: #FFCC00;
-        display: inline-block;
-        font-size: 15px;
-        font-weight: 500;
-        height: 50px;
-        line-height: 0.8;
-        padding: 18px 25px;
-        text-transform: capitalize;
-        border-radius: 1px;
-        letter-spacing: 0.5px;
-        border: 2px solid #FFCC00;
-        cursor: pointer;
-        border-radius: 100px;
-
+    /* black */
+    .success {
+        border-color: silver;
+        border-radius: 8px;
+        color: black;
     }
 
 

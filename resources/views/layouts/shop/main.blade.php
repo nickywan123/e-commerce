@@ -86,7 +86,7 @@
 
 <body>
     <div id="app">
-        @include('layouts.shop.navigation')
+        @include('shopv2.layouts.navigation.navigation')
         <main>
             @yield('content')
         </main>
