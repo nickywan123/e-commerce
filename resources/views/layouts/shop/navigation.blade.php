@@ -33,14 +33,7 @@
                     <div class="right-content">
                         <div class="list">
                             <ul>
-                                <li class="login">
-                                    <a href="#" class="sign-log">
-                                        <div class="links">
-                                            <span class="sign-in" style="color: #000000;">Sign in</span> <span style="color: #000000;">|</span>
-                                            <span class="join" style="color: #000000;">Join</span>
-                                        </div>
-                                    </a>
-                                </li>
+                           
                                 <li>
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->userInfo->name }} <span class="caret"></span>
@@ -57,10 +50,14 @@
                                             @csrf
                                         </form>
                                 </li>
+                                @can('view dealer')
+
+
                                 <li class="dealer"> 
                                     <a href="/dashboard/dealer" > Switch To Dealer Account</a>
 
                                 </li>
+                                @endcan
                             </ul>
                         </div>
                     </div>

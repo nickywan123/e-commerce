@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dealer;
 use App\Http\Controllers\Controller;
 use App\Models\Orders\Order;
 
-
+use PDF;
 use Illuminate\Http\Request;
 
 
@@ -47,8 +47,9 @@ class DashboardController extends Controller
      */
     public function viewInvoice()
     {
-
-        return view('dashboard_receipts.invoice');
+        $pdf = PDF::loadView('dashboard_receipts.invoice')->setPaper('a4');
+        return $pdf->download('invoice.pdf');
+        //return view('dashboard_receipts.invoice');
     }
 
     /**

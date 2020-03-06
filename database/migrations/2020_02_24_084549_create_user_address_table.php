@@ -23,7 +23,7 @@ class CreateUserAddressTable extends Migration
             $table->string('address_3');
             $table->integer('zipcode');
 
-            $table->string('shipping_address');
+            $table->string('shipping_address')->nullable();
 
             $table->timestamps();
         });

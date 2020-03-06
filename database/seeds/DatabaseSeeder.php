@@ -16,17 +16,17 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             // OrdersTableSeeder::class,
-            OrdersTableSeeder::class,
+            // OrdersTableSeeder::class,
             // UsersAddressTableSeeder::class,
             // UsersContactsTableSeeder::class,
             // UsersInfoTableSeeder::class,
             // UsersTableSeeder::class
             // UsersTableSeeder::class,
-            // CategoriesTableSeeder::class,
-            // SubCategoriesTableSeeder::class,
-            // ProductTypesTableSeeder::class,
-            // ProductsTableSeeder::class,
-            // PermissionsSeeder::class
+            CategoriesTableSeeder::class,
+            SubCategoriesTableSeeder::class,
+            ProductTypesTableSeeder::class,
+            ProductsTableSeeder::class,
+            PermissionsSeeder::class
         ]);
     }
 }
