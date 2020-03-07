@@ -2,63 +2,70 @@
 
 @section('content')
 
-<body class=>
-    <div class="backgroundImage">
-        <div class="row">
-            <div class="col-md-4 mx-auto my-auto col-12">
-                <div class="form-body">
-                    <ul class="nav nav-tabs final-login">
-                        <li><a data-toggle="tab" href="#sectionA">LOGIN</a></li>
-                        <li><a data-toggle="tab" href="#sectionB">REGISTER</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="sectionA" class="tab-pane fade show active">
-                            <div class="innter-form" style="margin-top:-10px;">
-
-                                <form class="sa-innate-form" method="POST" action="{{ route('login') }}">
-                                    @csrf
-                                    <label>Email Address</label>
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                    <label>Password</label>
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                    <a href="">Forgot Password?</a>
-                                    <br>
-                                    <center><button type="submit">LOGIN</button></center>
-                                </form>
+<body>
+    <div id="login" class="backgroundImage">
+      
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box"">
+                          <div class="col-md-12" style=" background-color: black;">   <h3 class="text-center " style=" color: #fbcc34;">LOGIN NOW</h3></div>
+                         
+                        <form id="login-form" class="form" action="" method="post">
+                        
+                            <div class="form-group">
+                              
+                         
+							 <input type="text" name="username"  id="username" class="form-control">
                             </div>
-
-                            <div class="clearfix"></div>
-                        </div>
-                        <div id="sectionB" class="tab-pane fade">
-                            <div class="innter-form" style="margin-top:-10px;">
-                                <form class="sa-innate-form" method="post">
-                                    <label>Name</label>
-                                    <input type="text" name="username">
-                                    <label>Email Address</label>
-                                    <input type="text" name="username">
-                                    <label>Password</label>
-                                    <input type="password" name="password">
-                                    <a href="">Forgot Password?</a>
-                                    <br>
-                                    <center><button type="submit">REGISTER</button></center>
-
-                                </form>
+                            <div class="form-group">
+                              
+                                <input type="text" name="password" id="password" class="form-control">
                             </div>
-
-                        </div>
+                            <div class="form-group">
+                                <label for="remember-me" ><span><input id="remember-me" name="remember-me" type="checkbox" style="  transform: scale(1.5);margin-left:5px;"></span><span style="color:black;margin-left:10px;">Remember Password</span></label><br>
+                              <center>  <input type="submit" name="submit" style="background-color:white;font-weight: bold;"class="btn btn-md" value="LOGIN"></center>
+                            </div>
+                            <div id="register-link" class="text-right">
+                                <a href="#"  style="color:black;">Forgot Password?</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 </body>
+
 @endsection
 
 @push('style')
 <STYLE>
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fbcc34;
+  height: 100vh;
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 100px;
+  max-width: 600px;
+  height: 260px;
+  border: 1px solid #9C9C9C;
+  background-color: #fbcc34;
+ 
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+
+
+
     /* form */
     .backgroundImage {
         width: 100vw;
