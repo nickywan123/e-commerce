@@ -61,7 +61,14 @@
 
     .btn {
         border: 3px solid black;
-        background-color: #fbcc34;
+        background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(8%, rgba(253,234,170,1)), color-stop(19%, rgba(251,204,52,1)), color-stop(100%, rgba(251,204,52,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fbcc34', GradientType=0 );
         color: black;
         padding: 4px 24px;
         font-size: 16px;
