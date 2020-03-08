@@ -73,7 +73,6 @@ Route::prefix('dashboard')->group(function () {
 
 
 
-
 // Shop Routes
 Route::prefix('shop')->group(function () {
     // Home/Index page for shop.

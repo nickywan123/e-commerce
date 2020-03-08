@@ -47,7 +47,7 @@ class DashboardController extends Controller
      */
     public function viewInvoice()
     {
-        $pdf = PDF::loadView('dashboard_receipts.invoice')->setPaper('a4');
+        $pdf = PDF::loadView('dashboard_receipts.invoice');
         return $pdf->download('invoice.pdf');
         //return view('dashboard_receipts.invoice');
     }
