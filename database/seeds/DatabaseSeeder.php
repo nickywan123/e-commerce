@@ -22,11 +22,14 @@ class DatabaseSeeder extends Seeder
             // UsersInfoTableSeeder::class,
             // UsersTableSeeder::class
             // UsersTableSeeder::class,
-            CategoriesTableSeeder::class,
-            SubCategoriesTableSeeder::class,
-            ProductTypesTableSeeder::class,
-            ProductsTableSeeder::class,
-            PermissionsSeeder::class
+            StatusesTableSeeder::class,
+            CategoriesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
+            SubCategoriesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
+            ProductTypesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
+            QualitiesTableSeeder::class,
+            ProductsTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
+            PermissionsSeeder::class // Important -> Need to have all rows of data for login & registration to work.
+
         ]);
     }
 }

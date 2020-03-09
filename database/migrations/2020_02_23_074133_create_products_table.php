@@ -17,11 +17,11 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('unique_id');
             $table->string('name');
-            $table->decimal('price', 10, 2);
+            $table->unsignedBigInteger('price');
             $table->string('slug');
             $table->text('summary');
             $table->text('description');
-            $table->integer('quality')->default(1);
+            $table->integer('quality_id')->default(1);
             $table->bigInteger('panel_id');
             $table->integer('amount_sold')->default(0);
             $table->timestamps();

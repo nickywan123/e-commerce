@@ -11,7 +11,7 @@ use App\Models\Categories\ProductType;
 use App\Models\Categories\SubCategory;
 use App\Models\Products\Product;
 use Illuminate\Support\Facades\View;
-use App\User;
+use App\Models\Users\User;
 
 class ShopController extends Controller
 {
@@ -29,7 +29,7 @@ class ShopController extends Controller
             // Check if user is authenticated or not.
             if (Auth::check()) {
                 // If authenticated, then get their cart.
-                $this->cart = Auth::user()->cartItems;
+                $this->cart = Auth::user()->cartItems->where('status', 2001);
             }
             // Get all categories, with subcategories and its images.
             $categories = Category::with('image')->with('subcategories.image')->get();
@@ -139,9 +139,9 @@ class ShopController extends Controller
         // If ajax request..
         if ($request->ajax()) {
             // Find user
-            $user = User::find(Auth::user()->id);
+            $user = User::find(Auth::user()->user_id);
             // Get items in user's cart.
-            $cartItems = $user->cartItems;
+            $cartItems = $user->cartItems->where('status', 2001);
             // Return a partial view (can be treated as a component), the view will loop through all the items.
             return view('shop.cart.partials.shopping-cart-item')->with('cartItems', $cartItems);
         }

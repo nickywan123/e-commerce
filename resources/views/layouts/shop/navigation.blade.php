@@ -32,6 +32,7 @@
 
                     <div class="right-content">
                         <div class="list">
+                            @guest
                             <ul>
                                 @guest
                                 <li class="login">
@@ -77,6 +78,24 @@
                                 @endcan
                                 @endguest
                             </ul>
+                            @else
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ Auth::user()->userInfo->name }}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a href="/shop/order" class="dropdown-item">View Order History</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </div>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -183,7 +202,7 @@
                                 <ul class="categories_mega_menu column_1">
                                     @foreach($category->subcategories as $subcategory)
                                     <li>
-                                        <a href="/shop/category/{{ $subcategory->slug }}">{{ $subcategory->name }}</a>
+                                        <a href="/shop/category/{{ $subcategory->parentCategory->name }}/{{ $subcategory->slug }}">{{ $subcategory->name }}</a>
                                     </li>
                                     @endforeach
                                 </ul>

@@ -18,7 +18,8 @@ class Category extends Model
     // Set mass assignable columns
     protected $fillable = [
         'name',
-        'slug'
+        'slug',
+        'parent_category_id'
     ];
 
     /**
@@ -29,6 +30,23 @@ class Category extends Model
         return $this->morphOne('App\Models\Globals\Image', 'imageable');
     }
 
+    /**
+     * Get the category's parent if any.
+     */
+    public function parentCategory()
+    {
+        return $this->belongsTo('App\Models\Categories\Category', 'parent_category_id');
+    }
+
+    /**
+     * Get all of the category's child if any.
+     */
+    public function childCategories()
+    {
+        return $this->hasMany('App\Models\Categories\Category', 'parent_category_id');
+    }
+
+    // TODO: Confirm then delete this block of code.
     /**
      * Get all of the category's childs.
      */

@@ -9,14 +9,14 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
-              
 
- <br>  
+
+                    <br>
 
                     @can('view shop')
                     <a href="/shop">Visit Shop</a>
@@ -29,6 +29,10 @@
                     @can('view panel')
                     <a href="/dashboard/panel">Visit Panel Dashboard</a>
                     @endcan
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
                 </div>
             </div>
         </div>

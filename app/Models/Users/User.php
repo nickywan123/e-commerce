@@ -8,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Laravel\Passport\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable, HasRoles;
+    use HasApiTokens, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -78,5 +79,13 @@ class User extends Authenticatable
     {
 
         return $this->hasMany('App\Models\Orders\Order', 'user_id');
+    }
+
+    /**
+     * Get all items in customer's cart.
+     */
+    public function cartItems()
+    {
+        return $this->hasMany('App\Models\Users\Cart', 'user_id', 'user_id');
     }
 }

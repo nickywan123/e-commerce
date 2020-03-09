@@ -25,3 +25,14 @@ Route::prefix('shop')->group(function () {
         Route::delete('/delete/{id}', 'APIControllers\CartController@destroy');
     });
 });
+
+Route::group(['prefix' => 'auth'], function () {
+    Route::group(['middleware' => ['guest:api']], function () {
+        Route::post('login', 'API\Auth\AuthController@login');
+        Route::post('signup', 'API\Auth\AuthController@signup');
+    });
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::get('logout', 'API\Auth\AuthController@logout');
+        Route::get('getuser', 'API\Auth\AuthController@getUser');
+    });
+});
