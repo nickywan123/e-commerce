@@ -21,7 +21,13 @@ class UserInfo extends Model
     protected $fillable = [
         'name',
         'NRIC',
-        'dealer_id'
+        'dealer_id',
+        'ethnicity',
+        'gender',
+        'date_of_birth',
+        'occupation'
+
+
     ];
 
 

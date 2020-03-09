@@ -31,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/shop';
 
     /**
      * Create a new controller instance.
@@ -65,51 +65,98 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\Users\User
      */
-    protected function create(array $data)
+    protected function create(array $data) // Request $request
     {
+        /* Validate customer registration form */
 
-        $user = User::create([
-            // Users table
+        if ($data['RegistrationForm'] == 1) {
+            $user = User::create([
+                // Users table
 
-            'email' => $data['email'],
-            'password' => Hash::make($data['password'])
-        ]);
+                'email' => $data['email'],
+                'password' => Hash::make($data['password'])
+            ]);
 
-        $user->userInfo()->create([
-            'name' => $data['name'],
-            'NRIC' => $data['nric'], // Create NRIC field.
-        ]);
+            $user->userInfo()->create([
+                'name' => $data['name'],
+                'NRIC' => $data['nric'], // Create NRIC field.
+                'dealer_id' => $data['dealerID']
 
-        $user->userAddresses()->create([
-            'address_1' => $data['homeaddress1'],
-            'address_2' => $data['homeaddress2'],
-            'address_3' => $data['homeaddress3'],
-            'zipcode' => $data['postcode'],
+            ]);
 
-            'shipping_address' => $data['shippingaddress']
-        ]);
+            $user->userAddresses()->create([
+                'address_1' => $data['homeaddress1'],
+                'address_2' => $data['homeaddress2'],
+                'address_3' => $data['homeaddress3'],
+                'zipcode' => $data['postcode'],
+                'shipping_address' => $data['shippingaddress']
 
-        $user->userContacts()->create([
 
-            'mobile_num' => $data['number'],
-            'emergency_num' => $data['emergency']
+            ]);
 
-        ]);
+            $user->userContacts()->create([
 
-        // check if dealer form is registered, assign dealer role or otherwise
+                'mobile_num' => $data['number'],
+                'emergency_num' => $data['emergency']
 
-        if ($data['isDealerForm'] == 1) {
-            //assign track id code to dealer
-            $user->track_id = 1911000000 + $user->user_id;
-            $user->save();
-            $user->assignRole('2');
-        } else {
+            ]);
+
 
             //assign track id code to customer
             $user->track_id = 1913000000 + $user->user_id;
             $user->save();
             $user->assignRole('1');
         }
+
+        /* Validate dealer registration form */
+        if ($data['RegistrationForm'] == 2) {
+
+            $user = User::create([
+                // Users table
+
+                'email' => $data['email'],
+                'password' => Hash::make($data['password'])
+            ]);
+
+            $user->userInfo()->create([
+                'name' => $data['name'],
+                'NRIC' => $data['nric'], // Create NRIC field.
+                'occupation' => $data['occupation'],
+                'gender' => $data['gender'],
+                'ethnicity' => $data['race'],
+                'date_of_birth' => $data['dob']
+
+            ]);
+
+            $user->userAddresses()->create([
+                'address_1' => $data['homeaddress1'],
+                'address_2' => $data['homeaddress2'],
+                'address_3' => $data['homeaddress3'],
+                'zipcode' => $data['postcode'],
+
+
+
+            ]);
+
+            $user->userContacts()->create([
+
+                'mobile_num' => $data['number'],
+                'emergency_num' => $data['emergency']
+
+            ]);
+
+
+            //assign track id code to dealer
+            $user->track_id = 1911000000 + $user->user_id;
+            $user->save();
+
+
+            $user->assignRole('1');
+            $user->assignRole('2');
+        }
+
+
+
 
         return $user;
     }

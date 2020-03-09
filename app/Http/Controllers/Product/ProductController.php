@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Product;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Products\Product;
 
 class ProductController extends Controller
 {
@@ -39,7 +40,28 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->name = $request->input('product_name');
+        $product->price = $request->input('product_price');
+        $product->summary = $request->input('product_summary');
+        $product->description = $request->input('product_desc');
+        $product->summary = $request->input('product_summary');
+        $product->colors->color_name = $request->input('product_color');
+        $product->lengths->length = $request->input('product_length');
+        $product->dimensions->width = $request->input('width');
+        $product->dimensions->height = $request->input('height');
+        $product->dimensions->depth = $request->input('depth');
+        $product->dimensions->measurement_unit = $request->input('product_measurement');
+        $product->lengths->measurement_unit = $request->input('product_measurement');
+        $product->images->url = $request->input('img');
+        $product->save();
+        if ($product) {
+            dd('Success');
+        } else {
+            dd('Fail');
+        }
+
+        // $name = $request->input('name');
     }
 
     /**

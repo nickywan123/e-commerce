@@ -22,12 +22,12 @@
         <td>January</td>
         <td>Invoice123</td>
         <td>
-          <a href="/dashboard/dealer/statements/invoice" a>
+          <a href="" a>
           <h5>View Invoice</h5>
         </a>
       </td>
         <td>
-          <a href="https://ia803103.us.archive.org/14/items/goodytwoshoes00newyiala/goodytwoshoes00newyiala.pdf" a>
+          <a href="/dashboard/dealer/invoice" >
             <h5>Download Invoice</h5>
           </a>
         </td>

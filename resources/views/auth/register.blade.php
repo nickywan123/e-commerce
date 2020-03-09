@@ -1,193 +1,214 @@
 @extends('shopv2.layouts.main')
 
 @section('content')
-<body>
-    <div id="login" class="backgroundImage">
-      
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-12">
-                    <div id="login-box">
-                          <div class="col-md-12" style=" background-color: black;">   <h3 class="text-center " style=" color: #fbcc34;">REGISTER NOW</h3></div>
-                         
-                        <form id="login-form" class="form" action="{{ route('login') }}" method="post">
-                        <div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
-					</div>
-				</div>
-			</div>
-                        </form>
-                    </div>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card bg-secondary">
+                <div class="card-header">{{ __('Customer Registration') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+                        
+                        <input type="hidden" id="RegistrationForm" name="RegistrationForm" value="1">
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name (Per IC)') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('IC') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="nric" type="text" class="form-control @error('nric') is-invalid @enderror" name="nric" value="{{ old('nric') }}" required autocomplete="nric" autofocus>
+
+                                @error('nric')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('Mobile Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="number" type="text" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}" required autocomplete="number" autofocus>
+
+                                @error('number')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="emergency" class="col-md-4 col-form-label text-md-right">{{ __('Emergency Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="nric" type="text" class="form-control @error('emergency') is-invalid @enderror" name="emergency" value="{{ old('emergency') }}" required autocomplete="emergency" autofocus>
+
+                                @error('emergency')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="homeaddress1" class="col-md-4 col-form-label text-md-right">{{ __('Home Address 1') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="homeaddress1" type="text" class="form-control @error('homeaddress1') is-invalid @enderror" name="homeaddress1" value="{{ old('homeaddress1') }}" required autocomplete="homeaddress1" autofocus>
+
+                                @error('homeaddress1')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="homeaddress2" class="col-md-4 col-form-label text-md-right">{{ __('Home Address 2') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="homeaddress2" type="text" class="form-control @error('homeaddress2') is-invalid @enderror" name="homeaddress2" value="{{ old('homeaddress2') }}" required autocomplete="homeaddress2" autofocus>
+
+                                @error('homeaddress2')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="homeaddress3" class="col-md-4 col-form-label text-md-right">{{ __('Home Address 3') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="homeaddress3" type="text" class="form-control @error('homeaddress3') is-invalid @enderror" name="homeaddress3" value="{{ old('homeaddress3') }}" required autocomplete="homeaddress3" autofocus>
+
+                                @error('homeaddress3')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="postcode" class="col-md-4 col-form-label text-md-right">{{ __('Post Code ') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="postcode" type="text" class="form-control @error('postcode') is-invalid @enderror" name="postcode" value="{{ old('postcode') }}" required autocomplete="postcode" autofocus>
+
+                                @error('postcode')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="shippingaddress" class="col-md-4 col-form-label text-md-right">{{ __('Shipping Address ') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="shippingaddress" type="text" class="form-control @error('shippingaddress') is-invalid @enderror" name="shippingaddress" value="{{ old('shippingaddress') }}" required autocomplete="shippingaddress" autofocus>
+
+                                @error('shippingaddress')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dealerID" class="col-md-4 col-form-label text-md-right">{{ __('Dealer ID ') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="dealerID" type="text" placeholder="optional" class="form-control @error('dealerID') is-invalid @enderror" name="dealerID" value="{{ old('dealerID') }}" autocomplete="dealerID" autofocus>
+
+                                @error('dealerID')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div class="form-group row{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label text-md-right"></label>
+                            <div class="col-md-6">
+                                {!! app('captcha')->display() !!}
+                                @if ($errors->has('g-recaptcha-response'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>
 @endsection
-@push('style')
-<STYLE>
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #fbcc34;
-  height: 100vh;
-}
-#login .container #login-row #login-column #login-box {
-  margin-top: 100px;
- 
-  height: 400px;
-  border: 1px solid #9C9C9C;
-  background-color: #fbcc34;
-  width:1070px;
- 
-}
-
-#login .container #login-row #login-column #login-box #login-form {
-  padding: 20px;
-}
-#login .container #login-row #login-column #login-box #login-form #register-link {
-  margin-top: -85px;
-}
-
-
-.img-logo{
-    background-color:#fbcc34;
-}
-    /* form */
-    .backgroundImage {
-        width: 100vw;
-        height: 100vh;
-        background-image: url(/images/homepage.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-
-    /* Medium devices (tablets, 768px and up) */
-    @media (min-width: 768px) {
-        .form-body {
-            width: 100%;
-        }
-    }
-
-    /* Medium devices (tablets, 768px and up) */
-    @media (min-width: 992px) {
-        .form-body {
-            max-width: 500px;
-        }
-    }
-
-    /* Medium devices (tablets, 768px and up) */
-    @media (min-width: 1200px) {}
-
-    .form-body {
-        background: #fbcc34;
-        padding: 20px;
-        margin-top: 300px;
-    }
-
-    .login-form {
-        background: rgba(255, 255, 255, 0.8);
-        padding: 20px;
-        border-top: 3px solid#3e4043;
-    }
-
-    .innter-form {
-        padding-top: 20px;
-
-    }
-
-    .final-login li {
-        width: 50%;
-    }
-
-    .nav-tabs {
-        border-bottom: none !important;
-    }
-
-    .nav-tabs>li {
-        color: black;
-    }
-
-    .nav-tabs>li.active>a,
-    .nav-tabs>li.active>a:hover,
-    .nav-tabs>li.active>a:focus {
-        color: #FFCC00;
-        background-color: BLACK;
-        border: none !important;
-        border-bottom-color: transparent;
-        border-radius: none !important;
-    }
-
-    .nav-tabs>li>a {
-        margin-right: 2px;
-        line-height: 1.428571429;
-        border: none !important;
-        border-radius: none !important;
-        text-transform: uppercase;
-        font-size: 16px;
-        color: #FFCC00;
-        background-color: black;
-    }
-
-
-
-    .sa-innate-form input[type=text],
-    input[type=password],
-    input[type=file],
-    textarea,
-    select,
-    email {
-        font-size: 13px;
-        padding: 10px;
-        border: 1px solid#ccc;
-        outline: none;
-        width: 100%;
-        margin: 8px 0;
-
-    }
-
-    .sa-innate-form input[type=submit] {
-        border: 1px solid#e64b3b;
-        background: #e64b3b;
-        color: #fff;
-        padding: 10px 25px;
-        font-size: 14px;
-        margin-top: 5px;
-    }
-
-    .sa-innate-form input[type=submit]:hover {
-        border: 1px solid#db3b2b;
-        background: #db3b2b;
-        color: #fff;
-    }
-
-    .sa-innate-form button {
-        border: 1px solid;
-        background: WHITE;
-        color: BLACK;
-        padding: 10px 35px;
-        font-size: 14px;
-        margin-top: 10px;
-    }
-
-    .sa-innate-form button:hover {
-        border: 1px solid;
-        background: BLACK;
-        color: #FFCC00;
-    }
-
-    .sa-innate-form p {
-        font-size: 13px;
-        padding-top: 10px;
-    }
-</STYLE>
-@endpush
