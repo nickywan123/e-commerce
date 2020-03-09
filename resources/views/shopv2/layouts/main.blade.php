@@ -24,6 +24,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!--font awesome-->
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/multilevel-dropdown.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -76,7 +79,7 @@
         }
 
         .navbar .nav-item .nav-link {
-            color: #fbcc34 !important;
+            color: black !important;
 
         }
 
@@ -146,24 +149,26 @@
             }
 
             #wrapper {
-                padding: 90px 15px 15px 15px;
+                padding: 70px 55px 15px 35px;
+                display: inline-block;
+                color: #fbcc34;
             }
 
             .navbar-nav.side-nav.open {
                 left: 0;
+                color: #fbcc34;
+
             }
 
             .navbar-nav.side-nav {
-                background: #585f66;
+                background: #fbcc34;
                 box-shadow: 2px 1px 2px rgba(0, 0, 0, .1);
                 position: fixed;
-                top: 56px;
+                top: 85px;
                 flex-direction: column !important;
                 left: -220px;
-                width: 200px;
-                overflow-y: auto;
-                bottom: 0;
-                overflow-x: hidden;
+
+
                 padding-bottom: 40px
             }
         }
@@ -173,7 +178,8 @@
             -moz-transition: all .3s ease-in-out;
             -o-transition: all .3s ease-in-out;
             -ms-transition: all .3s ease-in-out;
-            transition: all .3s ease-in-out
+            transition: all .3s ease-in-out;
+
         }
     </style>
     @stack('style')

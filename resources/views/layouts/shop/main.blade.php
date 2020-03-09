@@ -31,57 +31,163 @@
     <link rel="stylesheet" href="{{ asset('assets/css/icofont/icofont.min.css') }}">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- TODO: Styles should be in it's respective scss file that will be compiled by Mix -->
-    @stack('style')
+
     <!-- TODO: Use SCSS -->
     <style>
-        .top-header .content .right-content .list li .sell-btn {
-            font-size: 13px;
-            font-weight: 600;
-            color: #000000;
-            border: 1px solid #000000;
+        @media (min-width: 768px) {
+            .form-body {
+                width: 100%;
+            }
         }
 
-        ::placeholder {
-            /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: #FFDF00;
-            font-size: 1rem;
-            opacity: 1;
-            /* Firefox */
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 992px) {
+            .form-body {
+                max-width: 500px;
+            }
         }
 
-        :-ms-input-placeholder {
-            /* Internet Explorer 10-11 */
-            color: #FFDF00;
-            font-size: 1rem;
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 1200px) {}
+
+        .navbar {
+            background: black !important;
+
         }
 
-        ::-ms-input-placeholder {
-            /* Microsoft Edge */
-            color: #FFDF00;
-            font-size: 1rem;
+
+
+        .dropdown {
+            border-radius: 0;
+            border: 0;
         }
 
-        .logo-header .helpful-links ul li.my-dropdown .my-dropdown-menu {
-            width: 300px;
+        .dropdown-menu {
+            background: #0c73cc;
+            border: 0;
+            top: 80%;
+            border-radius: 0px 0px 5px 5px;
+        }
+
+        .dropdown-item:hover {
+            background: #085ca5;
+            color: #fff;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+        }
+
+        .navbar .nav-item .nav-link {
+            color: black !important;
+
+        }
+
+        .navbar .nav-item .nav-link:hover .navbar .nav-item .nav-link {
+            color: red !important;
+
+        }
+
+
+        /*search button */
+
+        .main {
+            width: 50%;
+            margin: 50px auto;
+        }
+
+        /* Bootstrap 4 text input with search icon */
+
+        .has-search .form-control {
+            padding-left: 2.375rem;
+        }
+
+        .has-search .form-control-feedback {
             position: absolute;
-            top: 70%;
-            right: 0%;
-            border: 0px;
-            padding: 0px;
-            border-radius: 0px;
-            -webkit-box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.15);
-            box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.15);
-            background: #fff;
-            z-index: 10;
-            display: none;
+            z-index: 2;
+            display: block;
+            width: 2.375rem;
+            height: 2.375rem;
+            line-height: 2.375rem;
+            text-align: center;
+            pointer-events: none;
+            color: #aaa;
         }
 
-        .logo-header .search-box .categori-container {
-            z-index: 9;
+        body {
+            background: white;
+        }
+
+        #wrapper {
+            padding: 90px 15px;
+        }
+
+        .navbar-expand-lg .navbar-nav.side-nav {
+            flex-direction: column;
+        }
+
+        .card {
+            margin-bottom: 15px;
+            border-radius: 0;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
+        }
+
+        .header-top {
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .1)
+        }
+
+        .leftmenutrigger {
+            display: none
+        }
+
+        @media(min-width:992px) {
+            .leftmenutrigger {
+                display: block;
+                display: block;
+                margin: 7px 20px 4px 0;
+                cursor: pointer;
+            }
+
+            #wrapper {
+                padding: 70px 55px 30px 35px;
+                display: inline-block;
+                color: #fbcc34;
+            }
+
+            .navbar-nav.side-nav.open {
+                left: 0;
+            }
+
+            .navbar-nav.side-nav {
+                background: #fbcc34;
+                box-shadow: 2px 1px 2px rgba(0, 0, 0, .1);
+                position: fixed;
+                top: 56px;
+                flex-direction: column !important;
+                left: -220px;
+                width: 200px;
+                overflow-y: auto;
+                bottom: 0;
+                overflow-x: hidden;
+                padding-bottom: 40px
+            }
+        }
+
+        .animate {
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out
         }
     </style>
+    @stack('style')
 </head>
 
 <body>
@@ -90,8 +196,24 @@
         <main>
             @yield('content')
         </main>
+        @include('shopv2.layouts.footer.footer')
     </div>
     @stack('script')
+    <script>
+        $(document).ready(function() {
+            $('.navbar-light .dmenu').hover(function() {
+                $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+            }, function() {
+                $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
+            });
+        });
+        $(document).ready(function() {
+            $('.leftmenutrigger').on('click', function(e) {
+                $('.side-nav').toggleClass("open");
+                e.preventDefault();
+            });
+        });
+    </script>
 </body>
 
 </html>

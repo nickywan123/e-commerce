@@ -28,7 +28,7 @@
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
-                                <div class="input-group-text" style="background-color:white;width:37px;"><img class=”img-logo” src="{{ asset('images/image.png') }}" style="width:25px;font-weight:bold;margin-left:-5px;" /></div>
+                                <div class="input-group-text" style="background-color:white;width:37px; height:34px; margin-top:8px; "><img class=”img-logo” src="{{ asset('images/image.png') }}" style="width:25px;font-weight:bold;margin-left:-5px;" /></div>
                             </div>
                             <input id="password" type="password" placeholder="Type Password" class="form-control input-lg @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                             @error('password')

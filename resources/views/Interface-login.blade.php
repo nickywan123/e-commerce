@@ -23,7 +23,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine&display=swap" rel="stylesheet">
 
     <style>
         .backgroundImage {
@@ -41,12 +41,24 @@
     <div style="width: 100vw; height: 100vh;" class="backgroundImage">
         <div class="container-fluid" style="position: relative; top: 50%;">
             <center>
-                <h1 style="color: white; opacity:0.8; margin-bottom: 40px; font-size:40px;">Welcome to a world of <i>
-                        <p style="display:inline; font-family: 'Pacifico', cursive;">Inspiration</p>
-                    </i> for your home</h1>
-                <a href="/login " class="btn success" style="color:black; margin-right:20px; font-size:25px;"><b>{{ __('LOGIN') }}</b></a>
+                <h1 style="color: white; opacity:0.8; margin-bottom: -10px; font-size:40px;">A hopes is made of <i>
+                        <p style="display:inline; font-size:75px;font-family: 'Dancing Script', cursive;
+font-family: 'Tangerine', cursive;">hopes</p>
+                    </i> and <i>
+                        <p style="display:inline; font-size:75px; font-family: 'Dancing Script', cursive;
+font-family: 'Tangerine', cursive;">dreams</p>
+                    </i>
+                </h1>
+                <h1 style="color: white; opacity:0.8; margin-bottom: 20px; font-size:40px;">Let us<i>
+                        <p style="display:inline; font-size:75px;font-family: 'Dancing Script', cursive;
+font-family: 'Tangerine', cursive;">inspire</p>
+                    </i> you to build the perfect home!
+                </h1> <a href="/login " class="btn success" style="color:black; margin-right:20px; font-size:25px;"><b>{{ __('LOGIN') }}</b></a>
                 <a href="/register  " class="btn success" style="color:black;  margin-left:20px; font-size:25px;"><b>{{ __('SIGN UP') }}</b></a>
             </center>
+            <div class="container-fluid" style="position: absolute; left:80%; top:-170%;">
+                <a href="/registrations/dealer " class="btn success" style="color:black; margin-right:20px; font-size:25px;"><b>{{ __('SIGN UP AS A DEALER') }}</b></a>
+            </div>
         </div>
     </div>
 </body>
@@ -61,14 +73,14 @@
 
     .btn {
         border: 3px solid black;
-        background: rgba(255,255,255,1);
-background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(8%, rgba(253,234,170,1)), color-stop(19%, rgba(251,204,52,1)), color-stop(100%, rgba(251,204,52,1)));
-background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
-background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
-background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
-background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(253,234,170,1) 8%, rgba(251,204,52,1) 19%, rgba(251,204,52,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fbcc34', GradientType=0 );
+        background: rgba(255, 255, 255, 1);
+        background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(253, 234, 170, 1) 8%, rgba(251, 204, 52, 1) 19%, rgba(251, 204, 52, 1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(8%, rgba(253, 234, 170, 1)), color-stop(19%, rgba(251, 204, 52, 1)), color-stop(100%, rgba(251, 204, 52, 1)));
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(253, 234, 170, 1) 8%, rgba(251, 204, 52, 1) 19%, rgba(251, 204, 52, 1) 100%);
+        background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(253, 234, 170, 1) 8%, rgba(251, 204, 52, 1) 19%, rgba(251, 204, 52, 1) 100%);
+        background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(253, 234, 170, 1) 8%, rgba(251, 204, 52, 1) 19%, rgba(251, 204, 52, 1) 100%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(253, 234, 170, 1) 8%, rgba(251, 204, 52, 1) 19%, rgba(251, 204, 52, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#fbcc34', GradientType=0);
         color: black;
         padding: 4px 24px;
         font-size: 16px;
