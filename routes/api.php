@@ -30,6 +30,10 @@ Route::group(['prefix' => 'auth'], function () {
     Route::group(['middleware' => ['guest:api']], function () {
         Route::post('login', 'API\Auth\AuthController@login');
         Route::post('signup', 'API\Auth\AuthController@signup');
+
+        Route::group(['prefix' => 'customer'], function () {
+            Route::post('register', 'API\Auth\AuthController@customerRegister');
+        });
     });
     Route::group(['middleware' => 'auth:api'], function () {
         Route::get('logout', 'API\Auth\AuthController@logout');

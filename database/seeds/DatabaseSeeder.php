@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             CategoriesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
             SubCategoriesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
             ProductTypesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
-            QualitiesTableSeeder::class,
+            QualitiesTableSeeder::class, // Important -> Need to have all of the rows to correctly show product's quality.
             ProductsTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
             PermissionsSeeder::class // Important -> Need to have all rows of data for login & registration to work.
 

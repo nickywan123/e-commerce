@@ -145,19 +145,13 @@ class RegisterController extends Controller
 
             ]);
 
-
             //assign track id code to dealer
             $user->track_id = 1911000000 + $user->user_id;
             $user->save();
 
-
             $user->assignRole('1');
             $user->assignRole('2');
         }
-
-
-
-
         return $user;
     }
 }
