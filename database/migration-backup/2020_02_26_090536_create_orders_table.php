@@ -13,7 +13,7 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('old_orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('order_id')->unique();
             $table->bigInteger('user_id');
@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('product_id');
             $table->text('product_information');
             $table->integer('product_quantity');
-            $table->decimal('order_price', 10, 2);
+            $table->unsignedBigInteger('order_price');
             $table->integer('status_id');
             $table->timestamps();
         });
@@ -35,6 +35,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('old_orders');
     }
 }

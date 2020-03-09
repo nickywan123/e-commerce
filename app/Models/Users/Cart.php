@@ -61,4 +61,28 @@ class Cart extends Model
     {
         return $this->belongsTo('App\Models\Products\ProductLength', 'product_length_id');
     }
+
+    /**
+     * Get item's unit price formatted with 2 decimal points.
+     */
+    public function getDecimalUnitPrice()
+    {
+        return number_format(($this->unit_price / 100), 2);
+    }
+
+    /**
+     * Get item's total price formatted with 2 decimal points.
+     */
+    public function getDecimalTotalPrice()
+    {
+        return number_format(($this->total_price / 100), 2);
+    }
+
+    /**
+     * Get item's shipping fee formatted with 2 decimal points.
+     */
+    public function getDecimalShippingFee()
+    {
+        return number_format(($this->shipping_fee / 100), 2);
+    }
 }
