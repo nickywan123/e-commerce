@@ -21,8 +21,9 @@
     .navigation {
         padding: 0;
         margin: 0;
-        border: 0;
+        
         line-height: 1;
+      
     }
 
     .navigation ul,
@@ -87,7 +88,9 @@
     .navigation ul li {
         float: none;
     }
-
+.navbar{
+    border-bottom: 1px solid #fbcc34;
+}
     .navigation ul ul {
         margin-top: 0.05em;
     }
@@ -97,7 +100,7 @@
         background: white;
         font-family: 'roboto', Tahoma, Arial, sans-serif;
         zoom: 1;
-        border-bottom: 1px solid #fbcc34;
+        border-bottom: 4px solid #fbcc34;
     }
 
     .navigation:before {
@@ -244,26 +247,27 @@
         -moz-border-radius: 0 0 0 3px;
         border-radius: 0 0 0 3px;
     }
-
+ 
     .navigation.align-right ul ul {
         -webkit-border-radius: 3px 0 0 3px;
         -moz-border-radius: 3px 0 0 3px;
         border-radius: 3px 0 0 3px;
     }
-
+    
     /* Overrides */
+  
 </style>
 
 <div class="animate">
 
-    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark" style="border-bottom:2px solid #fbcc34 ">
+    <nav class="navbar header-top  navbar-expand-lg  navbar-dark bg-dark" >
 
-        <span class="navbar-toggler-icon leftmenutrigger" style="margin-top:5%;"></span>
+        <span class="navbar-toggler-icon leftmenutrigger " style="margin-top:5%; "></span>
         <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler ml-auto custom-toggler" type="button" style="border-color: black; " data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler ml-auto custom-toggler " style="" id="#hamburger" type="button"  data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
         </button>
-        <div class="collapse navbar-collapse navigation" id="navbarText">
+        <div class="collapse navbar-collapse navigation " id="navbarText">
             <ul class="navbar-nav animate side-nav">
                 <li class="nav-item has-sub">
                     <a href="#">Menu 1</a>
@@ -305,10 +309,10 @@
                 <img class="image" src="{{asset('/images/Logo.png')}}" alt="No LOGO">
             </div>
 
-            <ul class="navbar-nav ml-md-auto d-md-flex" style="position: absolute;  right: 72%; top:20%;">
-
+            <ul class="navbar-nav ml-md-auto d-md-flex" style="position: absolute;  right: 62%; top:20%;">
+         
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle " style="  background-color: white; color:black; height:37px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle " style="  background-color: white; margin-top:0px;color:black; height:37px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         All Categories
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -322,12 +326,22 @@
                     <!-- <div class="line-separator" style="width:30px; background-color:red;"></div> -->
 
                 </form>
-                <button class="btn btn-light" type="submit" style="height: 37px;"><i class="fa fa-search "></i></button>
-
+                <button class="btn btn-light" type="submit" style="height: 37px;margin-top:0px"><i class="fa fa-search "></i></button>
+                <button type="button" style="color:#fbcc34;" class="btn btn-link">My Account</button>
+                <button type="button" style="color:#fbcc34;" class="btn btn-link">Login</button>
+                <button type="button" style="color:#fbcc34;" class="btn btn-link">Register</button>
+              <button type="button" style="background-color:#fbcc34;margin-right:20px;border-radius: 15px;"class="btn btn-sm"><b>PANEL</b></button>
+              <button type="button" style="background-color:#fbcc34;border-radius: 15px;"class="btn btn-sm"><b>DEALER</b></button>
+              <br>
+              <i class="fa fa-heart-o" style="font-size:20px;color:#fbcc34;right:120%;position: relative;
+top: 40px;"></i> <button type="button" style="color:#fbcc34;right:125%;position: relative;top: 33px;" class="btn btn-link">My Wish List</button>  
+    <img class=”img-logo” src="{{ asset('images/cart.png') }}" style="width:28px; height: 30px;right:120%;position: relative;
+top: 40px;" /> <button type="button" style="color:#fbcc34;right:125%;position: relative;top: 33px;" class="btn btn-link">My Cart</button>  
+          
             </ul>
+            
 
         </div>
-
 
 </div>
 
