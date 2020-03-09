@@ -4,52 +4,54 @@
 
 <body>
     <div id="login" class="backgroundImage">
-      
+
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box"">
-                          <div class="col-md-12" style=" background-color: black;">   <h3 class="text-center " style=" color: #fbcc34;">LOGIN NOW</h3></div>
-                         
-                        <form id="login-form" class="form" action="{{ route('login') }}" method="post">
-                         @csrf
-                        <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text" style="background-color:white;"><i class="fa fa-user " style="color:#fbcc34"></i></div>
-                                        </div>
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                        @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                    </div>
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend"   >
-                                            <div class="input-group-text" style="background-color:white;width:37px;"><img class=”img-logo” src="{{ asset('images/image.png') }}" style="width:25px;font-weight:bold;margin-left:-5px;"/></div>
-                                        </div>
-                                        <input id="password" type="password" class="form-control input-lg @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                        @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                    </div>
-                            <div class="form-group">
-                                <label for="remember-me" ><span><input id="remember-me" name="remember-me" class="form-check-input" type="checkbox" {{ old('remember') ? 'checked' : '' }} style="  transform: scale(1.5);margin-left:5px;"></span><span style="color:black;margin-left:20px;">Remember Password</span></label><br>
-                              <center>  <input type="submit" name="submit" style="background-color:white;font-weight: bold;"class="btn btn-md" value="LOGIN"></center>
-                            </div>
-                            <div id="register-link" class="text-right">
-                            
-                            @if (Route::has('password.request'))
-                                <a href="{{ route('password.request') }}"  style="color:black;">Forgot Password?</a>
-                                @endif
-                            </div>
-                        </form>
+                          <div class=" col-md-12" style=" background-color: black;">
+                        <h3 class="text-center " style=" color: #fbcc34;">LOGIN NOW</h3>
                     </div>
+
+                    <form id="login-form" class="form" action="{{ route('login') }}" method="post">
+                        @csrf
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" style="background-color:white;"><i class="fa fa-user " style="color:#fbcc34"></i></div>
+                            </div>
+                            <input id="email" type="email" placeholder="Type Email Address" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" style="background-color:white;width:37px;"><img class=”img-logo” src="{{ asset('images/image.png') }}" style="width:25px;font-weight:bold;margin-left:-5px;" /></div>
+                            </div>
+                            <input id="password" type="password" placeholder="Type Password" class="form-control input-lg @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="remember-me"><span><input id="remember-me" name="remember-me" class="form-check-input" type="checkbox" {{ old('remember') ? 'checked' : '' }} style="  transform: scale(1.5);margin-left:5px;"></span><span style="color:black;margin-left:20px;">Remember Password</span></label><br>
+                            <center> <input type="submit" name="submit" style="background-color:white;font-weight: bold;" class="btn btn-md" value="LOGIN"></center>
+                        </div>
+                        <div id="register-link" class="text-right">
+
+                            @if (Route::has('password.request'))
+                            <a href="{{ route('password.request') }}" style="color:black;">Forgot Password?</a>
+                            @endif
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 
@@ -57,33 +59,35 @@
 
 @push('style')
 <STYLE>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #fbcc34;
+        height: 100vh;
+    }
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #fbcc34;
-  height: 100vh;
-}
-#login .container #login-row #login-column #login-box {
-  margin-top: 100px;
-  max-width: 600px;
-  height: 260px;
-  border: 1px solid #9C9C9C;
-  background-color: #fbcc34;
- 
-}
+    #login .container #login-row #login-column #login-box {
+        margin-top: 100px;
+        max-width: 600px;
+        height: 260px;
+        border: 1px solid #9C9C9C;
+        background-color: #fbcc34;
 
-#login .container #login-row #login-column #login-box #login-form {
-  padding: 20px;
-}
-#login .container #login-row #login-column #login-box #login-form #register-link {
-  margin-top: -85px;
-}
+    }
+
+    #login .container #login-row #login-column #login-box #login-form {
+        padding: 20px;
+    }
+
+    #login .container #login-row #login-column #login-box #login-form #register-link {
+        margin-top: -85px;
+    }
 
 
-.img-logo{
-    background-color:#fbcc34;
-}
+    .img-logo {
+        background-color: #fbcc34;
+    }
+
     /* form */
     .backgroundImage {
         width: 100vw;
