@@ -71,10 +71,10 @@ Route::prefix('dashboard')->group(function () {
 
 
 
-//return panel dashboard
-Route::get('/dashboard/panel', function () {
-    return view('panel.panel');
-})->name('panel');
+// //return panel dashboard
+// Route::get('/dashboard/panel', function () {
+//     return view('panel.panel');
+// })->name('panel');
 
 // Shop Routes
 Route::prefix('shop')->group(function () {

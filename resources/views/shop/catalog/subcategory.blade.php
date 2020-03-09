@@ -1,21 +1,31 @@
 @extends('layouts.shop.main')
 
 @section('content')
+
+
+<style>
+    .checked {
+  color: orange;
+}
+</style>
+
+
+
 <div>
     {{ Breadcrumbs::render('shop.category.subcategory', $category, $subcategory) }}
     <div class="container">
         <div class="row">
             <!-- Options / Recommendation -->
-            <div class="col-md-3 col-sm-12 hidden-sm" style="border: 1px solid #e5e5e5; padding: 10px;">
+            <div class="col-md-3 col-sm-12 hidden-sm" style="border: 1px solid #e5e5e5; padding: 10px; right:33%; ">
                 <!-- Related Categories -->
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <h6>Related Categories</h6>
+                        <h6><strong>BEDDING</strong></h6>
                         <ul class="list-group">
 
                             @foreach ($allCategories as $relatedCategory)
                             <li class="list-group-item">
-                                <a class="text-capitalize" style="font-weight: 520;" href="/shop/category/{{ $relatedCategory->slug }}">{{ $relatedCategory->name }}</a>
+                                {{-- <a class="text-capitalize" style="font-weight: 520;" href="/shop/category/{{ $relatedCategory->slug }}">{{ $relatedCategory->name }}</a> --}}
 
                                 @if($relatedCategory->id == $category->id)
                                 <ul class="list-group">
@@ -33,6 +43,83 @@
                                         @endif
                                     </li>
                                     @endforeach
+                                </ul> <br>
+                                <ul>
+                             <strong>PRICE</strong>
+                                <li>Under RM25 </li> 
+                                <li>RM 25 to RM 50 </li>
+                                <li>RM50 to RM100 </li>
+                                <li>RM100 to RM200 </li>
+                                <li>RM200 & Above </li>
+                                
+                                <input type="number" placeholder="Min" id="quantity" name="quantity" min="1" max="300">
+                                <input type="number" placeholder="Max" id="quantity" name="quantity" min="1" max="300">
+                                </ul> <br>
+                                
+                                <ul>
+                                <strong>COLOR</strong>
+                                <li><input type="checkbox" id="white" name="white" value="white">
+                                    <label for="white">WHITE</label>
+                                </li><br>
+                                <li><input type="checkbox" id="beige" name="beige" value="beige">
+                                    <label for="beige">BEIGE</label>
+                                </li><br>
+                                <li><input type="checkbox" id="red" name="red" value="red">
+                                    <label for="red">RED</label>
+                                </li><br>
+                                <li><input type="checkbox" id="maroon" name="maroon" value="maroon">
+                                    <label for="beige">MAROON</label>
+                                </li><br>
+                                <li><input type="checkbox" id="grey" name="grey" value="grey">
+                                    <label for="grey">GREY</label>
+                                </li><br>
+                                <li><input type="checkbox" id="black" name="black" value="black">
+                                    <label for="black">BLACK</label>
+                                </li><br>
+                                </ul>
+
+                                <ul>
+                                   <strong>RATINGS</strong> 
+                                   <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                           
+                                </li>
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                           and up
+                                </li>
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star"></span>
+                                           and up
+                                </li>
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star"></span>
+                                           and up
+                                </li>
+                                <li>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star "></span>
+                                    <span class="fa fa-star"></span>
+                                           and up
+                                </li>
                                 </ul>
                                 @endif
                             </li>
@@ -45,29 +132,15 @@
 
             <!-- Products -->
             <div class="col-md-9 col-sm-12">
-                <div class="pt-1">
-                    <!-- Sort by select button -->
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group w-100-sm w-50-md">
-                                <select class="form-control form-control-sm" id="exampleFormControlSelect1">
-                                    <option>Sort by</option>
-                                    <option>Popularity</option>
-                                    <option>Price low to high</option>
-                                    <option>Price high to low</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product cards -->
-                    <div class="row">
+                <div class="pt-1" style="margin: 20px auto; ">
+              <!-- Product cards -->
+                    <div class="row" >
                         @foreach($subcategory->products as $product)
-                        <div class="col-md-4 col-6 pb-3 pl-1 pr-1">
-                            <div class="item">
-                                <div class="item-img">
+                        <div class="col-md-3 col-6 pb-3 pl-1 pr-1">
+                            <div class="item"  >
+                                <div class="item-img" >
                                     <div class="sell-area">
-                                        <span class="sale" style="background-color: #000000;">{{ $product->quality->name }}</span>
+                                        <span class="sale" style="background-color:white;">{{ $product->quality->name }}</span>
                                     </div>
                                     <div class="extra-list">
                                         <ul>
