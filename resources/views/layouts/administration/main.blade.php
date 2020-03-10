@@ -30,12 +30,15 @@
             <div class="container-fluid">
                 <div class="animated fadeIn">
                     <!-- Content Here -->
+                    @yield('content')
                 </div>
             </div>
         </main>
         @include('layouts.administration.components.aside')
     </div>
     @include('layouts.administration.components.footer')
+
+    @stack('script')
 </body>
 
 </html>

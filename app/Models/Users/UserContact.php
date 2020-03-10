@@ -17,10 +17,8 @@ class UserContact extends Model
 
     // Set mass assignable columns
     protected $fillable = [
-
-        'mobile_num',
-        'emergency_num'
-
+        'contact_num',
+        'is_emergency'
     ];
 
 
@@ -32,7 +30,6 @@ class UserContact extends Model
 
     public function user()
     {
-
         return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 }

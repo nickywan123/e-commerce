@@ -122,14 +122,6 @@ Route::prefix('shop')->group(function () {
     });
 });
 
-/**
- * Any routes that needs a user to be logged in with a verified account,
- * place under this group.
- */
-Route::group(['middleware' => ['auth', 'verified']], function () {
-    //
-});
-
 Route::get('/generate-po', function () {
 
     // Get user.
@@ -222,9 +214,48 @@ Route::get('/generate-po', function () {
     // Create invoice record.
 });
 
+// Authentication routes. Verification is set to true.
+Auth::routes(['verify' => true]);
 
-Route::get('/coreui', function () {
-    return view('layouts.administration.main');
+/**
+ * Any routes that needs a user to be logged in with a verified account,
+ * place under this group.
+ */
+Route::group(['middleware' => ['auth', 'verified']], function () {
+
+    // Management
+    Route::group(['prefix' => 'management', 'middleware' => ['role:dealer|panel|administrator']], function () {
+
+        // Dashboard
+        Route::get('/', 'Management\ManagementController@index');
+
+        // Product Management
+        Route::group(
+            ['prefix' => 'product', 'middleware' => ['permission:view all products|create a product|edit a product']],
+            function () {
+
+                // List Product
+                Route::get('/', 'Management\ProductManagementController@index');
+
+                // Create Product
+                Route::get('/create', 'Management\ProductManagementController@create');
+
+                // Store Product
+                Route::post('/store', 'Management\ProductManagementController@store');
+
+                // Edit Product
+                Route::get('/edit/{id}', 'Management\ProductManagementController@edit');
+            }
+        );
+    });
 });
 
-Auth::routes(['verify' => true]);
+/**
+ * Route for view development.
+ * Prefixed with /view.
+ */
+Route::group(['prefix' => 'view', 'middleware' => ['role:dealer|panel|administrator']], function () {
+    Route::get('/coreui', function () {
+        return view('layouts.administration.main');
+    });
+});

@@ -19,19 +19,14 @@ class UserInfo extends Model
 
     // Set mass assignable columns
     protected $fillable = [
-        'name',
-        'NRIC',
-        'dealer_id',
+        'full_name',
+        'nric',
         'ethnicity',
         'gender',
         'date_of_birth',
-        'occupation'
-
-
+        'occupation',
+        'dealer_id',
     ];
-
-
-
 
     /**
      * Get the user info associated with the user.
@@ -39,7 +34,6 @@ class UserInfo extends Model
 
     public function user()
     {
-
         return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 }

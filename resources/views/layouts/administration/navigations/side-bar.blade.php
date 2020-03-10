@@ -6,6 +6,24 @@
                     <i class="nav-icon icon-speedometer"></i> Dashboard
                 </a>
             </li>
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="nav-icon icon-puzzle"></i> Products
+                </a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="/management/product" class="nav-link">
+                            <i class="nav-icon fa fa-list"></i> My Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/management/product/create" class="nav-link">
+                            <i class="nav-icon fa fa-plus"></i> New Product
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             <li class="nav-title">Theme</li>
             <li class="nav-item">
                 <a class="nav-link" href="colors.html">

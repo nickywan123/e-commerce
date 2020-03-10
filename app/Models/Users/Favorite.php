@@ -4,11 +4,10 @@ namespace App\Models\Users;
 
 use Illuminate\Database\Eloquent\Model;
 
-// model to handle user addresses
-class UserAddress extends Model
+class Favorite extends Model
 {
     // Set table
-    protected $table = 'user_addresses';
+    protected $table = 'favorites';
 
     // Set timestamps
     public $timestamps = true;
@@ -17,24 +16,24 @@ class UserAddress extends Model
     protected $primaryKey = 'id';
 
     // Set mass assignable columns
-    protected $fillable = [
-        'address_1',
-        'address_2',
-        'address_3',
-        'postcode',
-        'state',
-        'is_shipping_address'
-    ];
+    protected $fillable = [];
+
+    // Cast column to another datatype.
+    protected $casts = [];
 
     /**
-     * Get the user address associated with the user.
+     * Get user.
      */
-
     public function user()
     {
         return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 
-    // Eloquent Scope
-
+    /**
+     * Get product.
+     */
+    public function product()
+    {
+        return $this->belongsTo('App\Models\Products\Product', 'product_id');
+    }
 }

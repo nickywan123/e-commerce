@@ -1,12 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
+
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\PermissionRegistrar;
-use App\Models\Users\User;
 
-class PermissionsSeeder extends Seeder
+class PermissionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,14 +14,17 @@ class PermissionsSeeder extends Seeder
      */
     public function run()
     {
-
         // Permissions
         Permission::create([
-            'name' => 'create product'
+            'name' => 'view all products'
         ]);
 
         Permission::create([
-            'name' => 'edit product'
+            'name' => 'create a product'
+        ]);
+
+        Permission::create([
+            'name' => 'edit a product'
         ]);
 
         // Permission::create([
@@ -61,8 +63,9 @@ class PermissionsSeeder extends Seeder
             'name' => 'panel'
         ]);
 
-        $panel->givePermissionTo('create product');
-        $panel->givePermissionTo('edit product');
+        $panel->givePermissionTo('view all products');
+        $panel->givePermissionTo('create a product');
+        $panel->givePermissionTo('edit a product');
 
         $administrator = Role::create([
             'name' => 'administrator'

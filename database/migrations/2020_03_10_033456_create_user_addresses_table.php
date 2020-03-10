@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserAddressTable extends Migration
+class CreateUserAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,8 +19,9 @@ class CreateUserAddressTable extends Migration
             $table->string('address_1');
             $table->string('address_2');
             $table->string('address_3');
-            $table->integer('zipcode');
-            $table->string('shipping_address')->nullable();
+            $table->integer('postcode');
+            $table->integer('state');
+            $table->integer('is_shipping_address')->default(0);
             $table->timestamps();
         });
     }

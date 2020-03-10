@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserInfo extends Migration
+class CreateUserInfosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,14 @@ class CreateUserInfo extends Migration
     public function up()
     {
         Schema::create('user_infos', function (Blueprint $table) {
-            $table->integer('user_id')->unique();
-            $table->string('name', 300);
-            $table->string('NRIC', 100);
-            $table->string('ethnicity')->nullable();
-            $table->string('gender')->nullable();
+            $table->integer('user_id');
+            $table->string('full_name');
+            $table->string('nric');
+            $table->integer('ethnicity')->nullable();
+            $table->integer('gender')->nullable();
             $table->string('date_of_birth')->nullable();
             $table->string('occupation')->nullable();
             $table->integer('dealer_id')->nullable();
-
             $table->timestamps();
         });
     }

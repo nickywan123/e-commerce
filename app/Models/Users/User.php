@@ -20,7 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'user_id', 'track_id', 'email', 'password'
+        'account_id', 'email', 'password'
     ];
 
     /**
@@ -33,7 +33,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     /* Attribute to set primary user */
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that should be cast to native types.
@@ -43,6 +43,15 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime'
     ];
+
+    /**
+     * Get user's image/
+     */
+    public function image()
+    {
+        return $this->morphOne('App\Models\Globals\Image', 'imageable');
+    }
+
 
     /**
      * Get the user info associated with the user.
@@ -62,30 +71,88 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Models\Users\UserAddress', 'user_id');
     }
 
+    /**
+     * Get the user's shipping address.
+     */
+    public function shippingAddress()
+    {
+        return $this->hasOne('App\Models\Users\UserAddress', 'user_id')->where('is_shipping_address', 1);
+    }
+
 
     /**
      * Get the user contact associated with the user.
      */
-
-
     public function userContacts()
     {
-
         return $this->hasMany('App\Models\Users\UserContact', 'user_id');
     }
 
-
-    public function orders()
+    /**
+     * Get the user's emergency contact.
+     */
+    public function emergencyContact()
     {
-
-        return $this->hasMany('App\Models\Orders\Order', 'user_id');
+        return $this->hasOne('App\Models\Users\Usercontact', 'user_id')->where('is_emergency', 1);
     }
+
+    // TODO: Replace with new relationship. Cart, Purchase, Orders & Items.
+    // public function orders()
+    // {
+
+    //     return $this->hasMany('App\Models\Orders\Order', 'user_id');
+    // }
 
     /**
      * Get all items in customer's cart.
      */
-    public function cartItems()
+    public function carts()
     {
-        return $this->hasMany('App\Models\Users\Cart', 'user_id', 'user_id');
+        return $this->hasMany('App\Models\Users\Cart', 'user_id', 'id');
     }
+
+    /**
+     * Get all items in customer's favorite.
+     */
+    public function favorites()
+    {
+        return $this->hasMany('App\Models\Users\Favorite', 'user_id', 'id');
+    }
+
+    // Eloquent Scopes
+
+    /**
+     * Get largest customer account id.
+     */
+    public function scopeLargestCustomerId($query)
+    {
+        return $query->where('account_id', 'LIKE', '1913%')->max('account_id');
+    }
+
+    /**
+     * Get largest dealer account id.
+     */
+    public function scopeLargestDealerId($query)
+    {
+        // return $this->where('account_id', 'LIKE', '1911%')->max('account_id');
+        return $query->where('account_id', 'LIKE', '1911%')->max('account_id');
+    }
+
+    /**
+     * Get largest panel account id.
+     */
+    public function scopeLargestPanelId($query)
+    {
+        return $query->where('account_id', 'LIKE', '1918%')->max('account_id');
+    }
+
+    /**
+     * Get largest administrator account id.
+     */
+    public function scopeLargestAdministratorId($query)
+    {
+        $query->where('account_id', 'LIKE', '1919%')->max('account_id');
+    }
+
+    // --
 }
