@@ -136,9 +136,7 @@
             box-shadow: 0 3px 5px rgba(0, 0, 0, .1)
         }
 
-        .leftmenutrigger {
-            display: none
-        }
+
 
         @media(min-width:992px) {
             .leftmenutrigger {
