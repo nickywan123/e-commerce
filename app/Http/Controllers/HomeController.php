@@ -23,6 +23,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('Interface-login');
+    }
+
+
+    public function loginPage()
+    {
+
+        return view('shopv2.layouts.main');
+    }
+
+    public function testlogin()
+    {
+        return view('auth.login');
     }
 }

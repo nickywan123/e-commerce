@@ -117,21 +117,43 @@
                 <div class="search-box-wrapper">
                     <div class="search-box" style="border: 1px solid #FFDF00;">
                         <div class="categori-container" id="catSelectForm" style="background-color: #FFDF00;">
-                            <select name="category" id="category_select" class="categoris">
-                                <option value="" style="background-color: #FFDF00;">Categories</option>
+                            <select name="category" id="coldropdown" class="categoris">
+                                <option value="wiring" style="background-color: #FFDF00;">Categories</option>
                                 <option value="#" style="background-color: #FFDF00;">Category 1</option>
                                 <option value="#" style="background-color: #FFDF00;">Category 1</option>
+                                <option value="#" style="background-color: #FFDF00;">My Status</option>
                             </select>
                         </div>
 
                         <form id="searchForm" class="search-form">
-                            <input type="text" id="prod_name" name="search" placeholder="Search" value="" autocomplete="off" style="color: #FFDF00;">
+                            <input type="text" id="myInput" name="search" placeholder="Search" value="" autocomplete="off" style="color: #FFDF00;">
                             <div class="autocomplete">
                                 <div id="myInputautocomplete-list" class="autocomplete-items">
                                 </div>
                             </div>
-                            <button type="submit" style="background-color: #FFDF00;"><i class="icofont-search-1" style="color: #000000;"></i></button>
+                            <button type="submit" value="Search" id="btnSearch" style="background-color: #FFDF00;"><i class="icofont-search-1" style="color: #000000;"></i></button>
                         </form>
+
+
+
+                        <script>
+                            $(document).ready(function() {
+                                $("#myInput").on("keyup", function() {
+                                    var value = $(this).val().toLowerCase();
+                                    $("#test").filter(function() {
+                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                    });
+                                });
+                            });
+                        </script>
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -159,12 +181,79 @@
                                 <span id="wishlist-count">0</span>
                             </a>
                         </li>
-                    </ul>
+
+                        <li>
+                            <a href="CusStatus">
+                                <i class="fa fa-bell" style="font-size:23px;">
+                                    <span class="round round-sm  blue">50</span>
+                                </i>
+
+                            </a>
+                        <li>
                 </div>
+                </ul>
             </div>
         </div>
     </div>
+    </div>
 </section>
+
+
+<style>
+    .round {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        line-height: 30px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        background-color: #222;
+        color: #FFF;
+        text-align: center;
+        position: relative;
+        right: 14px;
+        top: -15px;
+        display: inline-block;
+        line-height: 20px;
+    }
+
+    .round.hollow {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        line-height: 30px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        background-color: #FFF;
+        color: #222;
+        text-align: center;
+        -webkit-box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.75);
+    }
+
+    .round.round-sm {
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        font-size: 0.5em;
+
+    }
+
+    .round.blue {
+        background-color: #3EA6CE;
+    }
+
+    .round.hollow.blue {
+        color: #3EA6CE;
+        background-color: #FFF;
+        -webkit-box-shadow: 0px 0px 0px 3px #3EA6CE;
+        -moz-box-shadow: 0px 0px 0px 3px #3EA6CE;
+        box-shadow: 0px 0px 0px 3px #3EA6CE;
+    }
+</style>
 <!-- Logo Header Area End -->
 
 <!-- Main Menu Area Start -->
@@ -215,3 +304,4 @@
     </div>
 </div>
 <!-- Main Menu Area End -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

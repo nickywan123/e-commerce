@@ -50,6 +50,8 @@
 </style>
 @endpush
 
+
+
 @push('script')
 <script>
     $(document).ready(function() {
