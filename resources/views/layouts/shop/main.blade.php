@@ -172,10 +172,9 @@
                 flex-direction: column !important;
                 left: -220px;
                 width: 200px;
-                overflow-y: auto;
-                bottom: 0;
-                overflow-x: hidden;
-                padding-bottom: 40px
+                padding-bottom: 40px;
+                top: 18%;
+
             }
         }
 
@@ -192,7 +191,7 @@
 
 <body>
     <div id="app">
-        @include('shopv2.layouts.navigation.navigation')
+        @include('shopv2.layouts.navigation.navigationshop')
         <main>
             @yield('content')
         </main>
