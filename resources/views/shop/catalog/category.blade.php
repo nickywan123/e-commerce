@@ -9,7 +9,7 @@
 
             <div class="col-md-3 col-sm-12 hidden-sm" style=" padding: 10px; right:33%; bottom: 20%; ">
                 <!-- Related Categories -->
-                <ul class="list-group">
+                <ul class="list-group border-right">
                     <li class="list-group-item">
          
                         
