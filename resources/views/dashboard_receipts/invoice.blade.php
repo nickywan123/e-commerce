@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Invoice</title>
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+ {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">  --}}
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+  
 </head>
 <body>
     <div class="container">
@@ -62,7 +63,7 @@
       <div class="table-responsive-sm">
       <table class="table table-striped">
       <thead>
-      <tr>
+      <tr >
       <th class="center">No</th>
       <th>Item</th>
       <th>Description</th>
@@ -111,7 +112,7 @@
         <table class="table table-clear ">
         <th><strong> Payment Received </strong></th>
         <tbody>
-          <tr>
+          <tr style="page-break-after: always;">
             <td class="left">
               Payment Method: xxxxxx
             </td>       
@@ -133,50 +134,7 @@
         </table>
       </div>
       
-      <div class="col-lg-4 col-sm-5 ml-auto">
-      <table class="table table-clear">
-      <tbody>
-      <tr>
-      <td class="left">
-      <strong>Subtotal</strong>
-      </td>
-      <td class="right">8.497,00</td>
-      </tr>
-      <tr>
-        <td class="left">
-        <strong>Transportation(Klang Valley)</strong>
-        </td>
-        <td class="right">xxxxx</td>
-        </tr>
-        <tr>
-          <td class="left">
-          <strong>Grand Total</strong>
-          </td>
-          <td class="right">8.497,00</td>
-          </tr>
-      <tr>
-        
-      <td class="left">
-      <strong>Discount (20%)</strong>
-      </td>
-      <td class="right">1,699,40</td>
-      </tr>
-      <tr>
-      <td class="left">
-       <strong>Amount Paid</strong>
-      </td>
-      <td class="right">679,76</td>
-      </tr>
-      <tr>
-      <td class="left">
-      <strong>Balance Due</strong>
-      </td>
-      <td class="right">
-      <strong>7.477,36</strong>
-      </td>
-      </tr>
-      </tbody>
-      </table>
+    
       
       </div>
       

@@ -31,7 +31,7 @@
                         <td>{{$order->delivery_date}}</td>
                         <td>{{$order->order_details}}</td>                     
                         <td>{{$order->order_status}}</td>
-                        <td>  <a href="" a>
+                        <td>  <a href="/dashboard/dealer/invoice" a>
                           <h5>View Invoice</h5>
                         </td>
                         

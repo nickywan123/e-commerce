@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
@@ -31,11 +32,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/icofont/icofont.min.css') }}">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
     <!-- TODO: Styles should be in it's respective scss file that will be compiled by Mix -->
 
     <!-- TODO: Use SCSS -->
@@ -185,8 +183,11 @@
             -ms-transition: all .3s ease-in-out;
             transition: all .3s ease-in-out
         }
+
+        
     </style>
-    @stack('style')
+
+  
 </head>
 
 <body>
@@ -198,21 +199,10 @@
         @include('shopv2.layouts.footer.footer')
     </div>
     @stack('script')
-    <script>
-        $(document).ready(function() {
-            $('.navbar-light .dmenu').hover(function() {
-                $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
-            }, function() {
-                $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
-            });
-        });
-        $(document).ready(function() {
-            $('.leftmenutrigger').on('click', function(e) {
-                $('.side-nav').toggleClass("open");
-                e.preventDefault();
-            });
-        });
-    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 
 </html>

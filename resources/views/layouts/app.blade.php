@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -35,8 +35,13 @@
                 background-position: center;
             }
 
-            :root {
-                --color_0: #FFDF00;
+                
+            
+            
+                width: 100%;
+                
+                height: auto;
+                
 
                 --color_1: #FFDF00;
                 --color_2: #000000;
@@ -85,6 +90,10 @@
                 box-shadow: none;
                 margin-bottom: 15px;
             }
+         
+                }
+
+        </style>
 
             .form-horizontal .form-control:focus {
                 border-color: #2655c1;
@@ -142,9 +151,9 @@
         {!! NoCaptcha::renderJs() !!}
     </head>
 
-    <body>
-        <div class="backgroundImage">
-            <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:white;">
+    <body class="backgroundImage">
+        <div>
+            <nav class="navbar navbar-expand-md navbar-dark  shadow-sm">
                 <div class="container-fluid">
                     <a class="navbar-brand " href="{{ url('/') }}">
                         {{-- {{ config('app.name', 'Laravel') }} --}}
@@ -162,7 +171,7 @@
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto ">
+                        <ul class="navbar-nav ml-auto  ">
                             <!-- Authentication Links -->
                             @guest
                             @if (Route::has('login'))
@@ -211,6 +220,7 @@
 
 
             <main class="py">
+                
                 @yield('content')
             </main>
         </div>
