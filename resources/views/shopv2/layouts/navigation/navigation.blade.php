@@ -1,391 +1,593 @@
-<style>
-    .caret {
-        color: red;
-    }
-
-    .image {
-
-        margin-top: -80px;
-        margin-left: 100px;
-        height: 70px;
-
-    }
-
-    .topnav-right {
-        float: right;
-    }
-
-
-    /*navigation*/
-
-    .navigation {
-        padding: 0;
-        margin: 0;
-
-        line-height: 1;
-
-    }
-
-    .navigation ul,
-    .navigation ul li,
-    .navigation ul ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .navigation ul {
-        position: relative;
-        z-index: 500;
-        float: left;
-    }
-
-    .navigation ul li {
-        float: left;
-        min-height: 0.05em;
-        line-height: 1em;
-        vertical-align: middle;
-        position: relative;
-
-    }
-
-    .navigation ul li.hover,
-    .navigation ul li:hover {
-        position: relative;
-        z-index: 510;
-        cursor: default;
-        background-color: #ffffff;
-    }
-
-    .navigation ul ul {
-        visibility: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0px;
-        z-index: 520;
-        width: 100%;
-    }
-
-    .navigation ul ul li {
-        float: none;
-    }
-
-    .navigation ul ul ul {
-        top: 0;
-        right: 0;
-    }
-
-    .navigation ul li:hover>ul {
-        visibility: visible;
-
-    }
-
-    .navigation ul ul {
-        top: 0;
-        left: 99%;
-    }
-
-    .navigation ul li {
-        float: none;
-    }
-
-    .navbar {
-        border-bottom: 1px solid #fbcc34;
-    }
-
-    .navigation ul ul {
-        margin-top: 0.05em;
-    }
-
-    .navigation {
-        width: 0;
-        background: white;
-        font-family: 'roboto', Tahoma, Arial, sans-serif;
-        zoom: 1;
-        border-bottom: 4px solid #fbcc34;
-    }
-
-    .navigation:before {
-        content: '';
-        display: block;
-    }
-
-    .navigation:after {
-        content: '';
-        display: table;
-        clear: both;
-    }
-
-    .navigation a {
-        display: block;
-        padding: 1em 1.3em;
-        color: #ffffff;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-
-    .navigation>ul {
-        width: 13em;
-
-    }
-
-    .navigation ul ul {
-        width: 13em;
-    }
-
-    .navigation>ul>li>a {
-        border-right: 0.3em solid white;
-        color: black;
-
-    }
-
-
-
-    .navigation>ul>li a:hover {
-        background-color: #ffffff;
-    }
-
-    .navigation>ul>li:hover a {
-        background: #fbcc34;
-        color: black;
-    }
-
-    .navigation li {
-        position: relative;
-    }
-
-    .navigation ul li.has-sub>a:after {
-        content: '»';
-        position: absolute;
-        right: 1em;
-
-    }
-
-    .navigation ul ul li.first {
-        -webkit-border-radius: 0 3px 0 0;
-        -moz-border-radius: 0 3px 0 0;
-        border-radius: 0 3px 0 0;
-    }
-
-    .navigation ul ul li.last {
-        -webkit-border-radius: 0 0 3px 0;
-        -moz-border-radius: 0 0 3px 0;
-        border-radius: 0 0 3px 0;
-        border-bottom: 0;
-    }
-
-    .navigation ul ul {
-        -webkit-border-radius: 0 3px 3px 0;
-        -moz-border-radius: 0 3px 3px 0;
-        border-radius: 0 3px 3px 0;
-    }
-
-    .navigation ul ul {
-        border: 1px solid white;
-    }
-
-    .navigation ul ul a {
-        color: #ffffff;
-    }
-
-    .navigation ul ul a:hover {
-        color: black;
-        background: white;
-    }
-
-    .navigation ul ul li {
-        border-bottom: 1px solid #fbcc34;
-    }
-
-    .navigation ul ul li:hover>a {
-        background: white;
-        color: black;
-    }
-
-    .navigation.align-right>ul>li>a {
-        border-left: 0.3em solid white;
-        border-right: none;
-    }
-
-    .navigation.align-right {
-        float: right;
-    }
-
-    .navigation.align-right li {
-        text-align: right;
-    }
-
-    .navigation.align-right ul li.has-sub>a:before {
-        content: '+';
-        position: absolute;
-        top: 50%;
-        left: 15px;
-        margin-top: -6px;
-
-    }
-
-    .navigation.align-right ul li.has-sub>a:after {
-        content: none;
-        background-color: #ffffff;
-    }
-
-    .navigation.align-right ul ul {
-        visibility: hidden;
-        position: absolute;
-        top: 0;
-        left: -100%;
-        z-index: 598;
-        width: 100%;
-    }
-
-    .navigation.align-right ul ul li.first {
-        -webkit-border-radius: 3px 0 0 0;
-        -moz-border-radius: 3px 0 0 0;
-        border-radius: 3px 0 0 0;
-    }
-
-    .navigation.align-right ul ul li.last {
-        -webkit-border-radius: 0 0 0 3px;
-        -moz-border-radius: 0 0 0 3px;
-        border-radius: 0 0 0 3px;
-    }
-
-    .navigation.align-right ul ul {
-        -webkit-border-radius: 3px 0 0 3px;
-        -moz-border-radius: 3px 0 0 3px;
-        border-radius: 3px 0 0 3px;
-    }
-
-    /* Overrides */
-</style>
-
-<div class="animate">
-
-    <nav class="navbar header-top  navbar-expand-lg  navbar-dark bg-dark">
-
-        <span class="navbar-toggler-icon leftmenutrigger " style="margin-top:5%; "></span>
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler ml-auto custom-toggler " id="#hamburger" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse navigation " id="navbarText">
-            <ul class="navbar-nav animate side-nav">
-                <li class="nav-item has-sub">
-                    <a href="#">Menu 1</a>
-                    <ul>
-                        <li class="has-sub"> <a href="#">Submenu 1.1</a>
-                            <ul>
-                                <li><a href="#">Submenu 1.1.1</a></li>
-                                <li class="has-sub"><a href="#">Submenu 1.1.2</a>
-                                    <ul>
-                                        <li><a href="#">Submenu 1.1.2.1</a></li>
-                                        <li><a href="#">Submenu 1.1.2.2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Submenu 1.2</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub"> <a href="#">Menu 2</a>
-                    <ul>
-                        <li><a href="#">Submenu 2.1</a></li>
-                        <li><a href="#">Submenu 2.2</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub"> <a href="#">Menu 3</a>
-                    <ul>
-                        <li><a href="#">Submenu 3.1</a></li>
-                        <li><a href="#">Submenu 3.2</a></li>
-                    </ul>
-                </li>
-
-
-
-
-
-
-            </ul>
-            <div>
-                <img class="image" src="{{asset('/images/Logo.png')}}" alt="No LOGO">
-            </div>
-
-            <ul class="navbar-nav ml-md-auto d-md-flex" style="position: absolute;  right: 72%; top:20%;">
-
-                <div class="dropdown" style="border-right:6px solid #fbcc34;">
-                    <button class="btn btn-secondary dropdown-toggle " style="border-radius:8px 1px 1px 8px;  background-color: white; margin-top:0px;color:black; height:37px;" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                        All Categories
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <style>
+        .mr-5 {
+            margin-right: 5px;
+        }
+
+        .ml-5 {
+            margin-left: 5px;
+        }
+
+        .w-100 {
+            width: 100px;
+        }
+
+        .w-150 {
+            width: 150px;
+        }
+
+        .w-250 {
+            width: 250px;
+        }
+
+
+
+
+        .topBar {
+            background-color: #ffffff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            font-size: 13px;
+        }
+
+        .topBar ul {
+            margin: 0;
+        }
+
+        .topBar ul li {
+            line-height: 42px;
+        }
+
+        .topBar a {
+            color: #878c94;
+            text-decoration: none;
+        }
+
+        .text-primary {
+            color: #0cd4d2;
+        }
+
+        .topBar ul.topBarNav {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .topBar ul.topBarNav li {
+            position: relative;
+            display: inline-block;
+            margin-right: -4px;
+            border-right: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .topBar ul.topBarNav li:last-child {
+            border-right: none;
+        }
+
+        .topBar ul.topBarNav li a {
+            display: block;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+
+
+        .topBar ul.topBarNav li ul {
+            background-color: #ffffff;
+            position: absolute;
+            top: 42px;
+            left: auto;
+            min-width: 10px;
+            right: 4px;
+            border-radius: 0px;
+            border: solid 0px;
+            margin-right: -4px;
+            padding: 0;
+            list-style-type: none;
+            z-index: 9999;
+            -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            -ms-transition: all 0.1s ease-in-out;
+            -o-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+            -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        .topBar ul.topBarNav li ul li {
+            display: block;
+            line-height: 30px;
+            width: 100%;
+            border: none;
+        }
+
+        .topBar ul.topBarNav li a {
+            display: block;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .topBar .dropdown-menu>li>a {
+            display: block;
+            padding: 6px 20px;
+            clear: both;
+            font-weight: normal;
+            line-height: 1.42857143;
+            color: #878c94;
+            font-size: 15px white-space: nowrap;
+        }
+
+        .topBar .dropdown-menu>li>a:hover,
+        .dropdown-menu>li>a:focus {
+            color: #00BCD4;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+
+        /*CART/////////////////////*/
+
+
+        .cart-items::-webkit-scrollbar {
+            width: 6px;
+            background-color: #ECECEC;
+        }
+
+        .cart-items::-webkit-scrollbar-track {}
+
+        .cart-items::-webkit-scrollbar-thumb {
+            background-color: #084951;
+            outline: 1px solid black;
+        }
+
+        .topBar ul.topBarNav li ul.cart .cart-items {
+            padding: 10px;
+            height: 200px;
+            overflow: auto;
+        }
+
+        .topBar ul.topBarNav li ul.cart .cart-items .items {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .topBar ul.topBarNav li ul.cart .cart-items .items li {
+            overflow: hidden;
+            clear: left;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .topBar ul.topBarNav li ul.cart .cart-items .items li .product-image {
+            width: 60px;
+            float: left;
+        }
+
+        .topBar ul.topBarNav li ul.cart .cart-items .items li a {
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+            background-color: transparent;
+            display: inline;
+        }
+
+        .topBar ul.topBarNav li ul.cart .cart-items .items li .product-details {
+            position: relative;
+            margin-left: 60px;
+            padding: 0 15px 0 10px;
+        }
+
+        .topBar ul.topBarNav li ul.cart .cart-items .items li .product-details .close-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 10px;
+            line-height: normal;
+        }
+
+        .topBar ul.topBarNav li ul.cart .cart-footer {
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .topBar ul.topBarNav li ul.cart .cart-footer a {
+            text-align: center;
+            padding: 10px 20px;
+            margin: 0;
+            background-color: transparent;
+        }
+
+
+        /*/////////////////////////middleBar//////////////////////*/
+
+        .middleBar {
+            padding: 10px 0 0 0;
+            margin: 0;
+            min-height: 70px;
+            background-color: black;
+        }
+
+        @media (min-width: 767px) {
+
+            .display-table {
+                display: table;
+                width: 100%;
+            }
+
+            .vertical-align {
+                display: table-cell;
+                vertical-align: middle;
+                float: none;
+            }
+
+            .grid-space-1 div[class*="col-"] {
+                padding: 0 1px;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            div[class^="col-"] {
+                margin-bottom: 30px;
+            }
+        }
+
+        .middleBar .form-control {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            box-shadow: none;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            border-radius: 0;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+            -webkit-transition: all 0.1s ease-in;
+            -moz-transition: all 0.1s ease-in;
+            -ms-transition: all 0.1s ease-in;
+            -o-transition: all 0.1s ease-in;
+            transition: all 0.1s ease-in;
+        }
+
+        .form-control.input-lg {
+            font-size: 15px;
+        }
+
+        .middleBar .btn.btn-default {
+            color: black;
+            background-color: #0cd4d2;
+            border: 1px solid #0cd4d2;
+            border-radius: 0px;
+        }
+
+        .middleBar .header-items .header-item {
+            display: inline-block;
+        }
+
+        .middleBar .header-items .header-item a {
+            position: relative;
+            display: block;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -ms-border-radius: 100%;
+            border-radius: 100%;
+            text-align: center;
+            color: #35404f;
+        }
+
+        .middleBar .header-items .header-item a sub {
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background-color: #0cd4d2;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -ms-border-radius: 100%;
+            border-radius: 100%;
+            color: #ffffff;
+            font-size: 9px;
+            -webkit-transition: all 0.2s ease-in;
+            -moz-transition: all 0.2s ease-in;
+            -ms-transition: all 0.2s ease-in;
+            -o-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
+        }
+
+        .middleBar .header-items .header-item a:hover {
+            background-color: #0cd4d2;
+            color: #ffffff;
+        }
+
+        /*/////////////////////////navbar-default///////////////*/
+
+        .navbar-default {
+            -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            margin-bottom: 0;
+            border: none;
+        }
+
+        .navbar-default .navbar-nav>.open>a,
+        .navbar-default .navbar-nav>.open>a:hover,
+        .navbar-default .navbar-nav>.open>a:focus {
+            color: #0cd4d2;
+            background-color: transparent;
+        }
+
+        .navbar-default .navbar-nav>.open>a,
+        .navbar-default .navbar-nav>.open>a:hover,
+        .navbar-default .navbar-nav>.open>a:after {
+            border-top: solid 2px #0cd4d2;
+
+        }
+
+        .navbar-default .dropdown-menu {
+            padding: 0;
+            font-size: 14px;
+            background-color: #ffffff;
+            color: #878c94;
+            border: none;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            border-radius: 0;
+            -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            -webkit-transition: all 0.1s ease-in;
+            -moz-transition: all 0.1s ease-in;
+            -ms-transition: all 0.1s ease-in;
+            -o-transition: all 0.1s ease-in;
+            transition: all 0.1s ease-in;
+        }
+
+        .dropdown-menu>li>a {
+            display: block;
+            padding: 6px 20px;
+            clear: both;
+            font-weight: normal;
+            line-height: 1.42857143;
+            color: #878c94;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu>li>a:hover {
+            color: #0cd4d2;
+        }
+
+
+        /*
+            megaDropMenu
+        */
+
+        .navbar-default .container {
+            position: relative;
+        }
+
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu {
+            position: static;
+        }
+
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu {
+            width: 100%;
+        }
+
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li:first-child {
+            padding: 20px 0px 5px 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            /* text-align: center; */
+            color: #0cd4d2;
+        }
+
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a {
+            display: block;
+            color: #878c94;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 8px 15px;
+        }
+
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a:hover {
+            color: #00BCD4;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu img {
+            display: block;
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        /* Author - Wan Shahruddin */
+        .container-90 {
+            max-width: 95%;
+            margin: 0 auto;
+        }
+
+        .navigation-icon {
+            font-size: 1.8rem;
+            margin-left: 30px;
+            color: #fbcc34;
+        }
+
+        .form-control {
+            width: auto;
+            display: inline-block;
+        }
+
+        .btn {
+            vertical-align: inherit;
+        }
+
+        .w-65 {
+            width: 65%;
+        }
+
+        .fa {
+            vertical-align: middle;
+        }
+
+        .font-15 {
+            font-size: 1.5rem;
+        }
+
+        .bottom-bar {
+            padding: 10px 0 0 0;
+            margin: 0;
+            min-height: 50px;
+            background-color: black;
+        }
+
+        @media (max-width: 576px) {
+            .hidden-sm {
+                display: none;
+            }
+
+            .w-100-sm {
+                width: 100%;
+            }
+
+            .w-85-sm {
+                width: 85%;
+            }
+
+            .navigation-logo {
+                max-height: 56px;
+                width: auto;
+            }
+
+            .justify-content-center-sm {
+                -ms-flex-pack: center !important;
+                justify-content: center !important;
+                float: right;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hidden-md {
+                display: none;
+            }
+
+            .float-right-md {
+                float: right;
+            }
+
+            .float-left-md {
+                float: left;
+            }
+
+            .w-50-md {
+                width: 50%;
+            }
+
+            .w-65-md {
+                width: 65%;
+            }
+
+            .navigation-logo {
+                max-height: 72px;
+                width: auto;
+            }
+
+            .justify-content-end-md {
+                -ms-flex-pack: end !important;
+                justify-content: end !important;
+                float: right;
+
+            }
+
+
+
+        }
+
+        .nav-link {
+            color: black;
+            background-color: #fbcc34;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--=========MIDDEL-TOP_BAR============-->
+
+    <div class="middleBar">
+        <div class="container-90">
+            <div class="row d-flex">
+                <div class="col-sm-6 vertical-align hidden-xs">
+                    <div class="row">
+
+                        <div class="col-12 my-auto">
+                            <a href="javascript:void(0);">
+                                <img class="navigation-logo" style="margin-right: 30px;" src="http://demo3.bujishu.com/storage/logo/bujishu.png" alt="">
+                            </a>
+                        </div>
                     </div>
+
                 </div>
-                <form class="form-inline" action="#" style="border-right:6px solid #fbcc34;">
-                    <input class=" form-control" style="width:650px; height:37px; border-radius:1px;" type="text" placeholder="Search For Product">
-                    <!-- <div class="line-separator" style="width:30px; background-color:red;"></div> -->
+                <!-- end col -->
 
-                </form>
-                <button class="btn btn-light" type="submit" style="height: 37px;margin-top:0px;border-radius:1px 8px 8px 1px;margin-right:250px;"><i class="fa fa-search "></i></button>
-                <button type="button" style="color:#fbcc34;" class="btn btn-link">My Account</button>
-                <button type="button" style="color:#fbcc34;" class="btn btn-link">Login</button>
-                <button type="button" style="color:#fbcc34;" class="btn btn-link">Register</button>
-                <button type="button" style="background-color:#fbcc34;margin-right:20px;border-radius: 15px;" class="btn btn-sm"><b>PANEL</b></button>
-                <button type="button" style="background-color:#fbcc34;border-radius: 15px;" class="btn btn-sm"><b>DEALER</b></button>
-                <br>
-                <i class="fa fa-heart-o" style="font-size:20px;color:#fbcc34;right:120%;position: relative;
-top: 40px;"></i> <button type="button" style="color:#fbcc34;right:125%;position: relative;top: 33px;" class="btn btn-link">My Wish List</button>
-                <img class=”img-logo” src="{{ asset('images/cart.png') }}" style="width:28px; height: 30px;right:120%;position: relative;
-top: 40px;" /> <button type="button" style="color:#fbcc34;right:125%;position: relative;top: 33px;" class="btn btn-link">My Cart</button>
+                <!-- end col -->
+                <div class="col-sm-6  vertical-align hidden-xs my-auto float-right">
+                    <!-- <div class="header-item mr-5">
+                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title=""
+                            data-original-title="Wishlist"> <i class="fa fa-heart-o"></i> <sub>32</sub> </a>
+                    </div>
+                    <div class="header-item">
+                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title=""
+                            data-original-title="Compare"> <i class="fa fa-refresh"></i> <sub>2</sub> </a>
+                    </div> -->
+                    <ul class=" nav justify-content-center-xs float-right  nav-right ">
+                        <li class="nav-item m-1">
+                            <a href="" class="nav-link btn"><b>Panel</b></a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a href="" class="nav-link btn"><b>Dealer</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end col -->
 
-            </ul>
-
+            </div>
+            <!-- end  row -->
 
         </div>
 
-</div>
+    </div>
 
 
+</body>
 
-
-</nav>
-
-</div>
-
-<script>
-    $(document).ready(function() {
-
-        $(".dropdown-submenu").click(function(event) {
-            // stop bootstrap.js to hide the parents
-            event.stopPropagation();
-            // hide the open children
-            $(this).find(".dropdown-submenu").removeClass('open');
-            // add 'open' class to all parents with class 'dropdown-submenu'
-            $(this).parents(".dropdown-submenu").addClass('open');
-            // this is also open (or was)
-            $(this).toggleClass('open');
-        });
-
-    });
-</script>
-
-
-
-
-<script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-46156385-1', 'cssscript.com');
-    ga('send', 'pageview');
-</script>
+</html>

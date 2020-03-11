@@ -1,12 +1,20 @@
   <!-- Style for footer-->
   <style>
+      .container-fluid {
+          background-color: black;
+          color: white;
+      }
+
+
+
       .site-footer {
-          background-color: #000000;
+          background-color: black;
           padding: 30px 0 10px;
           font-size: 15px;
           line-height: 24px;
           color: #ffffff;
           padding-right: 30%;
+          border-top: #fbcc34 1px solid;
       }
 
       .site-footer h6 {
@@ -28,7 +36,7 @@
       }
 
       .footer-links {
-          padding-left: 1;
+          padding-left: 0;
           list-style: none
       }
 
@@ -53,7 +61,7 @@
 
       .copyright-text {
           margin: 0;
-          float: left;
+          float: right;
       }
 
       @media (max-width:991px) {
@@ -74,36 +82,37 @@
 
   <!-- Site footer -->
   <footer class="site-footer">
-      <div class="container">
-          <div class="row">
-              <div class="col-xs-2 col-md-4">
-                  <h6>Information</h6>
-                  <ul class="footer-links">
-                      <li><a href="http://scanfcode.com/category/c-language/">About Us</a></li>
-                      <li><a href="http://scanfcode.com/category/front-end-development/">FAQ</a></li>
-                      <li><a href="http://scanfcode.com/category/back-end-development/">Warranty</a></li>
-                      <li><a href="http://scanfcode.com/category/java-programming-language/">Partnership</a></li>
-                      <li><a href="http://scanfcode.com/category/android/">Privacy Policy</a></li>
-                      <li><a href="http://scanfcode.com/category/templates/">Contact Us</a></li>
-                  </ul>
-              </div>
+      <div class="row">
 
-              <div class="col-xs-2 col-md-4">
-                  <h6>My Account</h6>
-                  <ul class="footer-links">
-                      <li><a href="http://scanfcode.com/category/c-language/">Sign In</a></li>
-                      <li><a href="http://scanfcode.com/category/front-end-development/">View Cart</a></li>
-                      <li><a href="http://scanfcode.com/category/back-end-development/">My Wishlist</a></li>
+          <div id="foot1" class="col-md-2 col-sm-9 ">
 
-                  </ul>
-              </div>
-
-              <div class="col-xs-6 col-md-4">
-                  <p class="copyright-text"> &copy; 2020 Bujishu All Rights Reserved.
-                  </p>
-              </div>
+              <h6 style="color:#fbcc34">Information</h6>
+              <ul class="footer-links">
+                  <li><a href="http://scanfcode.com/category/c-language/">About Us</a></li>
+                  <li><a href="http://scanfcode.com/category/front-end-development/">FAQ</a></li>
+                  <li><a href="http://scanfcode.com/category/back-end-development/">Warranty</a></li>
+                  <li><a href="http://scanfcode.com/category/java-programming-language/">Partnership</a></li>
+                  <li><a href="http://scanfcode.com/category/android/">Privacy Policy</a></li>
+                  <li><a href="http://scanfcode.com/category/templates/">Contact Us</a></li>
+              </ul>
           </div>
 
-      </div>
+          <div id="foot2" class="col-md-3 col-sm-3">
+              <h6>My Account</h6>
+              <ul class="footer-links">
+                  <li><a href="http://scanfcode.com/category/c-language/">Sign In</a></li>
+                  <li><a href="http://scanfcode.com/category/front-end-development/">View Cart</a></li>
+                  <li><a href="http://scanfcode.com/category/back-end-development/">My Wishlist</a></li>
 
+              </ul>
+          </div>
+
+
+
+      </div>
   </footer>
+  </div>
+
+  <section class="container-fluid " id="foot5">
+      <h6 class="text-right" style="color:white;">@ 2020 Bujishu. All Rights Reserved</h6>
+  </section>
