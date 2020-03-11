@@ -253,13 +253,20 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'shop'], function () {
         Route::group(['prefix' => 'cart'], function () {
             Route::get('/', 'Shop\CartController@index');
+
+            // Checkout cart items.
+            Route::post('/checkout', 'Purchase\PurchaseController@checkoutItems');
         });
     });
 
     // Web
     Route::group(['prefix' => 'web'], function () {
         Route::group(['prefix' => 'cart'], function () {
+            // Get user's cart items.
             Route::get('/', 'WEB\Shop\CartController@index');
+
+            // Remove user's cart item.
+            Route::put('/remove/{id}', 'WEB\Shop\CartController@remove');
         });
     });
 });

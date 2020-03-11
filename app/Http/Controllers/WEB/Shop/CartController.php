@@ -11,15 +11,28 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
     /**
-     * Get user's cart
+     * Get user's cart.
      */
     public function index(Request $request)
     {
         $user = User::find(Auth::user()->id);
 
-        $carts = $user->carts->with('product.images');
+        $carts = $user->carts->where('status', 2001);
 
+        // return $carts->where('status', 2001);
 
-        return $carts;
+        return view('shop.cart.partials.shopping-cart-item')->with('cartItems', $carts);
+    }
+
+    /**
+     * Delete a cart item.
+     */
+    public function remove($id)
+    {
+        $item = Cart::find($id);
+        $item->status = 2002;
+        $item->save();
+
+        return $item;
     }
 }
