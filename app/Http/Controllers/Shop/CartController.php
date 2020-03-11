@@ -9,9 +9,36 @@ use Auth;
 use App\Models\Products\Product;
 use App\Models\Users\Cart;
 use App\Models\Users\User;
+use App\Models\Categories\Category;
+use Illuminate\Support\Facades\View;
 
 class CartController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            // Check if user is authenticated or not.
+            if (Auth::check()) {
+                // If authenticated, then get their cart.
+                $this->cart = Auth::user()->carts->where('status', 2001);
+            }
+            // Get all categories, with subcategories and its images.
+            $categories = Category::with('image')->with('subcategories.image')->get();
+
+            // Share the above variable with all views in this controller.
+            View::share('categories', $categories);
+            View::share('cart', $this->cart);
+
+            // Return the request.
+            return $next($request);
+        });
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +69,7 @@ class CartController extends Controller
     public function store(Request $request)
     {
         // Get user
-        $user = User::find(Auth::user()->user_id);
+        $user = User::find(Auth::user()->id);
         // Get product
         $product = Product::find($request->input('productId'));
 
@@ -113,7 +140,7 @@ class CartController extends Controller
         }
 
         // Check if the exact item is already in the cart..
-        $existingCartItem = Cart::where('user_id', $user->user_id)
+        $existingCartItem = Cart::where('id', $user->id)
             ->where('product_id', $product->id)
             ->where('product_information->product_color_id', $colorId)
             ->where('product_information->product_dimension_id', $dimensionId)
@@ -128,7 +155,7 @@ class CartController extends Controller
 
             // Create a new cart item.
             $newCartItem = new Cart;
-            $newCartItem->user_id = $user->user_id;
+            $newCartItem->user_id = $user->id;
             $newCartItem->product_id = $product->id;
 
             // Check if the post request has product color id in it..

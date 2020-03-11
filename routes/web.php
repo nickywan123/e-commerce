@@ -248,6 +248,20 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             }
         );
     });
+
+    // Shop
+    Route::group(['prefix' => 'shop'], function () {
+        Route::group(['prefix' => 'cart'], function () {
+            Route::get('/', 'Shop\CartController@index');
+        });
+    });
+
+    // Web
+    Route::group(['prefix' => 'web'], function () {
+        Route::group(['prefix' => 'cart'], function () {
+            Route::get('/', 'WEB\Shop\CartController@index');
+        });
+    });
 });
 
 /**
