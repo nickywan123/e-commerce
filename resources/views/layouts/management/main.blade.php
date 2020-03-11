@@ -22,11 +22,12 @@
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-    @include('layouts.administration.navigations.navigation-bar')
+    @include('layouts.management.navigations.navigation-bar')
     <div class="app-body">
-        @include('layouts.administration.navigations.side-bar')
+        @include('layouts.management.navigations.side-bar')
         <main class="main">
-            @include('layouts.administration.components.breadcrumbs')
+
+            @yield('breadcrumbs')
             <div class="container-fluid">
                 <div class="animated fadeIn">
                     <!-- Content Here -->
@@ -34,9 +35,9 @@
                 </div>
             </div>
         </main>
-        @include('layouts.administration.components.aside')
+        @include('layouts.management.components.aside')
     </div>
-    @include('layouts.administration.components.footer')
+    @include('layouts.management.components.footer')
 
     @stack('script')
 </body>

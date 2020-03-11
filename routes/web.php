@@ -227,7 +227,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'management', 'middleware' => ['role:dealer|panel|administrator']], function () {
 
         // Dashboard
-        Route::get('/', 'Management\ManagementController@index');
+        Route::get('/', 'Management\ManagementController@index')->name('management.home');
 
         // Product Management
         Route::group(
@@ -235,10 +235,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             function () {
 
                 // List Product
-                Route::get('/', 'Management\ProductManagementController@index');
+                Route::get('/', 'Management\ProductManagementController@index')->name('management.product');
 
                 // Create Product
-                Route::get('/create', 'Management\ProductManagementController@create');
+                Route::get(
+                    '/create',
+                    'Management\ProductManagementController@create'
+                )->name('management.product.create');
 
                 // Store Product
                 Route::post('/store', 'Management\ProductManagementController@store');
@@ -248,6 +251,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             }
         );
     });
+    // End Management
 
     // Shop
     Route::group(['prefix' => 'shop'], function () {
@@ -258,6 +262,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::post('/checkout', 'Purchase\PurchaseController@checkoutItems');
         });
     });
+    // End Shop
 
     // Web
     Route::group(['prefix' => 'web'], function () {
@@ -269,14 +274,5 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::put('/remove/{id}', 'WEB\Shop\CartController@remove');
         });
     });
-});
-
-/**
- * Route for view development.
- * Prefixed with /view.
- */
-Route::group(['prefix' => 'view', 'middleware' => ['role:dealer|panel|administrator']], function () {
-    Route::get('/coreui', function () {
-        return view('layouts.administration.main');
-    });
+    // End Web
 });

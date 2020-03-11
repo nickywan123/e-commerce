@@ -24,7 +24,7 @@ class ProductManagementController extends Controller
      */
     public function create()
     {
-        return view('management.panels.products.create');
+        return view('management.products.create');
     }
 
     /**
