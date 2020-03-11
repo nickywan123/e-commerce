@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-3 col-sm-12 hidden-sm" style="border: 1px solid #e5e5e5; padding: 10px; right:33%; bottom: 20%; ">
+            <div class="col-md-3 col-sm-12 hidden-sm" style=" padding: 10px; right:33%; bottom: 20%; ">
                 <!-- Related Categories -->
                 <ul class="list-group">
                     <li class="list-group-item">
@@ -200,6 +200,8 @@
     .list-group-item {
         border: 0;
         padding: .15rem .75rem;
+        border: 1px;
+         solid: #e5e5e5;
     }
 
     .checked {

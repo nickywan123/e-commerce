@@ -3,21 +3,17 @@
 @section('content')
 
 
-<style>
-    .checked {
-  color: orange;
-}
-</style>
-
 
 
 <div>
     {{ Breadcrumbs::render('shop.category.subcategory', $category, $subcategory) }}
     
     
-  <div class="container">
-            <div class="row">        
-              <div class="col-3">
+  <div class="container-fluid">
+           
+    <div class="row">  
+                       
+              <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 order-first order-lg-last">
                 <div class="dropdown">
                   <button class="btn btn-default round-background " type="button" id="menu1" data-toggle="dropdown">
                     <img src="{{asset('images/bedsheet.jpg')}}" style=" border-radius: 50%;  height: 150px; ">    
@@ -32,7 +28,9 @@
                   </ul>
                 </div>  
               </div>  
-              <div class="col-3">
+
+
+              <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12  order-first order-lg-last">
                 <div class="dropdown">
                   <button class="btn btn-default round-background " type="button" id="menu1" data-toggle="dropdown">
                     <img src="{{asset('images/curtain.jpg')}}" style=" border-radius: 50%;  height: 150px;">    
@@ -47,7 +45,9 @@
                   </ul>
                 </div> 
               </div>
-              <div class="col-3">
+
+
+              <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12  order-first order-lg-last">
                 <div class="dropdown">
                   <button class="btn btn-default round-background " type="button" id="menu1" data-toggle="dropdown">
                     <img src="{{asset('images/pink-bed-sheet.jpg')}}" style=" border-radius: 50%;  height: 150px;">    
@@ -63,11 +63,10 @@
                 </div> 
               </div>
               
-             
-              <div class="col-3">
+              <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12  order-first order-lg-last">
                 <div class="dropdown">
                   <button class="btn btn-default round-background " type="button" id="menu1" data-toggle="dropdown">
-                    <img src="{{asset('images/curtain.jpg')}}" style=" border-radius: 50%;  height: 150px;">    
+                    <img src="{{asset('images/pink-bed-sheet.jpg')}}" style=" border-radius: 50%;  height: 150px;">    
                   </button><hr>
                   <span class="text-capitalize"> <strong>Curtain</strong> </span>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
@@ -79,19 +78,32 @@
                   </ul>
                 </div> 
               </div>
-            </div>
-          </div>
-          
-    
-    <div class="container">
-      <div class="row">
-            <!-- Options / Recommendation -->
-            <div class="col-md-3 col-sm-12 hidden-sm" style="border: 1px solid #e5e5e5; padding: 10px; right:33%; bottom: 220px; ">
+              
+              <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12  order-first order-lg-last">
+                <div class="dropdown">
+                  <button class="btn btn-default round-background " type="button" id="menu1" data-toggle="dropdown">
+                    <img src="{{asset('images/pink-bed-sheet.jpg')}}" style=" border-radius: 50%;  height: 150px;">    
+                  </button><hr>
+                  <span class="text-capitalize"> <strong>Curtain</strong> </span>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li><hr>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li><hr>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li><hr>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
+                  </ul>
+                </div> 
+              </div>
+              
+              
+             
+            <!-- Sidebar Filter -->
+            <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 "  >
                 <!-- Related Categories -->
-                <ul class="list-group">
-                    <li class="list-group-item">
+                <ul class="list-group" >
+                    <li class="list-group-item" >
          
-                        <ul class="list-group">
+                        <ul class="list-group" >
 
                             @foreach ($allCategories as $relatedCategory)
                             <li class="list-group-item">
@@ -197,16 +209,15 @@
                                </li>
                                </ul>
                     </li>
-                </ul>
-
-                
+                </ul>                
+             
             </div>
+            
+            
+           
           
-            
+          </div>
               
-        </div>
-            
-                
     </div>    
 
 </div>
@@ -214,11 +225,16 @@
   @endsection
 
 @push('style')
+
 <style>
-.list-group-item {
-        border: 0;
+
+.list-group-item{
+
+         border: 0;
         padding: .15rem .75rem;
-    }
+        border: 1px;
+         solid: #e5e5e5;
+}
 
 
 .round-background {
@@ -229,6 +245,10 @@
   display: inline-block;
 }
 
+
+.checked {
+  color: orange;
+}
 
 </style>
 @endpush

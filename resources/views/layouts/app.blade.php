@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -28,15 +28,18 @@
                 background-repeat: no-repeat;
                 background-size: 100%;
 
-                /* //background-size:contain;
+                
             
-            //background-position: center center; */
+            
                 width: 100%;
-                /* min-height: 100%; */
+                
                 height: auto;
-                /* margin: 10% 10% 10% 10%; */
+                
 
             }
+         
+                }
+
         </style>
 
         {!! NoCaptcha::renderJs() !!}
@@ -44,7 +47,7 @@
 
     <body class="backgroundImage">
         <div>
-            <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+            <nav class="navbar navbar-expand-md navbar-dark  shadow-sm">
                 <div class="container-fluid">
                     <a class="navbar-brand " href="{{ url('/') }}">
 
@@ -60,7 +63,7 @@
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto ">
+                        <ul class="navbar-nav ml-auto  ">
                             <!-- Authentication Links -->
                             @guest
 
@@ -105,7 +108,7 @@
             </nav>
 
             <main class="py">
-                {{-- <img src="{{ asset('images/homepage.jpg') }}" width="100%" height="100%" alt="No Logo"> --}}
+                
                 @yield('content')
             </main>
         </div>
