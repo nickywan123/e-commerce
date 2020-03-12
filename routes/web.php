@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', 'Auth\LoginController@showLoginForm');
+Route::get('/', function () {
+    return view('Interface-login');
+});
 
-Route::get('/login', 'HomeController@testlogin');
+Route::get('/login', 'Auth\LoginController@showLoginForm');
 
 Route::view('register', 'register');
 //Route::get('/login', 'LoginController@index')->name('login');
