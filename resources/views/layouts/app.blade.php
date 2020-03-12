@@ -35,17 +35,17 @@
                 background-position: center;
             }
 
-                
-            
-            
-                width: 100%;
-                
-                height: auto;
-                
 
-                --color_1: #FFDF00;
-                --color_2: #000000;
-                --color_3: #000000;
+
+
+            width: 100%;
+
+            height: auto;
+
+
+            --color_1: #FFDF00;
+            --color_2: #000000;
+            --color_3: #000000;
             }
 
             form {
@@ -90,10 +90,6 @@
                 box-shadow: none;
                 margin-bottom: 15px;
             }
-         
-                }
-
-        </style>
 
             .form-horizontal .form-control:focus {
                 border-color: #2655c1;
@@ -220,7 +216,7 @@
 
 
             <main class="py">
-                
+
                 @yield('content')
             </main>
         </div>
