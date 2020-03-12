@@ -9,9 +9,36 @@ use Auth;
 use App\Models\Products\Product;
 use App\Models\Users\Cart;
 use App\Models\Users\User;
+use App\Models\Categories\Category;
+use Illuminate\Support\Facades\View;
 
 class CartController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            // Check if user is authenticated or not.
+            if (Auth::check()) {
+                // If authenticated, then get their cart.
+                $this->cart = Auth::user()->carts->where('status', 2001);
+            }
+            // Get all categories, with subcategories and its images.
+            $categories = Category::with('image')->with('subcategories.image')->get();
+
+            // Share the above variable with all views in this controller.
+            View::share('categories', $categories);
+            View::share('cart', $this->cart);
+
+            // Return the request.
+            return $next($request);
+        });
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,6 +47,7 @@ class CartController extends Controller
     public function index(Request $request)
     {
         //
+        return view('shop.cart.cart');
     }
 
     /**
@@ -40,8 +68,9 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
-        $user = User::find(Auth::user()->user_id);
+        // Get user
+        $user = User::find(Auth::user()->id);
+        // Get product
         $product = Product::find($request->input('productId'));
 
         // Variables initiliazation.
@@ -110,47 +139,48 @@ class CartController extends Controller
             }
         }
 
-        // Check if the exact item already is in the card..
-        $existingCartItem = Cart::where('user_id', $user->user_id)
+        // Check if the exact item is already in the cart..
+        $existingCartItem = Cart::where('id', $user->id)
             ->where('product_id', $product->id)
-            ->where('product_color_id', $colorId)
-            ->where('product_dimension_id', $dimensionId)
-            ->where('product_length_id', $lengthId)
+            ->where('product_information->product_color_id', $colorId)
+            ->where('product_information->product_dimension_id', $dimensionId)
+            ->where('product_information->product_length_id', $lengthId)
             ->where('status', 2001)
             ->first();
 
         // If item doesn't exist in cart..
         if ($existingCartItem == null) {
+            // Initialize product information array.
+            $productInformation = array();
+
             // Create a new cart item.
             $newCartItem = new Cart;
-            $newCartItem->user_id = $user->user_id;
+            $newCartItem->user_id = $user->id;
             $newCartItem->product_id = $product->id;
 
             // Check if the post request has product color id in it..
             if ($color != null) {
                 // If yes, assign the color id and name
-                $newCartItem->product_color_id = $color->id;
-                $newCartItem->product_color = $color->color_name;
+                $productInformation['product_color_id'] = $color->id;
+                $productInformation['product_color_name'] = $color->color_name;
             }
             // Check if the post request has product dimension id in it..
             if ($dimension != null) {
                 // If yes, assign the dimension id and concate the width, height, depth and measurement unit.
-                $newCartItem->product_dimension_id = $dimension->id;
-                $newCartItem->product_dimension = $dimension->width . 'x' . $dimension->height . 'x' . $dimension->depth . 'x' . $dimension->measurement_unit;
+                $productInformation['product_dimension_id'] = $dimension->id;
+                $productInformation['product_dimension'] = $dimension->width . ' x ' . $dimension->height . ' x ' . $dimension->depth . ' x ' . $dimension->measurement_unit;
             }
             // Check if the post request has product length id in it..
             if ($length != null) {
                 // If yes, assign the length id and concate the length and measurement unit.
-                $newCartItem->product_length_id = $length->id;
-                $newCartItem->product_length = $length->length . ' ' . $length->measurement_unit;
+                $productInformation['product_length_id'] = $length->id;
+                $productInformation['product_length'] = $length->length . ' ' . $length->measurement_unit;
             }
 
+            $newCartItem->product_information = $productInformation;
             $newCartItem->quantity = $request->input('productQuantity');
             $newCartItem->unit_price = $product->price;
             $newCartItem->total_price = $product->price * $request->input('productQuantity');
-
-            // TODO: Check if shipping fee is needed.
-            $newCartItem->shipping_fee = 0;
             $newCartItem->save();
         } else {
             // If item exist in cart..

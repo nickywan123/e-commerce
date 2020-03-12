@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="text-right">
-                <form method="POST" action="/shop/order/checkout">
+                <form method="POST" action="/shop/cart/checkout">
                     @csrf
                     <?php
                     foreach ($cartItems as $cartItem) {

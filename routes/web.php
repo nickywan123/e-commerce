@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/', 'Auth\LoginController@showLoginForm');
 Route::get('/', function () {
     return view('Interface-login');
 });
@@ -70,13 +71,10 @@ Route::prefix('dashboard')->group(function () {
     });
 });
 
-
-
-
-// //return panel dashboard
-// Route::get('/dashboard/panel', function () {
-//     return view('panel.panel');
-// })->name('panel');
+//return panel dashboard
+Route::get('/dashboard/panel', function () {
+    return view('panel.panel');
+})->name('panel');
 
 // Shop Routes
 Route::prefix('shop')->group(function () {
@@ -145,31 +143,33 @@ Route::prefix('view')->group(function () {
     });
 });
 
-/**
- * Any routes that needs a user to be logged in with a verified account,
- * place under this group.
- */
-Route::group(['middleware' => ['auth', 'verified']], function () {
-    //
-});
-
 Route::get('/generate-po', function () {
+
+    // Get user.
     $user = App\Models\Users\User::find(1);
+    // Get the items in the cart of user.
     $cartItems = $user->cartItems;
 
-
+    // Initialize an empty array of PO Numbers
     $po_numbers = array(); // ['PO#1', 'PO#2', 'PO#3'];
 
+    // Create a new purchase record.
     $purchase = new App\Models\Purchases\Purchase;
+    // Assign user to the purchase record.
     $purchase->user_id = $user->user_id;
+    // Generate a unique number used to identify the purchase.
     $purchase->purchase_number = 'INV-' . Carbon\Carbon::now()->format('m') . '-' . mt_rand(11111, 99999);
+    // Assign a status to the purchase. Unpaid, paid.
     $purchase->purchase_status = 1;
+    // Assign the current date to the purchase in the form of DD/MM/YYYY.
     $purchase->purchase_date = Carbon\Carbon::now()->format('d/m/Y');
     $purchase->save();
 
     $price = 0;
     // Create order record.
+    // Foreach item in the cart..
     foreach ($cartItems as $cartItem) {
+        // Create a new PO Number for each different panel belonging to an item.
         if (!array_key_exists($cartItem->product->panel->user_id, $po_numbers)) {
             $po_numbers[$cartItem->product->panel->user_id] = 'PO#' . mt_rand(11111, 99999);
         }
@@ -186,37 +186,114 @@ Route::get('/generate-po', function () {
         // }
     }
 
+    // Initialize an empty variable to store panel's id.
     $panelId = null;
+    // Foreach PO Number..
     foreach ($po_numbers as $key => $po_number) {
+        // Create a new order record.
         $order = new App\Models\Purchases\Order;
+        // Assign PO Number to the order.
         $order->order_number = $po_number;
+        // Assign purchase id to the order
         $order->purchase_id = $purchase->id;
+        // Assign the panel id to the order record
         $order->panel_id = $key;
+        // Assign a status for the order. Placed, Shipped, Delivered.
         $order->order_status = 'Placed';
         $order->save();
 
         $panelId = $key;
 
+        // Foreach item in the cart..
         foreach ($cartItems as $cartItem) {
+            // If the cart item product's panel id matches with the current panel id..
             if ($cartItem->product->panel->user_id == $panelId) {
+                // Create a new item record.
                 $item = new App\Models\Purchases\Item;
+                // Assign an order number to the item
                 $item->order_number = $order->order_number;
+                // Assign a product id to the item
                 $item->product_id = $cartItem->product->id;
-                $item->product_information = 'Hello';
+                // Get the cart product's information. Color, dimension or length..
+                // Store it in an array, easier to access later and avoid creating another column just for an attribute of a product
+                $item->product_information = $cartItem->product_information;
                 // $item->product_information = array(
                 //     "product_color_id" => "1",
                 //     "product_dimension_id" => "null",
                 //     "product_length_id" => "null"
                 // );
+                // Assign item quantity.
                 $item->quantity = $cartItem->quantity;
+                // Assign subtotal price.
                 $item->subtotal_price = $cartItem->total_price;
+                // Assign status of the item. Placed, shipped, delivered.
                 $item->status_id = 1;
                 $item->save();
             }
         }
     }
-    var_dump($panelId);
     // Create invoice record.
 });
 
+// Authentication routes. Verification is set to true.
 Auth::routes(['verify' => true]);
+
+/**
+ * Any routes that needs a user to be logged in with a verified account,
+ * place under this group.
+ */
+Route::group(['middleware' => ['auth', 'verified']], function () {
+
+    // Management
+    Route::group(['prefix' => 'management', 'middleware' => ['role:dealer|panel|administrator']], function () {
+
+        // Dashboard
+        Route::get('/', 'Management\ManagementController@index')->name('management.home');
+
+        // Product Management
+        Route::group(
+            ['prefix' => 'product', 'middleware' => ['permission:view all products|create a product|edit a product']],
+            function () {
+
+                // List Product
+                Route::get('/', 'Management\ProductManagementController@index')->name('management.product');
+
+                // Create Product
+                Route::get(
+                    '/create',
+                    'Management\ProductManagementController@create'
+                )->name('management.product.create');
+
+                // Store Product
+                Route::post('/store', 'Management\ProductManagementController@store');
+
+                // Edit Product
+                Route::get('/edit/{id}', 'Management\ProductManagementController@edit');
+            }
+        );
+    });
+    // End Management
+
+    // Shop
+    Route::group(['prefix' => 'shop'], function () {
+        Route::group(['prefix' => 'cart'], function () {
+            Route::get('/', 'Shop\CartController@index');
+
+            // Checkout cart items.
+            Route::post('/checkout', 'Purchase\PurchaseController@checkoutItems');
+        });
+    });
+    // End Shop
+
+    // Web
+    Route::group(['prefix' => 'web'], function () {
+        Route::group(['prefix' => 'cart'], function () {
+            // Get user's cart items.
+            Route::get('/', 'WEB\Shop\CartController@index');
+
+            // Remove user's cart item.
+            Route::put('/remove/{id}', 'WEB\Shop\CartController@remove');
+        });
+    });
+    // End Web
+});
