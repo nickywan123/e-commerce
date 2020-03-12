@@ -94,6 +94,9 @@ class PurchaseController extends Controller
         }
 
         // Check if offline payment or payment gateway -> then redirect to related page.
+
+        // TODO: Temporary redirect to purchase tracking page.
+        return redirect('/shop/order');
     }
 
     /**

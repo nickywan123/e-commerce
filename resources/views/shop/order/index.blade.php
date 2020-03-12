@@ -2,42 +2,43 @@
 
 @section('content')
 <div class="mt-3">
-    <div class="container">
+    <div class="container" style="margin-top: 50px;">
+        <h3>Your Purchases</h3>
         <div class="card">
             <div class="card-body">
                 <table class="table table-striped table-hover">
                     <tr>
                         <th>No</th>
-                        <th>Order Number</th>
-                        <th>Store</th>
-                        <th>Product</th>
-                        <th>Product Information</th>
-                        <th>Quantity</th>
+                        <th>Invoice Number</th>
+                        <th>Items</th>
                         <th>Amount Paid</th>
-                        <th>Order Status</th>
                     </tr>
-                    @foreach($orders as $order)
+                    @foreach($purchases as $purchase)
                     <tr>
                         <td class="align-middle">{{ $loop->iteration }}</td>
-                        <td class="align-middle">{{ $order->order_id }}</td>
-                        <td class="align-middle">{{ $order->panel->userInfo->name }}</td>
-                        <td class="align-middle">{{ $order->product->name }}</td>
-                        <td class="align-middle text-capitalize">
-                            @if($order->product_information["product_color_id"] != null)
-                            Color: {{ $order->product_information["product_color_name"] }}
-                            <br>
-                            @endif
-                            @if($order->product_information["product_dimension_id"] != null)
-                            Dimension: {{ $order->product_information["product_dimension"] }}
-                            <br>
-                            @endif
-                            @if($order->product_information["product_length_id"] != null)
-                            Length: {{ $order->product_information["product_length"] }}
-                            @endif
+                        <td class="align-middle">{{ $purchase->purchase_number }}</td>
+                        <td class="align-middle">
+                            <ul>
+                                @foreach($purchase->orders as $order)
+                                @foreach($order->items as $item)
+                                <li>{{ $item->product->name }} x {{ $item->quantity }}</li>
+                                @endforeach
+                                @endforeach
+                            </ul>
                         </td>
-                        <td class="align-middle">{{ $order->product_quantity }} Pcs</td>
-                        <td class="align-middle">RM {{ $order->order_price }}</td>
-                        <td class="align-middle"> {{ $order->status->name }}</td>
+                        <td class="align-middle">
+                            <?php
+                            $subtotal = 0;
+                            ?>
+                            @foreach($purchase->orders as $order)
+                            @foreach($order->items as $item)
+                            <?php
+                            $subtotal = $subtotal + $item->subtotal_price;
+                            ?>
+                            @endforeach
+                            @endforeach
+                            <?php echo 'RM ' . $subtotal; ?>
+                        </td>
                     </tr>
                     @endforeach
                 </table>

@@ -20,7 +20,7 @@
 
 .topBar {
     background-color: #ffffff;
-    border-bottom: 1px solid #fbcc34;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     font-size: 13px;
 }
 
@@ -196,7 +196,6 @@
     padding: 10px 0 0 0;
     margin: 0;
     min-height: 70px;
-    background-color: black;
 }
 
 @media (min-width: 767px) {
@@ -220,7 +219,7 @@
 @media (max-width: 767px) {
 
     div[class^="col-"] {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 }
 
@@ -410,9 +409,8 @@
 }
 
 .navigation-icon {
-    font-size: 2.3rem;
-    margin-left: 100px;
-    color: #fbcc34;
+    font-size: 1.8rem;
+    margin-left: 30px;
 }
 
 .form-control {
@@ -422,7 +420,6 @@
 
 .btn {
     vertical-align: inherit;
-
 }
 
 .w-65 {
@@ -439,9 +436,8 @@
 
 .bottom-bar {
     padding: 10px 0 0 0;
-    margin: -40px;
+    margin: 0;
     min-height: 50px;
-    background-color: black;
 }
 
 @media (max-width: 576px) {
@@ -458,17 +454,13 @@
     }
 
     .navigation-logo {
-        width: 100px;
+        max-height: 56px;
+        width: auto;
     }
 
     .justify-content-center-sm {
         -ms-flex-pack: center !important;
         justify-content: center !important;
-        margin-top: 20px;
-    }
-
-    .navigation-icon {
-        margin-left: 30px;
     }
 }
 
@@ -494,34 +486,13 @@
     }
 
     .navigation-logo {
-        max-height: 100px;
-        width: 150px;
-        margin-top: 22px;
+        max-height: 72px;
+        width: auto;
     }
 
     .justify-content-end-md {
         -ms-flex-pack: end !important;
         justify-content: end !important;
     }
-}
 
-/* Author - Aqram */
-.grad1 {
-    background-image: linear-gradient(#ffe7a3, #ffca05, #faac18);
-    border-image-slice: 1;
-    padding: 4px 15px;
-    border-radius: 12px;
-}
-
-.colorlink-gold {
-    color: #fbcc34;
-}
-
-/*navigation*/
-.nav {
-    margin-bottom: 40px;
-}
-
-select:after {
-    color: yellow;
 }
