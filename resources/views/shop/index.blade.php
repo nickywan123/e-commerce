@@ -1,32 +1,142 @@
 @extends('layouts.shop.main')
 
 @section('content')
-<div class="container pl-0 pr-0" style="margin-top:50px;">
-    <div>
-        <img class="w-100" src="https://ww8.ikea.com/seaapp3/banners/carousel/wk7/my/en/LaunchThreeHomePage_carousel.jpg" style="height: 600px; width: 1920px;" alt="">
+<div class="container">
+    <div class="row">
+    <div class="col-8">
+        <div class="row">
+        <div class="col-6">
+            <img
+            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
+            class="img-fluid custom-position-1"
+            alt=""
+            />
+        </div>
+        <div class="col-6">
+            <img
+            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
+            class="img-fluid custom-position-2"
+            alt=""
+            />
+        </div>
+        <div class="col-12">
+            <img
+            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
+            class="img-fluid custom-position-3"
+            alt=""
+            />
+        </div>
+        </div>
     </div>
-    <div class="pt-1">
-        @foreach ($categories as $category)
-        <div class="heading-part">
-            <h1 class="main-title">{{ $category->name }}</h1>
+    <div class="col-4 d-flex">
+        <div class="d-flex flex-column">
+        <div class="flex-grow-1">
+            <img
+            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
+            class=" img-fluid custom-position-4"
+            alt=""
+            />
         </div>
-        <div class="row pt-3">
-            @foreach($category->subcategories as $childCategory)
-            <div class="col-lg-2 col-6">
-                <a href="/shop/category/{{ $childCategory->parentCategory->slug }}/{{ $childCategory->slug }}">
-                    <img src="{{ asset('assets/images/category-icons/'.$childCategory->image->url) }}" alt="{{ $childCategory->name }}" class="w-100 rounded">
-                    <p class="text-center pt-1 text-capitalize" style="font-size: 1.2rem;">{{ $childCategory->name }}</p>
-                </a>
-            </div>
-            @endforeach
+        <div class="flex-grow-1">
+            <img
+            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
+            class="img-fluid custom-position-5"
+            alt=""
+            />
         </div>
-        @endforeach
+        </div>
+    </div>
     </div>
 </div>
 @endsection
 
 @push('style')
 <style>
+
+
+.row {
+  margin-bottom: 30px;
+}
+
+img {
+    width: 100%;
+}
+[class*="col-"], .flex-grow-1 {
+    border: 1px solid black;
+}
+
+
+.custom-position-1{
+ position: relative;
+ bottom: -160px;
+ left: 50px;
+ height:100px;
+ object-fit: cover;
+}
+
+
+.custom-position-2{
+ position:relative;
+ right:100px;
+ object-fit:cover;
+}
+
+
+.custom-position-3{
+ position: relative;
+ bottom: -160px;
+ left: 50px;
+ height:100px;
+ object-fit: cover;
+}
+
+.custom-position-4{
+ position: relative;
+ height: 400px;
+ width:800px;
+ object-fit: cover;
+}
+
+
+
+
+.custom-position-5{
+
+    position: relative;
+    height:300px;
+ left:50px;
+ top: 100px;
+ object-fit: cover;
+}
+
+
+
+
+    body{
+
+        background-color: black;
+    }
+
+   /* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.container {
+  position: relative;
+ 
+}
+
+img{
+    width:100%;
+    border-radius: 20px;
+}
+
     .heading-part {
         border-bottom: 3px solid #e5e5e5;
         display: inline-block;
@@ -61,5 +171,7 @@
         //         alert('status: ' + textStatus + ', data:' + data.name);
         //     });
     });
+
+  
 </script>
 @endpush
