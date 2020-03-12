@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Interface-login');
 });
 
 
@@ -32,7 +32,7 @@ Route::get('/dashboard/dealer', 'Dealer\DashboardController@dashboard')->name('d
 
 
 
-Route::get('/', 'User\CustomerInfo@viewUser');
+// Route::get('/', 'User\CustomerInfo@viewUser');
 
 // return registration form for dealer
 Route::get('/registrations/dealer', function () {
