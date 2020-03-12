@@ -16,7 +16,7 @@ use App\Models\Users\Cart;
 class PurchaseController extends Controller
 {
     /**
-     * Handle what happens after user clicked checkout
+     * Handle what happens after user clicks checkout
      */
     public function checkoutItems(Request $request)
     {
@@ -92,13 +92,23 @@ class PurchaseController extends Controller
                 }
             }
         }
+
+        // Check if offline payment or payment gateway -> then redirect to related page.
+    }
+
+    /**
+     * Payment Gateway payment method.
+     */
+    public function paymentGatewayRequest(Request $request)
+    {
+        //
     }
 
     /**
      * Payment Gateway response.
      */
-
-    /**
-     * Offline Payment
-     */
+    public function paymentGatewayResponse(Request $request)
+    {
+        //
+    }
 }
