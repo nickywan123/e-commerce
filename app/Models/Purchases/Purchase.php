@@ -17,4 +17,20 @@ class Purchase extends Model
 
     // Set mass assignable columns
     protected $fillable = [];
+
+    /**
+     * Get all the orders belonging to the purchase.
+     */
+    public function orders()
+    {
+        return $this->hasMany('App\Models\Purchases\Order', 'purchase_id');
+    }
+
+    /**
+     * Get user of the purchase.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Models\Users\User', 'user_id');
+    }
 }

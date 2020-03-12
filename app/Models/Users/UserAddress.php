@@ -21,11 +21,9 @@ class UserAddress extends Model
         'address_1',
         'address_2',
         'address_3',
-        'zipcode',
+        'postcode',
         'state',
-        'shipping_address'
-
-
+        'is_shipping_address'
     ];
 
     /**
@@ -34,7 +32,9 @@ class UserAddress extends Model
 
     public function user()
     {
-
         return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
+
+    // Eloquent Scope
+
 }

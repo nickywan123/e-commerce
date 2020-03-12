@@ -5,6 +5,8 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+use Spatie\Permission\Exceptions\UnauthorizedException;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -46,6 +48,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
+            return abort(403, 'You do not have the right permission to access this page.');
+        }
         return parent::render($request, $exception);
     }
 }

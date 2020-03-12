@@ -31,6 +31,14 @@ class Category extends Model
     }
 
     /**
+     * Get top level category.
+     */
+    public function scopeTopLevelCategory($query)
+    {
+        return $query->where('parent_category_id', null)->get();
+    }
+
+    /**
      * Get the category's parent if any.
      */
     public function parentCategory()

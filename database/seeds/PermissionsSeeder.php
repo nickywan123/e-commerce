@@ -16,19 +16,56 @@ class PermissionsSeeder extends Seeder
     public function run()
     {
 
-        // create permissions
-        Permission::create(['name' => 'view shop']);
-        Permission::create(['name' => 'view dealer']);
-        Permission::create(['name' => 'view panel']);
+        // Permissions
+        Permission::create([
+            'name' => 'create product'
+        ]);
 
-        // create roles and assign existing permissions
-        $role1 = Role::create(['name' => 'customer']);
-        $role1->givePermissionTo('view shop');
+        Permission::create([
+            'name' => 'edit product'
+        ]);
 
-        $role2 = Role::create(['name' => 'dealer']);
-        $role2->givePermissionTo('view dealer');
+        // Permission::create([
+        //     'name' => ''
+        // ]);
 
-        $role3 = Role::create(['name' => 'panel']);
-        $role3->givePermissionTo('view panel');
+        // Permission::create([
+        //     'name' => ''
+        // ]);
+
+        // Permission::create([
+        //     'name' => ''
+        // ]);
+
+        // Permission::create([
+        //     'name' => ''
+        // ]);
+
+        // Permission::create([
+        //     'name' => ''
+        // ]);
+
+        // Permission::create([
+        //     'name' => ''
+        // ]);
+
+        $customer = Role::create([
+            'name' => 'customer'
+        ]);
+
+        $dealer = Role::create([
+            'name' => 'dealer'
+        ]);
+
+        $panel = Role::create([
+            'name' => 'panel'
+        ]);
+
+        $panel->givePermissionTo('create product');
+        $panel->givePermissionTo('edit product');
+
+        $administrator = Role::create([
+            'name' => 'administrator'
+        ]);
     }
 }

@@ -29,7 +29,7 @@ class ShopController extends Controller
             // Check if user is authenticated or not.
             if (Auth::check()) {
                 // If authenticated, then get their cart.
-                $this->cart = Auth::user()->cartItems->where('status', 2001);
+                $this->cart = Auth::user()->carts->where('status', 2001);
             }
             // Get all categories, with subcategories and its images.
             $categories = Category::with('image')->with('subcategories.image')->get();

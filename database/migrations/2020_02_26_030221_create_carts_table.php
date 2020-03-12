@@ -17,17 +17,11 @@ class CreateCartsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->bigInteger('product_id');
-            $table->bigInteger('product_color_id')->nullable();
-            $table->string('product_color')->nullable();
-            $table->bigInteger('product_dimension_id')->nullable();
-            $table->string('product_dimension')->nullable();
-            $table->bigInteger('product_length_id')->nullable();
-            $table->string('product_length')->nullable();
+            $table->text('product_information');
             $table->integer('quantity');
             $table->unsignedBigInteger('unit_price');
             $table->unsignedBigInteger('total_price');
-            $table->unsignedBigInteger('shipping_fee');
-            $table->integer('status')->default(2001);
+            $table->integer('status')->default(2001); // Active
             $table->timestamps();
         });
     }
