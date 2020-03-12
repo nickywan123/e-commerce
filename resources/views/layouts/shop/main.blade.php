@@ -569,6 +569,10 @@
             background-color: #ffffff !important;
             color: #35404f !important;
         }
+
+        .responsive-img {
+            max-width: 100%;
+        }
     </style>
 </head>
 

@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <!-- Breadcrumb here -->
-    <div class="container">
+    <div class="container" style="margin-top: 40px;">
         <h1 class="mt-2 pl-0 pr-0" style="font-size: 2.3rem; color: #000;">Your Shopping Cart</h1>
         <hr>
         <div class="row" id="cart-container">
