@@ -58101,6 +58101,7 @@ body {
 .navigation-icon {
   font-size: 1.8rem;
   margin-left: 30px;
+  color: #FBCC34;
 }
 
 .form-control {
@@ -58197,6 +58198,7 @@ body {
 
 #search-button {
   height: 38px;
+  background-color: white;
 }
 
 .border-rounded-0 {
@@ -58222,6 +58224,19 @@ body {
   border-right: 10px solid #FBCC34;
 }
 
+/*
+Author: Nicholas
+*/
+
+.nav-link {
+  color: #FBCC34;
+}
+
+.btn-register {
+  color: black;
+  background-color: #FBCC34;
+}
+
 #sidebar {
   width: 250px;
   position: fixed;
@@ -58229,7 +58244,7 @@ body {
   left: -250px;
   height: 100vh;
   z-index: 999;
-  background: #7386D5;
+  background: #FBCC34;
   color: #fff;
   transition: all 0.3s;
   overflow-y: scroll;
@@ -58281,7 +58296,6 @@ body {
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
@@ -58303,7 +58317,7 @@ body {
 #sidebar ul li.active > a,
 a[aria-expanded=true] {
   color: #fff;
-  background: #6d7fcc;
+  background: #FBCC34;
 }
 
 a[data-toggle=collapse] {
@@ -58321,7 +58335,7 @@ a[data-toggle=collapse] {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #6d7fcc;
+  background: #FBCC34;
 }
 
 ul.CTAs {

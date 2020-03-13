@@ -18,6 +18,7 @@
     width: 250px;
 }
 
+
 .topBar {
     background-color: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -397,6 +398,8 @@
     padding: 20px;
 }
 
+
+
 /* Author - Wan Shahruddin */
 .container-90 {
     max-width: 95%;
@@ -406,6 +409,8 @@
 .navigation-icon {
     font-size: 1.8rem;
     margin-left: 30px;
+    color: #FBCC34;
+
 }
 
 .form-control {
@@ -504,6 +509,7 @@
 
 #search-button {
     height: 38px;
+    background-color: white;
 }
 
 .border-rounded-0 {
@@ -527,4 +533,19 @@
 .margin-right-negative-with-border {
     margin-right: -4px;
     border-right: 10px solid #FBCC34;
+}
+
+/*
+Author: Nicholas
+*/
+
+.nav-link{
+
+    color:#FBCC34;
+}
+
+.btn-register{
+
+color: black;
+    background-color:#FBCC34;
 }

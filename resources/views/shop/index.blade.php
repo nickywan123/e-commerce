@@ -60,8 +60,8 @@
   display: grid;
   grid-template-columns: 3fr 2fr 3fr;
   grid-template-rows: repeat(8, 1fr);
-  padding: 1em;
-  grid-gap: 0.5em;
+  padding: 5em;
+  grid-gap: 2.5em;
   background-color: black;
   width: 2000px;
   height: 900px;

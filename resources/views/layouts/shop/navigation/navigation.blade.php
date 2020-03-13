@@ -34,7 +34,7 @@
                                     </optgroup>
                                 </select>
                                 <input type="text" name="keyword" class="form-control input-lg w-65-md w-85-sm margin-right-negative-with-border border-rounded-0-md border-left-rounded-10-sm" placeholder="Search">
-                                <button id="search-button" class="btn btn-primary border-right-rounded-10"><i class="fa fa-search"></i></button>
+                                <button id="search-button" class="btn  border-right-rounded-10"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
                     </div>
@@ -49,10 +49,10 @@
                         <a class="nav-link" href="">Register</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a href="" class="nav-link btn btn-primary">Panel</a>
+                        <a href="" class="nav-link btn  btn-register">Panel</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a href="" class="nav-link btn btn-secondary">Dealer</a>
+                        <a href="" class="nav-link btn  btn-register">Dealer</a>
                     </li>
                 </ul>
             </div>
@@ -68,7 +68,7 @@
             <div class="col-sm-12 justify-content-end-md justify-content-center-sm mb-1">
                 <ul class="nav justify-content-center-sm justify-content-end-md float-right-md">
                     <li class="nav-item m-1">
-                        <a class="nav-link" href=""><i class="fa fa-heart font-15 mr-1"></i> My Wishlist</a>
+                        <a class="nav-link" href=""><i class="fa fa-heart-o font-15 mr-1"></i> My Wishlist</a>
                     </li>
                     <li class="nav-item m-1">
                         <a class="nav-link" href=""><i class="fa fa-shopping-cart font-15 mr-1"></i> My Cart</a>

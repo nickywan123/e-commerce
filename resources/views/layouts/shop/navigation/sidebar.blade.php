@@ -6,24 +6,27 @@
     <div class="sidebar-header">
         <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
     </div>
-
+     
     <ul class="list-unstyled components">
-        <p>Shop By Category</p>
+        <p style="color:black"><strong>Shop By Category</strong></p>
         <li class="active">
-            <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul> -->
+            <a href="#homeSubmenu">Bedsheet & Mattress</a>
+            <a href="#">Cupboard</a>
+            <a href="#pageSubmenu"  >Tables & Chairs</a>
+            <a href="#">Carpet</a>
+            <a href="#">Tiles</a>
+            <a href="#">Lighting</a>
+            <a href="#">Wall Papers</a>
+            <a href="#">Roof</a>
+            <a href="#">Doors</a>
+            <a href="#">Window</a>
+            <a href="#">Auxillary Propesrity Items</a>
+            <a href="#">Product & Services</a>
+            
+        </li>
 
-            <nav id="mysidebarmenu" class="amazonmenu">
+         <!-- For future use of navigation bar expand -->
+            {{-- <nav id="mysidebarmenu" class="amazonmenu">
                 <ul>
                     <li><a href="#">Item 1</a></li>
                     <li><a href="#">Folder 0</a>
@@ -38,7 +41,8 @@
                         </div>
                     </li>
                 </ul>
-            </nav>
+            </nav> --}}
         </li>
     </ul>
+
 </nav>
