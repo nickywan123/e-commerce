@@ -4,13 +4,13 @@
             <div class="col-sm-2 vertical-align hidden-xs">
                 <div class="row">
                     <div class="col-6 my-auto text-left p-1">
-                        <a href="javascript:void(0);">
+                        <button type="button" id="sidebarCollapse" class="btn">
                             <i class="fa fa-bars navigation-icon"></i>
-                        </a>
+                        </button>
                     </div>
                     <div class="col-6 text-right my-auto">
                         <a href="javascript:void(0);">
-                            <img class="navigation-logo" style="margin-right: 30px;" src="http://demo3.bujishu.com/storage/logo/bujishu.png" alt="">
+                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
                         </a>
                     </div>
                 </div>
@@ -21,41 +21,26 @@
                 <form>
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto">
-                            <select class="form-control input-lg w-25 hidden-sm" name="category">
-                                <option value="all">All Categories</option>
-                                <optgroup label="Mens">
-                                    <option value="shirts">Shirts</option>
-                                    <option value="coats-jackets">Coats & Jackets</option>
-                                    <option value="underwear">Underwear</option>
-                                    <option value="sunglasses">Sunglasses</option>
-                                    <option value="socks">Socks</option>
-                                    <option value="belts">Belts</option>
-                                </optgroup>
-                            </select>
-                            <input type="text" name="keyword" class="form-control input-lg w-65-md w-85-sm" placeholder="Search">
-                            <button class="btn btn-primary"><i class="fa fa-search"></i></button>
-                        </div>
-                        <!-- <div class="col-6">
-                                <input type="text" name="keyword" class="form-control input-lg" placeholder="Search">
+                            <div>
+                                <select class="form-control input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border" name="category">
+                                    <option value="all">All Categories</option>
+                                    <optgroup label="Mens">
+                                        <option value="shirts">Shirts</option>
+                                        <option value="coats-jackets">Coats & Jackets</option>
+                                        <option value="underwear">Underwear</option>
+                                        <option value="sunglasses">Sunglasses</option>
+                                        <option value="socks">Socks</option>
+                                        <option value="belts">Belts</option>
+                                    </optgroup>
+                                </select>
+                                <input type="text" name="keyword" class="form-control input-lg w-65-md w-85-sm margin-right-negative-with-border border-rounded-0-md border-left-rounded-10-sm" placeholder="Search">
+                                <button id="search-button" class="btn btn-primary border-right-rounded-10"><i class="fa fa-search"></i></button>
                             </div>
-                            <div class="col-3 text-left">
-                                <button class="btn btn-primary"><i class="fa fa-search"></i></button> 
-                            </div> -->
-                        <!-- end col -->
+                        </div>
                     </div>
-                    <!-- end row -->
                 </form>
             </div>
-            <!-- end col -->
-            <div class="col-sm-4 vertical-align hidden-xs my-auto">
-                <!-- <div class="header-item mr-5">
-                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title=""
-                            data-original-title="Wishlist"> <i class="fa fa-heart-o"></i> <sub>32</sub> </a>
-                    </div>
-                    <div class="header-item">
-                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title=""
-                            data-original-title="Compare"> <i class="fa fa-refresh"></i> <sub>2</sub> </a>
-                    </div> -->
+            <div class="col-sm-4 vertical-align hidden-sm my-auto">
                 <ul class="nav justify-content-center-sm float-md-right">
                     <li class="nav-item m-1">
                         <a class="nav-link" href="">Login</a>
@@ -79,9 +64,9 @@
 
 <div class="bottom-bar shadow-sm">
     <div class="container-90">
-        <div class="row display-table">
-            <div class="col-sm-12 justify-content-end-md justify-content-center-sm">
-                <ul class="nav justify-content-center-sm justify-content-end-md">
+        <div class="row">
+            <div class="col-sm-12 justify-content-end-md justify-content-center-sm mb-1">
+                <ul class="nav justify-content-center-sm justify-content-end-md float-right-md">
                     <li class="nav-item m-1">
                         <a class="nav-link" href=""><i class="fa fa-heart font-15 mr-1"></i> My Wishlist</a>
                     </li>

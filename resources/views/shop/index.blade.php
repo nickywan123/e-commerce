@@ -1,7 +1,7 @@
 @extends('layouts.shop.main')
 
 @section('content')
-<div class="container pl-0 pr-0" style="margin-top:50px;">
+<div class="container pl-0 pr-0">
     <div>
         <img class="w-100" src="https://ww8.ikea.com/seaapp3/banners/carousel/wk7/my/en/LaunchThreeHomePage_carousel.jpg" style="height: 600px; width: 1920px;" alt="">
     </div>

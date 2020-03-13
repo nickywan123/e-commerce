@@ -19,60 +19,67 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <!-- Expanded Side Menu -->
+    <link rel="stylesheet" href="{{ asset('assets/css/expandedsidemenu/expandedsidemenu.css') }}">
+    <!-- Custom Scrollbar CDN -->
+    <!-- TODO: Import using mix. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     @stack('style')
+
+    <script>
+        jQuery(function() {
+            expandedsidemenu.init({
+                menuid: 'mysidebarmenu'
+            })
+        })
+    </script>
 </head>
 
 <body>
 
     <!-- Navigation bar -->
-    @include('shopv2.layouts.navigation.navigationshop')
+    @include('layouts.shop.navigation.navigation')
 
+    <!-- Side bar -->
+    @include('layouts.shop.navigation.sidebar')
 
     <main>
         @yield('content')
     </main>
 
     <!-- Footer -->
-    @include('shopv2.layouts.footer.footer')
+    @include('layouts.shop.footer.footer')
 
-    @stack('script')
-
-    <script>
+    <!-- Custom Scrollbar CDN -->
+    <!-- TODO: Import using mix. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{{ asset('assets/js/expandedsidemenu/expandedsidemenu.js') }}"></script>
+    <script type="text/javascript">
         $(document).ready(function() {
-            $('.navbar-light .dmenu').hover(function() {
-                $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
-            }, function() {
-                $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
-            });
-        });
-        $(document).ready(function() {
-            $('.leftmenutrigger').on('click', function(e) {
-                $('.side-nav').toggleClass("open");
-                e.preventDefault();
-            });
-        });
-        $(document).ready(function() {
-
-            $(".dropdown-submenu").click(function(event) {
-                // stop bootstrap.js to hide the parents
-                event.stopPropagation();
-                // hide the open children
-                $(this).find(".dropdown-submenu").removeClass('open');
-                // add 'open' class to all parents with class 'dropdown-submenu'
-                $(this).parents(".dropdown-submenu").addClass('open');
-                // this is also open (or was)
-                $(this).toggleClass('open');
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
             });
 
-        });
-        $(document).ready(function() {
-            $('#side-menu-trigger').click(function() {
-                console.log('button clicked.');
-                $('.sidemenu').css('left', '0');
+            $('#dismiss, .overlay').on('click', function() {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+
+            $(function() {
+                expandedsidemenu.init({
+                    menuid: 'mysidebarmenu'
+                });
             });
         });
     </script>
+    @stack('script')
 </body>
 
 </html>
