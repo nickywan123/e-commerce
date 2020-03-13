@@ -33,7 +33,7 @@ class OrderController extends Controller
             // Check if user is authenticated or not.
             if (Auth::check()) {
                 // If authenticated, then get their cart.
-                $this->cart = Auth::user()->cartItems->where('status', 2001);
+                $this->cart = Auth::user()->carts->where('status', 2001);
             }
             // Get all categories, with subcategories and its images.
             $categories = Category::with('image')->with('subcategories.image')->get();
@@ -54,10 +54,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $user = User::find(Auth::user()->user_id);
-        $orders = $user->orders;
-
-        return view('shop.order.index')->with('orders', $orders);
+        $user = User::find(Auth::user()->id);
+        $purchases = $user->purchases;
+        // return $purchases;
+        return view('shop.order.index')->with('purchases', $purchases);
     }
 
     /**

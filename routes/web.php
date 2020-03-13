@@ -295,3 +295,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
     // End Web
 });
+
+Route::get('/test-shop-navigation', function () {
+    return view('layouts.shop.main');
+});
