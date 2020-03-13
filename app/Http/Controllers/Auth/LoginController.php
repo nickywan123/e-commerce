@@ -25,19 +25,19 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
     public function showLoginForm()
     {
-        // Check if user is authenticated or not.
-        if (Auth::check()) {
-            // If authenticated, then get their cart.
-            $cart = Auth::user()->cartItems->where('status', 2001);
-        } else {
-            $cart = null;
-        }
-        // Get all categories, with subcategories and its images.
-        $categories = Category::with('image')->with('subcategories.image')->get();
-
-        return view('auth.login')->with('cart', $cart)->with('categories', $categories);
+        return view('auth.login');
     }
 
     /**
@@ -48,45 +48,11 @@ class LoginController extends Controller
 
 
     protected $redirectTo = '/shop';
-    // protected $redirectTo;
-
-    // public function redirectTo()
-    // {
-
-    //     switch (Auth::user()->role) {
-    //         case 1:
-    //             $this->redirectTo = '/shop';
-    //             return $this->redirectTo;
-    //             break;
-
-    //         case 2:
-    //             $this->redirectTo = '/dashboard/dealer';
-    //             return $this->redirectTo;
-    //             break;
-    //         case 3:
-    //             $this->redirectTo = '/dashboard/panel';
-    //             return $this->redirectTo;
-    //             break;
-    //         default:
-    //             $this->redirectTo = '/home';
-    //             return $this->redirectTo;
-    //     }
-    // }
 
     public function logout(Request $request)
     {
         $this->guard()->logout();
         $request->session()->invalidate();
         return $this->loggedOut($request) ?: redirect('/login');
-    }
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
     }
 }

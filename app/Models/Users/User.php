@@ -55,7 +55,6 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->morphOne('App\Models\Globals\Image', 'imageable');
     }
 
-
     /**
      * Get the user info associated with the user.
      * each user has one user info

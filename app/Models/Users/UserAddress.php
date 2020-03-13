@@ -23,7 +23,9 @@ class UserAddress extends Model
         'address_3',
         'postcode',
         'state',
-        'is_shipping_address'
+        'is_shipping_address',
+        'is_residential_address',
+        'is_correspondence_address'
     ];
 
     /**

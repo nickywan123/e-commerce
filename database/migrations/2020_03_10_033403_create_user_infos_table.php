@@ -17,11 +17,12 @@ class CreateUserInfosTable extends Migration
             $table->integer('user_id');
             $table->string('full_name');
             $table->string('nric');
-            $table->integer('ethnicity')->nullable();
+            $table->integer('race')->nullable();
             $table->integer('gender')->nullable();
             $table->string('date_of_birth')->nullable();
-            $table->string('occupation')->nullable();
-            $table->integer('dealer_id')->nullable();
+            $table->integer('marital_status_id');
+            $table->unsignedBigInteger('dealer_id')->nullable();
+            $table->unsignedBigInteger('referrer_id')->nullable();
             $table->timestamps();
         });
     }

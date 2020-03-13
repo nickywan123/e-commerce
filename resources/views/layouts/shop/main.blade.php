@@ -47,9 +47,6 @@
         @yield('content')
     </main>
 
-    <!-- Footer -->
-    @include('layouts.shop.footer.footer')
-
     <!-- Custom Scrollbar CDN -->
     <!-- TODO: Import using mix. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>

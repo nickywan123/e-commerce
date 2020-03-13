@@ -294,6 +294,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // End Web
 });
 
-Route::get('/test-shop-navigation', function () {
-    return view('layouts.shop.main');
+Route::get('/register-dealer', 'Auth\RegisterController@showDealerRegistrationForm');
+Route::get('/register-panel', 'Auth\RegisterController@showPanelRegistrationForm');
+
+Route::get('test-login-page', function () {
+    return view('backups.Interface-login');
 });

@@ -44,6 +44,30 @@ class RegisterController extends Controller
     }
 
     /**
+     * Return customer registration form.
+     */
+    public function showRegistrationForm()
+    {
+        return view('auth.register.customer');
+    }
+
+    /**
+     * Return dealer registration form.
+     */
+    public function showDealerRegistrationForm()
+    {
+        return view('auth.register.dealer');
+    }
+
+    /**
+     * Return panel registration form.
+     */
+    public function showPanelRegistrationForm()
+    {
+        return view('auth.register.panel');
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -51,6 +75,13 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        if ($data['registrationFor'] == 'customer') {
+            // Validation for customer registration.
+        } elseif ($data['registrationFor'] == 'dealer') {
+            // Validation for dealer registration.
+        } elseif ($data['registrationFor'] == 'panel') {
+            // Validation for panel registration.
+        }
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -67,8 +98,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data) // Request $request
     {
-        /* Validate customer registration form */
+        if ($data['registrationFor'] == 'customer') {
+            // Register customer.
+        } elseif ($data['registrationFor'] == 'dealer') {
+            // Register dealer.
+        } elseif ($data['registrationFor'] == 'panel') {
+            // Register panel.
+        }
 
+        // Validate customer registration form
         if ($data['RegistrationForm'] == 1) {
             $user = User::create([
                 // Users table
@@ -90,12 +128,9 @@ class RegisterController extends Controller
                 'address_3' => $data['homeaddress3'],
                 'zipcode' => $data['postcode'],
                 'shipping_address' => $data['shippingaddress']
-
-
             ]);
 
             $user->userContacts()->create([
-
                 'mobile_num' => $data['number'],
                 'emergency_num' => $data['emergency']
 
@@ -108,34 +143,28 @@ class RegisterController extends Controller
             $user->assignRole('1');
         }
 
-        /* Validate dealer registration form */
+        // Dealer Registration
         if ($data['RegistrationForm'] == 2) {
-
             $user = User::create([
-                // Users table
-
+                'account_id' => User::largestDealerId() + 1,
                 'email' => $data['email'],
                 'password' => Hash::make($data['password'])
             ]);
 
             $user->userInfo()->create([
-                'name' => $data['name'],
-                'NRIC' => $data['nric'], // Create NRIC field.
-                'occupation' => $data['occupation'],
+                'full_name' => $data['name'],
+                'nric' => $data['nric'],
+                'ethnicity' => $data['ethnicity'],
                 'gender' => $data['gender'],
-                'ethnicity' => $data['race'],
-                'date_of_birth' => $data['dob']
-
+                'date_of_birth' => $data['date_of_birth'],
+                'occupation' => $data['occupation']
             ]);
 
             $user->userAddresses()->create([
                 'address_1' => $data['homeaddress1'],
                 'address_2' => $data['homeaddress2'],
                 'address_3' => $data['homeaddress3'],
-                'zipcode' => $data['postcode'],
-
-
-
+                'postcode' => $data['postcode']
             ]);
 
             $user->userContacts()->create([

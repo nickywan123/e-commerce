@@ -24,7 +24,7 @@
                 </ul>
             </li>
 
-            <li class="nav-title">Theme</li>
+            <!-- <li class="nav-title">Theme</li>
             <li class="nav-item">
                 <a class="nav-link" href="colors.html">
                     <i class="nav-icon icon-drop"></i> Colors</a>
@@ -195,7 +195,7 @@
                             <i class="nav-icon icon-star"></i> Error 500</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
         </ul>
     </nav>
     <button class="sidebar-minimizer brand-minimizer" type="button"></button>

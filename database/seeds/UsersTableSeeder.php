@@ -24,10 +24,12 @@ class UsersTableSeeder extends Seeder
         $customer1->userInfo()->create([
             'full_name' => 'Customer Number 1',
             'nric' => '123456789123',
-            'ethnicity' => 1,
+            'race' => 1,
             'gender' => 1,
             'date_of_birth' => '56/34/12',
-            'dealer_id' => 3
+            'marital_status_id' => 1,
+            'dealer_id' => 3,
+            'referrer_id' => 1
         ]);
 
         $customer1->userAddresses()->createMany([
@@ -36,6 +38,7 @@ class UsersTableSeeder extends Seeder
                 'address_2' => 'Address line 2',
                 'address_3' => 'Address line 3',
                 'postcode' => '42000',
+                'city' => 'Kuala Lumpur',
                 'state' => 1,
                 'is_shipping_address' => 1
             ],
@@ -44,19 +47,19 @@ class UsersTableSeeder extends Seeder
                 'address_2' => 'Address line 2',
                 'address_3' => 'Address line 3',
                 'postcode' => '68000',
+                'city' => 'Kuala Lumpur',
                 'state' => 2,
-                'is_shipping_address' => 0
             ]
         ]);
 
         $customer1->userContacts()->createMany([
             [
                 'contact_num' => '0194039056',
-                'is_emergency' => 0
+                'is_home' => 1
             ],
             [
                 'contact_num' => '0191233333',
-                'is_emergency' => 1
+                'is_mobile' => 1
             ]
         ]);
 
@@ -73,10 +76,12 @@ class UsersTableSeeder extends Seeder
         $customer2->userInfo()->create([
             'full_name' => 'Customer Number 2',
             'nric' => '123456789123',
-            'ethnicity' => 1,
+            'race' => 1,
             'gender' => 1,
             'date_of_birth' => '56/34/12',
-            'dealer_id' => 4
+            'marital_status_id' => 1,
+            'dealer_id' => 3,
+            'referrer_id' => 1
         ]);
 
         $customer2->userAddresses()->create([
@@ -84,6 +89,7 @@ class UsersTableSeeder extends Seeder
             'address_2' => 'Address line 2',
             'address_3' => 'Address line 3',
             'postcode' => '42000',
+            'city' => 'Kuala Lumpur',
             'state' => 1,
             'is_shipping_address' => 1
         ]);
@@ -91,11 +97,10 @@ class UsersTableSeeder extends Seeder
         $customer2->userContacts()->createMany([
             [
                 'contact_num' => '0194039056',
-                'is_emergency' => 0
+                'is_home' => 1
             ],
             [
                 'contact_num' => '0191233333',
-                'is_emergency' => 1
             ]
         ]);
 
@@ -109,10 +114,12 @@ class UsersTableSeeder extends Seeder
         $dealer1->userInfo()->create([
             'full_name' => 'Dealer Number 1',
             'nric' => '123456789123',
-            'ethnicity' => 1,
+            'race' => 1,
             'gender' => 1,
             'date_of_birth' => '56/34/12',
-            'occupation' => 'businessman'
+            'marital_status_id' => 1,
+            'dealer_id' => 3,
+            'referrer_id' => 1
         ]);
 
         $dealer1->userAddresses()->create([
@@ -120,6 +127,7 @@ class UsersTableSeeder extends Seeder
             'address_2' => 'Address line 2',
             'address_3' => 'Address line 3',
             'postcode' => '42000',
+            'city' => 'Kuala Lumpur',
             'state' => 1,
             'is_shipping_address' => 1
         ]);
@@ -127,11 +135,10 @@ class UsersTableSeeder extends Seeder
         $dealer1->userContacts()->createMany([
             [
                 'contact_num' => '0194039056',
-                'is_emergency' => 0
+                'is_home' => 1
             ],
             [
-                'contact_num' => '0191233333',
-                'is_emergency' => 1
+                'contact_num' => '0191233333'
             ]
         ]);
 
@@ -148,10 +155,12 @@ class UsersTableSeeder extends Seeder
         $dealer2->userInfo()->create([
             'full_name' => 'Dealer Number 2',
             'nric' => '123456789123',
-            'ethnicity' => 1,
+            'race' => 1,
             'gender' => 1,
             'date_of_birth' => '56/34/12',
-            'occupation' => 'businessman'
+            'marital_status_id' => 1,
+            'dealer_id' => 3,
+            'referrer_id' => 1
         ]);
 
         $dealer2->userAddresses()->create([
@@ -159,18 +168,17 @@ class UsersTableSeeder extends Seeder
             'address_2' => 'Address line 2',
             'address_3' => 'Address line 3',
             'postcode' => '42000',
+            'city' => 'Kuala Lumpur',
             'state' => 1,
-            'is_shipping_address' => 1
         ]);
 
         $dealer2->userContacts()->createMany([
             [
                 'contact_num' => '0194039056',
-                'is_emergency' => 0
+                'is_home' => 1
             ],
             [
-                'contact_num' => '0191233333',
-                'is_emergency' => 1
+                'contact_num' => '0191233333'
             ]
         ]);
 
@@ -184,10 +192,12 @@ class UsersTableSeeder extends Seeder
         $panel1->userInfo()->create([
             'full_name' => 'Panel Number 1',
             'nric' => '123456789123',
-            'ethnicity' => 1,
+            'race' => 1,
             'gender' => 1,
             'date_of_birth' => '56/34/12',
-            'occupation' => 'businessman'
+            'marital_status_id' => 1,
+            'dealer_id' => 3,
+            'referrer_id' => 1
         ]);
 
         $panel1->userAddresses()->create([
@@ -195,6 +205,7 @@ class UsersTableSeeder extends Seeder
             'address_2' => 'Address line 2',
             'address_3' => 'Address line 3',
             'postcode' => '42000',
+            'city' => 'Kuala Lumpur',
             'state' => 1,
             'is_shipping_address' => 1
         ]);
@@ -202,11 +213,10 @@ class UsersTableSeeder extends Seeder
         $panel1->userContacts()->createMany([
             [
                 'contact_num' => '0194039056',
-                'is_emergency' => 0
+                'is_home' => 1
             ],
             [
-                'contact_num' => '0191233333',
-                'is_emergency' => 1
+                'contact_num' => '0191233333'
             ]
         ]);
 
@@ -226,10 +236,12 @@ class UsersTableSeeder extends Seeder
         $panel2->userInfo()->create([
             'full_name' => 'Panel Number 2',
             'nric' => '123456789123',
-            'ethnicity' => 1,
+            'race' => 1,
             'gender' => 1,
             'date_of_birth' => '56/34/12',
-            'occupation' => 'businessman'
+            'marital_status_id' => 1,
+            'dealer_id' => 3,
+            'referrer_id' => 1
         ]);
 
         $panel2->userAddresses()->create([
@@ -237,18 +249,18 @@ class UsersTableSeeder extends Seeder
             'address_2' => 'Address line 2',
             'address_3' => 'Address line 3',
             'postcode' => '42000',
+            'city' => 'Kuala Lumpur',
             'state' => 1,
             'is_shipping_address' => 1
         ]);
 
         $panel2->userContacts()->createMany([
             [
-                'contact_num' => '0194039056',
-                'is_emergency' => 0
+                'contact_num' => '0194039056'
             ],
             [
                 'contact_num' => '0191233333',
-                'is_emergency' => 1
+                'is_home' => 1
             ]
         ]);
 
@@ -267,10 +279,12 @@ class UsersTableSeeder extends Seeder
         $panel3->userInfo()->create([
             'full_name' => 'Panel Number 3',
             'nric' => '123456789123',
-            'ethnicity' => 1,
+            'race' => 1,
             'gender' => 1,
             'date_of_birth' => '56/34/12',
-            'occupation' => 'businessman'
+            'marital_status_id' => 1,
+            'dealer_id' => 3,
+            'referrer_id' => 1
         ]);
 
         $panel3->userAddresses()->create([
@@ -278,6 +292,7 @@ class UsersTableSeeder extends Seeder
             'address_2' => 'Address line 2',
             'address_3' => 'Address line 3',
             'postcode' => '42000',
+            'city' => 'Kuala Lumpur',
             'state' => 1,
             'is_shipping_address' => 1
         ]);
@@ -285,11 +300,10 @@ class UsersTableSeeder extends Seeder
         $panel3->userContacts()->createMany([
             [
                 'contact_num' => '0194039056',
-                'is_emergency' => 0
+                'is_home' => 1
             ],
             [
                 'contact_num' => '0191233333',
-                'is_emergency' => 1
             ]
         ]);
 

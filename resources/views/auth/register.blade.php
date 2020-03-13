@@ -1,4 +1,4 @@
-@extends('shopv2.layouts.main')
+@extends('layouts.shop.main')
 
 @section('content')
 <div class="container py-5">
@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        
+
                         <input type="hidden" id="RegistrationForm" name="RegistrationForm" value="1">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name (Per IC)') }}</label>
