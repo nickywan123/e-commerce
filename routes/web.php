@@ -11,13 +11,11 @@
 |
 */
 
-// Route::get('/', 'Auth\LoginController@showLoginForm');
 Route::get('/', function () {
     return view('Interface-login');
 });
+Route::get('/login', 'Auth\LoginController@showLoginForm');
 
-
-Route::get('/login', 'HomeController@testlogin');
 
 Route::view('register', 'register');
 //Route::get('/login', 'LoginController@index')->name('login');
@@ -296,4 +294,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         });
     });
     // End Web
+});
+
+Route::get('/test-shop-navigation', function () {
+    return view('layouts.shop.main');
 });

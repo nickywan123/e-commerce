@@ -10,9 +10,6 @@
 // Components
 @import './components/product-component';
 
-// Dealer Dashboard Layout
-@import '_dealer_dashboard';
-
 // Fontawesome Free
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/regular';
@@ -26,11 +23,13 @@
 // Simple Line Icon
 @import 'simple-line-icons/scss/simple-line-icons';
 
+// CoreUi
 @import '~@coreui/coreui/scss/coreui';
 @import '~@coreui/coreui/scss/coreui';
 
 // 04-Layouts
 @import
-    './04-layouts/shop-navigation',
-    './04-layouts/shop-navigation';
-    './04-layouts/shop-navigation';
+    // Shop
+    './04-layouts/shop/navigation',
+    './04-layouts/shop/sidebar';
+

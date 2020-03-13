@@ -99,6 +99,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne('App\Models\Users\Usercontact', 'user_id')->where('is_emergency', 1);
     }
 
+    /**
+     * Get user's purchase.
+     */
+    public function purchases()
+    {
+        return $this->hasMany('App\Models\Purchases\Purchase', 'user_id', 'id');
+    }
+
     // TODO: Replace with new relationship. Cart, Purchase, Orders & Items.
     // public function orders()
     // {

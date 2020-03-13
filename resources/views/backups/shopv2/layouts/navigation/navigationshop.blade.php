@@ -6,8 +6,8 @@
                 <div class="col-sm-2 vertical-align hidden-xs">
                     <div class="row">
                         <div class="col-6 my-auto text-left p-1">
-                            <a href="javascript:void(0);">
-                                <i class="fa fa-bars navigation-icon leftmenutrigger "></i>
+                            <a href="javascript:void(0);" id="side-menu-trigger">
+                                <i class="fa fa-bars navigation-icon"></i>
                             </a>
 
                         </div>
@@ -98,4 +98,34 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="navigation side-menu">
+        <div class="row">
+            <div class="col-12" style="background-color: #000;">
+                <h4>Shop By Category</h4>
+            </div>
+        </div>
+        <ul class="navbar-nav animate side-nav" style="background-color: #fbcc34;">
+            <li class="nav-item has-sub">
+                <a href="#">Menu 1</a>
+                <ul>
+                    <li class="has-sub"> <a href="#">Submenu 1.1</a>
+                    </li>
+                    <li><a href="#">Submenu 1.2</a></li>
+                </ul>
+            </li>
+            <li class="has-sub"> <a href="#">Menu 2</a>
+                <ul>
+                    <li><a href="#">Submenu 2.1</a></li>
+                    <li><a href="#">Submenu 2.2</a></li>
+                </ul>
+            </li>
+            <li class="has-sub"> <a href="#">Menu 3</a>
+                <ul>
+                    <li><a href="#">Submenu 3.1</a></li>
+                    <li><a href="#">Submenu 3.2</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
