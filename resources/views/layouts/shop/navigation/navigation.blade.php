@@ -42,18 +42,45 @@
             </div>
             <div class="col-sm-4 vertical-align hidden-sm my-auto">
                 <ul class="nav justify-content-center-sm float-md-right">
+                    @guest
                     <li class="nav-item m-1">
-                        <a class="nav-link" href="">Login</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a class="nav-link" href="">Register</a>
+                        <a class="nav-link" href="/register">Register</a>
                     </li>
+                    @else
                     <li class="nav-item m-1">
-                        <a href="" class="nav-link btn  btn-register">Panel</a>
+                        <div class="dropdown show">
+                            <!-- TODO: Create a class for the style -->
+                            <a class="btn btn-secondary dropdown-toggle my-account-button" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
+                                My Account
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">My Orders</a>
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </div>
                     </li>
+                    @hasrole('panel')
                     <li class="nav-item m-1">
-                        <a href="" class="nav-link btn  btn-register">Dealer</a>
+                        <a href="/management" class="nav-link btn  btn-register">Panel</a>
                     </li>
+                    @endhasrole
+                    @hasrole('dealer')
+                    <li class="nav-item m-1">
+                        <a href="/management" class="nav-link btn  btn-register">Dealer</a>
+                    </li>
+                    @endhasrole
+                    @endguest
                 </ul>
             </div>
             <!-- end col -->
@@ -68,10 +95,10 @@
             <div class="col-sm-12 justify-content-end-md justify-content-center-sm mb-1">
                 <ul class="nav justify-content-center-sm justify-content-end-md float-right-md">
                     <li class="nav-item m-1">
-                        <a class="nav-link" href=""><i class="fa fa-heart-o font-15 mr-1"></i> My Wishlist</a>
+                        <a class="nav-link" href="/shop/wishlist"><i class="fa fa-heart-o font-15 mr-1"></i> My Wishlist</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a class="nav-link" href=""><i class="fa fa-shopping-cart font-15 mr-1"></i> My Cart</a>
+                        <a class="nav-link" href="/shop/cart"><i class="fa fa-shopping-cart font-15 mr-1"></i> My Cart</a>
                     </li>
                 </ul>
             </div>

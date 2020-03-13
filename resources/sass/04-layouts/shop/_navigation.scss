@@ -197,6 +197,7 @@
     padding: 10px 0 0 0;
     margin: 0;
     min-height: 70px;
+    background-color: #000000;
 }
 
 @media (min-width: 767px) {
@@ -438,6 +439,7 @@
     padding: 10px 0 0 0;
     margin: 0;
     min-height: 50px;
+    background-color: #000000;
 }
 
 @media (max-width: 576px) {
@@ -535,17 +537,22 @@
     border-right: 10px solid #FBCC34;
 }
 
+.my-account-button {
+    color: #FBCC34;
+    background-color: #000000;
+    border: 1px solid #FBCC34;
+    padding-right: 40px;
+}
+
 /*
 Author: Nicholas
 */
 
-.nav-link{
-
+.nav-link {
     color:#FBCC34;
 }
 
-.btn-register{
-
-color: black;
+.btn-register {
+    color: black;
     background-color:#FBCC34;
 }

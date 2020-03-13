@@ -48,7 +48,6 @@
     </main>
 
     <!-- Footer -->
-    @include('layouts.shop.footer.footer')
 
     <!-- Custom Scrollbar CDN -->
     <!-- TODO: Import using mix. -->
