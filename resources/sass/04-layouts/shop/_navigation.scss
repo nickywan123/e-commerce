@@ -18,6 +18,7 @@
     width: 250px;
 }
 
+
 .topBar {
     background-color: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -196,6 +197,7 @@
     padding: 10px 0 0 0;
     margin: 0;
     min-height: 70px;
+    background-color: #000000;
 }
 
 @media (min-width: 767px) {
@@ -397,6 +399,8 @@
     padding: 20px;
 }
 
+
+
 /* Author - Wan Shahruddin */
 .container-90 {
     max-width: 95%;
@@ -406,6 +410,8 @@
 .navigation-icon {
     font-size: 1.8rem;
     margin-left: 30px;
+    color: #FBCC34;
+
 }
 
 .form-control {
@@ -433,6 +439,7 @@
     padding: 10px 0 0 0;
     margin: 0;
     min-height: 50px;
+    background-color: #000000;
 }
 
 @media (max-width: 576px) {
@@ -504,6 +511,7 @@
 
 #search-button {
     height: 38px;
+    background-color: white;
 }
 
 .border-rounded-0 {
@@ -527,4 +535,24 @@
 .margin-right-negative-with-border {
     margin-right: -4px;
     border-right: 10px solid #FBCC34;
+}
+
+.my-account-button {
+    color: #FBCC34;
+    background-color: #000000;
+    border: 1px solid #FBCC34;
+    padding-right: 40px;
+}
+
+/*
+Author: Nicholas
+*/
+
+.nav-link {
+    color:#FBCC34;
+}
+
+.btn-register {
+    color: black;
+    background-color:#FBCC34;
 }

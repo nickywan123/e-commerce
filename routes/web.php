@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', 'Auth\LoginController@showLoginForm');
+Route::get('/', function () {
+    return view('Interface-login');
+});
+Route::get('/login', 'Auth\LoginController@showLoginForm');
 
-Route::get('/login', 'HomeController@testlogin');
 
 Route::view('register', 'register');
 //Route::get('/login', 'LoginController@index')->name('login');
@@ -118,13 +120,6 @@ Route::prefix('shop')->group(function () {
 
         // POST route for checking out cart item and placing order.
         Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
-    });
-    Route::prefix('shopv2')->group(function () {
-        // Order history page.
-        Route::get('/')->name('/shopv2');
-
-        // POST route for checking out cart item and placing order.
-        // Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
     });
 });
 
@@ -277,6 +272,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
             // Checkout cart items.
             Route::post('/checkout', 'Purchase\PurchaseController@checkoutItems');
+        });
+
+        Route::group(['prefix' => 'wishlist'], function () {
+            Route::get('/', 'Development\ComingSoonController@index');
         });
     });
     // End Shop

@@ -1,32 +1,149 @@
 @extends('layouts.shop.main')
 
 @section('content')
-<div class="container pl-0 pr-0">
-    <div>
-        <img class="w-100" src="https://ww8.ikea.com/seaapp3/banners/carousel/wk7/my/en/LaunchThreeHomePage_carousel.jpg" style="height: 600px; width: 1920px;" alt="">
-    </div>
-    <div class="pt-1">
-        @foreach ($categories as $category)
-        <div class="heading-part">
-            <h1 class="main-title">{{ $category->name }}</h1>
-        </div>
-        <div class="row pt-3">
-            @foreach($category->subcategories as $childCategory)
-            <div class="col-lg-2 col-6">
-                <a href="/shop/category/{{ $childCategory->parentCategory->slug }}/{{ $childCategory->slug }}">
-                    <img src="{{ asset('assets/images/category-icons/'.$childCategory->image->url) }}" alt="{{ $childCategory->name }}" class="w-100 rounded">
-                    <p class="text-center pt-1 text-capitalize" style="font-size: 1.2rem;">{{ $childCategory->name }}</p>
-                </a>
-            </div>
-            @endforeach
-        </div>
-        @endforeach
-    </div>
+
+
+  <!--CSS Grid to display home page images -->
+<div class="wrapper">
+
+    <div class=" bed"><img src="{{asset('/images/Home_Bed.jpg')}}" alt=""></div>
+    <div class="pillow"><img src="{{asset('/images/Home_Pillow.jpg')}}" alt=""></div>
+    <div class=" kitchen"><img src="{{asset('/images/Home_Kitchen.jpg')}}" alt=""></div>
+    <div class=" living-room"><img src="{{asset('/images/Shop_Page.jpg')}}" alt=""></div>
+    <div class=" sofa"><img src="{{asset('/images/Home_Sofa.jpg')}}" alt=""></div>
+
+
+
+
 </div>
+
 @endsection
 
 @push('style')
 <style>
+
+@media (max-width: 700px) {
+
+.bed {
+  grid-column: 1/-1;
+  grid-row: 1 / -3;
+}
+.pillow {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+
+
+.kitchen {
+  grid-column: 3;
+  grid-row: 2 / 5;
+}
+
+
+
+.living-room {
+  grid-column: 1 / 3;
+  grid-row: 3 / -1;
+}
+
+
+
+.sofa {
+  grid-column-start: 3;
+  grid-row: 5 / -1;
+}
+
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr;
+  grid-template-rows: repeat(8, 1fr);
+  padding: 5em;
+  grid-gap: 2.5em;
+  background-color: black;
+  width: 2000px;
+  height: 900px;
+  max-width: 100%;
+}
+
+.wrapper>div {
+  position: relative;
+}
+
+.wrapper>div::after {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: black;
+  color: white;
+  padding: .5rem;
+}
+
+.bed {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+
+
+
+.pillow {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+
+
+.kitchen {
+  grid-column: 3;
+  grid-row: 2 / 5;
+}
+
+
+
+.living-room {
+  grid-column: 1 / 3;
+  grid-row: 3 / -1;
+}
+
+
+
+.sofa {
+  grid-column-start: 3;
+  grid-row: 5 / -1;
+}
+
+
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+
+body{
+    background-color: black;
+    }
+
+   /* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.container {
+  position: relative;
+ 
+}
+
+
     .heading-part {
         border-bottom: 3px solid #e5e5e5;
         display: inline-block;
@@ -61,5 +178,7 @@
         //         alert('status: ' + textStatus + ', data:' + data.name);
         //     });
     });
+
+  
 </script>
 @endpush
