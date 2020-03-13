@@ -1,120 +1,131 @@
 @extends('layouts.shop.main')
 
 @section('content')
-<div class="container">
-    <div class="row">
-    <div class="col-8">
-        <div class="row">
-        <div class="col-6">
-            <img
-            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
-            class="img-fluid custom-position-1"
-            alt=""
-            />
-        </div>
-        <div class="col-6">
-            <img
-            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
-            class="img-fluid custom-position-2"
-            alt=""
-            />
-        </div>
-        <div class="col-12">
-            <img
-            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
-            class="img-fluid custom-position-3"
-            alt=""
-            />
-        </div>
-        </div>
-    </div>
-    <div class="col-4 d-flex">
-        <div class="d-flex flex-column">
-        <div class="flex-grow-1">
-            <img
-            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
-            class=" img-fluid custom-position-4"
-            alt=""
-            />
-        </div>
-        <div class="flex-grow-1">
-            <img
-            src="https://www.w3schools.com/bootstrap4/cinqueterre.jpg"
-            class="img-fluid custom-position-5"
-            alt=""
-            />
-        </div>
-        </div>
-    </div>
-    </div>
+
+
+  <!--CSS Grid to display home page images -->
+<div class="wrapper">
+
+    <div class=" bed"><img src="{{asset('/images/Home_Bed.jpg')}}" alt=""></div>
+    <div class="pillow"><img src="{{asset('/images/Home_Pillow.jpg')}}" alt=""></div>
+    <div class=" kitchen"><img src="{{asset('/images/Home_Kitchen.jpg')}}" alt=""></div>
+    <div class=" living-room"><img src="{{asset('/images/Shop_Page.jpg')}}" alt=""></div>
+    <div class=" sofa"><img src="{{asset('/images/Home_Sofa.jpg')}}" alt=""></div>
+
+
+
+
 </div>
+
 @endsection
 
 @push('style')
 <style>
 
+@media (max-width: 700px) {
 
-.row {
-  margin-bottom: 30px;
+.bed {
+  grid-column: 1/-1;
+  grid-row: 1 / -3;
 }
+.pillow {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+
+
+.kitchen {
+  grid-column: 3;
+  grid-row: 2 / 5;
+}
+
+
+
+.living-room {
+  grid-column: 1 / 3;
+  grid-row: 3 / -1;
+}
+
+
+
+.sofa {
+  grid-column-start: 3;
+  grid-row: 5 / -1;
+}
+
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr;
+  grid-template-rows: repeat(8, 1fr);
+  padding: 1em;
+  grid-gap: 0.5em;
+  background-color: black;
+  width: 2000px;
+  height: 900px;
+  max-width: 100%;
+}
+
+.wrapper>div {
+  position: relative;
+}
+
+.wrapper>div::after {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: black;
+  color: white;
+  padding: .5rem;
+}
+
+.bed {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+
+
+
+.pillow {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+
+
+.kitchen {
+  grid-column: 3;
+  grid-row: 2 / 5;
+}
+
+
+
+.living-room {
+  grid-column: 1 / 3;
+  grid-row: 3 / -1;
+}
+
+
+
+.sofa {
+  grid-column-start: 3;
+  grid-row: 5 / -1;
+}
+
+
 
 img {
-    width: 100%;
-}
-[class*="col-"], .flex-grow-1 {
-    border: 1px solid black;
-}
-
-
-.custom-position-1{
- position: relative;
- bottom: -160px;
- left: 50px;
- height:100px;
- object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
 
 
-.custom-position-2{
- position:relative;
- right:100px;
- object-fit:cover;
-}
-
-
-.custom-position-3{
- position: relative;
- bottom: -160px;
- left: 50px;
- height:100px;
- object-fit: cover;
-}
-
-.custom-position-4{
- position: relative;
- height: 400px;
- width:800px;
- object-fit: cover;
-}
-
-
-
-
-.custom-position-5{
-
-    position: relative;
-    height:300px;
- left:50px;
- top: 100px;
- object-fit: cover;
-}
-
-
-
-
-    body{
-
-        background-color: black;
+body{
+    background-color: black;
     }
 
    /* Bottom right text */
@@ -132,10 +143,6 @@ img {
  
 }
 
-img{
-    width:100%;
-    border-radius: 20px;
-}
 
     .heading-part {
         border-bottom: 3px solid #e5e5e5;
