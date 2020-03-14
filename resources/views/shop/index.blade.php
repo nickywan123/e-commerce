@@ -6,8 +6,8 @@
   <!--CSS Grid to display home page images -->
 <div class="wrapper">
 
-    <div class=" bed"><img src="{{asset('/images/Home_Bed.jpg')}}" alt=""></div>
-    <div class="pillow"><img src="{{asset('/images/Home_Pillow.jpg')}}" alt=""></div>
+    <div class=" bed"><img src="{{asset('/images/chair2.jpg')}}" alt=""></div>
+    <div class="pillow"><img src="{{asset('/images/1803.jpg')}}" alt=""></div>
     <div class=" kitchen"><img src="{{asset('/images/Home_Kitchen.jpg')}}" alt=""></div>
     <div class=" living-room"><img src="{{asset('/images/Shop_Page.jpg')}}" alt=""></div>
     <div class=" sofa"><img src="{{asset('/images/Home_Sofa.jpg')}}" alt=""></div>
@@ -56,6 +56,8 @@
 
 }
 
+
+
 .wrapper {
   display: grid;
   grid-template-columns: 3fr 2fr 3fr;
@@ -63,7 +65,7 @@
   padding: 5em;
   grid-gap: 2.5em;
   background-color: black;
-  width: 2000px;
+  
   height: 900px;
   max-width: 100%;
 }
@@ -85,13 +87,16 @@
 .bed {
   grid-column: 1/2;
   grid-row: 1/3;
+  height: 110%;
+  width:100%;
 }
-
 
 
 .pillow {
   grid-column: 2;
   grid-row: 1 / 3;
+  height: 110%;
+  width:90%;
 }
 
 
@@ -128,16 +133,7 @@ body{
     background-color: black;
     }
 
-   /* Bottom right text */
-.text-block {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: black;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
 .container {
   position: relative;
  

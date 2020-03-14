@@ -1,42 +1,38 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 // Fontawesome Free
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
-@import '~@fortawesome/fontawesome-free/scss/v4-shims';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/v4-shims";
 
 // Flag Icon
-@import 'flag-icon-css/sass/flag-icon';
+@import "flag-icon-css/sass/flag-icon";
 
 // Simple Line Icon
-@import 'simple-line-icons/scss/simple-line-icons';
+@import "simple-line-icons/scss/simple-line-icons";
 
 // CoreUi
-@import '~@coreui/coreui/scss/coreui';
-@import '~@coreui/coreui/scss/coreui';
+@import "~@coreui/coreui/scss/coreui";
+@import "~@coreui/coreui/scss/coreui";
+
+//01- Landing Page
+@import "./01-landing-page/landing_page";
 
 // 02-Base
 @import
     './02-base/widths';
 
 // 03-Components
-@import
-    './03-components/images';
-    
-// 04-Layouts
-@import
-    // Shop
-    './04-layouts/shop/navigation',
-    './04-layouts/shop/sidebar';
+@import "./03-components/images";
 
 @import
     './05-pages/guests-main';
