@@ -22,7 +22,7 @@
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto">
                             <div>
-                                <select class="form-control input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border" name="category">
+                                <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border" name="category">
                                     <option value="all">All Categories</option>
                                     <optgroup label="Mens">
                                         <option value="shirts">Shirts</option>
@@ -33,8 +33,8 @@
                                         <option value="belts">Belts</option>
                                     </optgroup>
                                 </select>
-                                <input type="text" name="keyword" class="form-control input-lg w-65-md w-85-sm margin-right-negative-with-border border-rounded-0-md border-left-rounded-10-sm" placeholder="Search">
-                                <button id="search-button" class="btn  border-right-rounded-10"><i class="fa fa-search"></i></button>
+                                <input type="text" name="keyword" class="form-control navigation-input input-lg w-65-md w-85-sm margin-right-negative-with-border border-rounded-0-md border-left-rounded-10-sm" placeholder="Search">
+                                <button id="search-button" class="btn navigation-input border-right-rounded-10"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
                     </div>

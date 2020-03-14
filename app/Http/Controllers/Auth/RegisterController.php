@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\Users\User;
 use App\Http\Controllers\Controller;
+use App\Models\Globals\Employment;
+use App\Models\Globals\Gender;
+use App\Models\Globals\Marital;
+use App\Models\Globals\Race;
+use App\Models\Globals\State;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -56,7 +61,17 @@ class RegisterController extends Controller
      */
     public function showDealerRegistrationForm()
     {
-        return view('auth.register.dealer');
+        $genders = Gender::all();
+        $races = Race::all();
+        $states = State::all();
+        $maritals = Marital::all();
+        $employments = Employment::all();
+        return view('auth.register.dealer')
+            ->with('genders', $genders)
+            ->with('races', $races)
+            ->with('states', $states)
+            ->with('maritals', $maritals)
+            ->with('employments', $employments);
     }
 
     /**

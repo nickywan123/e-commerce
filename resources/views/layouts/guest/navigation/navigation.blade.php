@@ -1,15 +1,14 @@
-<div class="middleBar">
+<div class="middleBar pt-1 pb-2">
     <div class="container-90">
         <div class="row d-flex">
-            <div class="col-sm-2 vertical-align hidden-xs">
+            <div class="col-sm-2 vertical-align mb-0">
                 <div class="row">
-                    <div class="col-6 text-right my-auto">
+                    <div class="col-6 text-left text-md-right my-auto">
                         <a href="javascript:void(0);">
                             <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
                         </a>
                     </div>
                 </div>
-
             </div>
             <!-- end col -->
             <div class="col-sm-6 vertical-align text-center my-auto">
@@ -38,16 +37,7 @@
             <div class="col-sm-4 vertical-align hidden-sm my-auto">
                 <ul class="nav justify-content-center-sm float-md-right">
                     <li class="nav-item m-1">
-                        <a class="nav-link" href="">Login</a>
-                    </li>
-                    <li class="nav-item m-1">
-                        <a class="nav-link" href="">Register</a>
-                    </li>
-                    <li class="nav-item m-1">
-                        <a href="" class="nav-link btn btn-primary">Panel</a>
-                    </li>
-                    <li class="nav-item m-1">
-                        <a href="" class="nav-link btn btn-secondary">Dealer</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -57,7 +47,7 @@
     </div>
 </div>
 
-<div class="bottom-bar shadow-sm">
+<!-- <div class="bottom-bar shadow-sm">
     <div class="container-90">
         <div class="row">
             <div class="col-sm-12 justify-content-end-md justify-content-center-sm mb-1">
@@ -72,4 +62,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

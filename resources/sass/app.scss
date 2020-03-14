@@ -7,9 +7,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// Components
-@import './components/product-component';
-
 // Fontawesome Free
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/regular';
@@ -27,6 +24,10 @@
 @import '~@coreui/coreui/scss/coreui';
 @import '~@coreui/coreui/scss/coreui';
 
+// 02-Base
+@import
+    './02-base/widths';
+
 // 03-Components
 @import
     './03-components/images';
@@ -37,3 +38,5 @@
     './04-layouts/shop/navigation',
     './04-layouts/shop/sidebar';
 
+@import
+    './05-pages/guests-main';

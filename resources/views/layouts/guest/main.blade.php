@@ -37,6 +37,9 @@
 
 <body>
     @include('layouts.guest.navigation.navigation')
+    <main class="h-100">
+        @yield('content')
+    </main>
 </body>
 
 </html>

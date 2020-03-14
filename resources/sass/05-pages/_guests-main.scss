@@ -1,0 +1,52 @@
+@media (max-width: 576px) {
+    .bg-sm {
+        padding-top: 25%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 25%;
+
+        /* The image used */
+        background-image: url("../../../public/assets/images/background-image/bujishu-home-sm.jpg");
+        
+        /* Full height */
+        height: 100%;
+    
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 768px) {
+    .bg-md {
+        padding-top: 8%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 8%;
+
+        /* The image used */
+        background-image: url("../../../public/assets/images/background-image/bujishu-home-lg.jpg");
+    
+        /* Full height */
+        height: 100%;
+    
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.bg-bujishu-gold {
+    background-color: #fccb34;
+}
+
+.bujishu-gold {
+    color: #fccb34;
+}
+
+.form-card-title {
+    background-color: #000000;
+    padding: 1rem 0;
+}
