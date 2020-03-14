@@ -53,7 +53,9 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('auth.register.customer');
+        // TODO: Change to auth/register/customer.
+        // return view('auth.register.customer');
+        return view('auth.register');
     }
 
     /**

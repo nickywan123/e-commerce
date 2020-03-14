@@ -27,7 +27,7 @@
     </div>
 </div>
 @else
-<div class="col-7">
+<div class="col-md-7">
     @foreach($cartItems as $cartItem)
     <div class="card mb-2">
         <div class="card-body">
@@ -64,7 +64,7 @@
     </div>
     @endforeach
 </div>
-<div class="col-5">
+<div class="col-md-5">
     <div class="card">
         <div class="card-body">
             <h4>Cart Summary</h4>

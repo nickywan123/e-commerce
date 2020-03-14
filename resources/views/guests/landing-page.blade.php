@@ -24,32 +24,29 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine&display=swap" rel="stylesheet">
-
-
-
 </head>
 
 <body style="font-family:Verdana;color:#aaaaaa;">
 
-    
-        <div class="backgroundImage ">
-            <a href="/registrations/dealer "  class="btn grad1 btn-dealer" ><b>{{ __('Be A Dealer') }}</b></a>
-           
-                
-                    <div class="container"  >                  
-                        <h1 > A home is made of <i>
-                       <p >hopes</p></i> and <i><p >dreams</p>  </i>
-                        </h1>
-                    <h1 >Let us<i> <p >inspire</p></i> you to build the perfect home!</h1> <br>
-                  
-                    <a href="/login "  class="btn grad1" ><b>{{ __('LOGIN') }}</b></a>
-                    <a href="/register"  class="btn grad1"><b>{{ __('SIGN UP') }}</b></a>
-                </div>
-        
+    <div class="backgroundImage ">
+        <a href="/register-dealer " class="btn grad1 btn-dealer"><b>{{ __('Be A Dealer') }}</b></a>
+
+        <div class="container">
+            <h1> A home is made of <i>
+                    <p>hopes</p>
+                </i> and <i>
+                    <p>dreams</p>
+                </i>
+            </h1>
+            <h1>Let us<i>
+                    <p>inspire</p>
+                </i> you to build the perfect home!</h1> <br>
+
+            <a href="/login " class="btn grad1"><b>{{ __('LOGIN') }}</b></a>
+            <a href="/register" class="btn grad1"><b>{{ __('SIGN UP') }}</b></a>
+        </div>
+
     </div>
-
-
-
 </body>
 
 </html>

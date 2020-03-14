@@ -40,8 +40,8 @@
                     </div>
                 </form>
             </div>
-            <div class="col-sm-4 vertical-align hidden-sm my-auto">
-                <ul class="nav justify-content-center-sm float-md-right">
+            <div class="col-sm-4 vertical-align my-auto">
+                <ul class="nav justify-content-center-sm float-right pt-2">
                     @guest
                     <li class="nav-item m-1">
                         <a class="nav-link" href="/login">Login</a>
@@ -57,8 +57,8 @@
                                 My Account
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">My Orders</a>
+                                <a class="dropdown-item" href="#">Profile <small>(wip)</small></a>
+                                <a class="dropdown-item" href="#">My Orders <small>(wip)</small></a>
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}

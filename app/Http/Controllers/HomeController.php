@@ -23,19 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-         return view('backups.landing_page');
+        return view('backups.landing_page');
     }
 
-   
-
-    public function loginPage()
+    /**
+     * Return landing page.
+     */
+    public function landingPage()
     {
-
-        return view('shopv2.layouts.main');
-    }
-
-    public function testlogin()
-    {
-        return view('auth.login');
+        return 'Hello';
+        // return view('guests.landing-page');
     }
 }
