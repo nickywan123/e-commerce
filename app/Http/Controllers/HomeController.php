@@ -23,9 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Interface-login');
+         return view('backups.landing_page');
     }
 
+   
 
     public function loginPage()
     {

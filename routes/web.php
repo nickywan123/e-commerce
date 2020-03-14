@@ -11,16 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('Interface-login');
-});
-Route::get('/login', 'Auth\LoginController@showLoginForm');
+Route::get('/', 'HomeController@landingpage')->name('landing-page');
+
+
+ Route::get('/login', 'Auth\LoginController@showLoginForm');
 
 
 Route::view('register', 'register');
-//Route::get('/login', 'LoginController@index')->name('login');
 
-Route::view('Interface-login', 'Interface-login');
+
+// Route::view('Interface-login', 'Interface-login');
 Route::view('Registration-interface', 'Registration-interface');
 Route::view('CusStatus', 'CusStatus');
 //Route::get('/home', 'UserInfo\orderconfirmation@home')->name('user_info');

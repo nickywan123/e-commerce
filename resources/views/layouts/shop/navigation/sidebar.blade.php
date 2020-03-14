@@ -8,7 +8,7 @@
     </div>
      
     <ul class="list-unstyled components">
-        <p style="color:black"><strong>Shop By Category</strong></p>
+        <h4 ><strong>Shop By Category</strong></h4>
         <li class="active">
             <a href="#homeSubmenu">Bedsheet & Mattress</a>
             <a href="#">Cupboard</a>

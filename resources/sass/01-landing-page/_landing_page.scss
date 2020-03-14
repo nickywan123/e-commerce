@@ -1,0 +1,59 @@
+.backgroundImage {
+    background-image: url(/images/homepage.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a.btn {
+    color: black;
+    border-radius: 10px;
+    background-color: #fbcc34;
+}
+
+a.btn-dealer {
+    float: right;
+}
+h1 {
+    color: white;
+}
+
+p {
+    display: inline;
+    font-size: 75px;
+    font-family: "Dancing Script" cursive;
+    font-family: "Tangerine", cursive;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+
+// Add media query for mobile devices
+@media (max-width: 567px) {
+    h1 {
+        font-size: 120%;
+        float: left;
+        margin-left: 30px;
+    }
+    p {
+        font-size: 170%;
+    }
+
+    .container {
+        text-align: center;
+        position: relative;
+    }
+
+    a.btn {
+        font-size: 10px;
+    }
+}

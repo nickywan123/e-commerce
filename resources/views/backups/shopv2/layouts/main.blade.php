@@ -547,14 +547,14 @@
 <body>
 
     <!-- Navigation bar -->
-    @include('shopv2.layouts.navigation.navigation')
+    @include('backups.shopv2.layouts.navigation.navigation')
     <main>
 
         @yield('content')
     </main>
 
     <!-- Footer -->
-    @include('shopv2.layouts.footer.footer')
+    @include('backups.shopv2.layouts.footer.footer')
 
     @stack('script')
 

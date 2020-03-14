@@ -1,4 +1,4 @@
-@extends('shopv2.layouts.main')
+@extends('layouts.shop.main')
 
 @section('content')
 
@@ -8,7 +8,7 @@
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
-                    <div id="login-box"">
+                    <div id="login-box">
                           <div class=" col-md-12" style=" background-color: black;">
                         <h3 class="text-center " style=" color: #fbcc34;">LOGIN NOW</h3>
                     </div>
