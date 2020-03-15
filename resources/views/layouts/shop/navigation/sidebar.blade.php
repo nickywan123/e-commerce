@@ -6,28 +6,27 @@
     <div class="sidebar-header">
         <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
     </div>
-     
+
     <ul class="list-unstyled components">
-        <h4 ><strong>Shop By Category</strong></h4>
-        <li class="active">
-            <a href="/category/bedsheet-mattress">Bedsheet & Mattress</a>
-            <a href="/category/bedsheet-mattress">Cupboard</a>
-            <a href="/category/bedsheet-mattress"  >Tables & Chairs</a>
-            <a href="/category/bedsheet-mattress">Carpet</a>
-            <a href="/category/bedsheet-mattress">Curtain</a>
-            <a href="/category/bedsheet-mattress">Tiles</a>
-            <a href="/category/bedsheet-mattress">Lighting</a>
-            <a href="/category/bedsheet-mattress">Wall Papers</a>
-            <a href="/category/bedsheet-mattress">Roof</a>
-            <a href="/category/bedsheet-mattress">Doors</a>
-            <a href="/category/bedsheet-mattress">Window</a>
-            <a href="/category/bedsheet-mattress">Auxillary Propesrity Items</a>
-            <a href="/category/product-services">Product & Services</a>
-            
+        <h4 style="color: #000; padding: 10px;"><strong>Shop By Category</strong></h4>
+        <li class="active text-dark">
+            <a class="text-dark" href="#homeSubmenu">Bedsheet & Mattress</a>
+            <a class="text-dark" href="#">Cupboard</a>
+            <a class="text-dark" href="#pageSubmenu">Tables & Chairs</a>
+            <a class="text-dark" href="#">Carpet</a>
+            <a class="text-dark" href="#">Tiles</a>
+            <a class="text-dark" href="#">Lighting</a>
+            <a class="text-dark" href="#">Wall Papers</a>
+            <a class="text-dark" href="#">Roof</a>
+            <a class="text-dark" href="#">Doors</a>
+            <a class="text-dark" href="#">Window</a>
+            <a class="text-dark" href="#">Auxillary Propesrity Items</a>
+            <a class="text-dark" href="#">Product & Services</a>
+
         </li>
 
-         <!-- For future use of navigation bar expand -->
-            {{-- <nav id="mysidebarmenu" class="amazonmenu">
+        <!-- For future use of navigation bar expand -->
+        {{-- <nav id="mysidebarmenu" class="amazonmenu">
                 <ul>
                     <li><a href="#">Item 1</a></li>
                     <li><a href="#">Folder 0</a>
