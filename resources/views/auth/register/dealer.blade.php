@@ -261,3 +261,15 @@
     </div>
 </div>
 @endsection
+
+@push('style')
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        height: 100%;
+    }
+</style>
+@endpush
