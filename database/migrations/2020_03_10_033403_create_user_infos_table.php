@@ -20,7 +20,7 @@ class CreateUserInfosTable extends Migration
             $table->integer('race')->nullable();
             $table->integer('gender')->nullable();
             $table->string('date_of_birth')->nullable();
-            $table->integer('marital_status_id');
+            $table->integer('marital_status_id')->nullable();
             $table->unsignedBigInteger('dealer_id')->nullable();
             $table->unsignedBigInteger('referrer_id')->nullable();
             $table->timestamps();

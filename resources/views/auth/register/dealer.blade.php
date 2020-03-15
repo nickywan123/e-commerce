@@ -19,7 +19,8 @@
             <div class="card-body">
 
                 <!-- Dealer Registration Form -->
-                <form>
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
                     <div class="tab-content" id="myTabContent">
                         <!-- Registration  Tab-->
                         <div class="tab-pane fade show active" id="registration" role="tabpanel" aria-labelledby="registration-tab">
@@ -28,10 +29,21 @@
                                 <div class="form-group col-md-8">
                                     <label for="email">Email (Used for bujishu login)</label>
                                     <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="password">Password</label>
                                     <input type="password" name="password" class="form-control" id="password">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-8"></div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="password-confirm">Confirm Password</label>
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
                             <!-- Next Button -->
@@ -62,7 +74,7 @@
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="gender">Gender</label>
-                                    <select class="form-control" id="gender" name="gender">
+                                    <select class="form-control" id="gender" name="gender_id">
                                         <option disabled selected>Choose your gender..</option>
                                         @foreach($genders as $gender)
                                         <option class="text-capitalize" value="{{ $gender->id }}">{{ $gender->name }}</option>
@@ -70,8 +82,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="race">Race</label>
-                                    <select name="race" id="race" class="form-control">
+                                    <label for="race_id">Race</label>
+                                    <select name="race_id" id="race_id" class="form-control">
                                         <option disabled selected>Choose your race..</option>
                                         @foreach($races as $race)
                                         <option class="text-capitalize" value="{{ $race->id }}">{{ $race->name }}</option>
@@ -79,8 +91,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="marital">Marital Status</label>
-                                    <select name="marital" id="marital" class="form-control">
+                                    <label for="marital_id">Marital Status</label>
+                                    <select name="marital_id" id="marital_id" class="form-control">
                                         <option disabled selected>Choose your marital status..</option>
                                         @foreach($maritals as $marital)
                                         <option class="text-capitalize" value="{{ $marital->id }}">{{ $marital->name }}</option>
@@ -251,6 +263,7 @@
 
                             <!-- Submit Button -->
                             <div class="text-right">
+                                <input type="hidden" name="registrationFor" value="dealer">
                                 <button type="submit" class="btn btn-primary text-right">Sign up</button>
                             </div>
                         </div>

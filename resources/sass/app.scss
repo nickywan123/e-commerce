@@ -24,18 +24,23 @@
 @import "~@coreui/coreui/scss/coreui";
 @import "~@coreui/coreui/scss/coreui";
 
+
 //01- Landing Page
 @import "./01-landing-page/landing_page";
 
 // 02-Base
-@import "./02-base/widths";
+@import
+    './02-base/widths';
 
 // 03-Components
 @import "./03-components/images";
 
-@import "./05-pages/guests-main";
+// 04-Layouts
+@import 
+    './04-layouts/shop/navigation',
+    './04-layouts/shop/sidebar';
 
-//-04-layouts shops navigation and sidebar
-@import "./04-layouts/shop/navigation";
-
-@import "./04-layouts/shop/sidebar";
+// 05-Pages
+@import
+    './05-pages/guests-main',
+    './05-pages/guests_login';

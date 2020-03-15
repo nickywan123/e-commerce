@@ -94,17 +94,35 @@ class RegisterController extends Controller
     {
         if ($data['registrationFor'] == 'customer') {
             // Validation for customer registration.
+            return Validator::make($data, [
+                'email' => [
+                    'required',
+                    'string',
+                    'email',
+                    'max:255',
+                    'unique:users'
+                ]
+            ]);
         } elseif ($data['registrationFor'] == 'dealer') {
             // Validation for dealer registration.
+            return Validator::make($data, [
+                'email' => [
+                    'required',
+                    'string',
+                    'email',
+                    'max:255',
+                    'unique:users'
+                ]
+            ]);
         } elseif ($data['registrationFor'] == 'panel') {
             // Validation for panel registration.
         }
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'g-recaptcha-response' => 'required|captcha',
-        ]);
+        // return Validator::make($data, [
+        //     'name' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        //     'password' => ['required', 'string', 'min:8', 'confirmed'],
+        //     'g-recaptcha-response' => 'required|captcha',
+        // ]);
     }
 
     /**
@@ -117,87 +135,119 @@ class RegisterController extends Controller
     {
         if ($data['registrationFor'] == 'customer') {
             // Register customer.
-        } elseif ($data['registrationFor'] == 'dealer') {
-            // Register dealer.
-        } elseif ($data['registrationFor'] == 'panel') {
-            // Register panel.
-        }
-
-        // Validate customer registration form
-        if ($data['RegistrationForm'] == 1) {
             $user = User::create([
-                // Users table
-
                 'email' => $data['email'],
-                'password' => Hash::make($data['password'])
-            ]);
-
-            $user->userInfo()->create([
-                'name' => $data['name'],
-                'NRIC' => $data['nric'], // Create NRIC field.
-                'dealer_id' => $data['dealerID']
-
-            ]);
-
-            $user->userAddresses()->create([
-                'address_1' => $data['homeaddress1'],
-                'address_2' => $data['homeaddress2'],
-                'address_3' => $data['homeaddress3'],
-                'zipcode' => $data['postcode'],
-                'shipping_address' => $data['shippingaddress']
-            ]);
-
-            $user->userContacts()->create([
-                'mobile_num' => $data['number'],
-                'emergency_num' => $data['emergency']
-
-            ]);
-
-
-            //assign track id code to customer
-            $user->track_id = 1913000000 + $user->user_id;
-            $user->save();
-            $user->assignRole('1');
-        }
-
-        // Dealer Registration
-        if ($data['RegistrationForm'] == 2) {
-            $user = User::create([
-                'account_id' => User::largestDealerId() + 1,
-                'email' => $data['email'],
-                'password' => Hash::make($data['password'])
+                'password' => Hash::make($data['password']),
+                'account_id' => User::largestCustomerId() + 1
             ]);
 
             $user->userInfo()->create([
                 'full_name' => $data['name'],
                 'nric' => $data['nric'],
-                'ethnicity' => $data['ethnicity'],
-                'gender' => $data['gender'],
+                // 'race' => $data['race_id'],
+                // 'gender' => $data['gender_id'],
+                // 'date_of_birth' => $data['date_of_birth'],
+                // 'marital_status_id' => $data['marital_id']
+            ]);
+        } elseif ($data['registrationFor'] == 'dealer') {
+            // Register dealer.
+            $user = User::create([
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'account_id' => User::largestDealerId() + 1
+            ]);
+
+            $user->userInfo()->create([
+                'full_name' => $data['full_name'],
+                'nric' => $data['nric'],
+                'race' => $data['race_id'],
+                'gender' => $data['gender_id'],
                 'date_of_birth' => $data['date_of_birth'],
-                'occupation' => $data['occupation']
+                'marital_status_id' => $data['marital_id']
             ]);
 
-            $user->userAddresses()->create([
-                'address_1' => $data['homeaddress1'],
-                'address_2' => $data['homeaddress2'],
-                'address_3' => $data['homeaddress3'],
-                'postcode' => $data['postcode']
-            ]);
-
-            $user->userContacts()->create([
-
-                'mobile_num' => $data['number'],
-                'emergency_num' => $data['emergency']
-
-            ]);
-
-            //assign track id code to dealer
-            $user->track_id = 1911000000 + $user->user_id;
-            $user->save();
-
-            $user->assignRole('1');
-            $user->assignRole('2');
+            $user->assignRole('dealer');
+        } elseif ($data['registrationFor'] == 'panel') {
+            // Register panel.
         }
+
+        return $user;
+
+        // // Validate customer registration form
+        // if ($data['RegistrationForm'] == 1) {
+        //     $user = User::create([
+        //         // Users table
+
+        //         'email' => $data['email'],
+        //         'password' => Hash::make($data['password'])
+        //     ]);
+
+        //     $user->userInfo()->create([
+        //         'name' => $data['name'],
+        //         'NRIC' => $data['nric'], // Create NRIC field.
+        //         'dealer_id' => $data['dealerID']
+
+        //     ]);
+
+        //     $user->userAddresses()->create([
+        //         'address_1' => $data['homeaddress1'],
+        //         'address_2' => $data['homeaddress2'],
+        //         'address_3' => $data['homeaddress3'],
+        //         'zipcode' => $data['postcode'],
+        //         'shipping_address' => $data['shippingaddress']
+        //     ]);
+
+        //     $user->userContacts()->create([
+        //         'mobile_num' => $data['number'],
+        //         'emergency_num' => $data['emergency']
+
+        //     ]);
+
+
+        //     //assign track id code to customer
+        //     $user->track_id = 1913000000 + $user->user_id;
+        //     $user->save();
+        //     $user->assignRole('1');
+        // }
+
+        // // Dealer Registration
+        // if ($data['RegistrationForm'] == 2) {
+        //     $user = User::create([
+        //         'account_id' => User::largestDealerId() + 1,
+        //         'email' => $data['email'],
+        //         'password' => Hash::make($data['password'])
+        //     ]);
+
+        //     $user->userInfo()->create([
+        //         'full_name' => $data['name'],
+        //         'nric' => $data['nric'],
+        //         'ethnicity' => $data['ethnicity'],
+        //         'gender' => $data['gender'],
+        //         'date_of_birth' => $data['date_of_birth'],
+        //         'occupation' => $data['occupation']
+        //     ]);
+
+        //     $user->userAddresses()->create([
+        //         'address_1' => $data['homeaddress1'],
+        //         'address_2' => $data['homeaddress2'],
+        //         'address_3' => $data['homeaddress3'],
+        //         'postcode' => $data['postcode']
+        //     ]);
+
+        //     $user->userContacts()->create([
+
+        //         'mobile_num' => $data['number'],
+        //         'emergency_num' => $data['emergency']
+
+        //     ]);
+
+        //     //assign track id code to dealer
+        //     $user->track_id = 1911000000 + $user->user_id;
+        //     $user->save();
+
+        //     $user->assignRole('1');
+        //     $user->assignRole('2');
+        // }
         return $user;
     }
 }
