@@ -10,18 +10,19 @@
     <ul class="list-unstyled components">
         <h4 ><strong>Shop By Category</strong></h4>
         <li class="active">
-            <a href="#homeSubmenu">Bedsheet & Mattress</a>
-            <a href="#">Cupboard</a>
-            <a href="#pageSubmenu"  >Tables & Chairs</a>
-            <a href="#">Carpet</a>
-            <a href="#">Tiles</a>
-            <a href="#">Lighting</a>
-            <a href="#">Wall Papers</a>
-            <a href="#">Roof</a>
-            <a href="#">Doors</a>
-            <a href="#">Window</a>
-            <a href="#">Auxillary Propesrity Items</a>
-            <a href="#">Product & Services</a>
+            <a href="/category/bedsheet-mattress">Bedsheet & Mattress</a>
+            <a href="/category/bedsheet-mattress">Cupboard</a>
+            <a href="/category/bedsheet-mattress"  >Tables & Chairs</a>
+            <a href="/category/bedsheet-mattress">Carpet</a>
+            <a href="/category/bedsheet-mattress">Curtain</a>
+            <a href="/category/bedsheet-mattress">Tiles</a>
+            <a href="/category/bedsheet-mattress">Lighting</a>
+            <a href="/category/bedsheet-mattress">Wall Papers</a>
+            <a href="/category/bedsheet-mattress">Roof</a>
+            <a href="/category/bedsheet-mattress">Doors</a>
+            <a href="/category/bedsheet-mattress">Window</a>
+            <a href="/category/bedsheet-mattress">Auxillary Propesrity Items</a>
+            <a href="/category/product-services">Product & Services</a>
             
         </li>
 

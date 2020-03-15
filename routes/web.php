@@ -16,6 +16,18 @@ Route::get('/', 'Guest\GuestController@index');
 
 Route::get('/login', 'Auth\LoginController@showLoginForm');
 
+
+/** Author Nicholas
+ * Hardcode (Temporarily) to show product category for each category
+ */
+
+Route::view('/category/bedsheet-mattress', 'shop.catalog.backups.bedsheet-mattress');
+Route::view('/category/bedsheet-mattress/canopy-bed', 'shop.catalog.backups.canopy-bed');
+
+
+
+
+
 // Shop Routes
 Route::prefix('shop')->group(function () {
     // Home/Index page for shop.
