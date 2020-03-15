@@ -10,19 +10,19 @@
     <ul class="list-unstyled components">
         <h4 style="color: #000; padding: 10px;"><strong>Shop By Category</strong></h4>
         <li class="active text-dark">
-            <a class="text-dark" href="#homeSubmenu">Bedsheet & Mattress</a>
-            <a class="text-dark" href="#">Cupboard</a>
-            <a class="text-dark" href="#pageSubmenu">Tables & Chairs</a>
-            <a class="text-dark" href="#">Carpet</a>
-            <a class="text-dark" href="#">Tiles</a>
-            <a class="text-dark" href="#">Lighting</a>
-            <a class="text-dark" href="#">Wall Papers</a>
-            <a class="text-dark" href="#">Roof</a>
-            <a class="text-dark" href="#">Doors</a>
-            <a class="text-dark" href="#">Window</a>
-            <a class="text-dark" href="#">Auxillary Propesrity Items</a>
-            <a class="text-dark" href="#">Product & Services</a>
-
+            <a class="text-dark" href="/category/bedsheet-mattress">Bedsheet & Mattress</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Cupboard</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Tables & Chairs</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Carpet</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Curtain</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Tiles</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Lighting</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Wall Papers</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Roof</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Doors</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Window</a>
+            <a class="text-dark" href="/category/bedsheet-mattress">Auxillary Propesrity Items</a>
+            <a class="text-dark" href="/category/product-services">Product & Services</a>
         </li>
 
         <!-- For future use of navigation bar expand -->
