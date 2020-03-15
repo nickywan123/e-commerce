@@ -89,7 +89,7 @@
     </div>
 </div>
 
-<div class="bottom-bar shadow-sm">
+<div class="bottom-bar shadow-sm" style="border-bottom: 3px solid #fccb34;">
     <div class="container-90">
         <div class="row">
             <div class="col-sm-12 justify-content-end-md justify-content-center-sm mb-1">

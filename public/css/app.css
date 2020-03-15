@@ -58123,6 +58123,7 @@ a.grad2 {
   margin: 0;
   min-height: 50px;
   background-color: #000000;
+  border-bottom: 3px solid #fccb34;
 }
 
 @media (max-width: 576px) {

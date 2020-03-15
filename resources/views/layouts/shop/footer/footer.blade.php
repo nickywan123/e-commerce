@@ -1,35 +1,45 @@
-<footer class="site-footer">
-    <div class="row">
-
-        <div id="foot1" class="col-md-2 col-sm-9 ">
-
-            <h6 style="color:#fbcc34">Information</h6>
-            <ul class="footer-links">
-                <li><a href="http://scanfcode.com/category/c-language/">About Us</a></li>
-                <li><a href="http://scanfcode.com/category/front-end-development/">FAQ</a></li>
-                <li><a href="http://scanfcode.com/category/back-end-development/">Warranty</a></li>
-                <li><a href="http://scanfcode.com/category/java-programming-language/">Partnership</a></li>
-                <li><a href="http://scanfcode.com/category/android/">Privacy Policy</a></li>
-                <li><a href="http://scanfcode.com/category/templates/">Contact Us</a></li>
+<footer style="max-width:100%; overflow: hidden; border-top: 3px solid #fbcc34; padding-top: 0.5rem;">
+    <div class="row pl-2 pr-2">
+        <div class="col-6 col-md-2 text-center text-md-left">
+            <h5 class="pr-1 pl-1 bujishu-gold">Information</h5>
+            <ul class="list-unstyled pr-2 pl-2 bujishu-gold">
+                <li>
+                    <a class="bujishu-gold" href="">About Us</a>
+                </li>
+                <li>
+                    <a class="bujishu-gold" href="">FAQ</a>
+                </li>
+                <li>
+                    <a class="bujishu-gold" href="">Warranty</a>
+                </li>
+                <li>
+                    <a class="bujishu-gold" href="">Partnership</a>
+                </li>
+                <li>
+                    <a class="bujishu-gold" href="">Privacy Policy</a>
+                </li>
+                <li>
+                    <a class="bujishu-gold" href="">Contact Us</a>
+                </li>
             </ul>
         </div>
-
-        <div id="foot2" class="col-md-3 col-sm-3">
-            <h6>My Account</h6>
-            <ul class="footer-links">
-                <li><a href="http://scanfcode.com/category/c-language/">Sign In</a></li>
-                <li><a href="http://scanfcode.com/category/front-end-development/">View Cart</a></li>
-                <li><a href="http://scanfcode.com/category/back-end-development/">My Wishlist</a></li>
-
+        <div class="col-6 col-md-2 text-center text-md-left">
+            <h5 class="pr-1 pl-1 bujishu-gold">My Account</h5>
+            <ul class="list-unstyled pr-2 pl-2">
+                <li>
+                    <a class="bujishu-gold" href="">Sign In</a>
+                </li>
+                <li>
+                    <a class="bujishu-gold" href="">My Cart</a>
+                </li>
+                <li>
+                    <a class="bujishu-gold" href="">My Wishlist</a>
+                </li>
             </ul>
         </div>
-
-
-
     </div>
 </footer>
-</div>
 
-<section class="container-fluid " id="foot5">
+<section class="container-fluid">
     <h6 class="text-right" style="color:white;">@ 2020 Bujishu. All Rights Reserved</h6>
 </section>
