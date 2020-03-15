@@ -36,9 +36,21 @@
             </div>
             <div class="col-sm-4 vertical-align hidden-sm my-auto">
                 <ul class="nav justify-content-center-sm float-md-right">
+                    @if(!Request::is('login'))
                     <li class="nav-item m-1">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
+                    @endif
+                    @if(!Request::is('register'))
+                    <li class="nav-item m-1">
+                        <a class="nav-link" href="/register">Join</a>
+                    </li>
+                    @endif
+                    @if(!Request::is('register-dealer'))
+                    <li class="nav-item m-1">
+                        <a class="nav-link" href="/register-dealer">Be a dealer</a>
+                    </li>
+                    @endif
                 </ul>
             </div>
             <!-- end col -->

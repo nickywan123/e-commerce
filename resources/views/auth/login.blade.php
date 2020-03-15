@@ -6,7 +6,8 @@
         <div class="card border-rounded-0 bg-bujishu-gold login-card">
             <h5 class="text-center bujishu-gold form-card-title">Sign in</h5>
             <div class="card-body">
-                <form action="">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="form-row mb-2">
                         <div class="input-group col-12">
                             <div class="input-group-prepend">
