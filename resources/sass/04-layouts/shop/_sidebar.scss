@@ -5,7 +5,7 @@
     left: -250px;
     height: 100vh;
     z-index: 999;
-    background: #FBCC34;
+    background: #fbcc34;
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;
@@ -33,7 +33,7 @@
 
 #dismiss:hover {
     background: #fff;
-    color: #7386D5;
+    color: #7386d5;
 }
 
 .overlay {
@@ -58,7 +58,6 @@
 
 #sidebar ul.components {
     padding: 20px 0;
-    
 }
 
 #sidebar ul p {
@@ -73,14 +72,14 @@
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #7386d5;
     background: #fff;
 }
 
-#sidebar ul li.active>a,
+#sidebar ul li.active > a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #FBCC34;
+    background: #fbcc34;
 }
 
 a[data-toggle="collapse"] {
@@ -98,7 +97,6 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #FBCC34;
 }
 
 ul.CTAs {
@@ -115,7 +113,7 @@ ul.CTAs a {
 
 a.download {
     background: #fff;
-    color: #7386D5;
+    color: #7386d5;
 }
 
 a.article,
@@ -137,6 +135,3 @@ a.article:hover {
     top: 0;
     right: 0;
 }
-
-
-

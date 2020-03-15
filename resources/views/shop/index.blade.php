@@ -6,11 +6,21 @@
   <!--CSS Grid to display home page images -->
 <div class="wrapper">
 
-    <div class=" bed"><img src="{{asset('/images/Home_Bed.jpg')}}" alt=""></div>
-    <div class="pillow"><img src="{{asset('/images/Home_Pillow.jpg')}}" alt=""></div>
-    <div class=" kitchen"><img src="{{asset('/images/Home_Kitchen.jpg')}}" alt=""></div>
-    <div class=" living-room"><img src="{{asset('/images/Shop_Page.jpg')}}" alt=""></div>
-    <div class=" sofa"><img src="{{asset('/images/Home_Sofa.jpg')}}" alt=""></div>
+    <div class="bed">
+      <img src="{{asset('/images/Home_Bed.jpg')}}" alt=""> 
+      <a href="#">New Product <span class="">➡</span></a>
+    </div>
+    <div class="pillow"><img src="{{asset('/images/Home_Pillow.jpg')}}" alt="">
+      <a href="#">Best Seller <span class="">➡</span></a></div>
+    <div class="kitchen"><img src="{{asset('/images/Home_Kitchen.jpg')}}" alt="">
+      <a href="#">Offer <span class="">➡</span></a>
+    </div>
+    <div class="living-room"><img src="{{asset('/images/Shop_Page.jpg')}}" alt="">
+      <a href="#">DC Home Design <span class="">➡</span></a>
+    </div>
+    <div class="sofa"><img src="{{asset('/images/Home_Sofa.jpg')}}" alt="">
+      <a href="#">Top Rated <span class="">➡</span></a>
+    </div>
 
 
 
@@ -21,41 +31,6 @@
 
 @push('style')
 <style>
-
-@media (max-width: 700px) {
-
-.bed {
-  grid-column: 1/-1;
-  grid-row: 1 / -3;
-}
-.pillow {
-  grid-column: 3;
-  grid-row: 1 / 3;
-}
-
-
-
-.kitchen {
-  grid-column: 3;
-  grid-row: 2 / 5;
-}
-
-
-
-.living-room {
-  grid-column: 1 / 3;
-  grid-row: 3 / -1;
-}
-
-
-
-.sofa {
-  grid-column-start: 3;
-  grid-row: 5 / -1;
-}
-
-}
-
 
 
 .wrapper {
@@ -72,6 +47,14 @@
 
 .wrapper>div {
   position: relative;
+}
+
+.wrapper>div>a {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  text-decoration: none;
 }
 
 .wrapper>div::after {
@@ -125,7 +108,7 @@
 img {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 
@@ -134,10 +117,7 @@ body{
     }
 
 
-.container {
-  position: relative;
- 
-}
+
 
 
     .heading-part {
@@ -160,6 +140,51 @@ body{
         margin-bottom: -3px;
         padding: 2px;
     }
+
+
+ @media(max-width:767px) {
+
+
+.bed {
+  grid-column: 1/5;
+    grid-row: 1 / 3;
+
+}
+.pillow {
+  grid-column: 1/5;
+    grid-row: -7/6;
+    width: 100%;
+    height: 30%;
+}
+
+
+
+.kitchen {
+  grid-column: 1/5;
+    grid-row: 5/5;
+    width: 120%;
+    margin-left: -10%;
+}
+
+
+
+.living-room {
+  grid-column: 1 / 5;
+    grid-row: -3/9;
+}
+
+
+
+.sofa {
+  grid-column: 1/5;
+    grid-row: 6/6;
+}
+
+
+
+}
+
+    
 </style>
 @endpush
 
