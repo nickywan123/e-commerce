@@ -26,24 +26,52 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine&display=swap" rel="stylesheet">
 </head>
 
-<body style="font-family:Verdana;color:#aaaaaa;">
+<body >
 
-    <div class="backgroundImage ">
+    <div class="backgroundImage">
         <a href="/register-dealer " class="btn grad1 btn-dealer"><b>{{ __('Be A Dealer') }}</b></a>
 
         <div class="container">
-            <h1> A home is made of <i>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-3 col-md-4">
+                    <img class="my-md-5 logo" src="{{asset('/images/Logo.png')}}" alt="No Logo">
+                
+                </div>
+                <div class="col-md-4">
+               
+                </div>
+            </div>
+        </div>
+       
+        <div class="container content">
+            <div class="row"> 
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+            <h2> A home is made of <i>
                     <p>hopes</p>
                 </i> and <i>
                     <p>dreams</p>
                 </i>
-            </h1>
-            <h1>Let us<i>
+            </h2>
+            <h2>Let us<i>
                     <p>inspire</p>
-                </i> you to build the perfect home!</h1> <br>
+                </i> you to build the perfect home!</h2> <br>
+            </div>
+            <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+      
+                    <a href="/login " class="btn grad1 grad2"><b>{{ __('LOGIN') }}</b></a>
+            <a href="/register" class="btn grad1 grad2"><b>{{ __('SIGN UP') }}</b></a>
+        </div>
+        <div class="col-md-4"></div>
 
-            <a href="/login " class="btn grad1"><b>{{ __('LOGIN') }}</b></a>
-            <a href="/register" class="btn grad1"><b>{{ __('SIGN UP') }}</b></a>
+        </div>
+        </div>
+        
         </div>
 
     </div>

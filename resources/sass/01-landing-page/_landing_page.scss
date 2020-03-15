@@ -1,8 +1,8 @@
 .backgroundImage {
-    background-image: url(/images/homepage.jpg);
+    background-image: url(/images/Bujishu_Landing_Page_Desktop.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100vw 100vh;
     width: 100vw;
     height: 100vh;
 }
@@ -15,13 +15,16 @@ a.btn {
     color: black;
     border-radius: 10px;
     background-color: #fbcc34;
+    border-color: #8b878d;
 }
 
 a.btn-dealer {
     float: right;
+    margin-right: 20px;
+    margin-top: 20px;
 }
-h1 {
-    color: white;
+h2 {
+    color: rgb(235, 232, 232);
 }
 
 p {
@@ -31,21 +34,34 @@ p {
     font-family: "Tangerine", cursive;
 }
 
-.container {
+.content {
     text-align: center;
     position: relative;
-    top: 50%;
+    // top: 50%;
+}
+
+.logo {
+    text-align: center;
+}
+
+body {
+    min-height: 100%;
+    font-family: Verdana;
+    color: #aaaaaa;
+}
+
+a.grad2 {
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 // Add media query for mobile devices
-@media (max-width: 567px) {
-    h1 {
-        font-size: 120%;
-        float: left;
-        margin-left: 30px;
+@media (max-width: 767px) {
+    h2 {
+        font-size: 100%;
     }
     p {
-        font-size: 170%;
+        font-size: 200%;
     }
 
     .container {
@@ -55,5 +71,17 @@ p {
 
     a.btn {
         font-size: 10px;
+    }
+
+    .backgroundImage {
+        background-image: url(/images/Bujishu_Landing_Page_Mobile.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .logo {
+        width: 300%;
+        margin-left: 350%;
+        margin-top: 200%;
     }
 }

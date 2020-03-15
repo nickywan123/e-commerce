@@ -6,8 +6,8 @@
   <!--CSS Grid to display home page images -->
 <div class="wrapper">
 
-    <div class=" bed"><img src="{{asset('/images/chair2.jpg')}}" alt=""></div>
-    <div class="pillow"><img src="{{asset('/images/1803.jpg')}}" alt=""></div>
+    <div class=" bed"><img src="{{asset('/images/Home_Bed.jpg')}}" alt=""></div>
+    <div class="pillow"><img src="{{asset('/images/Home_Pillow.jpg')}}" alt=""></div>
     <div class=" kitchen"><img src="{{asset('/images/Home_Kitchen.jpg')}}" alt=""></div>
     <div class=" living-room"><img src="{{asset('/images/Shop_Page.jpg')}}" alt=""></div>
     <div class=" sofa"><img src="{{asset('/images/Home_Sofa.jpg')}}" alt=""></div>
