@@ -58395,3 +58395,17 @@ a.article:hover {
   padding: 1rem 0;
 }
 
+@media (max-width: 576px) {
+  .login-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .login-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+

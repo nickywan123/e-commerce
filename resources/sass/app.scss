@@ -34,5 +34,12 @@
 // 03-Components
 @import "./03-components/images";
 
+// 04-Layouts
+@import 
+    './04-layouts/shop/navigation',
+    './04-layouts/shop/sidebar';
+
+// 05-Pages
 @import
-    './05-pages/guests-main';
+    './05-pages/guests-main',
+    './05-pages/guests_login';
