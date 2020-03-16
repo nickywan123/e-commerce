@@ -14,7 +14,7 @@
             <a class="text-dark" href="/category/bedsheet-mattress">Cupboard</a>
             <a class="text-dark" href="/category/bedsheet-mattress">Tables & Chairs</a>
             <a class="text-dark" href="/category/bedsheet-mattress">Carpet</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Curtain</a>
+            <a class="text-dark" href="/category/curtain">Curtain</a>
             <a class="text-dark" href="/category/bedsheet-mattress">Tiles</a>
             <a class="text-dark" href="/category/bedsheet-mattress">Lighting</a>
             <a class="text-dark" href="/category/bedsheet-mattress">Wall Papers</a>

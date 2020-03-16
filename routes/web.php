@@ -22,6 +22,9 @@ Route::get('/login', 'Auth\LoginController@showLoginForm');
  */
 
 Route::view('/category/bedsheet-mattress', 'shop.catalog.backups.bedsheet-mattress');
+
+Route::view('/category/curtain', 'shop.catalog.backups.curtain');
+Route::view('/category/curtain/pinch-pleat', 'shop.catalog.backups.pinch-pleat');
 Route::view('/category/bedsheet-mattress/canopy-bed', 'shop.catalog.backups.canopy-bed');
 
 
