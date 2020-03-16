@@ -62,7 +62,7 @@
                         <div class="form-row mb-2">
                             <div class="input-group col-12">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    <span class="input-group-text"><i class="fa fa-user bujishu-gold"></i></span>
                                 </div>
                                 <input class="form-control" type="email" name="email" id="email" placeholder="Your email address">
                             </div>
@@ -71,7 +71,7 @@
                         <div class="form-row mb-2">
                             <div class="input-group col-12">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                    <span class="input-group-text"><i class="fa fa-key bujishu-gold"></i></span>
                                 </div>
                                 <input class="form-control" type="password" name="password" id="password" placeholder="Your password">
                             </div>
@@ -81,13 +81,13 @@
                             <div class="col-6 mb-1">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember-me" id="remember-me" {{ old('remember') ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="defaultCheck1">
+                                    <label class="form-check-label text-dark" for="remember">
                                         Remember me
                                     </label>
                                 </div>
                             </div>
                             <div class="col-6 text-right mb-1">
-                                <input type="submit" name="submit" class="btn btn-primary" value="Login">
+                                <input type="submit" name="submit" class="btn btn-primary" value="Login" style="background-color: #fff; color: #000000; font-weight: 700;">
                             </div>
                             <div class="col-12 text-right mb-1">
                                 <a class="text-dark" href="{{ route('password.request') }}">Forgot Password?</a>
