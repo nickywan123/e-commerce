@@ -55,7 +55,17 @@ class RegisterController extends Controller
     {
         // TODO: Change to auth/register/customer.
         // return view('auth.register.customer');
-        return view('auth.register');
+        $genders = Gender::all();
+        $races = Race::all();
+        $states = State::all();
+        $maritals = Marital::all();
+        $employments = Employment::all();
+        return view('auth.register.customer')
+            ->with('genders', $genders)
+            ->with('races', $races)
+            ->with('states', $states)
+            ->with('maritals', $maritals)
+            ->with('employments', $employments);
     }
 
     /**
@@ -142,7 +152,7 @@ class RegisterController extends Controller
             ]);
 
             $user->userInfo()->create([
-                'full_name' => $data['name'],
+                'full_name' => $data['full_name'],
                 'nric' => $data['nric'],
                 // 'race' => $data['race_id'],
                 // 'gender' => $data['gender_id'],
