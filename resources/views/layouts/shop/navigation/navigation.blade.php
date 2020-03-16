@@ -1,17 +1,66 @@
 <div class="middleBar">
     <div class="container-90">
         <div class="row d-flex">
-            <div class="col-sm-2 vertical-align hidden-xs">
+            <div class="col-sm-2 vertical-align hidden-xs mb-1">
                 <div class="row">
-                    <div class="col-6 my-auto text-left p-1">
+                    <div class="col-3 col-md-6 my-auto text-left p-1">
                         <button type="button" id="sidebarCollapse" class="btn">
                             <i class="fa fa-bars navigation-icon"></i>
                         </button>
                     </div>
-                    <div class="col-6 text-right my-auto">
-                        <a href="javascript:void(0);">
+                    <div class="col-3 col-md-6 text-right my-auto">
+                        <a href="/shop">
                             <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
                         </a>
+                    </div>
+                    <div class="col-6 hidden-md my-auto">
+                        <ul class="nav justify-content-center-sm float-right pt-2">
+                            @guest
+                            <li class="nav-item m-1">
+                                <div class="dropdown show">
+                                    <!-- TODO: Create a class for the style -->
+                                    <a class="btn btn-secondary dropdown-toggle my-account-button" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
+                                        Menu
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="/login">Login</a>
+                                        <a class="dropdown-item" href="/register">Register</a>
+                                    </div>
+                                </div>
+                            </li>
+                            @else
+                            <li class="nav-item m-1">
+                                <div class="dropdown show">
+                                    <!-- TODO: Create a class for the style -->
+                                    <a class="btn btn-secondary dropdown-toggle my-account-button" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
+                                        My Account
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Profile <small>(wip)</small></a>
+                                        <a class="dropdown-item" href="#">My Orders <small>(wip)</small></a>
+                                        <a class="dropdown-item" href="#" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            @hasrole('panel')
+                            <li class="nav-item m-1">
+                                <a href="/management" class="nav-link btn  btn-register">Panel</a>
+                            </li>
+                            @endhasrole
+                            @hasrole('dealer')
+                            <li class="nav-item m-1">
+                                <a href="/management" class="nav-link btn  btn-register">Dealer</a>
+                            </li>
+                            @endhasrole
+                            @endguest
+                        </ul>
                     </div>
                 </div>
 
@@ -41,7 +90,7 @@
                 </form>
             </div>
             <div class="col-sm-4 vertical-align my-auto">
-                <ul class="nav justify-content-center-sm float-right pt-2">
+                <ul class="nav justify-content-center-sm float-right pt-2 hidden-sm">
                     @guest
                     <li class="nav-item m-1">
                         <a class="nav-link" href="/login">Login</a>
