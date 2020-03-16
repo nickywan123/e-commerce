@@ -1,22 +1,16 @@
 @extends('layouts.shop.main')
 
 @section('content')
-<div>
-  {{-- {{ Breadcrumbs::render('shop.category.subcategory', $category, $subcategory) }} --}}
- 
-
-  <div class="container-fluid">
-
-<div class="row">
-<div class="col-md-2"></div>
-<div class="col-md-10"><h3 style="color:black;">Featured Categories</h3><br> <hr></div> 
-
-</div>
 
 
-    <div class="row">
-<div class="col-md-2 ">
-    <ul class="list-group border-right">
+
+
+<!-- ------------------------------------>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 d-none d-md-block">
+      <ul class="list-group border-right">
         <li class="list-group-item">
     
              <ul class="list-group">
@@ -234,160 +228,185 @@
          
      </ul>
 
-</div>
+    </div>
+    <div class="col-md-10">
+      <div class="row">
 
-<div class="col-md-2 order-first order-lg-last text-center">
+        <div class=" col-md-10"><h3 style="color:black;">Featured Categories</h3><br> <hr></div> 
+        
+        </div>
+
+      <div class="row">
+        <div class="col-6 col-md-3 text-center">
+          <div class="dropdown">
+            <a id="menu1"  >
+              <img class="image" src="{{asset('images/bedframe-1.jpg')}}">
+            </a> <br> <br>
+            <span class="text-capitalize "><strong>Bedframe</strong> </span>
+            <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="/category/bedsheet-mattress/canopy-bed">Canopy Bed</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="/category/bedsheet-mattress/canopy-bed">Bunk Bed</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="/category/bedsheet-mattress/canopy-bed">Day Bed</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="/category/bedsheet-mattress/canopy-bed">Platform Bed</a></li>
+            </ul>
+          </div> <br>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="dropdown">
+            <a id="menu1" >
+              <img class="image" src="{{asset('images/mattress_white.jpg')}}">
+            </a><br> <br>
+            <span class="text-capitalize "> <strong>Mattress</strong> </span>
+            <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
+            </ul>
+          </div> 
+          
     
-    <div class="dropdown">
-        <a  id="menu1">
-          <img class="image" src="{{asset('images/bedframe-1.jpg')}}">
-        </a> <br> <br>
-        <span class="text-capitalize "><strong>Bedframe</strong> </span>
-        <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/category/bedsheet-mattress/canopy-bed">Canopy Bed</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/category/bedsheet-mattress/canopy-bed">Bunk Bed</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/category/bedsheet-mattress/canopy-bed">Day Bed</a></li>
-          <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="/category/bedsheet-mattress/canopy-bedd">Platform Bed</a></li>
-        </ul>
-      </div> <br>
-  <h3 style="color:black">Featured Deals</h3> <hr>
-      <a href="#" id="menu1">
-        <img class="product-item" src="{{asset('images/canopy-bed-1.jpg')}}">
-      </a> <br> <br>
-      <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
-        <br>
-
-        <span> Pillow,soft,50cm</span>
-        <h3><strong>RM20</strong></h3>
-        <ul>
-
-          <li>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span>(60) </span>
-          </li>
-          <ul><br>
-            
-           
-</div>
-<div class="col-md-2 order-first order-lg-last text-center">
-    <div class="dropdown">
-        <a id="menu1" >
-          <img class="image" src="{{asset('images/mattress_white.jpg')}}">
-        </a><br> <br>
-        <span class="text-capitalize "> <strong>Mattress</strong> </span>
-        <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
-          <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
-        </ul>
-      </div> 
-      
-
-      <a href="#" id="menu1">
-        <img style="margin-top:30%;" class="product-item" src="{{asset('images/canopy-bed-2.jpg')}}">
-      </a> <br> <br>
-      <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
-        <br>
-
-        <span> Pillow,soft,50cm</span>
-        <h3><strong>RM20</strong></h3>
-        <ul>
-
-          <li>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span>(60) </span>
-          </li>
-          <ul><br>
-</div>
-<div class="col-md-2 order-first order-lg-last text-center">
-    <div class="dropdown">
-        <a  id="menu1" >
-          <img class="image" src="{{asset('images/pillow1.jpg')}}">
-        </a><br> <br>
-        <span class="text-capitalize "> <strong>Pillow</strong> </span>
-        <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
-          <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
-        </ul>
-      </div> 
-
-      <a href="#" id="menu1">
-        <img style="margin-top:30%;"  class="product-item" src="{{asset('images/canopy-bed-3.jpg')}}">
-      </a> <br> <br>
-      <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
-        <br>
-
-        <span> Pillow,soft,50cm</span>
-        <h3><strong>RM20</strong></h3>
-        <ul>
-
-          <li>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span>(60) </span>
-          </li>
-          <ul><br>
-</div>
-<div class="col-md-2 order-first order-lg-last text-center">
-    <div class="dropdown">
-        <a  id="menu1" >
-          <img class="image" src="{{asset('images/babycot-1.jpg')}}">
-        </a> <br> <br>
-        <span class="text-capitalize "> <strong>BabyCot</strong> </span>
-        <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
-          <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
-        </ul>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="dropdown">
+            <a id="menu1">
+              <img class="image" src="{{asset('images/pillow1.jpg')}}">
+            </a><br> <br>
+            <span class="text-capitalize "> <strong>Pillow</strong> </span>
+            <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
+            </ul>
+          </div> 
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <div class="dropdown">
+            <a id="menu1" >
+              <img class="image" src="{{asset('images/babycot-1.jpg')}}">
+            </a> <br> <br>
+            <span class="text-capitalize "> <strong>BabyCot</strong> </span>
+            <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
+            </ul>
+          </div> 
+        </div>
       </div>
-      <a  href="#" id="menu1">
-        <img style="margin-top:30%;"  class="product-item" src="{{asset('images/canopy-bed-4.jpg')}}">
-      </a> <br> <br>
-      <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
-        <br>
 
-        <span> Pillow,soft,50cm</span>
-        <h3><strong>RM20</strong></h3>
-        <ul>
+       <div class="row">
 
-          <li>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span>(70) </span>
-          </li>
-          <ul><br>
-</div>
+        <div class="col-md-10"><h3 style="color:black;">Featured Deals</h3><br> <hr></div> 
+        
+        </div>
+
+        <div class="row">
+   <div class="col-6 col-md-3 text-center">
+    <a href="#" id="menu1">
+      <img class="product-item" src="{{asset('images/canopy-bed-1.jpg')}}">
+    </a> <br> <br>
+    <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
+      <br>
+
+      <span> Pillow,soft,50cm</span>
+      <h3><strong>RM20</strong></h3>
+      <ul>
+
+        <li>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span>(60) </span>
+        </li>
+        <ul><br>
+   </div>
+
+   <div class="col-6 col-md-3 text-center">
+
+    <a href="#" id="menu1">
+      <img class="product-item" src="{{asset('images/canopy-bed-2.jpg')}}">
+    </a> <br> <br>
+    <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
+      <br>
+
+      <span> Pillow,soft,50cm</span>
+      <h3><strong>RM20</strong></h3>
+      <ul>
+
+        <li>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span>(60) </span>
+        </li>
+        <ul><br>
+   </div>
+
+   <div class="col-6 col-md-3 text-center">
+
+    <a href="#" id="menu1">
+      <img class="product-item" src="{{asset('images/canopy-bed-3.jpg')}}">
+    </a> <br> <br>
+    <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
+      <br>
+
+      <span> Pillow,soft,50cm</span>
+      <h3><strong>RM20</strong></h3>
+      <ul>
+
+        <li>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span>(60) </span>
+        </li>
+        <ul><br>
+   </div>
+
+   <div class="col-6 col-md-3 text-center">
+
+    <a href="#" id="menu1">
+      <img class="product-item" src="{{asset('images/canopy-bed-4.jpg')}}">
+    </a> <br> <br>
+    <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
+      <br>
+
+      <span> Pillow,soft,50cm</span>
+      <h3><strong>RM20</strong></h3>
+      <ul>
+
+        <li>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span>(60) </span>
+        </li>
+        <ul><br>
+   </div>
+
+        </div>
+
+
 
     </div>
-
-
-
-
   </div>
 
-</div>
+
 
 @endsection
 
@@ -427,8 +446,8 @@
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
     border-radius: 100%;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
   }
 
   .image:hover {
@@ -442,12 +461,6 @@
   }
 
 
-  /* .round-background {
-  height: 200px;
-  width: 200px;
-  background-color:  ;
-  border-radius: 50%;
-  display: inline-block;
-} */
+
 </style>
 @endpush
