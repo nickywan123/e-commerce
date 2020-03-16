@@ -239,7 +239,7 @@
 <div class="col-md-2 order-first order-lg-last text-center">
     
     <div class="dropdown">
-        <a type="button" id="menu1" data-toggle="dropdown">
+        <a id="menu1" >
           <img class="image" src="{{asset('images/bedframe-1.jpg')}}">
         </a> <br> <br>
         <span class="text-capitalize "><strong>Bedframe</strong> </span>
@@ -251,8 +251,10 @@
           <li role="presentation"><a role="menuitem" tabindex="-1" href="/category/bedsheet-mattress/canopy-bed">Platform Bed</a></li>
         </ul>
       </div> <br>
+
+      
   <h3 style="color:black">Featured Deals</h3> <hr>
-      <a type="button" id="menu1">
+      <a href="#" id="menu1">
         <img class="product-item" src="{{asset('images/pillow2.jpg')}}">
       </a> <br> <br>
       <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
@@ -276,7 +278,7 @@
 </div>
 <div class="col-md-2 order-first order-lg-last text-center">
     <div class="dropdown">
-        <a type="button" id="menu1" data-toggle="dropdown">
+        <a id="menu1" >
           <img class="image" src="{{asset('images/mattress_white.jpg')}}">
         </a><br> <br>
         <span class="text-capitalize "> <strong>Mattress</strong> </span>
@@ -290,8 +292,8 @@
       </div> 
       
 
-      <a style="margin-top:38%;" type="button" id="menu1">
-        <img class="product-item" src="{{asset('images/babycot.jpg')}}">
+      <a  href="#" id="menu1">
+        <img style="margin-top:30%;" class="product-item" src="{{asset('images/babycot.jpg')}}">
       </a> <br> <br>
       <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
         <br>
@@ -312,7 +314,7 @@
 </div>
 <div class="col-md-2 order-first order-lg-last text-center">
     <div class="dropdown">
-        <a type="button" id="menu1" data-toggle="dropdown">
+        <a id="menu1">
           <img class="image" src="{{asset('images/pillow1.jpg')}}">
         </a><br> <br>
         <span class="text-capitalize "> <strong>Pillow</strong> </span>
@@ -325,14 +327,14 @@
         </ul>
       </div> 
 
-      <a style="margin-top:38%;" type="button" id="menu1">
-        <img class="product-item" src="{{asset('images/bedframe-2.jpg')}}">
+      <a  href="#" id="menu1">
+        <img style="margin-top:30%;" class="product-item" src="{{asset('images/bedframe-2.jpg')}}">
       </a> <br> <br>
       <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
         <br>
 
         <span> Pillow,soft,50cm</span>
-        <h3><strong>RM20</strong></h3>
+        <h3><strong>RM30</strong></h3>
         <ul>
 
           <li>
@@ -347,7 +349,7 @@
 </div>
 <div class="col-md-2 order-first order-lg-last text-center">
     <div class="dropdown">
-        <a type="button" id="menu1" data-toggle="dropdown">
+        <a  id="menu1">
           <img class="image" src="{{asset('images/babycot-1.jpg')}}">
         </a> <br> <br>
         <span class="text-capitalize "> <strong>BabyCot</strong> </span>
@@ -359,8 +361,8 @@
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
         </ul>
       </div>
-      <a style="margin-top:38%;" type="button" id="menu1">
-        <img class="product-item" src="{{asset('images/mattress-getha.jpg')}}">
+      <a  href="#" id="menu1">
+        <img style="margin-top:30%;" class="product-item" src="{{asset('images/mattress-getha.jpg')}}">
       </a> <br> <br>
       <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
         <br>
@@ -384,443 +386,7 @@
 
 
 
-    {{-- <div class="row">
-
-      <div class="col-lg-2 col-md-6  col-sm-6 col-xs-12 order-first order-lg-last text-center ">
-        <h3 style="font-family:verdana;">Featured Categories</h3>
-        <div class="dropdown">      
-          <a type="button" id="menu1" data-toggle="dropdown">
-            <img class="image" src="{{asset('images/pillow1.jpg')}}">
-          </a> <br> <br>
-          <span class="text-capitalize"><strong>Pillow</strong></span>
-          <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/shop/category/electrical">Memory Foams</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Latex Pillow </a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Down Pillow</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Feather Pillow</a></li>
-          </ul>
-        </div> <br> <br>
-
-
-        <h2 style="text-align: center; font-family:verdana;">Foams</h2> <br>
-        <!-- List of sub products -->
-        <a type="button" id="menu1">
-          <img class="product-item" src="{{asset('images/pillow1.jpg')}}">
-        </a> <br> <br>
-        <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
-        </span> <br>
-        <span> Pillow,soft,50cm</span>
-        <h3><strong>RM20</strong></h3>
-        <ul>
-
-          <li>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span>(60) </span>
-          </li>
-          <ul><br>
-
-
-
-
-      </div>
-
-      <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12  order-first order-lg-last text-center">
-        <div class="dropdown">
-          <a type="button" id="menu1" data-toggle="dropdown">
-            <img class="image" src="{{asset('images/curtain.jpg')}}">
-          </a> <br> <br>
-          <span class="text-capitalize "> <strong>Bedframe</strong> </span>
-          <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
-          </ul>
-        </div> <br> <br><br> <br><br><br>
-
-        <!-- List of sub products -->
-
-        <a type="button" id="menu1">
-          <img class="product-item" src="{{asset('images/pillow2.jpg')}}">
-        </a> <br> <br>
-        <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
-          <br>
-
-          <span> Pillow,soft,50cm</span>
-          <h3><strong>RM20</strong></h3>
-          <ul>
-
-            <li>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span>(60) </span>
-            </li>
-            <ul><br>
-
-
-
-
-      </div>
-
-
-
-      <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12  order-first order-lg-last text-center">
-        <div class="dropdown">
-          <a type="button" id="menu1" data-toggle="dropdown">
-            <img class="image" src="{{asset('images/pink-bed-sheet.jpg')}}">
-          </a><br> <br>
-          <span class="text-capitalize "> <strong>Mattress</strong> </span>
-          <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
-          </ul>
-        </div> <br> <br><br> <br><br><br>
-
-        <!-- List of sub products -->
-        <a type="button" id="menu1">
-          <img class="product-item" src="{{asset('images/pillow3.jpg')}}">
-        </a> <br> <br>
-        <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
-          <br>
-
-          <span> Pillow,soft,50cm</span>
-          <h3><strong>RM20</strong></h3>
-          <ul>
-            <li>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span>(60) </span>
-            </li>
-            <ul><br>
-
-
-
-
-      </div>
-
-      <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12  order-first order-lg-last text-center">
-        <div class="dropdown">
-          <a type="button" id="menu1" data-toggle="dropdown">
-            <img class="image" src="{{asset('images/pink-bed-sheet.jpg')}}">
-          </a> <br> <br>
-          <span class="text-capitalize "> <strong>BabyCot</strong> </span>
-          <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
-          </ul>
-        </div> <br> <br><br> <br><br> <br>
-
-
-        <!-- List of sub products -->
-        <a type="button" id="menu1">
-          <img class="product-item" src="{{asset('images/bedding.jpg')}}">
-        </a> <br> <br>
-        <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
-          <br>
-
-          <span> Pillow,soft,50cm</span>
-          <h3><strong>RM20</strong></h3>
-          <ul>
-
-            <li>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span>(60) </span>
-            </li>
-            <ul><br>
-
-
-
-
-      </div>
-
-      <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12  order-first order-lg-last text-center">
-        <div class="dropdown">
-          <a type="button" id="menu1" data-toggle="dropdown">
-            <img class="image" src="{{asset('images/pink-bed-sheet.jpg')}}">
-          </a> <br> <br>
-          <span class="text-capitalize "> <strong>Curtain</strong> </span>
-          <ul class="dropdown-menu text-center" role="menu" aria-labelledby="menu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 1</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 2</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 3</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
-          </ul>
-        </div> <br> <br><br> <br><br> <br>
-
-        <!-- List of sub products -->
-        <a type="button" id="menu1">
-          <img class="product-item" src="{{asset('images/california-king-bed-11.jpg')}}">
-        </a> <br> <br>
-        <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
-          <br>
-
-          <span> Pillow,soft,50cm</span>
-          <h3><strong>RM20</strong></h3>
-          <ul>
-
-            <li>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span>(60) </span>
-            </li>
-            <ul><br>
-
-
-
-
-
-      </div> --}}
-
-
-
-      <!-- Sidebar Filter -->
-      {{-- <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
-        <!-- Related Categories -->
-        <ul class="list-group border-right">
-    <li class="list-group-item">
-
-         <ul class="list-group">
-
-            <li>
-                <strong>Panel</strong>
-            </li>
-            <li>
-                <a class="text-capitalize" style="font-weight: 520; color:black;" href="/shop/category/">A Company</a>
-
-                
-                <ul class="list-group">
-                  
-                  <li>
-                    <a class="text-capitalize" style="font-weight: 490; color:black;" href="/shop/category/">B Company</a>
-                 
-                    <ul class="list-group">
-                      
-                      <li>
-                        <a class="text-capitalize" style="font-weight: 400; color:black;" href="/shop/category/">C Company</a>
-                      </li>
-                      
-                    </ul>
-                  
-                  </li>
-               
-                </ul> <br>
-
-                
-            </li>
-             
-         </ul> <br>
-
-
-           
-
-        <ul class="list-group">
-
-            <li>
-                <strong>Price</strong>
-            </li>
-            <li>
-                <a class="text-capitalize" style="font-weight: 520; color:black;" href="/shop/category/">Under RM25 </a>
-
-                
-                <ul class="list-group">
-                  
-                  <li>
-                    <a class="text-capitalize" style="font-weight: 490; color:black;" href="/shop/category/">RM 25 to RM 50</a>
-                 
-                    <ul class="list-group">
-                      
-                      <li>
-                        <a class="text-capitalize" style="font-weight: 400; color:black;" href="/shop/category/">RM50 to RM100</a>
-                      </li>
-                      
-                      <ul class="list-group">
-                      
-                        <li>
-                          <a class="text-capitalize" style="font-weight: 400; color:black;" href="/shop/category/">RM100 to RM200</a>
-                        </li>
-
-                        <ul class="list-group">
-                      
-                            <li>
-                              <a class="text-capitalize" style="font-weight: 400; color:black;" href="/shop/category/">>RM200 & Above</a>
-                            </li>
-                        </ul>
-                      </ul>
-                      
-                    </ul>
-                  
-                  </li>
-               
-                </ul> 
-
-                
-            </li>
-             
-         </ul>
-
-              <input type="number" placeholder="Min" id="quantity" name="quantity" min="1" max="300">
-              <input type="number" placeholder="Max" id="quantity" name="quantity" min="1" max="300">
- <br> <br>
-            
-
-
- <ul class="list-group">
-
-    <li>
-        <strong>Color</strong>
-    </li>
-    <li>
-        <a class="text-capitalize" style="font-weight: 520; color:black;" href="#"><input type="checkbox" id="white" name="white" value="white">
-            <label for="white">WHITE</label> </a>
-
-        
-        <ul class="list-group">
-          
-          <li>
-            <a class="text-capitalize" style="font-weight: 490; color:black;" href="#"><input type="checkbox" id="beige" name="beige" value="beige">
-                <label for="beige">BEIGE</label></a>
-         
-            <ul class="list-group">
-              
-              <li>
-                <a class="text-capitalize" style="font-weight: 400; color:black;" href="#"><input type="checkbox" id="red" name="red" value="red">
-                    <label for="red">RED</label></a>
-              </li>
-              
-              <ul class="list-group">
-              
-                <li>
-                  <a class="text-capitalize" style="font-weight: 400; color:black;" href="#"><input type="checkbox" id="maroon" name="maroon" value="maroon">
-                    <label for="maroon">MAROON</label></a>
-                </li>
-
-                <ul class="list-group">
-              
-                    <li>
-                      <a class="text-capitalize" style="font-weight: 400; color:black;" href="#"><input type="checkbox" id="grey" name="grey" value="grey">
-                        <label for="grey">GREY</label></a>
-                    </li>
-                    <ul class="list-group">
-              
-                        <li>
-                          <a class="text-capitalize" style="font-weight: 400; color:black;" href="#"><input type="checkbox" id="black" name="black" value="black">
-                            <label for="black">BLACK</label></a>
-                        </li>
-                </ul>
-              </ul>
-              
-            </ul>
-          
-          </li>
-       
-        </ul> 
-
-        
-    </li>
-     
- </ul>
-
-
-        
- <ul class="list-group">
-
-    <li>
-        <strong>Ratings</strong>
-    </li>
-    <li>
-        <a class="text-capitalize" style="font-weight: 520; color:black;" href="#"> <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span> </a>
-
-        
-        <ul class="list-group">
-          
-          <li>
-            <a class="text-capitalize" style="font-weight: 490; color:black;" href="#"> <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                
-            </a>
-          
-            <ul class="list-group">
-              
-              <li>
-                <a class="text-capitalize" style="font-weight: 400; color:black;" href="#"><span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star "></span>
-                    <span class="fa fa-star"></span>
-                    </a>
-              </li>
-              
-              <ul class="list-group">
-              
-                <li>
-                  <a class="text-capitalize" style="font-weight: 400; color:black;" href="#"><span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star "></span>
-                    <span class="fa fa-star"></span></a>
-                </li>
-
-                <ul class="list-group">
-              
-                    <li>
-                      <a class="text-capitalize" style="font-weight: 400; color:black;" href="#"> <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star"></span>
-                       </a>
-                    </li>
-                   
-              </ul>
-              
-            </ul>
-          
-          </li>
-       
-        </ul> 
-
-        
-    </li>
-     
- </ul>
-
-    </div> --}}
+  
 
   </div>
 

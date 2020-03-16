@@ -239,7 +239,7 @@
 <div class="col-md-2 order-first order-lg-last text-center">
     
     <div class="dropdown">
-        <a type="button" id="menu1" data-toggle="dropdown">
+        <a  id="menu1">
           <img class="image" src="{{asset('images/bedframe-1.jpg')}}">
         </a> <br> <br>
         <span class="text-capitalize "><strong>Bedframe</strong> </span>
@@ -252,7 +252,7 @@
         </ul>
       </div> <br>
   <h3 style="color:black">Featured Deals</h3> <hr>
-      <a type="button" id="menu1">
+      <a href="#" id="menu1">
         <img class="product-item" src="{{asset('images/canopy-bed-1.jpg')}}">
       </a> <br> <br>
       <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
@@ -276,7 +276,7 @@
 </div>
 <div class="col-md-2 order-first order-lg-last text-center">
     <div class="dropdown">
-        <a type="button" id="menu1" data-toggle="dropdown">
+        <a id="menu1" >
           <img class="image" src="{{asset('images/mattress_white.jpg')}}">
         </a><br> <br>
         <span class="text-capitalize "> <strong>Mattress</strong> </span>
@@ -290,8 +290,8 @@
       </div> 
       
 
-      <a style="margin-top:38%;" type="button" id="menu1">
-        <img class="product-item" src="{{asset('images/canopy-bed-2.jpg')}}">
+      <a href="#" id="menu1">
+        <img style="margin-top:30%;" class="product-item" src="{{asset('images/canopy-bed-2.jpg')}}">
       </a> <br> <br>
       <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
         <br>
@@ -312,7 +312,7 @@
 </div>
 <div class="col-md-2 order-first order-lg-last text-center">
     <div class="dropdown">
-        <a type="button" id="menu1" data-toggle="dropdown">
+        <a  id="menu1" >
           <img class="image" src="{{asset('images/pillow1.jpg')}}">
         </a><br> <br>
         <span class="text-capitalize "> <strong>Pillow</strong> </span>
@@ -325,8 +325,8 @@
         </ul>
       </div> 
 
-      <a style="margin-top:38%;" type="button" id="menu1">
-        <img class="product-item" src="{{asset('images/canopy-bed-3.jpg')}}">
+      <a href="#" id="menu1">
+        <img style="margin-top:30%;"  class="product-item" src="{{asset('images/canopy-bed-3.jpg')}}">
       </a> <br> <br>
       <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
         <br>
@@ -347,7 +347,7 @@
 </div>
 <div class="col-md-2 order-first order-lg-last text-center">
     <div class="dropdown">
-        <a type="button" id="menu1" data-toggle="dropdown">
+        <a  id="menu1" >
           <img class="image" src="{{asset('images/babycot-1.jpg')}}">
         </a> <br> <br>
         <span class="text-capitalize "> <strong>BabyCot</strong> </span>
@@ -359,8 +359,8 @@
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Item 4</a></li>
         </ul>
       </div>
-      <a style="margin-top:38%;" type="button" id="menu1">
-        <img class="product-item" src="{{asset('images/canopy-bed-4.jpg')}}">
+      <a  href="#" id="menu1">
+        <img style="margin-top:30%;"  class="product-item" src="{{asset('images/canopy-bed-4.jpg')}}">
       </a> <br> <br>
       <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
         <br>
@@ -375,7 +375,7 @@
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
-            <span>(60) </span>
+            <span>(70) </span>
           </li>
           <ul><br>
 </div>
