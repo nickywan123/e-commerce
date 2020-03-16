@@ -23,14 +23,14 @@
 <body>
 
     <div class="backgroundImage">
-        <div class="p-3 text-right">
+        <div class="text-right p-3">
             <a href="/register-dealer " class="btn grad1 p-2"><b>{{ __('Be A Dealer') }}</b></a>
         </div>
 
 
         <div class="container mt-4 mb-4">
             <div class="row">
-                <div class="col-6 col-md-4 mx-auto my-auto p-3">
+                <div class="col-4 col-md-4 mx-auto my-auto">
                     <img class="mw-100" src="{{ asset('storage/logo/bujishu.png') }}" alt="Bujishu">
                 </div>
             </div>
