@@ -239,7 +239,7 @@
 <div class="col-md-2 order-first order-lg-last text-center">
     
     <div class="dropdown">
-        <a id="menu1" >
+        <a id="menu1"  >
           <img class="image" src="{{asset('images/bedframe-1.jpg')}}">
         </a> <br> <br>
         <span class="text-capitalize "><strong>Bedframe</strong> </span>
@@ -349,7 +349,7 @@
 </div>
 <div class="col-md-2 order-first order-lg-last text-center">
     <div class="dropdown">
-        <a  id="menu1">
+        <a id="menu1" >
           <img class="image" src="{{asset('images/babycot-1.jpg')}}">
         </a> <br> <br>
         <span class="text-capitalize "> <strong>BabyCot</strong> </span>
@@ -362,7 +362,7 @@
         </ul>
       </div>
       <a  href="#" id="menu1">
-        <img style="margin-top:30%;" class="product-item" src="{{asset('images/mattress-getha.jpg')}}">
+        <img class="product-item" src="{{asset('images/mattress-getha.jpg')}}">
       </a> <br> <br>
       <span class="text-capitalize" data-toggle="tooltip" data-placement="right" title="Lorem Ipsum y of type and scrambled it"><strong>[COMPANY NAME]</strong>
         <br>
@@ -397,7 +397,7 @@
 @push('style')
 
 <style>
-  @media (min-width:480px) {
+  @media (min-width:280px) {
     .dropdown:hover .dropdown-menu {
       display: block;
       margin-top: 0;
@@ -445,12 +445,6 @@
   }
 
 
-  /* .round-background {
-  height: 200px;
-  width: 200px;
-  background-color:  ;
-  border-radius: 50%;
-  display: inline-block;
-} */
+
 </style>
 @endpush

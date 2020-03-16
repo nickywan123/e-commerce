@@ -394,7 +394,7 @@
 @push('style')
 
 <style>
-  @media (min-width:480px) {
+  @media (min-width:280px) {
     .dropdown:hover .dropdown-menu {
       display: block;
       margin-top: 0;
