@@ -49,12 +49,12 @@
 
     <div class="bg-md bg-sm">
         <div class="row">
-            <div class="col-6 offset-3 col-md-4 offset-md-4">
-                <img class="mw-100" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
+            <div class="col-6 offset-3 col-md-4 offset-md-4 text-center">
+                <img class="mw-100 w-50-md" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
             </div>
         </div>
         <div>
-            <div class="card border-rounded-0 bg-bujishu-gold login-card">
+            <div class="card border-rounded-0 bg-bujishu-gold login-card mt-4">
                 <h5 class="text-center bujishu-gold form-card-title">Sign in</h5>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -87,10 +87,13 @@
                                 </div>
                             </div>
                             <div class="col-6 text-right mb-1">
-                                <input type="submit" name="submit" class="btn btn-primary" value="Login" style="background-color: #fff; color: #000000; font-weight: 700;">
-                            </div>
-                            <div class="col-12 text-right mb-1">
                                 <a class="text-dark" href="{{ route('password.request') }}">Forgot Password?</a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 text-center mb-1">
+                                <input type="submit" name="submit" class="btn btn-primary" value="LOGIN" style="background-color: #fff; color: #000000; font-weight: 700; border: 1px solid #ffd445; border-radius: 10px;">
                             </div>
                         </div>
                     </form>
