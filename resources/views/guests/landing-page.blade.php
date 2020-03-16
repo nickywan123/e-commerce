@@ -11,68 +11,63 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine&display=swap" rel="stylesheet">
 </head>
 
-<body >
+<body>
 
     <div class="backgroundImage">
-        <a href="/register-dealer " class="btn grad1 btn-dealer"><b>{{ __('Be A Dealer') }}</b></a>
+        <div class="p-3 text-right">
+            <a href="/register-dealer " class="btn grad1 p-2"><b>{{ __('Be A Dealer') }}</b></a>
+        </div>
+
+
+        <div class="container mt-4 mb-4">
+            <div class="row">
+                <div class="col-6 col-md-4 mx-auto my-auto p-3">
+                    <img class="mw-100" src="{{ asset('storage/logo/bujishu.png') }}" alt="Bujishu">
+                </div>
+            </div>
+        </div>
 
         <div class="container">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-3 col-md-4">
-                    <img class="my-md-5 logo" src="{{asset('/images/Logo.png')}}" alt="No Logo">
-                
+            <div class="row mb-4">
+                <div class="col-12 col-md-8 offset-md-2 text-center">
+                    <h2>
+                        A home is made of
+                        <i>
+                            <p>hopes</p>
+                        </i>
+                        and
+                        <i>
+                            <p>dreams</p>
+                        </i>
+                    </h2>
+                    <h2>
+                        Let us
+                        <i>
+                            <p>inspire</p>
+                        </i>
+                        you to build the perfect home!
+                    </h2>
                 </div>
-                <div class="col-md-4">
-               
-                </div>
             </div>
-        </div>
-       
-        <div class="container content">
-            <div class="row"> 
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-            <h2> A home is made of <i>
-                    <p>hopes</p>
-                </i> and <i>
-                    <p>dreams</p>
-                </i>
-            </h2>
-            <h2>Let us<i>
-                    <p>inspire</p>
-                </i> you to build the perfect home!</h2> <br>
-            </div>
-            <div class="col-md-2"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-      
-                    <a href="/login " class="btn grad1 grad2"><b>{{ __('LOGIN') }}</b></a>
-            <a href="/register" class="btn grad1 grad2"><b>{{ __('SIGN UP') }}</b></a>
-        </div>
-        <div class="col-md-4"></div>
 
+            <div class="row mt-4">
+                <div class="col-12 col-md-4 offset-md-4 text-center">
+                    <a href="/login " class="btn grad1 grad2"><b>{{ __('LOGIN') }}</b></a>
+                    <a href="/register" class="btn grad1 grad2"><b>{{ __('SIGN UP') }}</b></a>
+                </div>
+            </div>
         </div>
-        </div>
-        
-        </div>
+
+    </div>
 
     </div>
 </body>
