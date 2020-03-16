@@ -25,7 +25,8 @@ class Product extends Model
         'description',
         'quality',
         'panel_id',
-        'amount_sold'
+        'amount_sold',
+        'average_rating'
     ];
 
     /**

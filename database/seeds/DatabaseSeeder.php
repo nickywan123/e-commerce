@@ -18,11 +18,8 @@ class DatabaseSeeder extends Seeder
             PermissionsTableSeeder::class, // Important -> Registrations and logins uses roles and permissions.
             UsersTableSeeder::class,
             CategoriesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
-            // SubCategoriesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
-            // ProductTypesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
             QualitiesTableSeeder::class, // Important -> Need to have all of the rows to correctly show product's quality.
-            // ProductsTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
-            // StatusesTableSeeder::class, // Important -> Need to have to show statuses correctly.
+            ProductsTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
         ]);
     }
 }

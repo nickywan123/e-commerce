@@ -123,7 +123,8 @@
 
         <div class="col-12 col-md-10">
             <?php
-            $childCategories = App\Models\Categories\Category::find(1)->childCategories->take(6);
+            $category = App\Models\Categories\Category::find(1);
+            $childCategories = $category->childCategories->take(6);
             ?>
             <div class="row pb-1">
                 <div class="col-12 mb-1">
@@ -133,24 +134,36 @@
             </div>
             <div class="row mb-3">
                 @foreach($childCategories as $childCategory)
+                @if($childCategory->childCategories->count() != 0)
                 <div class="col-6 col-md-2 text-center">
                     <div class="slide-up-image-container">
-                        <img class="slide-up-image" src="https://via.placeholder.com/640" alt="">
+                        <img class="slide-up-image" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="">
                         <div class="slide-up-overlay">
                             <div class="slide-up-overlay-content">
                                 <ul class="list-unstyled">
-                                    <li>
-                                        <a href="">3rd Level 1</a>
+                                    <li style="font-size: 0.8rem; padding: 0.4rem; border-bottom: 1px solid #e5e5e5;"></li>
+                                    @foreach($childCategory->childCategories as $anotherChildCategory)
+                                    <li style="font-size: 0.8rem; padding: 0.4rem; border-bottom: 1px solid #e5e5e5;">
+                                        <a href="">{{ $anotherChildCategory->name }}</a>
                                     </li>
-                                    <li>
-                                        <a href="">3rd Level 2</a>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <h5 class="pt-2">{{ $childCategory->name }}</h5>
                 </div>
+                @else
+                <div class="col-6 col-md-2 text-center">
+                    <a href="">
+                        <div>
+                            <img class="mw-100 radius-100" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="">
+                        </div>
+                        <h5 class="pt-2">{{ $childCategory->name }}</h5>
+
+                    </a>
+                </div>
+                @endif
                 @endforeach
             </div>
 
@@ -162,14 +175,49 @@
             </div>
 
             <div class="row">
+                @foreach($category->products as $product)
                 <div class="col-6 col-md-2">
-                    <div class="item-overlay">
-                        <img class="mw-100" src="https://via.placeholder.com/640" alt="">
+                    <div class="item-overlay-container mb-1">
+                        <img class="mw-100" style="min-height: 150px;" src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="">
+                        <div class="item-overlay">
+                            <p class="item-quality">{{ $product->quality->name }}</p>
+                        </div>
+                        <div class="slide-right-overlay">
+                            <button class="btn btn-primary mb-2" style="display: block;">
+                                <i class="fa fa-cart-plus"></i>
+                            </button>
+                            <button class="btn btn-primary mb-2" style="display: block;">
+                                <i class="fa fa-star" style="color: #fccb34;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-info text-center">
+                        <a href="">
+                            <h5>{{ $product->panel->userInfo->full_name }}</h5>
+                            <p>Product 1</p>
+                            <h6 class="item-price">RM {{ $product->price }}</h6>
+                        </a>
+                        <ul class="list-unstyled product-rating mb-1">
+                            <li>
+                                <i class="fa fa-star checked"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star checked"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star checked"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star checked"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star checked"></i>
+                            </li>
+                        </ul>
+                        <p>(60)</p>
                     </div>
                 </div>
-                <div class="col-6 col-md-2">
-                    <img class="mw-100" src="https://via.placeholder.com/640" alt="">
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -178,6 +226,71 @@
 
 @push('style')
 <style>
+    .product-rating li {
+        display: inline;
+    }
+
+    .radius-100 {
+        border-radius: 100%;
+    }
+
+    .item-info {
+        color: rgb(91, 91, 91);
+    }
+
+    .item-info h5 {
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .item-info p {
+        font-weight: 450;
+        font-family: sans-serif;
+        font-size: 1rem;
+    }
+
+    .item-info .item-price {
+        font-size: 1.3rem;
+        font-weight: 650;
+    }
+
+    .slide-right-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.4);
+        overflow: hidden;
+        width: 0;
+        height: 100%;
+        transition: .5s ease;
+        padding-top: 1rem;
+    }
+
+    .item-overlay-container:hover .slide-right-overlay {
+        width: 100%;
+        left: 0;
+        padding-left: 1rem;
+    }
+
+    .item-overlay-container {
+        position: relative;
+    }
+
+    .item-overlay {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        background: rgb(91, 91, 91);
+        background: rgba(91, 91, 91, 0.9);
+    }
+
+    .item-quality {
+        padding: .5rem;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+
     .fa.fa-star {
         color: #6e6e6e;
     }

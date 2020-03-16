@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->integer('quality_id')->default(1);
             $table->bigInteger('panel_id');
             $table->integer('amount_sold')->default(0);
+            $table->integer('average_rating')->default(0);
             $table->timestamps();
         });
     }

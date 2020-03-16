@@ -64,7 +64,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -73,13 +73,13 @@ class CategoriesTableSeeder extends Seeder
 
         $category = Category::create([
             'name' => 'Cupboards',
-            'slug' => 'cupboard',
+            'slug' => 'cupboards',
             'parent_category_id' => 0
         ]);
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -94,7 +94,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -109,7 +109,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -124,7 +124,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -139,7 +139,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -154,7 +154,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -169,7 +169,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -184,7 +184,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -199,7 +199,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -214,7 +214,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -229,7 +229,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -255,7 +255,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -270,7 +270,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -285,7 +285,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -306,7 +306,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -321,7 +321,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -336,7 +336,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -351,7 +351,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -366,7 +366,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -381,7 +381,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -402,7 +402,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -423,7 +423,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -438,7 +438,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -453,7 +453,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -468,7 +468,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -483,7 +483,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -504,7 +504,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -519,7 +519,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -534,7 +534,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -555,7 +555,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -570,7 +570,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -585,7 +585,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -600,7 +600,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -621,7 +621,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -636,7 +636,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -651,7 +651,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -666,7 +666,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -681,7 +681,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -696,7 +696,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -711,7 +711,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -732,7 +732,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -747,7 +747,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -762,7 +762,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -777,7 +777,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -792,7 +792,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -807,7 +807,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -822,7 +822,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -837,7 +837,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -852,7 +852,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -873,7 +873,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -888,7 +888,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -903,7 +903,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -918,7 +918,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -933,7 +933,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -948,7 +948,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -969,7 +969,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -984,7 +984,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -999,7 +999,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1014,7 +1014,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1029,7 +1029,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1050,7 +1050,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1065,7 +1065,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1080,7 +1080,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1095,7 +1095,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1110,7 +1110,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1125,7 +1125,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1140,7 +1140,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1155,7 +1155,7 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
@@ -1170,11 +1170,71 @@ class CategoriesTableSeeder extends Seeder
 
         $category->image()->create([
             'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '_1.jpg'
+            'filename' => $category->slug . '.jpg'
         ]);
 
         // --
         $category = null;
         // --
+
+        $parentCategory = Category::where('name', 'Pillows')->first();
+
+        $category = Category::create([
+            'name' => 'Memory Foam',
+            'slug' => 'memory-foam',
+            'parent_category_id' => $parentCategory->id
+        ]);
+
+        $category->image()->create([
+            'path' => 'uploads/images/categories/' . $category->slug . '/',
+            'filename' => $category->slug . '.jpg'
+        ]);
+
+        // --
+        $category = null;
+        // --
+
+        $category = Category::create([
+            'name' => 'Ergonomic',
+            'slug' => 'ergonomic',
+            'parent_category_id' => $parentCategory->id
+        ]);
+
+        $category->image()->create([
+            'path' => 'uploads/images/categories/' . $category->slug . '/',
+            'filename' => $category->slug . '.jpg'
+        ]);
+
+        // --
+        $category = null;
+        // --
+
+        $parentCategory = Category::where('name', 'Mattresses')->first();
+
+        $category = Category::create([
+            'name' => 'Spring Mattresses',
+            'slug' => 'spring-mattresses',
+            'parent_category_id' => $parentCategory->id
+        ]);
+
+        $category->image()->create([
+            'path' => 'uploads/images/categories/' . $category->slug . '/',
+            'filename' => $category->slug . '.jpg'
+        ]);
+
+        // --
+        $category = null;
+        // --
+
+        $category = Category::create([
+            'name' => 'Foam Mattresses',
+            'slug' => 'foam-mattresses',
+            'parent_category_id' => $parentCategory->id
+        ]);
+
+        $category->image()->create([
+            'path' => 'uploads/images/categories/' . $category->slug . '/',
+            'filename' => $category->slug . '.jpg'
+        ]);
     }
 }
