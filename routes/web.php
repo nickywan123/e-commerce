@@ -13,9 +13,7 @@
 
 Route::get('/', 'Guest\GuestController@index');
 
-
 Route::get('/login', 'Auth\LoginController@showLoginForm');
-
 
 /** Author Nicholas
  * Hardcode (Temporarily) to show product category for each category
@@ -24,36 +22,35 @@ Route::get('/login', 'Auth\LoginController@showLoginForm');
 Route::view('/category/bedsheet-mattress', 'shop.catalog.backups.bedsheet-mattress');
 Route::view('/category/bedsheet-mattress/canopy-bed', 'shop.catalog.backups.canopy-bed');
 
-
-
-
-
 // Shop Routes
 Route::prefix('shop')->group(function () {
     // Home/Index page for shop.
     Route::get('/', 'Shop\ShopController@index')->name('shop.index');
 
-    // Category page for shop. Displays products related to selected category.
-    // Accepts slugged category name or slugged subcategory name.
-    Route::get('/category/{categorySlug}', 'Shop\ShopController@category')->name('shop.category');
+    // Author - Wan Shahruddin
+    Route::get('/category/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory');
 
-    // Subcategory page for shop. Displays products related to the selected product type.
-    Route::get(
-        '/category/{categorySlug}/{subcategorySlug}',
-        'Shop\ShopController@subcategory'
-    )->name('shop.category.subcategory');
+    // // Category page for shop. Displays products related to selected category.
+    // // Accepts slugged category name or slugged subcategory name.
+    // Route::get('/category/{categorySlug}', 'Shop\ShopController@category')->name('shop.category');
 
-    // Product type page for shop. Displays products related to the selected product type.
-    Route::get(
-        '/category/{categorySlug}/{subcategorySlug}/{productTypeSlug}',
-        'Shop\ShopController@productType'
-    )->name('shop.category.subcategory.type');
+    // // Subcategory page for shop. Displays products related to the selected product type.
+    // Route::get(
+    //     '/category/{categorySlug}/{subcategorySlug}',
+    //     'Shop\ShopController@subcategory'
+    // )->name('shop.category.subcategory');
 
-    // Product page for shop. Display detailed info of the product.
-    Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
+    // // Product type page for shop. Displays products related to the selected product type.
+    // Route::get(
+    //     '/category/{categorySlug}/{subcategorySlug}/{productTypeSlug}',
+    //     'Shop\ShopController@productType'
+    // )->name('shop.category.subcategory.type');
 
-    // Shopping cart page.
-    Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');
+    // // Product page for shop. Display detailed info of the product.
+    // Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
+
+    // // Shopping cart page.
+    // Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');
 
     // Cart prefix.
     Route::prefix('cart')->group(function () {
@@ -236,9 +233,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // End Web
 });
 
+/**
+ * Guest Routes
+ */
 Route::get('/register-dealer', 'Auth\RegisterController@showDealerRegistrationForm');
 Route::get('/register-panel', 'Auth\RegisterController@showPanelRegistrationForm');
-
-Route::get('test-login-page', function () {
-    return view('backups.Interface-login');
-});

@@ -150,4 +150,14 @@ class ShopController extends Controller
         // After finished loading, the view will submit an AJAX request that will be handled by the statement above.
         return view('shop.shopping-cart');
     }
+
+    // Author - Wan Shahruddin
+
+    /**
+     * Handles /shop/category/[category-name]
+     */
+    public function topLevelCategory($topLevelSlug)
+    {
+        return view('shop.catalog.top-level');
+    }
 }
