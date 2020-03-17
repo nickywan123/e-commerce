@@ -445,7 +445,14 @@
     border-bottom: 3px solid #fccb34;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
+
+   
+
+    .search-bar-size{
+        height:49px;
+    }
+
     .hidden-sm {
         display: none;
     }
@@ -510,14 +517,19 @@
     .border-rounded-0-md {
         border-radius: 0;
     }
+
+  
+    .search-bar-size{
+    height:48px;
 }
+}
+
 
 #search-button {
     height: 48px;
     background-color: white;
     
 }
-
 
 
 .border-rounded-0 {
@@ -569,6 +581,3 @@ Author: Nicholas
     border-color: #FBCC34;
 }
 
-.search-bar-size{
-    height:48px;
-}
