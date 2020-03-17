@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<body class="app header-fixed aside-menu-fixed sidebar-lg-show">
     @include('layouts.management.navigations.navigation-bar')
     <div class="app-body">
         @include('layouts.management.navigations.side-bar')

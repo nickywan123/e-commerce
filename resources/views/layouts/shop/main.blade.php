@@ -35,7 +35,7 @@
     </script>
 </head>
 
-<body>
+<body class="promo-page-background-color">
 
     <!-- Navigation bar -->
     @include('layouts.shop.navigation.navigation')

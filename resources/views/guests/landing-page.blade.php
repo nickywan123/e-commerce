@@ -24,14 +24,14 @@
 
     <div class="backgroundImage">
         <div class="text-right p-3">
-            <a href="/register-dealer " class="btn grad1 p-2"><b>{{ __('Be A Dealer') }}</b></a>
+            <a href="/register-dealer " class="btn  p-2"><b>{{ __('Be A Dealer') }}</b></a>
         </div>
 
 
         <div class="container mt-4 mb-4">
             <div class="row">
                 <div class="col-4 col-md-4 mx-auto my-auto">
-                    <img class="mw-100" src="{{ asset('storage/logo/bujishu.png') }}" alt="Bujishu">
+                    <img class="mw-100" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="Bujishu">
                 </div>
             </div>
         </div>
@@ -39,20 +39,20 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12 col-md-8 offset-md-2 text-center">
-                    <h2>
+                    <h2 class="bujishu-motto">
                         A home is made of
                         <i>
-                            <p>hopes</p>
+                            <p class="bujishu-recursive">hopes</p>
                         </i>
                         and
                         <i>
-                            <p>dreams</p>
+                            <p class="bujishu-recursive">dreams</p>
                         </i>
                     </h2>
-                    <h2>
+                    <h2 class="bujishu-motto">
                         Let us
                         <i>
-                            <p>inspire</p>
+                            <p class="bujishu-recursive">inspire</p>
                         </i>
                         you to build the perfect home!
                     </h2>
@@ -60,9 +60,14 @@
             </div>
 
             <div class="row mt-4">
-                <div class="col-12 col-md-4 offset-md-4 text-center">
-                    <a href="/login " class="btn grad1 grad2"><b>{{ __('LOGIN') }}</b></a>
-                    <a href="/register" class="btn grad1 grad2"><b>{{ __('SIGN UP') }}</b></a>
+                <div class="col-6 col-md-4 offset-md-3 ">
+                    <a href="/login " class="grad2"><img class="landing_button" src="{{ asset('storage/buttons/Login-Icon.png') }}" alt="Login"></a>
+                  
+                </div>
+
+                <div class="col-6 col-md-4  ">
+                   
+                    <a href="/register" class="grad2"><img class="landing_button"  src="{{ asset('storage/buttons/Sign-Up.png') }}" alt="Sign Up"></a>
                 </div>
             </div>
         </div>

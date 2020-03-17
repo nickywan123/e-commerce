@@ -23,11 +23,11 @@ a.btn-dealer {
     margin-right: 20px;
     margin-top: 20px;
 }
-h2 {
+.bujishu-motto{
     color: rgb(235, 232, 232);
 }
 
-p {
+.bujishu-recursive{
     display: inline;
     font-size: 75px;
     font-family: "Dancing Script" cursive;
@@ -44,23 +44,19 @@ p {
     text-align: center;
 }
 
-body {
-    min-height: 100%;
-    font-family: Verdana;
-    color: #aaaaaa;
-}
 
-a.grad2 {
-    margin-left: 30px;
-    margin-right: 30px;
+
+.landing_button{
+    height: 70%;
+   
 }
 
 // Add media query for mobile devices
 @media (max-width: 767px) {
-    h2 {
+    .bujishu-motto{
         font-size: 100%;
     }
-    p {
+    .bujishu-recursive{
         font-size: 200%;
     }
 
@@ -83,5 +79,9 @@ a.grad2 {
         width: 300%;
         margin-left: 350%;
         margin-top: 200%;
+    }
+    .landing_button{
+        height: 40%;
+       
     }
 }
