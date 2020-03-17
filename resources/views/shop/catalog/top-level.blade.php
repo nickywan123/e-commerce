@@ -180,7 +180,7 @@
                     <div class="item-overlay-container mb-1">
                         <img class="mw-100" style="min-height: 150px;" src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="">
                         <div class="item-overlay">
-                            <p class="item-quality">{{ $product->quality->name }}</p>
+                            <p class="item-quality m-0">{{ $product->quality->name }}</p>
                         </div>
                         <div class="slide-right-overlay">
                             <button class="btn btn-primary mb-2" style="display: block;">
@@ -286,7 +286,7 @@
     }
 
     .item-quality {
-        padding: .5rem;
+        padding: .25rem;
         font-size: 1rem;
         color: #ffffff;
     }
