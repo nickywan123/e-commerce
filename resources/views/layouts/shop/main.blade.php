@@ -19,20 +19,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- Expanded Side Menu -->
-    <link rel="stylesheet" href="{{ asset('assets/css/expandedsidemenu/expandedsidemenu.css') }}">
     <!-- Custom Scrollbar CDN -->
     <!-- TODO: Import using mix. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     @stack('style')
-
-    <script>
-        jQuery(function() {
-            expandedsidemenu.init({
-                menuid: 'mysidebarmenu'
-            })
-        })
-    </script>
 </head>
 
 <body>
@@ -49,11 +39,10 @@
 
     <!-- Footer -->
     @include('layouts.shop.footer.footer')
-    
+
     <!-- Custom Scrollbar CDN -->
     <!-- TODO: Import using mix. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="{{ asset('assets/js/expandedsidemenu/expandedsidemenu.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#sidebar").mCustomScrollbar({
@@ -70,12 +59,6 @@
                 $('.overlay').addClass('active');
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-
-            $(function() {
-                expandedsidemenu.init({
-                    menuid: 'mysidebarmenu'
-                });
             });
         });
     </script>

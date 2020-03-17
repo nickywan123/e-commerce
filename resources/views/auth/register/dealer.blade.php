@@ -3,7 +3,7 @@
 @section('content')
 <div class="bg-md bg-sm">
     <div>
-        <div class="card border-rounded-0 bg-bujishu-gold">
+        <div class="card border-rounded-0 bg-bujishu-gold guests-card">
             <h5 class="text-center bujishu-gold form-card-title">Dealer Registration</h5>
             <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
                 <li class="nav-item">
@@ -26,26 +26,22 @@
                         <div class="tab-pane fade show active" id="registration" role="tabpanel" aria-labelledby="registration-tab">
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Account Particulars</h5>
                             <div class="form-row">
-                                <div class="form-group col-md-8">
-                                    <label for="email">Email (Used for bujishu login)</label>
+                                <div class="form-group col-md-12">
+                                    <label for="email">Email</label>
                                     <input type="email" name="email" class="form-control" id="email" placeholder="Email">
-
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
-                                <div class="form-group col-md-4">
+
+                                <div class="form-group col-md-12">
                                     <label for="password">Password</label>
                                     <input type="password" name="password" class="form-control" id="password">
                                 </div>
-                            </div>
 
-                            <div class="form-row">
-                                <div class="form-group col-md-8"></div>
-
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="password-confirm">Confirm Password</label>
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
+
                             <!-- Next Button -->
                             <div class="text-right">
                                 <a class="btn btn-secondary" id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Next</a>
@@ -57,22 +53,22 @@
                             <!-- Personal Particulars -->
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Personal Particulars</h5>
                             <div class="form-row">
-                                <div class="form-group col-md-8">
+                                <div class="form-group col-md-6">
                                     <label for="full_name">Full Name (as per NRIC)</label>
                                     <input type="text" name="full_name" class="form-control" id="full_name" placeholder="Full Name">
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label for="nric">NRIC Number (810212-10-3345)</label>
+                                <div class="form-group col-md-6">
+                                    <label for="nric">NRIC Number</label>
                                     <input type="text" name="nric" class="form-control" id="nric" placeholder="NRIC Number">
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-6">
                                     <label for="date_of_birth">Date Of Birth</label>
                                     <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" placeholder="Date of birth">
                                 </div>
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-6">
                                     <label for="gender">Gender</label>
                                     <select class="form-control" id="gender" name="gender_id">
                                         <option disabled selected>Choose your gender..</option>
@@ -81,7 +77,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-6">
                                     <label for="race_id">Race</label>
                                     <select name="race_id" id="race_id" class="form-control">
                                         <option disabled selected>Choose your race..</option>
@@ -90,7 +86,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-6">
                                     <label for="marital_id">Marital Status</label>
                                     <select name="marital_id" id="marital_id" class="form-control">
                                         <option disabled selected>Choose your marital status..</option>
@@ -102,30 +98,30 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="address_1">Residential Address Line 1</label>
                                     <input type="text" name="address_1" id="address_1" class="form-control" placeholder="Residential Address Line 1">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="address_1">Residential Address Line 2</label>
                                     <input type="text" name="address_2" id="address_2" class="form-control" placeholder="Residential Address Line 1">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="address_1">Residential Address Line 3</label>
                                     <input type="text" name="address_3" id="address_3" class="form-control" placeholder="Residential Address Line 1">
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="postcode">Postcode</label>
                                     <input type="text" name="postcode" id="postcode" class="form-control" placeholder="Postcode">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="city">City</label>
                                     <input type="text" name="city" id="city" class="form-control" placeholder="City">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="state">State</label>
                                     <select name="state" id="state" class="form-control">
                                         <option disabled selected>Choose your state..</option>
@@ -137,11 +133,11 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="contact_number_home">Contact Number (Home)</label>
                                     <input type="text" name="contact_number_home" class="form-control" placeholder="Home Contact Number">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="contact_number_mobile">Contact Number (Mobile)</label>
                                     <input type="text" name="contact_number_mobile" class="form-control" placeholder="Mobile Contact Number">
                                 </div>
@@ -150,37 +146,37 @@
                             <!-- Spouse's Particular -->
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Spouse's Particulars</h5>
                             <div class="form-row">
-                                <div class="form-group col-md-8">
+                                <div class="form-group col-md-6">
                                     <label for="spouse_full_name">Spouse's Full Name (as per NRIC)</label>
                                     <input type="text" name="spouse_full_name" class="form-control" id="spouse_full_name" placeholder="Full Name">
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label for="spouse_nric">Spouse's NRIC Number (810212-10-3345)</label>
+                                <div class="form-group col-md-6">
+                                    <label for="spouse_nric">Spouse's NRIC Number</label>
                                     <input type="text" name="spouse_nric" class="form-control" id="spouse_nric" placeholder="NRIC Number">
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="spouse_date_of_birth">Spouse's Date Of Birth</label>
                                     <input type="text" name="spouse_date_of_birth" class="form-control" id="spouse_date_of_birth" placeholder="Spouse's Date Of Birth">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="spouse_occupation">Spouse's Occupation</label>
                                     <input type="text" name="spouse_occupation" class="form-control" id="spouse_occupation" placeholder="Spouse's Occupation">
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="spouse_contact_office">Contact Number (Office)</label>
                                     <input type="text" name="spouse_contact_office" class="form-control" id="spouse_contact_office" placeholder="Spouse's Office Contact">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="spouse_contact_mobile">Contact Number (Mobile)</label>
                                     <input type="text" name="spouse_contact_mobile" class="form-control" id="spouse_contact_mobile" placeholder="Spouse's Mobile Contact">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="spouse_email">Email Address</label>
                                     <input type="text" name="spouse_email" id="spouse_email" class="form-control" placeholder="Spouse's Email Address">
                                 </div>
@@ -189,7 +185,7 @@
                             <!-- Employment History -->
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Employment History</h5>
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     @foreach($employments as $employment)
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="employment_id" id="employment_id" value="{{ $employment->id }}">
@@ -200,37 +196,37 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-8">
+                                <div class="form-group col-md-12">
                                     <label for="employment_name">Name Of Company</label>
                                     <input type="text" name="employment_name" id="employment_name" class="form-control" placeholder="Name of company">
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="company_address_1">Company Address Line 1</label>
                                     <input type="text" name="company_address_1" id="company_address_1" class="form-control" placeholder="Company Address Line 1">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="company_address_1">Company Address Line 2</label>
                                     <input type="text" name="company_address_2" id="company_address_2" class="form-control" placeholder="Company Address Line 1">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="company_address_1">Company Address Line 3</label>
                                     <input type="text" name="company_address_3" id="company_address_3" class="form-control" placeholder="Company Address Line 1">
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="company_postcode">Postcode</label>
                                     <input type="text" name="postcode" id="company_postcode" class="form-control" placeholder="Postcode">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-6">
                                     <label for="company_city">City</label>
                                     <input type="text" name="company_city" id="company_city" class="form-control" placeholder="City">
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-12">
                                     <label for="state">State</label>
                                     <select name="company_state" id="company_state" class="form-control">
                                         <option disabled selected>Choose your state..</option>
@@ -261,6 +257,13 @@
                                 </div>
                             </div>
 
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="exampleFormControlFile1">Payment Proof <small>(Please upload payment receipt.)</small></label>
+                                    <input type="file" name="payment_proof" id="payment_proof" class="form-control-file">
+                                </div>
+                            </div>
+
                             <!-- Submit Button -->
                             <div class="text-right">
                                 <input type="hidden" name="registrationFor" value="dealer">
@@ -277,12 +280,5 @@
 
 @push('style')
 <style>
-    html {
-        height: 100%;
-    }
-
-    body {
-        height: 100%;
-    }
 </style>
 @endpush

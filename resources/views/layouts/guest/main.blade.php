@@ -24,6 +24,9 @@
     <!-- Custom Scrollbar CDN -->
     <!-- TODO: Import using mix. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- Signature Pad -->
+    <!-- TODO: Import using mix. -->
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
     @stack('style')
 
     <script>
@@ -40,6 +43,7 @@
     <main class="h-100">
         @yield('content')
     </main>
+    @stack('script')
 </body>
 
 </html>

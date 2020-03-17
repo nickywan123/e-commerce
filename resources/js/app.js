@@ -7,6 +7,7 @@
 require('./bootstrap');
 require('@fortawesome/fontawesome-free');
 require('@coreui/coreui');
+require('signature_pad');
 
 window.Vue = require('vue');
 

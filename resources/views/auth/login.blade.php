@@ -54,7 +54,7 @@
             </div>
         </div>
         <div>
-            <div class="card border-rounded-0 bg-bujishu-gold login-card mt-4">
+            <div class="card border-rounded-0 bg-bujishu-gold mt-4 guests-card">
                 <h5 class="text-center bujishu-gold form-card-title">Sign in</h5>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
