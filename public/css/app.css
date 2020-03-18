@@ -58460,3 +58460,19 @@ a.article:hover {
   background-color: #ffcc00;
 }
 
+.welcome-panel-text {
+  color: #ffcc00;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+@media (max-width: 767px) {
+  .margin-right-logo-mobile {
+    margin-right: 170px;
+  }
+
+  .welcome-panel-text {
+    font-size: 10px;
+  }
+}
+
