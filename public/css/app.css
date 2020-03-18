@@ -57673,8 +57673,10 @@ a.btn-dealer {
   text-align: center;
 }
 
-.landing_button {
-  height: 70%;
+@media (min-width: 768px) {
+  .landing_button {
+    height: 70%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -57709,7 +57711,7 @@ a.btn-dealer {
   }
 
   .landing_button {
-    height: 40%;
+    height: 30%;
   }
 }
 

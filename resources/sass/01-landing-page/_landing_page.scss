@@ -23,11 +23,11 @@ a.btn-dealer {
     margin-right: 20px;
     margin-top: 20px;
 }
-.bujishu-motto{
+.bujishu-motto {
     color: rgb(235, 232, 232);
 }
 
-.bujishu-recursive{
+.bujishu-recursive {
     display: inline;
     font-size: 75px;
     font-family: "Dancing Script" cursive;
@@ -44,19 +44,18 @@ a.btn-dealer {
     text-align: center;
 }
 
-
-
-.landing_button{
-    height: 70%;
-   
+@media (min-width: 768px) {
+    .landing_button {
+        height: 70%;
+    }
 }
 
 // Add media query for mobile devices
 @media (max-width: 767px) {
-    .bujishu-motto{
+    .bujishu-motto {
         font-size: 100%;
     }
-    .bujishu-recursive{
+    .bujishu-recursive {
         font-size: 200%;
     }
 
@@ -80,8 +79,7 @@ a.btn-dealer {
         margin-left: 350%;
         margin-top: 200%;
     }
-    .landing_button{
-        height: 40%;
-       
+    .landing_button {
+        height: 30%;
     }
 }
