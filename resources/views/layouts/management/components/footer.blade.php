@@ -1,4 +1,4 @@
-<footer class="app-footer">
+<footer class="app-footer footer-bg-color">
     <div>
         <a href="https://coreui.io">Bujishu</a>
         <span>&copy; 2020 Delhub Digital.</span>

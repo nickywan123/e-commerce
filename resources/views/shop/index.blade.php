@@ -178,25 +178,25 @@
     .bed-grid {
       grid-column: 1/5;
       grid-row: 1 / 3;
-      height: 120%;
+      /* height: 120%; */
        width: 100%;
 
     }
 
     .pillow-grid {
       grid-column: 1/5;
-      grid-row: -7/6;
+      grid-row: -7/5;
       width: 100%;
-      height: 45%;
+      /* height: 45%; */
     }
 
 
 
     .kitchen-grid{
       grid-column: 1/5;
-      grid-row: 5/5;
+      grid-row: 5/6;
      
-      height: 115%
+      /* height: 115% */
       
     }
 
@@ -205,7 +205,7 @@
     .living-room-grid{
       grid-column: 1 / 5;
       grid-row: -3/9;
-      height: 120%;
+      /* height: 120%; */
      margin-top: 5%;
     }
 
@@ -214,7 +214,7 @@
     .sofa-grid{
       grid-column: 1/5;
       grid-row: 6/6;
-      height: 130%;
+      /* height: 130%; */
     }
 
 
