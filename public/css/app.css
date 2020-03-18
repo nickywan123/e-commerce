@@ -57722,15 +57722,25 @@ a.btn-dealer {
 .bujishu-btn-signup {
   background-image: url(http://bujishu.test/storage/buttons/Sign-Up.png);
   background-size: 100% 100%;
-  min-width: 75px;
-  min-height: 35px;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 35px;
+  overflow: hidden;
 }
 
 .bujishu-btn-login {
   background-image: url(http://bujishu.test/storage/buttons/Login-Icon.png);
   background-size: 100% 100%;
-  min-width: 75px;
-  min-height: 35px;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 35px;
+  overflow: hidden;
 }
 
 .mr-5 {
@@ -58213,7 +58223,7 @@ a.btn-dealer {
 }
 
 #search-button {
-  height: 48px;
+  height: 49px;
   background-color: white;
 }
 
