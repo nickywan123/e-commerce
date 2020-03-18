@@ -4,21 +4,27 @@
 
 
 <!--CSS Grid to display home page images -->
-<div class="wrapper">
 
-  <div class="bed">
-    <img src="{{asset('/images/Home_Bed.jpg')}}" alt="">
+
+<div class="wrapper">
+ 
+  <div class="bed-grid">
+    <img class="promo-image-bed" src="{{asset('/images/Home_Bed.jpg')}}" alt="">
     <a href="#">New Product <span class="">➡</span></a>
   </div>
-  <div class="pillow"><img src="{{asset('/images/Home_Pillow.jpg')}}" alt="">
+  <div class="pillow-grid">
+    <img class="promo-image-pillow" src="{{asset('/images/Home_Pillow.jpg')}}" alt="">
     <a href="#">Best Seller <span class="">➡</span></a></div>
-  <div class="kitchen"><img src="{{asset('/images/Home_Kitchen.jpg')}}" alt="">
+  <div class="kitchen-grid">
+    <img class="promo-image-kitchen" src="{{asset('/images/Home_Kitchen.jpg')}}" alt="">
     <a href="#">Offer <span class="">➡</span></a>
   </div>
-  <div class="living-room"><img src="{{asset('/images/Shop_Page.jpg')}}" alt="">
+  <div class="living-room-grid">
+    <img class="promo-image-living-room" src="{{asset('/images/Shop_Page.jpg')}}" alt="">
     <a href="#">DC Home Design <span class="">➡</span></a>
   </div>
-  <div class="sofa"><img src="{{asset('/images/Home_Sofa.jpg')}}" alt="">
+  <div class="sofa-grid">
+    <img class="promo-image-sofa" src="{{asset('/images/Home_Sofa.jpg')}}" alt="">
     <a href="#">Top Rated <span class="">➡</span></a>
   </div>
 </div>
@@ -61,7 +67,7 @@
     padding: .5rem;
   }
 
-  .bed {
+  .bed-grid{
     grid-column: 1/2;
     grid-row: 1/3;
     height: 110%;
@@ -69,7 +75,7 @@
   }
 
 
-  .pillow {
+  .pillow-grid{
     grid-column: 2;
     grid-row: 1 / 3;
     height: 110%;
@@ -78,35 +84,63 @@
 
 
 
-  .kitchen {
+  .kitchen-grid{
     grid-column: 3;
     grid-row: 2 / 5;
   }
 
 
 
-  .living-room {
+  .living-room-grid{
     grid-column: 1 / 3;
     grid-row: 3 / -1;
   }
 
 
 
-  .sofa {
+  .sofa-grid{
     grid-column-start: 3;
     grid-row: 5 / -1;
   }
 
 
 
-  img {
+  .promo-image-bed{
     width: 100%;
     height: 100%;
     border-radius: 5px;
   }
 
 
-  body {
+  .promo-image-pillow{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .promo-image-kitchen{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .promo-image-living-room{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .promo-image-sofa{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+
+
+
+
+  .promo-page-background-color{
     background-color: black;
   }
 
@@ -139,42 +173,50 @@
   @media(max-width:767px) {
 
 
-    .bed {
+    .bed-grid {
       grid-column: 1/5;
       grid-row: 1 / 3;
+      height: 120%;
+       width: 100%;
 
     }
 
-    .pillow {
+    .pillow-grid {
       grid-column: 1/5;
       grid-row: -7/6;
       width: 100%;
-      height: 30%;
+      height: 45%;
     }
 
 
 
-    .kitchen {
+    .kitchen-grid{
       grid-column: 1/5;
       grid-row: 5/5;
-      width: 120%;
-      margin-left: -10%;
+     
+      height: 115%
+      
     }
 
 
 
-    .living-room {
+    .living-room-grid{
       grid-column: 1 / 5;
       grid-row: -3/9;
+      height: 120%;
+     margin-top: 5%;
     }
 
 
 
-    .sofa {
+    .sofa-grid{
       grid-column: 1/5;
       grid-row: 6/6;
+      height: 130%;
     }
 
+
+ 
 
 
   }

@@ -218,6 +218,7 @@
     }
 }
 
+
 @media (max-width: 767px) {
 
     div[class^="col-"] {
@@ -444,7 +445,14 @@
     border-bottom: 3px solid #fccb34;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
+
+   
+
+    .search-bar-size{
+        height:49px;
+    }
+
     .hidden-sm {
         display: none;
     }
@@ -497,7 +505,7 @@
     }
 
     .navigation-logo {
-        max-height: 72px;
+        max-height: 100px;
         width: auto;
     }
 
@@ -509,12 +517,20 @@
     .border-rounded-0-md {
         border-radius: 0;
     }
+
+  
+    .search-bar-size{
+    height:48px;
+}
 }
 
+
 #search-button {
-    height: 38px;
+    height: 48px;
     background-color: white;
+    
 }
+
 
 .border-rounded-0 {
     border-radius: 0;
@@ -537,6 +553,7 @@
 .margin-right-negative-with-border {
     margin-right: -4px;
     border-right: 10px solid #FBCC34;
+   
 }
 
 .my-account-button {
@@ -558,3 +575,9 @@ Author: Nicholas
     color: black;
     background-color:#FBCC34;
 }
+
+
+ .margin-right-border-color:focus{
+    border-color: #FBCC34;
+}
+

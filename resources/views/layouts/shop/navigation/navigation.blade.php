@@ -3,7 +3,7 @@
         <div class="row d-flex">
             <div class="col-sm-2 vertical-align hidden-xs mb-1">
                 <div class="row">
-                    <div class="col-3 col-md-6 my-auto text-left p-1">
+                    <div class="col-5 my-auto text-left p-1">
                         <button type="button" id="sidebarCollapse" class="btn">
                             <i class="fa fa-bars navigation-icon"></i>
                         </button>
@@ -71,7 +71,7 @@
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto">
                             <div>
-                                <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border" name="category">
+                                <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size " name="category">
                                     <option value="all">All Categories</option>
                                     <optgroup label="Mens">
                                         <option value="shirts">Shirts</option>
@@ -82,7 +82,7 @@
                                         <option value="belts">Belts</option>
                                     </optgroup>
                                 </select>
-                                <input type="text" name="keyword" class="form-control navigation-input input-lg w-65-md w-85-sm margin-right-negative-with-border border-rounded-0-md border-left-rounded-10-sm" placeholder="Search">
+                                <input type="text" name="keyword" class="form-control navigation-input input-lg w-65-md w-85-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size" placeholder="Search">
                                 <button id="search-button" class="btn navigation-input border-right-rounded-10"><i class="fa fa-search"></i></button>
                             </div>
                         </div>

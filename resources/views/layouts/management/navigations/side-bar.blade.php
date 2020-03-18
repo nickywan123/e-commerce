@@ -198,5 +198,5 @@
             </li> -->
         </ul>
     </nav>
-    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+    {{-- <button class="sidebar-minimizer brand-minimizer" type="button"></button> --}}
 </div>
