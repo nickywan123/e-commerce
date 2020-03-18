@@ -57743,6 +57743,32 @@ a.btn-dealer {
   overflow: hidden;
 }
 
+/* Author - Wan Shahruddin */
+
+.bjsh-btn-gold {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 0.35rem 0.55rem;
+  color: #000;
+  background-color: #000;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  background-image: linear-gradient(black, black), linear-gradient(90deg, #ded9d6 0%, #8b878d 25%, #f3f4f4 50%, #807b80 75%, #a7a9ac 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #FFDF00 inset;
+}
+
+.bjsh-btn-gold:hover {
+  box-shadow: 2px 1000px 1px #ffed66 inset;
+}
+
+.bjsh-btn-gold:focus {
+  outline: none;
+}
+
 .mr-5 {
   margin-right: 5px;
 }

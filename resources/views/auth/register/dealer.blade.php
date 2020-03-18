@@ -274,8 +274,7 @@
                             <!-- Submit Button -->
                             <div class="text-right">
                                 <input type="hidden" name="registrationFor" value="dealer">
-                                <button type="submit" class="btn bujishu-btn-signup text-right hidden-sm"></button>
-                                <button type="submit" class="btn btn-submit text-right hidden-md">Sign Up</button>
+                                <button type="submit" class="bjsh-btn-gold text-right">Sign Up</button>
                             </div>
                         </div>
                     </div>
