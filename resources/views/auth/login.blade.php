@@ -99,8 +99,8 @@
 
                         <div class="row">
                             <div class="col-12 text-center mb-1">
-                                <!-- <input type="submit" name="submit" class="btn bujishu-btn-login" style="background-color: #fff; color: #000000; font-weight: 700; border: 1px solid #ffd445; border-radius: 10px;"> -->
-                                <button type="submit" class="btn bujishu-btn-login text-right"></button>
+                                <input type="submit" name="submit" class="btn hidden-md" style="background-color: #fff; color: #000000; font-weight: 700; border: 1px solid #ffd445; border-radius: 10px;">
+                                <button type="submit" class="btn bujishu-btn-login hidden-sm"></button>
                             </div>
                         </div>
                     </form>

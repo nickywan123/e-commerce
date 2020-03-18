@@ -274,7 +274,8 @@
                             <!-- Submit Button -->
                             <div class="text-right">
                                 <input type="hidden" name="registrationFor" value="dealer">
-                                <button type="submit" class="btn bujishu-btn-signup text-right"></button>
+                                <button type="submit" class="btn bujishu-btn-signup text-right hidden-sm"></button>
+                                <button type="submit" class="btn btn-submit text-right hidden-md">Sign Up</button>
                             </div>
                         </div>
                     </div>
@@ -289,6 +290,13 @@
 <style>
     .nav-fill .nav-link.active.register-tab-active {
         font-weight: 600;
+    }
+
+    .btn-submit {
+        color: black;
+        border-radius: 10px;
+        background-color: #fbcc34;
+        border-color: #8b878d;
     }
 </style>
 @endpush
