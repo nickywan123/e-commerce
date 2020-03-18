@@ -2,18 +2,23 @@
 
 @section('content')
 <div class="bg-md bg-sm">
+    <div class="row">
+        <div class="col-6 offset-3 col-md-2 offset-md-5 mb-0 pt-2 pb-3">
+            <img class="mw-100" src="{{ asset('storage/logo/bujishu_logo.png') }}" alt="">
+        </div>
+    </div>
     <div>
         <div class="card border-rounded-0 bg-bujishu-gold guests-card">
             <h5 class="text-center bujishu-gold form-card-title">Registration</h5>
-            <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link" id="home-tab" data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
+            <ul class="nav nav-tabs nav-fill" role="tablist">
+                <li class="nav-item active">
+                    <a class="nav-link register-tab-active active" id="home-tab" data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Information</a>
+                    <a class="nav-link register-tab-active" id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Information</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="agreement" aria-selected="false">Agreement</a>
+                    <a class="nav-link register-tab-active" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="agreement" aria-selected="false">Agreement</a>
                 </li>
             </ul>
             <div class="card-body">
@@ -43,7 +48,8 @@
 
                             <!-- Next Button -->
                             <div class="text-right">
-                                <a class="btn btn-secondary" id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Next</a>
+                                <!-- <a class="btn btn-secondary next-button" id="information-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Next</a> -->
+                                <a class="btn btn-secondary next-button">Next</a>
                             </div>
                         </div>
 
@@ -124,7 +130,8 @@
 
                             <!-- Next Button -->
                             <div class="text-right">
-                                <a class="btn btn-secondary" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="profile" aria-selected="false">Next</a>
+                                <!-- <a class="btn btn-secondary next-button" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="profile" aria-selected="false">Next</a> -->
+                                <a class="btn btn-secondary next-button">Next</a>
                             </div>
                         </div>
 
@@ -437,7 +444,7 @@
                                     <!-- Submit Button -->
                                     <div class="text-right">
                                         <input type="hidden" name="registrationFor" value="customer">
-                                        <button type="submit" class="btn btn-primary text-right">Sign up</button>
+                                        <button type="submit" class="btn bujishu-btn-signup text-right"></button>
                                     </div>
                                 </div>
                             </div>
@@ -496,6 +503,10 @@
         width: 100%;
         border: 1px solid #e5e5e5;
     }
+
+    .nav-fill .nav-link.active.register-tab-active {
+        font-weight: 600;
+    }
 </style>
 @endpush
 
@@ -508,13 +519,33 @@
     const signatureError = document.getElementById("signatureError");
     const signatureInput = document.getElementById("signatureInput");
 
+    let currentTab = $('.nav-tabs > .active');
+    let nextTab = currentTab.next('li');
+
+    // Handles tabs click.
+    $('.nav-link').click(function() {
+        currentTab = $(this).parent();
+        $('.nav-tabs > .active').removeClass('active');
+        currentTab.addClass('active');
+        nextTab = currentTab.next('li');
+    });
+
+    // Handles next button click.
+    $('.next-button').click(function() {
+        currentTab.removeClass('active');
+        nextTab.find('a').trigger('click');
+        nextTab.addClass('active');
+        currentTab = $('.nav-tabs > .active');
+        nextTab = currentTab.next('li');
+    });
+
     // Initialize a new signaturePad instance.
     var signaturePad = new SignaturePad(canvas);
 
     // Clear signature pad.
     signatureResetButton.addEventListener("click", function(event) {
         signaturePad.clear();
-    })
+    });
 
     // Save signature pad as data url.
     signatureSaveButton.addEventListener("click", function(event) {
@@ -524,6 +555,6 @@
             signatureUrl = signaturePad.toDataURL();
             signatureInput.value = signatureUrl;
         }
-    })
+    });
 </script>
 @endpush

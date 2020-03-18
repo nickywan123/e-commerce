@@ -1,6 +1,6 @@
 @media (max-width: 576px) {
     .bg-sm {
-        padding-top: 25%;
+        padding-top: 3%;
         padding-left: 1rem;
         padding-right: 1rem;
         padding-bottom: 25%;
@@ -15,13 +15,13 @@
         /* Center and scale the image nicely */
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 102% 102%;
     }
 }
 
 @media (min-width: 768px) {
     .bg-md {
-        padding-top: 8%;
+        padding-top: 2%;
         padding-left: 5%;
         padding-right: 5%;
         padding-bottom: 8%;
@@ -36,7 +36,7 @@
         /* Center and scale the image nicely */
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 102% 102%;
     }
 }
 
@@ -51,4 +51,12 @@
 .form-card-title {
     background-color: #000000;
     padding: 1rem 0;
+}
+
+a.hover-white:hover {
+    color: #ffffff;
+}
+
+.font-size-125 {
+    font-size: 1.25rem;
 }
