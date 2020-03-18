@@ -9,14 +9,14 @@
 <div class="wrapper">
  
   <div class="bed-grid">
-    <img class="promo-image-bed" src="{{asset('/images/Home_Bed.jpg')}}" alt="">
+    <img class="promo-image-bed" src="{{asset('/images/Home_Bed_compressed.jpg')}}" alt="">
     <a href="#">New Product <span class="">➡</span></a>
   </div>
   <div class="pillow-grid">
-    <img class="promo-image-pillow" src="{{asset('/images/Home_Pillow.jpg')}}" alt="">
+    <img class="promo-image-pillow" src="{{asset('/images/Home_Pillow_compressed.jpg')}}" alt="">
     <a href="#">Best Seller <span class="">➡</span></a></div>
   <div class="kitchen-grid">
-    <img class="promo-image-kitchen" src="{{asset('/images/Home_Kitchen.jpg')}}" alt="">
+    <img class="promo-image-kitchen" src="{{asset('/images/Home_Kitchen_compressed.jpg')}}" alt="">
     <a href="#">Offer <span class="">➡</span></a>
   </div>
   <div class="living-room-grid">
@@ -69,17 +69,17 @@
 
   .bed-grid{
     grid-column: 1/2;
-    grid-row: 1/3;
-    height: 110%;
-    width: 100%;
+    grid-row: 1/4;
+    /* height: 140%;
+    width: 70%; */
   }
 
 
   .pillow-grid{
     grid-column: 2;
-    grid-row: 1 / 3;
-    height: 110%;
-    width: 90%;
+    grid-row: 1 / 4;
+    /* height: 140%;
+    width: 100%; */
   }
 
 
@@ -93,7 +93,8 @@
 
   .living-room-grid{
     grid-column: 1 / 3;
-    grid-row: 3 / -1;
+    grid-row: 4 / -1;
+   
   }
 
 
@@ -128,6 +129,7 @@
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    /* margin-top: 50px; */
   }
 
   .promo-image-sofa{
