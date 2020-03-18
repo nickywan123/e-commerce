@@ -4,7 +4,7 @@
 <div class="bg-md bg-sm">
     <div class="row">
         <div class="col-6 offset-3 col-md-2 offset-md-5 mb-0 pt-2 pb-3">
-            <img class="mw-100" src="{{ asset('storage/logo/bujishu_logo.png') }}" alt="">
+            <img class="mw-100" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
         </div>
     </div>
     <div>
