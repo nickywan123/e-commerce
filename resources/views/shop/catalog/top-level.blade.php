@@ -169,7 +169,7 @@
                             <ul class="list-unstyled">
                                 @foreach($childCategory->childCategories as $anotherChildCategory)
                                 <li>
-                                    <a href="">{{ $anotherChildCategory->name }}</a>
+                                    <a class="animated-category-list-container-item" href="">{{ $anotherChildCategory->name }}</a>
                                 </li>
                                 @endforeach
                             </ul>
@@ -178,12 +178,13 @@
                 </div>
                 @else
                 <div class="col-6 col-md-2 text-center">
-                    <a href="">
-                        <div>
-                            <img class="mw-100 radius-100" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="">
+                    <a class="category-item" href="">
+                        <div class="category-container">
+                            <div class="category-image-container">
+                                <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
+                                <p>{{ $childCategory->name }}</p>
+                            </div>
                         </div>
-                        <h5 class="pt-2">{{ $childCategory->name }}</h5>
-
                     </a>
                 </div>
                 @endif
