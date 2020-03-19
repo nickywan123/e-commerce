@@ -1,19 +1,19 @@
 <div class="middleBar">
     <div class="container-90">
         <div class="row d-flex">
-            <div class="col-sm-2 vertical-align hidden-xs mb-1">
+            <div class="col-sm-2 vertical-align mt-2 mb-3">
                 <div class="row">
-                    <div class="col-5 my-auto text-left p-1">
+                    <div class="col-4 my-auto text-left p-1">
                         <button type="button" id="sidebarCollapse" class="btn">
                             <i class="fa fa-bars navigation-icon"></i>
                         </button>
                     </div>
-                    <div class="col-3 col-md-6 text-right my-auto">
+                    <div class="col-4 col-md-6 text-right my-auto">
                         <a href="/shop">
-                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
+                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
                         </a>
                     </div>
-                    <div class="col-6 hidden-md my-auto">
+                    <div class="col-4 hidden-md my-auto">
                         <ul class="nav justify-content-center-sm float-right pt-2">
                             @guest
                             <li class="nav-item m-1">
@@ -66,7 +66,7 @@
 
             </div>
             <!-- end col -->
-            <div class="col-sm-6 vertical-align text-center my-auto">
+            <div class="col-sm-8 vertical-align text-center my-auto">
                 <form>
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto">
@@ -89,7 +89,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-sm-4 vertical-align my-auto">
+            <div class="col-sm-2 vertical-align my-auto">
                 <ul class="nav justify-content-center-sm float-right pt-2 hidden-sm">
                     @guest
                     <li class="nav-item m-1">

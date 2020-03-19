@@ -42,6 +42,12 @@
         body {
             height: 100%;
         }
+
+        .remember-check {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -50,7 +56,7 @@
     <div class="bg-md bg-sm">
         <div class="row">
             <div class="col-6 offset-3 col-md-4 offset-md-4 text-center">
-                <img class="mw-100 w-50-md" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
+                <img class="mw-100 w-50-md" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
             </div>
         </div>
         <div>
@@ -80,8 +86,8 @@
                         <div class="row">
                             <div class="col-6 mb-1">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember-me" id="remember-me" {{ old('remember') ? 'checked' : '' }}>
-                                    <label class="form-check-label text-dark" for="remember">
+                                    <input class="form-check-input remember-check" type="checkbox" name="remember-me" id="remember-me" {{ old('remember') ? 'checked' : '' }}>
+                                    <label class="form-check-label text-dark" style="padding-top: 1px;" for="remember">
                                         Remember me
                                     </label>
                                 </div>
@@ -93,7 +99,7 @@
 
                         <div class="row">
                             <div class="col-12 text-center mb-1">
-                                <input type="submit" name="submit" class="btn btn-primary" value="LOGIN" style="background-color: #fff; color: #000000; font-weight: 700; border: 1px solid #ffd445; border-radius: 10px;">
+                                <button type="submit" class="bjsh-btn-gold">Login</button>
                             </div>
                         </div>
                     </form>
