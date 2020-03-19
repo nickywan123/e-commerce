@@ -79,8 +79,8 @@
     display: grid;
     grid-template-columns: 3fr 2fr 3fr;
     grid-template-rows: repeat(8, 1fr);
-    padding: 5em;
-    grid-gap: 2.5em;
+    padding: 1em;
+    grid-gap: 2.0em;
     background-color: black;
 
     height: 700px;
@@ -126,10 +126,7 @@
 
 
 
-  .kitchen-grid{
-    grid-column: 3;
-    grid-row: 2 / 5;
-  }
+ 
 
 
 
@@ -161,11 +158,7 @@
     border-radius: 5px;
   }
 
-  .promo-image-kitchen{
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-  }
+ 
 
   .promo-image-living-room{
     width: 100%;
@@ -219,34 +212,27 @@
 
     .bed-grid {
       grid-column: 1/5;
-      grid-row: 1 / 3;
+      grid-row: 2 / 3;
       /* height: 120%; */
        width: 100%;
 
     }
 
     .pillow-grid {
-      grid-column: 1/5;
-      grid-row: -7/5;
+      grid-column: 1/3;
+      grid-row: 3/7;
       width: 100%;
       /* height: 45%; */
     }
 
 
 
-    .kitchen-grid{
-      grid-column: 1/5;
-      grid-row: 5/6;
-     
-      /* height: 115% */
-      
-    }
-
+  
 
 
     .living-room-grid{
       grid-column: 1 / 5;
-      grid-row: -3/9;
+      grid-row: 1/2;
       /* height: 120%; */
      margin-top: 5%;
     }
@@ -254,9 +240,10 @@
 
 
     .sofa-grid{
-      grid-column: 1/5;
-      grid-row: 6/6;
+      grid-column: 3;
+      grid-row: 3/7;
       /* height: 130%; */
+      width: 130%;
     }
 
 
