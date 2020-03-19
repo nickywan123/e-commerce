@@ -120,23 +120,29 @@
                 </ul>
             </div>
         </div>
+        <?php
+        $category = App\Models\Categories\Category::find(1);
+        $childCategories = $category->childCategories->take(6);
+        ?>
 
         <div class="col-12 col-md-10">
-            <?php
-            $category = App\Models\Categories\Category::find(1);
-            $childCategories = $category->childCategories->take(6);
-            ?>
+            <div class="row pb-4">
+                <div class="col-12 mb-1">
+                    <h3 class="text-muted">{{ $category->name }}</h3>
+                </div>
+            </div>
+
             <div class="row pb-1">
                 <div class="col-12 mb-1">
-                    <h3 class="text-dark">Featured Categories</h3>
+                    <h3 class="text-dark font-weight-bold">Featured Categories</h3>
                     <hr>
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="row custom-mb-5">
                 @foreach($childCategories as $childCategory)
                 @if($childCategory->childCategories->count() != 0)
                 <div class="col-6 col-md-2 text-center">
-                    <div class="slide-up-image-container">
+                    <!-- <div class="slide-up-image-container">
                         <img class="slide-up-image" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="">
                         <div class="slide-up-overlay">
                             <div class="slide-up-overlay-content">
@@ -151,7 +157,24 @@
                             </div>
                         </div>
                     </div>
-                    <h5 class="pt-2">{{ $childCategory->name }}</h5>
+                    <h5 class="pt-2">{{ $childCategory->name }}</h5> -->
+
+                    <div class="animated-category-container">
+                        <div class="animated-category-image-container">
+                            <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}">
+                            <p>{{ $childCategory->name }}</p>
+                        </div>
+                        <div class="animated-category-list-container">
+                            <hr class="w-50 mt-1 mb-1">
+                            <ul class="list-unstyled">
+                                @foreach($childCategory->childCategories as $anotherChildCategory)
+                                <li>
+                                    <a href="">{{ $anotherChildCategory->name }}</a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 @else
                 <div class="col-6 col-md-2 text-center">
@@ -169,7 +192,7 @@
 
             <div class="row pb-1">
                 <div class="col-12 mb-1">
-                    <h3 class="text-dark">Featured Deals</h3>
+                    <h3 class="text-dark font-weight-bold">Featured Deals</h3>
                     <hr>
                 </div>
             </div>
