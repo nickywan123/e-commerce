@@ -1,4 +1,4 @@
-<div class="middleBar">
+<div class="middleBar" style="border-bottom: 3px solid #fccb34;">
     <div class="container-90">
         <div class="row d-flex">
             <div class="col-sm-2 vertical-align mt-2 mb-3">
@@ -35,12 +35,13 @@
                                     <a class="btn btn-secondary dropdown-toggle my-account-button" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
                                         My Account
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Profile <small>(wip)</small></a>
-                                        <a class="dropdown-item" href="#">My Orders <small>(wip)</small></a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile <small>(wip)</small></a>
+                                        <a class="dropdown-item" href="#"><i class="fa fa-credit-card"></i> My Orders <small>(wip)</small></a>
+                                        <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -70,7 +71,7 @@
                 <form>
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto">
-                            <div>
+                            <div class="pb-2">
                                 <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size " name="category">
                                     <option value="all">All Categories</option>
                                     <optgroup label="Mens">
@@ -106,11 +107,12 @@
                                 My Account
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Profile <small>(wip)</small></a>
-                                <a class="dropdown-item" href="#">My Orders <small>(wip)</small></a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile <small>(wip)</small></a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-credit-card"></i> My Orders <small>(wip)</small></a>
+                                <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -138,7 +140,7 @@
     </div>
 </div>
 
-<div class="bottom-bar shadow-sm" style="border-bottom: 3px solid #fccb34;">
+<!-- <div class="bottom-bar shadow-sm" style="border-bottom: 3px solid #fccb34;">
     <div class="container-90">
         <div class="row">
             <div class="col-sm-12 justify-content-end-md justify-content-center-sm mb-1">
@@ -153,4 +155,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

@@ -142,23 +142,6 @@
                 @foreach($childCategories as $childCategory)
                 @if($childCategory->childCategories->count() != 0)
                 <div class="col-6 col-md-2 text-center">
-                    <!-- <div class="slide-up-image-container">
-                        <img class="slide-up-image" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="">
-                        <div class="slide-up-overlay">
-                            <div class="slide-up-overlay-content">
-                                <ul class="list-unstyled">
-                                    <li style="font-size: 0.8rem; padding: 0.4rem; border-bottom: 1px solid #e5e5e5;"></li>
-                                    @foreach($childCategory->childCategories as $anotherChildCategory)
-                                    <li style="font-size: 0.8rem; padding: 0.4rem; border-bottom: 1px solid #e5e5e5;">
-                                        <a href="">{{ $anotherChildCategory->name }}</a>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <h5 class="pt-2">{{ $childCategory->name }}</h5> -->
-
                     <div class="animated-category-container">
                         <div class="animated-category-image-container">
                             <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}">
@@ -198,9 +181,90 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row no-gutters">
                 @foreach($category->products as $product)
-                <div class="col-6 col-md-2">
+                <div class="col-6 col-md-2 pl-1 pr-1 pb-2">
+                    <div class="animated-product-container shadow-sm">
+                        <div class="animated-product-image-container">
+                            <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
+                        </div>
+
+                        <div class="animated-product-information-container">
+                            <p class="product-name">{{ $product->name }}</p>
+                            <div>
+                                <!-- TODO: Remove if not used. -->
+                                <!-- <p class="mb-1 product-detail">
+                                    Pillows, 50cm
+                                </p> -->
+                                <p class="mb-1 product-price">
+                                    RM {{ $product->getDecimalPrice() }}
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="list-unstyled product-rating mb-1">
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                </ul>
+                                <p class="mb-1">120 ratings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2 pl-1 pr-1">
+                    <div class="animated-product-container shadow-sm">
+                        <div class="animated-product-image-container">
+                            <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
+                        </div>
+
+                        <div class="animated-product-information-container">
+                            <p class="product-name">{{ $product->name }}</p>
+                            <div>
+                                <!-- TODO: Remove if not used. -->
+                                <!-- <p class="mb-1 product-detail">
+                                    Pillows, 50cm
+                                </p> -->
+                                <p class="mb-1 product-price">
+                                    RM {{ $product->getDecimalPrice() }}
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="list-unstyled product-rating mb-1">
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                </ul>
+                                <p class="mb-1">120 ratings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-6 col-md-2">
                     <div class="item-overlay-container mb-1">
                         <img class="mw-100" style="min-height: 150px;" src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="">
                         <div class="item-overlay">
@@ -240,7 +304,7 @@
                         </ul>
                         <p>(60)</p>
                     </div>
-                </div>
+                </div> -->
                 @endforeach
             </div>
         </div>

@@ -194,7 +194,6 @@
 /*/////////////////////////middleBar//////////////////////*/
 
 .middleBar {
-    padding: 10px 0 0 0;
     margin: 0;
     min-height: 70px;
     background-color: #000000;
@@ -468,6 +467,7 @@
     .navigation-logo {
         max-height: 56px;
         width: auto;
+        float: left;
     }
 
     .justify-content-center-sm {
@@ -505,8 +505,9 @@
     }
 
     .navigation-logo {
-        max-height: 100px;
+        max-height: 90px;
         width: auto;
+        margin-right: 30px;
     }
 
     .justify-content-end-md {
@@ -526,7 +527,7 @@
 
 
 #search-button {
-    height: 49px;
+    height: 48px;
     background-color: white;
     
 }
