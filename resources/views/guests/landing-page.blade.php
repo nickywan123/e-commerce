@@ -61,8 +61,8 @@
 
             <div class="row mt-4">
                 <div class="col-12 col-md-4 offset-md-4 text-center">
-                    <a href="/login " class="btn bjsh-btn-gold grad1 grad2"><b>{{ __('LOGIN') }}</b></a>
-                    <a href="/register" class="btn bjsh-btn-gold grad1 grad2"><b>{{ __('SIGN UP') }}</b></a>
+                    <a href="/login " class="btn bjsh-btn-gold grad2"><b>{{ __('LOGIN') }}</b></a>
+                    <a href="/register" class="btn bjsh-btn-gold grad2"><b> {{ __('SIGN UP') }}</b></a>
                 </div>
             </div>
         </div>
