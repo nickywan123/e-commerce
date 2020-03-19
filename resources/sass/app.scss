@@ -28,12 +28,16 @@
 @import "./01-landing-page/landing_page";
 
 // 02-Base
-@import "./02-base/widths";
+@import 
+    "./02-base/widths",
+    "./02-base/margins";
 
 // 03-Components
 @import 
     "./03-components/images",
-    "./03-components/buttons";
+    "./03-components/buttons",
+    "./03-components/category",
+    "./03-components/animated-category";
 
 // 04-Layouts
 @import "./04-layouts/shop/navigation", "./04-layouts/shop/sidebar";

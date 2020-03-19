@@ -10,32 +10,32 @@
                 <h5 class="text-dark">Panel</h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a href="">Company A</a>
+                        <a class="text-dark" href="">Company A</a>
                     </li>
                     <li>
-                        <a href="">Company B</a>
+                        <a class="text-dark" href="">Company B</a>
                     </li>
                     <li>
-                        <a href="">Company C</a>
+                        <a class="text-dark" href="">Company C</a>
                     </li>
                 </ul>
 
                 <h5 class="text-dark">Price</h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a href="">Under RM25</a>
+                        <a class="text-dark" href="">Under RM25</a>
                     </li>
                     <li>
-                        <a href="">RM25 - RM50</a>
+                        <a class="text-dark" href="">RM25 - RM50</a>
                     </li>
                     <li>
-                        <a href="">RM50 - RM100</a>
+                        <a class="text-dark" href="">RM50 - RM100</a>
                     </li>
                     <li>
-                        <a href="">RM100 - RM200</a>
+                        <a class="text-dark" href="">RM100 - RM200</a>
                     </li>
                     <li>
-                        <a href="">RM200 & Above</a>
+                        <a class="text-dark" href="">RM200 & Above</a>
                     </li>
                     <li class="p-1">
                         <form action="" class="form-inline">
@@ -51,22 +51,22 @@
                 <h5 class="text-dark">Color</h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a href="">White</a>
+                        <a class="text-dark" href="">White</a>
                     </li>
                     <li>
-                        <a href="">Beige</a>
+                        <a class="text-dark" href="">Beige</a>
                     </li>
                     <li>
-                        <a href="">Red</a>
+                        <a class="text-dark" href="">Red</a>
                     </li>
                     <li>
-                        <a href="">Maroon</a>
+                        <a class="text-dark" href="">Maroon</a>
                     </li>
                     <li>
-                        <a href="">Grey</a>
+                        <a class="text-dark" href="">Grey</a>
                     </li>
                     <li>
-                        <a href="">Black</a>
+                        <a class="text-dark" href="">Black</a>
                     </li>
                 </ul>
 
@@ -120,23 +120,29 @@
                 </ul>
             </div>
         </div>
+        <?php
+        $category = App\Models\Categories\Category::find(1);
+        $childCategories = $category->childCategories->take(6);
+        ?>
 
         <div class="col-12 col-md-10">
-            <?php
-            $category = App\Models\Categories\Category::find(1);
-            $childCategories = $category->childCategories->take(6);
-            ?>
+            <div class="row pb-4">
+                <div class="col-12 mb-1">
+                    <h3 class="text-muted">{{ $category->name }}</h3>
+                </div>
+            </div>
+
             <div class="row pb-1">
                 <div class="col-12 mb-1">
-                    <h3 class="text-dark">Featured Categories</h3>
+                    <h3 class="text-dark font-weight-bold">Featured Categories</h3>
                     <hr>
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="row custom-mb-5">
                 @foreach($childCategories as $childCategory)
                 @if($childCategory->childCategories->count() != 0)
                 <div class="col-6 col-md-2 text-center">
-                    <div class="slide-up-image-container">
+                    <!-- <div class="slide-up-image-container">
                         <img class="slide-up-image" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="">
                         <div class="slide-up-overlay">
                             <div class="slide-up-overlay-content">
@@ -151,16 +157,34 @@
                             </div>
                         </div>
                     </div>
-                    <h5 class="pt-2">{{ $childCategory->name }}</h5>
+                    <h5 class="pt-2">{{ $childCategory->name }}</h5> -->
+
+                    <div class="animated-category-container">
+                        <div class="animated-category-image-container">
+                            <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}">
+                            <p>{{ $childCategory->name }}</p>
+                        </div>
+                        <div class="animated-category-list-container">
+                            <hr class="w-50 mt-1 mb-1">
+                            <ul class="list-unstyled">
+                                @foreach($childCategory->childCategories as $anotherChildCategory)
+                                <li>
+                                    <a class="animated-category-list-container-item" href="">{{ $anotherChildCategory->name }}</a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 @else
                 <div class="col-6 col-md-2 text-center">
-                    <a href="">
-                        <div>
-                            <img class="mw-100 radius-100" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="">
+                    <a class="category-item" href="">
+                        <div class="category-container">
+                            <div class="category-image-container">
+                                <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
+                                <p>{{ $childCategory->name }}</p>
+                            </div>
                         </div>
-                        <h5 class="pt-2">{{ $childCategory->name }}</h5>
-
                     </a>
                 </div>
                 @endif
@@ -169,7 +193,7 @@
 
             <div class="row pb-1">
                 <div class="col-12 mb-1">
-                    <h3 class="text-dark">Featured Deals</h3>
+                    <h3 class="text-dark font-weight-bold">Featured Deals</h3>
                     <hr>
                 </div>
             </div>
