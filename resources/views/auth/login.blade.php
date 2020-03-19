@@ -99,7 +99,7 @@
 
                         <div class="row">
                             <div class="col-12 text-center mb-1">
-                                <button type="submit" class="bjsh-btn-gold">Login</button>
+                                <button type="submit" class="btn" style="background-color: #ffffff;">Login</button>
                             </div>
                         </div>
                     </form>

@@ -35,12 +35,13 @@
                                     <a class="btn btn-secondary dropdown-toggle my-account-button" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
                                         My Account
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Profile <small>(wip)</small></a>
-                                        <a class="dropdown-item" href="#">My Orders <small>(wip)</small></a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile <small>(wip)</small></a>
+                                        <a class="dropdown-item" href="#"><i class="fa fa-credit-card"></i> My Orders <small>(wip)</small></a>
+                                        <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -106,11 +107,12 @@
                                 My Account
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Profile <small>(wip)</small></a>
-                                <a class="dropdown-item" href="#">My Orders <small>(wip)</small></a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile <small>(wip)</small></a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-credit-card"></i> My Orders <small>(wip)</small></a>
+                                <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
