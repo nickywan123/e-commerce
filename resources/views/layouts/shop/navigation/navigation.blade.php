@@ -3,17 +3,18 @@
         <div class="row d-flex">
             <div class="col-sm-2 vertical-align mt-2 mb-3">
                 <div class="row">
-                    <div class="col-4 my-auto text-left p-1">
+                    <div class="col-4 my-auto text-left p-1 ">
                         <button type="button" id="sidebarCollapse" class="btn">
                             <i class="fa fa-bars navigation-icon"></i>
                         </button>
                     </div>
+                    
                     <div class="col-4 col-md-6 text-right my-auto">
                         <a href="/shop">
                             <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
                         </a>
                     </div>
-                    <div class="col-4 hidden-md my-auto">
+                    <div class="col-4 hidden-md my-auto ">
                         <ul class="nav justify-content-center-sm float-right pt-2">
                             @guest
                             <li class="nav-item m-1">
@@ -29,8 +30,8 @@
                                 </div>
                             </li>
                             @else
-                            <li class="nav-item m-1">
-                                <div class="dropdown show">
+                            <li class="nav-item m-1 ">
+                                <div class="dropdown show ">
                                     <!-- TODO: Create a class for the style -->
                                     <a class="btn btn-secondary dropdown-toggle my-account-button" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
                                         My Account
@@ -66,9 +67,9 @@
 
             </div>
             <!-- end col -->
-            <div class="col-sm-8 vertical-align text-center my-auto">
+            <div class="col-sm-8 vertical-align text-center my-auto nav-content-sidebar-collapse">
                 <form>
-                    <div class="row grid-space-1">
+                    <div class="row grid-space-1 nav-content-sidebar-collapse">
                         <div class="col-12 my-auto">
                             <div>
                                 <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size " name="category">
@@ -89,7 +90,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-sm-2 vertical-align my-auto">
+            <div class="col-sm-2 vertical-align my-auto nav-content-sidebar-collapse">
                 <ul class="nav justify-content-center-sm float-right pt-2 hidden-sm">
                     @guest
                     <li class="nav-item m-1">
@@ -100,7 +101,7 @@
                     </li>
                     @else
                     <li class="nav-item m-1">
-                        <div class="dropdown show">
+                        <div class="dropdown show ">
                             <!-- TODO: Create a class for the style -->
                             <a class="btn btn-secondary dropdown-toggle my-account-button" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
                                 My Account
@@ -138,7 +139,7 @@
     </div>
 </div>
 
-<div class="bottom-bar shadow-sm" style="border-bottom: 3px solid #fccb34;">
+<div class="bottom-bar shadow-sm nav-content-sidebar-collapse" style="border-bottom: 3px solid #fccb34;">
     <div class="container-90">
         <div class="row">
             <div class="col-sm-12 justify-content-end-md justify-content-center-sm mb-1">

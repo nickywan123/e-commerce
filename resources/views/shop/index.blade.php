@@ -6,7 +6,7 @@
 <!--CSS Grid to display home page images -->
 
 
-<div class="wrapper">
+<div class="wrapper" id="body-content-collapse-sidebar">
  
   <div class="bed-grid">
     <img class="promo-image-bed" src="{{asset('/images/Home_Bed_compressed.jpg')}}" alt="">
@@ -27,49 +27,7 @@
 </div>
 
 
-{{--                                             --}}
 
-{{-- <div class="wrapper">
-
- <div class="row">
-
-<div class=" col-6 col-md-6">
-  <img class="promo-image-living-room" src="{{asset('/images/Shop_Page.jpg')}}" alt="">
-  <a href="#">DC Home Design <span class="">➡</span></a>
-
-</div>
-
-<div class="col-md-6">
-
-  <div class="row">
-
- <div class="col-md-12">
-  <img class="promo-image-bed" src="{{asset('/images/Home_Bed_compressed.jpg')}}" alt="">
-  <a href="#">New Product <span class="">➡</span></a>
-
- </div>
-  
- <div class="row">
-
- <div class="col-md-6">
-  <img class="promo-image-pillow" src="{{asset('/images/Home_Pillow_compressed.jpg')}}" alt="">
-    <a href="#">Best Seller <span class="">➡</span></a></div>
- </div>
-
- <div class="col-md-6">
-  <img class="promo-image-sofa" src="{{asset('/images/Home_Sofa.jpg')}}" alt="">
-  <a href="#">Top Rated <span class="">➡</span></a>
-</div>
-
- </div>
-  </div>
-  
-</div>
-
-
- </div>
-
-</div> --}}
 
 @endsection
 
