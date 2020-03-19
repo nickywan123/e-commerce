@@ -10,25 +10,18 @@
                     <a class="bujishu-gold" href="">FAQ</a>
                 </li>
                 <li>
-                    <a class="bujishu-gold" href="">Warranty</a>
-                </li>
-                <li>
-                    <a class="bujishu-gold" href="">Partnership</a>
-                </li>
-                <li>
                     <a class="bujishu-gold" href="">Privacy Policy</a>
-                </li>
-                <li>
-                    <a class="bujishu-gold" href="">Contact Us</a>
                 </li>
             </ul>
         </div>
         <div class="col-6 col-md-2 text-center text-md-left">
-            <h5 class="pr-1 pl-1 bujishu-gold">My Account</h5>
+            <h5 class="pr-1 pl-1 bujishu-gold">Account</h5>
             <ul class="list-unstyled pr-2 pl-2">
+                @if(!Auth::check())
                 <li>
                     <a class="bujishu-gold" href="">Sign In</a>
                 </li>
+                @endif
                 <li>
                     <a class="bujishu-gold" href="">My Cart</a>
                 </li>

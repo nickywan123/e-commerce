@@ -1,4 +1,4 @@
-<div class="middleBar">
+<div class="middleBar" style="border-bottom: 3px solid #fccb34;">
     <div class="container-90">
         <div class="row d-flex">
             <div class="col-sm-2 vertical-align mt-2 mb-3">
@@ -70,7 +70,7 @@
                 <form>
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto">
-                            <div>
+                            <div class="pb-2">
                                 <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size " name="category">
                                     <option value="all">All Categories</option>
                                     <optgroup label="Mens">
@@ -138,7 +138,7 @@
     </div>
 </div>
 
-<div class="bottom-bar shadow-sm" style="border-bottom: 3px solid #fccb34;">
+<!-- <div class="bottom-bar shadow-sm" style="border-bottom: 3px solid #fccb34;">
     <div class="container-90">
         <div class="row">
             <div class="col-sm-12 justify-content-end-md justify-content-center-sm mb-1">
@@ -153,4 +153,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
