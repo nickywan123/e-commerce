@@ -10,32 +10,32 @@
                 <h5 class="text-dark">Panel</h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a href="">Company A</a>
+                        <a class="text-dark" href="">Company A</a>
                     </li>
                     <li>
-                        <a href="">Company B</a>
+                        <a class="text-dark" href="">Company B</a>
                     </li>
                     <li>
-                        <a href="">Company C</a>
+                        <a class="text-dark" href="">Company C</a>
                     </li>
                 </ul>
 
                 <h5 class="text-dark">Price</h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a href="">Under RM25</a>
+                        <a class="text-dark" href="">Under RM25</a>
                     </li>
                     <li>
-                        <a href="">RM25 - RM50</a>
+                        <a class="text-dark" href="">RM25 - RM50</a>
                     </li>
                     <li>
-                        <a href="">RM50 - RM100</a>
+                        <a class="text-dark" href="">RM50 - RM100</a>
                     </li>
                     <li>
-                        <a href="">RM100 - RM200</a>
+                        <a class="text-dark" href="">RM100 - RM200</a>
                     </li>
                     <li>
-                        <a href="">RM200 & Above</a>
+                        <a class="text-dark" href="">RM200 & Above</a>
                     </li>
                     <li class="p-1">
                         <form action="" class="form-inline">
@@ -51,22 +51,22 @@
                 <h5 class="text-dark">Color</h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a href="">White</a>
+                        <a class="text-dark" href="">White</a>
                     </li>
                     <li>
-                        <a href="">Beige</a>
+                        <a class="text-dark" href="">Beige</a>
                     </li>
                     <li>
-                        <a href="">Red</a>
+                        <a class="text-dark" href="">Red</a>
                     </li>
                     <li>
-                        <a href="">Maroon</a>
+                        <a class="text-dark" href="">Maroon</a>
                     </li>
                     <li>
-                        <a href="">Grey</a>
+                        <a class="text-dark" href="">Grey</a>
                     </li>
                     <li>
-                        <a href="">Black</a>
+                        <a class="text-dark" href="">Black</a>
                     </li>
                 </ul>
 
