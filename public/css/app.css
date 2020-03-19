@@ -58359,10 +58359,12 @@ Author: Nicholas
   padding: 10px;
   font-size: 1.1em;
   display: block;
+  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 #sidebar ul li a:hover {
-  color: #7386d5;
+  color: black;
   background: #fff;
 }
 
@@ -58424,6 +58426,12 @@ a.article:hover {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+/* Author Nick*/
+
+.font-style-list {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (max-width: 576px) {
@@ -58513,6 +58521,14 @@ a.hover-white:hover {
   font-size: 15px;
 }
 
+.navbar-border-bottom-color {
+  border-bottom: 3px solid #ffcc00;
+}
+
+.navbar-border-top-color {
+  border-top: 3px solid #ffcc00;
+}
+
 @media (max-width: 767px) {
   .margin-right-logo-mobile {
     margin-right: 170px;
@@ -58521,5 +58537,26 @@ a.hover-white:hover {
   .welcome-panel-text {
     font-size: 10px;
   }
+}
+
+.sidebar .nav-link {
+  color: #ffcc00;
+}
+
+.sidebar .nav-link:hover {
+  background-color: white;
+  color: black;
+}
+
+.sidebar .nav-dropdown.open .nav-link {
+  color: #ffcc00;
+}
+
+.sidebar .nav-dropdown.open .nav-link:hover {
+  color: black;
+}
+
+.text-color-breadcrumb {
+  color: black;
 }
 

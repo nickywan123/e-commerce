@@ -1,11 +1,12 @@
-<header class="app-header navbar navbar-bg-color">
+<header class="app-header navbar navbar-bg-color navbar-border-bottom-color">
 
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon" ></span>
     </button>
 
     <button class="navbar-toggler sidebar-toggler d-md-down-none"  type="button" data-toggle="sidebar-lg-show">
-        <span class="navbar-toggler-icon"></span>
+        {{-- <span class="navbar-toggler-icon"></span> --}}
+        <i class="fa fa-bars navigation-icon"></i>
     </button>
 
     <a class="navbar-brand" href="#">

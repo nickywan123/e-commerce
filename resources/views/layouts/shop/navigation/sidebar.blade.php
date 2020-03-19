@@ -7,22 +7,22 @@
         <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
     </div>
 
-    <ul class="list-unstyled components">
+    <ul class="list-unstyled components ">
         <h4 style="color: #000; padding: 10px;"><strong>Shop By Category</strong></h4>
-        <li class="active text-dark">
-            <a class="text-dark" href="/category/bedsheet-mattress">Bedsheet & Mattress</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Cupboard</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Tables & Chairs</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Carpet</a>
-            <a class="text-dark" href="/category/curtain">Curtain</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Tiles</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Lighting</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Wall Papers</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Roof</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Doors</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Window</a>
-            <a class="text-dark" href="/category/bedsheet-mattress">Auxillary Propesrity Items</a>
-            <a class="text-dark" href="/category/product-services">Product & Services</a>
+        <li >
+            <a   href="/category/bedsheet-mattress">Bedsheet & Mattress</a>
+            <a   href="/category/bedsheet-mattress">Cupboard</a>
+            <a   href="/category/bedsheet-mattress">Tables & Chairs</a>
+            <a   href="/category/bedsheet-mattress">Carpet</a>
+            <a   href="/category/curtain">Curtain</a>
+            <a   href="/category/bedsheet-mattress">Tiles</a>
+            <a   href="/category/bedsheet-mattress">Lighting</a>
+            <a   href="/category/bedsheet-mattress">Wall Papers</a>
+            <a   href="/category/bedsheet-mattress">Roof</a>
+            <a   href="/category/bedsheet-mattress">Doors</a>
+            <a   href="/category/bedsheet-mattress">Window</a>
+            <a   href="/category/bedsheet-mattress">Auxillary Propesrity Items</a>
+            <a   href="/category/product-services">Product & Services</a>
         </li>
 
         <!-- For future use of navigation bar expand -->
