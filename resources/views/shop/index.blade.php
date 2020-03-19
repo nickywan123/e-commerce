@@ -15,10 +15,7 @@
   <div class="pillow-grid">
     <img class="promo-image-pillow" src="{{asset('/images/Home_Pillow_compressed.jpg')}}" alt="">
     <a href="#">Best Seller <span class="">➡</span></a></div>
-  <div class="kitchen-grid">
-    <img class="promo-image-kitchen" src="{{asset('/images/Home_Kitchen_compressed.jpg')}}" alt="">
-    <a href="#">Offer <span class="">➡</span></a>
-  </div>
+ 
   <div class="living-room-grid">
     <img class="promo-image-living-room" src="{{asset('/images/Shop_Page.jpg')}}" alt="">
     <a href="#">DC Home Design <span class="">➡</span></a>
@@ -28,6 +25,51 @@
     <a href="#">Top Rated <span class="">➡</span></a>
   </div>
 </div>
+
+
+{{--                                             --}}
+
+{{-- <div class="wrapper">
+
+ <div class="row">
+
+<div class=" col-6 col-md-6">
+  <img class="promo-image-living-room" src="{{asset('/images/Shop_Page.jpg')}}" alt="">
+  <a href="#">DC Home Design <span class="">➡</span></a>
+
+</div>
+
+<div class="col-md-6">
+
+  <div class="row">
+
+ <div class="col-md-12">
+  <img class="promo-image-bed" src="{{asset('/images/Home_Bed_compressed.jpg')}}" alt="">
+  <a href="#">New Product <span class="">➡</span></a>
+
+ </div>
+  
+ <div class="row">
+
+ <div class="col-md-6">
+  <img class="promo-image-pillow" src="{{asset('/images/Home_Pillow_compressed.jpg')}}" alt="">
+    <a href="#">Best Seller <span class="">➡</span></a></div>
+ </div>
+
+ <div class="col-md-6">
+  <img class="promo-image-sofa" src="{{asset('/images/Home_Sofa.jpg')}}" alt="">
+  <a href="#">Top Rated <span class="">➡</span></a>
+</div>
+
+ </div>
+  </div>
+  
+</div>
+
+
+ </div>
+
+</div> --}}
 
 @endsection
 
@@ -41,7 +83,7 @@
     grid-gap: 2.5em;
     background-color: black;
 
-    height: 900px;
+    height: 700px;
     max-width: 100%;
   }
 
@@ -100,8 +142,8 @@
 
 
   .sofa-grid{
-    grid-column-start: 3;
-    grid-row: 5 / -1;
+    grid-column-start: 3/6;
+    grid-row: 2/9;
   }
 
 
