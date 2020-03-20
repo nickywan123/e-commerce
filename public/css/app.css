@@ -57777,10 +57777,6 @@ a.grad2 {
 }
 
 .category-image-container {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
   width: 100%;
 }
 
@@ -58329,6 +58325,11 @@ a.grad2 {
 }
 
 @media (max-width: 767px) {
+  #search-button {
+    height: 49px;
+    background-color: white;
+  }
+
   .search-bar-size {
     height: 49px;
   }
@@ -58401,11 +58402,11 @@ a.grad2 {
   .search-bar-size {
     height: 48px;
   }
-}
 
-#search-button {
-  height: 48px;
-  background-color: white;
+  #search-button {
+    height: 48px;
+    background-color: white;
+  }
 }
 
 .border-rounded-0 {

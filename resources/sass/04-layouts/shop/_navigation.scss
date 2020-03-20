@@ -446,7 +446,11 @@
 
 @media (max-width: 767px) {
 
-   
+    #search-button {
+        height: 49px;
+        background-color: white;
+        
+    }
 
     .search-bar-size{
         height:49px;
@@ -519,19 +523,15 @@
         border-radius: 0;
     }
 
-  
     .search-bar-size{
     height:48px;
-}
-}
+    }
 
-
-#search-button {
-    height: 48px;
-    background-color: white;
-    
+    #search-button {
+        height: 48px;
+        background-color: white;
+    }
 }
-
 
 .border-rounded-0 {
     border-radius: 0;
