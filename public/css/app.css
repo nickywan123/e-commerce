@@ -9830,7 +9830,7 @@ Author: Nicholas
   width: 17%;
   position: fixed;
   top: 0;
-  left: -250px;
+  left: -17%;
   height: 100vh;
   z-index: 999;
   background: #fbcc34;
@@ -9886,7 +9886,6 @@ Author: Nicholas
 #sidebar ul.components {
   padding: 20px 0;
   letter-spacing: 1px;
-  text-decoration: none;
 }
 
 #sidebar ul p {
@@ -9905,6 +9904,7 @@ Author: Nicholas
 #sidebar ul li a:hover {
   color: black;
   background: #fff;
+  text-decoration: none;
 }
 
 #sidebar ul li.active > a,
