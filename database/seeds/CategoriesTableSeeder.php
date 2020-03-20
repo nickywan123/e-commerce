@@ -395,27 +395,6 @@ class CategoriesTableSeeder extends Seeder
         $parentCategory = Category::where('name', 'Tables & Chairs')->first();
 
         $category = Category::create([
-            'name' => 'Kitchen Cabinets',
-            'slug' => 'kitchen-cabinets',
-            'parent_category_id' => $parentCategory->id
-        ]);
-
-        $category->image()->create([
-            'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '.jpg'
-        ]);
-
-        // --
-        $category = null;
-        // --
-
-        // --
-        $parentCategory = null;
-        //--
-
-        $parentCategory = Category::where('name', 'Tables & Chairs')->first();
-
-        $category = Category::create([
             'name' => 'Dining Sets',
             'slug' => 'dining-sets',
             'parent_category_id' => $parentCategory->id

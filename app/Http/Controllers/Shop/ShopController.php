@@ -32,7 +32,7 @@ class ShopController extends Controller
                 $this->cart = Auth::user()->carts->where('status', 2001);
             }
             // Get all categories, with subcategories and its images.
-            $categories = Category::with('image')->with('subcategories.image')->get();
+            $categories = Category::topLevelCategory();
 
             // Share the above variable with all views in this controller.
             View::share('categories', $categories);
@@ -161,7 +161,33 @@ class ShopController extends Controller
         $category = Category::where('slug', $topLevelSlug)->first();
         $childCategories = $category->childCategories->take(6);
 
-        return view('shop.catalog.top-level')
+        return view('shop.catalog.catalog')
+            ->with('category', $category)
+            ->with('childCategories', $childCategories);
+    }
+
+    /**
+     * Handles /shop/category/[category-name]/[category-name]
+     */
+    public function secondLevelCategory($topLevelSlug, $secondLevelSlug)
+    {
+        $category = Category::where('slug', $secondLevelSlug)->first();
+        $childCategories = $category->childCategories->take(6);
+
+        return view('shop.catalog.catalog')
+            ->with('category', $category)
+            ->with('childCategories', $childCategories);
+    }
+
+    /**
+     * Handles /shop/category/[category-name]/[category-name]/[category-name]
+     */
+    public function thirdLevelCategory($topLevelSlug, $secondLevelSlug, $thirdLevelSlug)
+    {
+        $category = Category::where('slug', $thirdLevelSlug)->first();
+        $childCategories = $category->childCategories->take(6);
+
+        return view('shop.catalog.catalog')
             ->with('category', $category)
             ->with('childCategories', $childCategories);
     }

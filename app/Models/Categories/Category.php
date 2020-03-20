@@ -35,7 +35,7 @@ class Category extends Model
      */
     public function scopeTopLevelCategory($query)
     {
-        return $query->where('parent_category_id', null)->get();
+        return $query->where('parent_category_id', 0)->get();
     }
 
     /**

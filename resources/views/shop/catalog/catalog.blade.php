@@ -128,6 +128,7 @@
                 </div>
             </div>
 
+            @if($childCategories->count() > 0)
             <div class="row pb-1">
                 <div class="col-12 mb-1">
                     <h3 class="text-dark font-weight-bold">Featured Categories</h3>
@@ -171,6 +172,7 @@
                 @endif
                 @endforeach
             </div>
+            @endif
 
             <div class="row pb-1">
                 <div class="col-12 mb-1">
@@ -179,14 +181,7 @@
                 </div>
             </div>
 
-            @if($category->products == null)
-            <!-- No product found message -->
-            <div class="row">
-                <div class="col-12">
-                    <p class="no-product-found-message">We're sorry, there's no available product under this category yet.</p>
-                </div>
-            </div>
-            @else
+            @if($category->products->count() > 0)
             <!-- Products -->
             <div class="row no-gutters">
                 @foreach($category->products as $product)
@@ -229,6 +224,13 @@
                     </a>
                 </div>
                 @endforeach
+            </div>
+            @else
+            <!-- No product found message -->
+            <div class="row">
+                <div class="col-12">
+                    <p class="no-product-found-message">We're sorry, there's no available product under this category yet.</p>
+                </div>
             </div>
             @endif
 
