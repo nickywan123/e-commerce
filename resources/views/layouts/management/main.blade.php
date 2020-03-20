@@ -25,7 +25,7 @@
     @include('layouts.management.navigations.navigation-bar')
     <div class="app-body">
         @include('layouts.management.navigations.side-bar')
-        <main class="main">
+        <main class="main " style="margin-top:2%;">
 
             @yield('breadcrumbs')
             <div class="container-fluid">

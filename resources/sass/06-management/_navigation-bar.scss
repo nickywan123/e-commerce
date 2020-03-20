@@ -22,6 +22,19 @@
     border-top: 3px solid #ffcc00;
 }
 
+.nav-height {
+    min-height: 13%;
+}
+
+.img-logo-resize {
+    min-width: 80%;
+    min-height: 120%;
+}
+
+.img-logo-margin-left {
+    margin-left: 30px;
+}
+
 @media (max-width: 767px) {
     .margin-right-logo-mobile {
         margin-right: 170px;

@@ -1,10 +1,22 @@
 .sidebar .nav-link {
     color: #ffcc00;
+
+    letter-spacing: 2px;
+    .icon-color {
+        color: #ffcc00;
+    }
+}
+
+.sidebar .nav-link.active .icon-color {
+    color: #ffcc00;
 }
 
 .sidebar .nav-link:hover {
     background-color: white;
     color: black;
+    .icon-color {
+        color: #ffcc00;
+    }
 }
 
 .sidebar .nav-dropdown.open .nav-link {
@@ -17,4 +29,8 @@
 
 .text-color-breadcrumb {
     color: black;
+}
+
+.sidebar-margin-top {
+    margin-top: 20%;
 }
