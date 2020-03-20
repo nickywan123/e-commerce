@@ -47,13 +47,35 @@
 
         </div>
    
-       
-
-            <img class="icon-image" src="{{asset('/images/1.png')}}" alt="Icon">
-            <img  class="icon-image"src="{{asset('/images/2.png')}}" alt="Icon">
-            <img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon">
+            
           
   </section>
+  <br>
+
+
+  <div class="container">
+ <div class="row">
+   
+ <div class="col-6 col-md-2">
+ <a style="color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/1.png')}}" alt="Icon"> <h5>Electrical</h5></a>
+
+ </div>
+ <div class="col-6 col-md-2">
+  <a style=" color:#ffcc00;"  href="#"><img class="icon-image" src="{{asset('/images/2.png')}}" alt="Icon"> <h5>Beds & Mattress</h5></a>
+  
+  </div>
+
+  <div class="col-6 col-md-2">
+    <a style=" color:#ffcc00;"  href="#"><img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon"><h5>Curtain</h5></a>
+   
+  </div>
+
+</div>
+
+ </div>
+
+
+
   <!-- Hero Area End -->
 
 @endsection
@@ -300,7 +322,18 @@
 
   @media(max-width:767px) {
 
-
+    .hero-area .hero-area-slider .intro-carousel .intro-content {
+  background-size: cover;
+  height: 400px;
+  margin-right: 10px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  }
+   
     .bed-grid {
       grid-column: 1/5;
       grid-row: 2 / 3;

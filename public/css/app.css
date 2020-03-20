@@ -9672,7 +9672,7 @@ Author: Nicholas
 }
 
 #sidebar {
-  width: 250px;
+  width: 17%;
   position: fixed;
   top: 0;
   left: -250px;
@@ -9730,7 +9730,8 @@ Author: Nicholas
 
 #sidebar ul.components {
   padding: 20px 0;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  text-decoration: none;
 }
 
 #sidebar ul p {
