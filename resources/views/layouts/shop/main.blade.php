@@ -63,9 +63,9 @@
 
 
             $('#body-content-collapse-sidebar,#footer-content-collapse-sidebar,.nav-content-sidebar-collapse').click(function(event){
-   if($(event.target).attr('id') !== "sidebar" && $(event.target).attr('id') !== "sidebarCollapse") {
-     $('#sidebar').removeClass('active');
-     $('.overlay').removeClass('active');
+            if($(event.target).attr('id') !== "sidebar" && $(event.target).attr('id') !== "sidebarCollapse") {
+            $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
    }
 });
 
