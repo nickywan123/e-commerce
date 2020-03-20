@@ -110,6 +110,12 @@
                                 <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile <small>(wip)</small></a>
                                 <a class="dropdown-item" href="#"><i class="fa fa-credit-card"></i> My Orders <small>(wip)</small></a>
                                 <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
+                                @hasrole('panel')
+                                <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Panel</a>
+                                @endhasrole
+                                @hasrole('dealer')
+                                <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Dealer</a>
+                                @endhasrole
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                     <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
@@ -121,11 +127,6 @@
                             </div>
                         </div>
                     </li>
-                    @hasrole('panel')
-                    <li class="nav-item m-1">
-                        <a href="/management" class="nav-link btn  btn-register">Panel</a>
-                    </li>
-                    @endhasrole
                     @hasrole('dealer')
                     <li class="nav-item m-1">
                         <a href="/management" class="nav-link btn  btn-register">Dealer</a>

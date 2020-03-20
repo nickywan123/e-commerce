@@ -30,7 +30,15 @@ Route::prefix('shop')->group(function () {
     // Home/Index page for shop.
     Route::get('/', 'Shop\ShopController@index')->name('shop.index');
 
+
     // Author - Wan Shahruddin
+
+    Route::group(['prefix' => 'category'], function () {
+        Route::get('/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory');
+        Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}', 'Shop\ShopController@secondLevelCategory');
+        Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory');
+    });
+
     Route::get('/category/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory');
 
     // // Category page for shop. Displays products related to selected category.

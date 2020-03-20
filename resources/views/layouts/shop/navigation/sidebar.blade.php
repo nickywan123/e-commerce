@@ -9,20 +9,23 @@
 
     <ul class="list-unstyled components ">
         <h4 style="color: #000; padding: 10px;"><strong>Shop By Category</strong></h4>
-        <li >
-            <a   href="/category/bedsheet-mattress">Bedsheet & Mattress</a>
-            <a   href="/category/bedsheet-mattress">Cupboard</a>
-            <a   href="/category/bedsheet-mattress">Tables & Chairs</a>
-            <a   href="/category/bedsheet-mattress">Carpet</a>
-            <a   href="/category/curtain">Curtain</a>
-            <a   href="/category/bedsheet-mattress">Tiles</a>
-            <a   href="/category/bedsheet-mattress">Lighting</a>
-            <a   href="/category/bedsheet-mattress">Wall Papers</a>
-            <a   href="/category/bedsheet-mattress">Roof</a>
-            <a   href="/category/bedsheet-mattress">Doors</a>
-            <a   href="/category/bedsheet-mattress">Window</a>
-            <a   href="/category/bedsheet-mattress">Auxillary Propesrity Items</a>
-            <a   href="/category/product-services">Product & Services</a>
+        <li>
+            @foreach($categories as $category)
+            <a href="/shop/category/{{ $category->slug }}">{{ $category->name }}</a>
+            @endforeach
+            <!-- <a href="/category/bedsheet-mattress">Bedsheet & Mattress</a>
+            <a href="/category/bedsheet-mattress">Cupboard</a>
+            <a href="/category/bedsheet-mattress">Tables & Chairs</a>
+            <a href="/category/bedsheet-mattress">Carpet</a>
+            <a href="/category/curtain">Curtain</a>
+            <a href="/category/bedsheet-mattress">Tiles</a>
+            <a href="/category/bedsheet-mattress">Lighting</a>
+            <a href="/category/bedsheet-mattress">Wall Papers</a>
+            <a href="/category/bedsheet-mattress">Roof</a>
+            <a href="/category/bedsheet-mattress">Doors</a>
+            <a href="/category/bedsheet-mattress">Window</a>
+            <a href="/category/bedsheet-mattress">Auxillary Propesrity Items</a>
+            <a href="/category/product-services">Product & Services</a> -->
         </li>
 
         <!-- For future use of navigation bar expand -->
@@ -42,9 +45,9 @@
                     </li>
                 </ul>
             </nav> --}}
-        
-        
-      
+
+
+
     </ul>
 
 </nav>
