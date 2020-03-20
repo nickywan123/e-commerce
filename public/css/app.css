@@ -57643,8 +57643,8 @@ body {
 a.btn {
   color: black;
   border-radius: 10px;
-  background-color: #fbcc34;
   font-style: italic;
+  min-width: 90px;
 }
 
 a.btn-dealer {
@@ -57747,7 +57747,7 @@ a.grad2 {
   background-image: linear-gradient(black, black), linear-gradient(90deg, #ded9d6 0%, #8b878d 25%, #f3f4f4 50%, #807b80 75%, #a7a9ac 100%);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  box-shadow: 2px 1000px 1px #FFDF00 inset;
+  box-shadow: 2px 1000px 1px #ffdf00 inset;
 }
 
 .bjsh-btn-gold:hover {
@@ -57756,6 +57756,15 @@ a.grad2 {
 
 .bjsh-btn-gold:focus {
   outline: none;
+}
+
+/* Author Nick
+ Class for gradient of button
+*/
+
+.bjsh-btn-gradient {
+  background: #faac18;
+  background: linear-gradient(0deg, #faac18 5%, #ffca05 56%, #ffe7a3 94%);
 }
 
 .mr-5 {
@@ -58348,6 +58357,7 @@ Author: Nicholas
 
 #sidebar ul.components {
   padding: 20px 0;
+  letter-spacing: 2px;
 }
 
 #sidebar ul p {
@@ -58529,6 +58539,19 @@ a.hover-white:hover {
   border-top: 3px solid #ffcc00;
 }
 
+.nav-height {
+  min-height: 13%;
+}
+
+.img-logo-resize {
+  min-width: 80%;
+  min-height: 120%;
+}
+
+.img-logo-margin-left {
+  margin-left: 30px;
+}
+
 @media (max-width: 767px) {
   .margin-right-logo-mobile {
     margin-right: 170px;
@@ -58541,11 +58564,24 @@ a.hover-white:hover {
 
 .sidebar .nav-link {
   color: #ffcc00;
+  letter-spacing: 2px;
+}
+
+.sidebar .nav-link .icon-color {
+  color: #ffcc00;
+}
+
+.sidebar .nav-link.active .icon-color {
+  color: #ffcc00;
 }
 
 .sidebar .nav-link:hover {
   background-color: white;
   color: black;
+}
+
+.sidebar .nav-link:hover .icon-color {
+  color: #ffcc00;
 }
 
 .sidebar .nav-dropdown.open .nav-link {
@@ -58558,5 +58594,9 @@ a.hover-white:hover {
 
 .text-color-breadcrumb {
   color: black;
+}
+
+.sidebar-margin-top {
+  margin-top: 20%;
 }
 

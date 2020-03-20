@@ -30,15 +30,23 @@
     border-bottom-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding: .35rem .55rem;
+    padding: 0.35rem 0.55rem;
     color: #000;
     background-color: #000;
     box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
     border: solid 3px transparent;
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), linear-gradient(90deg, rgba(222, 217, 214, 1) 0%, rgba(139, 135, 141, 1) 25%, rgba(243, 244, 244, 1) 50%, rgba(128, 123, 128, 1) 75%, rgba(167, 169, 172, 1) 100%);
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
+        linear-gradient(
+            90deg,
+            rgba(222, 217, 214, 1) 0%,
+            rgba(139, 135, 141, 1) 25%,
+            rgba(243, 244, 244, 1) 50%,
+            rgba(128, 123, 128, 1) 75%,
+            rgba(167, 169, 172, 1) 100%
+        );
     background-origin: border-box;
     background-clip: content-box, border-box;
-    box-shadow: 2px 1000px 1px #FFDF00 inset;
+    box-shadow: 2px 1000px 1px #ffdf00 inset;
 }
 
 .bjsh-btn-gold:hover {
@@ -47,4 +55,18 @@
 
 .bjsh-btn-gold:focus {
     outline: none;
+}
+
+/* Author Nick
+ Class for gradient of button
+*/
+
+.bjsh-btn-gradient {
+    background: rgb(250, 172, 24);
+    background: linear-gradient(
+        0deg,
+        rgba(250, 172, 24, 1) 5%,
+        rgba(255, 202, 5, 1) 56%,
+        rgba(255, 231, 163, 1) 94%
+    );
 }

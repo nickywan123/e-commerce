@@ -24,7 +24,7 @@
 
     <div class="backgroundImage">
         <div class="text-right p-3">
-            <a href="/register-dealer " class="btn bjsh-btn-gold p-2"><b>{{ __('Be A Dealer') }}</b></a>
+            <a href="/register-dealer " class="btn  p-2 bjsh-btn-gradient"><b>{{ __('Be A Dealer') }}</b></a>
         </div>
 
 
@@ -61,8 +61,8 @@
 
             <div class="row mt-4">
                 <div class="col-12 col-md-4 offset-md-4 text-center">
-                    <a href="/login " class="btn bjsh-btn-gold grad2"><b>{{ __('LOGIN') }}</b></a>
-                    <a href="/register" class="btn bjsh-btn-gold grad2"><b> {{ __('SIGN UP') }}</b></a>
+                    <a href="/login " class="btn  grad2 bjsh-btn-gradient"><b>{{ __('LOGIN') }}</b></a>
+                    <a href="/register" class="btn  grad2 bjsh-btn-gradient"><b> {{ __('SIGN UP') }}</b></a>
                 </div>
             </div>
         </div>

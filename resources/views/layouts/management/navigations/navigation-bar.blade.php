@@ -1,4 +1,4 @@
-<header class="app-header navbar navbar-bg-color navbar-border-bottom-color ">
+<header class="app-header navbar navbar-bg-color navbar-border-bottom-color nav-height ">
 
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon" ></span>
@@ -9,7 +9,7 @@
         <i class="fa fa-bars navigation-icon"></i>
     </button>
 
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand img-logo-margin-left" href="#">
         <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('images/Bujishu_logo.png')}}" width="89" height="50" alt="Bujishu Logo">
         <img class="navbar-brand-minimized" src="{{asset('images/Bujishu_logo.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>

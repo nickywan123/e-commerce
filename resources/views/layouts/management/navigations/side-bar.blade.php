@@ -1,24 +1,24 @@
 <div class="sidebar sidebar-bg-color">
     <nav class="sidebar-nav ">
-        <ul class="nav ">
+        <ul class="nav sidebar-margin-top">
             <li class="nav-item">
                 <a class="nav-link" href="index.html">
-                    <i class="nav-icon icon-speedometer"></i> Dashboard
+                    <i class="nav-icon icon-speedometer icon-color"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
-                    <i class="nav-icon icon-puzzle"></i> Products
+                    <i class="nav-icon icon-puzzle icon-color"></i> Products
                 </a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="/management/product" class="nav-link">
-                            <i class="nav-icon fa fa-list"></i> My Products
+                            <i class="nav-icon fa fa-list icon-color"></i> My Products
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="/management/product/create" class="nav-link">
-                            <i class="nav-icon fa fa-plus"></i> New Product
+                            <i class="nav-icon fa fa-plus icon-color"></i> New Product
                         </a>
                     </li>
                 </ul>
