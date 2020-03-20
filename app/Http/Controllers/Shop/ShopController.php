@@ -158,14 +158,11 @@ class ShopController extends Controller
      */
     public function topLevelCategory($topLevelSlug)
     {
-        if ($topLevelSlug == 'square') {
-            return view('shop.catalog.top-level-square');
-        } elseif ($topLevelSlug == 'circle') {
-            return view('shop.catalog.top-level-circle');
-        } elseif ($topLevelSlug == 'rounded-square') {
-            return view('shop.catalog.top-level-rounded');
-        } else {
-            return view('shop.catalog.top-level');
-        }
+        $category = Category::where('slug', $topLevelSlug)->first();
+        $childCategories = $category->childCategories->take(6);
+
+        return view('shop.catalog.top-level')
+            ->with('category', $category)
+            ->with('childCategories', $childCategories);
     }
 }

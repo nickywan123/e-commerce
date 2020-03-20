@@ -57770,6 +57770,10 @@ a.grad2 {
   outline: none;
 }
 
+a.category-item:hover {
+  text-decoration: none;
+}
+
 .category-container {
   width: 180px;
   min-height: 180px;
@@ -57784,7 +57788,7 @@ a.grad2 {
   width: 150px;
   max-width: 100%;
   display: block;
-  border-radius: 100%;
+  border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -57824,7 +57828,7 @@ a.grad2 {
   width: 150px;
   max-width: 100%;
   display: block;
-  border-radius: 100%;
+  border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
   transition: width 0.45s, height 0.5s;
@@ -57862,6 +57866,13 @@ a.grad2 {
 
 .animated-category-container:hover .animated-category-list-container {
   height: 50%;
+}
+
+.no-product-found-message {
+  font-size: 1.3rem;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .animated-product-container {

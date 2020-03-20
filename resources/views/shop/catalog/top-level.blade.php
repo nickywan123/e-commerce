@@ -120,10 +120,6 @@
                 </ul>
             </div>
         </div>
-        <?php
-        $category = App\Models\Categories\Category::find(1);
-        $childCategories = $category->childCategories->take(6);
-        ?>
 
         <div class="col-12 col-md-10">
             <div class="row pb-4">
@@ -138,6 +134,8 @@
                     <hr>
                 </div>
             </div>
+
+            <!-- Child Categories -->
             <div class="row custom-mb-5">
                 @foreach($childCategories as $childCategory)
                 @if($childCategory->childCategories->count() != 0)
@@ -152,7 +150,7 @@
                             <ul class="list-unstyled">
                                 @foreach($childCategory->childCategories as $anotherChildCategory)
                                 <li>
-                                    <a class="animated-category-list-container-item" href="">{{ $anotherChildCategory->name }}</a>
+                                    <a class="animated-category-list-container-item" href="/shop/category/{{ $category->slug }}/{{ $childCategory->slug }}/{{ $anotherChildCategory->slug }}">{{ $anotherChildCategory->name }}</a>
                                 </li>
                                 @endforeach
                             </ul>
@@ -161,7 +159,7 @@
                 </div>
                 @else
                 <div class="col-6 col-md-2 text-center">
-                    <a class="category-item" href="">
+                    <a class="category-item" href="/shop/category/{{ $category->slug }}/{{ $childCategory->slug }}">
                         <div class="category-container">
                             <div class="category-image-container">
                                 <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
@@ -181,6 +179,15 @@
                 </div>
             </div>
 
+            @if($category->products == null)
+            <!-- No product found message -->
+            <div class="row">
+                <div class="col-12">
+                    <p class="no-product-found-message">We're sorry, there's no available product under this category yet.</p>
+                </div>
+            </div>
+            @else
+            <!-- Products -->
             <div class="row no-gutters">
                 @foreach($category->products as $product)
                 <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
@@ -193,10 +200,6 @@
                             <div class="animated-product-information-container">
                                 <p class="product-name">{{ $product->name }}</p>
                                 <div>
-                                    <!-- TODO: Remove if not used. -->
-                                    <!-- <p class="mb-1 product-detail">
-                                    Pillows, 50cm
-                                </p> -->
                                     <p class="mb-1 product-price">
                                         RM {{ $product->getDecimalPrice() }}
                                     </p>
@@ -225,93 +228,10 @@
                         </div>
                     </a>
                 </div>
-
-                <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
-                    <a style="text-decoration: none; color: #212529;" href="">
-                        <div class="animated-product-container">
-                            <div class="animated-product-image-container">
-                                <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
-                            </div>
-
-                            <div class="animated-product-information-container">
-                                <p class="product-name">{{ $product->name }}</p>
-                                <div>
-                                    <!-- TODO: Remove if not used. -->
-                                    <!-- <p class="mb-1 product-detail">
-                                    Pillows, 50cm
-                                </p> -->
-                                    <p class="mb-1 product-price">
-                                        RM {{ $product->getDecimalPrice() }}
-                                    </p>
-                                </div>
-                                <div>
-                                    <ul class="list-unstyled product-rating mb-1">
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                    </ul>
-                                    <p class="mb-1">120 ratings</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- <div class="col-6 col-md-2">
-                    <div class="item-overlay-container mb-1">
-                        <img class="mw-100" style="min-height: 150px;" src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="">
-                        <div class="item-overlay">
-                            <p class="item-quality m-0">{{ $product->quality->name }}</p>
-                        </div>
-                        <div class="slide-right-overlay">
-                            <button class="btn btn-primary mb-2" style="display: block;">
-                                <i class="fa fa-cart-plus"></i>
-                            </button>
-                            <button class="btn btn-primary mb-2" style="display: block;">
-                                <i class="fa fa-star" style="color: #fccb34;"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="item-info text-center">
-                        <a href="">
-                            <h5>{{ $product->panel->userInfo->full_name }}</h5>
-                            <p>Product 1</p>
-                            <h6 class="item-price">RM {{ $product->price }}</h6>
-                        </a>
-                        <ul class="list-unstyled product-rating mb-1">
-                            <li>
-                                <i class="fa fa-star checked"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star checked"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star checked"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star checked"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star checked"></i>
-                            </li>
-                        </ul>
-                        <p>(60)</p>
-                    </div>
-                </div> -->
                 @endforeach
             </div>
+            @endif
+
         </div>
     </div>
 </div>
