@@ -158,6 +158,14 @@ class ShopController extends Controller
      */
     public function topLevelCategory($topLevelSlug)
     {
-        return view('shop.catalog.top-level');
+        if ($topLevelSlug == 'square') {
+            return view('shop.catalog.top-level-square');
+        } elseif ($topLevelSlug == 'circle') {
+            return view('shop.catalog.top-level-circle');
+        } elseif ($topLevelSlug == 'rounded-square') {
+            return view('shop.catalog.top-level-rounded');
+        } else {
+            return view('shop.catalog.top-level');
+        }
     }
 }

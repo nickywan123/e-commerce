@@ -1,5 +1,6 @@
 .animated-product-container {
     background-color: #f0f0f0;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)
 }
 
 .animated-product-image-container {
@@ -48,6 +49,6 @@
     }
 }
 
-.animated-product-container:hover .animated-product-image-container img  {
-    transform: scale(1.5)
+.animated-product-container:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }

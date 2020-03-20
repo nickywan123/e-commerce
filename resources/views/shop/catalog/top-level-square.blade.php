@@ -144,7 +144,7 @@
                 <div class="col-6 col-md-2 text-center">
                     <div class="animated-category-container">
                         <div class="animated-category-image-container">
-                            <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}">
+                            <img style="border-radius: 0;" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}">
                             <p>{{ $childCategory->name }}</p>
                         </div>
                         <div class="animated-category-list-container">
@@ -164,7 +164,7 @@
                     <a class="category-item" href="">
                         <div class="category-container">
                             <div class="category-image-container">
-                                <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
+                                <img style="border-radius: 0;" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
                                 <p>{{ $childCategory->name }}</p>
                             </div>
                         </div>
@@ -183,90 +183,85 @@
 
             <div class="row no-gutters">
                 @foreach($category->products as $product)
-                <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
-                    <a style="text-decoration: none; color: #212529;" href="">
-                        <div class="animated-product-container">
-                            <div class="animated-product-image-container">
-                                <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
-                            </div>
+                <div class="col-6 col-md-2 pl-1 pr-1 pb-2">
+                    <div class="animated-product-container shadow-sm">
+                        <div class="animated-product-image-container">
+                            <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
+                        </div>
 
-                            <div class="animated-product-information-container">
-                                <p class="product-name">{{ $product->name }}</p>
-                                <div>
-                                    <!-- TODO: Remove if not used. -->
-                                    <!-- <p class="mb-1 product-detail">
+                        <div class="animated-product-information-container">
+                            <p class="product-name">{{ $product->name }}</p>
+                            <div>
+                                <!-- TODO: Remove if not used. -->
+                                <!-- <p class="mb-1 product-detail">
                                     Pillows, 50cm
                                 </p> -->
-                                    <p class="mb-1 product-price">
-                                        RM {{ $product->getDecimalPrice() }}
-                                    </p>
-                                </div>
-                                <div>
-                                    <ul class="list-unstyled product-rating mb-1">
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                    </ul>
-                                    <p class="mb-1">120 ratings</p>
-                                </div>
+                                <p class="mb-1 product-price">
+                                    RM {{ $product->getDecimalPrice() }}
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="list-unstyled product-rating mb-1">
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                </ul>
+                                <p class="mb-1">120 ratings</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
+                <div class="col-6 col-md-2 pl-1 pr-1">
+                    <div class="animated-product-container shadow-sm">
+                        <div class="animated-product-image-container">
+                            <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
+                        </div>
 
-                <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
-                    <a style="text-decoration: none; color: #212529;" href="">
-                        <div class="animated-product-container">
-                            <div class="animated-product-image-container">
-                                <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
-                            </div>
-
-                            <div class="animated-product-information-container">
-                                <p class="product-name">{{ $product->name }}</p>
-                                <div>
-                                    <!-- TODO: Remove if not used. -->
-                                    <!-- <p class="mb-1 product-detail">
+                        <div class="animated-product-information-container">
+                            <p class="product-name">{{ $product->name }}</p>
+                            <div>
+                                <!-- TODO: Remove if not used. -->
+                                <!-- <p class="mb-1 product-detail">
                                     Pillows, 50cm
                                 </p> -->
-                                    <p class="mb-1 product-price">
-                                        RM {{ $product->getDecimalPrice() }}
-                                    </p>
-                                </div>
-                                <div>
-                                    <ul class="list-unstyled product-rating mb-1">
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                    </ul>
-                                    <p class="mb-1">120 ratings</p>
-                                </div>
+                                <p class="mb-1 product-price">
+                                    RM {{ $product->getDecimalPrice() }}
+                                </p>
+                            </div>
+                            <div>
+                                <ul class="list-unstyled product-rating mb-1">
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star checked"></i>
+                                    </li>
+                                </ul>
+                                <p class="mb-1">120 ratings</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
                 <!-- <div class="col-6 col-md-2">

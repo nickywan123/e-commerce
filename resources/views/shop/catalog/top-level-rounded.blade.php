@@ -144,7 +144,7 @@
                 <div class="col-6 col-md-2 text-center">
                     <div class="animated-category-container">
                         <div class="animated-category-image-container">
-                            <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}">
+                            <img style="border-radius: 10px;" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}">
                             <p>{{ $childCategory->name }}</p>
                         </div>
                         <div class="animated-category-list-container">
@@ -164,7 +164,7 @@
                     <a class="category-item" href="">
                         <div class="category-container">
                             <div class="category-image-container">
-                                <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
+                                <img style="border-radius: 10px;" src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
                                 <p>{{ $childCategory->name }}</p>
                             </div>
                         </div>
