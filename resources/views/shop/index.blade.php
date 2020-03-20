@@ -5,71 +5,33 @@
 
 <!--CSS Grid to display home page images -->
 
+ <div class="container">
 
-<div class="wrapper">
+<div class="wrapper" id="body-content-collapse-sidebar">
  
   <div class="bed-grid">
     <img class="promo-image-bed" src="{{asset('/images/Home_Bed_compressed.jpg')}}" alt="">
     <a href="#">New Product <span class="">➡</span></a>
   </div>
-  <div class="pillow-grid">
-    <img class="promo-image-pillow" src="{{asset('/images/Home_Pillow_compressed.jpg')}}" alt="">
-    <a href="#">Best Seller <span class="">➡</span></a></div>
- 
+
   <div class="living-room-grid">
     <img class="promo-image-living-room" src="{{asset('/images/Shop_Page.jpg')}}" alt="">
     <a href="#">DC Home Design <span class="">➡</span></a>
   </div>
+
+  {{-- <div class="pillow-grid">
+    <img class="promo-image-pillow" src="{{asset('/images/Home_Pillow_compressed.jpg')}}" alt="">
+    <a href="#">Best Seller <span class="">➡</span></a></div>
+  --}}
+
   <div class="sofa-grid">
     <img class="promo-image-sofa" src="{{asset('/images/Home_Sofa.jpg')}}" alt="">
     <a href="#">Top Rated <span class="">➡</span></a>
   </div>
 </div>
-
-
-{{--                                             --}}
-
-{{-- <div class="wrapper">
-
- <div class="row">
-
-<div class=" col-6 col-md-6">
-  <img class="promo-image-living-room" src="{{asset('/images/Shop_Page.jpg')}}" alt="">
-  <a href="#">DC Home Design <span class="">➡</span></a>
-
-</div>
-
-<div class="col-md-6">
-
-  <div class="row">
-
- <div class="col-md-12">
-  <img class="promo-image-bed" src="{{asset('/images/Home_Bed_compressed.jpg')}}" alt="">
-  <a href="#">New Product <span class="">➡</span></a>
-
- </div>
-  
- <div class="row">
-
- <div class="col-md-6">
-  <img class="promo-image-pillow" src="{{asset('/images/Home_Pillow_compressed.jpg')}}" alt="">
-    <a href="#">Best Seller <span class="">➡</span></a></div>
- </div>
-
- <div class="col-md-6">
-  <img class="promo-image-sofa" src="{{asset('/images/Home_Sofa.jpg')}}" alt="">
-  <a href="#">Top Rated <span class="">➡</span></a>
-</div>
-
- </div>
-  </div>
-  
 </div>
 
 
- </div>
-
-</div> --}}
 
 @endsection
 
@@ -110,16 +72,17 @@
   }
 
   .bed-grid{
-    grid-column: 1/2;
-    grid-row: 1/4;
+    grid-column: 3;
+    grid-row: 1/5;
     /* height: 140%;
     width: 70%; */
   }
 
 
   .pillow-grid{
-    grid-column: 2;
-    grid-row: 1 / 4;
+    grid-column: 3;
+    grid-row: 4 / 6;
+    
     /* height: 140%;
     width: 100%; */
   }
@@ -132,15 +95,15 @@
 
   .living-room-grid{
     grid-column: 1 / 3;
-    grid-row: 4 / -1;
+    grid-row: 1 / 9;
    
   }
 
 
 
   .sofa-grid{
-    grid-column-start: 3/6;
-    grid-row: 2/9;
+    /* grid-column-start: 3/6; */
+    grid-row: 5/9;
   }
 
 
@@ -240,10 +203,10 @@
 
 
     .sofa-grid{
-      grid-column: 3;
-      grid-row: 3/7;
+      grid-column: 1/5;
+      grid-row: 3/10;
       /* height: 130%; */
-      width: 130%;
+      /* width: 130%; */
     }
 
 

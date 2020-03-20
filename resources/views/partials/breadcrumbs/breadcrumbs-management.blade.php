@@ -3,9 +3,9 @@
     @foreach ($breadcrumbs as $breadcrumb)
 
     @if ($breadcrumb->url && !$loop->last)
-    <li class="breadcrumb-item"><a href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a></li>
+    <li class="breadcrumb-item "><a class="text-color-breadcrumb" href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a></li>
     @else
-    <li class="breadcrumb-item active">{{ $breadcrumb->title }}</li>
+    <li class="breadcrumb-item  active">{{ $breadcrumb->title }}</li>
     @endif
 
     @endforeach
@@ -15,9 +15,9 @@
             <a class="btn" href="#">
                 <i class="icon-speech"></i>
             </a>
-            <a class="btn" href="./">
+            <a class="btn text-color-breadcrumb" href="./">
                 <i class="icon-graph"></i>  Dashboard</a>
-            <a class="btn" href="#">
+            <a class="btn text-color-breadcrumb" href="#">
                 <i class="icon-settings"></i>  Settings</a>
         </div>
     </li>
