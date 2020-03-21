@@ -24,8 +24,13 @@
 @import "~@coreui/coreui/scss/coreui";
 @import "~@coreui/coreui/scss/coreui";
 
+//Slick Carousel
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
+
 //01- Landing Page
-@import "./01-landing-page/landing_page";
+@import 
+    "./01-landing-page/landing_page";
 
 // 02-Base
 @import 
@@ -42,14 +47,16 @@
     "./03-components/animated-product";
 
 // 04-Layouts
-@import "./04-layouts/shop/navigation", "./04-layouts/shop/sidebar";
+@import 
+    "./04-layouts/shop/navigation",
+    "./04-layouts/shop/sidebar";
 
 // 05-Pages
-@import "./05-pages/guests-main", "./05-pages/guests_login";
+@import 
+    "./05-pages/guests-main",
+    "./05-pages/guests_login";
 
 // 06-Management Panel
-@import "./06-management/navigation-bar", "./06-management/sidebar";
-
-//Slick Carousel
-@import "~slick-carousel/slick/slick";
-@import "~slick-carousel/slick/slick-theme";
+@import 
+    "./06-management/navigation-bar",
+    "./06-management/sidebar";
