@@ -12,6 +12,7 @@ use App\Models\Categories\SubCategory;
 use App\Models\Products\Product;
 use Illuminate\Support\Facades\View;
 use App\Models\Users\User;
+use App\Models\PromotionPage\Banner;
 
 class ShopController extends Controller
 {
@@ -48,9 +49,13 @@ class ShopController extends Controller
      */
     public function index()
     {
+        // Author Nick : Display image for promo page slider
+       
+        // return view('shop.index')->with('data', $data);
         // Get all categories and subcategories with its image.
-        $categories = Category::with('image')->with('subcategories.image')->get();
-        return view('shop.index')->with('categories', $categories);
+        // $categories = Category::with('image')->with('subcategories.image')->get();
+        $data = Banner::all();
+        return view('shop.index')->with('data', $data);
     }
 
     /**

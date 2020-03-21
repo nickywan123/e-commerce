@@ -2,7 +2,7 @@
     width: 17%;
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -17%;
     height: 100vh;
     // height: auto;
     z-index: 999;
@@ -60,7 +60,6 @@
 #sidebar ul.components {
     padding: 20px 0;
     letter-spacing: 1px;
-    text-decoration: none;
 }
 
 #sidebar ul p {
@@ -80,6 +79,7 @@
 #sidebar ul li a:hover {
     color: black;
     background: #fff;
+    text-decoration: none;
 }
 
 #sidebar ul li.active > a,

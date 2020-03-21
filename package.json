@@ -29,6 +29,7 @@
         "flag-icon-css": "^3.4.6",
         "perfect-scrollbar": "^1.5.0",
         "signature_pad": "^3.0.0-beta.3",
-        "simple-line-icons": "^2.4.1"
+        "simple-line-icons": "^2.4.1",
+        "slick-carousel": "^1.8.1"
     }
 }

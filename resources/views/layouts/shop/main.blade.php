@@ -33,7 +33,7 @@
     <!-- Side bar -->
     @include('layouts.shop.navigation.sidebar')
 
-    <main>
+    <main class="mt-3 ml-3 mr-3" >
         @yield('content')
     </main>
 
