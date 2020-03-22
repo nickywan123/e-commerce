@@ -58445,6 +58445,22 @@ a.article:hover {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@media (max-width: 767px) {
+  #sidebar {
+    width: 60%;
+    position: fixed;
+    top: 0;
+    left: -60%;
+    height: 100vh;
+    z-index: 999;
+    background: #fbcc34;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
 @media (max-width: 576px) {
   .bg-sm {
     padding-top: 3%;

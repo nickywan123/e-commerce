@@ -12,10 +12,10 @@
             <h5 class="text-center bujishu-gold form-card-title">Registration</h5>
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item active">
-                    <a class="nav-link register-tab-active active" id="home-tab" data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
+                    <a class="nav-link register-tab-active active" id="home-tab"  data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link register-tab-active" id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Information</a>
+                    <a class="nav-link register-tab-active" id="profile-tab" data-toggle="tab"  href="#information" role="tab" aria-controls="profile" aria-selected="false">Information</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link register-tab-active" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="agreement" aria-selected="false">Agreement</a>
@@ -24,47 +24,47 @@
             <div class="card-body">
 
                 <!-- Dealer Registration Form -->
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('register') }}" id="register-form">
                     @csrf
-                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-content " id="myTabContent">
                         <!-- Registration  Tab-->
-                        <div class="tab-pane fade show active" id="registration" role="tabpanel" aria-labelledby="registration-tab">
+                        <div class="tab-pane fade show active " id="registration"  role="tabpanel" aria-labelledby="registration-tab">
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Account Particulars</h5>
-                            <div class="form-row">
+                            <div class="form-row register-info">
                                 <div class="form-group col-md-12">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" name="email" class="form-control " required id="email" placeholder="Email">
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="password">Password</label>
-                                    <input type="password" name="password" class="form-control" id="password">
+                                    <input type="password" name="password" class="form-control " required id="password">
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="password-confirm">Confirm Password</label>
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="password-confirm" type="password" class="form-control " name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
 
                             <!-- Next Button -->
                             <div class="text-right">
                                 <!-- <a class="btn btn-secondary next-button" id="information-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Next</a> -->
-                                <a class="btn btn-secondary next-button">Next</a>
+                                <a class="btn btn-secondary next-button bjsh-btn-gradient" id="next-btn">Next</a>
                             </div>
                         </div>
 
                         <!-- Information Tab -->
-                        <div class="tab-pane fade" id="information" role="tabpanel" aria-labelledby="information-tab">
+                        <div class="tab-pane fade" id="information"  role="tabpanel" aria-labelledby="information-tab">
                             <!-- Personal Particulars -->
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Personal Particulars</h5>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="full_name">Full Name (as per NRIC)</label>
-                                    <input type="text" name="full_name" class="form-control" id="full_name" placeholder="Full Name">
+                                    <input type="text" name="full_name" class="form-control" id="full_name" required placeholder="Full Name">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="nric">NRIC Number</label>
-                                    <input type="text" name="nric" class="form-control" id="nric" placeholder="NRIC Number">
+                                    <input type="text" name="nric" class="form-control" id="nric" placeholder="NRIC Number (e.g 930502-10-2342)">
                                 </div>
                             </div>
 
@@ -106,11 +106,11 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="contact_number_home">Contact Number (Home)</label>
-                                    <input type="text" name="contact_number_home" class="form-control" placeholder="Home Contact Number">
+                                    <input type="text" name="contact_number_home" id="contact_number_home" class="form-control" placeholder="Home Contact Number">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="contact_number_mobile">Contact Number (Mobile)</label>
-                                    <input type="text" name="contact_number_mobile" class="form-control" placeholder="Mobile Contact Number">
+                                    <input type="text" name="contact_number_mobile" id="contact_number_mobile" class="form-control" placeholder="Mobile Contact Number">
                                 </div>
                             </div>
 
@@ -118,11 +118,11 @@
                                 <div class="col-12">
                                     <label style="display: block;" for="existing_customer_options">Are you an existing Destiny Code customer?</label>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" class="form-check-input" name="existing_customer" value="0" checked>
+                                        <input type="radio" class="form-check-input" id="existing_customer" name="existing_customer" value="0" checked>
                                         <label class="form-check-label" for="existing_customer">No</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" class="form-check-input" name="existing_customer" value="1">
+                                        <input type="radio" class="form-check-input" id="existing_customer" name="existing_customer" value="1">
                                         <label class="form-check-label" for="existing_customer">Yes</label>
                                     </div>
                                 </div>
@@ -131,11 +131,11 @@
                             <!-- Next Button -->
                             <div class="text-right">
                                 <!-- <a class="btn btn-secondary next-button" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="profile" aria-selected="false">Next</a> -->
-                                <a class="btn btn-secondary next-button">Next</a>
+                                <a class="btn btn-secondary next-button bjsh-btn-gradient" id="next-btn2">Next</a>
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="agreement" role="tabpanel" aria-labelledby="agreement-tab">
+                        <div class="tab-pane fade" id="agreement"  role="tabpanel" aria-labelledby="agreement-tab">
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Agreement</h5>
 
                             <!-- Registration Agreement -->
@@ -430,7 +430,7 @@
                             <div class="row">
                                 <div class="col-12 col-md-8 offset-md-2 pl-3 pr-3 pt-2 mb-0">
                                     <canvas class="display-block signature-pad" style="touch-action: none;"></canvas>
-                                    <p id="signatureError" style="color: red; display: none;">Please provide your signature.</p>
+                                    <p id="signatureError" name="signatureError" style="color: red; display: none;">Please provide your signature.</p>
                                     <div class="p-1 text-right">
                                         <button id="resetSignature" class="btn btn-sm" style="background-color: lightblue;">Reset</button>
                                         <button id="saveSignature" class="btn btn-sm" style="background-color: #fbcc34;">Save</button>
@@ -444,7 +444,7 @@
                                     <!-- Submit Button -->
                                     <div class="text-right">
                                         <input type="hidden" name="registrationFor" value="customer">
-                                        <button type="submit" class="bjsh-btn-gold text-right">Sign Up</button>
+                                        <button type="submit" id="submit"  class=" btn next-button bjsh-btn-gradient text-right">Sign Up</button>
                                     </div>
                                 </div>
                             </div>
@@ -514,6 +514,15 @@
         background-color: #fbcc34;
         border-color: #8b878d;
     }
+
+    /* Author Nick
+    */
+    
+    /* Style error validation message*/
+
+    .error{
+        color: red;
+    }
 </style>
 @endpush
 
@@ -521,6 +530,7 @@
 <script>
     // Variablie initialization.
     var canvas = document.querySelector("canvas");
+    // let canvas = document.querySelector('.signature-pad');
     const signatureSaveButton = document.getElementById("saveSignature");
     const signatureResetButton = document.getElementById("resetSignature");
     const signatureError = document.getElementById("signatureError");
@@ -529,7 +539,7 @@
     let currentTab = $('.nav-tabs > .active');
     let nextTab = currentTab.next('li');
 
-    // Handles tabs click.
+    //Handles tabs click.
     $('.nav-link').click(function() {
         currentTab = $(this).parent();
         $('.nav-tabs > .active').removeClass('active');
@@ -538,16 +548,16 @@
     });
 
     // Handles next button click.
-    $('.next-button').click(function() {
-        currentTab.removeClass('active');
-        nextTab.find('a').trigger('click');
-        nextTab.addClass('active');
-        currentTab = $('.nav-tabs > .active');
-        nextTab = currentTab.next('li');
-    });
+    // $('.next-button').click(function() {
+    //     currentTab.removeClass('active');
+    //     nextTab.find('a').trigger('click');
+    //     nextTab.addClass('active');
+    //     currentTab = $('.nav-tabs > .active');
+    //     nextTab = currentTab.next('li');
+    // });
 
     // Initialize a new signaturePad instance.
-    var signaturePad = new SignaturePad(canvas);
+    let signaturePad = new SignaturePad(canvas);
 
     // Clear signature pad.
     signatureResetButton.addEventListener("click", function(event) {
@@ -563,5 +573,123 @@
             signatureInput.value = signatureUrl;
         }
     });
+
+   
+// Validate registration tab before moving to the next tab
+
+
+ $( "#register-form" ).validate({
+
+        rules: {
+
+        email: {
+              required: true,
+              // Specify that email should be validated
+             // by the built-in "email" rule
+             email: true
+                   },
+        password: {
+                 required: true,
+                 minlength: 8,
+
+                 },
+        password_confirmation:{
+            required: true,
+            minlength: 8,
+            equalTo: "#password"
+
+        },
+        full_name: {required:true},
+        nric:{required:true},
+        address_1:{required:true},
+        address_2:{required:true},
+        address_3:{required:true},
+        postcode:{required:true},
+        city:{required:true},
+        state:{required:true},
+        contact_number_home:{required:true},
+        contact_number_mobile:{required:true},
+        existing_customer:{required:true},
+        signatureError:{required:true},
+        },
+        messages: {
+            email:{
+                required:"Please enter an email",
+                email:"The email is not valid"
+            },
+            password:{
+                required:"Please enter a password",
+                minlength:"Password must be minimum of 8 characters"
+            },
+            password_confirmation:{
+                required:"Please confirm your password",
+                minlength:"Passmust must be minimum of 8 characters",
+                equalTo:"Password must be same as above"
+            },
+            full_name:{required:"Please enter your full name"},
+            nric:{required:"Please enter your identity card number"},
+            address_1:{required:"Please enter your address"},
+            address_2:{required:"Please enter your address"},
+            address_3:{required:"Please enter your address"},
+            postcode:{required:"Please enter your postcode"},
+            city:{required:"Please select your city"},
+            state:{required:"Please select your state"},
+            contact_number_home:{required:"Please enter your home number"},
+            contact_number_mobile:{required:"Please enter your mobile number"},
+            signatureError:{required:"Please provide your signature"},
+}
+});
+
+// validate fields in 1st tab
+$('#next-btn').click(function() {  
+    if($("#register-form").validate().element('#email') && $("#register-form").validate().element('#password')&& $("#register-form").validate().element('#password-confirm')) {
+    
+        nextTab.find('a').trigger('click');
+    }else{
+        
+    }
+   
+});
+
+// validate fields in 2nd tab
+$('#next-btn2').click(function() {  
+    if($("#register-form").validate().element('#full_name') && $("#register-form").validate().element('#nric')&& $("#register-form").validate().element('#address_1')&& $("#register-form").validate().element('#address_2') && $("#register-form").validate().element('#address_3') && $("#register-form").validate().element('#postcode')
+    && $("#register-form").validate().element('#city')&& $("#register-form").validate().element('#state')&& $("#register-form").validate().element('#contact_number_home')
+    && $("#register-form").validate().element('#contact_number_mobile')&& $("#register-form").validate().element('#existing_customer')
+    ) {
+    
+        nextTab.find('a').trigger('click');
+    }else{
+        
+    }
+   
+});
+
+// validate signature input in 3rd tab
+
+$('#submit').click(function(e){
+
+if (signaturePad.isEmpty()) {
+    alert("Please provide your signature")
+  }else{
+      alert("SUCCESS");
+      // Perform submit to db.
+  }
+});
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
 </script>
 @endpush
