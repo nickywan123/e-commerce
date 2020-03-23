@@ -34,5 +34,5 @@
 </footer>
 
 <section class="container-fluid" style="background-color: #000;">
-    <h6 class="text-right" style="color:white;">@ 2020 Bujishu. All Rights Reserved</h6>
+    <h6 class="text-right mb-0 pt-1 pb-1" style="color:white;">@ 2020 Bujishu. All Rights Reserved</h6>
 </section>

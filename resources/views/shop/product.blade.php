@@ -5,69 +5,474 @@
     <!-- Breadcrumb here -->
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-7 pt-1 pl-1 pr-1">
-                <img src="{{ asset('storage/' . $product->images[0]->path . $product->images[0]->filename) }}" alt="" style="height: 450px; width: auto;">
+            <div class="col-12 hidden-md pt-1 pl-1 pr-1 mb-2">
+                <h1 class="pl-0 pr-0 text-capitalize text-left" style="font-size: 1.5rem; margin: 0;">{{ $product->name }}</h1>
             </div>
-            <div class="col-12 col-md-5 pt-1 pl-1 pr-1">
-                <div class="row">
+            <div class="col-12 col-md-5 pl-1 pr-1 mb-1">
+                <div class="slider slider-single">
+                    @foreach($product->images as $image)
+                    <div>
+                        <img class="mw-100" src="{{ asset('storage/' . $image->path . '/' . $image->filename) }}" alt="">
+                    </div>
+                    @endforeach
+                </div>
+                <div class="slider slider-nav hidden-sm">
+                    @foreach($product->images as $image)
+                    <div>
+                        <img class="mw-100" src="{{ asset('storage/' . $image->path . '/' . $image->filename) }}" alt="">
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="col-12 col-md-7 pt-1 pl-2 pr-2">
+                <div class="row hidden-sm">
                     <div class="col-12 text-md-left text-center">
-                        <h1 class="pl-0 pr-0 text-capitalize" style="font-size: 2.5rem; margin: 0;">{{ $product->name }}</h1>
-                        <p style="font-size: 1.5rem; font-weight: 550;">RM {{ $product->price }}</p>
+                        <h1 class="pl-0 pr-0 text-capitalize" style="font-size: 2rem; margin: 0;">{{ $product->name }}</h1>
                     </div>
                 </div>
                 <hr>
-
                 <div class="row">
                     <div class="col-12 text-md-left text-center">
                         <p>{{ $product->summary }}</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 pt-2">
-                        <div class="w-100-sm w-50-md float-left-md pt-4 text-md-left text-center">
-                            <p>Quantity</p>
-                        </div>
+                    <div class="col-12">
+                        <p class="mb-1">Size</p>
+                        <div class="boxed">
+                            <input type="radio" id="size1" name="size" value="120cm x 200cm">
+                            <label for="size1">120cm x 200cm</label>
 
-                        <div class="w-100-sm w-50-md float-right-md pt-4">
-                            <div class="input-group ">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                                        <span class="fa fa-minus"></span>
-                                    </button>
-                                </span>
-                                <input type=" text" name="quant[1]" class="form-control input-number" value="1" min="1" max="50">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                                        <span class="fa fa-plus"></span>
-                                    </button>
-                                </span>
-                            </div>
+                            <input type="radio" id="size2" name="size" value="120cm x 200cm">
+                            <label for="size2">120cm x 200cm</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 pt-3 pb-3">
+                    <div class="col-12">
+                        <p class="mb-1">Color</p>
+                        <div class="boxed">
+                            <input type="radio" id="grey" name="color" value="Grey">
+                            <label for="grey">Grey</label>
 
-                        <!-- <a href="/shop/add-to-cart/{{ $product->id }}" class="btn btn-primary d-block">Add to cart</a> -->
-                        <form method="POST" action="{{ route('shop.cart.add-item') }}">
-                            @method('POST')
-                            @csrf
-                            <input type="hidden" name="productId" value="{{ $product->id }}">
-                            @if(!$product->colors->isEmpty())
-                            <input type="hidden" name="productColorId" value="{{ $product->getDefaultColor()->id }}">
-                            @endif
-                            @if(!$product->dimensions->isEmpty())
-                            <input type="hidden" name="productDimensionId" value="{{ $product->getDefaultDimension()->id }}">
-                            @endif
-                            @if(!$product->lengths->isEmpty())
-                            <input type="hidden" name="productLengthId" value="{{ $product->getDefaultLength()->id }}">
-                            @endif
-                            <input type="hidden" name="productQuantity" value="1">
-                            <button type="submit" class="btn btn-primary float-right-md w-100-sm">Add to cart</button>
-                        </form>
+                            <input type="radio" id="white" name="color" value="White">
+                            <label for="white">White</label>
+
+                            <input type="radio" id="green" name="color" value="Green">
+                            <label for="green">Green</label>
+                        </div>
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-12 mb-0 text-left">
+                        <h4 class="mb-0">Sold By</h4>
+                    </div>
+                </div>
+
+                <hr class="mt-1 w-50 text-left ml-0">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row no-gutters">
+                            <div class="col-12 col-md-6 pl-1 pr-1 mb-1">
+                                <a style="text-decoration: none; color: #212529;" href="#exampleModal1" data-toggle="modal" data-target="#exampleModal1">
+                                    <div class="card panel-option-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-4 mb-0">
+                                                    <img class="mw-100" src="https://www.logodesign.net/logo/line-art-car-with-swoosh-5986ld.png" alt="">
+                                                </div>
+                                                <div class="col-8 mb-0 text-left">
+                                                    <p class="mb-1 font-weight-bold">Panel 1 Sdn Bhd</p>
+                                                    <p class="mb-0">Rating by panel: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </p>
+                                                    <p class="mb-0">Rating by customers: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Quality: </p>
+                                                    <p class="mb-1">Moderate</p>
+                                                    <p class="mb-0">Price: </p>
+                                                    <p class="mb-1 font-weight-bold">RM 120</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-6 pl-1 pr-1 mb-1">
+                                <a style="text-decoration: none; color: #212529;" href="#exampleModal2" data-toggle="modal" data-target="#exampleModal2">
+                                    <div class="card panel-option-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-4 mb-0">
+                                                    <img class="mw-100" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/corporate-company-logo-design-template-2402e0689677112e3b2b6e0f399d7dc3_screen.jpg?ts=1561532453" alt="">
+                                                </div>
+                                                <div class="col-8 mb-0 text-left">
+                                                    <p class="mb-1 font-weight-bold">Panel 2 Sdn Bhd</p>
+                                                    <p class="mb-0">Rating by panel: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Rating by customers: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Quality: </p>
+                                                    <p class="mb-1">Standard</p>
+                                                    <p class="mb-0">Price: </p>
+                                                    <p class="mb-1 font-weight-bold">RM 100</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-6 pl-1 pr-1 mb-1">
+                                <a style="text-decoration: none; color: #212529;" href="#exampleModal1" data-toggle="modal" data-target="#exampleModal1">
+                                    <div class="card panel-option-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-4 mb-0">
+                                                    <img class="mw-100" src="https://dypdvfcjkqkg2.cloudfront.net/original/4841768-7155.jpg" alt="">
+                                                </div>
+                                                <div class="col-8 mb-0 text-left">
+                                                    <p class="mb-1 font-weight-bold">Panel 3 Sdn Bhd</p>
+                                                    <p class="mb-0">Rating by panel: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Rating by customers: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Quality: </p>
+                                                    <p class="mb-1">Standard</p>
+                                                    <p class="mb-0">Price: </p>
+                                                    <p class="mb-1 font-weight-bold">RM 150</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-6 pl-1 pr-1 mb-1">
+                                <a style="text-decoration: none; color: #212529;" href="#exampleModal2" data-toggle="modal" data-target="#exampleModal2">
+                                    <div class="card panel-option-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-4 mb-0">
+                                                    <img class="mw-100" src="https://cdn6.f-cdn.com/contestentries/1465575/31577979/5c471a44972fb_thumb900.jpg" alt="">
+                                                </div>
+                                                <div class="col-8 mb-0 text-left">
+                                                    <p class="mb-1 font-weight-bold">Panel 4 Sdn Bhd</p>
+                                                    <p class="mb-0">Rating by panel: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Rating by customers: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Quality: </p>
+                                                    <p class="mb-1">Standard</p>
+                                                    <p class="mb-0">Price: </p>
+                                                    <p class="mb-1 font-weight-bold">RM 90</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <form method="POST" action="{{ route('shop.cart.add-item') }}">
+                    @method('POST')
+                    @csrf
+                    <input type="hidden" name="productId" value="{{ $product->id }}">
+                    @if(!$product->colors->isEmpty())
+                    <input type="hidden" name="productColorId" value="{{ $product->getDefaultColor()->id }}">
+                    @endif
+                    @if(!$product->dimensions->isEmpty())
+                    <input type="hidden" name="productDimensionId" value="{{ $product->getDefaultDimension()->id }}">
+                    @endif
+                    @if(!$product->lengths->isEmpty())
+                    <input type="hidden" name="productLengthId" value="{{ $product->getDefaultLength()->id }}">
+                    @endif
+                    <input type="hidden" name="productQuantity" value="1">
+                    <button type="submit" class="btn btn-primary float-right-md w-100-sm">Add to cart</button>
+                </form> -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Panel 1 Sdn Bhd - {{ $product->name }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <img class="mw-100" style="border: 1px solid #ededed; padding: 5px;" src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="">
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="mb-4">
+                            <p class="mb-1">100% Cotton Shell, 100% Polyester Fiber Fill</p>
+                            <p>With 15 years experience in manufacturing pillows, with 2 million satisfied customers, we guarantee 100% satisfaction from buying this product.</p>
+                        </div>
+                        <div>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>
+                                        Material
+                                    </td>
+                                    <td>
+                                        Cotton, Polyester Fiber
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Quality
+                                    </td>
+                                    <td>
+                                        Moderate
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ratings
+                                    </td>
+                                    <td>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="ml-2">(60 ratings)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Price
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        RM 120
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
+                        <select class="select2 color-option" style="width: 100%;">
+                            <option class="text-left" selected>Choose your color option</option>
+                            <option value="1">Red</option>
+                            <option value="2">Beige</option>
+                            <option value="3">Yellow</option>
+                            <option value="1">Blue</option>
+                            <option value="2">White</option>
+                            <option value="3">Grey</option>
+                        </select>
+                    </div>
+
+                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
+                        <select class="select2 color-option" style="width: 100%;">
+                            <option selected>Choose your size option</option>
+                            <option value="1">50cm x 60cm</option>
+                            <option value="2">60cm x 120cm</option>
+                            <option value="3">40cm x 40cm</option>
+                        </select>
+                    </div>
+
+                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
+                        <select class="select2 color-option" style="width: 100%;">
+                            <option selected>Quantity</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            <option value="3">7</option>
+                            <option value="3">8</option>
+                            <option value="3">9</option>
+                            <option value="3">10</option>
+                            <option value="3">11</option>
+                            <option value="3">12</option>
+                            <option value="3">13</option>
+                            <option value="3">14</option>
+                            <option value="3">15</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
+                <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Panel 2 Sdn Bhd - {{ $product->name }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <img class="mw-100" style="border: 1px solid #ededed; padding: 5px;" src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="">
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="mb-4">
+                            <p class="mb-1">100% Cotton Shell, 100% Polyester Fiber Fill</p>
+                            <p>With 15 years experience in manufacturing pillows, with 2 million satisfied customers, we guarantee 100% satisfaction from buying this product.</p>
+                        </div>
+                        <div>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>
+                                        Material
+                                    </td>
+                                    <td>
+                                        Cotton, Polyester Fiber
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Quality
+                                    </td>
+                                    <td>
+                                        Standard
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ratings
+                                    </td>
+                                    <td>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="ml-2">(60 ratings)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Price
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        RM 100
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
+                        <select class="select2 color-option" style="width: 100%;">
+                            <option selected>Choose your color option</option>
+                            <option value="1">Red</option>
+                            <option value="2">Beige</option>
+                            <option value="2">White</option>
+                            <option value="3">Grey</option>
+                        </select>
+                    </div>
+
+                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
+                        <select class="select2 color-option" style="width: 100%;">
+                            <option selected>Choose your size option</option>
+                            <option value="1">50cm x 60cm</option>
+                            <option value="3">40cm x 40cm</option>
+                        </select>
+                    </div>
+
+                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
+                        <select class="select2 color-option" style="width: 100%;">
+                            <option selected>Quantity</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                            <option value="3">5</option>
+                            <option value="3">6</option>
+                            <option value="3">7</option>
+                            <option value="3">8</option>
+                            <option value="3">9</option>
+                            <option value="3">10</option>
+                            <option value="3">11</option>
+                            <option value="3">12</option>
+                            <option value="3">13</option>
+                            <option value="3">14</option>
+                            <option value="3">15</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
+                <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to cart</button>
             </div>
         </div>
     </div>
@@ -76,55 +481,104 @@
 
 @push('script')
 <script>
-    // fetch('https://jsonplaceholder.typicode.com/posts').then(function(response) {
-    //     // The API call was successful!
-    //     console.log('success!', response);
-    // }).catch(function(err) {
-    //     // There was an error
-    //     console.warn('Something went wrong.', err);
-    // });
+    $(document).ready(function() {
+        // Function to change slick script based on media query state.
+        function changeSlickScriptOnSmScreen(smScreen) {
+            if (smScreen.matches) {
+                $('.slider-single').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    fade: false,
+                    dots: true,
+                });
+            } else {
+                $('.slider-single').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    fade: false,
+                    asNavFor: '.slider-nav'
+                });
+                $('.slider-nav').slick({
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    asNavFor: '.slider-single',
+                    centerMode: true,
+                    focusOnSelect: true
+                });
+            }
+        }
 
-    // Assign a varibale to element with the class input-number.
-    const productQuantity = $('.input-number');
-    // Assign a variable to input with the name productQuantity.
-    const postProductQuantity = $('input[name$="productQuantity"]')
+        // Set media query.
+        var smScreen = window.matchMedia("(max-width: 576px)");
 
-    // On change event of productQuantity..
-    productQuantity.on('change', function() {
-        // change the value of postProductQuantity to match productQuantity.
-        postProductQuantity.val(productQuantity.val());
+        // Call function at runtime.
+        changeSlickScriptOnSmScreen(smScreen);
+
+        // Attach listener function on state changes.
+        smScreen.addListener(changeSlickScriptOnSmScreen);
+
+        // Assign a variable to element with the class input-number.
+        const productQuantity = $('.input-number');
+        // Assign a variable to input with the name productQuantity.
+        const postProductQuantity = $('input[name$="productQuantity"]')
+
+        // On change event of productQuantity..
+        productQuantity.on('change', function() {
+            // change the value of postProductQuantity to match productQuantity.
+            postProductQuantity.val(productQuantity.val());
+        });
+
+        $('.select2').select2({
+            width: 'resolve'
+        });
     });
 </script>
 @endpush
 
 @push('style')
 <style>
-    @media (max-width: 576px) {
-        .hidden-sm {
-            display: none;
-        }
-
-        .w-100-sm {
-            width: 100%;
-        }
+    .slider-single {
+        border: 1px solid #dedede;
+        padding: 5px;
     }
 
-    @media (min-width: 768px) {
-        .hidden-md {
-            display: none;
-        }
+    .slider-nav {
+        margin-top: 5px;
+    }
 
-        .float-right-md {
-            float: right;
-        }
+    .fa.fa-star {
+        color: #6e6e6e;
+    }
 
-        .float-left-md {
-            float: left;
-        }
+    .fa.fa-star.checked {
+        color: #fccb34;
+    }
 
-        .w-50-md {
-            width: 50%;
-        }
+    .panel-option-card {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        transition: all ease-in-out .2s;
+    }
+
+    .panel-option-card:hover {
+        box-shadow: 0 0.175rem 0.75rem rgba(0, 0, 0, 0.075);
+    }
+
+    .boxed label {
+        display: inline-block;
+        width: 150px;
+        padding: 10px;
+        border: solid 2px #ccc;
+        transition: all 0.3s;
+    }
+
+    .boxed input[type="radio"] {
+        display: none;
+    }
+
+    .boxed input[type="radio"]:checked+label {
+        border: solid 2px #fccb34;
     }
 </style>
 @endpush

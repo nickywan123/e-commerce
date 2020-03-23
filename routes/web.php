@@ -39,8 +39,6 @@ Route::prefix('shop')->group(function () {
         Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory');
     });
 
-    Route::get('/category/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory');
-
     // // Category page for shop. Displays products related to selected category.
     // // Accepts slugged category name or slugged subcategory name.
     // Route::get('/category/{categorySlug}', 'Shop\ShopController@category')->name('shop.category');
@@ -58,7 +56,7 @@ Route::prefix('shop')->group(function () {
     // )->name('shop.category.subcategory.type');
 
     // // Product page for shop. Display detailed info of the product.
-    // Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
+    Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 
     // // Shopping cart page.
     // Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');

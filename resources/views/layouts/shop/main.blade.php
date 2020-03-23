@@ -22,6 +22,10 @@
     <!-- Custom Scrollbar CDN -->
     <!-- TODO: Import using mix. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
     @stack('style')
 </head>
 
@@ -33,7 +37,7 @@
     <!-- Side bar -->
     @include('layouts.shop.navigation.sidebar')
 
-    <main class="mt-3 ml-3 mr-3" >
+    <main class="mt-3 ml-3 mr-3">
         @yield('content')
     </main>
 
@@ -62,19 +66,16 @@
             });
 
 
-            $('#body-content-collapse-sidebar,#footer-content-collapse-sidebar,.nav-content-sidebar-collapse').click(function(event){
-            if($(event.target).attr('id') !== "sidebar" && $(event.target).attr('id') !== "sidebarCollapse") {
-            $('#sidebar').removeClass('active');
-                $('.overlay').removeClass('active');
-   }
-});
+            $('#body-content-collapse-sidebar,#footer-content-collapse-sidebar,.nav-content-sidebar-collapse').click(function(event) {
+                if ($(event.target).attr('id') !== "sidebar" && $(event.target).attr('id') !== "sidebarCollapse") {
+                    $('#sidebar').removeClass('active');
+                    $('.overlay').removeClass('active');
+                }
+            });
 
 
 
         });
-
-
-
     </script>
     @stack('script')
 </body>

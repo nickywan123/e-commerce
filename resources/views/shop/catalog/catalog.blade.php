@@ -186,7 +186,7 @@
             <div class="row no-gutters">
                 @foreach($category->products as $product)
                 <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
-                    <a style="text-decoration: none; color: #212529;" href="">
+                    <a style="text-decoration: none; color: #212529;" href="/shop/product/{{ $product->slug }}">
                         <div class="animated-product-container">
                             <div class="animated-product-image-container">
                                 <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
