@@ -50,7 +50,7 @@
                             <!-- Next Button -->
                             <div class="text-right">
                                 <!-- <a class="btn btn-secondary" id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Next</a> -->
-                                <a class="btn btn-secondary next-button">Next</a>
+                                <a class="btn btn-secondary next-button bjsh-btn-gradient">Next</a>
                             </div>
                         </div>
 
@@ -245,7 +245,7 @@
                             <!-- Next Button -->
                             <div class="text-right">
                                 <!-- <a class="btn btn-secondary" id="profile-tab" data-toggle="tab" href="#introducer" role="tab" aria-controls="profile" aria-selected="false">Next</a> -->
-                                <a class="btn btn-secondary next-button">Next</a>
+                                <a class="btn btn-secondary next-button bjsh-btn-gradient">Next</a>
                             </div>
                         </div>
 
@@ -274,7 +274,7 @@
                             <!-- Submit Button -->
                             <div class="text-right">
                                 <input type="hidden" name="registrationFor" value="dealer">
-                                <button type="submit" class="bjsh-btn-gold text-right">Sign Up</button>
+                                <button type="submit" class="btn next-button bjsh-btn-gradient text-right">Sign Up</button>
                             </div>
                         </div>
                     </div>

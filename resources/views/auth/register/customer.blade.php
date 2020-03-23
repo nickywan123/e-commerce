@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="nric">NRIC Number</label>
-                                    <input type="text" name="nric" class="form-control" id="nric" placeholder="NRIC Number (e.g 930502-10-2342)">
+                                    <input type="text" name="nric" class="form-control" id="nric" placeholder="(e.g 930502-10-2342)">
                                 </div>
                             </div>
 

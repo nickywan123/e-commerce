@@ -15,6 +15,17 @@ Route::get('/', 'Guest\GuestController@index');
 
 Route::get('/login', 'Auth\LoginController@showLoginForm');
 
+// Temporarily only
+Route::get('/invoice',function(){
+
+ return view("backups.dashboard_receipts.invoice");
+});
+
+Route::get('/purchase-order',function(){
+
+    return view("backups.dashboard_receipts.purchase_order");
+   });
+
 /** Author Nicholas
  * Hardcode (Temporarily) to show product category for each category
  */
