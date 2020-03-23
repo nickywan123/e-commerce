@@ -27,6 +27,8 @@
     <!-- Signature Pad -->
     <!-- TODO: Import using mix. -->
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <!--Validate register fields -->
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     @stack('style')
 
     <script>
