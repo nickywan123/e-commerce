@@ -58823,12 +58823,12 @@ Author: Nicholas
   padding: 10px;
   font-size: 1.1em;
   display: block;
-  color: black;
+  color: #212529;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 #sidebar ul li a:hover {
-  color: black;
+  color: #212529;
   background: #fff;
   text-decoration: none;
 }
@@ -58879,18 +58879,12 @@ a.article:hover {
   color: #fff !important;
 }
 
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
+/*
+    Author - Wan Shahruddin
+*/
 
-#content {
-  width: 100%;
-  padding: 20px;
-  min-height: 100vh;
-  transition: all 0.3s;
-  position: absolute;
-  top: 0;
-  right: 0;
+.sidebar-logo {
+  max-width: 100px;
 }
 
 /* Author Nick*/
