@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGlobalColorsTable extends Migration
+class CreateProductColorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class CreateGlobalColorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('global_colors', function (Blueprint $table) {
+        Schema::create('product_colors', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('product_id');
+            $table->string('color_name');
+            $table->string('name_slug');
+            $table->string('color_hex');
+            $table->integer('is_default')->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateGlobalColorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('global_colors');
+        Schema::dropIfExists('product_colors');
     }
 }

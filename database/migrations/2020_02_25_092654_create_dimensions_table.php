@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGlobalProductsTable extends Migration
+class CreateDimensionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateGlobalProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('global_products', function (Blueprint $table) {
+        Schema::create('global_dimensions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('product_code');
-            $table->string('product_name');
+            $table->integer('width');
+            $table->integer('height');
+            $table->integer('depth');
+            $table->string('measurement_unit');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateGlobalProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('global_products');
+        Schema::dropIfExists('global_dimensions');
     }
 }
