@@ -194,7 +194,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         // Dashboard
         Route::get('/', 'Management\ManagementController@index')->name('management.home');
-
+       Route::get('/orders/all', 'Management\ManagementController@allOrders');
         // Product Management
         Route::group(
             ['prefix' => 'product', 'middleware' => ['permission:view all products|create a product|edit a product']],

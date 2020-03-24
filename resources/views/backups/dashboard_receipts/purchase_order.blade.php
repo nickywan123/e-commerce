@@ -13,7 +13,7 @@
   </head>
 <body>
     <div class="container">
-        <div class="card">
+        <div class="">
       
       <div class="container">
         <span class="float-left " > <img src="{{ asset('images/Invoice-Logo.png') }}" style="width:50%;" alt="No Logo"></span>
@@ -122,34 +122,16 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-      <td class="center">1</td>
-      <td class="left strong">E3W453</td>
-      <td class="left">Longest wire ever</td>
-      
-      <td class="center">1</td>
-        <td class="left">999,00</td>
-      <td class="right">999,00</td>
-      </tr>
-      <tr>
-      <td class="center">2</td>
-      <td class="left">SE324</td>
-      <td class="left">Instalation and Customization (cost per hour)</td>
-      
-      <td class="left">20</td>
-        <td class="center">150</td>
-      <td class="right">3.000,00</td>
-      </tr>
-      <tr>
-      <td class="center">3</td>
-      <td class="left">BV345</td>
-      <td class="left">Round table</td>
-      
-      <td class="left">1</td>
-        <td class="center">499,00</td>
-      <td class="right">499,00</td>
-      </tr>
-   
+        <tr style="height:500px;" >
+          <td  class="center">1</td>
+          <td class="left strong">E3W453</td>
+          <td class="left"> Longest wire ever</td>
+          
+          <td class="center">1</td>
+            <td class="left">999,00</td>
+          <td class="right">999,00</td>
+          
+          </tr>
       </tbody>
       </table>
       </div>
@@ -274,10 +256,10 @@
 }
 
 .table-outer-border  {
-    border-left:  black solid;
-    border-right: black solid;
-    border-top: black solid ;
-    border-bottom: black solid;
+    border-left:  #e3e3e3  solid;
+    border-right: #e3e3e3  solid;
+    border-top: #e3e3e3  solid ;
+    border-bottom: #e3e3e3  solid;
    
 }
 
