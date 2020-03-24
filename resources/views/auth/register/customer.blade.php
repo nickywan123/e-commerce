@@ -12,10 +12,10 @@
             <h5 class="text-center bujishu-gold form-card-title">Registration</h5>
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item active">
-                    <a class="nav-link register-tab-active active" id="home-tab"  data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
+                    <a class="nav-link register-tab-active active" id="home-tab" data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link register-tab-active" id="profile-tab" data-toggle="tab"  href="#information" role="tab" aria-controls="profile" aria-selected="false">Information</a>
+                    <a class="nav-link register-tab-active" id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Information</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link register-tab-active" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="agreement" aria-selected="false">Agreement</a>
@@ -28,7 +28,7 @@
                     @csrf
                     <div class="tab-content " id="myTabContent">
                         <!-- Registration  Tab-->
-                        <div class="tab-pane fade show active " id="registration"  role="tabpanel" aria-labelledby="registration-tab">
+                        <div class="tab-pane fade show active " id="registration" role="tabpanel" aria-labelledby="registration-tab">
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Account Particulars</h5>
                             <div class="form-row register-info">
                                 <div class="form-group col-md-12">
@@ -54,7 +54,7 @@
                         </div>
 
                         <!-- Information Tab -->
-                        <div class="tab-pane fade" id="information"  role="tabpanel" aria-labelledby="information-tab">
+                        <div class="tab-pane fade" id="information" role="tabpanel" aria-labelledby="information-tab">
                             <!-- Personal Particulars -->
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Personal Particulars</h5>
                             <div class="form-row">
@@ -135,7 +135,7 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="agreement"  role="tabpanel" aria-labelledby="agreement-tab">
+                        <div class="tab-pane fade" id="agreement" role="tabpanel" aria-labelledby="agreement-tab">
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Agreement</h5>
 
                             <!-- Registration Agreement -->
@@ -444,7 +444,7 @@
                                     <!-- Submit Button -->
                                     <div class="text-right">
                                         <input type="hidden" name="registrationFor" value="customer">
-                                        <button type="submit" id="submit"  class=" btn next-button bjsh-btn-gradient text-right">Sign Up</button>
+                                        <button type="submit" id="submit" class=" btn next-button bjsh-btn-gradient text-right">Sign Up</button>
                                     </div>
                                 </div>
                             </div>
@@ -517,10 +517,10 @@
 
     /* Author Nick
     */
-    
+
     /* Style error validation message*/
 
-    .error{
+    .error {
         color: red;
     }
 </style>
@@ -574,122 +574,167 @@
         }
     });
 
-   
-// Validate registration tab before moving to the next tab
 
+    // Custom validator for postcode.
+    jQuery.validator.addMethod("postcode", function(value, element) {
+        return this.optional(element) || /^\d{5}(?:-\d{4})?$/.test(value);
+    }, "Please provide a valid postcode.");
 
- $( "#register-form" ).validate({
+    // Validate registration tab before moving to the next tab
+    $("#register-form").validate({
 
         rules: {
-
-        email: {
-              required: true,
-              // Specify that email should be validated
-             // by the built-in "email" rule
-             email: true
-                   },
-        password: {
-                 required: true,
-                 minlength: 8,
-
-                 },
-        password_confirmation:{
-            required: true,
-            minlength: 8,
-            equalTo: "#password"
-
-        },
-        full_name: {required:true},
-        nric:{required:true},
-        address_1:{required:true},
-        address_2:{required:true},
-        address_3:{required:true},
-        postcode:{required:true},
-        city:{required:true},
-        state:{required:true},
-        contact_number_home:{required:true},
-        contact_number_mobile:{required:true},
-        existing_customer:{required:true},
-        signatureError:{required:true},
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 8,
+            },
+            password_confirmation: {
+                required: true,
+                minlength: 8,
+                equalTo: "#password"
+            },
+            full_name: {
+                required: true,
+                minlength: 3
+            },
+            nric: {
+                required: true,
+                minlength: 14,
+                maxlength: 14
+            },
+            address_1: {
+                required: true,
+                minlength: 3
+            },
+            address_2: {
+                required: true,
+                minlength: 3
+            },
+            address_3: {
+                required: true,
+                minlength: 3
+            },
+            postcode: {
+                required: true,
+                postcode: true
+            },
+            city: {
+                required: true
+            },
+            state: {
+                required: true
+            },
+            contact_number_home: {
+                required: '#contact_number_mobile:blank',
+                digits: true,
+                minlength: 10,
+                maxlength: 15
+            },
+            contact_number_mobile: {
+                required: '#contact_number_home:blank',
+                digits: true,
+                minlength: 10,
+                maxlength: 15
+            },
+            existing_customer: {
+                required: true
+            },
+            signatureError: {
+                required: true
+            },
         },
         messages: {
-            email:{
-                required:"Please enter an email",
-                email:"The email is not valid"
+            email: {
+                required: "Please enter an email.",
+                email: "The email is not valid."
             },
-            password:{
-                required:"Please enter a password",
-                minlength:"Password must be minimum of 8 characters"
+            password: {
+                required: "Please enter a password.",
+                minlength: "Password must be minimum of 8 characters."
             },
-            password_confirmation:{
-                required:"Please confirm your password",
-                minlength:"Passmust must be minimum of 8 characters",
-                equalTo:"Password must be same as above"
+            password_confirmation: {
+                required: "Please confirm your password",
+                minlength: "Password must must be minimum of 8 characters",
+                equalTo: "Password must be same as above"
             },
-            full_name:{required:"Please enter your full name"},
-            nric:{required:"Please enter your identity card number"},
-            address_1:{required:"Please enter your address"},
-            address_2:{required:"Please enter your address"},
-            address_3:{required:"Please enter your address"},
-            postcode:{required:"Please enter your postcode"},
-            city:{required:"Please select your city"},
-            state:{required:"Please select your state"},
-            contact_number_home:{required:"Please enter your home number"},
-            contact_number_mobile:{required:"Please enter your mobile number"},
-            signatureError:{required:"Please provide your signature"},
-}
-});
+            full_name: {
+                required: "Please enter your full name.",
+                minlength: "Your name must be more than 3 characters."
+            },
+            nric: {
+                required: "Please enter your NRIC number.",
+                minlength: "Please enter a valid NRIC number.",
+                maxlength: "Please enter a valid NRIC number."
+            },
+            address_1: {
+                required: "Please enter your address"
+            },
+            address_2: {
+                required: "Please enter your address"
+            },
+            address_3: {
+                required: "Please enter your address"
+            },
+            postcode: {
+                required: "Please enter your postcode"
+            },
+            city: {
+                required: "Please select your city"
+            },
+            state: {
+                required: "Please select your state"
+            },
+            contact_number_home: {
+                required: "Please enter your home number.",
+                digits: "Please enter number only.",
+                minlength: "Contact number must at least be 10 digits.",
+                maxlength: "Please enter a valid contact number."
+            },
+            contact_number_mobile: {
+                required: "Please enter your mobile number.",
+                digits: "Please enter number only.",
+                minlength: "Contact number must at least be 10 digits.",
+                maxlength: "Please enter a valid contact number."
+            },
+            signatureError: {
+                required: "Please provide your signature"
+            },
+        }
+    });
 
-// validate fields in 1st tab
-$('#next-btn').click(function() {  
-    if($("#register-form").validate().element('#email') && $("#register-form").validate().element('#password')&& $("#register-form").validate().element('#password-confirm')) {
-    
-        nextTab.find('a').trigger('click');
-    }else{
-        
-    }
-   
-});
+    // validate fields in 1st tab
+    $('#next-btn').click(function() {
+        if ($("#register-form").validate().element('#email') && $("#register-form").validate().element('#password') && $("#register-form").validate().element('#password-confirm')) {
+            nextTab.find('a').trigger('click');
+        }
+    });
 
-// validate fields in 2nd tab
-$('#next-btn2').click(function() {  
-    if($("#register-form").validate().element('#full_name') && $("#register-form").validate().element('#nric')&& $("#register-form").validate().element('#address_1')&& $("#register-form").validate().element('#address_2') && $("#register-form").validate().element('#address_3') && $("#register-form").validate().element('#postcode')
-    && $("#register-form").validate().element('#city')&& $("#register-form").validate().element('#state')&& $("#register-form").validate().element('#contact_number_home')
-    && $("#register-form").validate().element('#contact_number_mobile')&& $("#register-form").validate().element('#existing_customer')
-    ) {
-    
-        nextTab.find('a').trigger('click');
-    }else{
-        
-    }
-   
-});
+    // validate fields in 2nd tab
+    $('#next-btn2').click(function() {
+        if (
+            $("#register-form").validate().element('#full_name') && $("#register-form").validate().element('#nric') && $("#register-form").validate().element('#address_1') && $("#register-form").validate().element('#address_2') && $("#register-form").validate().element('#address_3') && $("#register-form").validate().element('#postcode') &&
+            $("#register-form").validate().element('#city') && $("#register-form").validate().element('#state') && $("#register-form").validate().element('#contact_number_home') &&
+            $("#register-form").validate().element('#contact_number_mobile') && $("#register-form").validate().element('#existing_customer')
+        ) {
+            nextTab.find('a').trigger('click');
+        }
+    });
 
-// validate signature input in 3rd tab
+    // validate signature input in 3rd tab
 
-$('#submit').click(function(e){
-
-if (signaturePad.isEmpty()) {
-    alert("Please provide your signature")
-  }else{
-      alert("SUCCESS");
-      // Perform submit to db.
-  }
-});
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
+    $('#submit').click(function(e) {
+        if (signaturePad.isEmpty()) {
+            signatureError.style.display = "block";
+            return false;
+        } else {
+            signatureUrl = signaturePad.toDataURL();
+            signatureInput.value = signatureUrl;
+            return true;
+        }
+    });
 </script>
 @endpush

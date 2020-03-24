@@ -220,6 +220,27 @@ class GlobalTablesSeeder extends Seeder
             'iso_code' => 'MY-11',
         ]);
 
+        State::create([
+            'name' => 'W.P Kuala Lumpur',
+            'description' => 'W.P Kuala Lumpur',
+            'abbreviation' => 'KUL',
+            'iso_code' => 'MY-14',
+        ]);
+
+        State::create([
+            'name' => 'W.P Labuan',
+            'description' => 'W.P Labuan',
+            'abbreviation' => 'LBN',
+            'iso_code' => 'MY-15',
+        ]);
+
+        State::create([
+            'name' => 'W.P Putrajaya',
+            'description' => 'W.P Putrajaya',
+            'abbreviation' => 'PJY',
+            'iso_code' => 'MY-16',
+        ]);
+
         /**
          * Statutes
          */

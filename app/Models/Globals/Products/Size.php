@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models\Globals;
+namespace App\Models\Globals\Products;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Length extends Model
+class Size extends Model
 {
     // Set table
-    protected $table = 'global_lengths';
+    protected $table = 'global_sizes';
 
     // Set timestamps
     public $timestamps = true;

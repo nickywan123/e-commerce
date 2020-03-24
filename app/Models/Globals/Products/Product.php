@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models\Globals;
+namespace App\Models\Globals\Products;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Color extends Model
+class Product extends Model
 {
     // Set table
-    protected $table = 'global_colors';
+    protected $table = 'global_products';
 
     // Set timestamps
     public $timestamps = true;
