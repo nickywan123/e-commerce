@@ -7,16 +7,17 @@
         <div class="row">
             <div class="col-12 hidden-md pt-1 pl-1 pr-1 mb-2">
                 <h1 class="pl-0 pr-0 text-capitalize text-left" style="font-size: 1.5rem; margin: 0;">{{ $product->name }}</h1>
+                <div class="text-left my-auto mt-1">
+                    <span class="fa fa-star checked align-middle"></span>
+                    <span class="fa fa-star checked align-middle"></span>
+                    <span class="fa fa-star checked align-middle"></span>
+                    <span class="fa fa-star checked align-middle"></span>
+                    <span class="fa fa-star align-middle"></span>
+                    <span class="ml-1 align-middle">(60 ratings)</span>
+                </div>
             </div>
             <div class="col-12 col-md-5 pl-1 pr-1 mb-1">
                 <div class="slider slider-single">
-                    @foreach($product->images as $image)
-                    <div>
-                        <img class="mw-100" src="{{ asset('storage/' . $image->path . '/' . $image->filename) }}" alt="">
-                    </div>
-                    @endforeach
-                </div>
-                <div class="slider slider-nav hidden-sm">
                     @foreach($product->images as $image)
                     <div>
                         <img class="mw-100" src="{{ asset('storage/' . $image->path . '/' . $image->filename) }}" alt="">
@@ -28,6 +29,14 @@
                 <div class="row hidden-sm">
                     <div class="col-12 text-md-left text-center">
                         <h1 class="pl-0 pr-0 text-capitalize" style="font-size: 2rem; margin: 0;">{{ $product->name }}</h1>
+                        <div class="text-left my-auto mt-1">
+                            <span class="fa fa-star checked align-middle"></span>
+                            <span class="fa fa-star checked align-middle"></span>
+                            <span class="fa fa-star checked align-middle"></span>
+                            <span class="fa fa-star checked align-middle"></span>
+                            <span class="fa fa-star align-middle"></span>
+                            <span class="ml-1 align-middle">(60 ratings)</span>
+                        </div>
                     </div>
                 </div>
                 <hr>
@@ -40,6 +49,9 @@
                     <div class="col-12">
                         <p class="mb-1">Size</p>
                         <div class="boxed">
+                            <input type="radio" id="size0" name="size" value="all">
+                            <label for="size0">All sizes</label>
+
                             <input type="radio" id="size1" name="size" value="120cm x 200cm">
                             <label for="size1">120cm x 200cm</label>
 
@@ -52,14 +64,18 @@
                     <div class="col-12">
                         <p class="mb-1">Color</p>
                         <div class="boxed">
+                            <input type="radio" id="color0" name="color" value="120cm x 200cm">
+                            <label for="color0">All colors</label>
+                        </div>
+                        <div class="boxed">
                             <input type="radio" id="grey" name="color" value="Grey">
-                            <label for="grey">Grey</label>
+                            <label class="color-options" for="grey" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow; width: 50px; height: 50px; border-radius: 100%;"></label>
 
                             <input type="radio" id="white" name="color" value="White">
-                            <label for="white">White</label>
+                            <label class="color-options" for="white" style="background-color: blue; width: 50px; height: 50px; border-radius: 100%;"></label>
 
                             <input type="radio" id="green" name="color" value="Green">
-                            <label for="green">Green</label>
+                            <label class="color-options" for="green" style="background-color: red; width: 50px; height: 50px; border-radius: 100%;"></label>
                         </div>
                     </div>
                 </div>
@@ -289,19 +305,6 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        Ratings
-                                    </td>
-                                    <td>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="ml-2">(60 ratings)</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
                                         Price
                                     </td>
                                     <td class="font-weight-bold">
@@ -314,52 +317,63 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
-                        <select class="select2 color-option" style="width: 100%;">
-                            <option class="text-left" selected>Choose your color option</option>
-                            <option value="1">Red</option>
-                            <option value="2">Beige</option>
-                            <option value="3">Yellow</option>
-                            <option value="1">Blue</option>
-                            <option value="2">White</option>
-                            <option value="3">Grey</option>
-                        </select>
-                    </div>
+                    <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
+                        <p class="mb-1">Size</p>
+                        <hr class="mt-1">
+                        <div class="boxed">
+                            <input type="radio" id="size1Modal" name="sizeModal" value="120cm x 200cm">
+                            <label for="size1Modal">120cm x 200cm</label>
 
-                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
-                        <select class="select2 color-option" style="width: 100%;">
-                            <option selected>Choose your size option</option>
-                            <option value="1">50cm x 60cm</option>
-                            <option value="2">60cm x 120cm</option>
-                            <option value="3">40cm x 40cm</option>
-                        </select>
-                    </div>
-
-                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
-                        <select class="select2 color-option" style="width: 100%;">
-                            <option selected>Quantity</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="3">4</option>
-                            <option value="3">5</option>
-                            <option value="3">6</option>
-                            <option value="3">7</option>
-                            <option value="3">8</option>
-                            <option value="3">9</option>
-                            <option value="3">10</option>
-                            <option value="3">11</option>
-                            <option value="3">12</option>
-                            <option value="3">13</option>
-                            <option value="3">14</option>
-                            <option value="3">15</option>
-                        </select>
+                            <input type="radio" id="size2Modal" name="sizeModal" value="120cm x 200cm">
+                            <label for="size2Modal">120cm x 200cm</label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
-                <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to cart</button>
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
+                        <p class="mb-1">Color</p>
+                        <hr class="mt-1">
+                        <div class="boxed">
+                            <input type="radio" id="greyModal" name="colorModal" value="Grey">
+                            <label class="color-options" for="greyModal" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow; width: 50px; height: 50px; border-radius: 100%;"></label>
+
+                            <input type="radio" id="whiteModal" name="colorModal" value="White">
+                            <label class="color-options" for="whiteModal" style="background-color: blue; width: 50px; height: 50px; border-radius: 100%;"></label>
+
+                            <input type="radio" id="greenModal" name="colorModal" value="Green">
+                            <label class="color-options" for="greenModal" style="background-color: red; width: 50px; height: 50px; border-radius: 100%;"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <hr class="mb-1">
+                    <div class="col-12 col-md-8 offset-md-4 mb-1 text-center text-md-left">
+                        <p class="mb-1">Quantity</p>
+                        <hr class="mt-1">
+                    </div>
+
+                    <div class="col-12 col-md-8 offset-md-4 mb-3 text-center text-md-left">
+                        <div class="input-group mx-auto-sm" style="max-width: 180px;">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                    <span class="fa fa-minus"></span>
+                                </button>
+                            </span>
+                            <input type=" text" name="quant[1]" class="form-control input-number" value="1" min="1" max="50">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                    <span class="fa fa-plus"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-center-sm">
+                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
+                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to cart</button>
+                </div>
             </div>
         </div>
     </div>
@@ -482,6 +496,13 @@
 @push('script')
 <script>
     $(document).ready(function() {
+        $('.slider-single').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: false,
+            dots: true,
+        });
         // Function to change slick script based on media query state.
         function changeSlickScriptOnSmScreen(smScreen) {
             if (smScreen.matches) {
@@ -550,6 +571,7 @@
 
     .fa.fa-star {
         color: #6e6e6e;
+        font-size: 15px;
     }
 
     .fa.fa-star.checked {
@@ -567,9 +589,20 @@
 
     .boxed label {
         display: inline-block;
-        width: 150px;
+        min-width: 100px;
         padding: 10px;
-        border: solid 2px #ccc;
+        border: solid 1px #ccc;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .boxed label.color-options {
+        display: inline-block;
+        min-width: 0;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        border: solid 1px #ccc;
         transition: all 0.3s;
     }
 
@@ -578,7 +611,50 @@
     }
 
     .boxed input[type="radio"]:checked+label {
-        border: solid 2px #fccb34;
+        border: solid 1px #fccb34;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .boxed-modal label {
+        display: inline-block;
+        min-width: 100px;
+        padding: 10px;
+        border: solid 1px #ccc;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .boxed-modal label.color-options {
+        display: inline-block;
+        min-width: 0;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        border: solid 1px #ccc;
+        transition: all 0.3s;
+    }
+
+    .boxed-modal input[type="radio"] {
+        display: none;
+    }
+
+    .boxed-modal input[type="radio"]:checked+label {
+        border: solid 1px #fccb34;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    @media (max-width: 767px) {
+        .mx-auto-sm {
+            margin: 0 auto;
+        }
+
+        .justify-center-sm {
+            justify-content: center;
+        }
     }
 </style>
 @endpush
