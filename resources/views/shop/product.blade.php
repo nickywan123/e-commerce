@@ -69,13 +69,13 @@
                         </div>
                         <div class="boxed">
                             <input type="radio" id="grey" name="color" value="Grey">
-                            <label class="color-options" for="grey" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow; width: 50px; height: 50px; border-radius: 100%;"></label>
+                            <label class="color-options" for="grey" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow;"></label>
 
                             <input type="radio" id="white" name="color" value="White">
-                            <label class="color-options" for="white" style="background-color: blue; width: 50px; height: 50px; border-radius: 100%;"></label>
+                            <label class="color-options" for="white" style="background-color: blue;"></label>
 
                             <input type="radio" id="green" name="color" value="Green">
-                            <label class="color-options" for="green" style="background-color: red; width: 50px; height: 50px; border-radius: 100%;"></label>
+                            <label class="color-options" for="green" style="background-color: red;"></label>
                         </div>
                     </div>
                 </div>
@@ -335,13 +335,13 @@
                         <hr class="mt-1">
                         <div class="boxed">
                             <input type="radio" id="greyModal" name="colorModal" value="Grey">
-                            <label class="color-options" for="greyModal" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow; width: 50px; height: 50px; border-radius: 100%;"></label>
+                            <label class="color-options" for="greyModal" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow;"></label>
 
                             <input type="radio" id="whiteModal" name="colorModal" value="White">
-                            <label class="color-options" for="whiteModal" style="background-color: blue; width: 50px; height: 50px; border-radius: 100%;"></label>
+                            <label class="color-options" for="whiteModal" style="background-color: blue;"></label>
 
                             <input type="radio" id="greenModal" name="colorModal" value="Green">
-                            <label class="color-options" for="greenModal" style="background-color: red; width: 50px; height: 50px; border-radius: 100%;"></label>
+                            <label class="color-options" for="greenModal" style="background-color: red;"></label>
                         </div>
                     </div>
                 </div>
@@ -414,20 +414,7 @@
                                         Quality
                                     </td>
                                     <td>
-                                        Standard
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Ratings
-                                    </td>
-                                    <td>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="ml-2">(60 ratings)</span>
+                                        Moderate
                                     </td>
                                 </tr>
                                 <tr>
@@ -435,7 +422,7 @@
                                         Price
                                     </td>
                                     <td class="font-weight-bold">
-                                        RM 100
+                                        RM 120
                                     </td>
                                 </tr>
                             </table>
@@ -444,49 +431,63 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
-                        <select class="select2 color-option" style="width: 100%;">
-                            <option selected>Choose your color option</option>
-                            <option value="1">Red</option>
-                            <option value="2">Beige</option>
-                            <option value="2">White</option>
-                            <option value="3">Grey</option>
-                        </select>
-                    </div>
+                    <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
+                        <p class="mb-1">Size</p>
+                        <hr class="mt-1">
+                        <div class="boxed">
+                            <input type="radio" id="size1Modal" name="sizeModal" value="120cm x 200cm">
+                            <label for="size1Modal">120cm x 200cm</label>
 
-                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
-                        <select class="select2 color-option" style="width: 100%;">
-                            <option selected>Choose your size option</option>
-                            <option value="1">50cm x 60cm</option>
-                            <option value="3">40cm x 40cm</option>
-                        </select>
-                    </div>
-
-                    <div class="col-8 offset-2 col-md-4 offset-md-8 text-center text-md-left mb-3">
-                        <select class="select2 color-option" style="width: 100%;">
-                            <option selected>Quantity</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="3">4</option>
-                            <option value="3">5</option>
-                            <option value="3">6</option>
-                            <option value="3">7</option>
-                            <option value="3">8</option>
-                            <option value="3">9</option>
-                            <option value="3">10</option>
-                            <option value="3">11</option>
-                            <option value="3">12</option>
-                            <option value="3">13</option>
-                            <option value="3">14</option>
-                            <option value="3">15</option>
-                        </select>
+                            <input type="radio" id="size2Modal" name="sizeModal" value="120cm x 200cm">
+                            <label for="size2Modal">120cm x 200cm</label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
-                <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to cart</button>
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
+                        <p class="mb-1">Color</p>
+                        <hr class="mt-1">
+                        <div class="boxed">
+                            <input type="radio" id="greyModal" name="colorModal" value="Grey">
+                            <label class="color-options" for="greyModal" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow;"></label>
+
+                            <input type="radio" id="whiteModal" name="colorModal" value="White">
+                            <label class="color-options" for="whiteModal" style="background-color: blue;"></label>
+
+                            <input type="radio" id="greenModal" name="colorModal" value="Green">
+                            <label class="color-options" for="greenModal" style="background-color: red;"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <hr class="mb-1">
+                    <div class="col-12 col-md-8 offset-md-4 mb-1 text-center text-md-left">
+                        <p class="mb-1">Quantity</p>
+                        <hr class="mt-1">
+                    </div>
+
+                    <div class="col-12 col-md-8 offset-md-4 mb-3 text-center text-md-left">
+                        <div class="input-group mx-auto-sm" style="max-width: 180px;">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                    <span class="fa fa-minus"></span>
+                                </button>
+                            </span>
+                            <input type=" text" name="quant[1]" class="form-control input-number" value="1" min="1" max="50">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                    <span class="fa fa-plus"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-center-sm">
+                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
+                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to cart</button>
+                </div>
             </div>
         </div>
     </div>
@@ -589,7 +590,7 @@
 
     .boxed label {
         display: inline-block;
-        min-width: 100px;
+        min-width: 50px;
         padding: 10px;
         border: solid 1px #ccc;
         border-radius: 10px;
@@ -598,11 +599,13 @@
 
     .boxed label.color-options {
         display: inline-block;
+        margin-right: 5px;
         min-width: 0;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         padding: 10px;
         border: solid 1px #ccc;
+        border-radius: 100%;
         transition: all 0.3s;
     }
 
@@ -611,36 +614,6 @@
     }
 
     .boxed input[type="radio"]:checked+label {
-        border: solid 1px #fccb34;
-        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    }
-
-    .boxed-modal label {
-        display: inline-block;
-        min-width: 100px;
-        padding: 10px;
-        border: solid 1px #ccc;
-        border-radius: 10px;
-        transition: all 0.3s;
-    }
-
-    .boxed-modal label.color-options {
-        display: inline-block;
-        min-width: 0;
-        width: 50px;
-        height: 50px;
-        padding: 10px;
-        border: solid 1px #ccc;
-        transition: all 0.3s;
-    }
-
-    .boxed-modal input[type="radio"] {
-        display: none;
-    }
-
-    .boxed-modal input[type="radio"]:checked+label {
         border: solid 1px #fccb34;
         -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
