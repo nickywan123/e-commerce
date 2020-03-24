@@ -18,7 +18,6 @@
     width: 250px;
 }
 
-
 .topBar {
     background-color: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -102,7 +101,7 @@
     padding-right: 12px;
 }
 
-.topBar .dropdown-menu>li>a {
+.topBar .dropdown-menu > li > a {
     display: block;
     padding: 6px 20px;
     clear: both;
@@ -113,9 +112,9 @@
     white-space: nowrap;
 }
 
-.topBar .dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus {
-    color: #00BCD4;
+.topBar .dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #00bcd4;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.02);
 }
@@ -124,7 +123,7 @@
 
 .cart-items::-webkit-scrollbar {
     width: 6px;
-    background-color: #ECECEC;
+    background-color: #ececec;
 }
 
 .cart-items::-webkit-scrollbar-thumb {
@@ -171,7 +170,15 @@
     padding: 0 15px 0 10px;
 }
 
-.topBar ul.topBarNav li ul.cart .cart-items .items li .product-details .close-icon {
+.topBar
+    ul.topBarNav
+    li
+    ul.cart
+    .cart-items
+    .items
+    li
+    .product-details
+    .close-icon {
     position: absolute;
     top: 0;
     right: 0;
@@ -200,7 +207,6 @@
 }
 
 @media (min-width: 767px) {
-
     .display-table {
         display: table;
         width: 100%;
@@ -217,9 +223,7 @@
     }
 }
 
-
 @media (max-width: 767px) {
-
     div[class^="col-"] {
         margin-bottom: 30px;
     }
@@ -306,18 +310,17 @@
     border: none;
 }
 
-.navbar-default .navbar-nav>.open>a,
-.navbar-default .navbar-nav>.open>a:hover,
-.navbar-default .navbar-nav>.open>a:focus {
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
     color: #0cd4d2;
     background-color: transparent;
 }
 
-.navbar-default .navbar-nav>.open>a,
-.navbar-default .navbar-nav>.open>a:hover,
-.navbar-default .navbar-nav>.open>a:after {
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:after {
     border-top: solid 2px #0cd4d2;
-
 }
 
 .navbar-default .dropdown-menu {
@@ -341,7 +344,7 @@
     transition: all 0.1s ease-in;
 }
 
-.dropdown-menu>li>a {
+.dropdown-menu > li > a {
     display: block;
     padding: 6px 20px;
     clear: both;
@@ -351,8 +354,8 @@
     white-space: nowrap;
 }
 
-.dropdown-menu>li>a:hover {
-    color: #0cd4d2;
+.dropdown-menu > li > a:hover {
+    color: #fbcc34;
 }
 
 /*
@@ -371,15 +374,28 @@
     width: 100%;
 }
 
-.navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li:first-child {
+.navbar-default
+    .navbar-collapse
+    li.dropdown.megaDropMenu
+    .dropdown-menu
+    li
+    ul
+    li:first-child {
     padding: 20px 0px 5px 15px;
     font-size: 16px;
     text-transform: uppercase;
     /* text-align: center; */
-    color: #0cd4d2;
+    color: #fbcc34;
 }
 
-.navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a {
+.navbar-default
+    .navbar-collapse
+    li.dropdown.megaDropMenu
+    .dropdown-menu
+    li
+    ul
+    li
+    a {
     display: block;
     color: #878c94;
     font-size: 14px;
@@ -387,8 +403,15 @@
     padding: 8px 15px;
 }
 
-.navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a:hover {
-    color: #00BCD4;
+.navbar-default
+    .navbar-collapse
+    li.dropdown.megaDropMenu
+    .dropdown-menu
+    li
+    ul
+    li
+    a:hover {
+    color: #fbcc34;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.02);
 }
@@ -399,8 +422,6 @@
     padding: 20px;
 }
 
-
-
 /* Author - Wan Shahruddin */
 .container-90 {
     max-width: 95%;
@@ -410,15 +431,13 @@
 .navigation-icon {
     font-size: 1.8rem;
     margin-left: 30px;
-    color: #FBCC34;
-
+    color: #fbcc34;
 }
 
 .navigation-input {
     display: inline-block;
     width: auto;
 }
-
 
 .btn {
     vertical-align: inherit;
@@ -445,15 +464,13 @@
 }
 
 @media (max-width: 767px) {
-
     #search-button {
         height: 49px;
         background-color: white;
-        
     }
 
-    .search-bar-size{
-        height:49px;
+    .search-bar-size {
+        height: 49px;
     }
 
     .hidden-sm {
@@ -523,8 +540,8 @@
         border-radius: 0;
     }
 
-    .search-bar-size{
-    height:48px;
+    .search-bar-size {
+        height: 48px;
     }
 
     #search-button {
@@ -553,14 +570,13 @@
 
 .margin-right-negative-with-border {
     margin-right: -4px;
-    border-right: 10px solid #FBCC34;
-   
+    border-right: 10px solid #fbcc34;
 }
 
 .my-account-button {
-    color: #FBCC34;
+    color: #fbcc34;
     background-color: #000000;
-    border: 1px solid #FBCC34;
+    border: 1px solid #fbcc34;
     padding-right: 40px;
 }
 
@@ -569,16 +585,18 @@ Author: Nicholas
 */
 
 .nav-link {
-    color:#FBCC34;
+    color: #fbcc34;
 }
 
 .btn-register {
     color: black;
-    background-color:#FBCC34;
+    background-color: #fbcc34;
 }
 
-
- .margin-right-border-color:focus{
-    border-color: #FBCC34;
+.margin-right-border-color:focus {
+    border-color: #fbcc34;
 }
 
+.my-account-icon-color {
+    color: #fbcc34;
+}

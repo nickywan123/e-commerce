@@ -21,10 +21,7 @@ Route::get('/invoice',function(){
  return view("backups.dashboard_receipts.invoice");
 });
 
-Route::get('/purchase-order',function(){
-
-    return view("backups.dashboard_receipts.purchase_order");
-   });
+Route::get('/purchase-order','Panel\DashboardController@viewPurchaseOrder');
 
 /** Author Nicholas
  * Hardcode (Temporarily) to show product category for each category
@@ -200,7 +197,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         // Dashboard
         Route::get('/', 'Management\ManagementController@index')->name('management.home');
-       Route::get('/orders/all', 'Management\ManagementController@allOrders');
+        Route::get('/orders/all', 'Management\ManagementController@allOrders');
+
         // Product Management
         Route::group(
             ['prefix' => 'product', 'middleware' => ['permission:view all products|create a product|edit a product']],

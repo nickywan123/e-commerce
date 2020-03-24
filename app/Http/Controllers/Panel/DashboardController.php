@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Orders\Order;
 
+use PDF;
 /**
  *  Controller to handle dashboard for panel
  */
@@ -27,5 +28,18 @@ class DashboardController extends Controller
     public function productForm()
     {
         return view("panel.product");
+    }
+
+       /**
+     * Return Purchase Order for Panel
+     */
+    public function viewPurchaseOrder()
+    {
+        return view('backups.dashboard_receipts.purchase_order');
+        // $pdf = PDF::loadView('backups.dashboard_receipts.purchase_order');
+        // return $pdf->download('invoice.pdf');
+
+        
+       
     }
 }
