@@ -236,9 +236,9 @@ class ProductsTableSeeder extends Seeder
 
         $product = Product::create([
             'unique_id' => mt_rand(1000000, 9999999),
-            'name' => 'COZSINOOR Hotel Collection Pillows for Sleeping',
+            'name' => 'COZSINOOR Hotel Collection Bedsheet',
             'price' => '120',
-            'slug' => 'cozsinoor-hotel-collection-pillows-for-sleeping',
+            'slug' => 'cozsinoor-hotel-collection-bedsheet',
             'summary' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fermentum gravida arcu vel laoreet. Nullam volutpat, nulla in tincidunt bibendum, neque dolor tempus arcu, vitae hendrerit ligula purus eu sem. Quisque nec purus neque. Nullam justo diam, ullamcorper eu nisl sed, molestie gravida nulla.',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fermentum gravida arcu vel laoreet. Nullam volutpat, nulla in tincidunt bibendum, neque dolor tempus arcu, vitae hendrerit ligula purus eu sem. Quisque nec purus neque. Nullam justo diam, ullamcorper eu nisl sed, molestie gravida nulla. Aliquam volutpat felis sit amet odio porttitor, vitae pretium erat dapibus. Nam lobortis orci id ultricies tincidunt. Nam lacinia bibendum magna vel sodales. Aliquam ac turpis ornare, pellentesque neque sed, venenatis ligula. Duis pretium dolor dignissim sem consectetur rhoncus. In faucibus, est vel luctus pulvinar, velit dui tincidunt lacus, a fringilla arcu nibh a risus. Vivamus commodo, dui in posuere sodales, enim est facilisis libero, nec imperdiet nibh magna in erat. Etiam est sem, aliquet vehicula est id, fringilla euismod sem.',
             'quality_id' => '1',
@@ -260,8 +260,7 @@ class ProductsTableSeeder extends Seeder
 
         $product->categories()->attach([
             Category::where('name', 'Bedsheets & Mattresses')->first()->id,
-            Category::where('name', 'Pillows')->first()->id,
-            Category::where('name', 'Memory Foam')->first()->id,
+            Category::where('name', 'Bedsheets')->first()->id,
         ]);
 
         $product->colors()->createMany([

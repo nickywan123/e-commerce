@@ -112,21 +112,6 @@ class CategoriesTableSeeder extends Seeder
             'filename' => $category->slug . '.jpg'
         ]);
 
-           // --
-           $category = null;
-           // --
-   
-           $category = Category::create([
-               'name' => 'Curtain',
-               'slug' => 'curtain',
-               'parent_category_id' => 0
-           ]);
-   
-           $category->image()->create([
-               'path' => 'uploads/images/categories/' . $category->slug . '/',
-               'filename' => $category->slug . '.jpg'
-           ]);
-   
         // --
         $category = null;
         // --
@@ -277,9 +262,26 @@ class CategoriesTableSeeder extends Seeder
 
         $parentCategory = Category::where('name', 'Bedsheets & Mattresses')->first();
 
+
+
         $category = Category::create([
             'name' => 'Pillows',
             'slug' => 'pillows',
+            'parent_category_id' => $parentCategory->id
+        ]);
+
+        $category->image()->create([
+            'path' => 'uploads/images/categories/' . $category->slug . '/',
+            'filename' => $category->slug . '.jpg'
+        ]);
+
+        // --
+        $category = null;
+        // --
+
+        $category = Category::create([
+            'name' => 'Bedsheets',
+            'slug' => 'bedsheets',
             'parent_category_id' => $parentCategory->id
         ]);
 

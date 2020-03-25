@@ -9,72 +9,43 @@ Breadcrumbs::for('shop.index', function ($trail) {
 });
 
 // Home > [Category]
-Breadcrumbs::for('shop.category', function ($trail, $category) {
+Breadcrumbs::for('shop.category.first', function ($trail, $category) {
     $trail->parent('shop.index');
-    $trail->push($category->name, route('shop.category', $category->slug));
+    $trail->push($category->name, route('shop.category.first', $category->slug));
 });
 
 // Home > [Category] > [Subcategory]
-Breadcrumbs::for('shop.category.subcategory', function ($trail, $category, $subcategory) {
+Breadcrumbs::for('shop.category.second', function ($trail, $category) {
     $trail->parent('shop.index');
-    $trail->push($category->name, route('shop.category', $category->slug));
-    $trail->push($subcategory->name, route(
-        'shop.category.subcategory',
+    $trail->push($category->parentCategory->name, route('shop.category.first', $category->parentCategory->slug));
+    $trail->push($category->name, route(
+        'shop.category.second',
         [
-            'categorySlug' => $category->slug,
-            'subcategorySlug' => $subcategory->slug
+            'topLevelCategorySlug' => $category->parentCategory->slug,
+            'secondLevelCategorySlug' => $category->slug
         ]
     ));
 });
 
 // Home > [Category] > [Subcategory] > [Product Type]
-Breadcrumbs::for('shop.category.subcategory.type', function ($trail, $category, $subcategory, $type) {
+Breadcrumbs::for('shop.category.third', function ($trail, $category, $parentCategory) {
     $trail->parent('shop.index');
-    $trail->push($category->name, route('shop.category', $category->slug));
-    $trail->push($subcategory->name, route(
-        'shop.category.subcategory',
+    $trail->push($parentCategory->parentCategory->name, route('shop.category.first', $parentCategory->parentCategory->slug));
+    $trail->push($parentCategory->name, route(
+        'shop.category.second',
         [
-            'categorySlug' => $category->slug,
-            'subcategorySlug' => $subcategory->slug
+            'topLevelCategorySlug' => $parentCategory->parentCategory->slug,
+            'secondLevelCategorySlug' => $parentCategory->slug
         ]
     ));
-    $trail->push($type->name, route(
-        'shop.category.subcategory.type',
+    $trail->push($category->name, route(
+        'shop.category.third',
         [
-            'categorySlug' => $category->slug,
-            'subcategorySlug' => $subcategory->slug,
-            'productTypeSlug' => $type->slug
+            'topLevelCategorySlug' => $parentCategory->parentCategory->slug,
+            'secondLevelCategorySlug' => $parentCategory->slug,
+            'productTypeSlug' => $category->slug
         ]
     ));
 });
 
-// Home > [Category] > [Subcategory]> [Product]
-// Breadcrumbs::for('shop.product', function ($trail, $product) {
-//     $trail->parent('shop.index');
-//     $trail->push($product->)
-// })
-
-// // Home > About
-// Breadcrumbs::for('about', function ($trail) {
-//     $trail->parent('home');
-//     $trail->push('About', route('about'));
-// });
-
-// // Home > Blog
-// Breadcrumbs::for('blog', function ($trail) {
-//     $trail->parent('home');
-//     $trail->push('Blog', route('blog'));
-// });
-
-// // Home > Blog > [Category]
-// Breadcrumbs::for('category', function ($trail, $category) {
-//     $trail->parent('blog');
-//     $trail->push($category->title, route('category', $category->id));
-// });
-
-// // Home > Blog > [Category] > [Post]
-// Breadcrumbs::for('post', function ($trail, $post) {
-//     $trail->parent('category', $post->category);
-//     $trail->push($post->title, route('post', $post->id));
-// });
 include('breadcrumbs/management.php');

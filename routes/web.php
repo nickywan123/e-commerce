@@ -204,7 +204,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/profile', 'Management\ManagementController@profile');
         Route::get('/password', 'Management\ManagementController@modifyPassword');
         Route::get('/statements', 'Management\ManagementController@statements');
-       
+
 
         // Product Management
         Route::group(
@@ -236,9 +236,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/', 'Shop\ShopController@index')->name('shop.index');
 
         Route::group(['prefix' => 'category'], function () {
-            Route::get('/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory');
-            Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}', 'Shop\ShopController@secondLevelCategory');
-            Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory');
+            Route::get('/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory')->name('shop.category.first');
+
+            Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}', 'Shop\ShopController@secondLevelCategory')->name('shop.category.second');
+
+            Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory')->name('shop.category.third');
         });
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');

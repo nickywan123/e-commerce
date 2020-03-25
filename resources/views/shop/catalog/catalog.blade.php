@@ -2,8 +2,6 @@
 
 @section('content')
 <div class="container-fluid pt-3 pb-3">
-
-
     <div class="row">
         <div class="col-2 hidden-sm">
             <div class="p-3 shadow-sm" style="background-color: #ffffff;">
@@ -122,6 +120,21 @@
         </div>
 
         <div class="col-12 col-md-10">
+            <div class="row">
+                <div class="col-12 mb-1">
+                    @if($categoryLevel == 1)
+                    {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs', 'shop.category.first', $category) }}
+                    @endif
+
+                    @if($categoryLevel == 2)
+                    {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs', 'shop.category.second', $category) }}
+                    @endif
+
+                    @if($categoryLevel == 3)
+                    {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs', 'shop.category.third', $category, $parentCategory) }}
+                    @endif
+                </div>
+            </div>
             <div class="row pb-4">
                 <div class="col-12 mb-1">
                     <h3 class="text-muted">{{ $category->name }} <small>(WIP)</small></h3>

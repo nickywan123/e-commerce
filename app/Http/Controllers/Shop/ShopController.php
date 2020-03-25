@@ -167,10 +167,12 @@ class ShopController extends Controller
     {
         $category = Category::where('slug', $topLevelSlug)->first();
         $childCategories = $category->childCategories->take(6);
+        $categoryLevel = 1;
 
         return view('shop.catalog.catalog')
             ->with('category', $category)
-            ->with('childCategories', $childCategories);
+            ->with('childCategories', $childCategories)
+            ->with('categoryLevel', $categoryLevel);
     }
 
     /**
@@ -180,10 +182,12 @@ class ShopController extends Controller
     {
         $category = Category::where('slug', $secondLevelSlug)->first();
         $childCategories = $category->childCategories->take(6);
+        $categoryLevel = 2;
 
         return view('shop.catalog.catalog')
             ->with('category', $category)
-            ->with('childCategories', $childCategories);
+            ->with('childCategories', $childCategories)
+            ->with('categoryLevel', $categoryLevel);
     }
 
     /**
@@ -192,10 +196,14 @@ class ShopController extends Controller
     public function thirdLevelCategory($topLevelSlug, $secondLevelSlug, $thirdLevelSlug)
     {
         $category = Category::where('slug', $thirdLevelSlug)->first();
+        $parentCategory = $category->parentCategory;
         $childCategories = $category->childCategories->take(6);
+        $categoryLevel = 3;
 
         return view('shop.catalog.catalog')
             ->with('category', $category)
-            ->with('childCategories', $childCategories);
+            ->with('childCategories', $childCategories)
+            ->with('parentCategory', $parentCategory)
+            ->with('categoryLevel', $categoryLevel);
     }
 }

@@ -348,7 +348,7 @@
                 </div>
 
                 <div class="modal-footer justify-center-sm">
-                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
+                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist <br> <small>(WIP)</small></button>
                     <form method="POST" action="{{ route('shop.cart.add-item') }}">
                         @method('POST')
                         @csrf
@@ -363,7 +363,7 @@
                         <input type="hidden" name="productLengthId" value="{{ $product->getDefaultLength()->id }}">
                         @endif
                         <input type="hidden" name="productQuantity" value="1">
-                        <button style="color: #000; background-color: #fccb34;" type="submit" class="btn btn-primary">Add to cart <br> <small>(WIP)</small></button>
+                        <button style="color: #000; background-color: #fccb34;" type="submit" class="btn btn-primary">Add to cart</button>
                     </form>
                 </div>
             </div>

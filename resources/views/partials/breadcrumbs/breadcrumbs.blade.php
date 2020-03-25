@@ -1,7 +1,7 @@
 @if (count($breadcrumbs))
 
 <div style="background-color: #e9ecef;">
-    <ol class="breadcrumb container text-capitalize">
+    <ol class="breadcrumb text-capitalize" style="background-color: #f6f6f6;">
         @foreach ($breadcrumbs as $breadcrumb)
 
         @if ($breadcrumb->url && !$loop->last)
