@@ -63,32 +63,6 @@ class Product extends Model
     }
 
     /**
-     * Get product's sub categories.
-     */
-    public function subCategories()
-    {
-        return $this->belongsToMany(
-            'App\Models\Categories\SubCategory',
-            'piv_product_subcategory',
-            'product_id',
-            'subcategory_id'
-        );
-    }
-
-    /**
-     * get product's product type.
-     */
-    public function productTypes()
-    {
-        return $this->belongsToMany(
-            'App\Models\Categories\ProductType',
-            'piv_product_type',
-            'product_id',
-            'product_type_id'
-        );
-    }
-
-    /**
      * Get all of the product's colors.
      */
     public function colors()

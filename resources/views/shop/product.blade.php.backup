@@ -3,13 +3,6 @@
 @section('content')
 <div>
     <!-- Breadcrumb here -->
-    <?php
-    $companyname = 'Bujishu';
-
-    if ($product->categories->last()->name == 'Curtains') {
-        $companyname = 'Lafayette Industries';
-    }
-    ?>
     <div class="container">
         <div class="row">
             <div class="col-12 hidden-md pt-1 pl-1 pr-1 mb-2">
@@ -52,22 +45,18 @@
                         <p>{{ $product->summary }}</p>
                     </div>
                 </div>
-                @if($product->categories->last()->name == 'Curtains')
                 <div class="row">
                     <div class="col-12">
-                        <p class="mb-1">Widths</p>
+                        <p class="mb-1">Size</p>
                         <div class="boxed">
                             <input type="radio" id="size0" name="size" value="all">
-                            <label for="size0">All</label>
+                            <label for="size0">All sizes</label>
 
                             <input type="radio" id="size1" name="size" value="120cm x 200cm">
-                            <label for="size1">112cm</label>
+                            <label for="size1">120cm x 200cm</label>
 
                             <input type="radio" id="size2" name="size" value="120cm x 200cm">
-                            <label for="size2">167cm</label>
-
-                            <input type="radio" id="size3" name="size" value="120cm x 200cm">
-                            <label for="size3">228cm</label>
+                            <label for="size2">120cm x 200cm</label>
                         </div>
                     </div>
                 </div>
@@ -79,36 +68,17 @@
                             <label for="color0">All colors</label>
                         </div>
                         <div class="boxed">
-                            <input type="radio" id="red" name="color" value="Red">
-                            <label class="color-options" for="red" style="background-color: red;"></label>
-
                             <input type="radio" id="grey" name="color" value="Grey">
-                            <label class="color-options" for="grey" style="background-color: grey;"></label>
+                            <label class="color-options" for="grey" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow;"></label>
 
-                            <input type="radio" id="beige" name="color" value="Beige">
-                            <label class="color-options" for="beige" style="background-color: #f5f5dc;"></label>
+                            <input type="radio" id="white" name="color" value="White">
+                            <label class="color-options" for="white" style="background-color: blue;"></label>
+
+                            <input type="radio" id="green" name="color" value="Green">
+                            <label class="color-options" for="green" style="background-color: red;"></label>
                         </div>
                     </div>
                 </div>
-                @endif
-
-                @if($product->categories->first()->name == 'Lightings')
-                <div class="row">
-                    <div class="col-12">
-                        <p class="mb-1">Color Temperature</p>
-                        <div class="boxed">
-                            <input type="radio" id="size0" name="size" value="all">
-                            <label for="size0">All</label>
-
-                            <input type="radio" id="size1" name="size" value="120cm x 200cm">
-                            <label for="size1">Daylight 6000k</label>
-
-                            <input type="radio" id="size2" name="size" value="120cm x 200cm">
-                            <label for="size2">Warm White 3000k</label>
-                        </div>
-                    </div>
-                </div>
-                @endif
 
                 <div class="row">
                     <div class="col-12 mb-0 text-left">
@@ -130,7 +100,7 @@
                                                     <img class="mw-100" src="https://www.logodesign.net/logo/line-art-car-with-swoosh-5986ld.png" alt="">
                                                 </div>
                                                 <div class="col-8 mb-0 text-left">
-                                                    <p class="mb-1 font-weight-bold">{{ $companyname }} Sdn Bhd</p>
+                                                    <p class="mb-1 font-weight-bold">Panel 1 Sdn Bhd</p>
                                                     <p class="mb-0">Rating by panel: </p>
                                                     <p class="mb-1">
                                                         <span class="fa fa-star checked"></span>
@@ -151,6 +121,117 @@
                                                     <p class="mb-1">Moderate</p>
                                                     <p class="mb-0">Price: </p>
                                                     <p class="mb-1 font-weight-bold">RM 120</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-6 pl-1 pr-1 mb-1">
+                                <a style="text-decoration: none; color: #212529;" href="#exampleModal2" data-toggle="modal" data-target="#exampleModal2">
+                                    <div class="card panel-option-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-4 mb-0">
+                                                    <img class="mw-100" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/corporate-company-logo-design-template-2402e0689677112e3b2b6e0f399d7dc3_screen.jpg?ts=1561532453" alt="">
+                                                </div>
+                                                <div class="col-8 mb-0 text-left">
+                                                    <p class="mb-1 font-weight-bold">Panel 2 Sdn Bhd</p>
+                                                    <p class="mb-0">Rating by panel: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Rating by customers: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Quality: </p>
+                                                    <p class="mb-1">Standard</p>
+                                                    <p class="mb-0">Price: </p>
+                                                    <p class="mb-1 font-weight-bold">RM 100</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-6 pl-1 pr-1 mb-1">
+                                <a style="text-decoration: none; color: #212529;" href="#exampleModal1" data-toggle="modal" data-target="#exampleModal1">
+                                    <div class="card panel-option-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-4 mb-0">
+                                                    <img class="mw-100" src="https://dypdvfcjkqkg2.cloudfront.net/original/4841768-7155.jpg" alt="">
+                                                </div>
+                                                <div class="col-8 mb-0 text-left">
+                                                    <p class="mb-1 font-weight-bold">Panel 3 Sdn Bhd</p>
+                                                    <p class="mb-0">Rating by panel: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Rating by customers: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Quality: </p>
+                                                    <p class="mb-1">Standard</p>
+                                                    <p class="mb-0">Price: </p>
+                                                    <p class="mb-1 font-weight-bold">RM 150</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-6 pl-1 pr-1 mb-1">
+                                <a style="text-decoration: none; color: #212529;" href="#exampleModal2" data-toggle="modal" data-target="#exampleModal2">
+                                    <div class="card panel-option-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-4 mb-0">
+                                                    <img class="mw-100" src="https://cdn6.f-cdn.com/contestentries/1465575/31577979/5c471a44972fb_thumb900.jpg" alt="">
+                                                </div>
+                                                <div class="col-8 mb-0 text-left">
+                                                    <p class="mb-1 font-weight-bold">Panel 4 Sdn Bhd</p>
+                                                    <p class="mb-0">Rating by panel: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Rating by customers: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Quality: </p>
+                                                    <p class="mb-1">Standard</p>
+                                                    <p class="mb-0">Price: </p>
+                                                    <p class="mb-1 font-weight-bold">RM 90</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -188,7 +269,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title font-weight-bold" id="exampleModalLabel">{{ $companyname }} - {{ $product->name }}</h5>
+                <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Panel 1 Sdn Bhd - {{ $product->name }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -201,7 +282,8 @@
 
                     <div class="col-12 col-md-8">
                         <div class="mb-4">
-                            <p>{{ $product->summary }}</p>
+                            <p class="mb-1">100% Cotton Shell, 100% Polyester Fiber Fill</p>
+                            <p>With 15 years experience in manufacturing pillows, with 2 million satisfied customers, we guarantee 100% satisfaction from buying this product.</p>
                         </div>
                         <div>
                             <table class="table table-bordered">
@@ -234,20 +316,16 @@
                     </div>
                 </div>
 
-                @if($product->categories->last()->name == 'Curtains')
                 <div class="row">
                     <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
                         <p class="mb-1">Size</p>
                         <hr class="mt-1">
                         <div class="boxed">
                             <input type="radio" id="size1Modal" name="sizeModal" value="120cm x 200cm">
-                            <label for="size1Modal">112cm</label>
+                            <label for="size1Modal">120cm x 200cm</label>
 
                             <input type="radio" id="size2Modal" name="sizeModal" value="120cm x 200cm">
-                            <label for="size2Modal">167cm</label>
-
-                            <input type="radio" id="size3Modal" name="sizeModal" value="120cm x 200cm">
-                            <label for="size3Modal">228cm</label>
+                            <label for="size2Modal">120cm x 200cm</label>
                         </div>
                     </div>
                 </div>
@@ -256,35 +334,17 @@
                         <p class="mb-1">Color</p>
                         <hr class="mt-1">
                         <div class="boxed">
-                            <input type="radio" id="redModal" name="colorModal" value="Red">
-                            <label class="color-options" for="redModal" style="background-color: red;"></label>
-
                             <input type="radio" id="greyModal" name="colorModal" value="Grey">
-                            <label class="color-options" for="greyModal" style="background-color: grey;"></label>
+                            <label class="color-options" for="greyModal" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow;"></label>
 
-                            <input type="radio" id="beigeModal" name="colorModal" value="Beige">
-                            <label class="color-options" for="beigeModal" style="background-color: #f5f5dc;"></label>
+                            <input type="radio" id="whiteModal" name="colorModal" value="White">
+                            <label class="color-options" for="whiteModal" style="background-color: blue;"></label>
+
+                            <input type="radio" id="greenModal" name="colorModal" value="Green">
+                            <label class="color-options" for="greenModal" style="background-color: red;"></label>
                         </div>
                     </div>
                 </div>
-                @endif
-
-                @if($product->categories->first()->name == 'Lightings')
-                <div class="row">
-                    <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
-                        <p class="mb-1">Color Temperature</p>
-                        <hr class="mt-1">
-                        <div class="boxed">
-                            <input type="radio" id="size1Modal" name="sizeModal" value="120cm x 200cm">
-                            <label for="size1Modal">Daylight 6000k</label>
-
-                            <input type="radio" id="size2Modal" name="sizeModal" value="120cm x 200cm">
-                            <label for="size2Modal">Warm White 3000k</label>
-                        </div>
-                    </div>
-                </div>
-                @endif
-
 
                 <div class="row">
                     <hr class="mb-1">
@@ -312,22 +372,121 @@
 
                 <div class="modal-footer justify-center-sm">
                     <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
-                    <form method="POST" action="{{ route('shop.cart.add-item') }}">
-                        @method('POST')
-                        @csrf
-                        <input type="hidden" name="productId" value="{{ $product->id }}">
-                        @if(!$product->colors->isEmpty())
-                        <input type="hidden" name="productColorId" value="{{ $product->getDefaultColor()->id }}">
-                        @endif
-                        @if(!$product->dimensions->isEmpty())
-                        <input type="hidden" name="productDimensionId" value="{{ $product->getDefaultDimension()->id }}">
-                        @endif
-                        @if(!$product->lengths->isEmpty())
-                        <input type="hidden" name="productLengthId" value="{{ $product->getDefaultLength()->id }}">
-                        @endif
-                        <input type="hidden" name="productQuantity" value="1">
-                        <button style="color: #000; background-color: #fccb34;" type="submit" class="btn btn-primary">Add to cart</button>
-                    </form>
+                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Panel 2 Sdn Bhd - {{ $product->name }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <img class="mw-100" style="border: 1px solid #ededed; padding: 5px;" src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="">
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="mb-4">
+                            <p class="mb-1">100% Cotton Shell, 100% Polyester Fiber Fill</p>
+                            <p>With 15 years experience in manufacturing pillows, with 2 million satisfied customers, we guarantee 100% satisfaction from buying this product.</p>
+                        </div>
+                        <div>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>
+                                        Material
+                                    </td>
+                                    <td>
+                                        Cotton, Polyester Fiber
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Quality
+                                    </td>
+                                    <td>
+                                        Moderate
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Price
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        RM 120
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
+                        <p class="mb-1">Size</p>
+                        <hr class="mt-1">
+                        <div class="boxed">
+                            <input type="radio" id="size1Modal" name="sizeModal" value="120cm x 200cm">
+                            <label for="size1Modal">120cm x 200cm</label>
+
+                            <input type="radio" id="size2Modal" name="sizeModal" value="120cm x 200cm">
+                            <label for="size2Modal">120cm x 200cm</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
+                        <p class="mb-1">Color</p>
+                        <hr class="mt-1">
+                        <div class="boxed">
+                            <input type="radio" id="greyModal" name="colorModal" value="Grey">
+                            <label class="color-options" for="greyModal" data-toggle="tooltip" data-placement="top" title="Tooltip on top" style="background-color: yellow;"></label>
+
+                            <input type="radio" id="whiteModal" name="colorModal" value="White">
+                            <label class="color-options" for="whiteModal" style="background-color: blue;"></label>
+
+                            <input type="radio" id="greenModal" name="colorModal" value="Green">
+                            <label class="color-options" for="greenModal" style="background-color: red;"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <hr class="mb-1">
+                    <div class="col-12 col-md-8 offset-md-4 mb-1 text-center text-md-left">
+                        <p class="mb-1">Quantity</p>
+                        <hr class="mt-1">
+                    </div>
+
+                    <div class="col-12 col-md-8 offset-md-4 mb-3 text-center text-md-left">
+                        <div class="input-group mx-auto-sm" style="max-width: 180px;">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                    <span class="fa fa-minus"></span>
+                                </button>
+                            </span>
+                            <input type=" text" name="quant[1]" class="form-control input-number" value="1" min="1" max="50">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                    <span class="fa fa-plus"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-center-sm">
+                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
+                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -390,8 +549,7 @@
         // On change event of productQuantity..
         productQuantity.on('change', function() {
             // change the value of postProductQuantity to match productQuantity.
-            // postProductQuantity.val(productQuantity.val());
-            postProductQuantity.val() = productQuantity.val();
+            postProductQuantity.val(productQuantity.val());
         });
 
         $('.select2').select2({

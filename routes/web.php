@@ -16,12 +16,12 @@ Route::get('/', 'Guest\GuestController@index');
 Route::get('/login', 'Auth\LoginController@showLoginForm');
 
 // Temporarily only
-Route::get('/invoice',function(){
+Route::get('/invoice', function () {
 
- return view("backups.dashboard_receipts.invoice");
+    return view("backups.dashboard_receipts.invoice");
 });
 
-Route::get('/purchase-order','Panel\DashboardController@viewPurchaseOrder');
+Route::get('/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
 
 /** Author Nicholas
  * Hardcode (Temporarily) to show product category for each category
@@ -33,63 +33,63 @@ Route::view('/category/curtain', 'shop.catalog.backups.curtain');
 Route::view('/category/curtain/pinch-pleat', 'shop.catalog.backups.pinch-pleat');
 Route::view('/category/bedsheet-mattress/canopy-bed', 'shop.catalog.backups.canopy-bed');
 
-// Shop Routes
-Route::prefix('shop')->group(function () {
-    // Home/Index page for shop.
-    Route::get('/', 'Shop\ShopController@index')->name('shop.index');
+// // Shop Routes
+// Route::prefix('shop')->group(function () {
+//     // Home/Index page for shop.
+//     Route::get('/', 'Shop\ShopController@index')->name('shop.index');
 
 
-    // Author - Wan Shahruddin
+//     // Author - Wan Shahruddin
 
-    Route::group(['prefix' => 'category'], function () {
-        Route::get('/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory');
-        Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}', 'Shop\ShopController@secondLevelCategory');
-        Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory');
-    });
+//     Route::group(['prefix' => 'category'], function () {
+//         Route::get('/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory');
+//         Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}', 'Shop\ShopController@secondLevelCategory');
+//         Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory');
+//     });
 
-    // // Category page for shop. Displays products related to selected category.
-    // // Accepts slugged category name or slugged subcategory name.
-    // Route::get('/category/{categorySlug}', 'Shop\ShopController@category')->name('shop.category');
+//     // // Category page for shop. Displays products related to selected category.
+//     // // Accepts slugged category name or slugged subcategory name.
+//     // Route::get('/category/{categorySlug}', 'Shop\ShopController@category')->name('shop.category');
 
-    // // Subcategory page for shop. Displays products related to the selected product type.
-    // Route::get(
-    //     '/category/{categorySlug}/{subcategorySlug}',
-    //     'Shop\ShopController@subcategory'
-    // )->name('shop.category.subcategory');
+//     // // Subcategory page for shop. Displays products related to the selected product type.
+//     // Route::get(
+//     //     '/category/{categorySlug}/{subcategorySlug}',
+//     //     'Shop\ShopController@subcategory'
+//     // )->name('shop.category.subcategory');
 
-    // // Product type page for shop. Displays products related to the selected product type.
-    // Route::get(
-    //     '/category/{categorySlug}/{subcategorySlug}/{productTypeSlug}',
-    //     'Shop\ShopController@productType'
-    // )->name('shop.category.subcategory.type');
+//     // // Product type page for shop. Displays products related to the selected product type.
+//     // Route::get(
+//     //     '/category/{categorySlug}/{subcategorySlug}/{productTypeSlug}',
+//     //     'Shop\ShopController@productType'
+//     // )->name('shop.category.subcategory.type');
 
-    // // Product page for shop. Display detailed info of the product.
-    Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
+//     // // Product page for shop. Display detailed info of the product.
+//     Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 
-    // // Shopping cart page.
-    // Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');
+//     // // Shopping cart page.
+//     // Route::get('/shopping-cart', 'Shop\ShopController@shoppingCart')->name('shop.cart');
 
-    // Cart prefix.
-    Route::prefix('cart')->group(function () {
-        // Shopping cart page.
-        Route::get('/', 'Shop\CartController@index')->name('shop.cart');
+//     // Cart prefix.
+//     Route::prefix('cart')->group(function () {
+//         // Shopping cart page.
+//         Route::get('/', 'Shop\CartController@index')->name('shop.cart');
 
-        // POST route for adding item to cart.
-        Route::post('/add-item', 'Shop\CartController@store')->name('shop.cart.add-item');
+//         // POST route for adding item to cart.
+//         Route::post('/add-item', 'Shop\CartController@store')->name('shop.cart.add-item');
 
-        // DELETE route for deleting cart item.
-        Route::put('/delete-item/{id}', 'Shop\CartController@destroy')->name('shop.cart.delete-item');
-    });
+//         // DELETE route for deleting cart item.
+//         Route::put('/delete-item/{id}', 'Shop\CartController@destroy')->name('shop.cart.delete-item');
+//     });
 
-    // Order prefix.
-    Route::prefix('order')->group(function () {
-        // Order history page.
-        Route::get('/', 'Shop\OrderController@index')->name('shop.order');
+//     // Order prefix.
+//     Route::prefix('order')->group(function () {
+//         // Order history page.
+//         Route::get('/', 'Shop\OrderController@index')->name('shop.order');
 
-        // POST route for checking out cart item and placing order.
-        Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
-    });
-});
+//         // POST route for checking out cart item and placing order.
+//         Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
+//     });
+// });
 
 // Route::get('/generate-po', function () {
 
@@ -225,8 +225,25 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     // Shop
     Route::group(['prefix' => 'shop'], function () {
+        // Home/Index page for shop.
+        Route::get('/', 'Shop\ShopController@index')->name('shop.index');
+
+        Route::group(['prefix' => 'category'], function () {
+            Route::get('/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory');
+            Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}', 'Shop\ShopController@secondLevelCategory');
+            Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory');
+        });
+
+        Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
+
         Route::group(['prefix' => 'cart'], function () {
             Route::get('/', 'Shop\CartController@index');
+
+            // POST route for adding item to cart.
+            Route::post('/add-item', 'Shop\CartController@store')->name('shop.cart.add-item');
+
+            // DELETE route for deleting cart item.
+            Route::put('/delete-item/{id}', 'Shop\CartController@destroy')->name('shop.cart.delete-item');
 
             // Checkout cart items.
             Route::post('/checkout', 'Purchase\PurchaseController@checkoutItems');
@@ -237,6 +254,16 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         });
     });
     // End Shop
+
+    // Order
+    Route::prefix('order')->group(function () {
+        // Order history page.
+        Route::get('/', 'Shop\OrderController@index')->name('shop.order');
+
+        // POST route for checking out cart item and placing order.
+        Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
+    });
+    // End Order
 
     // Web
     Route::group(['prefix' => 'web'], function () {

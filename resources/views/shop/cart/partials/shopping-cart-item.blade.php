@@ -27,7 +27,7 @@
     </div>
 </div>
 @else
-<div class="col-md-7">
+<div class="col-12 col-md-7">
     @foreach($cartItems as $cartItem)
     <div class="card mb-2">
         <div class="card-body">
@@ -41,7 +41,7 @@
                     <button class="btn btn-sm btn-danger float-right" id="DeleteCartItem" value="{{ $cartItem->id }}">Delete</button>
                     <h4 style="width: 80%;">{{ $cartItem->product->name }}</h4>
                     <p>x {{ $cartItem->quantity }}</p>
-                    <h5>RM {{ $cartItem->total_price }}</h5>
+                    <h5>RM {{ number_format(($cartItem->total_price / 100), 2) }}</h5>
 
                     <div>
                         <ul class="list-unstyled">
@@ -64,7 +64,7 @@
     </div>
     @endforeach
 </div>
-<div class="col-md-5">
+<div class="col-12 col-md-5">
     <div class="card">
         <div class="card-body">
             <h4>Cart Summary</h4>
@@ -80,7 +80,7 @@
                         foreach ($cartItems as $cartItem) {
                             $totalPrice = $totalPrice + $cartItem->total_price;
                         }
-                        echo $totalPrice;
+                        echo number_format(($totalPrice / 100), 2);
                         ?>
                     </h4>
                 </div>

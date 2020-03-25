@@ -37,7 +37,7 @@
                             ?>
                             @endforeach
                             @endforeach
-                            <?php echo 'RM ' . $subtotal; ?>
+                            <?php echo 'RM ' . number_format(($subtotal / 100), 2); ?>
                         </td>
                     </tr>
                     @endforeach

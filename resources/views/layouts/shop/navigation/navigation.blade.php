@@ -36,9 +36,9 @@
                                         My Account
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile <small>(wip)</small></a>
-                                        <a class="dropdown-item" href="#"><i class="fa fa-credit-card"></i> My Orders <small>(wip)</small></a>
-                                        <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
+                                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile <small>(WIP)</small></a>
+                                        <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card"></i> My Orders <small>(WIP)</small></a>
+                                        <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart(WIP)</a>
                                         @hasrole('panel')
                                         <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Panel</a>
                                         @endhasrole
@@ -103,9 +103,9 @@
                                 My Account
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#"><i class="fa fa-user "  style="color:#fbcc34;" ></i> Profile <small>(wip)</small></a>
-                                <a class="dropdown-item" href="#"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Orders <small>(wip)</small></a>
-                                <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-user " style="color:#fbcc34;"></i> Profile <small>(WIP)</small></a>
+                                <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Orders <small>(WIP)</small></a>
+                                <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart <small>(WIP)</small></a>
                                 @hasrole('panel')
                                 <a href="/management" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
                                 @endhasrole

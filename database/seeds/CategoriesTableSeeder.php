@@ -117,6 +117,21 @@ class CategoriesTableSeeder extends Seeder
         // --
 
         $category = Category::create([
+            'name' => 'Curtains',
+            'slug' => 'curtains',
+            'parent_category_id' => 0
+        ]);
+
+        $category->image()->create([
+            'path' => 'uploads/images/categories/' . $category->slug . '/',
+            'filename' => $category->slug . '.jpg'
+        ]);
+
+        // --
+        $category = null;
+        // --
+
+        $category = Category::create([
             'name' => 'Tiles',
             'slug' => 'tiles',
             'parent_category_id' => 0
@@ -1208,6 +1223,38 @@ class CategoriesTableSeeder extends Seeder
         $category = Category::create([
             'name' => 'Foam Mattresses',
             'slug' => 'foam-mattresses',
+            'parent_category_id' => $parentCategory->id
+        ]);
+
+        $category->image()->create([
+            'path' => 'uploads/images/categories/' . $category->slug . '/',
+            'filename' => $category->slug . '.jpg'
+        ]);
+
+        // --
+        $category = null;
+        // --
+
+        $parentCategory = Category::where('name', 'LED')->first();
+
+        $category = Category::create([
+            'name' => 'Eyeball',
+            'slug' => 'eyeball',
+            'parent_category_id' => $parentCategory->id
+        ]);
+
+        $category->image()->create([
+            'path' => 'uploads/images/categories/' . $category->slug . '/',
+            'filename' => $category->slug . '.jpg'
+        ]);
+
+        // --
+        $category = null;
+        // --
+
+        $category = Category::create([
+            'name' => 'Downlight',
+            'slug' => 'downlight',
             'parent_category_id' => $parentCategory->id
         ]);
 
