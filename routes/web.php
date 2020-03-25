@@ -22,7 +22,8 @@ Route::get('/invoice', function () {
 });
 
 Route::get('/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
-
+  //Return Work In progress page
+  Route::view('/wip', 'errors.wip');
 /** Author Nicholas
  * Hardcode (Temporarily) to show product category for each category
  */
@@ -198,6 +199,15 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // Dashboard-Panel
         Route::get('/panel', 'Management\ManagementController@index')->name('management.home');
         Route::get('/orders/all', 'Management\ManagementController@allOrders');
+        Route::get('/orders/open', 'Management\ManagementController@openOrders');
+        Route::get('/orders/in-progress', 'Management\ManagementController@inProgressOrders');
+        Route::get('/orders/delivered', 'Management\ManagementController@deliveredOrders');
+        Route::get('/orders/completed', 'Management\ManagementController@completedOrders');
+        Route::get('/orders/cancelled', 'Management\ManagementController@cancelledOrders');
+        Route::get('/panel/person-in-charge', 'Management\ManagementController@personInCharge');
+
+        // Temp statement layout
+        Route::view('/statement', 'management.panel.statement');
 
         //Dashboard-Dealer (Group them in future)
         Route::get('/dealer', 'Management\ManagementController@index_dealer');
@@ -205,6 +215,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/password', 'Management\ManagementController@modifyPassword');
         Route::get('/statements', 'Management\ManagementController@statements');
        
+      
 
         // Product Management
         Route::group(

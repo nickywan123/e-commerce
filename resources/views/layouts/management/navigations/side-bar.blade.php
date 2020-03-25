@@ -18,7 +18,7 @@
                     </li>
                     @hasrole('panel')
                     <li class="nav-item">
-                        <a href="/management/PIC" class="nav-link">
+                        <a href="/management/panel/person-in-charge" class="nav-link">
                             <i class="nav-icon fa fa-key icon-color"></i> Person In Charge
                         </a>
                     </li>
@@ -40,27 +40,27 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/management/orders/open" class="nav-link">
                             <i class="nav-icon fa fa-key icon-color"></i>Open
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/management/orders/in-progress" class="nav-link">
                             <i class="nav-icon fa fa-key icon-color"></i> In Progress
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/management/orders/delivered" class="nav-link">
                             <i class="nav-icon fa fa-key icon-color"></i> Delivered
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/management/orders/completed" class="nav-link">
                             <i class="nav-icon fa fa-key icon-color"></i> Completed
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/management/orders/cancelled" class="nav-link">
                             <i class="nav-icon fa fa-key icon-color"></i> Cancelled
                         </a>
                     </li>
