@@ -24,13 +24,13 @@
 
 <section id="slideshow" class="hidden-sm">
   <div class="slick ">
-    <div  >
-      <img class="image-slideshow" src="{{asset('/images/promopage1-wip.png')}}" alt=""> 
+    <div>
+      <img class="image-slideshow" src="{{asset('/images/promopage1-wip.png')}}" alt="">
     </div>
     <div>
       <img class="image-slideshow" src="{{asset('/images/promopage2-wip.png')}}" alt="">
     </div>
-  
+
   </div>
 </section>
 
@@ -42,7 +42,7 @@
     <div>
       <img class="image-slideshow" src="{{asset('/images/promopage3-mobile-wip.png')}}" alt="">
     </div>
-    
+
   </div>
 </section>
 
@@ -54,14 +54,14 @@
       </div>
     </div>
     <div class="col-6 col-md-2 text-alignment">
-      <a style="color:#ffcc00;" href="/shop/category/bedsheets-and-mattresses/bedframes"><img class="icon-image" src="{{asset('/images/bedsheet-icon.png')}}" alt="Icon">
+      <a style="color:#ffcc00;" href="/shop/category/bedsheets-and-mattresses/bedsheets"><img class="icon-image" src="{{asset('/images/bedsheet-icon.png')}}" alt="Icon">
         <h5>Bedsheet</h5>
       </a>
 
     </div>
     <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href=" /shop/category/curtain"><img class="icon-image" src="{{asset('/images/curtain-icon.png')}}" alt="Icon">
-        <h5>Curtain</h5>
+      <a style=" color:#ffcc00;" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/images/curtain-icon.png')}}" alt="Icon">
+        <h5>Curtains</h5>
       </a>
 
     </div>
@@ -76,7 +76,7 @@
       <a style=" color:#ffcc00;" href="/wip"><img class="icon-image" src="{{asset('/images/wallpaper-icon.png')}}" alt="Icon">
         <h5>Renovation</h5>
       </a>
-     
+
     </div>
     <div class="col-6 col-md-2 text-alignment">
       <a style=" color:#ffcc00;" href="/shop/category/tiles"><img class="icon-image" src="{{asset('/images/tiles-icon.png')}} " alt="Icon">
