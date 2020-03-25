@@ -37,14 +37,12 @@
 <section id="slideshow" class="hidden-md">
   <div class="slick ">
     <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage1-mobile.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/images/promopage2-mobile-wip.png')}}" alt="">
     </div>
     <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage2-mobile.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/images/promopage3-mobile-wip.png')}}" alt="">
     </div>
-    <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage3-mobile.jpg')}}" alt="">
-    </div>
+    
   </div>
 </section>
 
