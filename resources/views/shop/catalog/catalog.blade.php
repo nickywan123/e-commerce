@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-2 hidden-sm">
             <div class="p-3 shadow-sm" style="background-color: #ffffff;">
-                <h5 class="text-dark">Panel</h5>
+                <h5 class="text-dark">Panel <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
                         <a class="text-dark" href="">Company A</a>
@@ -20,7 +20,7 @@
                     </li>
                 </ul>
 
-                <h5 class="text-dark">Price</h5>
+                <h5 class="text-dark">Price <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
                         <a class="text-dark" href="">Under RM25</a>
@@ -48,7 +48,7 @@
                     </li>
                 </ul>
 
-                <h5 class="text-dark">Color</h5>
+                <h5 class="text-dark">Color <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
                         <a class="text-dark" href="">White</a>
@@ -70,7 +70,7 @@
                     </li>
                 </ul>
 
-                <h5 class="text-dark">Rating</h5>
+                <h5 class="text-dark">Rating <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
                         <a href="">
@@ -124,7 +124,7 @@
         <div class="col-12 col-md-10">
             <div class="row pb-4">
                 <div class="col-12 mb-1">
-                    <h3 class="text-muted">{{ $category->name }}</h3>
+                    <h3 class="text-muted">{{ $category->name }} <small>(WIP)</small></h3>
                 </div>
             </div>
 

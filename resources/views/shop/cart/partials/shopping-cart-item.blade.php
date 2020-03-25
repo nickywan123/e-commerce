@@ -86,6 +86,41 @@
                 </div>
             </div>
             <div class="text-right">
+                <!-- <form method="POST" action="/shop/cart/checkout">
+                    @csrf
+                    <?php
+                    foreach ($cartItems as $cartItem) {
+                        echo '<input type="hidden" name="cartItemId[]" value="' . $cartItem->id . '">';
+                    }
+                    ?>
+                    <button class="btn btn-primary" type="submit">Checkout</button>
+                </form> -->
+                <!-- Button trigger modal -->
+                <button style="color: #000000;" type="button" class="btn btn-secondary bjsh-btn-gradient" data-toggle="modal" data-target="#exampleModal">
+                    Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Payment Method</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <button class="btn btn-primary disabled" style="min-width: 100px;">FPX <small>(WIP)</small></button>
+                <button class="btn btn-primary disabled" style="min-width: 100px;">Credit Card <small>(WIP)</small></button>
+                <button class="btn btn-primary disabled" style="min-width: 100px;">Offline <small>(WIP)</small></button>
+                <p>Payment gateway is still work in progress.</p>
+            </div>
+            <div class="modal-footer">
                 <form method="POST" action="/shop/cart/checkout">
                     @csrf
                     <?php

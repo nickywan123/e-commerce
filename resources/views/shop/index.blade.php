@@ -57,59 +57,14 @@
       <div style="border-top: 1px solid #ffcc00; margin-bottom: 20px;" class="w-50-md w-100-sm">
       </div>
     </div>
+    @foreach($popularCategories as $popularCategory)
     <div class="col-6 col-md-2 text-alignment">
-      <a style="color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/1.png')}}" alt="Icon">
-        <h5>Bedsheet</h5>
+      <a style="color:#ffcc00;" href="/shop/category/{{ $popularCategory->slug }}"><img class="icon-image" src="{{asset('/images/'. $popularCategory->id .'.png')}}" alt="Icon">
+        <h5>{{ $popularCategory->name }}</h5>
       </a>
-
     </div>
-    <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/2.png')}}" alt="Icon">
-        <h5>Curtain</h5>
-      </a>
-
-    </div>
-
-    <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon">
-        <h5>Cabinet</h5>
-      </a>
-
-    </div>
-    <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon">
-        <h5>Wallpaper</h5>
-      </a>
-
-    </div>
-    <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon">
-        <h5>Carpet</h5>
-      </a>
-
-    </div>
-    <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon">
-        <h5>Paint</h5>
-      </a>
-
-    </div>
-
-    <!-- <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon">
-        <h5>Furniture</h5>
-      </a>
-
-    </div>
-    <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon">
-        <h5>Wiring</h5>
-      </a>
-
-    </div> -->
-
+    @endforeach
   </div>
-
 </div>
 
 <br>

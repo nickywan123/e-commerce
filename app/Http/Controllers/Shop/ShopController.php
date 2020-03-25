@@ -50,12 +50,14 @@ class ShopController extends Controller
     public function index()
     {
         // Author Nick : Display image for promo page slider
-       
+
         // return view('shop.index')->with('data', $data);
         // Get all categories and subcategories with its image.
         // $categories = Category::with('image')->with('subcategories.image')->get();
         $data = Banner::all();
-        return view('shop.index')->with('data', $data);
+        $popularCategories = Category::take(6)->get();
+
+        return view('shop.index')->with('data', $data)->with('popularCategories', $popularCategories);
     }
 
     /**

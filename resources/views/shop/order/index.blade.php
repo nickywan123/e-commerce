@@ -3,7 +3,7 @@
 @section('content')
 <div class="mt-3">
     <div class="container" style="margin-top: 50px;">
-        <h3>Your Purchases</h3>
+        <h3>Your Purchases <small>(WIP)</small></h3>
         <div class="card">
             <div class="card-body">
                 <table class="table table-striped table-hover">

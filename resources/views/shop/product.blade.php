@@ -20,7 +20,7 @@
                     <span class="fa fa-star checked align-middle"></span>
                     <span class="fa fa-star checked align-middle"></span>
                     <span class="fa fa-star align-middle"></span>
-                    <span class="ml-1 align-middle">(60 ratings)</span>
+                    <span class="ml-1 align-middle">(60 ratings) <small>(WIP)</small></span>
                 </div>
             </div>
             <div class="col-12 col-md-5 pl-1 pr-1 mb-1">
@@ -42,7 +42,7 @@
                             <span class="fa fa-star checked align-middle"></span>
                             <span class="fa fa-star checked align-middle"></span>
                             <span class="fa fa-star align-middle"></span>
-                            <span class="ml-1 align-middle">(60 ratings)</span>
+                            <span class="ml-1 align-middle">(60 ratings) <small>(WIP)</small></span>
                         </div>
                     </div>
                 </div>
@@ -55,25 +55,25 @@
                 @if($product->categories->last()->name == 'Curtains')
                 <div class="row">
                     <div class="col-12">
-                        <p class="mb-1">Widths</p>
+                        <p class="mb-1">Sizes <small>(WIP)</small></p>
                         <div class="boxed">
                             <input type="radio" id="size0" name="size" value="all">
                             <label for="size0">All</label>
 
                             <input type="radio" id="size1" name="size" value="120cm x 200cm">
-                            <label for="size1">112cm</label>
+                            <label for="size1">112cm x 80cm</label>
 
                             <input type="radio" id="size2" name="size" value="120cm x 200cm">
-                            <label for="size2">167cm</label>
+                            <label for="size2">167cm x 80cm</label>
 
                             <input type="radio" id="size3" name="size" value="120cm x 200cm">
-                            <label for="size3">228cm</label>
+                            <label for="size3">228cm x 80cm</label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <p class="mb-1">Color</p>
+                        <p class="mb-1">Color <small>(WIP)</small></p>
                         <div class="boxed">
                             <input type="radio" id="color0" name="color" value="120cm x 200cm">
                             <label for="color0">All colors</label>
@@ -95,7 +95,7 @@
                 @if($product->categories->first()->name == 'Lightings')
                 <div class="row">
                     <div class="col-12">
-                        <p class="mb-1">Color Temperature</p>
+                        <p class="mb-1">Color Temperature <small>(WIP)</small></p>
                         <div class="boxed">
                             <input type="radio" id="size0" name="size" value="all">
                             <label for="size0">All</label>
@@ -112,7 +112,7 @@
 
                 <div class="row">
                     <div class="col-12 mb-0 text-left">
-                        <h4 class="mb-0">Sold By</h4>
+                        <h4 class="mb-0">Sold By <small>(WIP)</small></h4>
                     </div>
                 </div>
 
@@ -151,6 +151,43 @@
                                                     <p class="mb-1">Moderate</p>
                                                     <p class="mb-0">Price: </p>
                                                     <p class="mb-1 font-weight-bold">RM 120</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-6 pl-1 pr-1 mb-1">
+                                <a style="text-decoration: none; color: #212529;" href="#exampleModal1" data-toggle="modal" data-target="#exampleModal1">
+                                    <div class="card panel-option-card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-4 mb-0">
+                                                    <img class="mw-100" src="https://www.logodesign.net/logo/line-art-car-with-swoosh-5986ld.png" alt="">
+                                                </div>
+                                                <div class="col-8 mb-0 text-left">
+                                                    <p class="mb-1 font-weight-bold">{{ $companyname }} Sdn Bhd 1</p>
+                                                    <p class="mb-0">Rating by panel: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Rating by customers: </p>
+                                                    <p class="mb-1">
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </p>
+                                                    <p class="mb-0">Quality: </p>
+                                                    <p class="mb-1">Moderate</p>
+                                                    <p class="mb-0">Price: </p>
+                                                    <p class="mb-1 font-weight-bold">RM 90</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -237,7 +274,7 @@
                 @if($product->categories->last()->name == 'Curtains')
                 <div class="row">
                     <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
-                        <p class="mb-1">Size</p>
+                        <p class="mb-1">Sizes <small>(WIP)</small></p>
                         <hr class="mt-1">
                         <div class="boxed">
                             <input type="radio" id="size1Modal" name="sizeModal" value="120cm x 200cm">
@@ -253,7 +290,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
-                        <p class="mb-1">Color</p>
+                        <p class="mb-1">Color <small>(WIP)</small></p>
                         <hr class="mt-1">
                         <div class="boxed">
                             <input type="radio" id="redModal" name="colorModal" value="Red">
@@ -272,7 +309,7 @@
                 @if($product->categories->first()->name == 'Lightings')
                 <div class="row">
                     <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
-                        <p class="mb-1">Color Temperature</p>
+                        <p class="mb-1">Color Temperature <small>(WIP)</small></p>
                         <hr class="mt-1">
                         <div class="boxed">
                             <input type="radio" id="size1Modal" name="sizeModal" value="120cm x 200cm">
@@ -326,7 +363,7 @@
                         <input type="hidden" name="productLengthId" value="{{ $product->getDefaultLength()->id }}">
                         @endif
                         <input type="hidden" name="productQuantity" value="1">
-                        <button style="color: #000; background-color: #fccb34;" type="submit" class="btn btn-primary">Add to cart</button>
+                        <button style="color: #000; background-color: #fccb34;" type="submit" class="btn btn-primary">Add to cart <br> <small>(WIP)</small></button>
                     </form>
                 </div>
             </div>

@@ -69,17 +69,12 @@
                         <div class="col-12 my-auto">
                             <div class="pb-2">
                                 <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size " name="category">
-                                    <option value="all">All Categories</option>
-                                    <optgroup label="Mens">
-                                        <option value="shirts">Shirts</option>
-                                        <option value="coats-jackets">Coats & Jackets</option>
-                                        <option value="underwear">Underwear</option>
-                                        <option value="sunglasses">Sunglasses</option>
-                                        <option value="socks">Socks</option>
-                                        <option value="belts">Belts</option>
-                                    </optgroup>
+                                    <option value="all">All Categories <small>(WIP)</small></option>
+                                    <!-- <optgroup label="Mens">
+
+                                    </optgroup> -->
                                 </select>
-                                <input type="text" name="keyword" class="form-control navigation-input input-lg w-65-md w-85-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size" placeholder="Search">
+                                <input type="text" name="keyword" class="form-control navigation-input input-lg w-65-md w-85-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size" placeholder="Search (WIP)">
                                 <button id="search-button" class="btn navigation-input border-right-rounded-10"><i class="fa fa-search"></i></button>
                             </div>
                         </div>

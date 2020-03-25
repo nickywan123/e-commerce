@@ -252,18 +252,18 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::group(['prefix' => 'wishlist'], function () {
             Route::get('/', 'Development\ComingSoonController@index');
         });
+
+        // Order
+        Route::prefix('order')->group(function () {
+            // Order history page.
+            Route::get('/', 'Shop\OrderController@index')->name('shop.order');
+
+            // POST route for checking out cart item and placing order.
+            Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
+        });
+        // End Order
     });
     // End Shop
-
-    // Order
-    Route::prefix('order')->group(function () {
-        // Order history page.
-        Route::get('/', 'Shop\OrderController@index')->name('shop.order');
-
-        // POST route for checking out cart item and placing order.
-        Route::post('/checkout', 'Shop\OrderController@store')->name('shop.order.checkout');
-    });
-    // End Order
 
     // Web
     Route::group(['prefix' => 'web'], function () {
