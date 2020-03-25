@@ -195,9 +195,16 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // Management
     Route::group(['prefix' => 'management', 'middleware' => ['role:dealer|panel|administrator']], function () {
 
-        // Dashboard
-        Route::get('/', 'Management\ManagementController@index')->name('management.home');
+        // Dashboard-Panel
+        Route::get('/panel', 'Management\ManagementController@index')->name('management.home');
         Route::get('/orders/all', 'Management\ManagementController@allOrders');
+
+        //Dashboard-Dealer (Group them in future)
+        Route::get('/dealer', 'Management\ManagementController@index_dealer');
+        Route::get('/profile', 'Management\ManagementController@profile');
+        Route::get('/password', 'Management\ManagementController@modifyPassword');
+        Route::get('/statements', 'Management\ManagementController@statements');
+       
 
         // Product Management
         Route::group(

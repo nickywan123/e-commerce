@@ -16,6 +16,27 @@ class ManagementController extends Controller
 
     // return orders(all) for panel
     public function allOrders(){
- return view('management.orders.allCustOrders');
+     return view('management.orders.allCustOrders');
     }
+
+ // Home Page for Dealer
+    public function index_dealer(){
+        return view('management.dealer.index');
+    }
+
+    // View Profile 
+    public function profile(){
+        return view('management.dealer.profile');
+    }
+
+    // Change Password
+    public function modifyPassword(){
+        return view('management.dealer.modifypassword');
+    }
+
+    // View Statments for dealers
+public function statements(){
+    return view('management.dealer.statements');
+}
+
 }

@@ -17,8 +17,12 @@
     
 
     <ul class="nav navbar-nav ml-auto">
+        @hasrole('panel')
         <h5 class="welcome-panel-text"  >Welcome Panel</h5>
-        
+        @endhasrole
+        @hasrole('dealer')
+        <h5 class="welcome-panel-text"  >Welcome Dealer</h5>
+        @endhasrole
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <img class="img-avatar" src="{{asset('images/panel-company.png')}}" alt="{{ Auth::user()->userInfo->full_name }}">

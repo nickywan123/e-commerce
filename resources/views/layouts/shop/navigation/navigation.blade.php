@@ -107,10 +107,10 @@
                                 <a class="dropdown-item" href="#"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Orders <small>(wip)</small></a>
                                 <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart</a>
                                 @hasrole('panel')
-                                <a href="/management" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
+                                <a href="/management/panel" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
                                 @endhasrole
                                 @hasrole('dealer')
-                                <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
+                                <a href="/management/dealer" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                 @endhasrole
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
