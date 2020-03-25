@@ -1,10 +1,30 @@
-<div class="sidebar sidebar-bg-color">
-    <nav class="sidebar-nav ">
-        <ul class="nav sidebar-margin-top">
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="nav-icon icon-user icon-color"></i> Profile
+<div class="sidebar sidebar-bg-color" >
+    <nav class="sidebar-nav " >
+        <ul class="nav sidebar-margin-top" >
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="nav-icon icon-user icon-color"></i> Profile(WIP)
                 </a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="/management/orders/all" class="nav-link">
+                            <i class="nav-icon fa fa-list icon-color"></i> Company Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-key icon-color"></i>Change Password
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-key icon-color"></i> Person In Charge
+                        </a>
+                    </li>
+              
+                 
+
+                </ul>
             </li>
            
             <li class="nav-item nav-dropdown">
@@ -49,7 +69,7 @@
       
             <li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
-                    <i class="nav-icon icon-menu icon-color"></i> Products
+                    <i class="nav-icon icon-menu icon-color"></i> Products(WIP)
                 </a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">

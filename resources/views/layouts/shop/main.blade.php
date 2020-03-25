@@ -37,7 +37,7 @@
     <!-- Side bar -->
     @include('layouts.shop.navigation.sidebar')
 
-    <main class="mt-3 ml-3 mr-3">
+    <main class="mt-3 ml-3 mr-3" id="body-content-collapse-sidebar">
         @yield('content')
     </main>
 
