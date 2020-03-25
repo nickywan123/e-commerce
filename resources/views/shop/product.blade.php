@@ -92,6 +92,39 @@
                 </div>
                 @endif
 
+                @if($product->categories->last()->name == 'Bedsheets')
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-1">Sizes <small>(WIP)</small></p>
+                        <div class="boxed">
+                            <input type="radio" id="size1" name="size" value="120cm x 200cm">
+                            <label for="size1Modal">Single</label>
+
+                            <input type="radio" id="size2" name="size" value="120cm x 200cm">
+                            <label for="size2Modal">Queen</label>
+
+                            <input type="radio" id="size3" name="size" value="120cm x 200cm">
+                            <label for="size3Modal">King</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-1">Color <small>(WIP)</small></p>
+                        <div class="boxed">
+                            <input type="radio" id="red" name="color" value="Red">
+                            <label class="color-options" for="red" style="background-color: red;"></label>
+
+                            <input type="radio" id="grey" name="color" value="Grey">
+                            <label class="color-options" for="grey" style="background-color: grey;"></label>
+
+                            <input type="radio" id="white" name="color" value="White">
+                            <label class="color-options" for="white" style="background-color: #ffffff;"></label>
+                        </div>
+                    </div>
+                </div>
+                @endif
+
                 @if($product->categories->first()->name == 'Lightings')
                 <div class="row">
                     <div class="col-12">
@@ -301,6 +334,41 @@
 
                             <input type="radio" id="beigeModal" name="colorModal" value="Beige">
                             <label class="color-options" for="beigeModal" style="background-color: #f5f5dc;"></label>
+                        </div>
+                    </div>
+                </div>
+                @endif
+
+                @if($product->categories->last()->name == 'Bedsheets')
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
+                        <p class="mb-1">Sizes <small>(WIP)</small></p>
+                        <hr class="mt-1">
+                        <div class="boxed">
+                            <input type="radio" id="size1Modal" name="sizeModal" value="120cm x 200cm">
+                            <label for="size1Modal">Single</label>
+
+                            <input type="radio" id="size2Modal" name="sizeModal" value="120cm x 200cm">
+                            <label for="size2Modal">Queen</label>
+
+                            <input type="radio" id="size3Modal" name="sizeModal" value="120cm x 200cm">
+                            <label for="size3Modal">King</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-4 text-center text-md-left">
+                        <p class="mb-1">Color <small>(WIP)</small></p>
+                        <hr class="mt-1">
+                        <div class="boxed">
+                            <input type="radio" id="redModal" name="colorModal" value="Red">
+                            <label class="color-options" for="redModal" style="background-color: red;"></label>
+
+                            <input type="radio" id="greyModal" name="colorModal" value="Grey">
+                            <label class="color-options" for="greyModal" style="background-color: grey;"></label>
+
+                            <input type="radio" id="whiteModal" name="colorModal" value="White">
+                            <label class="color-options" for="whiteModal" style="background-color: #ffffff;"></label>
                         </div>
                     </div>
                 </div>
