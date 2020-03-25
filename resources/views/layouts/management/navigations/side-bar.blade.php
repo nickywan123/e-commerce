@@ -3,13 +3,13 @@
         <ul class="nav sidebar-margin-top">
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="nav-icon icon-speedometer icon-color"></i> Profile
+                    <i class="nav-icon icon-user icon-color"></i> Profile
                 </a>
             </li>
            
             <li class="nav-item nav-dropdown">
                 <a class="nav-link nav-dropdown-toggle"  href="#">
-                    <i class="nav-icon icon-speedometer icon-color"></i> Orders
+                    <i class="nav-icon icon-folder icon-color"></i> Orders
                 </a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
@@ -19,22 +19,27 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-plus icon-color"></i> Pending
+                            <i class="nav-icon fa fa-key icon-color"></i>Open
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-plus icon-color"></i> Ready To Ship
+                            <i class="nav-icon fa fa-key icon-color"></i> In Progress
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-plus icon-color"></i> Deleted
+                            <i class="nav-icon fa fa-key icon-color"></i> Delivered
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-plus icon-color"></i> Cancelled
+                            <i class="nav-icon fa fa-key icon-color"></i> Completed
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-key icon-color"></i> Cancelled
                         </a>
                     </li>
 
@@ -44,12 +49,12 @@
       
             <li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
-                    <i class="nav-icon icon-puzzle icon-color"></i> Products
+                    <i class="nav-icon icon-menu icon-color"></i> Products
                 </a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="/management/product" class="nav-link">
-                            <i class="nav-icon fa fa-list icon-color"></i> My Products
+                            <i class="nav-icon fa fa-medal icon-color"></i> My Products
                         </a>
                     </li>
                     <li class="nav-item">
@@ -61,9 +66,15 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="nav-icon icon-speedometer icon-color"></i> Statements
+                    <i class="nav-icon icon-notebook icon-color"></i> Statements
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/shop">
+                    <i class="nav-icon icon-bag icon-color"></i> Shop
+                </a>
+            </li>
+            
 
             <!-- <li class="nav-title">Theme</li>
             <li class="nav-item">

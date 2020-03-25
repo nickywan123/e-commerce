@@ -139,7 +139,7 @@
       <div class="row">
 
       <div class="col-4  offset-1 col-md-6 col-sm-5 font-style" style="font-size:15px; font-weight:bold;" >
-      Remarks: <br><textarea style="width:100%; margin-top:30px;" cols="100" rows="10">
+      Remarks: <br><textarea readonly style="width:100%; margin-top:30px; resize:none;" cols="100" rows="10" >
 
       </textarea>
     </div>

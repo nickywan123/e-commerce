@@ -58325,7 +58325,7 @@ a.category-item:hover {
 
 .topBar .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  color: #00BCD4;
+  color: #00bcd4;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.02);
 }
@@ -58334,7 +58334,7 @@ a.category-item:hover {
 
 .cart-items::-webkit-scrollbar {
   width: 6px;
-  background-color: #ECECEC;
+  background-color: #ececec;
 }
 
 .cart-items::-webkit-scrollbar-thumb {
@@ -58531,7 +58531,7 @@ a.category-item:hover {
 }
 
 .dropdown-menu > li > a:hover {
-  color: #0cd4d2;
+  color: #fbcc34;
 }
 
 /*
@@ -58555,7 +58555,7 @@ a.category-item:hover {
   font-size: 16px;
   text-transform: uppercase;
   /* text-align: center; */
-  color: #0cd4d2;
+  color: #fbcc34;
 }
 
 .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a {
@@ -58567,7 +58567,7 @@ a.category-item:hover {
 }
 
 .navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a:hover {
-  color: #00BCD4;
+  color: #fbcc34;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.02);
 }
@@ -58588,7 +58588,7 @@ a.category-item:hover {
 .navigation-icon {
   font-size: 1.8rem;
   margin-left: 30px;
-  color: #FBCC34;
+  color: #fbcc34;
 }
 
 .navigation-input {
@@ -58725,13 +58725,13 @@ a.category-item:hover {
 
 .margin-right-negative-with-border {
   margin-right: -4px;
-  border-right: 10px solid #FBCC34;
+  border-right: 10px solid #fbcc34;
 }
 
 .my-account-button {
-  color: #FBCC34;
+  color: #fbcc34;
   background-color: #000000;
-  border: 1px solid #FBCC34;
+  border: 1px solid #fbcc34;
   padding-right: 40px;
 }
 
@@ -58740,16 +58740,20 @@ Author: Nicholas
 */
 
 .nav-link {
-  color: #FBCC34;
+  color: #fbcc34;
 }
 
 .btn-register {
   color: black;
-  background-color: #FBCC34;
+  background-color: #fbcc34;
 }
 
 .margin-right-border-color:focus {
-  border-color: #FBCC34;
+  border-color: #fbcc34;
+}
+
+.my-account-icon-color {
+  color: #fbcc34;
 }
 
 #sidebar {
