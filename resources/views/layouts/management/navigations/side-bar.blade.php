@@ -1,12 +1,34 @@
-<div class="sidebar sidebar-bg-color">
-    <nav class="sidebar-nav ">
-        <ul class="nav sidebar-margin-top">
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+<div class="sidebar sidebar-bg-color" >
+    <nav class="sidebar-nav " >
+        <ul class="nav sidebar-margin-top" >
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
                     <i class="nav-icon icon-user icon-color"></i> Profile
                 </a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="/management/profile" class="nav-link">
+                            <i class="nav-icon fa fa-list icon-color"></i> Company Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/management/password" class="nav-link">
+                            <i class="nav-icon fa fa-key icon-color"></i>Change Password
+                        </a>
+                    </li>
+                    @hasrole('panel')
+                    <li class="nav-item">
+                        <a href="/management/PIC" class="nav-link">
+                            <i class="nav-icon fa fa-key icon-color"></i> Person In Charge
+                        </a>
+                    </li>
+                    @endrole
+              
+                 
+
+                </ul>
             </li>
-           
+             @hasrole('panel')
             <li class="nav-item nav-dropdown">
                 <a class="nav-link nav-dropdown-toggle"  href="#">
                     <i class="nav-icon icon-folder icon-color"></i> Orders
@@ -45,7 +67,7 @@
 
                 </ul>
             </li>
-
+         
       
             <li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
@@ -64,8 +86,9 @@
                     </li>
                 </ul>
             </li>
+            @endhasrole
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/management/statements">
                     <i class="nav-icon icon-notebook icon-color"></i> Statements
                 </a>
             </li>
@@ -74,6 +97,8 @@
                     <i class="nav-icon icon-bag icon-color"></i> Shop
                 </a>
             </li>
+            
+        
             
 
             <!-- <li class="nav-title">Theme</li>

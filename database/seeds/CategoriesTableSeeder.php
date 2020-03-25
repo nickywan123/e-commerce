@@ -112,6 +112,21 @@ class CategoriesTableSeeder extends Seeder
             'filename' => $category->slug . '.jpg'
         ]);
 
+           // --
+           $category = null;
+           // --
+   
+           $category = Category::create([
+               'name' => 'Curtain',
+               'slug' => 'curtain',
+               'parent_category_id' => 0
+           ]);
+   
+           $category->image()->create([
+               'path' => 'uploads/images/categories/' . $category->slug . '/',
+               'filename' => $category->slug . '.jpg'
+           ]);
+   
         // --
         $category = null;
         // --

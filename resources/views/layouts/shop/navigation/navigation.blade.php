@@ -67,7 +67,7 @@
                 <form>
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto">
-                            <div class="pb-2">
+                            <div class="pb-2 nav-content-sidebar-collapse">
                                 <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size " name="category">
                                     <option value="all">All Categories <small>(WIP)</small></option>
                                     <!-- <optgroup label="Mens">
@@ -94,7 +94,7 @@
                     <li class="nav-item m-1">
                         <div class="dropdown show">
                             <!-- TODO: Create a class for the style -->
-                            <a class="btn btn-secondary dropdown-toggle my-account-button" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
+                            <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
                                 My Account
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -102,10 +102,10 @@
                                 <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Orders <small>(WIP)</small></a>
                                 <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart <small>(WIP)</small></a>
                                 @hasrole('panel')
-                                <a href="/management" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
+                                <a href="/management/panel" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
                                 @endhasrole
                                 @hasrole('dealer')
-                                <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
+                                <a href="/management/dealer" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                 @endhasrole
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

@@ -25,14 +25,14 @@
 <section id="slideshow" class="hidden-sm">
   <div class="slick ">
     <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage1.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/images/wip3.jpg')}}" alt="">
     </div>
     <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage2.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/images/wip5.jpg')}}" alt="">
     </div>
-    <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage3.jpg')}}" alt="">
-    </div>
+    {{-- <div>
+      <img class="image-slideshow" src="{{asset('/images/WIP-Banner3.jpg')}}" alt="">
+    </div> --}}
   </div>
 </section>
 
@@ -57,14 +57,59 @@
       <div style="border-top: 1px solid #ffcc00; margin-bottom: 20px;" class="w-50-md w-100-sm">
       </div>
     </div>
-    @foreach($popularCategories as $popularCategory)
     <div class="col-6 col-md-2 text-alignment">
-      <a style="color:#ffcc00;" href="/shop/category/{{ $popularCategory->slug }}"><img class="icon-image" src="{{asset('/images/'. $popularCategory->id .'.png')}}" alt="Icon">
-        <h5>{{ $popularCategory->name }}</h5>
+      <a style="color:#ffcc00;" href="/shop/category/bedsheets-and-mattresses"><img class="icon-image" src="{{asset('/images/bedsheet-icon.png')}}" alt="Icon">
+        <h5>Bedsheet</h5>
       </a>
+
     </div>
-    @endforeach
+    <div class="col-6 col-md-2 text-alignment">
+      <a style=" color:#ffcc00;" href="/shop/category/cupboards"><img class="icon-image" src="{{asset('/images/cupboard-icon.png')}}" alt="Icon">
+        <h5>Cupboards</h5>
+      </a>
+
+    </div>
+
+    <div class="col-6 col-md-2 text-alignment">
+      <a style=" color:#ffcc00;" href="/shop/category/tiles"><img class="icon-image" src="{{asset('/images/tiles-icon.png')}}" alt="Icon">
+        <h5>Tiles</h5>
+      </a>
+
+    </div>
+    <div class="col-6 col-md-2 text-alignment">
+      <a style=" color:#ffcc00;" href="/shop/category/wallpapers"><img class="icon-image" src="{{asset('/images/wallpaper-icon.png')}}" alt="Icon">
+        <h5>Wallpaper</h5>
+      </a>
+
+    </div>
+    <div class="col-6 col-md-2 text-alignment">
+      <a style=" color:#ffcc00;" href="/shop/category/lightings"><img class="icon-image" src="{{asset('/images/lighting-icon.png')}}" alt="Icon">
+        <h5>Lighting</h5>
+      </a>
+
+    </div>
+    <div class="col-6 col-md-2 text-alignment">
+      <a style=" color:#ffcc00;" href="/shop/category/paint"><img class="icon-image" src="{{asset('/images/paint-icon.png')}}" alt="Icon">
+        <h5>Paint</h5>
+      </a>
+
+    </div>
+
+    <!-- <div class="col-6 col-md-2 text-alignment">
+      <a style=" color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon">
+        <h5>Furniture</h5>
+      </a>
+
+    </div>
+    <div class="col-6 col-md-2 text-alignment">
+      <a style=" color:#ffcc00;" href="#"><img class="icon-image" src="{{asset('/images/3.png')}}" alt="Icon">
+        <h5>Wiring</h5>
+      </a>
+
+    </div> -->
+
   </div>
+
 </div>
 
 <br>

@@ -40,3 +40,5 @@ Breadcrumbs::for('management.product.create', function ($trail) {
     $trail->parent('management.product');
     $trail->push('Create', route('management.product.create'));
 });
+
+

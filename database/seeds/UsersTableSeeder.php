@@ -141,6 +141,7 @@ class UsersTableSeeder extends Seeder
                 'contact_num' => '0191233333'
             ]
         ]);
+            $dealer1->assignRole('dealer');
 
         // Get current dealer account id
         $currentDealerId = User::largestDealerId();
@@ -181,7 +182,7 @@ class UsersTableSeeder extends Seeder
                 'contact_num' => '0191233333'
             ]
         ]);
-
+        $dealer2->assignRole('dealer');
         // Panel 1
         $panel1 = User::create([
             'account_id' => 1918000001,

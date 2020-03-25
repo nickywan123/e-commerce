@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-<img src="{{asset('/images/inProgress.gif')}}" alt="No Logo">
+
 @endsection

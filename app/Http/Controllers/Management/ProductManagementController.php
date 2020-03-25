@@ -14,7 +14,7 @@ class ProductManagementController extends Controller
      */
     public function index()
     {
-        //
+        return view('management.products.index');
     }
 
     /**
