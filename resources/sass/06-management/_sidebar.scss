@@ -19,6 +19,10 @@
     }
 }
 
+.sidebar .nav-link.active {
+    background-color: #fffcfc;
+}
+
 .sidebar .nav-dropdown.open .nav-link {
     color: #ffcc00;
 }

@@ -12,6 +12,7 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   </head>
 <body>
+  @foreach($purchases as $purchase)
     <div class="container">
         <div class="">
       
@@ -33,16 +34,16 @@
        <tbody class="font-style">
     
          <tr class="table-dotted-line" style="height: 160px;" > 
-           <td>Receiver:</td>
+           <td>Receiver: {{$purchase->user->userInfo->full_name}}</td>
                 
          </tr>
        
          <tr class="table-dotted-line"> 
-           <td>Attention To:</td>
+           <td>Attention To:???</td>
             
          </tr>
          <tr class="table-dotted-line"> 
-           <td>Contact No:</td>
+           <td>Contact No:{{$purchase->user->userContacts[0]->contact_num}}</td>
              
          </tr>
       
@@ -58,15 +59,15 @@
      <tbody class="font-style  ">
   
        <tr class="table-dotted-line" style="height: 160px;  " > 
-         <td >Deliver To:</td>
+         <td >Deliver To:{{$purchase->user->userAddresses[0]->address_1}}</td>
           
        </tr>
        <tr class="table-dotted-line"> 
-         <td>Attention To: </td>
+         <td>Attention To:???? </td>
               
        </tr>
        <tr class="table-dotted-line"> 
-         <td>Contact No:</td>
+         <td>Contact No:{{$purchase->user->userContacts[0]->contact_num}}</td>
         
        </tr>
      
@@ -81,31 +82,32 @@
           <th class="table-secondary" style="color:red; text-align:center; font-size:10px; " colspan="2"  >INVOICE/RECEIPT</th>
       </thead>
    <tbody class="font-style">
-
+ 
      <tr > 
        <td>Number</td>
-       <td>BJSDSHDSO2132</td>      
+       <td>{{$purchase->purchase_number}}</td>      
      </tr>
      <tr> 
        <td>Date</td>
-       <td>28/02/2020</td>      
+       <td>{{$purchase->purchase_date}}</td>      
      </tr>
      <tr> 
        <td>Delivery Date</td>
-       <td>03/04/2020</td>      
+       <td>???</td>      
      </tr>
      <tr> 
        <td>Agent Code</td>
-       <td>XSDSDS</td>      
+       <td>???</td>      
      </tr>
      <tr> 
        <td>Credit Terms</td>
-       <td>Cash</td>      
+       <td>???</td>      
      </tr>
    </tbody>
     </table>
   </div>
 </div>
+
    </div>
       
       <div class="font-style"  style="font-size:10px; ">
@@ -124,12 +126,12 @@
       <tbody>
       <tr style="height:500px;" >
       <td  class="center">1</td>
-      <td class="left strong">E3W453</td>
-      <td class="left"> Longest wire ever</td>
+      <td class="left strong">{{$purchase->orders[0]->items[0]->product_id}}</td>
+      <td class="left"> Pillow</td>
       
-      <td class="center">1</td>
-        <td class="left">999,00</td>
-      <td class="right">999,00</td>
+      <td class="center">{{$purchase->orders[0]->items[0]->quantity}}</td>
+        <td class="left">{{$purchase->orders[0]->items[0]->subtotal_price}}</td>
+      <td class="right">{{$purchase->orders[0]->items[0]->subtotal_price*$purchase->orders[0]->items[0]->quantity}}</td>
       
       </tr>
       
@@ -221,7 +223,7 @@
           
           </div>
      </div>
-       
+     @endforeach  
 
       <div class="row">    
       <div class="col-5 col-md-5 font-style" style="margin-left: 20px;">

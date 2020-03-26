@@ -32,11 +32,6 @@
     transition: all 0.3s;
 }
 
-#dismiss:hover {
-    background: #fff;
-    color: #7386d5;
-}
-
 .overlay {
     display: none;
     position: fixed;
@@ -74,12 +69,6 @@
     color: #212529;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-#sidebar ul li a:hover {
-    color: #212529;
-    background: #fff;
-    text-decoration: none;
 }
 
 #sidebar ul li.active > a,
@@ -135,11 +124,23 @@ a.article:hover {
     max-width: 100px;
 }
 
-
 /* Author Nick*/
 
 .font-style-list {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (min-width: 768px) {
+    #sidebar ul li a:hover {
+        color: #212529;
+        background: #fff;
+        text-decoration: none;
+    }
+
+    #dismiss:hover {
+        background: #fff;
+        color: #7386d5;
+    }
 }
 
 @media (max-width: 767px) {

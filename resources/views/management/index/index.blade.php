@@ -1,8 +1,8 @@
 @extends('layouts.management.main')
 
-@section('breadcrumbs')
+{{-- @section('breadcrumbs')
 {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs-management', 'management.product.create') }}
-@endsection
+@endsection --}}
 
 @section('content')
 

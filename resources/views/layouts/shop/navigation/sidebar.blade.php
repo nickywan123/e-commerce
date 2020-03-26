@@ -11,7 +11,7 @@
         <h4 style="color: #212529; padding: 5px 10px;"><strong>Shop By Category</strong></h4>
         <li>
             @foreach($categories as $category)
-            <a href="/shop/category/{{ $category->slug }}">{{ $category->name }}</a>
+            <a style="text-decoration:none;" href="/shop/category/{{ $category->slug }}">{{ $category->name }}</a>
             @endforeach
             <!-- <a href="/category/bedsheet-mattress">Bedsheet & Mattress</a>
             <a href="/category/bedsheet-mattress">Cupboard</a>

@@ -15,25 +15,15 @@ Route::get('/', 'Guest\GuestController@index');
 
 Route::get('/login', 'Auth\LoginController@showLoginForm');
 
-// Temporarily only
-Route::get('/invoice', function () {
+// Return invoice 
+Route::get('/shop/invoice', 'Purchase\PurchaseController@invoiceCustomer');
 
-    return view("backups.dashboard_receipts.invoice");
-});
 
 Route::get('/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
   //Return Work In progress page
   Route::view('/wip', 'errors.wip');
-/** Author Nicholas
- * Hardcode (Temporarily) to show product category for each category
- */
 
-Route::view('/category/bedsheet-mattress', 'shop.catalog.backups.bedsheet-mattress');
-
-Route::view('/category/curtain', 'shop.catalog.backups.curtain');
-Route::view('/category/curtain/pinch-pleat', 'shop.catalog.backups.pinch-pleat');
-Route::view('/category/bedsheet-mattress/canopy-bed', 'shop.catalog.backups.canopy-bed');
-
+  Route::get('/shop/profile', 'Shop\ProfileController@index');
 // // Shop Routes
 // Route::prefix('shop')->group(function () {
 //     // Home/Index page for shop.

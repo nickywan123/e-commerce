@@ -17,13 +17,11 @@
     
 
     <ul class="nav navbar-nav ml-auto">
-        @hasrole('panel')
-        <h5 class="welcome-panel-text"  >Welcome Panel</h5>
-        @endhasrole
-        @hasrole('dealer')
-        <h5 class="welcome-panel-text"  >Welcome Dealer</h5>
-        @endhasrole
-        <li class="nav-item dropdown">
+       
+       
+        <h5 style="margin-right:10px" class="welcome-text"  >Welcome, {{Auth::user()->userInfo->full_name}}</h5>
+       
+        {{-- <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <img class="img-avatar" src="{{asset('images/panel-company.png')}}" alt="{{ Auth::user()->userInfo->full_name }}">
             </a>
@@ -55,7 +53,7 @@
                     @csrf
                 </form>
             </div>
-        </li>
+        </li> --}}
     </ul>
     {{-- <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
         <span class="navbar-toggler-icon"></span>

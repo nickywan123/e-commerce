@@ -58787,11 +58787,6 @@ Author: Nicholas
   transition: all 0.3s;
 }
 
-#dismiss:hover {
-  background: #fff;
-  color: #7386d5;
-}
-
 .overlay {
   display: none;
   position: fixed;
@@ -58829,12 +58824,6 @@ Author: Nicholas
   display: block;
   color: #212529;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-#sidebar ul li a:hover {
-  color: #212529;
-  background: #fff;
-  text-decoration: none;
 }
 
 #sidebar ul li.active > a,
@@ -58895,6 +58884,19 @@ a.article:hover {
 
 .font-style-list {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (min-width: 768px) {
+  #sidebar ul li a:hover {
+    color: #212529;
+    background: #fff;
+    text-decoration: none;
+  }
+
+  #dismiss:hover {
+    background: #fff;
+    color: #7386d5;
+  }
 }
 
 @media (max-width: 767px) {
@@ -58998,7 +59000,7 @@ a.hover-white:hover {
   background-color: #ffcc00;
 }
 
-.welcome-panel-text {
+.welcome-text {
   color: #ffcc00;
   margin-top: 5px;
   font-size: 15px;
@@ -59055,6 +59057,10 @@ a.hover-white:hover {
 
 .sidebar .nav-link:hover .icon-color {
   color: #ffcc00;
+}
+
+.sidebar .nav-link.active {
+  background-color: #fffcfc;
 }
 
 .sidebar .nav-dropdown.open .nav-link {

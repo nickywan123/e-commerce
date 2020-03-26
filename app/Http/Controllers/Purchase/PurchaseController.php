@@ -114,4 +114,23 @@ class PurchaseController extends Controller
     {
         //
     }
+
+
+
+
+ /**
+  * Invoice response after customer purchase item
+  */
+  public function invoiceCustomer(){
+      
+    $user = User::find(Auth::user()->id);
+    $purchases = $user->purchases;
+    // return $purchases;
+    return view('backups.dashboard_receipts.invoice')->with('purchases', $purchases);
+
+      
+
+
+  }
+
 }

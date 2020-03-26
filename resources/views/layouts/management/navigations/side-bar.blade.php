@@ -6,20 +6,29 @@
                     <i class="nav-icon icon-user icon-color"></i> Profile
                 </a>
                 <ul class="nav-dropdown-items">
+                   @hasrole('dealer')
                     <li class="nav-item">
                         <a href="/management/profile" class="nav-link">
-                            <i class="nav-icon fa fa-list icon-color"></i> Company Profile
+                            <i class="nav-icon fa fa-list icon-color"></i> Profile
                         </a>
                     </li>
+                    @endhasrole
+                    @hasrole('panel')
+                    <li class="nav-item">
+                        <a href="/management/profile" class="nav-link">
+                            <i class="nav-icon fa fa-list icon-color"></i> Company Info
+                        </a>
+                    </li>
+                    @endhasrole
                     <li class="nav-item">
                         <a href="/management/password" class="nav-link">
-                            <i class="nav-icon fa fa-key icon-color"></i>Change Password
+                            <i class="nav-icon fa fa-key icon-color"></i>Edit Password
                         </a>
                     </li>
                     @hasrole('panel')
                     <li class="nav-item">
                         <a href="/management/panel/person-in-charge" class="nav-link">
-                            <i class="nav-icon fa fa-key icon-color"></i> Person In Charge
+                            <i class="nav-icon fa fa-key icon-color"></i> Assignee
                         </a>
                     </li>
                     @endrole
@@ -96,10 +105,22 @@
                 <a class="nav-link" href="/shop">
                     <i class="nav-icon icon-bag icon-color"></i> Shop
                 </a>
+                
             </li>
             
+            <li class="nav-item">
+                <a class="nav-link"  href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    <i class="nav-icon icon-tag icon-color"></i> Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>
         
+       
             
+         
 
             <!-- <li class="nav-title">Theme</li>
             <li class="nav-item">
@@ -277,3 +298,4 @@
     </nav>
     {{-- <button class="sidebar-minimizer brand-minimizer" type="button"></button> --}}
 </div>
+

@@ -54,8 +54,9 @@ class ManagementController extends Controller
         return view('management.dealer.index');
     }
 
-    // View Profile 
+    // View Profile of the dealer/panel
     public function profile(){
+       //$user=Auth::user();
         return view('management.dealer.profile');
     }
 
