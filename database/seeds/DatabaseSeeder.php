@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             GlobalTablesSeeder::class,
             PermissionsTableSeeder::class, // Important -> Registrations and logins uses roles and permissions.
-            UsersTableSeeder::class,
+            // UsersTableSeeder::class,
             CategoriesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
             QualitiesTableSeeder::class, // Important -> Need to have all of the rows to correctly show product's quality.
             ProductsTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
-          
+
         ]);
     }
 }

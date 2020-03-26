@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Models\Users;
+namespace App\Models\Users\Panels;
 
 use Illuminate\Database\Eloquent\Model;
 
-// Model to handle User Info
-
-class UserInfo extends Model
+class PanelInfo extends Model
 {
     // Set table
-    protected $table = 'user_infos';
+    protected $table = 'panel_infos';
 
     // Set timestamps
     public $timestamps = true;
@@ -21,8 +19,7 @@ class UserInfo extends Model
     protected $fillable = [
         'account_id',
         'full_name',
-        'nric',
-        'referrer_id'
+        'nric'
     ];
 
     /**
@@ -34,25 +31,17 @@ class UserInfo extends Model
     }
 
     /**
-     * Get the user contact associated with the user.
-     */
-    public function contacts()
-    {
-        return $this->hasMany('App\Models\Users\UserContact', 'account_id', 'account_id');
-    }
-
-    /**
      * Get all of the user's addresses.
      */
     public function addresses()
     {
-        return $this->hasMany('App\Models\Users\UserAddress', 'account_id', 'account_id');
+        return $this->hasMany('App\Models\User\UserAddress', 'account_id', 'account_id');
     }
 
     /**
-     * Get largest customer account id.
+     * Get largest panel account id.
      */
-    public function scopeLargestCustomerId($query)
+    public function scopeLargestPanelId($query)
     {
         return $query->max('account_id');
     }

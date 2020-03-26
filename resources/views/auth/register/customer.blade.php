@@ -33,16 +33,25 @@
                             <div class="form-row register-info">
                                 <div class="form-group col-md-12">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" class="form-control " required id="email" placeholder="Email">
+                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" required id="email" placeholder="Email" value="{{ old('email') }}">
+                                    @error('email')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="password">Password</label>
                                     <input type="password" name="password" class="form-control " required id="password">
+                                    @error('password')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="password-confirm">Confirm Password</label>
                                     <input id="password-confirm" type="password" class="form-control " name="password_confirmation" required autocomplete="new-password">
+                                    @error('password_confirmation')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -60,57 +69,87 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="full_name">Full Name (as per NRIC)</label>
-                                    <input type="text" name="full_name" class="form-control" id="full_name" required placeholder="Full Name">
+                                    <input type="text" name="full_name" class="form-control @error('full_name') is-invalid @enderror" id="full_name" required placeholder="Full Name" value="{{ old('full_name') }}">
+                                    @error('full_name')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="nric">NRIC Number</label>
-                                    <input type="text" name="nric" class="form-control" id="nric" placeholder="(e.g 930502-10-2342)">
+                                    <label for="nric">NRIC Number <small>(Numbers Only)</small></label>
+                                    <input type="text" name="nric" class="form-control @error('nric') is-invalid @enderror" id="nric" placeholder="(e.g 930502102342)" value="{{ old('nric') }}">
+                                    @error('nric')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="address_1">Address Line 1</label>
-                                    <input type="text" name="address_1" id="address_1" class="form-control" placeholder="Residential Address Line 1">
+                                    <input type="text" name="address_1" id="address_1" class="form-control @error('address_1') is-invalid @enderror" placeholder="Residential Address Line 1" value="{{ old('address_1') }}">
+                                    @error('address_1')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="address_1">Address Line 2</label>
-                                    <input type="text" name="address_2" id="address_2" class="form-control" placeholder="Residential Address Line 1">
+                                    <input type="text" name="address_2" id="address_2" class="form-control @error('address_2') is-invalid @enderror" placeholder="Residential Address Line 1" value="{{ old('address_2') }}">
+                                    @error('address_2')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="address_1">Address Line 3</label>
-                                    <input type="text" name="address_3" id="address_3" class="form-control" placeholder="Residential Address Line 1">
+                                    <input type="text" name="address_3" id="address_3" class="form-control @error('address_3') is-invalid @enderror" placeholder="Residential Address Line 1" value="{{ old('address_3') }}">
+                                    @error('address_3')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="postcode">Postcode</label>
-                                    <input type="text" name="postcode" id="postcode" class="form-control" placeholder="Postcode">
+                                    <input type="text" name="postcode" id="postcode" class="form-control @error('postcode') is-invalid @enderror" placeholder="Postcode" value="{{ old('postcode') }}">
+                                    @error('postcode')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="city">City</label>
-                                    <input type="text" name="city" id="city" class="form-control" placeholder="City">
+                                    <input type="text" name="city" id="city" class="form-control @error('city') is-invalid @enderror" placeholder="City" value="{{ old('city') }}">
+                                    @error('city')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="state">State</label>
-                                    <select name="state" id="state" class="form-control">
+                                    <select name="state" id="state" class="form-control @error('state') is-invalid @enderror">
                                         <option disabled selected>Choose your state..</option>
                                         @foreach($states as $state)
                                         <option class="text-capitalize" value="{{ $state->id }}">{{ $state->name }}</option>
                                         @endforeach
                                     </select>
+                                    @error('state')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="contact_number_home">Contact Number (Home)</label>
-                                    <input type="text" name="contact_number_home" id="contact_number_home" class="form-control" placeholder="Home Contact Number">
+                                    <input type="text" name="contact_number_home" id="contact_number_home" class="form-control @error('contact_number_home') is-invalid @enderror" placeholder="Home Contact Number" value="{{ old('contact_number_home') }}">
+                                    @error('contact_number_home')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="contact_number_mobile">Contact Number (Mobile)</label>
-                                    <input type="text" name="contact_number_mobile" id="contact_number_mobile" class="form-control" placeholder="Mobile Contact Number">
+                                    <input type="text" name="contact_number_mobile" id="contact_number_mobile" class="form-control @error('contact_number_mobile') is-invalid @enderror" placeholder="Mobile Contact Number" value="{{ old('contact_number_mobile') }}">
+                                    @error('contact_number_mobile')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -118,11 +157,11 @@
                                 <div class="col-12">
                                     <label style="display: block;" for="existing_customer_options">Are you an existing Destiny Code customer?</label>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" class="form-check-input" id="existing_customer" name="existing_customer" value="0" checked>
+                                        <input type="radio" class="form-check-input" id="existing_customer-n" name="existing_customer" value="0" checked>
                                         <label class="form-check-label" for="existing_customer">No</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" class="form-check-input" id="existing_customer" name="existing_customer" value="1">
+                                        <input type="radio" class="form-check-input" id="existing_customer-y" name="existing_customer" value="1">
                                         <label class="form-check-label" for="existing_customer">Yes</label>
                                     </div>
                                 </div>
@@ -432,8 +471,8 @@
                                     <canvas class="display-block signature-pad" style="touch-action: none;"></canvas>
                                     <p id="signatureError" name="signatureError" style="color: red; display: none;">Please provide your signature.</p>
                                     <div class="p-1 text-right">
-                                        <button id="resetSignature" class="btn btn-sm" style="background-color: lightblue;">Reset</button>
-                                        <button id="saveSignature" class="btn btn-sm" style="background-color: #fbcc34;">Save</button>
+                                        <button id="resetSignature" type="button" class="btn btn-sm btn-info" style="background-color: lightblue;">Reset</button>
+                                        <!-- <button id="saveSignature" type="button" class="btn btn-sm" style="background-color: #fbcc34;">Save</button> -->
                                     </div>
                                     <input type="hidden" name="signature" id="signatureInput">
                                 </div>
@@ -531,7 +570,7 @@
     // Variablie initialization.
     var canvas = document.querySelector("canvas");
     // let canvas = document.querySelector('.signature-pad');
-    const signatureSaveButton = document.getElementById("saveSignature");
+    // const signatureSaveButton = document.getElementById("saveSignature");
     const signatureResetButton = document.getElementById("resetSignature");
     const signatureError = document.getElementById("signatureError");
     const signatureInput = document.getElementById("signatureInput");
@@ -547,6 +586,7 @@
         nextTab = currentTab.next('li');
     });
 
+    // TODO: Not needed as each button click will need to validate the form fields first.
     // Handles next button click.
     // $('.next-button').click(function() {
     //     currentTab.removeClass('active');
@@ -564,16 +604,16 @@
         signaturePad.clear();
     });
 
+    // TODO: Not needed as submiting the form will automatically inject the signature into an input field.
     // Save signature pad as data url.
-    signatureSaveButton.addEventListener("click", function(event) {
-        if (signaturePad.isEmpty()) {
-            signatureError.style.display = "block";
-        } else {
-            signatureUrl = signaturePad.toDataURL();
-            signatureInput.value = signatureUrl;
-        }
-    });
-
+    // signatureSaveButton.addEventListener("click", function(event) {
+    //     if (signaturePad.isEmpty()) {
+    //         signatureError.style.display = "block";
+    //     } else {
+    //         signatureUrl = signaturePad.toDataURL();
+    //         signatureInput.value = signatureUrl;
+    //     }
+    // });
 
     // Custom validator for postcode.
     jQuery.validator.addMethod("postcode", function(value, element) {
@@ -603,8 +643,8 @@
             },
             nric: {
                 required: true,
-                minlength: 14,
-                maxlength: 14
+                minlength: 12,
+                maxlength: 12
             },
             address_1: {
                 required: true,
@@ -629,20 +669,20 @@
                 required: true
             },
             contact_number_home: {
-                required: '#contact_number_mobile:blank',
+                required: true,
                 digits: true,
                 minlength: 10,
                 maxlength: 15
             },
             contact_number_mobile: {
-                required: '#contact_number_home:blank',
+                required: true,
                 digits: true,
                 minlength: 10,
                 maxlength: 15
             },
-            existing_customer: {
-                required: true
-            },
+            // existing_customer: {
+            //     required: true
+            // },
             signatureError: {
                 required: true
             },
@@ -708,7 +748,11 @@
 
     // validate fields in 1st tab
     $('#next-btn').click(function() {
-        if ($("#register-form").validate().element('#email') && $("#register-form").validate().element('#password') && $("#register-form").validate().element('#password-confirm')) {
+        if (
+            $("#register-form").validate().element('#email') &&
+            $("#register-form").validate().element('#password') &&
+            $("#register-form").validate().element('#password-confirm')
+        ) {
             nextTab.find('a').trigger('click');
         }
     });
@@ -716,16 +760,22 @@
     // validate fields in 2nd tab
     $('#next-btn2').click(function() {
         if (
-            $("#register-form").validate().element('#full_name') && $("#register-form").validate().element('#nric') && $("#register-form").validate().element('#address_1') && $("#register-form").validate().element('#address_2') && $("#register-form").validate().element('#address_3') && $("#register-form").validate().element('#postcode') &&
-            $("#register-form").validate().element('#city') && $("#register-form").validate().element('#state') && $("#register-form").validate().element('#contact_number_home') &&
-            $("#register-form").validate().element('#contact_number_mobile') && $("#register-form").validate().element('#existing_customer')
+            $("#register-form").validate().element('#full_name') &&
+            $("#register-form").validate().element('#nric') &&
+            $("#register-form").validate().element('#address_1') &&
+            $("#register-form").validate().element('#address_2') &&
+            $("#register-form").validate().element('#address_3') &&
+            $("#register-form").validate().element('#postcode') &&
+            $("#register-form").validate().element('#city') &&
+            $("#register-form").validate().element('#state') &&
+            $("#register-form").validate().element('#contact_number_home') &&
+            $("#register-form").validate().element('#contact_number_mobile')
         ) {
             nextTab.find('a').trigger('click');
         }
     });
 
-    // validate signature input in 3rd tab
-
+    // Validate the signature pad before submitting form.
     $('#submit').click(function(e) {
         if (signaturePad.isEmpty()) {
             signatureError.style.display = "block";

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserInfosTable extends Migration
+class CreatePanelInfosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateUserInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_infos', function (Blueprint $table) {
+        Schema::create('panel_infos', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('account_id')->unique();
-            $table->string('full_name');
-            $table->string('nric');
-            $table->integer('referrer_id');
+            $table->string('company_name');
+            $table->string('ssm_number');
+            $table->string('company_email');
+            $table->string('pic_name');
+            $table->string('pic_nric');
+            $table->string('pic_contact');
+            $table->string('pic_email');
             $table->timestamps();
         });
     }
@@ -30,6 +34,6 @@ class CreateUserInfosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_infos');
+        Schema::dropIfExists('panel_infos');
     }
 }

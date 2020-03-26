@@ -4,6 +4,7 @@ namespace App\Models\Users;
 
 use Illuminate\Database\Eloquent\Model;
 
+// model to handle user addresses
 class UserAddress extends Model
 {
     // Set table
@@ -21,11 +22,10 @@ class UserAddress extends Model
         'address_2',
         'address_3',
         'postcode',
-        'city',
         'state_id',
         'is_shipping_address',
         'is_residential_address',
-        'is_mailing_address'
+        'is_correspondence_address'
     ];
 
     /**

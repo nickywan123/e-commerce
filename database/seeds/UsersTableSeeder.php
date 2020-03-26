@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
                 'address_3' => 'Address line 3',
                 'postcode' => '42000',
                 'city' => 'Kuala Lumpur',
-                'state' => 1,
+                'state_id' => 1,
                 'is_shipping_address' => 1
             ],
             [
@@ -48,7 +48,7 @@ class UsersTableSeeder extends Seeder
                 'address_3' => 'Address line 3',
                 'postcode' => '68000',
                 'city' => 'Kuala Lumpur',
-                'state' => 2,
+                'state_id' => 2,
             ]
         ]);
 
@@ -90,7 +90,7 @@ class UsersTableSeeder extends Seeder
             'address_3' => 'Address line 3',
             'postcode' => '42000',
             'city' => 'Kuala Lumpur',
-            'state' => 1,
+            'state_id' => 1,
             'is_shipping_address' => 1
         ]);
 
@@ -128,7 +128,7 @@ class UsersTableSeeder extends Seeder
             'address_3' => 'Address line 3',
             'postcode' => '42000',
             'city' => 'Kuala Lumpur',
-            'state' => 1,
+            'state_id' => 1,
             'is_shipping_address' => 1
         ]);
 
@@ -141,7 +141,7 @@ class UsersTableSeeder extends Seeder
                 'contact_num' => '0191233333'
             ]
         ]);
-            $dealer1->assignRole('dealer');
+        $dealer1->assignRole('dealer');
 
         // Get current dealer account id
         $currentDealerId = User::largestDealerId();
@@ -170,7 +170,7 @@ class UsersTableSeeder extends Seeder
             'address_3' => 'Address line 3',
             'postcode' => '42000',
             'city' => 'Kuala Lumpur',
-            'state' => 1,
+            'state_id' => 1,
         ]);
 
         $dealer2->userContacts()->createMany([
@@ -207,7 +207,7 @@ class UsersTableSeeder extends Seeder
             'address_3' => 'Address line 3',
             'postcode' => '42000',
             'city' => 'Kuala Lumpur',
-            'state' => 1,
+            'state_id' => 1,
             'is_shipping_address' => 1
         ]);
 
@@ -251,7 +251,7 @@ class UsersTableSeeder extends Seeder
             'address_3' => 'Address line 3',
             'postcode' => '42000',
             'city' => 'Kuala Lumpur',
-            'state' => 1,
+            'state_id' => 1,
             'is_shipping_address' => 1
         ]);
 
@@ -294,7 +294,7 @@ class UsersTableSeeder extends Seeder
             'address_3' => 'Address line 3',
             'postcode' => '42000',
             'city' => 'Kuala Lumpur',
-            'state' => 1,
+            'state_id' => 1,
             'is_shipping_address' => 1
         ]);
 

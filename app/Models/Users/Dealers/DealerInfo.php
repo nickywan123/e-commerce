@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Models\Users;
+namespace App\Models\Users\Dealers;
 
 use Illuminate\Database\Eloquent\Model;
 
-// Model to handle User Info
-
-class UserInfo extends Model
+class DealerInfo extends Model
 {
     // Set table
-    protected $table = 'user_infos';
+    protected $table = 'dealer_infos';
 
     // Set timestamps
     public $timestamps = true;
@@ -21,8 +19,7 @@ class UserInfo extends Model
     protected $fillable = [
         'account_id',
         'full_name',
-        'nric',
-        'referrer_id'
+        'nric'
     ];
 
     /**
@@ -34,14 +31,6 @@ class UserInfo extends Model
     }
 
     /**
-     * Get the user contact associated with the user.
-     */
-    public function contacts()
-    {
-        return $this->hasMany('App\Models\Users\UserContact', 'account_id', 'account_id');
-    }
-
-    /**
      * Get all of the user's addresses.
      */
     public function addresses()
@@ -50,10 +39,11 @@ class UserInfo extends Model
     }
 
     /**
-     * Get largest customer account id.
+     * Get largest dealer account id.
      */
-    public function scopeLargestCustomerId($query)
+    public function scopeLargestDealerId($query)
     {
+        // return $this->where('account_id', 'LIKE', '1911%')->max('account_id');
         return $query->max('account_id');
     }
 }

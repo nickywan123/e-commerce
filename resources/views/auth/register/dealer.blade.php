@@ -214,11 +214,11 @@
                                     <input type="text" name="company_address_1" id="company_address_1" class="form-control" placeholder="Company Address Line 1">
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="company_address_1">Company Address Line 2</label>
+                                    <label for="company_address_2">Company Address Line 2</label>
                                     <input type="text" name="company_address_2" id="company_address_2" class="form-control" placeholder="Company Address Line 1">
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="company_address_1">Company Address Line 3</label>
+                                    <label for="company_address_3">Company Address Line 3</label>
                                     <input type="text" name="company_address_3" id="company_address_3" class="form-control" placeholder="Company Address Line 1">
                                 </div>
                             </div>

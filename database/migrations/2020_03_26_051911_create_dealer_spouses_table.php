@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserInfosTable extends Migration
+class CreateDealerSpousesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateUserInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_infos', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('account_id')->unique();
-            $table->string('full_name');
-            $table->string('nric');
-            $table->integer('referrer_id');
+        Schema::create('dealer_spouses', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateUserInfosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_infos');
+        Schema::dropIfExists('dealer_spouses');
     }
 }
