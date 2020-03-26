@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\Users\User;
 use App\Http\Controllers\Controller;
+use App\Models\Dealers\Spouse;
 use App\Models\Globals\Employment;
 use App\Models\Globals\Gender;
 use App\Models\Globals\Marital;
 use App\Models\Globals\Race;
 use App\Models\Globals\State;
+use App\Models\Users\Dealers\DealerInfo;
+use App\Models\Users\Panels\PanelInfo;
 use App\Models\Users\UserAddress;
 use App\Models\Users\UserContact;
 use App\Models\Users\UserInfo;
@@ -359,45 +362,103 @@ class RegisterController extends Controller
             $userContactMobile->is_mobile = 1;
             $userContactMobile->save();
 
-            // $user = User::create([
-            //     'email' => $data['email'],
-            //     'password' => Hash::make($data['password'])
-            // ]);
-
-            // $user->userInfo()->create([
-            //     'account_id' => $largestCustomerId,
-            //     'full_name' => $data['full_name'],
-            //     'nric' => $data['nric'],
-            //     'referrer_id' => 0
-            // ]);
-
-            // $user->userInfo->addresses()->create([
-            //     'address_1' => $data['address_1'],
-            //     'address_2' => $data['address_2'],
-            //     'address_3' => $data['address_3'],
-            //     'postcode' => $data['postcode'],
-            //     'city' => $data['city'],
-            //     'state_id' => $data['state'],
-            //     'is_shipping_address' => 1,
-            //     'is_residential_address' => 1,
-            //     'is_mailing_address' => 1
-            // ]);
+            $user->assignRole('customer');
         } elseif ($data['registrationFor'] == 'dealer') {
             // Register dealer.
-            $user = User::create([
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'account_id' => User::largestDealerId() + 1
-            ]);
 
-            $user->userInfo()->create([
-                'full_name' => $data['full_name'],
-                'nric' => $data['nric'],
-                'race' => $data['race_id'],
-                'gender' => $data['gender_id'],
-                'date_of_birth' => $data['date_of_birth'],
-                'marital_status_id' => $data['marital_id']
-            ]);
+            // Users table.
+            $user = new User;
+            $user->email = $data['email'];
+            $user->password = Hash::make($data['password']);
+            $user->save();
+
+            // Generating new customer account id.
+            $largestCustomerId = 0;
+            if (UserInfo::all()->count() == 0) {
+                $largestCustomerId = 1913000001;
+            } else {
+                $largestCustomerId = UserInfo::largestCustomerId() + 1;
+            }
+
+            // Generating new dealer account id.
+            $largestDealerId = 0;
+            if (DealerInfo::all()->count() == 0) {
+                $largestDealerId = 1913000001;
+            } else {
+                $largestDealerId = DealerInfo::largestCustomerId() + 1;
+            }
+
+            // User_infos table.
+            $userInfo = new UserInfo;
+            $userInfo->user_id = $user->id;
+            $userInfo->account_id = $largestCustomerId;
+            $userInfo->full_name = $data['full_name'];
+            $userInfo->nric = $data['nric'];
+            $userInfo->referrer_id = 0;
+            $userInfo->save();
+
+            $dealerInfo = new DealerInfo;
+            $dealerInfo->user_id = $user->id;
+            $dealerInfo->account_id = $largestDealerId;
+            $dealerInfo->full_name = $data['full_name'];
+            $dealerInfo->nric = $data['nric'];
+            $dealerInfo->date_of_birth = $data['date_of_birth'];
+            $dealerInfo->gender_id = $data['gender_id'];
+            $dealerInfo->race_id = $data['race_id'];
+            $dealerInfo->marital_id = $data['marital_id'];
+            $dealerInfo->referrer_id = $data['introducer_id'];
+            $dealerInfo->save();
+
+            // User_addresses table.
+            $userAddress = new UserAddress;
+            $userAddress->account_id = $userInfo->account_id;
+            $userAddress->address_1 = $data['address_1'];
+            $userAddress->address_2 = $data['address_2'];
+            $userAddress->address_3 = $data['address_3'];
+            $userAddress->postcode = $data['postcode'];
+            $userAddress->city = $data['city'];
+            $userAddress->state_id = $data['state'];
+            $userAddress->is_shipping_address = 1;
+            $userAddress->is_residential_address = 1;
+            $userAddress->is_mailing_address = 1;
+            $userAddress->save();
+
+            // User_contacts table (Home).
+            $userContactHome = new UserContact;
+            $userContactHome->account_id = $userInfo->account_id;
+            $userContactHome->contact_num = $data['contact_number_home'];
+            $userContactHome->is_home = 1;
+            $userContactHome->save();
+
+            // User_contacts table (Mobile).
+            $userContactMobile = new UserContact;
+            $userContactMobile->account_id = $userInfo->account_id;
+            $userContactMobile->contact_num = $data['contact_number_mobile'];
+            $userContactMobile->is_mobile = 1;
+            $userContactMobile->save();
+
+            $dealerSpouse = new Spouse;
+            $dealerSpouse->account_id = $userInfo->account_id;
+            $dealerSpouse->spouse_name = $data['spouse_full_name'];
+            $dealerSpouse->spouse_nric = $data['spouse_nric'];
+            $dealerSpouse->spouse_date_of_birth = $data['spouse_date_of_birth'];
+            $dealerSpouse->spouse_occupation = $data['spouse_occupation'];
+            $dealerSpouse->spouse_contact_office = $data['spouse_contact_office'];
+            $dealerSpouse->spouse_contact_mobile = $data['spouse_contact_mobile'];
+            $dealerSpouse->spouse_email = $data['spouse_email'];
+            $dealerSpouse->save();
+
+            $dealerEmployment = new Employment;
+            $dealerEmployment->account_id = $userInfo->account_id;
+            $dealerEmployment->employment_type = $data['employment_id'];
+            $dealerEmployment->company_name = $data['employment_name'];
+            $dealerEmployment->company_address_1 = $data['company_address_1'];
+            $dealerEmployment->company_address_2 = $data['company_address_2'];
+            $dealerEmployment->company_address_3 = $data['company_address_3'];
+            $dealerEmployment->company_postcode = $data['company_postcode'];
+            $dealerEmployment->company_city = $data['company_city'];
+            $dealerEmployment->company_state_id = $data['company_state'];
+            $dealerEmployment->save();
 
             $user->assignRole('dealer');
         } elseif ($data['registrationFor'] == 'panel') {

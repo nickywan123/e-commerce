@@ -33,7 +33,10 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Email" value="{{ old('email') }}">
+                                    @error('email')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group col-md-12">
@@ -61,18 +64,27 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="full_name">Full Name (as per NRIC)</label>
-                                    <input type="text" name="full_name" class="form-control" id="full_name" placeholder="Full Name">
+                                    <input type="text" name="full_name" class="form-control @error('full_name') is-invalid @enderror" id="full_name" placeholder="Full Name" value="{{ old('full_name') }}">
+                                    @error('full_name')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="nric">NRIC Number</label>
-                                    <input type="text" name="nric" class="form-control" id="nric" placeholder="NRIC Number">
+                                    <label for="nric">NRIC Number <small>(Numbers Only)</small></label>
+                                    <input type="text" name="nric" class="form-control @error('nric') is-invalid @enderror" id="nric" placeholder="NRIC Number" value="{{ old('nric') }}">
+                                    @error('nric')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="date_of_birth">Date Of Birth</label>
-                                    <input type="date" class="form-control datepicker" id="date_of_birth" name="date_of_birth" placeholder="Date of birth">
+                                    <input type="date" class="form-control datepicker @error('date_of_birth') is-invalid @enderror" id="date_of_birth" name="date_of_birth" placeholder="Date of birth" value="{{ old('date_of_birth') }}">
+                                    @error('date_of_birth')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="gender">Gender</label>
@@ -106,26 +118,41 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="address_1">Residential Address Line 1</label>
-                                    <input type="text" name="address_1" id="address_1" class="form-control" placeholder="Residential Address Line 1">
+                                    <input type="text" name="address_1" id="address_1" class="form-control @error('address_1') is-invalid @enderror" placeholder="Residential Address Line 1" value="{{ old('address_1') }}">
+                                    @error('address_1')
+                                    <small class="form-text text-danger">{{ $message }}}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="address_1">Residential Address Line 2</label>
-                                    <input type="text" name="address_2" id="address_2" class="form-control" placeholder="Residential Address Line 1">
+                                    <input type="text" name="address_2" id="address_2" class="form-control @error('address_2') is-invalid @enderror" placeholder="Residential Address Line 1" value="{{ old('address_2') }}">
+                                    @error('address_2')
+                                    <small class="form-text text-danger">{{ $message}}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="address_1">Residential Address Line 3</label>
-                                    <input type="text" name="address_3" id="address_3" class="form-control" placeholder="Residential Address Line 1">
+                                    <input type="text" name="address_3" id="address_3" class="form-control @error('address_3') is-invalid @enderror" placeholder="Residential Address Line 1" value="{{ old('address_3') }}">
+                                    @error('address_3')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="postcode">Postcode</label>
-                                    <input type="text" name="postcode" id="postcode" class="form-control" placeholder="Postcode">
+                                    <input type="text" name="postcode" id="postcode" class="form-control @error('postcode') is-invalid @enderror" placeholder="Postcode" value="{{ old('postcode') }}">
+                                    @error('postcode')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="city">City</label>
-                                    <input type="text" name="city" id="city" class="form-control" placeholder="City">
+                                    <input type="text" name="city" id="city" class="form-control @error('city') is-invalid @enderror" placeholder="City" value="{{ old('city') }}">
+                                    @error('city')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="state">State</label>
@@ -141,11 +168,17 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="contact_number_home">Contact Number (Home)</label>
-                                    <input type="text" name="contact_number_home" id="contact_number_home" class="form-control" placeholder="Home Contact Number">
+                                    <input type="text" name="contact_number_home" id="contact_number_home" class="form-control @error('contact_number_home') is-invalid @enderror" placeholder="Home Contact Number" value="{{ old('contact_number_home') }}">
+                                    @error('contact_number_home')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="contact_number_mobile">Contact Number (Mobile)</label>
-                                    <input type="text" name="contact_number_mobile" id="contact_number_mobile" class="form-control" placeholder="Mobile Contact Number">
+                                    <input type="text" name="contact_number_mobile" id="contact_number_mobile" class="form-control @error('contact_number_mobile') is-invalid @enderror" placeholder="Mobile Contact Number" value="{{ old('contact_number_mobile') }}">
+                                    @error('contact_number_mobile')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -154,37 +187,58 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="spouse_full_name">Spouse's Full Name (as per NRIC)</label>
-                                    <input type="text" name="spouse_full_name" class="form-control" id="spouse_full_name" placeholder="Full Name">
+                                    <input type="text" name="spouse_full_name" class="form-control @error('spouse_full_name') is-invalid @enderror" id="spouse_full_name" placeholder="Full Name" value="{{ old('spouse_full_name') }}">
+                                    @error('spouse_full_name')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="spouse_nric">Spouse's NRIC Number</label>
-                                    <input type="text" name="spouse_nric" class="form-control" id="spouse_nric" placeholder="NRIC Number">
+                                    <input type="text" name="spouse_nric" class="form-control @error('spouse') is-invalid @enderror" id="spouse_nric" placeholder="NRIC Number" value="{{ old('spouse_nric') }}">
+                                    @error('spouse_nric')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="spouse_date_of_birth">Spouse's Date Of Birth</label>
-                                    <input type="date" name="spouse_date_of_birth" class="form-control" id="spouse_date_of_birth" placeholder="Spouse's Date Of Birth">
+                                    <input type="date" name="spouse_date_of_birth" class="form-control @error('spouse_date_of_birth') is-invalid @enderror" id="spouse_date_of_birth" placeholder="Spouse's Date Of Birth" value="{{ old('spouse_date_of_birth') }}">
+                                    @error('spouse_date_of_birth')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="spouse_occupation">Spouse's Occupation</label>
-                                    <input type="text" name="spouse_occupation" class="form-control" id="spouse_occupation" placeholder="Spouse's Occupation">
+                                    <input type="text" name="spouse_occupation" class="form-control @error('spouse_occupation') is-invalid @enderror" id="spouse_occupation" placeholder="Spouse's Occupation" value="{{ old('spouse_occupation') }}">
+                                    @error('spouse_occupation')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="spouse_contact_office">Contact Number (Office)</label>
-                                    <input type="text" name="spouse_contact_office" class="form-control" id="spouse_contact_office" placeholder="Spouse's Office Contact">
+                                    <input type="text" name="spouse_contact_office" class="form-control @error('spouse_contact_office') is-invalid @enderror" id="spouse_contact_office" placeholder="Spouse's Office Contact" value="{{ old('spouse_contact_office') }}">
+                                    @error('spouse_contact_office')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="spouse_contact_mobile">Contact Number (Mobile)</label>
-                                    <input type="text" name="spouse_contact_mobile" class="form-control" id="spouse_contact_mobile" placeholder="Spouse's Mobile Contact">
+                                    <input type="text" name="spouse_contact_mobile" class="form-control @error('spouse_contact_mobile') is-invalid @enderror" id="spouse_contact_mobile" placeholder="Spouse's Mobile Contact" value="{{ old('spouse_contact_mobile') }}">
+                                    @error('spouse_contact_mobile')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="spouse_email">Email Address</label>
-                                    <input type="text" name="spouse_email" id="spouse_email" class="form-control" placeholder="Spouse's Email Address">
+                                    <input type="text" name="spouse_email" id="spouse_email" class="form-control @error('spouse_email') is-invalid @enderror" placeholder="Spouse's Email Address" value="{{ old('spouse_email') }}">
+                                    @error('spouse_email')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -204,33 +258,51 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="employment_name">Name Of Company</label>
-                                    <input type="text" name="employment_name" id="employment_name" class="form-control" placeholder="Name of company">
+                                    <input type="text" name="employment_name" id="employment_name" class="form-control @error('employment_name') is-invalid @enderror" placeholder="Name of company" value="{{ old('employment_name') }}">
+                                    @error('employment_name')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="company_address_1">Company Address Line 1</label>
-                                    <input type="text" name="company_address_1" id="company_address_1" class="form-control" placeholder="Company Address Line 1">
+                                    <input type="text" name="company_address_1" id="company_address_1" class="form-control @error('company_address_1') is-invalid @enderror" placeholder="Company Address Line 1" value="{{ old('company_address_1') }}">
+                                    @error('company_address_1')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="company_address_2">Company Address Line 2</label>
-                                    <input type="text" name="company_address_2" id="company_address_2" class="form-control" placeholder="Company Address Line 1">
+                                    <input type="text" name="company_address_2" id="company_address_2" class="form-control @error('company_address_2') is-invalid @enderror" placeholder="Company Address Line 1" value="{{ old('company_address_2') }}">
+                                    @error('company_address_2')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="company_address_3">Company Address Line 3</label>
-                                    <input type="text" name="company_address_3" id="company_address_3" class="form-control" placeholder="Company Address Line 1">
+                                    <input type="text" name="company_address_3" id="company_address_3" class="form-control @error('company_address_3') is-invalid @enderror" placeholder="Company Address Line 1" value="{{ old('company_address_3') }}">
+                                    @error('company_address_3')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="company_postcode">Postcode</label>
-                                    <input type="text" name="company_postcode" id="company_postcode" class="form-control" placeholder="Postcode">
+                                    <input type="text" name="company_postcode" id="company_postcode" class="form-control @error('company_postcode') is-invalid @enderror" placeholder="Postcode" value="{{ old('company_postcode') }}">
+                                    @error('company_postcode')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="company_city">City</label>
-                                    <input type="text" name="company_city" id="company_city" class="form-control" placeholder="City">
+                                    <input type="text" name="company_city" id="company_city" class="form-control @error('company_city') is-invalid @enderror" placeholder="City" value="{{ old('company_city') }}">
+                                    @error('company_city')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="state">State</label>
@@ -256,18 +328,27 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="introducer_name">Introducer's Name (as per NRIC)</label>
-                                    <input type="text" name="introducer_name" id="introducer_name" class="form-control" placeholder="Introducer's Name">
+                                    <input type="text" name="introducer_name" id="introducer_name @error('introducer_name') is-invalid @enderror" class="form-control" placeholder="Introducer's Name" value="{{ old('introducer_name') }}">
+                                    @error('introducer_name')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="introducer_account_id">Introducer ID</label>
-                                    <input type="text" name="introducer_account_id" id="introducer_account_id" class="form-control" placeholder="Introducer's ID">
+                                    <input type="text" name="introducer_account_id" id="introducer_account_id" class="form-control @error('introducer_account_id') is-invalid @enderror" placeholder="Introducer's ID" value="{{ old('introducer_account_id') }}">
+                                    @error('introducer_account_id')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-12">
                                     <label for="exampleFormControlFile1">Payment Proof <small>(Please upload payment receipt.)</small></label>
-                                    <input type="file" name="payment_proof" id="payment_proof" class="form-control-file">
+                                    <input type="file" name="payment_proof" id="payment_proof" class="form-control-file @error('payment_proof') is-invalid @enderror">
+                                    @error('payment_proof')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -359,8 +440,8 @@
             },
             nric: {
                 required: true,
-                minlength: 14,
-                maxlength: 14
+                minlength: 12,
+                maxlength: 12
             },
             date_of_birth: {
                 required: true,

@@ -15,6 +15,15 @@ class CreateDealerEmploymentsTable extends Migration
     {
         Schema::create('dealer_employments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('account_id');
+            $table->integer('employment_type');
+            $table->string('company_name');
+            $table->string('company_address_1');
+            $table->string('company_address_2');
+            $table->string('company_address_3');
+            $table->string('company_postcode');
+            $table->string('company_city');
+            $table->string('company_state_id');
             $table->timestamps();
         });
     }
