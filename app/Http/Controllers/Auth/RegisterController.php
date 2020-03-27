@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\Users\User;
 use App\Http\Controllers\Controller;
-use App\Models\Dealers\Spouse;
+use App\Models\Users\Dealers\DealerSpouse;
+use App\Models\Users\Dealers\DealerEmployment;
+use App\Models\Users\Dealers\DealerContact;
+use App\Models\Users\Dealers\DealerAddress;
 use App\Models\Globals\Employment;
 use App\Models\Globals\Gender;
 use App\Models\Globals\Marital;
@@ -18,6 +21,9 @@ use App\Models\Users\UserInfo;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
+use File;
+use Storage;
 
 class RegisterController extends Controller
 {
@@ -288,7 +294,7 @@ class RegisterController extends Controller
                 ],
                 'payment_proof' => [
                     'required',
-                    'images',
+                    'image',
                     'mimes:jpeg,png,jpg',
                     'max:2048'
                 ]
@@ -332,6 +338,22 @@ class RegisterController extends Controller
             $userInfo->full_name = $data['full_name'];
             $userInfo->nric = $data['nric'];
             $userInfo->referrer_id = 0;
+            // Signature to image.
+            $base64_image = $data['signature'];
+
+            $name = $userInfo->account_id . '-signature.png';
+            $destinationPath = public_path('/storage/uploads/images/users/' . $userInfo->account_id);
+
+            if (preg_match('/^data:image\/(\w+);base64,/', $base64_image)) {
+                $image = substr($base64_image, strpos($base64_image, ',') + 1);
+
+                $image = base64_decode($image);
+                if(!File::isDirectory($destinationPath)){
+                    File::makeDirectory($destinationPath);
+                }
+                $imageFile = File::put($destinationPath . '/' . $name, $image);
+            }
+            $userInfo->signature = 'storage/uploads/images/users/'. $userInfo->account_id . '/' .  $name;
             $userInfo->save();
 
             // User_addresses table.
@@ -383,9 +405,9 @@ class RegisterController extends Controller
             // Generating new dealer account id.
             $largestDealerId = 0;
             if (DealerInfo::all()->count() == 0) {
-                $largestDealerId = 1913000001;
+                $largestDealerId = 1911000001;
             } else {
-                $largestDealerId = DealerInfo::largestCustomerId() + 1;
+                $largestDealerId = DealerInfo::largestDealerId() + 1;
             }
 
             // User_infos table.
@@ -397,6 +419,7 @@ class RegisterController extends Controller
             $userInfo->referrer_id = 0;
             $userInfo->save();
 
+            // Dealer_infos table.
             $dealerInfo = new DealerInfo;
             $dealerInfo->user_id = $user->id;
             $dealerInfo->account_id = $largestDealerId;
@@ -406,8 +429,28 @@ class RegisterController extends Controller
             $dealerInfo->gender_id = $data['gender_id'];
             $dealerInfo->race_id = $data['race_id'];
             $dealerInfo->marital_id = $data['marital_id'];
-            $dealerInfo->referrer_id = $data['introducer_id'];
+            $dealerInfo->referrer_id = $data['introducer_account_id'];
+            // Payment proof
+            $image = $data['payment_proof'];
+            $name = $dealerInfo->account_id.'-payment.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('storage/uploads/images/users/'. $dealerInfo->account_id);
+            $image->move($destinationPath, $name);
+            $dealerInfo->payment_proof = 'storage/uploads/images/users/'. $dealerInfo->account_id . '/' .  $name;
             $dealerInfo->save();
+
+            // Dealer_address table..
+            $dealerAddress = new DealerAddress;
+            $dealerAddress->account_id = $userInfo->account_id;
+            $dealerAddress->address_1 = $data['address_1'];
+            $dealerAddress->address_2 = $data['address_2'];
+            $dealerAddress->address_3 = $data['address_3'];
+            $dealerAddress->postcode = $data['postcode'];
+            $dealerAddress->city = $data['city'];
+            $dealerAddress->state_id = $data['state'];
+            $dealerAddress->is_shipping_address = 1;
+            $dealerAddress->is_residential_address = 1;
+            $dealerAddress->is_mailing_address = 1;
+            $dealerAddress->save();
 
             // User_addresses table.
             $userAddress = new UserAddress;
@@ -437,7 +480,21 @@ class RegisterController extends Controller
             $userContactMobile->is_mobile = 1;
             $userContactMobile->save();
 
-            $dealerSpouse = new Spouse;
+            // Dealer_contacts table (Mobile).
+            $dealerContactMobile = new DealerContact;
+            $dealerContactMobile->account_id = $userInfo->account_id;
+            $dealerContactMobile->contact_num = $data['contact_number_mobile'];
+            $dealerContactMobile->is_mobile = 1;
+            $dealerContactMobile->save();
+
+            // Dealer_contacts table (Home).
+            $dealerContactHome = new DealerContact;
+            $dealerContactHome->account_id = $userInfo->account_id;
+            $dealerContactHome->contact_num = $data['contact_number_home'];
+            $dealerContactHome->is_home = 1;
+            $dealerContactHome->save();
+
+            $dealerSpouse = new DealerSpouse;
             $dealerSpouse->account_id = $userInfo->account_id;
             $dealerSpouse->spouse_name = $data['spouse_full_name'];
             $dealerSpouse->spouse_nric = $data['spouse_nric'];
@@ -448,7 +505,7 @@ class RegisterController extends Controller
             $dealerSpouse->spouse_email = $data['spouse_email'];
             $dealerSpouse->save();
 
-            $dealerEmployment = new Employment;
+            $dealerEmployment = new DealerEmployment;
             $dealerEmployment->account_id = $userInfo->account_id;
             $dealerEmployment->employment_type = $data['employment_id'];
             $dealerEmployment->company_name = $data['employment_name'];
@@ -460,9 +517,11 @@ class RegisterController extends Controller
             $dealerEmployment->company_state_id = $data['company_state'];
             $dealerEmployment->save();
 
+            $user->assignRole('customer');
             $user->assignRole('dealer');
         } elseif ($data['registrationFor'] == 'panel') {
             // Register panel.
+            
         }
 
         return $user;

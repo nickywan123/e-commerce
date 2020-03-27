@@ -16,6 +16,7 @@ class CreateDealerInfosTable extends Migration
         Schema::create('dealer_infos', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('account_id')->unique();
+            $table->integer('account_status')->default(1);
             $table->string('full_name');
             $table->string('nric');
             $table->string('date_of_birth');
@@ -23,6 +24,7 @@ class CreateDealerInfosTable extends Migration
             $table->integer('race_id');
             $table->integer('marital_id');
             $table->integer('referrer_id');
+            $table->string('payment_proof')->nullable();
             $table->timestamps();
         });
     }

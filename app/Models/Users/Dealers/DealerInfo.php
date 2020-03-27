@@ -39,6 +39,14 @@ class DealerInfo extends Model
     }
 
     /**
+     * Get the user contact associated with the user.
+     */
+    public function contacts()
+    {
+        return $this->hasMany('App\Models\Users\Dealers\DealerContact', 'account_id', 'account_id');
+    }
+
+    /**
      * Get largest dealer account id.
      */
     public function scopeLargestDealerId($query)

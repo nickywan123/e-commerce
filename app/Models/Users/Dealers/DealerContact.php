@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Models\Dealers;
+namespace App\Models\Users\Dealers;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Spouse extends Model
+class DealerContact extends Model
 {
     // Set table
-    protected $table = 'dealer_spouses';
+    protected $table = 'dealer_contacts';
 
     // Set timestamps
     public $timestamps = true;
 
     // Set primary key
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'user_id';
 
     // Set mass assignable columns
     protected $fillable = [];

@@ -16,9 +16,11 @@ class CreatePanelInfosTable extends Migration
         Schema::create('panel_infos', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('account_id')->unique();
+            $table->integer('account_status')->default(0);
             $table->string('company_name');
             $table->string('ssm_number');
             $table->string('company_email');
+            $table->string('company_phone');
             $table->string('pic_name');
             $table->string('pic_nric');
             $table->string('pic_contact');

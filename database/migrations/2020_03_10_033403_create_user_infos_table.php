@@ -16,9 +16,11 @@ class CreateUserInfosTable extends Migration
         Schema::create('user_infos', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('account_id')->unique();
+            $table->integer('account_status')->default(1);
             $table->string('full_name');
             $table->string('nric');
             $table->integer('referrer_id');
+            $table->string('signature')->nullable();
             $table->timestamps();
         });
     }

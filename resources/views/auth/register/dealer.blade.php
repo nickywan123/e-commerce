@@ -24,7 +24,7 @@
             <div class="card-body">
 
                 <!-- Dealer Registration Form -->
-                <form method="POST" action="{{ route('register') }}" id="register-form">
+                <form method="POST" action="{{ route('register') }}" id="register-form" enctype="multipart/form-data">
                     @csrf
                     <div class="tab-content" id="myTabContent">
                         <!-- Registration  Tab-->
@@ -419,7 +419,6 @@
 
     // Form Validation
     $("#register-form").validate({
-
         rules: {
             email: {
                 required: true,
@@ -501,8 +500,8 @@
             },
             spouse_nric: {
                 required: true,
-                minlength: 14,
-                maxlength: 14
+                minlength: 12,
+                maxlength: 12
             },
             spouse_date_of_birth: {
                 required: true,
