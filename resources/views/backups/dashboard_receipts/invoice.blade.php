@@ -12,9 +12,9 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   </head>
 <body>
-  @foreach($purchases as $purchase)
-    <div class="container">
-        <div class="">
+  {{-- @foreach($purchases as $purchase) --}}
+<div class="container">
+<div class="">
       
       <div class="container">
         <span class="float-left " > <img src="{{ asset('images/Invoice-Logo.png') }}" style="width:50%;" alt="No Logo"></span>
@@ -34,7 +34,7 @@
        <tbody class="font-style">
     
          <tr class="table-dotted-line" style="height: 160px;" > 
-           <td>Receiver: {{$purchase->user->userInfo->full_name}}</td>
+           <td>Receiver: </td>
                 
          </tr>
        
@@ -43,7 +43,7 @@
             
          </tr>
          <tr class="table-dotted-line"> 
-           <td>Contact No:{{$purchase->user->userContacts[0]->contact_num}}</td>
+           <td>Contact No:</td>
              
          </tr>
       
@@ -59,7 +59,7 @@
      <tbody class="font-style  ">
   
        <tr class="table-dotted-line" style="height: 160px;  " > 
-         <td >Deliver To:{{$purchase->user->userAddresses[0]->address_1}}</td>
+         <td >Deliver To:</td>
           
        </tr>
        <tr class="table-dotted-line"> 
@@ -67,7 +67,7 @@
               
        </tr>
        <tr class="table-dotted-line"> 
-         <td>Contact No:{{$purchase->user->userContacts[0]->contact_num}}</td>
+         <td>Contact No:</td>
         
        </tr>
      
@@ -83,13 +83,13 @@
       </thead>
    <tbody class="font-style">
  
-     <tr > 
+     <tr> 
        <td>Number</td>
-       <td>{{$purchase->purchase_number}}</td>      
+       <td></td>      
      </tr>
      <tr> 
        <td>Date</td>
-       <td>{{$purchase->purchase_date}}</td>      
+       <td></td>      
      </tr>
      <tr> 
        <td>Delivery Date</td>
@@ -126,22 +126,19 @@
       <tbody>
       <tr style="height:500px;" >
       <td  class="center">1</td>
-      <td class="left strong">{{$purchase->orders[0]->items[0]->product_id}}</td>
+      <td class="left strong"></td>
       <td class="left"> Pillow</td>
       
-      <td class="center">{{$purchase->orders[0]->items[0]->quantity}}</td>
-        <td class="left">{{$purchase->orders[0]->items[0]->subtotal_price}}</td>
-      <td class="right">{{$purchase->orders[0]->items[0]->subtotal_price*$purchase->orders[0]->items[0]->quantity}}</td>
+      <td class="center"></td>
+        <td class="left"></td>
+      <td class="right"></td>
       
-      </tr>
-      
-  
-     
+      </tr> 
       </tbody>
       </table>
       </div>
 
-      <div class="row">
+<div class="row">
 
       <div class="col-4 offset-2  col-md-6 col-sm-5 font-style" style="font-size:15px;" >
         <table class="table table-outer-border " style="text-align:center; margin-top:110px;">
@@ -165,7 +162,7 @@
           <tbody>
      </table>
     </div>
-        <div class="col-4 offset-2 col-md-4 col-sm-5 ml-auto font-style"  style="font-size:10px; ">
+<div class="col-4 offset-2 col-md-4 col-sm-5 ml-auto font-style"  style="font-size:10px; ">
           <table class="table table-outer-border">
           <tbody>
           <tr>
@@ -223,9 +220,9 @@
           
           </div>
      </div>
-     @endforeach  
+     {{-- @endforeach   --}}
 
-      <div class="row">    
+<div class="row">    
       <div class="col-5 col-md-5 font-style" style="margin-left: 20px;">
   <h6 style="font-size:15px;  font-weight: bold;">Terms & Conditions</h6>
  <p style="font-size:10px"> Goods sold are neither returnable nor refundable</p>
@@ -245,7 +242,7 @@
     
    
   </div>
-  <div  style=" border-right: 2px solid black;  "></div>
+  <div style=" border-right: 2px solid black;"></div>
   <div class="col-6 col-md-5 font-style" style="font-size:10px" >
     <p>1-26-05-Menara Bangkok Bank,Berjaya Central Park, No 105, Jalan Ampang,50450 Kuala Lumpur,Malaysia</p>
     <p style="word-spacing: 0px;"><i class="icon-phone"></i> 603-21818821&emsp;;<i class="icon-file-text"></i> bujishu@gmail.com &emsp;<i class="icon-link"></i> www.bujishu.com</p>
@@ -256,11 +253,11 @@
     
 
       
-      </div>
+</div>
      
-      </div>
+</div>
      
-    </div>
+</div>
         
 
      

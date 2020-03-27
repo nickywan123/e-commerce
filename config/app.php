@@ -183,6 +183,7 @@ return [
 
         // PDF Download for invoice.
         Barryvdh\DomPDF\ServiceProvider::class,
+      
 
     ],
 
@@ -236,6 +237,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        // 'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        
 
     ],
 

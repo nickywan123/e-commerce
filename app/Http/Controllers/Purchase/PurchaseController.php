@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Models\Purchases\Order;
 use App\Models\Purchases\Item;
 use App\Models\Users\Cart;
+use PDF;
 
 class PurchaseController extends Controller
 {
@@ -123,14 +124,27 @@ class PurchaseController extends Controller
   */
   public function invoiceCustomer(){
       
-    $user = User::find(Auth::user()->id);
-    $purchases = $user->purchases;
+    // $user = User::find(Auth::user()->id);
+    // $purchases = $user->purchases;
     // return $purchases;
-    return view('backups.dashboard_receipts.invoice')->with('purchases', $purchases);
-
-      
-
-
+    // return view('backups.dashboard_receipts.invoice')->with('purchases', $purchases);
+        $pdf = PDF::loadView('backups.dashboard_receipts.invoice');
+        ob_end_clean();
+        return $pdf->stream('invoice.pdf');
   }
+
+   /**
+     * Return invoice for Dealer
+     */
+    public function viewInvoice()
+    {
+        // $user = User::find(Auth::user()->id);
+        // $purchases = $user->purchases;
+        $pdf = PDF::loadView('backups.dashboard_receipts.invoice');
+        ob_end_clean();
+        return $pdf->download('invoice.pdf');
+        //return view('dashboard_receipts.invoice');
+    }
+
 
 }

@@ -359,8 +359,8 @@
             },
             nric: {
                 required: true,
-                minlength: 14,
-                maxlength: 14
+                minlength: 12,
+                maxlength: 12
             },
             date_of_birth: {
                 required: true,
@@ -420,8 +420,8 @@
             },
             spouse_nric: {
                 required: true,
-                minlength: 14,
-                maxlength: 14
+                minlength: 12,
+                maxlength: 12
             },
             spouse_date_of_birth: {
                 required: true,

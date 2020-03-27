@@ -603,8 +603,8 @@
             },
             nric: {
                 required: true,
-                minlength: 14,
-                maxlength: 14
+                minlength: 12,
+                maxlength: 12
             },
             address_1: {
                 required: true,

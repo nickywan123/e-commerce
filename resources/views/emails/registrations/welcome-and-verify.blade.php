@@ -2,12 +2,15 @@
 
 Thank you for registering!
 
+Your account ID is: {{$user->account_id}} 
+
+Please click on the below link to verify your account.
+
 @component('mail::button', ['url' => $url])
 Verify Email
 @endcomponent
 
 
-{{ $user }}
 Regards,<br>
 {{ config('app.name') }}
 
