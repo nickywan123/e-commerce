@@ -236,6 +236,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
 
     ],
 

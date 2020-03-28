@@ -1,6 +1,6 @@
-<div class="sidebar sidebar-bg-color" >
-    <nav class="sidebar-nav " >
-        <ul class="nav sidebar-margin-top" >
+<div class="sidebar sidebar-bg-color">
+    <nav class="sidebar-nav">
+        <ul class="nav sidebar-margin-top">
             <li class="nav-item nav-dropdown">
                 <a class="nav-link nav-dropdown-toggle" href="#">
                     <i class="nav-icon icon-user icon-color"></i> Profile
@@ -23,14 +23,11 @@
                         </a>
                     </li>
                     @endrole
-              
-                 
-
                 </ul>
             </li>
-             @hasrole('panel')
+            @hasrole('panel')
             <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle"  href="#">
+                <a class="nav-link nav-dropdown-toggle" href="#">
                     <i class="nav-icon icon-folder icon-color"></i> Orders
                 </a>
                 <ul class="nav-dropdown-items">
@@ -67,8 +64,6 @@
 
                 </ul>
             </li>
-         
-      
             <li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="nav-icon icon-menu icon-color"></i> Products
@@ -87,6 +82,21 @@
                 </ul>
             </li>
             @endhasrole
+
+            @hasrole('administrator')
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="nav-icon icon-menu icon-color"></i> User Management
+                </a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="/management/administrator/user/panel" class="nav-link">
+                            <i class="nav-icon fa fa-medal icon-color"></i> Panel
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @endhasrole
             <li class="nav-item">
                 <a class="nav-link" href="/management/statements">
                     <i class="nav-icon icon-notebook icon-color"></i> Statements
@@ -97,9 +107,9 @@
                     <i class="nav-icon icon-bag icon-color"></i> Shop
                 </a>
             </li>
-            
-        
-            
+
+
+
 
             <!-- <li class="nav-title">Theme</li>
             <li class="nav-item">

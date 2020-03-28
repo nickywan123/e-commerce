@@ -22,9 +22,8 @@ class CreatePanelAddressesTable extends Migration
             $table->integer('postcode');
             $table->string('city');
             $table->integer('state_id');
-            $table->integer('is_shipping_address')->default(0);
-            $table->integer('is_residential_address')->default(0);
-            $table->integer('is_mailing_address')->default(0);
+            $table->integer('is_correspondence_address')->default(0);
+            $table->integer('is_billing_address')->default(0);
             $table->timestamps();
         });
     }
