@@ -11,6 +11,16 @@
 |
 */
 
+// Route for QR Code
+Route::get('qr-code-g', function () {
+    QrCode::size(500)
+              ->format('png')
+              ->generate('ItSolutionStuff.com', public_path('images/qrcode.png'));
+      
+    return view('qr.qrCode');
+      
+  });
+
 Route::get('/', 'Guest\GuestController@index');
 
 Route::get('/login', 'Auth\LoginController@showLoginForm');

@@ -161,6 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Package Service Providers...
@@ -183,6 +184,9 @@ return [
 
         // PDF Download for invoice.
         Barryvdh\DomPDF\ServiceProvider::class,
+
+        //QR Code to to update status when scanned
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
       
 
     ],
@@ -237,7 +241,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
-        // 'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         
 
     ],
