@@ -17,7 +17,7 @@ class CreateImagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('path')->nullable();
             $table->string('filename')->nullable();
-            $table->string('url')->nullable(); // TODO: Delete this field. Use path + filename.
+            $table->integer('default')->default(0);
             $table->integer('imageable_id');
             $table->string('imageable_type');
             $table->timestamps();

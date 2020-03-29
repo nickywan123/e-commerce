@@ -23,32 +23,32 @@ class GlobalTablesSeeder extends Seeder
         /**
          * Colors
          */
-        Color::create([
-            'name' => 'black',
-            'color_hex' => '#000000'
-        ]);
+        // Color::create([
+        //     'name' => 'black',
+        //     'color_hex' => '#000000'
+        // ]);
 
-        Color::create([
-            'name' => 'white',
-            'color_hex' => '#ffffff'
-        ]);
+        // Color::create([
+        //     'name' => 'white',
+        //     'color_hex' => '#ffffff'
+        // ]);
 
-        /**
-         * Dimensions
-         */
-        Dimension::create([
-            'width' => '100',
-            'height' => '100',
-            'depth' => '50',
-            'measurement_unit' => 'cm'
-        ]);
+        // /**
+        //  * Dimensions
+        //  */
+        // Dimension::create([
+        //     'width' => '100',
+        //     'height' => '100',
+        //     'depth' => '50',
+        //     'measurement_unit' => 'cm'
+        // ]);
 
-        Dimension::create([
-            'width' => '200',
-            'height' => '150',
-            'depth' => '30',
-            'measurement_unit' => 'cm'
-        ]);
+        // Dimension::create([
+        //     'width' => '200',
+        //     'height' => '150',
+        //     'depth' => '30',
+        //     'measurement_unit' => 'cm'
+        // ]);
 
         /**
          * Employments
@@ -79,15 +79,15 @@ class GlobalTablesSeeder extends Seeder
         /**
          * Lengths
          */
-        Length::create([
-            'length' => '100',
-            'measurement_unit' => 'cm'
-        ]);
+        // Length::create([
+        //     'length' => '100',
+        //     'measurement_unit' => 'cm'
+        // ]);
 
-        Length::create([
-            'length' => '200',
-            'measurement_unit' => 'cm'
-        ]);
+        // Length::create([
+        //     'length' => '200',
+        //     'measurement_unit' => 'cm'
+        // ]);
 
         /**
          * Maritals

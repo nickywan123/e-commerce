@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models\Globals\Products;
+namespace App\Models\Globals;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Color extends Model
+class Quality extends Model
 {
     // Set table
-    protected $table = 'global_colors';
+    protected $table = 'global_qualities';
 
     // Set timestamps
     public $timestamps = true;
@@ -16,5 +16,5 @@ class Color extends Model
     protected $primaryKey = 'id';
 
     // Set mass assignable columns
-    protected $fillable = [];
+    protected $fillable = []
 }

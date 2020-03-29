@@ -15,12 +15,24 @@
             <div class="col-12 hidden-md pt-1 pl-1 pr-1 mb-2">
                 <h1 class="pl-0 pr-0 text-capitalize text-left" style="font-size: 1.5rem; margin: 0;">{{ $product->name }}</h1>
                 <div class="text-left my-auto mt-1">
-                    <span class="fa fa-star checked align-middle"></span>
-                    <span class="fa fa-star checked align-middle"></span>
-                    <span class="fa fa-star checked align-middle"></span>
-                    <span class="fa fa-star checked align-middle"></span>
-                    <span class="fa fa-star align-middle"></span>
-                    <span class="ml-1 align-middle">(60 ratings) <small>(WIP)</small></span>
+                    @php $rating = $product->product_rating; @endphp
+
+                    @foreach(range(1,5) as $i)
+                    <span class="fa-stack" style="width:1em">
+                        <i class="far fa-star fa-stack-1x"></i>
+
+                        @if($rating >0)
+                        @if($rating >0.5)
+                        <i class="fas fa-star fa-stack-1x checked"></i>
+                        @else
+                        <i class="fas fa-star-half fa-stack-1x checked"></i>
+                        @endif
+                        @endif
+                        @php $rating--; @endphp
+                    </span>
+                    @endforeach
+                    <!-- TODO: Calculate average ratings -->
+                    <!-- <span class="ml-1 align-middle">(60 ratings) <small>(WIP)</small></span> -->
                 </div>
             </div>
             <div class="col-12 col-md-5 pl-1 pr-1 mb-1">
@@ -37,113 +49,93 @@
                     <div class="col-12 text-md-left text-center">
                         <h1 class="pl-0 pr-0 text-capitalize" style="font-size: 2rem; margin: 0;">{{ $product->name }}</h1>
                         <div class="text-left my-auto mt-1">
-                            <span class="fa fa-star checked align-middle"></span>
-                            <span class="fa fa-star checked align-middle"></span>
-                            <span class="fa fa-star checked align-middle"></span>
-                            <span class="fa fa-star checked align-middle"></span>
-                            <span class="fa fa-star align-middle"></span>
-                            <span class="ml-1 align-middle">(60 ratings) <small>(WIP)</small></span>
+                            @php $rating = $product->product_rating; @endphp
+
+                            @foreach(range(1,5) as $i)
+                            <span class="fa-stack" style="width:1em">
+                                <i class="far fa-star fa-stack-1x"></i>
+
+                                @if($rating >0)
+                                @if($rating >0.5)
+                                <i class="fas fa-star fa-stack-1x"></i>
+                                @else
+                                <i class="fas fa-star-half fa-stack-1x"></i>
+                                @endif
+                                @endif
+                                @php $rating--; @endphp
+                            </span>
+                            @endforeach
+                            <!-- TODO: Calculate average ratings -->
+                            <!-- <span class="ml-1 align-middle">(60 ratings) <small>(WIP)</small></span> -->
                         </div>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
                     <div class="col-12 text-md-left text-center">
-                        <p>{{ $product->summary }}</p>
+                        <p>{{ $product->description }}</p>
+                    </div>
+                    <div class="col-12 text-md-left text-center">
+                        <p>{{ $product->details }}</p>
                     </div>
                 </div>
-                @if($product->categories->last()->name == 'Curtains')
+
+                @if($product->colorAttributes->count() > 0)
                 <div class="row">
                     <div class="col-12">
-                        <p class="mb-1">Sizes <small>(WIP)</small></p>
-                        <div class="boxed">
-                            <input type="radio" id="size0" name="size" value="all">
-                            <label for="size0">All</label>
-
-                            <input type="radio" id="size1" name="size" value="120cm x 200cm">
-                            <label for="size1">112cm x 80cm</label>
-
-                            <input type="radio" id="size2" name="size" value="120cm x 200cm">
-                            <label for="size2">167cm x 80cm</label>
-
-                            <input type="radio" id="size3" name="size" value="120cm x 200cm">
-                            <label for="size3">228cm x 80cm</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p class="mb-1">Color <small>(WIP)</small></p>
+                        <p class="mb-1">Colors <small>(WIP)</small></p>
                         <div class="boxed">
                             <input type="radio" id="color0" name="color" value="120cm x 200cm">
                             <label for="color0">All colors</label>
                         </div>
+
                         <div class="boxed">
-                            <input type="radio" id="red" name="color" value="Red">
-                            <label class="color-options" for="red" style="background-color: red;"></label>
-
-                            <input type="radio" id="grey" name="color" value="Grey">
-                            <label class="color-options" for="grey" style="background-color: grey;"></label>
-
-                            <input type="radio" id="beige" name="color" value="Beige">
-                            <label class="color-options" for="beige" style="background-color: #f5f5dc;"></label>
+                            @foreach($product->colorAttributes as $colorAttribute)
+                            <input type="radio" id="color-{{ $colorAttribute->id }}" name="color" value="{{ $colorAttribute->id }}">
+                            <label class="color-options" for="color-{{ $colorAttribute->id }}" style="background-color: {{ $colorAttribute->color_hex }}"></label>
+                            @endforeach
                         </div>
                     </div>
                 </div>
                 @endif
 
-                @if($product->categories->last()->name == 'Bedsheets')
+                <!-- Sizes -->
+                @if($product->sizeAttributes->count() > 0)
                 <div class="row">
                     <div class="col-12">
                         <p class="mb-1">Sizes <small>(WIP)</small></p>
                         <div class="boxed">
-                            <input type="radio" id="size1" name="size" value="120cm x 200cm">
-                            <label for="size1Modal">Single</label>
+                            <input type="radio" id="size0" name="size" value="all">
+                            <label for="size0">All</label>
 
-                            <input type="radio" id="size2" name="size" value="120cm x 200cm">
-                            <label for="size2Modal">Queen</label>
-
-                            <input type="radio" id="size3" name="size" value="120cm x 200cm">
-                            <label for="size3Modal">King</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p class="mb-1">Color <small>(WIP)</small></p>
-                        <div class="boxed">
-                            <input type="radio" id="red" name="color" value="Red">
-                            <label class="color-options" for="red" style="background-color: red;"></label>
-
-                            <input type="radio" id="grey" name="color" value="Grey">
-                            <label class="color-options" for="grey" style="background-color: grey;"></label>
-
-                            <input type="radio" id="white" name="color" value="White">
-                            <label class="color-options" for="white" style="background-color: #ffffff;"></label>
+                            @foreach($product->sizeAttributes as $sizeAttribute)
+                            <input type="radio" id="size-{{ $sizeAttribute->id }}" name="size" value="{{ $sizeAttribute->id }}">
+                            <label for="size-{{ $sizeAttribute->id }}">{{ $sizeAttribute->attribute_name }}</label>
+                            @endforeach
                         </div>
                     </div>
                 </div>
                 @endif
 
-                @if($product->categories->first()->name == 'Lightings')
+                <!-- Color Temperatures -->
+                @if($product->lightTemperatureAttributes->count() > 0)
                 <div class="row">
                     <div class="col-12">
-                        <p class="mb-1">Color Temperature <small>(WIP)</small></p>
+                        <p class="mb-1">Color Temperatures <small>(WIP)</small></p>
                         <div class="boxed">
                             <input type="radio" id="size0" name="size" value="all">
                             <label for="size0">All</label>
 
-                            <input type="radio" id="size1" name="size" value="120cm x 200cm">
-                            <label for="size1">Daylight 6000k</label>
-
-                            <input type="radio" id="size2" name="size" value="120cm x 200cm">
-                            <label for="size2">Warm White 3000k</label>
+                            @foreach($product->lightTemperatureAttributes as $lightTemperatureAttribute)
+                            <input type="radio" id="temperature-{{ $lightTemperatureAttribute->id }}" name="size" value="{{ $lightTemperatureAttribute->id }}">
+                            <label for="temperature-{{ $lightTemperatureAttribute->id }}">{{ $lightTemperatureAttribute->attribute_name }}</label>
+                            @endforeach
                         </div>
                     </div>
                 </div>
                 @endif
 
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col-12 mb-0 text-left">
                         <h4 class="mb-0">Sold By <small>(WIP)</small></h4>
                     </div>
@@ -230,24 +222,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- <form method="POST" action="{{ route('shop.cart.add-item') }}">
-                    @method('POST')
-                    @csrf
-                    <input type="hidden" name="productId" value="{{ $product->id }}">
-                    @if(!$product->colors->isEmpty())
-                    <input type="hidden" name="productColorId" value="{{ $product->getDefaultColor()->id }}">
-                    @endif
-                    @if(!$product->dimensions->isEmpty())
-                    <input type="hidden" name="productDimensionId" value="{{ $product->getDefaultDimension()->id }}">
-                    @endif
-                    @if(!$product->lengths->isEmpty())
-                    <input type="hidden" name="productLengthId" value="{{ $product->getDefaultLength()->id }}">
-                    @endif
-                    <input type="hidden" name="productQuantity" value="1">
-                    <button type="submit" class="btn btn-primary float-right-md w-100-sm">Add to cart</button>
-                </form> -->
-
             </div>
         </div>
     </div>
@@ -421,15 +395,6 @@
                         @method('POST')
                         @csrf
                         <input type="hidden" name="productId" value="{{ $product->id }}">
-                        @if(!$product->colors->isEmpty())
-                        <input type="hidden" name="productColorId" value="{{ $product->getDefaultColor()->id }}">
-                        @endif
-                        @if(!$product->dimensions->isEmpty())
-                        <input type="hidden" name="productDimensionId" value="{{ $product->getDefaultDimension()->id }}">
-                        @endif
-                        @if(!$product->lengths->isEmpty())
-                        <input type="hidden" name="productLengthId" value="{{ $product->getDefaultLength()->id }}">
-                        @endif
                         <input type="hidden" name="productQuantity" value="1">
                         <button style="color: #000; background-color: #fccb34;" type="submit" class="btn btn-primary">Add to cart</button>
                     </form>

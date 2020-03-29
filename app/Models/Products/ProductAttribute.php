@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models\Users;
+namespace App\Models\Products;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Favorite extends Model
+class ProductAttribute extends Model
 {
     // Set table
-    protected $table = 'favorites';
+    protected $table = 'panel_product_attributes';
 
     // Set timestamps
     public $timestamps = true;
@@ -16,21 +16,15 @@ class Favorite extends Model
     protected $primaryKey = 'id';
 
     // Set mass assignable columns
-    protected $fillable = [];
-
-    // Cast column to another datatype.
-    protected $casts = [];
-
-    /**
-     * Get user.
-     */
-    public function user()
-    {
-        return $this->belongsTo('App\Models\Users\User', 'user_id');
-    }
+    protected $fillable = [
+        'panel_product_id',
+        'attribute_type',
+        'attribute_name',
+        'color_hex'
+    ];
 
     /**
-     * Get product.
+     * Get an attribute's product.
      */
     public function product()
     {

@@ -118,7 +118,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function carts()
     {
-        return $this->hasMany('App\Models\Users\Cart', 'user_id', 'id');
+        return $this->hasMany('App\Models\Users\Customers\Cart', 'user_id', 'id');
     }
 
     /**

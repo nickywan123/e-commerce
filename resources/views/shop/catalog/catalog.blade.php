@@ -164,7 +164,7 @@
                             <ul class="list-unstyled">
                                 @foreach($childCategory->childCategories as $anotherChildCategory)
                                 <li>
-                                    <a class="animated-category-list-container-item" href="/shop/category/{{ $category->slug }}/{{ $childCategory->slug }}/{{ $anotherChildCategory->slug }}">{{ $anotherChildCategory->name }}</a>
+                                    <a class="animated-category-list-container-item category-link" data-value="{{ $anotherChildCategory->slug }}" data-name="{{ $anotherChildCategory->name }}" href="javascript:void(0)">{{ $anotherChildCategory->name }}</a>
                                 </li>
                                 @endforeach
                             </ul>
@@ -173,7 +173,7 @@
                 </div>
                 @else
                 <div class="col-6 col-md-2 text-center">
-                    <a class="category-item" href="/shop/category/{{ $category->slug }}/{{ $childCategory->slug }}">
+                    <a class="category-item category-link" data-value="{{ $childCategory->slug }}" data-name="{{ $childCategory->name }}" href="javascript:void(0)">
                         <div class="category-container">
                             <div class="category-image-container">
                                 <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
@@ -189,63 +189,20 @@
 
             <div class="row pb-1">
                 <div class="col-12 mb-1">
-                    <h3 class="text-dark font-weight-bold">Featured Deals</h3>
+                    <h3 class="text-dark font-weight-bold">Featured Deals <small id="child-category-indicator" class='text-muted text-capitalize'></small></h3>
                     <hr>
                 </div>
             </div>
 
-            @if($category->products->count() > 0)
-            <!-- Products -->
-            <div class="row no-gutters">
-                @foreach($category->products as $product)
-                <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
-                    <a style="text-decoration: none; color: #212529;" href="/shop/product/{{ $product->slug }}">
-                        <div class="animated-product-container">
-                            <div class="animated-product-image-container">
-                                <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
-                            </div>
+            <div id="loadingDiv" class="text-center">
+                <div class="spinner-border text-warning" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
 
-                            <div class="animated-product-information-container">
-                                <p class="product-name">{{ $product->name }}</p>
-                                <div>
-                                    <p class="mb-1 product-price">
-                                        RM {{ $product->getDecimalPrice() }}
-                                    </p>
-                                </div>
-                                <div>
-                                    <ul class="list-unstyled product-rating mb-1">
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star checked"></i>
-                                        </li>
-                                    </ul>
-                                    <p class="mb-1">120 ratings</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @endforeach
+            <div id="category-product-container">
+                <!-- Ajax response will be loaded here -->
             </div>
-            @else
-            <!-- No product found message -->
-            <div class="row">
-                <div class="col-12">
-                    <p class="no-product-found-message">We're sorry, there's no available product under this category yet.</p>
-                </div>
-            </div>
-            @endif
 
         </div>
     </div>
@@ -372,5 +329,90 @@
         height: 100%;
         border: 1px solid #fccb34;
     }
+
+    .spinner-border {
+        display: inline-block;
+        width: 7rem;
+        height: 7rem;
+        vertical-align: text-bottom;
+        border: 0.75em solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner-border 0.75s linear infinite;
+        animation: spinner-border 0.75s linear infinite;
+    }
 </style>
+@endpush
+
+@push('script')
+<script>
+    $(document).ready(function() {
+        // Variable Initialization
+        var loading = $('#loadingDiv').hide();
+        const ItemContainer = $('#category-product-container');
+        let categorySlug;
+        let chidCategoryIndicator = $('#child-category-indicator');
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        // Run function
+        onPageLoad();
+
+        function onPageLoad() {
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    loading.show();
+                    ItemContainer.hide();
+                },
+                complete: function() {
+                    loading.hide();
+                    ItemContainer.show();
+                },
+                url: "{{ route('web.shop.category', ['categorySlug' => $category->slug])}}",
+                type: "get",
+                success: function(result) {
+                    ItemContainer.html(result);
+                },
+                error: function(result) {
+                    console.log(result.status + ' ' + result.statusText);
+                }
+            });
+        }
+
+        $('.category-link').on('click', function(e) {
+            e.preventDefault();
+
+            categorySlug = $(this).data('value');
+            categoryName = $(this).data('name');
+
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    loading.show();
+                    ItemContainer.hide();
+                },
+                complete: function() {
+                    loading.hide();
+                    chidCategoryIndicator.text('/ ' + categoryName)
+                    ItemContainer.show();
+
+                },
+                url: "/web/shop/category/" + categorySlug,
+                type: "get",
+                success: function(result) {
+                    ItemContainer.html(result);
+                },
+                error: function(result) {
+                    console.log(result.status + ' ' + result.statusText);
+                }
+            });
+        });
+
+    });
+</script>
 @endpush

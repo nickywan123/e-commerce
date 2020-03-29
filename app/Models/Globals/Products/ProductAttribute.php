@@ -4,10 +4,10 @@ namespace App\Models\Globals\Products;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Size extends Model
+class ProductAttribute extends Model
 {
     // Set table
-    protected $table = 'global_sizes';
+    protected $table = 'global_product_attributes';
 
     // Set timestamps
     public $timestamps = true;
@@ -17,4 +17,12 @@ class Size extends Model
 
     // Set mass assignable columns
     protected $fillable = [];
+
+    /**
+     * Get an attribute's product.
+     */
+    public function product()
+    {
+        return $this->belongsTo('App\Models\Globals\Products\Product', 'product_id');
+    }
 }

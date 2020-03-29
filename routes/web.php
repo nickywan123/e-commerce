@@ -171,6 +171,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             // Remove user's cart item.
             Route::put('/remove/{id}', 'WEB\Shop\CartController@remove');
         });
+
+        Route::group(['prefix' => 'shop'], function () {
+            Route::get('/category/{categorySlug}', 'WEB\Shop\ShopController@category')
+                ->name('web.shop.category');
+        });
     });
     // End Web
 });
