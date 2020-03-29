@@ -57954,6 +57954,13 @@ a.grad2 {
   margin-right: 40px;
 }
 
+@media (max-width: 374px) {
+  a.grad2 {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
 @media (max-width: 767px) {
   .bujishu-motto {
     font-size: 100%;

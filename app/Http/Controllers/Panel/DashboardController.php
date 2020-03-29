@@ -35,7 +35,7 @@ class DashboardController extends Controller
      */
     public function viewPurchaseOrder()
     {
-        return view('backups.dashboard_receipts.purchase_order');
+        return view('documents.purchase_order');
         // $pdf = PDF::loadView('backups.dashboard_receipts.purchase_order');
         // return $pdf->download('invoice.pdf');
 

@@ -142,7 +142,10 @@
 
       <div class="col-4 offset-2  col-md-6 col-sm-5 font-style" style="font-size:15px;" >
         <table class="table table-outer-border " style="text-align:center; margin-top:110px;">
-        <th class="table-secondary"><strong> Payment Received </strong></th>
+            <tr>
+                <th class="table-secondary"><strong> Payment Received </strong></th>
+            </tr>
+        
         <tbody>
           <tr>
             <td class="left">

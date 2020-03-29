@@ -128,9 +128,15 @@ class PurchaseController extends Controller
     // $purchases = $user->purchases;
     // return $purchases;
     // return view('backups.dashboard_receipts.invoice')->with('purchases', $purchases);
-        $pdf = PDF::loadView('backups.dashboard_receipts.invoice');
-        ob_end_clean();
-        return $pdf->stream('invoice.pdf');
+ 
+
+    $pdf = PDF::loadView('documents.invoice')->setPaper('A4');
+    return $pdf->stream('invoice.pdf');
+
+        // return view('backups.dashboard_receipts.invoice');
+        // $pdf = PDF::loadView('backups.dashboard_receipts.invoice');
+        // ob_end_clean();
+        // return $pdf->download('invoice.pdf');
   }
 
    /**
@@ -140,7 +146,7 @@ class PurchaseController extends Controller
     {
         // $user = User::find(Auth::user()->id);
         // $purchases = $user->purchases;
-        $pdf = PDF::loadView('backups.dashboard_receipts.invoice');
+        $pdf = PDF::loadView('documents.invoice');
         ob_end_clean();
         return $pdf->download('invoice.pdf');
         //return view('dashboard_receipts.invoice');
