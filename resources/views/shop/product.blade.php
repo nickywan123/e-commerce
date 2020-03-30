@@ -94,7 +94,7 @@
                     <div class="col-12">
                         <p class="mb-1">Colors <small>(WIP)</small></p>
                         <div class="boxed">
-                            <input type="radio" id="color0" class="panel-product-filter" name="color" value="all" checked>
+                            <input type="radio" id="color0" class="panel-product-filter" name="color" value="" checked>
                             <label for="color0">All colors</label>
                         </div>
 
@@ -114,7 +114,7 @@
                     <div class="col-12">
                         <p class="mb-1">Sizes <small>(WIP)</small></p>
                         <div class="boxed">
-                            <input type="radio" id="size0" class="panel-product-filter" name="size" value="all" checked>
+                            <input type="radio" id="size0" class="panel-product-filter" name="size" value="" checked>
                             <label for="size0">All</label>
 
                             @foreach($product->sizeAttributes as $sizeAttribute)
@@ -176,6 +176,8 @@
 @push('script')
 <script>
     $(document).ready(function() {
+        // TODO: Reorder the js based on runtime sequence.
+
         // Variable initialization.
         const ItemContainer = $('#product-panel-container');
         var loading = $('#loadingDiv').hide();
@@ -249,11 +251,6 @@
                 productTemperature = null;
             }
 
-            console.log(productQuality);
-            console.log(productColor);
-            console.log(productSize);
-            console.log(productTemperature);
-
             $.ajax({
                 async: true,
                 beforeSend: function() {
@@ -281,17 +278,62 @@
             });
         });
 
+        let panelColor;
+        let panelSize;
+        let panelTemperature;
+        let inputColor;
+        let inputSize;
+        let inputTemperature;
+
+        $(document).on('click', '.product-attributes', function(e) {
+            inputColor = $('#product_attribute_color');
+            inputSize = $('#product_attribute_size');
+            inputTemperature = $('#product_attribute_temperature');
+
+            if ($('input[name="modal-color"]:checked').val()) {
+                panelColor = $('input[name="modal-color"]:checked').val();
+            } else {
+                panelColor = null;
+            }
+
+            if ($('input[name="modal-size"]:checked').val()) {
+                panelSize = $('input[name="modal-size"]:checked').val();
+            } else {
+                panelSize = null;
+            }
+
+            if ($('input[name="modal-temperature"]:checked').val()) {
+                panelTemperature = $('input[name="modal-temperature"]:checked').val();
+            } else {
+                panelTemperature = null;
+            }
+
+            inputColor.val(panelColor);
+            inputSize.val(panelSize);
+            inputTemperature.val(panelTemperature);
+
+            console.log(inputColor.val());
+            console.log(inputSize.val());
+            console.log(inputTemperature.val());
+        })
+
 
         // Assign a variable to element with the class input-number.
-        const productQuantity = $('.input-number');
+        let quantity;
         // Assign a variable to input with the name productQuantity.
-        const postProductQuantity = $('input[name$="productQuantity"]')
+        let postProductQuantity;
 
         // On change event of productQuantity..
-        productQuantity.on('change', function() {
-            // change the value of postProductQuantity to match productQuantity.
-            postProductQuantity.val() = productQuantity.val();
-        });
+        // productQuantity.on('change', function() {
+        //     // change the value of postProductQuantity to match productQuantity.
+        //     postProductQuantity.val() = productQuantity.val();
+        // });
+        $(document).on('change', '.input-number', function(e) {
+            postProductQuantity = $('input[name="productQuantity"]');
+
+            quantity = $(this).val();
+            postProductQuantity.val(quantity);
+        })
 
 
     });

@@ -104,7 +104,7 @@ class ShopController extends Controller
 
         if ($productTemperatures->count() > 0) {
             if ($temperature == null) {
-                $productSoldByPanels->whereHas('colorAttributes', function ($query) use ($productTemperatureNames) {
+                $productSoldByPanels->whereHas('lightTemperatureAttributes', function ($query) use ($productTemperatureNames) {
                     $query->whereIn('attribute_name', $productTemperatureNames);
                 });
             } else {

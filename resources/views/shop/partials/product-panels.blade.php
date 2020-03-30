@@ -104,7 +104,7 @@
                         <p class="mb-1">Colors <small>(WIP)</small></p>
                         <div class="boxed">
                             @foreach($productByPanels->colorAttributes as $colorAttribute)
-                            <input type="radio" id="panelProductColor-{{ $colorAttribute->id }}" name="color" value="{{ $colorAttribute->id }}">
+                            <input type="radio" class="product-attributes" id="panelProductColor-{{ $colorAttribute->id }}" name="modal-color" value="{{ $colorAttribute->id }}">
                             <label class="color-options" for="panelProductColor-{{ $colorAttribute->id }}" style="background-color: {{ $colorAttribute->color_hex }}"></label>
                             @endforeach
                         </div>
@@ -124,7 +124,7 @@
                         <p class="mb-1">Sizes <small>(WIP)</small></p>
                         <div class="boxed">
                             @foreach($productByPanels->sizeAttributes as $sizeAttribute)
-                            <input type="radio" id="panelProductSize-{{ $sizeAttribute->id }}" name="size" value="{{ $sizeAttribute->id }}">
+                            <input type="radio" class="product-attributes" id="panelProductSize-{{ $sizeAttribute->id }}" name="modal-size" value="{{ $sizeAttribute->id }}">
                             <label for="panelProductSize-{{ $sizeAttribute->id }}">{{ $sizeAttribute->attribute_name }}</label>
                             @endforeach
                         </div>
@@ -144,7 +144,7 @@
                         <p class="mb-1">Color Temperatures <small>(WIP)</small></p>
                         <div class="boxed">
                             @foreach($productByPanels->lightTemperatureAttributes as $lightTemperatureAttribute)
-                            <input type="radio" id="panelProductTemperature-{{ $lightTemperatureAttribute->id }}" name="size" value="{{ $lightTemperatureAttribute->id }}">
+                            <input type="radio" class="product-attributes" id="panelProductTemperature-{{ $lightTemperatureAttribute->id }}" name="modal-temperature" value="{{ $lightTemperatureAttribute->id }}">
                             <label for="panelProductTemperature-{{ $lightTemperatureAttribute->id }}">{{ $lightTemperatureAttribute->attribute_name }}</label>
                             @endforeach
                         </div>
@@ -181,6 +181,11 @@
                     <form method="POST" action="{{ route('shop.cart.add-item') }}">
                         @method('POST')
                         @csrf
+                        <input type="hidden" name="product_id" value="{{ $productByPanels->id }}">
+                        <input type="hidden" id="product_attribute_color" name="product_attribute_color" value="">
+                        <input type="hidden" id="product_attribute_size" name="product_attribute_size" value="">
+                        <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
+
                         <input type="hidden" name="productQuantity" value="1">
                         <button style="color: #000; background-color: #fccb34;" type="submit" class="btn btn-primary">Add to cart</button>
                     </form>
