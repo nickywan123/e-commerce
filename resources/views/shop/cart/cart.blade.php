@@ -1,7 +1,7 @@
 @extends('layouts.shop.main')
 
 @section('content')
-<div>
+<div style="min-height: 100vh;">
     <!-- Breadcrumb here -->
     <div class="container" style="margin-top: 20px;">
         <h1 class="mt-2 pl-0 pr-0" style="font-size: 2.3rem; color: #000;">Your Shopping Cart <small>(WIP)</small></h1>

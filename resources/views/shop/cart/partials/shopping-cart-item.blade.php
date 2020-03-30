@@ -45,14 +45,14 @@
 
                     <div>
                         <ul class="list-unstyled">
-                            @if(in_array('product_color', $cartItem->product_information))
+                            @if(array_key_exists('product_color', $cartItem->product_information))
                             <li class="text-capitalize">Color: {{ $cartItem->product_information['product_color'] }}</li>
                             @endif
-                            @if(in_array('product_size', $cartItem->product_information))
-                            <li class="text-capitalize">Dimensions: {{ $cartItem->product_information['product_size'] }}</li>
+                            @if(array_key_exists('product_size', $cartItem->product_information))
+                            <li class="text-capitalize">Size: {{ $cartItem->product_information['product_size'] }}</li>
                             @endif
-                            @if(in_array('product_temperature', $cartItem->product_information))
-                            <li class="text-capitalize">Length: {{ $cartItem->product_information['product_temperature'] }}</li>
+                            @if(array_key_exists('product_temperature', $cartItem->product_information))
+                            <li class="text-capitalize">Color Temperature: {{ $cartItem->product_information['product_temperature'] }}</li>
                             @endif
                         </ul>
                     </div>

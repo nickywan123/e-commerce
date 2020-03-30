@@ -4,7 +4,7 @@ namespace App\Http\Controllers\WEB\Shop;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Users\Cart;
+use App\Models\Users\Customers\Cart;
 use App\Models\Users\User;
 use Illuminate\Support\Facades\Auth;
 
