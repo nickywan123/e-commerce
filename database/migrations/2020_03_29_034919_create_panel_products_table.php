@@ -18,11 +18,12 @@ class CreatePanelProductsTable extends Migration
             $table->unsignedBigInteger('global_product_id');
             $table->unsignedBigInteger('panel_account_id');
             $table->text('product_details');
-            $table->integer('price');
-            $table->integer('quality');
-            $table->integer('delivery_fee');
             $table->text('panel_promotion');
-            $table->integer('product_rating');
+            $table->text('product_materials');
+            $table->integer('price');
+            $table->integer('quality_id');
+            $table->integer('delivery_fee');
+            $table->decimal('product_rating', 2, 1)->default(0);
             $table->timestamps();
         });
     }

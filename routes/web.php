@@ -173,8 +173,17 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         });
 
         Route::group(['prefix' => 'shop'], function () {
+            // Get category.
             Route::get('/category/{categorySlug}', 'WEB\Shop\ShopController@category')
                 ->name('web.shop.category');
+
+            // Get product.
+            Route::get('/product/{productSlug}', 'WEB\Shop\ShopController@product')
+                ->name('web.shop.product');
+
+            // Product filter.
+            Route::post('/product/{productSlug}', 'WEB\Shop\ShopController@productFilter')
+                ->name('web.shop.product.filter');
         });
     });
     // End Web

@@ -25,6 +25,7 @@ class CreatePanelInfosTable extends Migration
             $table->string('pic_nric');
             $table->string('pic_contact');
             $table->string('pic_email');
+            $table->decimal('panel_rating', 2, 1)->default(0);
             $table->timestamps();
         });
     }

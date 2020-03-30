@@ -16,5 +16,8 @@ class Quality extends Model
     protected $primaryKey = 'id';
 
     // Set mass assignable columns
-    protected $fillable = []
+    protected $fillable = [
+        'name',
+        'description'
+    ];
 }

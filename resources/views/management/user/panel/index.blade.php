@@ -22,6 +22,7 @@
                     <th>Company Name</th>
                     <th>Company SSM</th>
                     <th>Email</th>
+                    <th>Panel ID</th>
                     <th>PIC Name</th>
                     <th>PIC Email</th>
                     <th>PIC Contact</th>
@@ -32,6 +33,7 @@
                     <td>{{ $panel->company_name }}</td>
                     <td>{{ $panel->ssm_number }}</td>
                     <td>{{ $panel->user->email }}</td>
+                    <td>{{ $panel->account_id }}</td>
                     <td>{{ $panel->pic_name }}</td>
                     <td>{{ $panel->pic_email }}</td>
                     <td>{{ $panel->pic_contact }}</td>

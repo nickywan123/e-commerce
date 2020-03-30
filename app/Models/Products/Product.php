@@ -31,6 +31,11 @@ class Product extends Model
         );
     }
 
+    public function parentProduct()
+    {
+        return $this->belongsTo('App\Models\Globals\Products\Product', 'global_product_id');
+    }
+
     /**
      * Get all attribute of a product.
      */
@@ -71,11 +76,22 @@ class Product extends Model
      */
     public function quality()
     {
-        return $this->hasOne('App\Models\Globals\Quality', 'quality_id');
+        return $this->belongsTo('App\Models\Globals\Quality', 'quality_id');
     }
 
+    /**
+     * Get panel info of a product.
+     */
     public function panel()
     {
         return $this->belongsTo('App\Models\Users\Panels\PanelInfo', 'panel_account_id', 'account_id');
+    }
+
+    /**
+     * Get the formatted product's price.
+     */
+    public function getDecimalPrice()
+    {
+        return number_format(($this->price / 100), 2);
     }
 }
