@@ -1,273 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Purchase Order</title>
- {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">  --}}
-   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Purchase Order</title>
+</head>
 <body>
-    <div class="container">
-        <div class="">
-      
-      <div class="container">
-        <span class="float-left " > <img src="{{ asset('images/Invoice-Logo.png') }}" style="width:50%;" alt="No Logo"></span>
-      </div>
-                                                                                                                                    
-       
-      
-      
-      <div class="card-body">
-      <div class="row mb-4">
+  <div class="container">
+    <span class="float-left" > <img src="{{ asset('images/Invoice-Logo.png') }}" style="width:15%;" alt="No Logo"></span>
+ 
 
+     
+      <img style="float:right; margin-bottom:10px;" src="data:images/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate('www.demo3.bujishu.com/QR-Completed')) }} ">
         
-      <div class="col-6 col-md-3 col-sm-6 font-style" style="font-size:10px;">
+       
+    
+  </div> <br> <br>
 
-        <table class="table  table-outer-border  font-style " style="font-weight:bold;" >
+  <div>
+
+  <div style="font-size:10px;float:left; width:50%;">
+  <table style="border: 1px solid black; "  >
+         <tr>
+            <td>Purchase From:</td>
+            <td>Bane</td>
+         </tr>
          
-       <tbody class="font-style">
-    
-         <tr class="table-dotted-line" style="height: 160px;" > 
-           <td>Purchase From:</td>
-                
+         <tr >
+            <td>Person In Charge:</td>
+            <td>Nick</td>
          </tr>
-       
-         <tr class="table-dotted-line"> 
-           <td>Person In Charge:</td>
-            
-         </tr>
-         <tr class="table-dotted-line"> 
-           <td>Contact No:</td>
-             
-         </tr>
-      
-       </tbody>
-        </table>
-    
-    </div>
 
-    <div class="col-6 col-md-3 col-sm-6 font-style " style="font-size:10px;">
-
-      <table class="table table-outer-border font-style " style="font-weight:bold;" >
-    
-     <tbody class="font-style  ">
+         <tr>
+          <td>Contact No:</td>
+          <td>0172190042</td>
+       </tr>
+      </table>
   
-       <tr class="table-dotted-line" style="height: 160px;  " > 
-         <td >Deliver To:</td>
-          
-       </tr>
-       <tr class="table-dotted-line"> 
-         <td>Attention To: </td>
-              
-       </tr>
-       <tr class="table-dotted-line"> 
-         <td>Contact No:</td>
-        
-       </tr>
-     
-     </tbody>
-      </table>
-      
-      </div>
-      <div class="col-6 col-md-4 offset-md-2 font-style" style="font-size:11px; ">
-    <table class="table  font-style table-outer-border table-bordered " >
-      <thead>
-        
-          <th class="table-secondary" style="color:red; text-align:center; font-size:10px; " colspan="2"  >PURCHASE ORDER</th>
-      </thead>
-   <tbody class="font-style">
+    </div>
 
-     <tr > 
-       <td>Number</td>
-       <td>BJSDSHDSO2132</td>      
-     </tr>
-     <tr> 
-       <td>Date</td>
-       <td>28/02/2020</td>      
-     </tr>
-     <tr> 
-       <td>Delivery Date</td>
-       <td>03/04/2020</td>      
-     </tr>
-     <tr> 
-       <td>Agent Code</td>
-       <td>XSDSDS</td>      
-     </tr>
-     <tr> 
-       <td>Credit Terms</td>
-       <td>Cash</td>      
-     </tr>
-   </tbody>
-    </table>
-  </div>
-</div>
-   </div>
-      
-      <div class="font-style"  style="font-size:10px; ">
-      <table class="table table-bordered table-outer-border ">
-      <thead class="table-secondary table-outer-border ">
-      <tr >
-      <th class="center">No</th>
-      <th>Product ID</th>
-      <th>Description</th>
-      
-      <th class="left">Quantity</th>
-        <th class="center">Unit Price (RM)</th>
-      <th class="right">Amount(RM)</th>
+
+    <div style="font-size:10px;float:right; margin-right:100px; width:50%;">
+
+  <table style="border: 1px solid black;  ">
+         <tr>
+            <td>Deliver To:</td>
+            <td>Jalan Bani Sasoi,Taman Megah</td>
+         </tr>
+         
+         <tr >
+            <td>Attention To:</td>
+            <td>James</td>
+         </tr>
+
+         <tr>
+          <td>Contact No:</td>
+          <td>0172155442</td>
+       </tr>
+      </table>
+  
+    </div>
+
+    <div style="font-size:10px;float:right; margin-left:93%;  width:50%;">
+
+      <table  border="1">
+      <tr>
+        <th style="color:red" colspan="2"> PURCHASE ORDER</th>
       </tr>
-      </thead>
-      <tbody>
-        <tr style="height:500px;" >
-          <td  class="center">1</td>
-          <td class="left strong">E3W453</td>
-          <td class="left"> Longest wire ever</td>
-          
-          <td class="center">1</td>
-            <td class="left">999,00</td>
-          <td class="right">999,00</td>
-          
-          </tr>
-      </tbody>
-      </table>
-      </div>
-
-      <div class="row">
-
-      <div class="col-4  offset-1 col-md-6 col-sm-5 font-style" style="font-size:15px; font-weight:bold;" >
-      Remarks: <br><textarea readonly style="width:100%; margin-top:30px; resize:none;" cols="100" rows="10" >
-
-      </textarea>
-    </div>
-        <div class="col-4 offset-2 col-md-4 col-sm-5 ml-auto font-style"  style="font-size:10px; ">
-          <table class="table table-outer-border">
-          <tbody>
-          <tr>
-          <td class="left">
-          <strong>Subtotal</strong>
-          </td>
-          <td class="right">8.497,00</td>
-          </tr>
-          <tr>
-          <td class="left">
-          <strong>Transportation(Klang Valley)</strong>
-          </td>
-          <td class="right">1,699,40</td>
-          </tr>
-          <tr>
-          <td class="left">
-           <strong>Transportation(Outstation)</strong>
-          </td>
-          <td class="right">679,76</td>
-          </tr>
-          <tr>
-          <td class="left">
-          <strong> Grand Total</strong>
-          </td>
-          <td class="right">
-          <strong>7.477,36</strong>
-          </td>
-          </tr>
-          <tr>
-            <td class="left">
-            <strong> Discount</strong>
-            </td>
-            <td class="right">
-            20%
-            </td>
-            </tr>
-            <tr>
-              <td class="left">
-              <strong> Amount Paid</strong>
-              </td>
-              <td class="right">
-              7.477,36
-              </td>
-              </tr>
-              <tr>
-                <td class="left">
-                <strong> Balance Due</strong>
-                </td>
-                <td class="right">
-                <strong>7.477,36</strong>
-                </td>
-                </tr>
-          </tbody>
+             <tr >
+                <td>Number</td>
+                <td>BJ203292434343</td>
+             </tr>
+             
+             <tr >
+                <td>Date</td>
+                <td>2/28/2020</td>
+             </tr>
+    
+             <tr>
+              <td>Delivered Date</td>
+              <td>??????</td>
+           </tr>
+           <tr>
+            <td>Agent Code</td>
+            <td>??????</td>
+         </tr>
+         <tr>
+          <td>Credit Terms:</td>
+          <td>??????</td>
+       </tr>
           </table>
-          
-          </div>
-     </div>
-       
-
-      <div class="row">    
-      <div class="col-5 col-md-5 font-style" style="margin-left: 20px;">
-  <h6 style="font-size:15px;  font-weight: bold;">Terms & Conditions</h6>
- <p style="font-size:10px"> Goods sold are neither returnable nor refundable</p>
-</div>  
-</div> 
-
-<div class="row">
-<div class="offset-4 col-md-4 font-style">
-  <h6 style="font-size:10px;" >This invoice is computer generated,no signature is required.</h6>
-</div>
-</div>
-<hr style="border:2px solid black">   
-<div class="row">
-  <div class="col-6 col-md-5 font-style" style="font-size:10px; margin-left: 20px;">
-    <h6 style="font-size:15px;  font-weight: bold;"> DC Signature Livingstyle SDN BHD</h6>
-    <p> Company No.202001002917(1359236-K)</p>
-    
-   
-  </div>
-  <div  style=" border-right: 2px solid black;  "></div>
-  <div class="col-6 col-md-5 font-style" style="font-size:10px" >
-    <p>1-26-05-Menara Bangkok Bank,Berjaya Central Park, No 105, Jalan Ampang,50450 Kuala Lumpur,Malaysia</p>
-    <p style="word-spacing: 0px;"><i class="icon-phone"></i> 603-21818821&emsp;;<i class="icon-file-text"></i> bujishu@gmail.com &emsp;<i class="icon-link"></i> www.bujishu.com</p>
-  </div>
-</div>
-     
-</div> 
-    
-
       
-      </div>
-     
-      </div>
-     
-    </div>
+        </div>
+
         
+<div style="font-size:10px; margin-top:15%;   width:100%;">
+  <table style=" width: 100%;" border="1">
+    <tr>
+      <th style="width:20%;" > No</th>
+      <th style="width:30%;" > Product ID</th>
+      <th style="width:170%;" > Description</th>
+      <th style="width:20%;"  > Quantity</th>
+      <th style="width:50%;" > Unit Price (RM)</th>
+      <th style="width:50%;"  > Amount (RM)</th>
+    </tr>
+  <tr >
+    <td style="height:500px;"  align="center">1</td>
+    <td >BU0320 0100 0001</td>
+    <td  align="center" >  BED SET GREY</td>
+    <td  align="center" >1</td>
+    <td  align="center" >3,000.00</td>
+    <td  align="center" >3,000.00</td>
+   
+  </tr>
 
-     
+  </table>
+  
+   
+    
+    
+<table style="position:relative; left:475px; bottom:250px;" border="0">
+  <tr>
+ <td style="border:none;">SubTotal</td>
+<td width="70" style="border: 1px solid #ccc; " >3,000.00</td>  
+</tr>
+<tr>
+  <td style="border:none;">Transportation(Klang Valley)</td>
+ <td style="border: 1px solid #ccc;" >-</td>  
+ </tr>
+ <tr>
+  <td style="border:none;">Transportation (Outstation)</td>
+ <td style="border: 1px solid #ccc;" >-</td>  
+ </tr>
+ <tr>
+  <td style="border:none;">Grand Total</td>
+ <td style="border: 1px solid #ccc;" >3,000.00</td>  
+ </tr>
+ <tr>
+  <td style="border:none;">Discount</td>
+ <td style="border: 1px solid #ccc;" >20%</td>  
+ </tr>
+ <tr>
+  <td style="border:none;">Amount Paid</td>
+ <td style="border: 1px solid #ccc;" >3,000.00</td>  
+ </tr>
+ <tr>
+  <td style="border:none;">Balance Due</td>
+ <td style="border: 1px solid #ccc;" >3,000.00</td>  
+ </tr>
+ 
+</table>
 
-     
 
+</div>
+
+<div style="position:absolute; top:690px;" >
+  <h3 style="font-size:10px;">Remarks:</h3>
+  <textarea class="textarea" name="remarks" id="remarks" cols="5" rows="10"></textarea>
+  </div>
+
+</div>
+
+  
+
+
+  <div style="font-size:10px;">
+    <h4>Terms & Condition</h4>
+    <p>Goods sold are neither returnable nor refundable</p>
+
+  </div>
+
+  <hr style="border-bottom:1px solid black;">
+
+  <div style="font-size:10px; position:absolute;">
+    <h3 style="font-weight:bold;">DC SIGNATURE LIVINGSTYLE SDN BHD </h3>
+    <p> Company No.202001002917(1359236-K)</p>
+  
+  </div>
+
+  <div style="font-size:10px; position:absolute; right:100px; float:right;">
+    <p >1-26-05-Menara Bangkok Bank,Berjaya Central Park, No 105, Jalan Ampang,50450 Kuala Lumpur,Malaysia</p>
+    <p > 603-21818821&emsp;; bujishu@gmail.com &emsp; www.bujishu.com</p>
+  </div>
+
+  
 
 </body>
-
+</html>
 
 <style>
-
-.font-style{
-  font-family: "Times New Roman", Times, serif;
-}
-
-.table-outer-border  {
-    border-left:  #e3e3e3  solid;
-    border-right: #e3e3e3  solid;
-    border-top: #e3e3e3  solid ;
-    border-bottom: #e3e3e3  solid;
-   
-}
-
-.table-dotted-line{
-   border-style: dotted;
-}
-
-</style>
+  .vl {
+    border-right: 1px solid black;
+    height: 50px;
+  }
 
 
-</html>
+  textarea{
+    width: auto; 
+    max-width: 400px;
+  }
+  </style>

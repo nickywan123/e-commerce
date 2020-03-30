@@ -21,6 +21,9 @@ Route::get('qr-code-g', function () {
       
   });
 
+  //Route to finalize order status to deliver state once customer scan the QR
+//   Route::get('/QR-Completed','SomeControllerMethod');
+
 Route::get('/', 'Guest\GuestController@index');
 
 Route::get('/login', 'Auth\LoginController@showLoginForm');
@@ -29,7 +32,7 @@ Route::get('/login', 'Auth\LoginController@showLoginForm');
 Route::get('/shop/invoice', 'Purchase\PurchaseController@invoiceCustomer');
 
 
-Route::get('/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
+Route::get('/shop/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
   //Return Work In progress page
   Route::view('/wip', 'errors.wip');
 

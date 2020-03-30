@@ -9,6 +9,7 @@
 <body>
     
 <a href="/shop/invoice">Invoice</a>
+<a href="/shop/purchase-order">Purchase Order</a>
 
 </body>
 </html>

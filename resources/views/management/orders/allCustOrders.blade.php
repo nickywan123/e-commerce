@@ -59,7 +59,7 @@
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
         
 
-        <td><a href="/purchase-order" target="_blank" rel="noopener noreferrer" >12310543</a></td>
+        <td><a href="/shop/purchase-order" target="_blank" rel="noopener noreferrer" >12310543</a></td>
        
         <td>CH93</td>
         <td>

@@ -9,7 +9,8 @@
 <body>
   <div class="container">
     <span class="float-left" > <img src="{{ asset('images/Invoice-Logo.png') }}" style="width:15%;" alt="No Logo"></span>
-  </div> <br>
+    <img style="float:right; margin-bottom:10px;" src="data:images/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate('www.demo3.bujishu.com/QR-Completed')) }} ">
+  </div> <br> <br>
 
   <div >
 
@@ -34,7 +35,8 @@
     </div>
 
 
-    <div style="font-size:10px;float:right; margin-right:150px; width:50%;">
+    <div style="font-size:10px;float:right; margin-right:100px; width:50%;">
+
 
   <table style="border: 1px solid black;  ">
          <tr>
@@ -55,7 +57,7 @@
   
     </div>
 
-    <div style="font-size:10px;float:right; margin-left:81%;  width:50%;">
+    <div style="font-size:10px;float:right; margin-left:93%;  width:50%;">
 
       <table  border="1">
       <tr>
@@ -99,22 +101,22 @@
       <th style="width:50%;"  > Amount (RM)</th>
     </tr>
   <tr >
-    <td style="height:350px;">1</td>
-    <td >BED12193232</td>
-    <td >BED SET GREY</td>
-    <td >1</td>
-    <td >3,000.00</td>
-    <td >3,000.00</td>
+    <td style="height:500px;"  align="center">1</td>
+    <td >BU0320 0100 0001</td>
+    <td  align="center" >  BED SET GREY</td>
+    <td  align="center" >1</td>
+    <td  align="center" >3,000.00</td>
+    <td  align="center" >3,000.00</td>
    
   </tr>
 
   </table>
     
-<table style="position:relative; left:500px; " border="1">
-  <tr>
- <td>SubTotal</td>
-<td style="border: 1px solid #ccc; " >3,000.00</td>  
-</tr>
+  <table style="position:relative; left:475px; bottom:250px;" border="0">
+    <tr>
+   <td style="border:none;">SubTotal</td>
+  <td width="70" style="border: 1px solid #ccc; " >3,000.00</td>  
+  </tr>
 <tr>
   <td>Transportation(Klang Valley)</td>
  <td style="border: 1px solid #ccc;" >-</td>  
@@ -145,9 +147,9 @@
 
 </div>
 
-<div>
-  <table  style="position:relative; left:100px; " border="0">
-    <tr>
+<div style="position:absolute; top:710px;   font-size:10px;" >
+  <table width="300" border="1">
+    <tr >
       <th  colspan="2"> Payment Received</th>
     </tr>
            <tr >
@@ -178,17 +180,16 @@
     <p>Goods sold are neither returnable nor refundable</p>
 
   </div>
-
-  <div style="font-size:10px; font-weight:bold; position:relative; left:200px;">
-    <p>This invoice is computer generated,no signature is required</p>
-  </div>
   <hr style="border-bottom:1px solid black;">
-
   <div style="font-size:10px; position:absolute;">
     <h3 style="font-weight:bold;">DC SIGNATURE LIVINGSTYLE SDN BHD </h3>
     <p> Company No.202001002917(1359236-K)</p>
-    <p style=" position:absolute; left:300px; bottom:10px;">1-26-05-Menara Bangkok Bank,Berjaya Central Park, No 105, Jalan Ampang,50450 Kuala Lumpur,Malaysia</p>
-    <p style=" position:absolute; left:350px; top:60px; "><i class="icon-phone"></i> 603-21818821&emsp;;<i class="icon-file-text"></i> bujishu@gmail.com &emsp;<i class="icon-link"></i> www.bujishu.com</p>
+  
+  </div>
+
+  <div style="font-size:10px; position:absolute; right:100px; float:right;">
+    <p >1-26-05-Menara Bangkok Bank,Berjaya Central Park, No 105, Jalan Ampang,50450 Kuala Lumpur,Malaysia</p>
+    <p > 603-21818821&emsp;; bujishu@gmail.com &emsp; www.bujishu.com</p>
   </div>
 
   

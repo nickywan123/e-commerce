@@ -5,19 +5,21 @@
     <div class="row">
         <div class="col-2 hidden-sm">
             <div class="p-3 shadow-sm" style="background-color: #ffffff;">
-                <h5 class="text-dark">Panel <small>(WIP)</small></h5>
-                <ul class="list-unstyled pl-2 pr-2">
-                    <li>
+                
+                <h5 class="text-dark ">Panel <small>(WIP)</small></h5>
+                
+                <ul class="list-unstyled pl-2 pr-2 ">
+                    <li >
                         <a class="text-dark" href="">Company A</a>
                     </li>
-                    <li>
+                    <li >
                         <a class="text-dark" href="">Company B</a>
                     </li>
-                    <li>
+                    <li >
                         <a class="text-dark" href="">Company C</a>
                     </li>
                 </ul>
-
+           
                 <h5 class="text-dark">Price <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
