@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\Purchase;
 
+use PDF;
 use Auth;
+use Carbon\Carbon;
+use App\Models\Users\User;
 use Illuminate\Http\Request;
-use App\Models\Purchases\Item;
-use App\Models\Purchases\Order;
 use App\Mail\Orders\CheckoutOrder;
 use App\Models\Purchases\Purchase;
-use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Purchases\Order;
+use App\Models\Purchases\Item;
 use App\Models\Users\Customers\Cart;
 use App\Models\Categories\Category;
 use Illuminate\Support\Facades\View;
-use PDF;
 
 class PurchaseController extends Controller
 {
