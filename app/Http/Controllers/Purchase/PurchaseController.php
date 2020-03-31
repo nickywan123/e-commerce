@@ -97,6 +97,15 @@ class PurchaseController extends Controller
         // Check if offline payment or payment gateway -> then redirect to related page.
 
         // TODO: Temporary redirect to purchase tracking page.
+        // If FPX, redirect to another page to POST submit to payment gateway.
+        // Create controller method to handle the response.
+
+        // If Card, redirect to another page to POST submit to payment gateway.
+        // Create controller method to handle the response.
+
+        // If Offline, redirect to another page for them to upload receipt.
+        // Create controller method to handle file upload and update invoice + po status.
+
         return redirect('/shop/order');
     }
 
@@ -113,33 +122,36 @@ class PurchaseController extends Controller
      */
     public function paymentGatewayResponse(Request $request)
     {
-        //
+        // Update PO & Invoice status to paid.
+        // Generate PDF of Invoice and PO.
+        // Email to customer & panel.
     }
 
 
 
 
- /**
-  * Invoice response after customer purchase item
-  */
-  public function invoiceCustomer(){
-      
-    // $user = User::find(Auth::user()->id);
-    // $purchases = $user->purchases;
-    // return $purchases;
-    // return view('backups.dashboard_receipts.invoice')->with('purchases', $purchases);
- 
+    /**
+     * Invoice response after customer purchase item
+     */
+    public function invoiceCustomer()
+    {
 
-    $pdf = PDF::loadView('documents.invoice')->setPaper('A4');
-    return $pdf->stream('invoice.pdf');
+        // $user = User::find(Auth::user()->id);
+        // $purchases = $user->purchases;
+        // return $purchases;
+        // return view('backups.dashboard_receipts.invoice')->with('purchases', $purchases);
+
+
+        $pdf = PDF::loadView('documents.invoice')->setPaper('A4');
+        return $pdf->stream('invoice.pdf');
 
         // return view('backups.dashboard_receipts.invoice');
         // $pdf = PDF::loadView('backups.dashboard_receipts.invoice');
         // ob_end_clean();
         // return $pdf->download('invoice.pdf');
-  }
+    }
 
-   /**
+    /**
      * Return invoice for Dealer
      */
     public function viewInvoice()
@@ -151,6 +163,4 @@ class PurchaseController extends Controller
         return $pdf->download('invoice.pdf');
         //return view('dashboard_receipts.invoice');
     }
-
-
 }
