@@ -25,10 +25,13 @@
 <section id="slideshow" class="hidden-sm">
   <div class="slick ">
     <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage1-wip.png')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/images/Home-Banner.jpg')}}" alt="">
     </div>
     <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage2-wip.png')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/images/Home-Design.jpg')}}" alt="">
+    </div>
+    <div>
+      <img class="image-slideshow" src="{{asset('/images/Home-Desktop.jpg')}}" alt="">
     </div>
 
   </div>
@@ -37,10 +40,13 @@
 <section id="slideshow" class="hidden-md">
   <div class="slick ">
     <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage2-mobile-wip.png')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/images/Banner_Design_Mobile.jpg')}}" alt="">
     </div>
     <div>
-      <img class="image-slideshow" src="{{asset('/images/promopage3-mobile-wip.png')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/images/Banner_Mobile.jpg')}}" alt="">
+    </div>
+    <div>
+      <img class="image-slideshow" src="{{asset('/images/Banner_Top_Rated_Mobile.jpg')}}" alt="">
     </div>
 
   </div>
