@@ -27,9 +27,9 @@ class PermissionsTableSeeder extends Seeder
             'name' => 'edit a product'
         ]);
 
-        // Permission::create([
-        //     'name' => ''
-        // ]);
+        Permission::create([
+            'name' => 'manage users'
+        ]);
 
         // Permission::create([
         //     'name' => ''
@@ -70,5 +70,7 @@ class PermissionsTableSeeder extends Seeder
         $administrator = Role::create([
             'name' => 'administrator'
         ]);
+
+        $administrator->givePermissionTo('manage users');
     }
 }

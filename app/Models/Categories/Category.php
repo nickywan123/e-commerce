@@ -54,20 +54,11 @@ class Category extends Model
         return $this->hasMany('App\Models\Categories\Category', 'parent_category_id');
     }
 
-    // TODO: Confirm then delete this block of code.
-    /**
-     * Get all of the category's childs.
-     */
-    public function subcategories()
-    {
-        return $this->hasMany('App\Models\Categories\SubCategory', 'parent_category_id');
-    }
-
     /**
      * Get all products belonging to a category.
      */
     public function products()
     {
-        return $this->belongsToMany('App\Models\Products\Product', 'piv_category_product', 'category_id', 'product_id');
+        return $this->belongsToMany('App\Models\Globals\Products\Product', 'piv_category_product', 'category_id', 'product_id');
     }
 }

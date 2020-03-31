@@ -34,25 +34,25 @@
             <div class="row">
 
                 <div class="col-4">
-                    <img class="responsive-img" src="{{ asset('storage/' . $cartItem->product->images[0]->path . $cartItem->product->images[0]->filename) }}" alt="">
+                    <img class="responsive-img" src="{{ asset('storage/' . $cartItem->product->parentProduct->images[0]->path . $cartItem->product->parentProduct->images[0]->filename) }}" alt="">
                 </div>
 
                 <div class="col-8">
                     <button class="btn btn-sm btn-danger float-right" id="DeleteCartItem" value="{{ $cartItem->id }}">Delete</button>
-                    <h4 style="width: 80%;">{{ $cartItem->product->name }}</h4>
+                    <h4 style="width: 80%;">{{ $cartItem->product->parentProduct->name }}</h4>
                     <p>x {{ $cartItem->quantity }}</p>
-                    <h5>RM {{ number_format(($cartItem->total_price / 100), 2) }}</h5>
+                    <h5>RM {{ $cartItem->getDecimalTotalPrice() }}</h5>
 
                     <div>
                         <ul class="list-unstyled">
-                            @if($cartItem->color)
-                            <li class="text-capitalize">Color: {{ $cartItem->color->color_name }}</li>
+                            @if(array_key_exists('product_color', $cartItem->product_information))
+                            <li class="text-capitalize">Color: {{ $cartItem->product_information['product_color'] }}</li>
                             @endif
-                            @if($cartItem->dimension)
-                            <li class="text-capitalize">Dimensions: {{ $cartItem->dimension->width }} x {{ $cartItem->dimension->height }} x {{ $cartItem->dimension->depth }} {{ $cartItem->dimension->measurement_unit }}</li>
+                            @if(array_key_exists('product_size', $cartItem->product_information))
+                            <li class="text-capitalize">Size: {{ $cartItem->product_information['product_size'] }}</li>
                             @endif
-                            @if($cartItem->length)
-                            <li class="text-capitalize">Length: {{ $cartItem->length->length }} {{ $cartItem->length->measurement_unit }}</li>
+                            @if(array_key_exists('product_temperature', $cartItem->product_information))
+                            <li class="text-capitalize">Color Temperature: {{ $cartItem->product_information['product_temperature'] }}</li>
                             @endif
                         </ul>
                     </div>

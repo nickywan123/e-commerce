@@ -19,21 +19,41 @@ class UserInfo extends Model
 
     // Set mass assignable columns
     protected $fillable = [
+        'account_id',
         'full_name',
         'nric',
-        'ethnicity',
-        'gender',
-        'date_of_birth',
-        'occupation',
-        'dealer_id',
+        'referrer_id'
     ];
 
     /**
      * Get the user info associated with the user.
      */
-
     public function user()
     {
         return $this->belongsTo('App\Models\Users\User', 'user_id');
+    }
+
+    /**
+     * Get the user contact associated with the user.
+     */
+    public function contacts()
+    {
+        return $this->hasMany('App\Models\Users\UserContact', 'account_id', 'account_id');
+    }
+
+    /**
+     * Get all of the user's addresses.
+     */
+    public function addresses()
+    {
+        return $this->hasMany('App\Models\Users\UserAddress', 'account_id', 'account_id');
+    }
+
+    /**
+     * Get largest customer account id.
+     */
+    public function scopeLargestCustomerId($query)
+    {
+        return $query->max('account_id');
     }
 }

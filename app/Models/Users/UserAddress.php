@@ -4,7 +4,6 @@ namespace App\Models\Users;
 
 use Illuminate\Database\Eloquent\Model;
 
-// model to handle user addresses
 class UserAddress extends Model
 {
     // Set table
@@ -22,10 +21,11 @@ class UserAddress extends Model
         'address_2',
         'address_3',
         'postcode',
-        'state',
+        'city',
+        'state_id',
         'is_shipping_address',
         'is_residential_address',
-        'is_correspondence_address'
+        'is_mailing_address'
     ];
 
     /**
@@ -37,6 +37,11 @@ class UserAddress extends Model
         return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 
-    // Eloquent Scope
-
+    /**
+     * Get state.
+     */
+    public function state()
+    {
+        return $this->belongsTo('App\Models\Globals\State', 'state_id');
+    }
 }

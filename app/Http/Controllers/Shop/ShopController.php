@@ -9,7 +9,7 @@ use Auth;
 use App\Models\Categories\Category;
 use App\Models\Categories\ProductType;
 use App\Models\Categories\SubCategory;
-use App\Models\Products\Product;
+use App\Models\Globals\Products\Product;
 use Illuminate\Support\Facades\View;
 use App\Models\Users\User;
 use App\Models\PromotionPage\Banner;
@@ -131,9 +131,9 @@ class ShopController extends Controller
             return 'Work in progress.';
         } else {
             // Get matching product.
-            $product = Product::where('slug', $slug)->with('images')->first();
+            $product = Product::where('name_slug', $slug)->with('images')->first();
         }
-
+        // return $product;
         return view('shop.product')->with('product', $product);
     }
 

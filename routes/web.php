@@ -32,6 +32,23 @@ Route::get('/login', 'Auth\LoginController@showLoginForm');
 Route::get('/shop/invoice', 'Purchase\PurchaseController@invoiceCustomer');
 
 
+Route::get('/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
+//Return Work In progress page
+Route::view('/wip', 'errors.wip');
+/** Author Nicholas
+ * Hardcode (Temporarily) to show product category for each category
+ */
+
+Route::view('/category/bedsheet-mattress', 'shop.catalog.backups.bedsheet-mattress');
+
+Route::view('/category/curtain', 'shop.catalog.backups.curtain');
+Route::view('/category/curtain/pinch-pleat', 'shop.catalog.backups.pinch-pleat');
+Route::view('/category/bedsheet-mattress/canopy-bed', 'shop.catalog.backups.canopy-bed');
+
+/**
+ * Temporary routes.
+ */
+Route::get('/management/administrator/user/panel', 'Administrator\User\PanelController@index');
 Route::get('/shop/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
   //Return Work In progress page
   Route::view('/wip', 'errors.wip');
@@ -154,6 +171,8 @@ Route::get('/shop/purchase-order', 'Panel\DashboardController@viewPurchaseOrder'
 //         $order->order_status = 'Placed';
 //         $order->save();
 
+    return view("backups.dashboard_receipts.invoice");
+});
 //         $panelId = $key;
 
 //         // Foreach item in the cart..
@@ -187,6 +206,9 @@ Route::get('/shop/purchase-order', 'Panel\DashboardController@viewPurchaseOrder'
 //     // Create invoice record.
 // });
 
+/**
+ * Real routes.
+ */
 // Authentication routes. Verification is set to true.
 Auth::routes(['verify' => true]);
 
@@ -218,9 +240,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/password', 'Management\ManagementController@modifyPassword');
         Route::get('/statements', 'Management\ManagementController@statements');
 
-       
-      
-
         // Product Management
         Route::group(
             ['prefix' => 'product', 'middleware' => ['permission:view all products|create a product|edit a product']],
@@ -242,6 +261,27 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
                 Route::get('/edit/{id}', 'Management\ProductManagementController@edit');
             }
         );
+
+        // Administrator
+        Route::group(['prefix' => 'administrator', 'middleware' => ['role:administrator']], function () {
+            // User management.
+            Route::group(['prefix' => 'user', 'middleware' => ['permission:manage users']], function () {
+                // Panel.
+                Route::group(['prefix' => 'panel'], function () {
+                    // Index.
+                    Route::get('/', 'Administrator\User\PanelController@index')
+                        ->name('management.user.panel');
+
+                    // Create.
+                    Route::get('/create', 'Administrator\User\PanelController@create')
+                        ->name('management.user.panel.create');
+
+                    // Store.
+                    Route::post('/store', 'Administrator\User\PanelController@store')
+                        ->name('management.user.panel.store');
+                });
+            });
+        });
     });
     // End Management
 
@@ -297,6 +337,20 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
             // Remove user's cart item.
             Route::put('/remove/{id}', 'WEB\Shop\CartController@remove');
+        });
+
+        Route::group(['prefix' => 'shop'], function () {
+            // Get category.
+            Route::get('/category/{categorySlug}', 'WEB\Shop\ShopController@category')
+                ->name('web.shop.category');
+
+            // Get product.
+            Route::get('/product/{productSlug}', 'WEB\Shop\ShopController@product')
+                ->name('web.shop.product');
+
+            // Product filter.
+            Route::post('/product/{productSlug}', 'WEB\Shop\ShopController@productFilter')
+                ->name('web.shop.product.filter');
         });
     });
     // End Web

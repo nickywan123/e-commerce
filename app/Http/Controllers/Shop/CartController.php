@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Auth;
-use App\Models\Products\Product;
-use App\Models\Users\Cart;
+use App\Models\Products\Product as PanelProduct;
+use App\Models\Users\Customers\Cart;
 use App\Models\Users\User;
 use App\Models\Categories\Category;
 use Illuminate\Support\Facades\View;
@@ -28,7 +28,7 @@ class CartController extends Controller
                 $this->cart = Auth::user()->carts->where('status', 2001);
             }
             // Get all categories, with subcategories and its images.
-            $categories = Category::with('image')->with('subcategories.image')->get();
+            $categories = Category::topLevelCategory();
 
             // Share the above variable with all views in this controller.
             View::share('categories', $categories);
@@ -70,83 +70,62 @@ class CartController extends Controller
     {
         // Get user
         $user = User::find(Auth::user()->id);
+
         // Get product
-        $product = Product::find($request->input('productId'));
+        $product = PanelProduct::find($request->input('product_id'));
 
         // Variables initiliazation.
         $color = null;
-        $dimension = null;
-        $length = null;
-        $colorId = null;
-        $dimensionId = null;
-        $lengthId = null;
-
+        $size = null;
+        $temperature = null;
 
         // If the post request has product color id value in it..
-        if ($request->has('productColorId')) {
+        if ($request->input('product_attribute_color') != null) {
             // Get selected product color.
-            $color = $product->colors->where('id', $request->input('productColorId'))->first();
+            $color = $product->colorAttributes->where('id', $request->input('product_attribute_color'))->first();
 
             // Set color id for checking purposes.
             $colorId = $color->id;
-        } else {
-            // Check if there's any default color specified.
-            if ($product->getDefaultColor() != null) {
-                // If default color is specified..
-                $color = $product->getDefaultColor();
-                $colorId = $color->id;
-            } else {
-                // If no default color is specified
-                $color = null;
-            }
         }
 
         // If the post request has product dimension id value in it..
-        if ($request->has('productDimensionId')) {
+        if ($request->input('product_attribute_size') != null) {
             // Get selected product dimension.
-            $dimension = $product->dimensions->where('id', $request->input('productDimensionId'))->first();
+            $size = $product->sizeAttributes->where('id', $request->input('product_attribute_size'))->first();
 
             // Set dimension id for checking purposes.
-            $dimensionId = $dimension->id;
-        } else {
-            // Check if there's any default dimension specified.
-            if ($product->getDefaultDimension() != null) {
-                // If default dimension is specified..
-                $dimension = $product->getDefaultDimension();
-                $dimensionId = $dimension->id;
-            } else {
-                // If no default dimension is specified.
-                $dimension = null;
-            }
+            $sizeId = $size->id;
         }
 
         // If the post request has product length id value in it..
-        if ($request->has('productLengthId')) {
+        if ($request->input('product_attribute_temperature') != null) {
             // Get selected product length.
-            $length = $product->lengths->where('id', $request->input('productLengthId'))->first();
+            $temperature = $product->lightTemperatureAttributes
+                ->where('id', $request->input('product_attribute_temperature'))->first();
 
             // Set length id for checking purposes.
-            $lengthId = $length->id;
-        } else {
-            // Check if there's any default length specified.
-            if ($product->getDefaultLength() != null) {
-                // If default length is specified..
-                $length = $product->getDefaultLength();
-                $lengthId = $length->id;
-            } else {
-                // If no default length is specified.
-                $length = null;
-            }
+            $temperatureId = $temperature->id;
         }
 
         // Check if the exact item is already in the cart..
-        $existingCartItem = Cart::where('id', $user->id)
-            ->where('product_id', $product->id)
-            ->where('product_information->product_color_id', $colorId)
-            ->where('product_information->product_dimension_id', $dimensionId)
-            ->where('product_information->product_length_id', $lengthId)
-            ->where('status', 2001)
-            ->first();
+        $existingCartItem = new Cart;
+
+        $existingCartItem = $existingCartItem->where('user_id', $user->id);
+
+        $existingCartItem->where('product_id', $product->id);
+
+        if ($color != null) {
+            $existingCartItem->where('product_information->product_color_id', $colorId);
+        }
+        if ($size != null) {
+            $existingCartItem->where('product_information->product_size_id', $sizeId);
+        }
+        if ($temperature != null) {
+            $existingCartItem->where('product_information->product_temperature_id', $temperatureId);
+        }
+
+        $existingCartItem = $existingCartItem->where('status', 2001)->first();
+
 
         // If item doesn't exist in cart..
         if ($existingCartItem == null) {
@@ -162,19 +141,19 @@ class CartController extends Controller
             if ($color != null) {
                 // If yes, assign the color id and name
                 $productInformation['product_color_id'] = $color->id;
-                $productInformation['product_color_name'] = $color->color_name;
+                $productInformation['product_color_name'] = $color->attribute_name;
             }
             // Check if the post request has product dimension id in it..
-            if ($dimension != null) {
+            if ($size != null) {
                 // If yes, assign the dimension id and concate the width, height, depth and measurement unit.
-                $productInformation['product_dimension_id'] = $dimension->id;
-                $productInformation['product_dimension'] = $dimension->width . ' x ' . $dimension->height . ' x ' . $dimension->depth . ' x ' . $dimension->measurement_unit;
+                $productInformation['product_size_id'] = $size->id;
+                $productInformation['product_size'] = $size->attribute_name;
             }
             // Check if the post request has product length id in it..
-            if ($length != null) {
+            if ($temperature != null) {
                 // If yes, assign the length id and concate the length and measurement unit.
-                $productInformation['product_length_id'] = $length->id;
-                $productInformation['product_length'] = $length->length . ' ' . $length->measurement_unit;
+                $productInformation['product_temperature_id'] = $temperature->id;
+                $productInformation['product_temperature'] = $temperature->attribute_name;
             }
 
             $newCartItem->product_information = $productInformation;
@@ -191,7 +170,7 @@ class CartController extends Controller
             $existingCartItem->save();
         }
 
-        return back();
+        return 'Success!';
     }
 
     /**

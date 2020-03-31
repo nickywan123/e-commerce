@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Orders\Order;
 
 use PDF;
+
 /**
  *  Controller to handle dashboard for panel
  */
@@ -30,16 +31,13 @@ class DashboardController extends Controller
         return view("panel.product");
     }
 
-       /**
+    /**
      * Return Purchase Order for Panel
      */
     public function viewPurchaseOrder()
     {
-       // return view('documents.purchase_order');
+        // return view('documents.purchase_order');
         $pdf = PDF::loadView('documents.purchase-order');
         return $pdf->stream('invoice.pdf');
-
-        
-       
     }
 }

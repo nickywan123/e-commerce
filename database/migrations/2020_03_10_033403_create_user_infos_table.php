@@ -14,15 +14,13 @@ class CreateUserInfosTable extends Migration
     public function up()
     {
         Schema::create('user_infos', function (Blueprint $table) {
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('account_id')->unique();
+            $table->integer('account_status')->default(1);
             $table->string('full_name');
             $table->string('nric');
-            $table->integer('race')->nullable();
-            $table->integer('gender')->nullable();
-            $table->string('date_of_birth')->nullable();
-            $table->integer('marital_status_id')->nullable();
-            $table->unsignedBigInteger('dealer_id')->nullable();
-            $table->unsignedBigInteger('referrer_id')->nullable();
+            $table->integer('referrer_id');
+            $table->string('signature')->nullable();
             $table->timestamps();
         });
     }

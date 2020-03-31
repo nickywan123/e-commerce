@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     // Set table
-    protected $table = 'products';
+    protected $table = 'panel_products';
 
     // Set timestamps
     public $timestamps = true;
@@ -16,38 +16,7 @@ class Product extends Model
     protected $primaryKey = 'id';
 
     // Set mass assignable columns
-    protected $fillable = [
-        'unique_id',
-        'name',
-        'price',
-        'slug',
-        'summary',
-        'description',
-        'quality',
-        'panel_id',
-        'amount_sold',
-        'average_rating'
-    ];
-
-    /**
-     * Get all of the product's images.
-     *
-     * Example Create = $product->images()->create(['key' => 'value']);
-     * Example Retrieve = $product->images;
-     */
-    // TODO: Add default_image column.
-    public function images()
-    {
-        return $this->morphMany('App\Models\Globals\Image', 'imageable');
-    }
-
-    /**
-     * Get product's seller/panel.
-     */
-    public function panel()
-    {
-        return $this->belongsTo('App\Models\Users\User', 'panel_id'); // TODO: Change to hasOne.
-    }
+    protected $fillable = [];
 
     /**
      *  Get product's categories.
@@ -62,64 +31,64 @@ class Product extends Model
         );
     }
 
-    /**
-     * Get all of the product's colors.
-     */
-    public function colors()
+    public function parentProduct()
     {
-        return $this->hasMany('App\Models\Products\ProductColor', 'product_id', 'id');
+        return $this->belongsTo('App\Models\Globals\Products\Product', 'global_product_id');
     }
 
     /**
-     * Get all of the product's dimensions.
+     * Get all attribute of a product.
      */
-    public function dimensions()
+    public function attributes()
     {
-        return $this->hasMany('App\Models\Products\ProductDimension', 'product_id', 'id');
+        return $this->hasMany('App\Models\Products\ProductAttribute', 'panel_product_id');
     }
 
     /**
-     * Get all of the product's lengths.
+     * Get all color attributes of a product.
      */
-    public function lengths()
+    public function colorAttributes()
     {
-        return $this->hasMany('App\Models\Products\ProductLength', 'product_id', 'id');
+        return $this->hasMany('App\Models\Products\ProductAttribute', 'panel_product_id')
+            ->where('attribute_type', 'color');
     }
 
     /**
-     * Get the product's quality.
+     * Get all size attributes of a product.
+     */
+    public function sizeAttributes()
+    {
+        return $this->hasMany('App\Models\Products\ProductAttribute', 'panel_product_id')
+            ->where('attribute_type', 'size');
+    }
+
+    /**
+     * Get all light temperature of a product.
+     */
+    public function lightTemperatureAttributes()
+    {
+        return $this->hasMany('App\Models\Products\ProductAttribute', 'panel_product_id')
+            ->where('attribute_type', 'light-temperature');
+    }
+
+    /**
+     * Get the quality of a product.
      */
     public function quality()
     {
-        return $this->belongsTo('App\Models\Categories\Quality', 'quality_id');
+        return $this->belongsTo('App\Models\Globals\Quality', 'quality_id');
     }
 
     /**
-     * Get the product's default color.
+     * Get panel info of a product.
      */
-    public function getDefaultColor()
+    public function panel()
     {
-        return $this->colors->where('is_default', 1)->first();
+        return $this->belongsTo('App\Models\Users\Panels\PanelInfo', 'panel_account_id', 'account_id');
     }
 
     /**
-     * Get the product's default dimension.
-     */
-    public function getDefaultDimension()
-    {
-        return $this->dimensions->where('is_default', 1)->first();
-    }
-
-    /**
-     * Get the product's default length.
-     */
-    public function getDefaultLength()
-    {
-        return $this->lengths->where('is_default', 1)->first();
-    }
-
-    /**
-     * Get product's price formatted with 2 decimal points.
+     * Get the formatted product's price.
      */
     public function getDecimalPrice()
     {

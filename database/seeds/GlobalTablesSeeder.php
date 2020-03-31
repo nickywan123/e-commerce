@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Globals\Quality;
 use App\Models\Globals\Color;
 use App\Models\Globals\Dimension;
 use App\Models\Globals\Employment;
@@ -20,36 +21,6 @@ class GlobalTablesSeeder extends Seeder
      */
     public function run()
     {
-        /**
-         * Colors
-         */
-        Color::create([
-            'name' => 'black',
-            'color_hex' => '#000000'
-        ]);
-
-        Color::create([
-            'name' => 'white',
-            'color_hex' => '#ffffff'
-        ]);
-
-        /**
-         * Dimensions
-         */
-        Dimension::create([
-            'width' => '100',
-            'height' => '100',
-            'depth' => '50',
-            'measurement_unit' => 'cm'
-        ]);
-
-        Dimension::create([
-            'width' => '200',
-            'height' => '150',
-            'depth' => '30',
-            'measurement_unit' => 'cm'
-        ]);
-
         /**
          * Employments
          */
@@ -77,21 +48,7 @@ class GlobalTablesSeeder extends Seeder
         ]);
 
         /**
-         * Lengths
-         */
-        Length::create([
-            'length' => '100',
-            'measurement_unit' => 'cm'
-        ]);
-
-        Length::create([
-            'length' => '200',
-            'measurement_unit' => 'cm'
-        ]);
-
-        /**
          * Maritals
-         * 
          */
         Marital::create([
             'name' => 'single',
@@ -278,6 +235,24 @@ class GlobalTablesSeeder extends Seeder
             'id' => 2003,
             'name' => 'Item Checked Out',
             'description' => 'Status for cart item status.'
+        ]);
+
+        /**
+         * Qualities
+         */
+        Quality::create([
+            'name' => 'Standard',
+            'description' => 'Quality for product sold by panels.'
+        ]);
+
+        Quality::create([
+            'name' => 'Moderate',
+            'description' => 'Quality for product sold by panels.'
+        ]);
+
+        Quality::create([
+            'name' => 'Premium',
+            'description' => 'Quality for product sold by panels.'
         ]);
     }
 }
