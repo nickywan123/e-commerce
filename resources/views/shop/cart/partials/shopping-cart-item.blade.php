@@ -114,23 +114,33 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body text-center">
-                <button class="btn btn-primary disabled" style="min-width: 100px;">FPX <small>(WIP)</small></button>
-                <button class="btn btn-primary disabled" style="min-width: 100px;">Credit Card <small>(WIP)</small></button>
-                <button class="btn btn-primary disabled" style="min-width: 100px;">Offline <small>(WIP)</small></button>
-                <p>Payment gateway is still work in progress.</p>
-            </div>
-            <div class="modal-footer">
-                <form method="POST" action="/shop/cart/checkout">
+            <form method="POST" action="/shop/cart/checkout">
+                <div class="modal-body text-center">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary">
+                            <input type="radio" name="options" id="option1" autocomplete="off" value="offline" required> Offline Payment
+                        </label>
+                        <label class="btn btn-primary disabled">
+                            <input type="radio" name="options" id="option2" autocomplete="off" value="fpx" disabled required> FPX Payment
+                        </label>
+                        <label class="btn btn-primary disabled">
+                            <input type="radio" name="options" id="option3" autocomplete="off" value="credit" disabled required> Credit/Debit Payment
+                        </label>
+                    </div>
+                    <p>Payment gateway is still work in progress.</p>
+                </div>
+                <div class="modal-footer">
+
                     @csrf
                     <?php
                     foreach ($cartItems as $cartItem) {
                         echo '<input type="hidden" name="cartItemId[]" value="' . $cartItem->id . '">';
                     }
                     ?>
-                    <button class="btn btn-primary" type="submit">Checkout</button>
-                </form>
-            </div>
+                    <button class="btn btn-secondary bjsh-btn-gradient" style="color: #212529;" type="submit">Checkout</button>
+
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -310,6 +310,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
             // Checkout cart items.
             Route::post('/checkout', 'Purchase\PurchaseController@checkoutItems');
+
+            Route::get('/checkout/offline', 'Purchase\PurchaseController@offlinePayment');
+
+            Route::post('/checkout/offline', 'Purchase\PurchaseController@offlinePaymentStore');
         });
 
         Route::group(['prefix' => 'wishlist'], function () {
@@ -360,3 +364,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
  */
 Route::get('/register-dealer', 'Auth\RegisterController@showDealerRegistrationForm');
 Route::get('/register-panel', 'Auth\RegisterController@showPanelRegistrationForm');
+
+// Test Routes
+Route::get('/test-route/date', function () {
+    return Carbon\Carbon::now()->format('Y') . Carbon\Carbon::now()->format('m') . Carbon\Carbon::now()->format('d');
+});

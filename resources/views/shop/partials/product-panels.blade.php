@@ -92,6 +92,12 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-4 mb-1">
+                        <p id="add-to-cart-error" class="text-danger p-2 shadow-sm" style="background-color: #f5f5f5; display: none;">Please make sure you have selected which type of the product you would like to add to your cart.</p>
+                    </div>
+                </div>
+
                 @if($productByPanels->colorAttributes->count() > 0)
                 <div class="row">
                     <hr class="mb-1">
@@ -178,7 +184,7 @@
 
                 <div class="modal-footer justify-center-sm">
                     <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist <br> <small>(WIP)</small></button>
-                    <form method="POST" action="{{ route('shop.cart.add-item') }}">
+                    <form id="add-to-cart-form" method="POST" action="{{ route('shop.cart.add-item') }}">
                         @method('POST')
                         @csrf
                         <input type="hidden" name="product_id" value="{{ $productByPanels->id }}">

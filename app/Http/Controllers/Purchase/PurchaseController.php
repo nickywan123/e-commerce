@@ -11,17 +11,43 @@ use App\Models\Purchases\Purchase;
 use Carbon\Carbon;
 use App\Models\Purchases\Order;
 use App\Models\Purchases\Item;
-use App\Models\Users\Cart;
+use App\Models\Users\Customers\Cart;
+use App\Models\Categories\Category;
+use Illuminate\Support\Facades\View;
 use PDF;
 
 class PurchaseController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            // Check if user is authenticated or not.
+            if (Auth::check()) {
+                // If authenticated, then get their cart.
+                $this->cart = Auth::user()->carts->where('status', 2001);
+            }
+            // Get all categories, with subcategories and its images.
+            $categories = Category::topLevelCategory();
+
+            // Share the above variable with all views in this controller.
+            View::share('categories', $categories);
+            View::share('cart', $this->cart);
+
+            // Return the request.
+            return $next($request);
+        });
+    }
+
+    /**
      * Handle what happens after user clicks checkout
      */
     public function checkoutItems(Request $request)
     {
-        // return $request->input('cartItemId');
         // Get user.
         $user = User::find(Auth::user()->id);
         // Get the items in the cart of user.
@@ -30,12 +56,14 @@ class PurchaseController extends Controller
         // Initialize an empty array of PO Numbers
         $po_numbers = array(); // ['PO#1', 'PO#2', 'PO#3'];
 
+        $invoiceSequence = Purchase::all()->count() + 1;
+
         // Create a new purchase record.
         $purchase = new Purchase;
         // Assign user to the purchase record.
         $purchase->user_id = $user->id;
         // Generate a unique number used to identify the purchase.
-        $purchase->purchase_number = 'INV-' . Carbon::now()->format('m') . '-' . mt_rand(11111, 99999);
+        $purchase->purchase_number = 'BSN ' . Carbon::now()->format('Y') . ' ' . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
         // Assign a status to the purchase. Unpaid, paid.
         $purchase->purchase_status = 1;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
@@ -43,12 +71,15 @@ class PurchaseController extends Controller
         $purchase->save();
 
         $price = 0;
+        $poSequence = Order::all()->count() + 1;
         // Create order record.
         // Foreach item in the cart..
         foreach ($cartItems as $cartItem) {
             // Create a new PO Number for each different panel belonging to an item.
             if (!array_key_exists($cartItem->product->panel->id, $po_numbers)) {
-                $po_numbers[$cartItem->product->panel->id] = 'PO#' . mt_rand(11111, 99999);
+                $po_numbers[$cartItem->product->panel->id] = 'PO ' . Carbon::now()->format('Y') . ' ' . Carbon::now()->format('m') . ' ' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
+
+                $poSequence = $poSequence + 1;
             }
         }
 
@@ -94,6 +125,7 @@ class PurchaseController extends Controller
             }
         }
 
+        $paymentMethod = $request->input('options');
         // Check if offline payment or payment gateway -> then redirect to related page.
 
         // TODO: Temporary redirect to purchase tracking page.
@@ -106,7 +138,13 @@ class PurchaseController extends Controller
         // If Offline, redirect to another page for them to upload receipt.
         // Create controller method to handle file upload and update invoice + po status.
 
-        return redirect('/shop/order');
+        if ($paymentMethod == 'offline') {
+            return view('shop.payment.offline')->with('purchase', $purchase);
+        } elseif ($paymentMethod == 'fpx') {
+            return view('shop.payment.fpx')->with('purchase', $purchase);
+        } elseif ($paymentMethod == 'credit') {
+            return view('shop.payment.credit')->with('purchase', $purchase);
+        }
     }
 
     /**
@@ -127,6 +165,10 @@ class PurchaseController extends Controller
         // Email to customer & panel.
     }
 
+    public function offlinePaymentStore(Request $request)
+    {
+        return redirect('/shop/order');
+    }
 
 
 

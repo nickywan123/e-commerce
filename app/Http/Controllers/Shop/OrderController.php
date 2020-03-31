@@ -9,10 +9,8 @@ use Illuminate\Support\Facades\View;
 
 use Auth;
 use App\Models\Categories\Category;
-use App\Models\Categories\SubCategory;
-use App\Models\Categories\ProductType;
 use App\Models\Orders\Order;
-use App\Models\Users\Cart;
+use App\Models\Users\Customers\Cart;
 use App\Models\Users\User;
 
 use App\Jobs\Emails\Orders\NewOrderSendEmail;
@@ -36,7 +34,7 @@ class OrderController extends Controller
                 $this->cart = Auth::user()->carts->where('status', 2001);
             }
             // Get all categories, with subcategories and its images.
-            $categories = Category::with('image')->with('subcategories.image')->get();
+            $categories = Category::topLevelCategory();
 
             // Share the above variable with all views in this controller.
             View::share('categories', $categories);

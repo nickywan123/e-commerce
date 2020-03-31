@@ -311,10 +311,46 @@
             inputColor.val(panelColor);
             inputSize.val(panelSize);
             inputTemperature.val(panelTemperature);
+        })
 
-            console.log(inputColor.val());
-            console.log(inputSize.val());
-            console.log(inputTemperature.val());
+
+        let error;
+
+        $(document).on('submit', '#add-to-cart-form', function(e) {
+            inputColor = $('#product_attribute_color');
+            inputSize = $('#product_attribute_size');
+            inputTemperature = $('#product_attribute_temperature');
+            error = 0;
+
+            if ($('input[name="modal-color"]').val()) {
+                if (inputColor.val() == null || inputColor.val() == "") {
+                    error = error + 1;
+                }
+            }
+
+            if ($('input[name="modal-size"]').val()) {
+                if (inputSize.val() == null || inputSize.val() == "") {
+                    error = error + 1;
+                }
+            }
+
+            if ($('input[name="modal-temperature"]').val()) {
+                if (inputTemperature.val() == null || inputTemperature.val() == "") {
+                    error = error + 1;
+                }
+            }
+
+            if (error == 0) {
+                return true;
+            } else {
+                $('#add-to-cart-error').css('display', 'block');
+                setTimeout(function() {
+                    $("#add-to-cart-error").css('display', 'none');
+                }, 3000);
+                return false;
+            }
+
+            return false;
         })
 
 

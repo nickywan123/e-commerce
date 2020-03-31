@@ -1,10 +1,10 @@
 @extends('layouts.shop.main')
 
 @section('content')
-<div class="mt-3">
+<div class="mt-3" style="min-height: 100vh;">
     <div class="container" style="margin-top: 50px;">
         <h3>Your Purchases <small>(WIP)</small></h3>
-        <div class="card">
+        <div class="card shadow-sm">
             <div class="card-body">
                 <table class="table table-striped table-hover">
                     <tr>
@@ -15,18 +15,36 @@
                     </tr>
                     @foreach($purchases as $purchase)
                     <tr>
-                        <td class="align-middle">{{ $loop->iteration }}</td>
-                        <td class="align-middle">{{ $purchase->purchase_number }}</td>
-                        <td class="align-middle">
+                        <td class="align-top">{{ $loop->iteration }}</td>
+                        <td class="font-weight-bold align-top">{{ $purchase->purchase_number }}</td>
+                        <td class="align-top" style="max-width: 400px;">
                             <ul>
                                 @foreach($purchase->orders as $order)
                                 @foreach($order->items as $item)
-                                <li>{{ $item->product->name }} x {{ $item->quantity }}</li>
+                                <li>
+                                    <div class="row mb-2">
+                                        <div class="col-2 my-auto">
+                                            <img class="responsive-img p-1" src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename) }}" alt="">
+                                        </div>
+                                        <div class="col-10 my-auto">
+                                            <p class="mb-0 font-weight-bold">{{ $item->product->parentProduct->name }}</p>
+                                            @if(array_key_exists('product_color', $item->product_information))
+                                            <p class="text-capitalize">Color: {{ $item->product_information['product_color'] }}</p>
+                                            @endif
+                                            @if(array_key_exists('product_size', $item->product_information))
+                                            <p class="text-capitalize">Size: {{ $item->product_information['product_size'] }}</p>
+                                            @endif
+                                            @if(array_key_exists('product_temperature', $item->product_information))
+                                            <p class="text-capitalize">Color Temperature: {{ $item->product_information['product_temperature'] }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </li>
                                 @endforeach
                                 @endforeach
                             </ul>
                         </td>
-                        <td class="align-middle">
+                        <td class="align-top font-weight-bold">
                             <?php
                             $subtotal = 0;
                             ?>
