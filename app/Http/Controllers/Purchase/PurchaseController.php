@@ -106,9 +106,9 @@ class PurchaseController extends Controller
             // Assign a status for the order. Placed, Shipped, Delivered.
             $order->order_status = 'Placed';
             $order->save();
-            
 
-          
+
+
 
             $panelId = $key;
 
@@ -134,9 +134,8 @@ class PurchaseController extends Controller
                     $item->save();
                 }
             }
-              //Send the email to customer after placing order
-              Mail::send(new CheckoutOrder);
-            
+            //Send the email to customer after placing order
+            Mail::send(new CheckoutOrder);
         }
 
         $paymentMethod = $request->input('options');
