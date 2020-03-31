@@ -348,12 +348,12 @@ class RegisterController extends Controller
                 $image = substr($base64_image, strpos($base64_image, ',') + 1);
 
                 $image = base64_decode($image);
-                if(!File::isDirectory($destinationPath)){
-                    File::makeDirectory($destinationPath);
+                if (!File::isDirectory($destinationPath)) {
+                    File::makeDirectory($destinationPath, 0777, true);
                 }
                 $imageFile = File::put($destinationPath . '/' . $name, $image);
             }
-            $userInfo->signature = 'storage/uploads/images/users/'. $userInfo->account_id . '/' .  $name;
+            $userInfo->signature = 'storage/uploads/images/users/' . $userInfo->account_id . '/' .  $name;
             $userInfo->save();
 
             // User_addresses table.
@@ -432,10 +432,10 @@ class RegisterController extends Controller
             $dealerInfo->referrer_id = $data['introducer_account_id'];
             // Payment proof
             $image = $data['payment_proof'];
-            $name = $dealerInfo->account_id.'-payment.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('storage/uploads/images/users/'. $dealerInfo->account_id);
+            $name = $dealerInfo->account_id . '-payment.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('storage/uploads/images/users/' . $dealerInfo->account_id);
             $image->move($destinationPath, $name);
-            $dealerInfo->payment_proof = 'storage/uploads/images/users/'. $dealerInfo->account_id . '/' .  $name;
+            $dealerInfo->payment_proof = 'storage/uploads/images/users/' . $dealerInfo->account_id . '/' .  $name;
             $dealerInfo->save();
 
             // Dealer_address table..
@@ -521,7 +521,7 @@ class RegisterController extends Controller
             $user->assignRole('dealer');
         } elseif ($data['registrationFor'] == 'panel') {
             // Register panel.
-            
+
         }
 
         return $user;
