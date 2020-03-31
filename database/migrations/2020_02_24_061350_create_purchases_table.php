@@ -19,6 +19,7 @@ class CreatePurchasesTable extends Migration
             $table->string('purchase_number')->unique();
             $table->integer('purchase_status');
             $table->string('purchase_date');
+            $table->integer('purchase_amount');
             $table->timestamps();
         });
     }

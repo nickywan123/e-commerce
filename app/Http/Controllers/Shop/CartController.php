@@ -170,7 +170,7 @@ class CartController extends Controller
             $existingCartItem->save();
         }
 
-        return 'Success!';
+        return redirect()->back();
     }
 
     /**
