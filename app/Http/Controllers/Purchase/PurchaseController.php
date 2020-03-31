@@ -77,8 +77,8 @@ class PurchaseController extends Controller
         // Foreach item in the cart..
         foreach ($cartItems as $cartItem) {
             // Create a new PO Number for each different panel belonging to an item.
-            if (!array_key_exists($cartItem->product->panel->id, $po_numbers)) {
-                $po_numbers[$cartItem->product->panel->id] = 'PO ' . Carbon::now()->format('Y') . ' ' . Carbon::now()->format('m') . ' ' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
+            if (!array_key_exists($cartItem->product->panel_account_id, $po_numbers)) {
+                $po_numbers[$cartItem->product->panel_account_id] = 'PO ' . Carbon::now()->format('Y') . ' ' . Carbon::now()->format('m') . ' ' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
 
                 $poSequence = $poSequence + 1;
             }
@@ -128,7 +128,7 @@ class PurchaseController extends Controller
                 }
             }
             //Send the email to customer after placing order
-            Mail::send(new CheckoutOrder);
+            Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
         }
 
         $paymentMethod = $request->input('options');

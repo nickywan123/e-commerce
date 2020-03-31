@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Models\Orders\Order;
+use App\Models\Purchases\Order;
 
 class CheckoutOrder extends Mailable
 {
@@ -21,7 +21,7 @@ class CheckoutOrder extends Mailable
      */
     public function __construct(Order $order)
     {
-        $this->order=$order;
+        $this->order = $order;
     }
 
     /**
@@ -32,6 +32,6 @@ class CheckoutOrder extends Mailable
     public function build()
     {
         return $this->subject('Your Bujishu Order Confirmation - ' . $this->order->order_number)
-                     ->view('emails.orders.checkout-payment');
+            ->view('emails.orders.checkout-payment')->with('order', $this->order);
     }
 }

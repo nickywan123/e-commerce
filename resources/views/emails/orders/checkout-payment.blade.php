@@ -1,30 +1,14 @@
-@component('mail::message')
-# Order Received
+<!DOCTYPE html>
+<html lang="en">
 
-Thank you for your order.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-Order ID:{{$order->order_number}} <br>
+<body>
+    <h1>Thank you for your order.</h1>
+</body>
 
-
-**Items Ordered **
-
-@foreach ($order->items as $item)
-
-Product: {{$item->product_id}} 
-Product Information: {{$item->product_information}}
-Quantity: {{$item->quantity}}
-@endforeach
-
-
-
-
-@component('mail::button', ['url' => $url,'color'=>'green'])
-Visit Website
-@endcomponent
-
-
-
-Regards,<br>
-{{ config('app.name') }}
-
-@endcomponent
+</html>
