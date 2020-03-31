@@ -14,14 +14,13 @@
 // Route for QR Code
 Route::get('qr-code-g', function () {
     QrCode::size(500)
-              ->format('png')
-              ->generate('ItSolutionStuff.com', public_path('images/qrcode.png'));
-      
-    return view('qr.qrCode');
-      
-  });
+        ->format('png')
+        ->generate('ItSolutionStuff.com', public_path('images/qrcode.png'));
 
-  //Route to finalize order status to deliver state once customer scan the QR
+    return view('qr.qrCode');
+});
+
+//Route to finalize order status to deliver state once customer scan the QR
 //   Route::get('/QR-Completed','SomeControllerMethod');
 
 Route::get('/', 'Guest\GuestController@index');
@@ -50,10 +49,10 @@ Route::view('/category/bedsheet-mattress/canopy-bed', 'shop.catalog.backups.cano
  */
 Route::get('/management/administrator/user/panel', 'Administrator\User\PanelController@index');
 Route::get('/shop/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
-  //Return Work In progress page
-  Route::view('/wip', 'errors.wip');
+//Return Work In progress page
+Route::view('/wip', 'errors.wip');
 
-  Route::get('/shop/profile', 'Shop\ProfileController@index');
+Route::get('/shop/profile', 'Shop\ProfileController@index');
 // // Shop Routes
 // Route::prefix('shop')->group(function () {
 //     // Home/Index page for shop.
@@ -171,8 +170,8 @@ Route::get('/shop/purchase-order', 'Panel\DashboardController@viewPurchaseOrder'
 //         $order->order_status = 'Placed';
 //         $order->save();
 
-    return view("backups.dashboard_receipts.invoice");
-});
+//     return view("backups.dashboard_receipts.invoice");
+// });
 //         $panelId = $key;
 
 //         // Foreach item in the cart..
