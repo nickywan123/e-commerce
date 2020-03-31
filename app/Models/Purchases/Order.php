@@ -13,7 +13,7 @@ class Order extends Model
     public $timestamps = true;
 
     // Set primary key
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'order_number';
 
     // Set mass assignable columns
     protected $fillable = [];

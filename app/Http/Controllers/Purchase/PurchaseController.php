@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers\Purchase;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
-use App\Models\Users\User;
-use Auth;
-use App\Models\Purchases\Purchase;
-use Carbon\Carbon;
-use App\Models\Purchases\Order;
-use App\Models\Purchases\Item;
-use App\Models\Users\Cart;
 use PDF;
+use Auth;
+
+use Carbon\Carbon;
+use App\Models\Users\Cart;
+use App\Models\Users\User;
+use Illuminate\Http\Request;
+use App\Models\Purchases\Item;
+use App\Models\Purchases\Order;
+use App\Mail\Orders\CheckoutOrder;
+use App\Models\Purchases\Purchase;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class PurchaseController extends Controller
 {
@@ -67,6 +69,9 @@ class PurchaseController extends Controller
             // Assign a status for the order. Placed, Shipped, Delivered.
             $order->order_status = 'Placed';
             $order->save();
+            
+
+          
 
             $panelId = $key;
 
@@ -92,6 +97,9 @@ class PurchaseController extends Controller
                     $item->save();
                 }
             }
+              //Send the email to customer after placing order
+              Mail::send(new CheckoutOrder);
+            
         }
 
         // Check if offline payment or payment gateway -> then redirect to related page.
