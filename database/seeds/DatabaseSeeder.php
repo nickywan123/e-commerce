@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             CategoriesTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
             GlobalProductsTableSeeder::class,
             PanelProductsTableSeeder::class,
-            //QualitiesTableSeeder::class, // Important -> Need to have all of the rows to correctly show product's quality.
+            // QualitiesTableSeeder::class, // Important -> Need to have all of the rows to correctly show product's quality.
             // ProductsTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
 
         ]);

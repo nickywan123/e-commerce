@@ -33,4 +33,11 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\Purchases\Purchase', 'purchase_id');
     }
+
+    /* Get panel of the order */
+    public function panel()
+    {
+        return $this->belongsTo('App\Models\Users\Panels\PanelInfo', 'panel_id', 'account_id');
+    }
+
 }
