@@ -136,7 +136,7 @@ class UsersTableSeeder extends Seeder
         // Generating new panel account id.
         $largestPanelId = 0;
         if (PanelInfo::all()->count() == 0) {
-            $largestPanelId = 1913000001;
+            $largestPanelId = 1918000001;
         } else {
             $largestPanelId = PanelInfo::largestPanelId() + 1;
         }
@@ -239,7 +239,7 @@ class UsersTableSeeder extends Seeder
         // Generating new panel account id.
         $largestPanelId = 0;
         if (PanelInfo::all()->count() == 0) {
-            $largestPanelId = 1913000001;
+            $largestPanelId = 1918000001;
         } else {
             $largestPanelId = PanelInfo::largestPanelId() + 1;
         }

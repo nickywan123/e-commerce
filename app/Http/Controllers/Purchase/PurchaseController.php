@@ -64,11 +64,17 @@ class PurchaseController extends Controller
         // Assign user to the purchase record.
         $purchase->user_id = $user->id;
         // Generate a unique number used to identify the purchase.
-        $purchase->purchase_number = 'BSN ' . Carbon::now()->format('Y') . ' ' . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
+        $purchase->purchase_number = 'BSN' . Carbon::now()->format('Y') . ' ' . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
         // Assign a status to the purchase. Unpaid, paid.
         $purchase->purchase_status = 1;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
         $purchase->purchase_date = Carbon::now()->format('d/m/Y');
+        // Calculate total price of items in cart.
+        $purchase_amount = 0;
+        foreach ($cartItems as $cartItem) {
+            $purchase_amount = $purchase_amount + $cartItem->total_price;
+        }
+        $purchase->purchase_amount = $purchase_amount;
         $purchase->save();
 
         $price = 0;
@@ -98,21 +104,21 @@ class PurchaseController extends Controller
             $order->panel_id = $key;
             // Assign a status for the order. Placed, Shipped, Delivered.
             $order->order_status = 'Placed';
+            // Assign empty value for order amount first.
+            $orderAmount = 0;
+            $order->order_amount = 0;
             $order->save();
-
-
-
 
             $panelId = $key;
 
             // Foreach item in the cart..
             foreach ($cartItems as $cartItem) {
                 // If the cart item product's panel id matches with the current panel id..
-                if ($cartItem->product->panel->id == $panelId) {
+                if ($cartItem->product->panel->account_id == $panelId) {
                     // Create a new item record.
                     $item = new Item;
                     // Assign an order number to the item
-                    $item->order_number = $order->order_number;
+                    $item->order_number = $po_number;
                     // Assign a product id to the item
                     $item->product_id = $cartItem->product->id;
                     // Get the cart product's information. Color, dimension or length..
@@ -125,8 +131,14 @@ class PurchaseController extends Controller
                     // Assign status of the item. Placed, shipped, delivered.
                     $item->status_id = 1;
                     $item->save();
+
+                    $orderAmount = $orderAmount + $cartItem->total_price;
                 }
             }
+
+            $order->order_amount = $orderAmount;
+            $order->save();
+
             //Send the email to customer after placing order
             //Mail::send(new CheckoutOrder);
             //  Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));

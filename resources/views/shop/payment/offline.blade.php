@@ -16,16 +16,28 @@
                                         <th>Item Name</th>
                                         <th>Item Price</th>
                                     </tr>
-
+                                    <?php
+                                    $totalPrice = 0;
+                                    ?>
                                     @foreach($purchase->orders as $order)
                                     @foreach($order->items as $item)
                                     <tr class="text-center">
                                         <td>{{ $loop->iteration }}</td>
-                                        <td class="text-left">{{ $item->product->parentProduct->name }}</td>
-                                        <td class="text-left">RM {{ $item->product->getDecimalPrice() }}</td>
+                                        <td class="text-left">
+                                            <p class="mb-0 font-weight-bold">{{ $item->product->parentProduct->name }} x {{ $item->quantity }}</p>
+                                            @if(array_key_exists('product_color', $item->product_information))
+                                            <p class="text-capitalize">Color: {{ $item->product_information['product_color'] }}</p>
+                                            @endif
+                                            @if(array_key_exists('product_size', $item->product_information))
+                                            <p class="text-capitalize">Size: {{ $item->product_information['product_size'] }}</p>
+                                            @endif
+                                            @if(array_key_exists('product_temperature', $item->product_information))
+                                            <p class="text-capitalize">Color Temperature: {{ $item->product_information['product_temperature'] }}</p>
+                                            @endif
+                                        </td>
+                                        <td class="text-left">RM {{ number_format(($item->subtotal_price / 100), 2) }}</td>
                                         <?php
-                                        $totalPrice = 0;
-                                        $totalPrice = $totalPrice + $item->product->price;
+                                        $totalPrice = $totalPrice + ($item->product->price * $item->quantity);
                                         ?>
                                     </tr>
                                     @endforeach

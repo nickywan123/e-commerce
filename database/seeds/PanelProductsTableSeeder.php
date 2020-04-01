@@ -15,7 +15,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 1
         $panelProduct1 = new Product;
         $panelProduct1->global_product_id = 1;
-        $panelProduct1->panel_account_id = 1913000001;
+        $panelProduct1->panel_account_id = 1918000001;
         $panelProduct1->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct1->price = 12000;
         $panelProduct1->quality_id = 1;
@@ -42,7 +42,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 2
         $panelProduct2 = new Product;
         $panelProduct2->global_product_id = 2;
-        $panelProduct2->panel_account_id = 1913000001;
+        $panelProduct2->panel_account_id = 1918000001;
         $panelProduct2->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct2->price = 12000;
         $panelProduct2->quality_id = 1;
@@ -69,7 +69,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 3
         $panelProduct3 = new Product;
         $panelProduct3->global_product_id = 3;
-        $panelProduct3->panel_account_id = 1913000001;
+        $panelProduct3->panel_account_id = 1918000001;
         $panelProduct3->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct3->price = 12000;
         $panelProduct3->quality_id = 1;
@@ -96,7 +96,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 4
         $panelProduct4 = new Product;
         $panelProduct4->global_product_id = 4;
-        $panelProduct4->panel_account_id = 1913000001;
+        $panelProduct4->panel_account_id = 1918000001;
         $panelProduct4->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct4->price = 12000;
         $panelProduct4->quality_id = 1;
@@ -123,7 +123,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 5
         $panelProduct5 = new Product;
         $panelProduct5->global_product_id = 5;
-        $panelProduct5->panel_account_id = 1913000001;
+        $panelProduct5->panel_account_id = 1918000001;
         $panelProduct5->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct5->price = 12000;
         $panelProduct5->quality_id = 1;
@@ -150,7 +150,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 6
         $panelProduct6 = new Product;
         $panelProduct6->global_product_id = 6;
-        $panelProduct6->panel_account_id = 1913000001;
+        $panelProduct6->panel_account_id = 1918000001;
         $panelProduct6->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct6->price = 12000;
         $panelProduct6->quality_id = 1;

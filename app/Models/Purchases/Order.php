@@ -15,6 +15,9 @@ class Order extends Model
     // Set primary key
     protected $primaryKey = 'order_number';
 
+    // Set incremeneting to false.
+    public $incrementing = false;
+
     // Set mass assignable columns
     protected $fillable = [];
 
@@ -39,5 +42,4 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\Users\Panels\PanelInfo', 'panel_id', 'account_id');
     }
-
 }
