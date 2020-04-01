@@ -108,7 +108,7 @@ class PurchaseController extends Controller
             // Assign empty value for order amount first.
             $orderAmount = 0;
             $order->order_amount = 0;
-          
+
             $order->save();
 
             $panelId = $key;
@@ -142,8 +142,6 @@ class PurchaseController extends Controller
             $order->save();
 
             //Send the email to customer after placing order
-            //Mail::send(new CheckoutOrder);
-            //  Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
             Mail::to($order->purchase->user->email)->send(new CheckoutOrder($order));
         }
 

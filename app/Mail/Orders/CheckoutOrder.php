@@ -34,7 +34,5 @@ class CheckoutOrder extends Mailable
     {
         return $this->subject('Bujishu Order Confirmation - ' . $this->order->order_number)
             ->view('emails.orders.checkout-payment')->with('order', $this->order);
-        return $this->subject('Your Bujishu Order Confirmation - ' . $this->order->order_number)
-                     ->view('emails.orders.checkout-payment')->with('order',$this->$order);
     }
 }
