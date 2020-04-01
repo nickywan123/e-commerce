@@ -375,7 +375,7 @@ Route::get('/test-route/date', function () {
 });
 
 Route::get('/test-route/email', function () {
-    $order = Order::where('order_number', 'PO 2020 04 000008')->first();
+    $order = Order::where('order_number', 'PO202004000008')->first();
 
     return (new CheckoutOrder($order))->render();
 });
