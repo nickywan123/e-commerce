@@ -27,10 +27,11 @@ class CheckoutOrder extends Mailable
 
     /**
      * Build the message.
-     *
+     * Email to panel after customer make payment
      * @return $this
      */
-    public function build()
+    
+     public function build()
     {
         return $this->subject('Bujishu Order Confirmation - ' . $this->order->order_number)
             ->view('emails.orders.checkout-payment')->with('order', $this->order);
