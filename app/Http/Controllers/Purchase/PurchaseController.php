@@ -128,7 +128,8 @@ class PurchaseController extends Controller
                 }
             }
             //Send the email to customer after placing order
-            Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
+            //Mail::send(new CheckoutOrder);
+            //  Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
         }
 
         $paymentMethod = $request->input('options');
