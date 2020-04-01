@@ -7,15 +7,17 @@ use Auth;
 use Carbon\Carbon;
 use App\Models\Users\User;
 use Illuminate\Http\Request;
+use App\Models\Purchases\Item;
+use App\Models\Purchases\Order;
 use App\Mail\Orders\CheckoutOrder;
 use App\Models\Purchases\Purchase;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Mail;
-use App\Models\Purchases\Order;
-use App\Models\Purchases\Item;
-use App\Models\Users\Customers\Cart;
 use App\Models\Categories\Category;
+use App\Http\Controllers\Controller;
+use App\Models\Users\Customers\Cart;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Storage;
+use App\Mail\Orders\InvoiceEmailCustomer;
 
 class PurchaseController extends Controller
 {
@@ -142,10 +144,18 @@ class PurchaseController extends Controller
             $order->save();
 
             //Send the email to panel after placing order (attach with PO)
+            
             Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
+        
+            $pdf = PDF::loadView('documents.invoice',compact('purchase'))->setPaper('a4'); 
+            // Make a copy of the PDF invoice and store in public/storage/....
+            $content = $pdf->download()->getOriginalContent();
+             Storage::put('public/storage/documents/invoice/invoice_'.$purchase->purchase_number. '.pdf',$content) ;
 
             //Send email to customer after placing order( attach with invoice)
-            Mail::to($purchase->user->email)->send(new InvoiceEmailCustomer($purchase));
+            $message = new InvoiceEmailCustomer($purchase);
+            $message->attachData($pdf->output(), "invoice.pdf");     
+            Mail::to($purchase->user->email)->send($message);
         }
 
         $paymentMethod = $request->input('options');

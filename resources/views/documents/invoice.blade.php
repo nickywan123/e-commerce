@@ -18,17 +18,19 @@
   <table style="border: 1px solid black; "  >
          <tr>
             <td>Receiver:</td>
-            <td>Bane</td>
+            <td>{{$purchase->user->userInfo->full_name}}</td>
          </tr>
          
          <tr >
             <td>Attention To:</td>
-            <td>Nick</td>
+            <td>-</td>
          </tr>
 
          <tr>
           <td>Contact No:</td>
-          <td>0172190042</td>
+         
+          <td>{{$purchase->user->userInfo->contacts->where('is_mobile', 1)->first()}}</td>     
+               
        </tr>
       </table>
   
@@ -41,17 +43,23 @@
   <table style="border: 1px solid black;  ">
          <tr>
             <td>Deliver To:</td>
-            <td>Jalan Bani Sasoi,Taman Megah</td>
+            <td>{{$purchase->user->userInfo->addresses->where('is_shipping_address',1)->first()->address_1}}
+              {{$purchase->user->userInfo->addresses->where('is_shipping_address',1)->first()->address_2}}
+              {{$purchase->user->userInfo->addresses->where('is_shipping_address',1)->first()->address_3}}
+              {{$purchase->user->userInfo->addresses->where('is_shipping_address',1)->first()->postcode}}
+              {{$purchase->user->userInfo->addresses->where('is_shipping_address',1)->first()->city}}
+
+            </td>
          </tr>
          
          <tr >
             <td>Attention To:</td>
-            <td>James</td>
+            <td>empty</td>
          </tr>
 
          <tr>
           <td>Contact No:</td>
-          <td>0172155442</td>
+          <td></td>
        </tr>
       </table>
   
@@ -65,25 +73,25 @@
       </tr>
              <tr >
                 <td>Number</td>
-                <td>BJ203292434343</td>
+                <td>{{$purchase->purchase_number}}</td>
              </tr>
              
              <tr >
                 <td>Date</td>
-                <td>2/28/2020</td>
+                <td>{{$purchase->purchase_date}}</td>
              </tr>
     
              <tr>
               <td>Delivered Date</td>
-              <td>??????</td>
+              <td>Empty</td>
            </tr>
            <tr>
             <td>Agent Code</td>
-            <td>??????</td>
+            <td>{{$purchase->user->userInfo->account_id}}</td>
          </tr>
          <tr>
           <td>Credit Terms:</td>
-          <td>??????</td>
+          <td>Empty</td>
        </tr>
           </table>
       
@@ -100,13 +108,18 @@
       <th style="width:50%;" > Unit Price (RM)</th>
       <th style="width:50%;"  > Amount (RM)</th>
     </tr>
-  <tr >
-    <td style="height:500px;"  align="center">1</td>
-    <td >BU0320 0100 0001</td>
-    <td  align="center" >  BED SET GREY</td>
-    <td  align="center" >1</td>
-    <td  align="center" >3,000.00</td>
-    <td  align="center" >3,000.00</td>
+    <tr>
+      <?php $i = 0 ?>
+      @foreach ($purchase as $item)
+      <?php $i++ ?>
+       
+      <td style="height:500px;"  align="center">{{$i}}</td>
+      <td ></td>
+      <td  align="center" >  BED SET GREY</td>
+      <td  align="center" >1</td>
+      <td  align="center" >3,000.00</td>
+      <td  align="center" >3,000.00</td>           
+      @endforeach
    
   </tr>
 
