@@ -69,6 +69,7 @@ class PurchaseController extends Controller
         $purchase->purchase_status = 1;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
         $purchase->purchase_date = Carbon::now()->format('d/m/Y');
+
         $purchase->save();
 
         $price = 0;
@@ -98,6 +99,7 @@ class PurchaseController extends Controller
             $order->panel_id = $key;
             // Assign a status for the order. Placed, Shipped, Delivered.
             $order->order_status = 'Placed';
+          
             $order->save();
 
 
@@ -128,7 +130,7 @@ class PurchaseController extends Controller
                 }
             }
             //Send the email to customer after placing order
-            Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
+            Mail::to($order->purchase->user->email)->send(new CheckoutOrder($order));
         }
 
         $paymentMethod = $request->input('options');

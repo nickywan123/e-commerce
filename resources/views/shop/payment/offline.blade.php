@@ -16,7 +16,9 @@
                                         <th>Item Name</th>
                                         <th>Item Price</th>
                                     </tr>
-
+                                    @php
+                                        $totalPrice = 0;
+                                    @endphp
                                     @foreach($purchase->orders as $order)
                                     @foreach($order->items as $item)
                                     <tr class="text-center">
@@ -24,7 +26,7 @@
                                         <td class="text-left">{{ $item->product->parentProduct->name }}</td>
                                         <td class="text-left">RM {{ $item->product->getDecimalPrice() }}</td>
                                         <?php
-                                        $totalPrice = 0;
+                                        
                                         $totalPrice = $totalPrice + $item->product->price;
                                         ?>
                                     </tr>

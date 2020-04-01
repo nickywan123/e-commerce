@@ -12,7 +12,7 @@ class CheckoutOrder extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $newOrder;
+    public $order;
 
     /**
      * Create a new message instance.
@@ -31,7 +31,7 @@ class CheckoutOrder extends Mailable
      */
     public function build()
     {
-        return $this->subject('Your Bujishu Order Confirmation - ' . $this->order->order_number)
+        return $this->subject('Bujishu Order Confirmation - ' . $this->order->order_number)
             ->view('emails.orders.checkout-payment')->with('order', $this->order);
     }
 }

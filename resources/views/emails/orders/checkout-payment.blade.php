@@ -8,7 +8,21 @@
 </head>
 
 <body>
-    <h1>Thank you for your order.</h1>
+ #Order Received.
+
+ Thank you for your order.
+
+ Order Number: {{$order->order_number}}
+
+ **Items Ordered**
+
+ @foreach ($order->items as $item)
+     Name: {{$item->product->name}}
+     Price:{{$item->subtotal_price}}
+     Quantity:{{$item->quantity}}
+ @endforeach
+
+   
 </body>
 
 </html>
