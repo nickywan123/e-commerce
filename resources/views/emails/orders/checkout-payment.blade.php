@@ -1,11 +1,7 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
     <style>
         /*!
         * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -9953,11 +9949,11 @@
     </style>
 </head>
 
-<body>
+<body style="background-color: #f5f5f5;">
     <div class="container">
         <div class="row mb-3 mt-3">
             <div class="col-4 offset-4">
-                <img class="mx-auto mw-100 p-4" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
+                <img class="mx-auto mw-100 p-4" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
             </div>
         </div>
         <div class="row">
