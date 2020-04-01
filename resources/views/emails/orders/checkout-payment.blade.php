@@ -9955,27 +9955,32 @@
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row mb-3 mt-3">
             <div class="col-4 offset-4">
-                <img class="mx-auto mw-100" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
+                <img class="mx-auto mw-100 p-4" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title text-center p-4" style="background-color: #fccb34;">Thank you for your order.</h3>
-                <div class="pl-4 pr-4 pt-2 pb-2">
-                    <p class="card-text">Hi, {{ $order->purchase->user->userInfo->full_name }}</p>
-                    <br>
-                    <p class="card-text">
-                        Just to let you know - we've received your order #{{ $order->order_number }}, and it is now being processed. Attached herewith your order form and receipt.
-                    </p>
-                    <p class="card-text">Regards,</p>
-                    <h5>
-                        DC Living Signature Sdn Bhd
-                    </h5>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-center p-4" style="background-color: #fccb34;">Thank you for your order.</h3>
+                        <div class="pl-4 pr-4 pt-2 pb-2">
+                            <p class="card-text">Hi, {{ $order->purchase->user->userInfo->full_name }}</p>
+                            <br>
+                            <p class="card-text">
+                                Just to let you know - we've received your order #{{ $order->order_number }}, and it is now being processed. Attached herewith your order form and receipt.
+                            </p>
+                            <p class="card-text">Regards,</p>
+                            <h5>
+                                DC Living Signature Sdn Bhd
+                            </h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 

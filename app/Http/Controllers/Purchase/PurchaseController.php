@@ -64,7 +64,7 @@ class PurchaseController extends Controller
         // Assign user to the purchase record.
         $purchase->user_id = $user->id;
         // Generate a unique number used to identify the purchase.
-        $purchase->purchase_number = 'BSN' . Carbon::now()->format('Y') . ' ' . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
+        $purchase->purchase_number = 'BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
         // Assign a status to the purchase. Unpaid, paid.
         $purchase->purchase_status = 1;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
@@ -85,7 +85,7 @@ class PurchaseController extends Controller
         foreach ($cartItems as $cartItem) {
             // Create a new PO Number for each different panel belonging to an item.
             if (!array_key_exists($cartItem->product->panel_account_id, $po_numbers)) {
-                $po_numbers[$cartItem->product->panel_account_id] = 'PO ' . Carbon::now()->format('Y') . ' ' . Carbon::now()->format('m') . ' ' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
+                $po_numbers[$cartItem->product->panel_account_id] = 'PO' . Carbon::now()->format('Y') . Carbon::now()->format('m') . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
 
                 $poSequence = $poSequence + 1;
             }
