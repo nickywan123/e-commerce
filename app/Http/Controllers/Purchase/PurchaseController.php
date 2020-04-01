@@ -143,6 +143,9 @@ class PurchaseController extends Controller
 
             //Send the email to panel after placing order (attach with PO)
             Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
+
+            //Send email to customer after placing order( attach with invoice)
+            Mail::to($purchase->user->email)->send(new InvoiceEmailCustomer($purchase));
         }
 
         $paymentMethod = $request->input('options');
