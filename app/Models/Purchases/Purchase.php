@@ -33,4 +33,11 @@ class Purchase extends Model
     {
         return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
+
+    // /*
+    // *Get carts items
+    //  */
+    // public function carts(){
+    //     return $this->hasMany('App\Models\Users\Customers\Cart', 'user_id');
+    // }
 }
