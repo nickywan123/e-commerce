@@ -12,6 +12,10 @@
 */
 
 // Route for QR Code
+
+use App\Models\Purchases\Order;
+use App\Mail\Orders\CheckoutOrder;
+
 Route::get('qr-code-g', function () {
     QrCode::size(500)
         ->format('png')
@@ -368,4 +372,10 @@ Route::get('/register-panel', 'Auth\RegisterController@showPanelRegistrationForm
 // Test Routes
 Route::get('/test-route/date', function () {
     return Carbon\Carbon::now()->format('Y') . Carbon\Carbon::now()->format('m') . Carbon\Carbon::now()->format('d');
+});
+
+Route::get('/test-route/email', function () {
+    $order = Order::where('order_number', 'PO 2020 04 000008')->first();
+
+    return (new CheckoutOrder($order))->render();
 });
