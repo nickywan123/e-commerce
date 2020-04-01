@@ -17,9 +17,9 @@
     **Items Ordered**
 
     @foreach ($order->items as $item)
-    Name: {{$item->product->name}}
-    Price:{{$item->subtotal_price}}
+    Name: {{$item->product->parentProduct->name}}
     Quantity:{{$item->quantity}}
+    Price: RM {{ number_format(($item->subtotal_price / 100), 2) }}
     @endforeach
 
 
