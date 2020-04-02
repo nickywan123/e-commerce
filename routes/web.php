@@ -24,6 +24,9 @@ Route::get('qr-code-g', function () {
     return view('qr.qrCode');
 });
 
+//Show order confirmation when customer scan QR (invoice)
+Route::get('/orders/confirm/{purchase_num}', 'OrderController@show')->name('confirm-order')->middleware('signed');
+
 //Route to finalize order status to deliver state once customer scan the QR
 //   Route::get('/QR-Completed','SomeControllerMethod');
 
@@ -42,11 +45,11 @@ Route::view('/wip', 'errors.wip');
  * Hardcode (Temporarily) to show product category for each category
  */
 
-Route::view('/category/bedsheet-mattress', 'shop.catalog.backups.bedsheet-mattress');
+// Route::view('/category/bedsheet-mattress', 'shop.catalog.backups.bedsheet-mattress');
 
-Route::view('/category/curtain', 'shop.catalog.backups.curtain');
-Route::view('/category/curtain/pinch-pleat', 'shop.catalog.backups.pinch-pleat');
-Route::view('/category/bedsheet-mattress/canopy-bed', 'shop.catalog.backups.canopy-bed');
+// Route::view('/category/curtain', 'shop.catalog.backups.curtain');
+// Route::view('/category/curtain/pinch-pleat', 'shop.catalog.backups.pinch-pleat');
+// Route::view('/category/bedsheet-mattress/canopy-bed', 'shop.catalog.backups.canopy-bed');
 
 /**
  * Temporary routes.
@@ -379,3 +382,4 @@ Route::get('/test-route/email', function () {
 
     return (new CheckoutOrder($order))->render();
 });
+

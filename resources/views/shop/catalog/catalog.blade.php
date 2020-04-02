@@ -23,19 +23,19 @@
                 <h5 class="text-dark">Price <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a class="text-dark" href="">Under RM25</a>
+                        <a class="text-dark" >Under RM25</a>
                     </li>
                     <li>
-                        <a class="text-dark" href="">RM25 - RM50</a>
+                        <a class="text-dark" >RM25 - RM50</a>
                     </li>
                     <li>
-                        <a class="text-dark" href="">RM50 - RM100</a>
+                        <a class="text-dark" >RM50 - RM100</a>
                     </li>
                     <li>
-                        <a class="text-dark" href="">RM100 - RM200</a>
+                        <a class="text-dark"  >RM100 - RM200</a>
                     </li>
                     <li>
-                        <a class="text-dark" href="">RM200 & Above</a>
+                        <a class="text-dark" >RM200 & Above</a>
                     </li>
                     <li class="p-1">
                         <form action="" class="form-inline">
@@ -51,7 +51,7 @@
                 <h5 class="text-dark">Color <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a class="text-dark" href="">White</a>
+                        <a class="text-dark" id="white" href="javascript:void(0)" >White</a>
                     </li>
                     <li>
                         <a class="text-dark" href="">Beige</a>
@@ -364,6 +364,11 @@
         // Run function
         onPageLoad();
 
+        //Run query search function
+        onQueryLoad();
+
+        onFilterLoad();
+
         function onPageLoad() {
             $.ajax({
                 async: true,
@@ -381,6 +386,7 @@
                     ItemContainer.html(result);
                 },
                 error: function(result) {
+                    
                     console.log(result.status + ' ' + result.statusText);
                 }
             });
@@ -414,6 +420,121 @@
                 }
             });
         });
+
+        /*Author Nicholas*/
+
+        function onQueryLoad() {
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    loading.show();
+                    ItemContainer.hide();
+                },
+                complete: function() {
+                    loading.hide();
+                    ItemContainer.show();
+                },
+                url: "{{ route('web.shop.category', ['categorySlug' =>"+query+"])}}",
+                type: "get",
+                success: function(result) {
+                    ItemContainer.html(result);
+                },
+                error: function(result) {
+                    console.log(result.status + ' ' + result.statusText);
+                }
+            });
+        }
+
+
+
+        $('#search-button').on('click', function(e) {
+            e.preventDefault();
+            var query=document.getElementById('search-box').value;
+            query = query.replace(/\s+/g, '-').toLowerCase();
+   
+
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    loading.show();
+                    ItemContainer.hide();
+                },
+                complete: function() {
+                    loading.hide();
+                    chidCategoryIndicator.text('/ ' + query)
+                    ItemContainer.show();
+
+                },
+                url: "/web/shop/category/" + query,
+                type: "get",
+                success: function(result) {
+                    ItemContainer.html(result);
+                },
+                error: function(result) {
+                    console.log(result.status + ' ' + result.statusText);
+                }
+            });
+        });
+
+/*Filter section*/
+
+
+function onFilterLoad() {
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    loading.show();
+                    ItemContainer.hide();
+                },
+                complete: function() {
+                    loading.hide();
+                    ItemContainer.show();
+                },
+                url: "{{ route('web.shop.category', ['categorySlug' => $category->slug])}}",
+                type: "get",
+                success: function(result) {
+                    ItemContainer.html(result);
+                },
+                error: function(result) {
+                    
+                    console.log(result.status + ' ' + result.statusText);
+                }
+            });
+        }
+
+        $('#white').on('click', function(e) {
+            e.preventDefault();
+            // var query=document.getElementById('search-box').value;
+            // query = query.replace(/\s+/g, '-').toLowerCase();
+            
+
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    loading.show();
+                    ItemContainer.hide();
+                },
+                complete: function() {
+                    loading.hide();
+                    chidCategoryIndicator.text('/ ' + categoryName)
+                    ItemContainer.show();
+
+                },
+                url: "/web/shop/category/" + categorySlug,
+                type: "get",
+                success: function(result) {
+                    ItemContainer.html(result);
+                },
+                error: function(result) {
+                    console.log(result.status + ' ' + result.statusText);
+                }
+            });
+        });
+
+
+
+
+
 
     });
 </script>

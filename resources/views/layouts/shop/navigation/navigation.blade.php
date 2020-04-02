@@ -74,7 +74,7 @@
 
                                     </optgroup> -->
                                 </select>
-                                <input type="text" name="keyword" class="form-control navigation-input input-lg w-65-md w-85-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size" placeholder="Search (WIP)">
+                                <input type="text" id="search-box" name="keyword" class="form-control navigation-input input-lg w-65-md w-85-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size" placeholder="Search (WIP)">
                                 <button id="search-button" class="btn navigation-input border-right-rounded-10"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
