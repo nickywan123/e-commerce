@@ -145,52 +145,30 @@ class PurchaseController extends Controller
             Mail::to($order->purchase->user->email)->send(new CheckoutOrder($order));
         }
 
-        $paymentMethod = $request->input('options');
-        // Check if offline payment or payment gateway -> then redirect to related page.
+        // $paymentMethod = $request->input('options');
 
-        // TODO: Temporary redirect to purchase tracking page.
-        // If FPX, redirect to another page to POST submit to payment gateway.
-        // Create controller method to handle the response.
+        // if ($paymentMethod == 'offline') {
+        //     return view('shop.payment.offline')->with('purchase', $purchase);
+        // } elseif ($paymentMethod == 'fpx') {
+        //     return view('shop.payment.fpx')->with('purchase', $purchase);
+        // } elseif ($paymentMethod == 'credit') {
+        //     return view('shop.payment.credit')->with('purchase', $purchase);
+        // }
 
-        // If Card, redirect to another page to POST submit to payment gateway.
-        // Create controller method to handle the response.
-
-        // If Offline, redirect to another page for them to upload receipt.
-        // Create controller method to handle file upload and update invoice + po status.
-
-        if ($paymentMethod == 'offline') {
-            return view('shop.payment.offline')->with('purchase', $purchase);
-        } elseif ($paymentMethod == 'fpx') {
-            return view('shop.payment.fpx')->with('purchase', $purchase);
-        } elseif ($paymentMethod == 'credit') {
-            return view('shop.payment.credit')->with('purchase', $purchase);
-        }
+        return redirect('/payment/cashier?orderId=' . $purchase->purchase_number);
     }
 
     /**
-     * Payment Gateway payment method.
+     * Show payment options to customer.
      */
-    public function paymentGatewayRequest(Request $request)
+    public function paymentOption(Request $request)
     {
-        //
+        $purchase = Purchase::where('purchase_number', $request->query('orderId'))
+            ->first();
+
+        return view('shop.payment.index')
+            ->with('purchase', $purchase);
     }
-
-    /**
-     * Payment Gateway response.
-     */
-    public function paymentGatewayResponse(Request $request)
-    {
-        // Update PO & Invoice status to paid.
-        // Generate PDF of Invoice and PO.
-        // Email to customer & panel.
-    }
-
-    public function offlinePaymentStore(Request $request)
-    {
-        return redirect('/shop/order');
-    }
-
-
 
     /**
      * Invoice response after customer purchase item

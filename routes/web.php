@@ -336,6 +336,16 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
     // End Shop
 
+    // Payment
+    Route::group(['prefix' => 'payment'], function () {
+        // Handle POST request after user selected payment option and provided their payment information.
+        Route::post('/', 'Purchase\PaymentGatewayController@paymentGatewayRequest');
+
+        // View for user to select payment option and provide their payment information.
+        Route::get('/cashier', 'Purchase\PurchaseController@paymentOption');
+    });
+    // End Payment
+
     // Web
     Route::group(['prefix' => 'web'], function () {
         Route::group(['prefix' => 'cart'], function () {
