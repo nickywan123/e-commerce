@@ -203,6 +203,7 @@
                                         <div class="col-12 col-md-5 mb-1 form-group">
                                             <label for="card_number">Card Number <small class="text-danger">*</small></label>
                                             <input type="text" class="form-control" name="card_number" id="card_number" placeholder="Card Number">
+                                            <input type="hidden" name="card_type" id="card_type" value="">
                                             <div class="valid-feedback feedback-icon with-cc-icon">
                                                 <i class="fa"></i>
                                             </div>
@@ -332,17 +333,17 @@
             // Credit card pattern recognition algorithm.
             function detectCardType(number) {
                 var re = {
-                    electron: /^(4026|417500|4405|4508|4844|4913|4917)\d+$/,
-                    maestro: /^(5018|5020|5038|5612|5893|6304|6759|6761|6762|6763|0604|6390)\d+$/,
-                    dankort: /^(5019)\d+$/,
-                    interpayment: /^(636)\d+$/,
-                    unionpay: /^(62|88)\d+$/,
+                    // electron: /^(4026|417500|4405|4508|4844|4913|4917)\d+$/,
+                    // maestro: /^(5018|5020|5038|5612|5893|6304|6759|6761|6762|6763|0604|6390)\d+$/,
+                    // dankort: /^(5019)\d+$/,
+                    // interpayment: /^(636)\d+$/,
+                    // unionpay: /^(62|88)\d+$/,
                     visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
                     mastercard: /^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[01]|2720)[0-9]{0,}$/,
-                    amex: /^3[47][0-9]{13}$/,
-                    diners: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/,
-                    discover: /^6(?:011|5[0-9]{2})[0-9]{12}$/,
-                    jcb: /^(?:2131|1800|35\d{3})\d{11}$/
+                    // amex: /^3[47][0-9]{13}$/,
+                    // diners: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/,
+                    // discover: /^6(?:011|5[0-9]{2})[0-9]{12}$/,
+                    // jcb: /^(?:2131|1800|35\d{3})\d{11}$/
                 }
 
                 for (var key in re) {
@@ -368,6 +369,7 @@
                     $(this).addClass('is-valid');
                     ccIcon.removeClass();
                     ccIcon.addClass('fa fa-cc-' + cardType).css('font-size', '30px');
+                    $('#card_type').val(cardType);
                 }
             });
 
@@ -407,7 +409,10 @@
             $('#card-form').on('submit', function(e) {
                 error = 0;
 
-                if ($('#card_number').val().length < 7 || cardType == undefined) {
+                if (
+                    $('#card_number').val().length < 7 ||
+                    cardType == undefined
+                ) {
                     error = error + 1;
                     $(this).focus();
                 }

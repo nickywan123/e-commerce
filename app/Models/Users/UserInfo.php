@@ -50,6 +50,14 @@ class UserInfo extends Model
     }
 
     /**
+     * Get the customer's payment info.
+     */
+    public function paymentInfo()
+    {
+        return $this->hasOne('App\Models\Users\Customers\PaymentInfo', 'account_id', 'account_id');
+    }
+
+    /**
      * Get largest customer account id.
      */
     public function scopeLargestCustomerId($query)

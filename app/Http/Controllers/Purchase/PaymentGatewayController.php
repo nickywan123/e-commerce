@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Purchase;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Globals\PaymentGateway\MerchantID;
+use App\Models\Purchases\Purchase;
+use App\Models\Users\Customers\PaymentInfo;
 
 class PaymentGatewayController extends Controller
 {
@@ -12,10 +15,12 @@ class PaymentGatewayController extends Controller
      */
     public function paymentGatewayRequest(Request $request)
     {
-
+        // return $request;
         $paymentOption = $request->input('payment_option');
         $orderId = $request->query('orderId');
         $savePaymentInfo = false;
+
+        $purchase = Purchase::where('purchase_number', $orderId)->first();
 
         if ($request->input('save_payment_info')) {
             $savePaymentInfo = true;
@@ -23,9 +28,25 @@ class PaymentGatewayController extends Controller
 
         // Handle if payment option card is selected.
         if ($paymentOption == 'card') {
+            $merchantId = MerchantID::where('cc_provider', $request->input('card_type'))->first();
+
             if ($savePaymentInfo == true) {
-                // Handle saving payment info.
+                $paymentInfo = new PaymentInfo;
+                $paymentInfo->card_number = $request->input('card_number');
+                $paymentInfo->name_on_card = $request->input('name_on_card');
+                $paymentInfo->expiry_date = $request->input('expiry_date');
+                $paymentInfo->save();
+            } else {
+                $paymentInfo = new PaymentInfo;
+                $paymentInfo->card_number = $request->input('card_number');
+                $paymentInfo->name_on_card = $request->input('name_on_card');
+                $paymentInfo->expiry_date = $request->input('expiry_date');
             }
+
+            return view('shop.payment.card.post-to-gateway')
+                ->with('purchase', $purchase)
+                ->with('paymentInfo', $paymentInfo)
+                ->with('merchantId', $merchantId);
 
             // Handle credit/debit payment option.
         }
