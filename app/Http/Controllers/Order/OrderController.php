@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Order;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Orders\Order;
+use Illuminate\Http\Request;
+use App\Models\Purchases\Purchase;
+use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
@@ -45,9 +46,15 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        if (! $request->hasValidSignature()) {
+            abort(401);
+        }
+       
+        return view('qr.confirm-order')->
+        with(['purchase'=>Purchase::where('purchase_num', $request->purchase_num)->get()]);
+     
     }
 
     /**
