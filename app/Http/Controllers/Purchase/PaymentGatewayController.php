@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Globals\PaymentGateway\MerchantID;
 use App\Models\Purchases\Purchase;
 use App\Models\Users\Customers\PaymentInfo;
+use App\Models\Users\User;
+use Auth;
 
 class PaymentGatewayController extends Controller
 {
@@ -21,6 +23,7 @@ class PaymentGatewayController extends Controller
         $savePaymentInfo = false;
 
         $purchase = Purchase::where('purchase_number', $orderId)->first();
+        $user = User::find(Auth::user()->id);
 
         if ($request->input('save_payment_info')) {
             $savePaymentInfo = true;
@@ -28,24 +31,36 @@ class PaymentGatewayController extends Controller
 
         // Handle if payment option card is selected.
         if ($paymentOption == 'card') {
-            $merchantId = MerchantID::where('cc_provider', $request->input('card_type'))->first();
+            $merchantId = MerchantID::where('card_type', $request->input('card_type'))->first();
 
             if ($savePaymentInfo == true) {
-                $paymentInfo = new PaymentInfo;
-                $paymentInfo->card_number = $request->input('card_number');
-                $paymentInfo->name_on_card = $request->input('name_on_card');
-                $paymentInfo->expiry_date = $request->input('expiry_date');
-                $paymentInfo->save();
+                $paymentInfo = PaymentInfo::where('account_id', $user->userInfo->account_id)
+                    ->where('card_number', $request->input('card_number'))->first();
+
+                if (!$paymentInfo) {
+                    $paymentInfo = new PaymentInfo;
+                    $paymentInfo->account_id = $user->userInfo->account_id;
+                    $paymentInfo->card_number = $request->input('card_number');
+                    $paymentInfo->name_on_card = $request->input('name_on_card');
+                    $paymentInfo->expiry_date = $request->input('expiry_date');
+                    $paymentInfo->save();
+                }
+
+                $cvv2 = $request->input('cvv');
             } else {
                 $paymentInfo = new PaymentInfo;
+                $paymentInfo->account_id = $user->userInfo->account_id;
                 $paymentInfo->card_number = $request->input('card_number');
                 $paymentInfo->name_on_card = $request->input('name_on_card');
                 $paymentInfo->expiry_date = $request->input('expiry_date');
+
+                $cvv2 = $request->input('cvv');
             }
 
             return view('shop.payment.card.post-to-gateway')
                 ->with('purchase', $purchase)
                 ->with('paymentInfo', $paymentInfo)
+                ->with('cvv2', $cvv2)
                 ->with('merchantId', $merchantId);
 
             // Handle credit/debit payment option.

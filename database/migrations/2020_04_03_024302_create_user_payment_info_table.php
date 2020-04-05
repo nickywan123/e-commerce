@@ -15,7 +15,8 @@ class CreateUserPaymentInfoTable extends Migration
     {
         Schema::create('user_payment_info', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('card_number');
+            $table->integer('account_id');
+            $table->string('card_number');
             $table->string('name_on_card');
             $table->char('expiry_date', 5);
             $table->timestamps();

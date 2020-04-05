@@ -15,6 +15,8 @@ class CreateGlobalPaymentMerchantidTable extends Migration
     {
         Schema::create('global_payment_merchantid', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('card_type');
+            $table->integer('merchant_id');
             $table->timestamps();
         });
     }

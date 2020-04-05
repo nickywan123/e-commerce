@@ -241,7 +241,7 @@
                                     <div class="form-row">
                                         <div class="col-12 col-md-3 mb-1 form-group">
                                             <label for="expiry_date">Expiration Date <small class="text-danger">*</small></label>
-                                            <input type="text" class="form-control" name="expiry_date" id="expiry_date" placeholder="MM/YY">
+                                            <input type="text" class="form-control" name="expiry_date" id="expiry_date" placeholder="MMYY">
                                             <div class="valid-feedback feedback-icon">
                                                 <i class="fa fa-check"></i>
                                             </div>
@@ -384,7 +384,7 @@
             });
 
             $('#expiry_date').on('keyup', function() {
-                if ($(this).val().length != 5) {
+                if ($(this).val().length != 4 || !$.isNumeric($(this).val())) {
                     $(this).removeClass('is-valid');
                     $(this).addClass('is-invalid');
                 } else {
@@ -394,7 +394,7 @@
             });
 
             $('#cvv').on('keyup', function() {
-                if ($(this).val().length < 3) {
+                if ($(this).val().length < 3 || !$.isNumeric($(this).val())) {
                     $(this).removeClass('is-valid');
                     $(this).addClass('is-invalid');
                 } else {
@@ -420,11 +420,11 @@
                     error = error + 1;
                     $(this).focus();
                 }
-                if ($('#expiry_date').val().length != 5) {
+                if ($('#expiry_date').val().length != 4 || !$.isNumeric($('#expiry_date').val())) {
                     error = error + 1;
                     $(this).focus();
                 }
-                if ($('#cvv').val().length < 3) {
+                if ($('#cvv').val().length < 3 || !$.isNumeric($('#cvv').val())) {
                     error = error + 1;
                     $(this).focus();
                 }

@@ -7,6 +7,7 @@ use App\Models\Globals\Employment;
 use App\Models\Globals\Gender;
 use App\Models\Globals\Length;
 use App\Models\Globals\Marital;
+use App\Models\Globals\PaymentGateway\MerchantID;
 use App\Models\Globals\Race;
 use App\Models\Globals\State;
 use App\Models\Globals\Status;
@@ -253,6 +254,19 @@ class GlobalTablesSeeder extends Seeder
         Quality::create([
             'name' => 'Premium',
             'description' => 'Quality for product sold by panels.'
+        ]);
+
+        /**
+         * Merchant ID
+         */
+        MerchantID::create([
+            'card_type' => 'mastercard',
+            'merchant_id' => '5500003437'
+        ]);
+
+        MerchantID::create([
+            'card_type' => 'visa',
+            'merchant_id' => '3300004454'
         ]);
     }
 }
