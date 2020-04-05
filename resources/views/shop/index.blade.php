@@ -25,13 +25,13 @@
 <section id="slideshow" class="hidden-sm">
   <div class="slick ">
     <div>
-      <img class="image-slideshow" src="{{asset('/images/Home-Banner.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/storage/banner/Banner-01.jpg')}}" alt="">
     </div>
     <div>
-      <img class="image-slideshow" src="{{asset('/images/Home-Design.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/storage/banner/Banner-02.jpg')}}" alt="">
     </div>
     <div>
-      <img class="image-slideshow" src="{{asset('/images/Home-Desktop.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/storage/banner/Banner-03.jpg')}}" alt="">
     </div>
 
   </div>
@@ -40,13 +40,13 @@
 <section id="slideshow" class="hidden-md">
   <div class="slick ">
     <div>
-      <img class="image-slideshow" src="{{asset('/images/Banner_Design_Mobile.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/storage/banner/Banner-01-mobile.jpg')}}" alt="">
     </div>
     <div>
-      <img class="image-slideshow" src="{{asset('/images/Banner_Mobile.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/storage/banner/Banner-02-mobile.jpg')}}" alt="">
     </div>
     <div>
-      <img class="image-slideshow" src="{{asset('/images/Banner_Top_Rated_Mobile.jpg')}}" alt="">
+      <img class="image-slideshow" src="{{asset('/storage/banner/Banner-03-mobile.jpg')}}" alt="">
     </div>
 
   </div>
@@ -55,43 +55,43 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1 style="color: #ffcc00;">Popular Categories</h1>
+      <h1 style="color: #ffcc00; font-family: 'Dekko'">Popular Categories</h1>
       <div style="border-top: 1px solid #ffcc00; margin-bottom: 20px;" class="w-50-md w-100-sm">
       </div>
     </div>
     <div class="col-6 col-md-2 text-alignment">
-      <a style="color:#ffcc00;" href="/shop/category/bedsheets-and-mattresses/bedsheets"><img class="icon-image" src="{{asset('/images/bedsheet-icon.png')}}" alt="Icon">
+      <a style="color:#ffcc00; font-family: 'Dekko'" href="/shop/category/bedsheets-and-mattresses/bedsheets"><img class="icon-image" src="{{asset('/storage/icons/bedsheet-icon.png')}}" alt="Icon">
         <h5>Bedsheet</h5>
       </a>
 
     </div>
     <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/images/curtain-icon.png')}}" alt="Icon">
+      <a style=" color:#ffcc00; font-family: 'Dekko'" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
         <h5>Curtains</h5>
       </a>
 
     </div>
 
     <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="/shop/category/lightings"><img class="icon-image" src="{{asset('/images/lighting-icon.png')}}" alt="Icon">
+      <a style=" color:#ffcc00; font-family: 'Dekko'" href="/shop/category/lightings"><img class="icon-image" src="{{asset('/images/lighting-icon.png')}}" alt="Icon">
         <h5>Lighting</h5>
       </a>
 
     </div>
     <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="/wip"><img class="icon-image" src="{{asset('/images/wallpaper-icon.png')}}" alt="Icon">
+      <a style=" color:#ffcc00; font-family: 'Dekko'" href="/wip"><img class="icon-image" src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
         <h5>Renovation</h5>
       </a>
 
     </div>
     <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="/shop/category/tiles"><img class="icon-image" src="{{asset('/images/tiles-icon.png')}} " alt="Icon">
+      <a style=" color:#ffcc00; font-family: 'Dekko'" href="/shop/category/tiles"><img class="icon-image" src="{{asset('/images/tiles-icon.png')}} " alt="Icon">
         <h5>Tiles</h5>
       </a>
 
     </div>
     <div class="col-6 col-md-2 text-alignment">
-      <a style=" color:#ffcc00;" href="/shop/category/paint"><img class="icon-image" src="{{asset('/images/paint-icon.png')}}" alt="Icon">
+      <a style=" color:#ffcc00; font-family: 'Dekko'" href="/shop/category/paint"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
         <h5>Paint</h5>
       </a>
 
@@ -189,6 +189,26 @@
       width: 50%;
     }
   }
+
+
+.slick-dots{
+position: absolute;
+display: block;
+width: 100%;
+padding: 10;
+margin: 0;
+list-style: none;
+text-align: center;
+}
+.slick-dots li button:before{
+  color: white;
+}
+.slick-dots li.slick-active button:before{
+  font-size:15px;
+  color:#fbcc34;
+  
+  
+}
 </style>
 @endpush
 
@@ -206,6 +226,9 @@
       prevArrow: false,
       nextArrow: false
     });
+
+
+    
   });
 </script>
 @endpush

@@ -4,7 +4,7 @@
     </div>
 
     <div class="sidebar-header">
-        <img class="sidebar-logo" src="{{ asset('storage/logo/bujishu.png') }}" alt="">
+        <img class="sidebar-logo" src="{{ asset('storage/logo/bujishu-logo-official-updated.png') }}" alt="">
     </div>
 
     <ul class="list-unstyled components ">

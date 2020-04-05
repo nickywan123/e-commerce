@@ -58629,12 +58629,8 @@ a.category-item:hover {
 
 @media (max-width: 767px) {
   #search-button {
-    height: 49px;
+    height: 38px;
     background-color: white;
-  }
-
-  .search-bar-size {
-    height: 49px;
   }
 
   .hidden-sm {

@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-4 col-md-6 text-right my-auto">
                         <a href="/shop">
-                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
+                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu-logo-official-updated.png') }}" alt="">
                         </a>
                     </div>
                     <div class="col-4 hidden-md my-auto">
@@ -36,9 +36,9 @@
                                         My Account
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user"></i> Profile <small>(WIP)</small></a>
-                                        <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card"></i> My Orders <small>(WIP)</small></a>
-                                        <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart(WIP)</a>
+                                        <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user"></i> Profile </a>
+                                        <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card"></i> My Orders </a>
+                                        <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
                                         @hasrole('panel')
                                         <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Panel</a>
                                         @endhasrole
@@ -69,12 +69,12 @@
                         <div class="col-12 my-auto">
                             <div class="pb-2 nav-content-sidebar-collapse">
                                 <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size " name="category">
-                                    <option value="all">All Categories <small>(WIP)</small></option>
+                                    <option value="all">All Categories </option>
                                     <!-- <optgroup label="Mens">
 
                                     </optgroup> -->
                                 </select>
-                                <input type="text" id="search-box" name="keyword" class="form-control navigation-input input-lg w-65-md w-85-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size" placeholder="Search (WIP)">
+                                <input type="text" id="search-box" name="keyword" class="form-control navigation-input input-lg w-65-md w-85-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size" >
                                 <button id="search-button" class="btn navigation-input border-right-rounded-10"><i class="fa fa-search"></i></button>
                             </div>
                         </div>
@@ -98,9 +98,9 @@
                                 My Account
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user " style="color:#fbcc34;"></i> Profile <small>(WIP)</small></a>
-                                <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Orders <small>(WIP)</small></a>
-                                <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart <small>(WIP)</small></a>
+                                <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user " style="color:#fbcc34;"></i> Profile </a>
+                                <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Orders </a>
+                                <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart </a>
                                 @hasrole('panel')
                                 <a href="/management/panel" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
                                 @endhasrole
