@@ -11,19 +11,17 @@
 <body>
 
     @php
-      $url = URL::signedRoute 
-    ('confirm-order', [ 
-        'purchase_num' => $purchase->purchase_number,
-        
-    ]);   
+    $url = URL::signedRoute
+    ('confirm-order', [
+    'purchase_num' => $purchase->purchase_number,
+
+    ]);
     @endphp
     <div class="container">
-        <span class="float-left"> <img src="{{ asset('images/Invoice-Logo.png') }}" style="width:15%;"
-                alt="No Logo"></span>
-        <img style="float:right; margin-bottom:10px;"
-            src="data:images/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate('{$url}')) }} ">
+        <span class="float-left"> <img src="{{ asset('images/Invoice-Logo.png') }}" style="width:15%;" alt="No Logo"></span>
+        <img style="float:right; margin-bottom:10px;" src="data:images/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate('{$url}')) }} ">
     </div> <br> <br>
-   
+
     <div>
 
         <div style="font-size:10px;float:left; width:50%;">
@@ -41,7 +39,7 @@
                 <tr>
                     <td>Contact No:</td>
 
-                    <td>{{$purchase->user->userInfo->contacts->where('is_mobile', 1)->first()}}</td>
+                    <td>{{ $purchase->user->userInfo->contacts->where('is_mobile', 1)->first()->contact_num }}</td>
 
                 </tr>
             </table>
@@ -121,14 +119,8 @@
                     <th style="width:50%;"> Amount (RM)</th>
                 </tr>
                 <tr>
-
-                    @foreach ($purchase as $purchase)
-
-
-                    <td style="height:500px;" align="center">{{ $loop->iteration }}</td>
                     @foreach($purchase->orders as $order)
                     @foreach($order->items as $item)
-                    
                     <td>{{ $item->product->parentProduct->id }}</td>
                     <td align="center"> {{ $item->product->parentProduct->name }}</td>
                     <td align="center">{{ $item->quantity }}</td>
@@ -138,19 +130,17 @@
 
                     <td align="center">
                         <?php
-                         $subtotal = 0;
-                            ?>
+                        $subtotal = 0;
+                        ?>
                         @foreach($purchase->orders as $order)
                         @foreach($order->items as $item)
                         <?php
-                            $subtotal = $subtotal + $item->subtotal_price;
-                            ?>
+                        $subtotal = $subtotal + $item->subtotal_price;
+                        ?>
                         @endforeach
                         @endforeach
                         <?php echo number_format(($subtotal / 100), 2); ?>
                     </td>
-
-
                 </tr>
 
             </table>
@@ -184,8 +174,6 @@
                     <td>Balance Due</td>
                     <td style="border: 1px solid #ccc;">3,000.00</td>
                 </tr>
-                @endforeach
-
             </table>
 
 
@@ -247,5 +235,4 @@
         border-right: 1px solid black;
         height: 50px;
     }
-
 </style>

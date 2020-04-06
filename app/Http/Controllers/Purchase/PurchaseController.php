@@ -110,9 +110,9 @@ class PurchaseController extends Controller
             // Assign empty value for order amount first.
             $orderAmount = 0;
             $order->order_amount = 0;
-           
+
             $order->save();
-          
+
             $panelId = $key;
 
             // Foreach item in the cart..
@@ -139,23 +139,25 @@ class PurchaseController extends Controller
                     $orderAmount = $orderAmount + $cartItem->total_price;
                 }
             }
-            
+
             $order->order_amount = $orderAmount;
             $order->save();
 
             //Send the email to panel after placing order (attach with PO)
-            
+
             Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
-        
-            $pdf = PDF::loadView('documents.invoice',compact('purchase'))->setPaper('a4'); 
+
+            $pdf = PDF::loadView('documents.invoice', compact('purchase'))->setPaper('a4');
+
+            return $pdf->stream();
 
             // Make a copy of the PDF invoice and store in public/storage/....
             $content = $pdf->download()->getOriginalContent();
-             Storage::put('public/storage/documents/invoice/invoice_'.$purchase->purchase_number. '.pdf',$content) ;
+            Storage::put('public/storage/documents/invoice/invoice_' . $purchase->purchase_number . '.pdf', $content);
 
             //Send email to customer after placing order( attach with invoice)
             $message = new InvoiceEmailCustomer($purchase);
-            $message->attachData($pdf->output(), "invoice.pdf");     
+            $message->attachData($pdf->output(), "invoice.pdf");
             Mail::to($purchase->user->email)->send($message);
         }
 
