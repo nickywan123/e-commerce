@@ -69,7 +69,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-12">
                         <p class="mb-1">Qualities <small>(WIP)</small></p>
                         <div class="boxed">
@@ -86,7 +86,7 @@
                             <label for="quality-premium">Premium</label>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Colors -->
                 @if($product->colorAttributes->count() > 0)
