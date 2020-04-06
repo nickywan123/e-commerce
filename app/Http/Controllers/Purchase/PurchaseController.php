@@ -149,8 +149,6 @@ class PurchaseController extends Controller
 
             $pdf = PDF::loadView('documents.invoice', compact('purchase'))->setPaper('a4');
 
-            return $pdf->stream();
-
             // Make a copy of the PDF invoice and store in public/storage/....
             $content = $pdf->download()->getOriginalContent();
             Storage::put('public/storage/documents/invoice/invoice_' . $purchase->purchase_number . '.pdf', $content);
