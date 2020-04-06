@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="text-right">
-                <!-- <form method="POST" action="/shop/cart/checkout">
+                <form method="POST" action="/shop/cart/checkout">
                     @csrf
                     <?php
                     foreach ($cartItems as $cartItem) {
@@ -94,11 +94,11 @@
                     }
                     ?>
                     <button class="btn btn-primary" type="submit">Checkout</button>
-                </form> -->
+                </form>
                 <!-- Button trigger modal -->
-                <button style="color: #000000;" type="button" class="btn btn-secondary bjsh-btn-gradient" data-toggle="modal" data-target="#exampleModal">
+                <!-- <button style="color: #000000;" type="button" class="btn btn-secondary bjsh-btn-gradient" data-toggle="modal" data-target="#exampleModal">
                     Checkout
-                </button>
+                </button> -->
             </div>
         </div>
     </div>

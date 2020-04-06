@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\Orders\InvoiceEmailCustomer;
+use File;
 
 class PurchaseController extends Controller
 {
@@ -66,7 +67,7 @@ class PurchaseController extends Controller
         // Assign user to the purchase record.
         $purchase->user_id = $user->id;
         // Generate a unique number used to identify the purchase.
-        $purchase->purchase_number = 'BSN' . Carbon::now()->format('Y') . ' ' . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
+        $purchase->purchase_number = 'BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
         // Assign a status to the purchase. Unpaid, paid.
         $purchase->purchase_status = 1;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
@@ -87,7 +88,7 @@ class PurchaseController extends Controller
         foreach ($cartItems as $cartItem) {
             // Create a new PO Number for each different panel belonging to an item.
             if (!array_key_exists($cartItem->product->panel_account_id, $po_numbers)) {
-                $po_numbers[$cartItem->product->panel_account_id] = 'PO ' . Carbon::now()->format('Y') . ' ' . Carbon::now()->format('m') . ' ' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
+                $po_numbers[$cartItem->product->panel_account_id] = 'PO' . Carbon::now()->format('Y') . Carbon::now()->format('m') . ' ' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
 
                 $poSequence = $poSequence + 1;
             }
@@ -110,9 +111,9 @@ class PurchaseController extends Controller
             // Assign empty value for order amount first.
             $orderAmount = 0;
             $order->order_amount = 0;
-           
+
             $order->save();
-          
+
             $panelId = $key;
 
             // Foreach item in the cart..
@@ -139,72 +140,55 @@ class PurchaseController extends Controller
                     $orderAmount = $orderAmount + $cartItem->total_price;
                 }
             }
-            
+
             $order->order_amount = $orderAmount;
             $order->save();
 
             //Send the email to panel after placing order (attach with PO)
-            
+
             Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
-        
-            $pdf = PDF::loadView('documents.invoice',compact('purchase'))->setPaper('a4'); 
+
+            $pdf = PDF::loadView('documents.invoice', compact('purchase'))->setPaper('a4');
 
             // Make a copy of the PDF invoice and store in public/storage/....
             $content = $pdf->download()->getOriginalContent();
-             Storage::put('public/storage/documents/invoice/invoice_'.$purchase->purchase_number. '.pdf',$content) ;
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            $pdfName = $purchase->purchase_number;
+            if (!File::isDirectory($pdfDestination)) {
+                File::makeDirectory($pdfDestination, 0777, true);
+            }
+            File::put($pdfDestination . $pdfName . '.pdf', $content);
 
             //Send email to customer after placing order( attach with invoice)
             $message = new InvoiceEmailCustomer($purchase);
-            $message->attachData($pdf->output(), "invoice.pdf");     
+            $message->attachData($pdf->output(), "invoice.pdf");
             Mail::to($purchase->user->email)->send($message);
         }
 
-        $paymentMethod = $request->input('options');
-        // Check if offline payment or payment gateway -> then redirect to related page.
+        // $paymentMethod = $request->input('options');
 
-        // TODO: Temporary redirect to purchase tracking page.
-        // If FPX, redirect to another page to POST submit to payment gateway.
-        // Create controller method to handle the response.
+        // if ($paymentMethod == 'offline') {
+        //     return view('shop.payment.offline')->with('purchase', $purchase);
+        // } elseif ($paymentMethod == 'fpx') {
+        //     return view('shop.payment.fpx')->with('purchase', $purchase);
+        // } elseif ($paymentMethod == 'credit') {
+        //     return view('shop.payment.credit')->with('purchase', $purchase);
+        // }
 
-        // If Card, redirect to another page to POST submit to payment gateway.
-        // Create controller method to handle the response.
-
-        // If Offline, redirect to another page for them to upload receipt.
-        // Create controller method to handle file upload and update invoice + po status.
-
-        if ($paymentMethod == 'offline') {
-            return view('shop.payment.offline')->with('purchase', $purchase);
-        } elseif ($paymentMethod == 'fpx') {
-            return view('shop.payment.fpx')->with('purchase', $purchase);
-        } elseif ($paymentMethod == 'credit') {
-            return view('shop.payment.credit')->with('purchase', $purchase);
-        }
+        return redirect('/payment/cashier?orderId=' . $purchase->purchase_number);
     }
 
     /**
-     * Payment Gateway payment method.
+     * Show payment options to customer.
      */
-    public function paymentGatewayRequest(Request $request)
+    public function paymentOption(Request $request)
     {
-        //
+        $purchase = Purchase::where('purchase_number', $request->query('orderId'))
+            ->first();
+
+        return view('shop.payment.index')
+            ->with('purchase', $purchase);
     }
-
-    /**
-     * Payment Gateway response.
-     */
-    public function paymentGatewayResponse(Request $request)
-    {
-        // Update PO & Invoice status to paid.
-        // Generate PDF of Invoice and PO.
-        // Email to customer & panel.
-    }
-
-    public function offlinePaymentStore(Request $request)
-    {
-        return redirect('/shop/order');
-    }
-
-
 
     /**
      * Invoice response after customer purchase item

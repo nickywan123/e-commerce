@@ -339,6 +339,16 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
     // End Shop
 
+    // Payment
+    Route::group(['prefix' => 'payment'], function () {
+        // Handle POST request after user selected payment option and provided their payment information.
+        Route::post('/', 'Purchase\PaymentGatewayController@paymentGatewayRequest');
+
+        // View for user to select payment option and provide their payment information.
+        Route::get('/cashier', 'Purchase\PurchaseController@paymentOption');
+    });
+    // End Payment
+
     // Web
     Route::group(['prefix' => 'web'], function () {
         Route::group(['prefix' => 'cart'], function () {
@@ -378,7 +388,7 @@ Route::get('/test-route/date', function () {
 });
 
 Route::get('/test-route/email', function () {
-    $order = Order::where('order_number', 'PO 2020 04 000008')->first();
+    $order = Order::where('order_number', 'PO202004 000001')->first();
 
     return (new CheckoutOrder($order))->render();
 });
