@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-4 col-md-6 text-right my-auto">
                         <a href="/shop">
-                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu-logo-official-updated.png') }}" alt="">
+                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu-logo.png') }}" alt="">
                         </a>
                     </div>
                     <div class="col-4 hidden-md my-auto">
@@ -31,19 +31,17 @@
                             @else
                             <li class="nav-item m-1">
                                 <div class="dropdown show">
-                                    <!-- TODO: Create a class for the style -->
+                                    <!-- TODO: Create a class for the style mobile devices -->
                                     <a class="btn btn-secondary dropdown-toggle my-account-button" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
                                         My Account
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user"></i> Profile </a>
-                                        <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card"></i> My Orders </a>
-                                        <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
+                                        <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> My Orders </a>
                                         @hasrole('panel')
-                                        <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Panel</a>
+                                        <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
                                         @endhasrole
                                         @hasrole('dealer')
-                                        <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Dealer</a>
+                                        <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                         @endhasrole
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -58,6 +56,11 @@
                             </li>
                             @endguest
                         </ul>
+                        <div>
+                            <a href="/shop/profile"><i class="fa fa-user" style="color:#fbcc34;"></i> </a>
+                            <a style="color:#fbcc34; margin-left:5px; " href="#" ><i class="fa fa-heart-o" style="color:#fbcc34;"></i>  </a>
+                            <a style="color:#fbcc34; margin-left:5px;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i></a>
+                        </div>
                     </div>
                 </div>
 
@@ -94,13 +97,13 @@
                     <li class="nav-item m-1">
                         <div class="dropdown show">
                             <!-- TODO: Create a class for the style -->
-                            <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px;">
-                                My Account
+                            <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px; margin-left: 30px;">
+                                My Account  
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user " style="color:#fbcc34;"></i> Profile </a>
                                 <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Orders </a>
-                                <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart </a>
+                                
                                 @hasrole('panel')
                                 <a href="/management/panel" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
                                 @endhasrole
@@ -118,7 +121,13 @@
                             </div>
                         </div>
                     </li>
+                    
                     @endguest
+                    <div style="margin-top:10px;">
+                        <a style="color:#fbcc34; margin-right:10px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34;"></i> My Wish List </a>
+                        <a style="color:#fbcc34;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart </a>
+                    </div>
+                   
                 </ul>
             </div>
             <!-- end col -->

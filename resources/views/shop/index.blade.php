@@ -205,7 +205,7 @@ text-align: center;
 }
 .slick-dots li.slick-active button:before{
   font-size:15px;
-  color:#fbcc34;
+  color:#ffcc00;
   
   
 }
