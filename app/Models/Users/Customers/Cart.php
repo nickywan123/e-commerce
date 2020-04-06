@@ -54,9 +54,4 @@ class Cart extends Model
     {
         return number_format(($this->shipping_fee / 100), 2);
     }
-
-    // /**Get purchases information */
-    // public function purchase(){
-    //     return $this->belongsTo('App\Models\Purchases\Purchase', 'user_id');
-    // }
 }
