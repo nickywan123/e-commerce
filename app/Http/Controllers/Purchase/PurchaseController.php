@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\Orders\InvoiceEmailCustomer;
+use File;
 
 class PurchaseController extends Controller
 {
@@ -151,7 +152,12 @@ class PurchaseController extends Controller
 
             // Make a copy of the PDF invoice and store in public/storage/....
             $content = $pdf->download()->getOriginalContent();
-            Storage::put('public/storage/documents/invoice/invoice_' . $purchase->purchase_number . '.pdf', $content);
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            $pdfName = $purchase->purchase_number;
+            if (!File::isDirectory($pdfDestination)) {
+                File::makeDirectory($pdfDestination, 0777, true);
+            }
+            File::put($pdfDestination . $pdfName . '.pdf', $content);
 
             //Send email to customer after placing order( attach with invoice)
             $message = new InvoiceEmailCustomer($purchase);
