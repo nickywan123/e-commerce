@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <td align="right">secretCode:</td>
-                    <td><input size="50" id="secretCode" value="PBBSECRET" name="secretCode"></td>
+                    <td><input size="50" id="secretCode" value="APPLE001" name="secretCode"></td>
                 </tr>
                 <tr>
                     <td align="right">PAN</td>
