@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
                             </li>
-                            @endguest
+                           
                         </ul>
                         <div>
                             <a href="/shop/profile"><i class="fa fa-user" style="color:#fbcc34;"></i> </a>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-
+                @endguest
             </div>
             <!-- end col -->
             <div class="col-sm-8 vertical-align text-center my-auto">
@@ -122,7 +122,7 @@
                         </div>
                     </li>
                     
-                    @endguest
+                   
                     <div style="margin-top:10px;">
                         <a style="color:#fbcc34; margin-right:10px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34;"></i> My Wish List </a>
                         <a style="color:#fbcc34;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart </a>
@@ -130,6 +130,7 @@
                    
                 </ul>
             </div>
+            @endguest
             <!-- end col -->
         </div>
         <!-- end  row -->
