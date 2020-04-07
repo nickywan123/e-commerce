@@ -261,12 +261,12 @@ class GlobalTablesSeeder extends Seeder
          */
         MerchantID::create([
             'card_type' => 'mastercard',
-            'merchant_id' => '5500003437'
+            'merchant_id' => 5500003437
         ]);
 
         MerchantID::create([
             'card_type' => 'visa',
-            'merchant_id' => '3300004454'
+            'merchant_id' => 3300004454
         ]);
     }
 }
