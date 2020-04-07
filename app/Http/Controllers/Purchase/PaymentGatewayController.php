@@ -80,6 +80,7 @@ class PaymentGatewayController extends Controller
      */
     public function paymentGatewayResponse(Request $request)
     {
+        dd($request);
         // Receive payment gateway response.
         // Update Purchase & Order model.
         // Update Cart model (Set item status to 2003 => Item Checked Out).

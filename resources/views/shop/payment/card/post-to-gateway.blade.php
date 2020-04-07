@@ -32,7 +32,7 @@
 
 <body>
     <div style="display: none;">
-        <form id=f name=f action=https://uattds2.pbebank.com/PGW/Pay/Detail method=post>
+        <form id="f" name="f" action="https://uattds2.pbebank.com/PGW/Pay/Process" method="POST">
             <table id=Table1 cellspacing=0 cellpadding=3 width=100% border=0>
                 <tr>
                     <td align="right" width="30%">Merchant ID:</td>
@@ -76,7 +76,7 @@
                 </tr>
                 <tr>
                     <td align="right">Post URL (card holder will see this page):</td>
-                    <td><input size="50" id="postURL" value="https://uattds2.pbebank.com/PGW/Pay/Show" name="postURL"></td>
+                    <td><input size="50" id="postURL" value="https://demo3.bujishu.com/payment/gateway-response" name="postURL"></td>
                 </tr><input size="50" type="hidden" id="secretString" name="secretString">
                 <tr>
                     <td align="right">&nbsp;</td>

@@ -341,11 +341,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     // Payment
     Route::group(['prefix' => 'payment'], function () {
+        // View for user to select payment option and provide their payment information.
+        Route::get('/cashier', 'Purchase\PurchaseController@paymentOption');
+
         // Handle POST request after user selected payment option and provided their payment information.
         Route::post('/', 'Purchase\PaymentGatewayController@paymentGatewayRequest');
 
-        // View for user to select payment option and provide their payment information.
-        Route::get('/cashier', 'Purchase\PurchaseController@paymentOption');
+        Route::post('/gateway-response', 'Purchase\PaymentGatewayController@paymentGatewayResponse');
     });
     // End Payment
 
@@ -392,4 +394,3 @@ Route::get('/test-route/email', function () {
 
     return (new CheckoutOrder($order))->render();
 });
-

@@ -5,37 +5,37 @@
     <div class="row">
         <div class="col-2 hidden-sm">
             <div class="p-3 shadow-sm" style="background-color: #ffffff;">
-                
+
                 <h5 class="text-dark ">Panel <small>(WIP)</small></h5>
-                
+
                 <ul class="list-unstyled pl-2 pr-2 ">
-                    <li >
+                    <li>
                         <a class="text-dark" href="">Company A</a>
                     </li>
-                    <li >
+                    <li>
                         <a class="text-dark" href="">Company B</a>
                     </li>
-                    <li >
+                    <li>
                         <a class="text-dark" href="">Company C</a>
                     </li>
                 </ul>
-           
+
                 <h5 class="text-dark">Price <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a class="text-dark" >Under RM25</a>
+                        <a class="text-dark">Under RM25</a>
                     </li>
                     <li>
-                        <a class="text-dark" >RM25 - RM50</a>
+                        <a class="text-dark">RM25 - RM50</a>
                     </li>
                     <li>
-                        <a class="text-dark" >RM50 - RM100</a>
+                        <a class="text-dark">RM50 - RM100</a>
                     </li>
                     <li>
-                        <a class="text-dark"  >RM100 - RM200</a>
+                        <a class="text-dark">RM100 - RM200</a>
                     </li>
                     <li>
-                        <a class="text-dark" >RM200 & Above</a>
+                        <a class="text-dark">RM200 & Above</a>
                     </li>
                     <li class="p-1">
                         <form action="" class="form-inline">
@@ -51,7 +51,7 @@
                 <h5 class="text-dark">Color <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
                     <li>
-                        <a class="text-dark" id="white" href="javascript:void(0)" >White</a>
+                        <a class="text-dark" id="white" href="javascript:void(0)">White</a>
                     </li>
                     <li>
                         <a class="text-dark" href="">Beige</a>
@@ -192,7 +192,7 @@
             <div class="row pb-1">
                 <div class="col-12 mb-1">
                     <h3 class="text-dark font-weight-bold">Featured Deals <small id="child-category-indicator" class='text-muted text-capitalize'></small></h3>
-                    <hr>
+                    <hr style="margin-top: 0.2rem;">
                 </div>
             </div>
 
@@ -203,9 +203,8 @@
             </div>
 
             <div id="category-product-container">
-                <!-- Ajax response will be loaded here -->
+                <!-- Ajax response loaded here -->
             </div>
-
         </div>
     </div>
 </div>
@@ -386,7 +385,7 @@
                     ItemContainer.html(result);
                 },
                 error: function(result) {
-                    
+
                     console.log(result.status + ' ' + result.statusText);
                 }
             });
@@ -434,7 +433,7 @@
                     loading.hide();
                     ItemContainer.show();
                 },
-                url: "{{ route('web.shop.category', ['categorySlug' =>"+query+"])}}",
+                url: "{{ route('web.shop.category', ['categorySlug' =>" + query + "])}}",
                 type: "get",
                 success: function(result) {
                     ItemContainer.html(result);
@@ -449,9 +448,9 @@
 
         $('#search-button').on('click', function(e) {
             e.preventDefault();
-            var query=document.getElementById('search-box').value;
+            var query = document.getElementById('search-box').value;
             query = query.replace(/\s+/g, '-').toLowerCase();
-   
+
 
             $.ajax({
                 async: true,
@@ -476,10 +475,10 @@
             });
         });
 
-/*Filter section*/
+        /*Filter section*/
 
 
-function onFilterLoad() {
+        function onFilterLoad() {
             $.ajax({
                 async: true,
                 beforeSend: function() {
@@ -496,7 +495,7 @@ function onFilterLoad() {
                     ItemContainer.html(result);
                 },
                 error: function(result) {
-                    
+
                     console.log(result.status + ' ' + result.statusText);
                 }
             });
@@ -506,7 +505,7 @@ function onFilterLoad() {
             e.preventDefault();
             // var query=document.getElementById('search-box').value;
             // query = query.replace(/\s+/g, '-').toLowerCase();
-            
+
 
             $.ajax({
                 async: true,
