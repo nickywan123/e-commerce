@@ -31,7 +31,7 @@
         <div class="container mt-4 mb-4">
             <div class="row">
                 <div class="col-4 col-md-4 mx-auto my-auto">
-                    <img class="mw-100" src="{{ asset('storage/logo/bujishu-logo.png') }}" alt="Bujishu">
+                    <img class="mw-100" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="Bujishu">
                 </div>
             </div>
         </div>
