@@ -58641,14 +58641,22 @@ a.category-item:hover {
     width: 100%;
   }
 
-  .w-85-sm {
-    width: 85%;
+  .w-60-sm {
+    width: 60%;
   }
 
   .navigation-logo {
     max-height: 56px;
     width: auto;
     float: left;
+  }
+
+  .display-same-row {
+    display: flex;
+  }
+
+  .margin-left-icon {
+    margin-left: 30px;
   }
 
   .justify-content-center-sm {
@@ -58660,6 +58668,14 @@ a.category-item:hover {
     border-bottom-left-radius: 10px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  .dropdown-toggle-position::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
   }
 }
 
@@ -58682,6 +58698,14 @@ a.category-item:hover {
 
   .w-65-md {
     width: 65%;
+  }
+
+  .w-30-md-customer {
+    width: 30%;
+  }
+
+  .search-bar-height-customer {
+    height: 30px;
   }
 
   .navigation-logo {
