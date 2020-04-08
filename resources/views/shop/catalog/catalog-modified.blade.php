@@ -255,15 +255,17 @@
                                     </div>
                                 </div>
 
-                                <div class="right">
+                                <div class="right overflow-auto" style="height: 400px;">
                                     <div class="text-content">
-                                        <h6>Product 1 - <small>Sold By</small></h6>
+                                        <h6 class="font-weight-bold">Product 1 - <small>Sold By</small></h6>
                                         <div class="row">
                                             <div class="col-12">
                                                 <a href="" style="text-decoration: none;">
                                                     <div class="card">
                                                         <div class="card-body">
                                                             <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
                                                             <ul class="list-unstyled product-rating mb-1">
                                                                 <li>
                                                                     <i class="fa fa-star checked"></i>
@@ -281,6 +283,32 @@
                                                                     <i class="fa fa-star checked"></i>
                                                                 </li>
                                                             </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -291,6 +319,8 @@
                                                     <div class="card">
                                                         <div class="card-body">
                                                             <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
                                                             <ul class="list-unstyled product-rating mb-1">
                                                                 <li>
                                                                     <i class="fa fa-star checked"></i>
@@ -308,6 +338,32 @@
                                                                     <i class="fa fa-star checked"></i>
                                                                 </li>
                                                             </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -318,6 +374,8 @@
                                                     <div class="card">
                                                         <div class="card-body">
                                                             <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
                                                             <ul class="list-unstyled product-rating mb-1">
                                                                 <li>
                                                                     <i class="fa fa-star checked"></i>
@@ -335,6 +393,32 @@
                                                                     <i class="fa fa-star checked"></i>
                                                                 </li>
                                                             </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -370,616 +454,1380 @@
 
                     <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
                         <div class="tooltip-container">
-                            <div class="animated-product-container">
-                                <div class="animated-product-image-container">
-                                    <img src="http://placehold.jp/250x250.png" alt="#">
-                                </div>
-
-                                <div class="animated-product-information-container">
-                                    <p class="product-name">Product 2</p>
-                                    <div>
-                                        <ul class="list-unstyled product-rating mb-1">
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">120 ratings</p>
+                            <a data-toggle="modal" data-target="#exampleModal">
+                                <div class="animated-product-container">
+                                    <div class="animated-product-image-container">
+                                        <img src="http://placehold.jp/250x250.png" alt="#">
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="right">
-                                <div class="text-content">
-                                    <h6>Product 2 - <small>Sold By</small></h6>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
+                                    <div class="animated-product-information-container">
+                                        <p class="product-name">Product 1</p>
+                                        <div>
+                                            <ul class="list-unstyled product-rating mb-1">
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                            </ul>
+                                            <p class="mb-1">120 ratings</p>
                                         </div>
                                     </div>
                                 </div>
-                                <i></i>
+
+                                <div class="right overflow-auto" style="height: 400px;">
+                                    <div class="text-content">
+                                        <h6 class="font-weight-bold">Product 1 - <small>Sold By</small></h6>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <i></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade d-md-none" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
                         <div class="tooltip-container">
-                            <div class="animated-product-container">
-                                <div class="animated-product-image-container">
-                                    <img src="http://placehold.jp/250x250.png" alt="#">
-                                </div>
-
-                                <div class="animated-product-information-container">
-                                    <p class="product-name">Product 3</p>
-                                    <div>
-                                        <ul class="list-unstyled product-rating mb-1">
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">120 ratings</p>
+                            <a data-toggle="modal" data-target="#exampleModal">
+                                <div class="animated-product-container">
+                                    <div class="animated-product-image-container">
+                                        <img src="http://placehold.jp/250x250.png" alt="#">
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="right">
-                                <div class="text-content">
-                                    <h6>Product 3 - <small>Sold By</small></h6>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
+                                    <div class="animated-product-information-container">
+                                        <p class="product-name">Product 1</p>
+                                        <div>
+                                            <ul class="list-unstyled product-rating mb-1">
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                            </ul>
+                                            <p class="mb-1">120 ratings</p>
                                         </div>
                                     </div>
                                 </div>
-                                <i></i>
-                            </div>
+
+                                <div class="right overflow-auto" style="height: 400px;">
+                                    <div class="text-content">
+                                        <h6 class="font-weight-bold">Product 1 - <small>Sold By</small></h6>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <i></i>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Right -->
-                    <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
-                        <div class="tooltip-container">
-                            <div class="animated-product-container">
-                                <div class="animated-product-image-container">
-                                    <img src="http://placehold.jp/250x250.png" alt="#">
+                    <!-- Modal -->
+                    <div class="modal fade d-md-none" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
-
-                                <div class="animated-product-information-container">
-                                    <p class="product-name">Product 4</p>
-                                    <div>
-                                        <ul class="list-unstyled product-rating mb-1">
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">120 ratings</p>
-                                    </div>
+                                <div class="modal-body">
+                                    ...
                                 </div>
-                            </div>
-
-                            <div class="left">
-                                <div class="text-content">
-                                    <h6>Product 4 - <small>Sold By</small></h6>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
                                 </div>
-                                <i></i>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
                         <div class="tooltip-container">
-                            <div class="animated-product-container">
-                                <div class="animated-product-image-container">
-                                    <img src="http://placehold.jp/250x250.png" alt="#">
-                                </div>
-
-                                <div class="animated-product-information-container">
-                                    <p class="product-name">Product 5</p>
-                                    <div>
-                                        <ul class="list-unstyled product-rating mb-1">
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">120 ratings</p>
+                            <a data-toggle="modal" data-target="#exampleModal">
+                                <div class="animated-product-container">
+                                    <div class="animated-product-image-container">
+                                        <img src="http://placehold.jp/250x250.png" alt="#">
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="left">
-                                <div class="text-content">
-                                    <h6>Product 5 - <small>Sold By</small></h6>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
+                                    <div class="animated-product-information-container">
+                                        <p class="product-name">Product 1</p>
+                                        <div>
+                                            <ul class="list-unstyled product-rating mb-1">
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                            </ul>
+                                            <p class="mb-1">120 ratings</p>
                                         </div>
                                     </div>
                                 </div>
-                                <i></i>
+
+                                <div class="left overflow-auto" style="height: 400px;">
+                                    <div class="text-content">
+                                        <h6 class="font-weight-bold">Product 1 - <small>Sold By</small></h6>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <i></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade d-md-none" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
                         <div class="tooltip-container">
-                            <div class="animated-product-container">
-                                <div class="animated-product-image-container">
-                                    <img src="http://placehold.jp/250x250.png" alt="#">
+                            <a data-toggle="modal" data-target="#exampleModal">
+                                <div class="animated-product-container">
+                                    <div class="animated-product-image-container">
+                                        <img src="http://placehold.jp/250x250.png" alt="#">
+                                    </div>
+
+                                    <div class="animated-product-information-container">
+                                        <p class="product-name">Product 1</p>
+                                        <div>
+                                            <ul class="list-unstyled product-rating mb-1">
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                            </ul>
+                                            <p class="mb-1">120 ratings</p>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="animated-product-information-container">
-                                    <p class="product-name">Product 6</p>
-                                    <div>
-                                        <ul class="list-unstyled product-rating mb-1">
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-star checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">120 ratings</p>
+                                <div class="left overflow-auto" style="height: 400px;">
+                                    <div class="text-content">
+                                        <h6 class="font-weight-bold">Product 1 - <small>Sold By</small></h6>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <i></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade d-md-none" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="left">
-                                <div class="text-content">
-                                    <h6>Product 6 - <small>Sold By</small></h6>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
+                    <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
+                        <div class="tooltip-container">
+                            <a data-toggle="modal" data-target="#exampleModal">
+                                <div class="animated-product-container">
+                                    <div class="animated-product-image-container">
+                                        <img src="http://placehold.jp/250x250.png" alt="#">
+                                    </div>
 
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <a href="" style="text-decoration: none;">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <h5 class="text-dark">Panel 1</h5>
-                                                        <ul class="list-unstyled product-rating mb-1">
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa fa-star checked"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </a>
+                                    <div class="animated-product-information-container">
+                                        <p class="product-name">Product 1</p>
+                                        <div>
+                                            <ul class="list-unstyled product-rating mb-1">
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                            </ul>
+                                            <p class="mb-1">120 ratings</p>
                                         </div>
                                     </div>
                                 </div>
-                                <i></i>
+
+                                <div class="left overflow-auto" style="height: 400px;">
+                                    <div class="text-content">
+                                        <h6 class="font-weight-bold">Product 1 - <small>Sold By</small></h6>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <i></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade d-md-none" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
+                        <div class="tooltip-container">
+                            <a data-toggle="modal" data-target="#exampleModal">
+                                <div class="animated-product-container">
+                                    <div class="animated-product-image-container">
+                                        <img src="http://placehold.jp/250x250.png" alt="#">
+                                    </div>
+
+                                    <div class="animated-product-information-container">
+                                        <p class="product-name">Product 1</p>
+                                        <div>
+                                            <ul class="list-unstyled product-rating mb-1">
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-star checked"></i>
+                                                </li>
+                                            </ul>
+                                            <p class="mb-1">120 ratings</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="right overflow-auto" style="height: 400px;">
+                                    <div class="text-content">
+                                        <h6 class="font-weight-bold">Product 1 - <small>Sold By</small></h6>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <a href="" style="text-decoration: none;">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">Panel 1</h5>
+                                                            <h6 class="text-dark font-weight-bold">RM 90.00 - RM 120.00</h6>
+                                                            <p class="mb-0 text-dark">Panel Rating</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Rating by Customers</p>
+                                                            <ul class="list-unstyled product-rating mb-1">
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star checked"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                            <p class="mb-0 text-dark">Area of Service:</p>
+                                                            <p class="mb-1 text-dark font-weight-bold">
+                                                                Kl, Seremban
+                                                            </p>
+                                                            <p class="mb-0 text-dark">Commitment: </p>
+                                                            <p style="font-size: .8rem;" class="mb-0 text-dark">
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi voluptates non cum facilis eaque vel, est corrupti saepe incidunt at, dolorum itaque voluptatem id animi debitis quasi natus atque voluptatum odio! Reprehenderit, quod pariatur ipsa doloremque fugit deleniti ipsam atque necessitatibus repellendus quasi ea facilis dolore assumenda voluptatem fuga.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <i></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade d-md-none" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1160,7 +2008,6 @@
 
     .tooltip-container {
         position: relative;
-        border-bottom: 1px dotted #666;
         text-align: left;
     }
 
@@ -1168,7 +2015,7 @@
         width: 300px;
         top: 50%;
         left: 90%;
-        margin-left: 20px;
+        margin-left: 10px;
         transform: translate(0, -50%);
         padding: 0;
         color: #EEEEEE;
@@ -1189,7 +2036,7 @@
         width: 300px;
         top: 50%;
         right: 90%;
-        margin-right: 20px;
+        margin-right: 10px;
         transform: translate(0, -50%);
         padding: 0;
         color: #EEEEEE;
@@ -1235,6 +2082,14 @@
 @push('script')
 <script>
     $(document).ready(function() {
+        $(".right").mCustomScrollbar({
+            'theme': 'minimal'
+        });
+
+        $(".left").mCustomScrollbar({
+            'theme': 'minimal'
+        });
+
         $('#exampleModal').on('show.bs.modal', function(e) {
             if ($(window).width() > 375) {
                 return e.preventDefault();

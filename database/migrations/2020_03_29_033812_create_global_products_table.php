@@ -20,6 +20,7 @@ class CreateGlobalProductsTable extends Migration
             $table->string('name_slug');
             $table->text('details');
             $table->text('description');
+            $table->integer('quality_id')->default(1);
             $table->decimal('product_rating', 2, 1)->default(0);
             $table->timestamps();
         });

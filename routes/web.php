@@ -366,6 +366,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::get('/category/{categorySlug}', 'WEB\Shop\ShopController@category')
                 ->name('web.shop.category');
 
+            // Category filter.
+            Route::post('/category/{categorySlug}', 'WEB\Shop\ShopController@categoryFilter')
+                ->name('web.shop.category.filter');
+
             // Get product.
             Route::get('/product/{productSlug}', 'WEB\Shop\ShopController@product')
                 ->name('web.shop.product');

@@ -14,8 +14,39 @@ class ShopController extends Controller
     {
         $category = Category::where('slug', $categorySlug)->first();
 
+        $products = $category->products;
+
         return view('shop.catalog.partials.catalog-products')
-            ->with('category', $category);
+            ->with('products', $products);
+    }
+
+    public function categoryFilter(Request $request, $categorySlug)
+    {
+
+        $category = Category::where('slug', $categorySlug)->first();
+
+        $quality = $request->input('quality');
+
+        $products = new Product;
+
+        $products = $products->whereHas('categories', function ($query) use ($categorySlug) {
+            $query->where('slug', $categorySlug);
+        });
+
+        if ($quality == null) {
+            $products->whereHas('quality', function ($query) {
+                $query->whereIn('name', ['standard', 'moderate', 'premium']);
+            });
+        } else {
+            $products->whereHas('quality', function ($query) use ($quality) {
+                $query->where('name', $quality);
+            });
+        }
+
+        $products = $products->get();
+
+        return view('shop.catalog.partials.catalog-products')
+            ->with('products', $products);
     }
 
     public function product(Request $request, $productSlug)

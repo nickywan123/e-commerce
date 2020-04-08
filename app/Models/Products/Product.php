@@ -72,14 +72,6 @@ class Product extends Model
     }
 
     /**
-     * Get the quality of a product.
-     */
-    public function quality()
-    {
-        return $this->belongsTo('App\Models\Globals\Quality', 'quality_id');
-    }
-
-    /**
      * Get panel info of a product.
      */
     public function panel()

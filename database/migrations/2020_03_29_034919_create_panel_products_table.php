@@ -21,7 +21,6 @@ class CreatePanelProductsTable extends Migration
             $table->text('panel_promotion');
             $table->text('product_materials');
             $table->integer('price');
-            $table->integer('quality_id');
             $table->integer('delivery_fee');
             $table->decimal('product_rating', 2, 1)->default(0);
             $table->timestamps();

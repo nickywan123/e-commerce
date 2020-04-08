@@ -192,6 +192,19 @@
             <div class="row pb-1">
                 <div class="col-12 mb-1">
                     <h3 class="text-dark font-weight-bold">Featured Deals <small id="child-category-indicator" class='text-muted text-capitalize'></small></h3>
+                    <div class="boxed">
+                        <input type="radio" class="catalog-quality-filter" id="catalog-quality-all" name="catalog-quality" value="" checked>
+                        <label for="catalog-quality-all">All</label>
+
+                        <input type="radio" class="catalog-quality-filter" id="catalog-quality-standard" name="catalog-quality" value="standard">
+                        <label for="catalog-quality-standard">Standard</label>
+
+                        <input type="radio" class="catalog-quality-filter" id="catalog-quality-moderate" name="catalog-quality" value="moderate">
+                        <label for="catalog-quality-moderate">Moderate</label>
+
+                        <input type="radio" class="catalog-quality-filter" id="catalog-quality-premium" name="catalog-quality" value="premium">
+                        <label for="catalog-quality-premium">Premium</label>
+                    </div>
                     <hr style="margin-top: 0.2rem;">
                 </div>
             </div>
@@ -342,56 +355,247 @@
         -webkit-animation: spinner-border 0.75s linear infinite;
         animation: spinner-border 0.75s linear infinite;
     }
+
+    .box {
+        position: relative;
+    }
+
+    .ribbon {
+        position: absolute;
+        right: -5px;
+        top: -5px;
+        z-index: 1;
+        overflow: hidden;
+        width: 75px;
+        height: 75px;
+        text-align: right;
+    }
+
+    .ribbon span {
+        font-size: 10px;
+        font-weight: bold;
+        color: #1f1f1f;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 20px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        width: 100px;
+        display: block;
+        background: #79A70A;
+        background: linear-gradient(#FCCB34 0%, #FCED14 100%);
+        box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+        position: absolute;
+        top: 19px;
+        right: -21px;
+    }
+
+    .ribbon span::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 100%;
+        z-index: -1;
+        border-left: 3px solid #FCED14;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #FCED14;
+    }
+
+    .ribbon span::after {
+        content: "";
+        position: absolute;
+        right: 0px;
+        top: 100%;
+        z-index: -1;
+        border-left: 3px solid transparent;
+        border-right: 3px solid #FCED14;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #FCED14;
+    }
+
+    .tooltip-container {
+        position: relative;
+        text-align: left;
+    }
+
+    .tooltip-container .right {
+        width: 300px;
+        top: 50%;
+        left: 90%;
+        margin-left: 10px;
+        transform: translate(0, -50%);
+        padding: 0;
+        color: #EEEEEE;
+        background-color: #444444;
+        font-weight: normal;
+        font-size: 13px;
+        border-radius: 8px;
+        position: absolute;
+        z-index: 99999999;
+        box-sizing: border-box;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.8s;
+    }
+
+    .tooltip-container .left {
+        width: 300px;
+        top: 50%;
+        right: 90%;
+        margin-right: 10px;
+        transform: translate(0, -50%);
+        padding: 0;
+        color: #EEEEEE;
+        background-color: #444444;
+        font-weight: normal;
+        font-size: 13px;
+        border-radius: 8px;
+        position: absolute;
+        z-index: 99999999;
+        box-sizing: border-box;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.8s;
+    }
+
+    .tooltip-container:hover .right {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .tooltip-container:hover .left {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .tooltip-container .text-content {
+        padding: 10px 20px;
+    }
+
+    .boxed label {
+        display: inline-block;
+        min-width: 50px;
+        padding: 10px;
+        border: solid 1px #ccc;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .boxed label.color-options {
+        display: inline-block;
+        margin-right: 5px;
+        min-width: 0;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        border: solid 1px #ccc;
+        border-radius: 100%;
+        transition: all 0.3s;
+    }
+
+    .boxed input[type="radio"] {
+        display: none;
+    }
+
+    .boxed input[type="radio"]:checked+label {
+        border: solid 1px #fccb34;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    }
 </style>
 @endpush
 
 @push('script')
 <script>
     $(document).ready(function() {
-        // Variable Initialization
+        /*
+        Author: Wan Shahruddin
+        */
+
+        /* Variables */
+        // Assign the element with loadingDiv as its ID into a variable.
+        // Hide/show based on ajax request status.
         var loading = $('#loadingDiv').hide();
+
+        // Assign the element with category-product-container as its id into a variable.
+        // Element to load ajax response into.
         const ItemContainer = $('#category-product-container');
-        let categorySlug;
+
+        // Assign the element with child-category-indicator as its id into a variable.
+        // Element to load sub category name into.
         let chidCategoryIndicator = $('#child-category-indicator');
 
+        // Initialize an empty variable.
+        // Used to initialize mCustomScrollbar after ajax request.
+        let left;
+
+        // Initialize an empty variable.
+        // Used to initialize mCustomScrollbar after ajax request.
+        let right;
+
+        // Initialize an empty variable.
+        // Used to filter product based on quality.
+        let productQuality = null;
+
+        // Setup ajax to include csrf token.
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
 
-        // Run function
+        // Function to run on page load.
         onPageLoad();
 
-        //Run query search function
-        onQueryLoad();
-
-        onFilterLoad();
-
+        // Make an ajax request to get all product beloging to a category.
         function onPageLoad() {
             $.ajax({
                 async: true,
                 beforeSend: function() {
+                    // Show loading spinner.
                     loading.show();
                     ItemContainer.hide();
                 },
                 complete: function() {
+                    // Hid loading spinner.
                     loading.hide();
                     ItemContainer.show();
                 },
                 url: "{{ route('web.shop.category', ['categorySlug' => $category->slug])}}",
-                type: "get",
+                type: "GET",
                 success: function(result) {
+                    // Load response into specified element.
                     ItemContainer.html(result);
+
+                    // Assign element with left/right class into a variable.
+                    left = ItemContainer.find('.left');
+                    right = ItemContainer.find('.right')
+
+                    // Initialize mCustomScrollbar
+                    left.mCustomScrollbar({
+                        'theme': 'minimal'
+                    });
+
+                    // Initialize mCustomScrollbar
+                    right.mCustomScrollbar({
+                        'theme': 'minimal'
+                    });
                 },
                 error: function(result) {
-
+                    // Log into console if there's an error.
                     console.log(result.status + ' ' + result.statusText);
                 }
             });
         }
 
+        // Handle click event on element with category-link as its class.
         $('.category-link').on('click', function(e) {
+            // Prevent default behavior.
+            // <a> tag is used here, prevent it from linking to another page or refreshing the page.
             e.preventDefault();
 
             categorySlug = $(this).data('value');
@@ -400,28 +604,89 @@
             $.ajax({
                 async: true,
                 beforeSend: function() {
+                    // Show loading spinner.
                     loading.show();
                     ItemContainer.hide();
                 },
                 complete: function() {
+                    // Hide loading spinner.
                     loading.hide();
+
+                    // Load categoryName into specified element.
                     chidCategoryIndicator.text('/ ' + categoryName)
                     ItemContainer.show();
-
                 },
                 url: "/web/shop/category/" + categorySlug,
                 type: "get",
                 success: function(result) {
+                    // Load ajax response into specified element.
                     ItemContainer.html(result);
                 },
                 error: function(result) {
+                    // Log into console if there's an error.
                     console.log(result.status + ' ' + result.statusText);
                 }
             });
         });
 
-        /*Author Nicholas*/
+        // Handle click event on element with the class of catalog-quality-filter.
+        // Filter products based on quality.
+        $('.catalog-quality-filter').on('click', function(e) {
+            // Get checked radio button value and put into a variable.
+            productQuality = $('input[name="catalog-quality"]:checked').val();
 
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    // Show loading spinner.
+                    loading.show();
+                    ItemContainer.hide();
+                },
+                complete: function() {
+                    // Hide loading spinner.
+                    loading.hide();
+                    ItemContainer.show();
+                },
+                url: "{{ route('web.shop.category.filter', ['categorySlug' => $category->slug])}}",
+                type: "POST",
+                data: {
+                    // POST data.
+                    quality: productQuality,
+                },
+                success: function(result) {
+                    // Load ajax response into specified element.
+                    ItemContainer.html(result);
+
+                    // Assign element with left/right class into a variable.
+                    left = ItemContainer.find('.left');
+                    right = ItemContainer.find('.right')
+
+                    // Initialize mCustomScrollbar
+                    left.mCustomScrollbar({
+                        'theme': 'minimal'
+                    });
+
+                    // Initialize mCustomScrollbar
+                    right.mCustomScrollbar({
+                        'theme': 'minimal'
+                    });
+                },
+                error: function(result) {
+                    // Log into console if there's an error.
+                    console.log(result.status + ' ' + result.statusText);
+                }
+            });
+        })
+
+        /* End Author */
+
+        /* Author: Nicholas */
+
+
+        // Run query search function
+        // onQueryLoad();
+
+        // onFilterLoad();
         function onQueryLoad() {
             $.ajax({
                 async: true,
@@ -476,7 +741,6 @@
         });
 
         /*Filter section*/
-
 
         function onFilterLoad() {
             $.ajax({

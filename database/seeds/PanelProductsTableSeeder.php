@@ -18,7 +18,6 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct1->panel_account_id = 1918000001;
         $panelProduct1->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct1->price = 12000;
-        $panelProduct1->quality_id = 1;
         $panelProduct1->delivery_fee = 0;
         $panelProduct1->panel_promotion = 'With 15 years experience in manufacturing and serving our customers, we can guarantee that this product will meet your needs and 100% satisfy you.';
         $panelProduct1->product_materials = 'Carbon fiber plastic, glass, LED, sand blasted plastic';
@@ -45,7 +44,6 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct2->panel_account_id = 1918000001;
         $panelProduct2->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct2->price = 12000;
-        $panelProduct2->quality_id = 1;
         $panelProduct2->delivery_fee = 0;
         $panelProduct2->panel_promotion = 'With 15 years experience in manufacturing and serving our customers, we can guarantee that this product will meet your needs and 100% satisfy you.';
         $panelProduct2->product_materials = 'Carbon fiber plastic, glass, LED, sand blasted plastic';
@@ -72,7 +70,6 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct3->panel_account_id = 1918000001;
         $panelProduct3->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct3->price = 12000;
-        $panelProduct3->quality_id = 1;
         $panelProduct3->delivery_fee = 0;
         $panelProduct3->panel_promotion = 'With 15 years experience in manufacturing and serving our customers, we can guarantee that this product will meet your needs and 100% satisfy you.';
         $panelProduct3->product_materials = 'Carbon fiber plastic, glass, LED, sand blasted plastic';
@@ -99,7 +96,6 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct4->panel_account_id = 1918000001;
         $panelProduct4->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct4->price = 12000;
-        $panelProduct4->quality_id = 1;
         $panelProduct4->delivery_fee = 0;
         $panelProduct4->panel_promotion = 'With 15 years experience in manufacturing and serving our customers, we can guarantee that this product will meet your needs and 100% satisfy you.';
         $panelProduct4->product_materials = 'Carbon fiber plastic, glass, LED, sand blasted plastic';
@@ -126,7 +122,6 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct5->panel_account_id = 1918000001;
         $panelProduct5->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct5->price = 12000;
-        $panelProduct5->quality_id = 1;
         $panelProduct5->delivery_fee = 0;
         $panelProduct5->panel_promotion = 'With 15 years experience in manufacturing and serving our customers, we can guarantee that this product will meet your needs and 100% satisfy you.';
         $panelProduct5->product_materials = 'Carbon fiber plastic, glass, LED, sand blasted plastic';
@@ -153,7 +148,6 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct6->panel_account_id = 1918000001;
         $panelProduct6->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct6->price = 12000;
-        $panelProduct6->quality_id = 1;
         $panelProduct6->delivery_fee = 0;
         $panelProduct6->panel_promotion = 'With 15 years experience in manufacturing and serving our customers, we can guarantee that this product will meet your needs and 100% satisfy you.';
         $panelProduct6->product_materials = 'Carbon fiber plastic, glass, LED, sand blasted plastic';

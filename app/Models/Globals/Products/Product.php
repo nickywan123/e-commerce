@@ -16,7 +16,15 @@ class Product extends Model
     protected $primaryKey = 'id';
 
     // Set mass assignable columns
-    protected $fillable = [];
+    protected $fillable = [
+        'product_code',
+        'name',
+        'name_slug',
+        'details',
+        'description',
+        'quality_id',
+        'product_rating'
+    ];
 
     /**
      * Get all images of a product.
@@ -92,5 +100,13 @@ class Product extends Model
     public function productSoldByPanels()
     {
         return $this->hasMany('App\Models\Products\Product', 'global_product_id');
+    }
+
+    /**
+     * Get the quality of a product.
+     */
+    public function quality()
+    {
+        return $this->belongsTo('App\Models\Globals\Quality', 'quality_id');
     }
 }
