@@ -12,7 +12,7 @@
 <!--Plugin JavaScript file-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script> 
 
-
+{{-- 
 <div class="container-fluid pt-3 pb-3">
     <div class="row">
         <div class="col-2 hidden-sm">
@@ -117,7 +117,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
 
         <div class="col-12 col-md-10">
             <div class="row">
