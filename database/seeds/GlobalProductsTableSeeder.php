@@ -178,6 +178,47 @@ class GlobalProductsTableSeeder extends Seeder
 
         // ---
 
+        $product3_2 = Product::create([
+            'product_code' => 'single round downlight_white casing_12w_001',
+            'name' => 'Single Round Downlight White Casing 12W 001',
+            'name_slug' => 'single-round-downlight-white-casing-12w-001',
+            'details' => 'Lamp Size: Diameter 105mm, Height 60mm, Cut-Hole Size: 90mm.',
+            'description' => 'Downlights are the all-purpose of lighting fixtures as they are used as a component of a good lighting plan in most lighting projects. A downlight is most often used to provide general lighting in a specific space.',
+            'quality_id' => 3,
+            'product_rating' => 0
+        ]);
+
+        $product3_2->attributes()->createMany([
+            [
+                'attribute_type' => 'light-temperature',
+                'attribute_name' => 'Daylight 6000K'
+            ],
+            [
+                'attribute_type' => 'light-temperature',
+                'attribute_name' => 'Warm White 3000K'
+            ]
+        ]);
+
+        $product3_2->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product3->name_slug . '/',
+                'filename' => $product3->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product3->name_slug . '/',
+                'filename' => $product3->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product3_2->categories()->attach([
+            Category::where('name', 'Lightings')->first()->id,
+            Category::where('name', 'LED')->first()->id,
+            Category::where('name', 'Downlight')->first()->id,
+        ]);
+
+        // ---
+
         $product4 = Product::create([
             'product_code' => 'single round downlight_white casing_15w_002',
             'name' => 'Single Round Downlight White Casing 15W 002',

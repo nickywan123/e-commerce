@@ -4,8 +4,27 @@
     @foreach($products as $key => $product)
     <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
         <div class="box">
-            <div class="ribbon"><span>{{ $product->quality->name }}</span></div>
-            <div class="tooltip-container">
+            <?php
+            $qualityColor = 'linear-gradient(#FCCB34 0%, #FCED14 100%)';
+            if ($product->quality->id == 1) {
+                $ribbonClass = 'linear-gradient(#E3BD9D 0%, #FFD4C9 100%);';
+            }
+            if ($product->quality->id == 2) {
+                $qualityColor = 'linear-gradient(#AFC4E3 0%, #C7D4FF 100%);';
+            }
+
+            if ($product->quality->id == 1) {
+                $ribbonClass = 'standard';
+            }
+            if ($product->quality->id == 2) {
+                $ribbonClass = 'moderate';
+            }
+            if ($product->quality->id == 3) {
+                $ribbonClass = 'premium';
+            }
+            ?>
+            <div class="ribbon {{ $ribbonClass }}"><span>{{ $product->quality->name }}</span></div>
+            <div class=" tooltip-container">
                 <a style="text-decoration: none; color: #212529;" href="javascript:void()" data-toggle="modal" data-target="#modal-{{ $product->id }}">
                     <div class="animated-product-container">
                         <div class="animated-product-image-container">
