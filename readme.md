@@ -27,6 +27,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - Run 'composer install' to install required dependencies.
 - Run 'php artisan key:generate'.
 - Run 'npm install' and then 'npm run dev'.
+- Run 'php artisan migrate' and then 'php artisan db:seed'.
 - Your project should be working.
 
 ## Dev Notes
@@ -35,6 +36,4 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 
 ## App Notes
-    [] Categories, sub-categories and their respective images are shared with all views. Code can be found in App\Providers\AppServiceProvider @ boot.
-    [] Categories, sub-categories and their respective images are shared with all views. Code can be found in App\Providers\AppServiceProvider @ boot.
-    [] Categories, sub-categories and their respective images are shared with all views. Code can be found in App\Providers\AppServiceProvider @ boot.
+    
