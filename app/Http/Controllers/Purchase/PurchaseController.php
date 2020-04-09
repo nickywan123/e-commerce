@@ -67,7 +67,7 @@ class PurchaseController extends Controller
         // Assign user to the purchase record.
         $purchase->user_id = $user->id;
         // Generate a unique number used to identify the purchase.
-        $purchase->purchase_number = 'BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
+        $purchase->purchase_number = '0000000BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
         // Assign a status to the purchase. Unpaid, paid.
         $purchase->purchase_status = 1;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
