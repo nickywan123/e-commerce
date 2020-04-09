@@ -8,6 +8,7 @@ use App\Models\Globals\Gender;
 use App\Models\Globals\Length;
 use App\Models\Globals\Marital;
 use App\Models\Globals\PaymentGateway\MerchantID;
+use App\Models\Globals\PaymentGateway\Response;
 use App\Models\Globals\Race;
 use App\Models\Globals\State;
 use App\Models\Globals\Status;
@@ -268,5 +269,144 @@ class GlobalTablesSeeder extends Seeder
             'card_type' => 'visa',
             'merchant_id' => 3300004454
         ]);
+
+        /**
+         * Gateway Response
+         */
+        Response::create([
+            'response_code' => 'RJ',
+            'description' => 'Rejected - invalid hash value, fraud related, duplicate transaction.'
+        ]);
+
+        Response::create([
+            'response_code' => 'EP',
+            'description' => 'Rejected - invalid input parameter.'
+        ]);
+
+        Response::create([
+            'response_code' => 'N7',
+            'description' => 'Declined - invalid CVV2.'
+        ]);
+
+        Response::create([
+            'response_code' => '00',
+            'description' => 'Approved - transaction accepted'
+        ]);
+
+        Response::create([
+            'response_code' => '01',
+            'description' => 'Declined - refer to card issuer.'
+        ]);
+
+        Response::create([
+            'response_code' => '02',
+            'description' => 'Declined - refer to issuer special.'
+        ]);
+
+        Response::create([
+            'response_code' => '03',
+            'description' => 'Declined - invalid merchant.'
+        ]);
+
+        Response::create([
+            'response_code' => '04',
+            'description' => 'Declined - retain card.'
+        ]);
+
+        Response::create([
+            'response_code' => '05',
+            'description' => 'Declined - do not honor.'
+        ]);
+
+        Response::create([
+            'response_code' => '06',
+            'description' => 'Declined - error.'
+        ]);
+
+        Response::create([
+            'response_code' => '07',
+            'description' => 'Declined- pick up, fraud.'
+        ]);
+
+        Response::create([
+            'response_code' => '12',
+            'description' => 'Declined - invalid'
+        ]);
+
+        Response::create([
+            'response_code' => '13',
+            'description' => 'Declined - invalid amount.'
+        ]);
+
+        Response::create([
+            'response_code' => '14',
+            'description' => 'Declined - no card number found.'
+        ]);
+
+        Response::create([
+            'response_code' => '15',
+            'description' => 'Declined - invalid issuer.'
+        ]);
+
+        Response::create([
+            'response_code' => '19',
+            'description' => 'Declined - system time out.'
+        ]);
+
+        Response::create([
+            'response_code' => '21',
+            'description' => 'Declined - no action taken for refferal.'
+        ]);
+
+        Response::create([
+            'response_code' => '22',
+            'description' => 'Declined - DUKPT error (Derived Unique Key Per Transaction).'
+        ]);
+
+        Response::create([
+            'response_code' => '30',
+            'description' => 'Declined - format error.'
+        ]);
+
+        Response::create([
+            'response_code' => '34',
+            'description' => 'Declined - suspected fraud.'
+        ]);
+
+        Response::create([
+            'response_code' => '38',
+            'description' => 'Declined - number of pin tries exceeded.'
+        ]);
+
+        Response::create([
+            'response_code' => '41',
+            'description' => 'Declined - pickup, lost.'
+        ]);
+
+        Response::create([
+            'response_code' => '43',
+            'description' => 'Declined - pickup, stolen.'
+        ]);
+
+        Response::create([
+            'response_code' => '51',
+            'description' => 'Declined - insufficient funds.'
+        ]);
+
+        Response::create([
+            'response_code' => '52',
+            'description' => 'Declined - damage/upgrade to gold/erc/name.'
+        ]);
+
+        Response::create([
+            'response_code' => '53',
+            'description' => 'Declined - no saving account.'
+        ]);
+
+        Response::create([
+            'response_code' => '54',
+            'description' => 'Declined - card expired.'
+        ])
+            
     }
 }
