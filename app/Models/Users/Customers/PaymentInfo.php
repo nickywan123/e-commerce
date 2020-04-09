@@ -22,4 +22,9 @@ class PaymentInfo extends Model
     protected $casts = [
         'product_information' => 'array'
     ];
+
+    public function issuer()
+    {
+        return $this->belongsTo('App\Models\Globals\Cards\Issuer', 'issuer_id');
+    }
 }

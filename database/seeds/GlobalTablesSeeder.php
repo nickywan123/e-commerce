@@ -406,7 +406,111 @@ class GlobalTablesSeeder extends Seeder
         Response::create([
             'response_code' => '54',
             'description' => 'Declined - card expired.'
-        ])
-            
+        ]);
+
+        Response::create([
+            'response_code' => '55',
+            'description' => 'Declined - invalid pin.'
+        ]);
+
+        Response::create([
+            'response_code' => '57',
+            'description' => 'Declined - transaction not permitted by issuer.'
+        ]);
+
+        Response::create([
+            'response_code' => '58',
+            'description' => 'Declined - transaction not permitted to acquire/terminal.'
+        ]);
+
+        Response::create([
+            'response_code' => '61',
+            'description' => 'Declined - exceed approval by STIP (Stand-in Processing).'
+        ]);
+
+        Response::create([
+            'response_code' => '62',
+            'description' => 'Declined - restricted card.'
+        ]);
+
+        Response::create([
+            'response_code' => '63',
+            'description' => 'Declined - security violation.'
+        ]);
+
+        Response::create([
+            'response_code' => '65',
+            'description' => 'Declined - exceed withdraw count limit.'
+        ]);
+
+        Response::create([
+            'response_code' => '75',
+            'description' => 'Declined - allowable number of pin tries exceeded.'
+        ]);
+
+        Response::create([
+            'response_code' => '76',
+            'description' => 'Declined - invalid/non-existent to account specified.'
+        ]);
+
+        Response::create([
+            'response_code' => '77',
+            'description' => 'Declined - invalid/non-existent from account specified.'
+        ]);
+
+        Response::create([
+            'response_code' => '78',
+            'description' => 'Declined - invalid/non-existent to account speficied.'
+        ]);
+
+        Response::create([
+            'response_code' => '82',
+            'description' => 'Declined - invalid CVV2.'
+        ]);
+
+        Response::create([
+            'response_code' => '84',
+            'description' => 'Declined - invalid authorization life cycle.'
+        ]);
+
+        Response::create([
+            'response_code' => '89',
+            'description' => 'Declined - invalid terminal.'
+        ]);
+
+        Response::create([
+            'response_code' => '91',
+            'description' => 'Declined - issuer or switch is inoperative.'
+        ]);
+
+        Response::create([
+            'response_code' => '93',
+            'description' => 'Declined - transaction cannot be completed, violation of law.'
+        ]);
+
+        Response::create([
+            'response_code' => '94',
+            'description' => 'Declined - EDC duplicate settlement.'
+        ]);
+
+        Response::create([
+            'response_code' => '96',
+            'description' => 'Declined - system malfunction.'
+        ]);
+
+        Response::create([
+            'response_code' => '97',
+            'description' => 'Declined - encryption error.'
+        ]);
+
+        Response::create([
+            'response_code' => '98',
+            'description' => 'Declined - SW didn\'t get reply from IS.'
+        ]);
+
+        Response::create([
+            'response_code' => '99',
+            'description' => 'Rejected - system error.'
+        ]);
     }
 }
