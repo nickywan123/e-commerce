@@ -46,8 +46,13 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        return view('shop.cart.cart');
+         // Get user
+         $user = User::find(Auth::user()->id);
+         // Check if the exact item is already in the cart..
+           $getCartQuantity = new Cart;
+
+           $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+        return view('shop.cart.cart')->with('getCartQuantity',$getCartQuantity);
     }
 
     /**
@@ -174,15 +179,26 @@ class CartController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the number of quantity in the cart for the user.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function getCartQuantity()
+    // {
+    //      // Get user
+    //      $user = User::find(Auth::user()->id);
+    //     // Check if the exact item is already in the cart..
+    //     $getCartQuantity = new Cart;
+
+    //     $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->quantity;
+
+       
+
+    //     return view('layouts.shop.navigation.navigation')->with('getCartQuantity',$getCartQuantity);
+
+        
+    // }
 
     /**
      * Show the form for editing the specified resource.

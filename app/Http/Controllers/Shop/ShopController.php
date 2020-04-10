@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Shop;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
 use Auth;
+use App\Models\Users\User;
+
+use Illuminate\Http\Request;
 use App\Models\Categories\Category;
+use App\Http\Controllers\Controller;
+use App\Models\PromotionPage\Banner;
+use App\Models\Users\Customers\Cart;
+use Illuminate\Support\Facades\View;
 use App\Models\Categories\ProductType;
 use App\Models\Categories\SubCategory;
 use App\Models\Globals\Products\Product;
-use Illuminate\Support\Facades\View;
-use App\Models\Users\User;
-use App\Models\PromotionPage\Banner;
 
 class ShopController extends Controller
 {
@@ -54,10 +55,19 @@ class ShopController extends Controller
         // return view('shop.index')->with('data', $data);
         // Get all categories and subcategories with its image.
         // $categories = Category::with('image')->with('subcategories.image')->get();
+
+        // Get user
+        $user = User::find(Auth::user()->id);
+        // Check if the exact item is already in the cart..
+        $getCartQuantity = new Cart;
+
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+
+
         $data = Banner::all();
         $popularCategories = Category::take(6)->get();
 
-        return view('shop.index')->with('data', $data)->with('popularCategories', $popularCategories);
+        return view('shop.index')->with('data', $data)->with('popularCategories', $popularCategories)->with('getCartQuantity',$getCartQuantity);
     }
 
 
@@ -67,6 +77,14 @@ class ShopController extends Controller
      */
     public function category($categorySlug)
     {
+
+       // Get user
+       $user = User::find(Auth::user()->id);
+       // Check if the exact item is already in the cart..
+       $getCartQuantity = new Cart;
+
+       $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+
         // Get matching category with related products and their images.
         $category = Category::where('slug', $categorySlug)->with('products.images')->first();
 
@@ -75,7 +93,8 @@ class ShopController extends Controller
 
         return view('shop.catalog.category')
             ->with('category', $category)
-            ->with('allCategories', $allCategories);
+            ->with('allCategories', $allCategories)
+            ->with('getCartQuantity',$getCartQuantity);
     }
 
     /**
@@ -132,11 +151,17 @@ class ShopController extends Controller
             // TODO: Change image and other related info if color is specified.
             return 'Work in progress.';
         } else {
+          // Get user
+           $user = User::find(Auth::user()->id);
+          // Check if the exact item is already in the cart..
+            $getCartQuantity = new Cart;
+
+            $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
             // Get matching product.
             $product = Product::where('name_slug', $slug)->with('images')->first();
         }
         // return $product;
-        return view('shop.product')->with('product', $product);
+        return view('shop.product')->with('product', $product)->with('getCartQuantity',$getCartQuantity);
     }
 
     /**
@@ -167,6 +192,12 @@ class ShopController extends Controller
      */
     public function topLevelCategory($topLevelSlug)
     {
+         // Get user
+        $user = User::find(Auth::user()->id);
+        // Check if the exact item is already in the cart..
+        $getCartQuantity = new Cart;
+  
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
         $category = Category::where('slug', $topLevelSlug)->first();
         $childCategories = $category->childCategories->take(6);
         $categoryLevel = 1;
@@ -174,7 +205,8 @@ class ShopController extends Controller
         return view('shop.catalog.catalog')
             ->with('category', $category)
             ->with('childCategories', $childCategories)
-            ->with('categoryLevel', $categoryLevel);
+            ->with('categoryLevel', $categoryLevel)
+            ->with('getCartQuantity',$getCartQuantity);
     }
 
     /**
@@ -182,6 +214,12 @@ class ShopController extends Controller
      */
     public function secondLevelCategory($topLevelSlug, $secondLevelSlug)
     {
+        // Get user
+        $user = User::find(Auth::user()->id);
+        // Check if the exact item is already in the cart..
+        $getCartQuantity = new Cart;
+  
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
         $category = Category::where('slug', $secondLevelSlug)->first();
         $childCategories = $category->childCategories->take(6);
         $categoryLevel = 2;
@@ -189,7 +227,8 @@ class ShopController extends Controller
         return view('shop.catalog.catalog')
             ->with('category', $category)
             ->with('childCategories', $childCategories)
-            ->with('categoryLevel', $categoryLevel);
+            ->with('categoryLevel', $categoryLevel)
+            ->with('getCartQuantity',$getCartQuantity);
     }
 
     /**
