@@ -9,6 +9,7 @@ require("@fortawesome/fontawesome-free");
 require("@coreui/coreui");
 require("signature_pad");
 require("slick-carousel");
+require("ion-rangeslider");
 
 window.Vue = require("vue");
 

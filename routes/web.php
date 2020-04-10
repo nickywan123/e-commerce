@@ -398,3 +398,7 @@ Route::get('/test-route/email', function () {
 
     return (new CheckoutOrder($order))->render();
 });
+
+Route::get('/test-route/success-payment', function () {
+    return view('shop.payment.success');
+});

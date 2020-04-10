@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Globals\Cards\Issuer;
 use App\Models\Globals\Quality;
 use App\Models\Globals\Color;
 use App\Models\Globals\Dimension;
@@ -8,6 +9,7 @@ use App\Models\Globals\Gender;
 use App\Models\Globals\Length;
 use App\Models\Globals\Marital;
 use App\Models\Globals\PaymentGateway\MerchantID;
+use App\Models\Globals\PaymentGateway\Response;
 use App\Models\Globals\Race;
 use App\Models\Globals\State;
 use App\Models\Globals\Status;
@@ -267,6 +269,262 @@ class GlobalTablesSeeder extends Seeder
         MerchantID::create([
             'card_type' => 'visa',
             'merchant_id' => 3300004454
+        ]);
+
+        /**
+         * Gateway Response
+         */
+        Response::create([
+            'response_code' => 'RJ',
+            'description' => 'Rejected - invalid hash value, fraud related, duplicate transaction.'
+        ]);
+
+        Response::create([
+            'response_code' => 'EP',
+            'description' => 'Rejected - invalid input parameter.'
+        ]);
+
+        Response::create([
+            'response_code' => 'N7',
+            'description' => 'Declined - invalid CVV2.'
+        ]);
+
+        Response::create([
+            'response_code' => '00',
+            'description' => 'Approved - transaction accepted'
+        ]);
+
+        Response::create([
+            'response_code' => '01',
+            'description' => 'Declined - refer to card issuer.'
+        ]);
+
+        Response::create([
+            'response_code' => '02',
+            'description' => 'Declined - refer to issuer special.'
+        ]);
+
+        Response::create([
+            'response_code' => '03',
+            'description' => 'Declined - invalid merchant.'
+        ]);
+
+        Response::create([
+            'response_code' => '04',
+            'description' => 'Declined - retain card.'
+        ]);
+
+        Response::create([
+            'response_code' => '05',
+            'description' => 'Declined - do not honor.'
+        ]);
+
+        Response::create([
+            'response_code' => '06',
+            'description' => 'Declined - error.'
+        ]);
+
+        Response::create([
+            'response_code' => '07',
+            'description' => 'Declined- pick up, fraud.'
+        ]);
+
+        Response::create([
+            'response_code' => '12',
+            'description' => 'Declined - invalid'
+        ]);
+
+        Response::create([
+            'response_code' => '13',
+            'description' => 'Declined - invalid amount.'
+        ]);
+
+        Response::create([
+            'response_code' => '14',
+            'description' => 'Declined - no card number found.'
+        ]);
+
+        Response::create([
+            'response_code' => '15',
+            'description' => 'Declined - invalid issuer.'
+        ]);
+
+        Response::create([
+            'response_code' => '19',
+            'description' => 'Declined - system time out.'
+        ]);
+
+        Response::create([
+            'response_code' => '21',
+            'description' => 'Declined - no action taken for refferal.'
+        ]);
+
+        Response::create([
+            'response_code' => '22',
+            'description' => 'Declined - DUKPT error (Derived Unique Key Per Transaction).'
+        ]);
+
+        Response::create([
+            'response_code' => '30',
+            'description' => 'Declined - format error.'
+        ]);
+
+        Response::create([
+            'response_code' => '34',
+            'description' => 'Declined - suspected fraud.'
+        ]);
+
+        Response::create([
+            'response_code' => '38',
+            'description' => 'Declined - number of pin tries exceeded.'
+        ]);
+
+        Response::create([
+            'response_code' => '41',
+            'description' => 'Declined - pickup, lost.'
+        ]);
+
+        Response::create([
+            'response_code' => '43',
+            'description' => 'Declined - pickup, stolen.'
+        ]);
+
+        Response::create([
+            'response_code' => '51',
+            'description' => 'Declined - insufficient funds.'
+        ]);
+
+        Response::create([
+            'response_code' => '52',
+            'description' => 'Declined - damage/upgrade to gold/erc/name.'
+        ]);
+
+        Response::create([
+            'response_code' => '53',
+            'description' => 'Declined - no saving account.'
+        ]);
+
+        Response::create([
+            'response_code' => '54',
+            'description' => 'Declined - card expired.'
+        ]);
+
+        Response::create([
+            'response_code' => '55',
+            'description' => 'Declined - invalid pin.'
+        ]);
+
+        Response::create([
+            'response_code' => '57',
+            'description' => 'Declined - transaction not permitted by issuer.'
+        ]);
+
+        Response::create([
+            'response_code' => '58',
+            'description' => 'Declined - transaction not permitted to acquire/terminal.'
+        ]);
+
+        Response::create([
+            'response_code' => '61',
+            'description' => 'Declined - exceed approval by STIP (Stand-in Processing).'
+        ]);
+
+        Response::create([
+            'response_code' => '62',
+            'description' => 'Declined - restricted card.'
+        ]);
+
+        Response::create([
+            'response_code' => '63',
+            'description' => 'Declined - security violation.'
+        ]);
+
+        Response::create([
+            'response_code' => '65',
+            'description' => 'Declined - exceed withdraw count limit.'
+        ]);
+
+        Response::create([
+            'response_code' => '75',
+            'description' => 'Declined - allowable number of pin tries exceeded.'
+        ]);
+
+        Response::create([
+            'response_code' => '76',
+            'description' => 'Declined - invalid/non-existent to account specified.'
+        ]);
+
+        Response::create([
+            'response_code' => '77',
+            'description' => 'Declined - invalid/non-existent from account specified.'
+        ]);
+
+        Response::create([
+            'response_code' => '78',
+            'description' => 'Declined - invalid/non-existent to account speficied.'
+        ]);
+
+        Response::create([
+            'response_code' => '82',
+            'description' => 'Declined - invalid CVV2.'
+        ]);
+
+        Response::create([
+            'response_code' => '84',
+            'description' => 'Declined - invalid authorization life cycle.'
+        ]);
+
+        Response::create([
+            'response_code' => '89',
+            'description' => 'Declined - invalid terminal.'
+        ]);
+
+        Response::create([
+            'response_code' => '91',
+            'description' => 'Declined - issuer or switch is inoperative.'
+        ]);
+
+        Response::create([
+            'response_code' => '93',
+            'description' => 'Declined - transaction cannot be completed, violation of law.'
+        ]);
+
+        Response::create([
+            'response_code' => '94',
+            'description' => 'Declined - EDC duplicate settlement.'
+        ]);
+
+        Response::create([
+            'response_code' => '96',
+            'description' => 'Declined - system malfunction.'
+        ]);
+
+        Response::create([
+            'response_code' => '97',
+            'description' => 'Declined - encryption error.'
+        ]);
+
+        Response::create([
+            'response_code' => '98',
+            'description' => 'Declined - SW didn\'t get reply from IS.'
+        ]);
+
+        Response::create([
+            'response_code' => '99',
+            'description' => 'Rejected - system error.'
+        ]);
+
+        /**
+         * Card Issuer
+         */
+        Issuer::create([
+            'issuer_name' => 'visa',
+            'description' => 'Visa'
+        ]);
+
+        Issuer::create([
+            'issuer_name' => 'mastercard',
+            'description' => 'Mastercard'
         ]);
     }
 }

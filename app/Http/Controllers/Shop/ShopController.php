@@ -60,6 +60,8 @@ class ShopController extends Controller
         return view('shop.index')->with('data', $data)->with('popularCategories', $popularCategories);
     }
 
+
+   
     /**
      * Handles /shop/category/{category-slug}
      */

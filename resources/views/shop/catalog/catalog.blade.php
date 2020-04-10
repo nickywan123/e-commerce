@@ -1,6 +1,18 @@
 @extends('layouts.shop.main')
 
+
+
 @section('content')
+<!--Plugin CSS file with desired skin-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+ 
+<!--jQuery-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+<!--Plugin JavaScript file-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script> 
+
+{{-- 
 <div class="container-fluid pt-3 pb-3">
     <div class="row">
         <div class="col-2 hidden-sm">
@@ -22,21 +34,7 @@
 
                 <h5 class="text-dark">Price <small>(WIP)</small></h5>
                 <ul class="list-unstyled pl-2 pr-2">
-                    <li>
-                        <a class="text-dark">Under RM25</a>
-                    </li>
-                    <li>
-                        <a class="text-dark">RM25 - RM50</a>
-                    </li>
-                    <li>
-                        <a class="text-dark">RM50 - RM100</a>
-                    </li>
-                    <li>
-                        <a class="text-dark">RM100 - RM200</a>
-                    </li>
-                    <li>
-                        <a class="text-dark">RM200 & Above</a>
-                    </li>
+                 <div> <input type="text" id="price-range-slider" name="price-range-slider" value="" /></div>
                     <li class="p-1">
                         <form action="" class="form-inline">
                             <div class="form-inline row">
@@ -119,7 +117,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
 
         <div class="col-12 col-md-10">
             <div class="row">
@@ -882,7 +880,18 @@
 
 
 
+ // Price range slider
 
+ $("#price-range-slider").ionRangeSlider({
+    skin: "flat",
+    min: 0,
+    max: 500,
+    from: 0,
+    to: 500,
+    type: 'double',
+    prefix: "RM",
+   
+});
 
 
     });

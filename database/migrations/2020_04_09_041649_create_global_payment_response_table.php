@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserPaymentInfoTable extends Migration
+class CreateGlobalPaymentResponseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateUserPaymentInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_payment_info', function (Blueprint $table) {
+        Schema::create('global_payment_responses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('account_id');
-            $table->string('card_number');
-            $table->integer('issuer_id');
-            $table->string('name_on_card');
-            $table->char('expiry_date', 5);
+            $table->string('response_code');
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateUserPaymentInfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_payment_info');
+        Schema::dropIfExists('global_payment_responses');
     }
 }
