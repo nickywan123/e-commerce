@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Globals\Cards\Issuer;
 use App\Models\Globals\Quality;
 use App\Models\Globals\Color;
 use App\Models\Globals\Dimension;
@@ -511,6 +512,19 @@ class GlobalTablesSeeder extends Seeder
         Response::create([
             'response_code' => '99',
             'description' => 'Rejected - system error.'
+        ]);
+
+        /**
+         * Card Issuer
+         */
+        Issuer::create([
+            'issuer_name' => 'visa',
+            'description' => 'Visa'
+        ]);
+
+        Issuer::create([
+            'issuer_name' => 'mastercard',
+            'description' => 'Mastercard'
         ]);
     }
 }

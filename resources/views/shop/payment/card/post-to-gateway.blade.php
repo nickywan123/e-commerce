@@ -77,7 +77,7 @@
                 </tr>
                 <tr>
                     <td align="right">Post URL (card holder will see this page):</td>
-                    <td><input size="50" id="postURL" value="https://demo3.bujishu.com/payment/gateway-response" name="postURL"></td>
+                    <td><input size="50" id="postURL" value="{{ $responseUrl }}" name="postURL"></td>
                 </tr><input size="50" type="hidden" id="secretString" name="secretString">
                 <tr>
                     <td align="right">&nbsp;</td>

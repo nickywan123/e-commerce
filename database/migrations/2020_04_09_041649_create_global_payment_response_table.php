@@ -13,7 +13,7 @@ class CreateGlobalPaymentResponseTable extends Migration
      */
     public function up()
     {
-        Schema::create('global_payment_response', function (Blueprint $table) {
+        Schema::create('global_payment_responses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('response_code');
             $table->text('description');
@@ -28,6 +28,6 @@ class CreateGlobalPaymentResponseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('global_payment_response');
+        Schema::dropIfExists('global_payment_responses');
     }
 }

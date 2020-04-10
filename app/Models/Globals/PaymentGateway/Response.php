@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Response extends Model
 {
     // Set table
-    protected $table = 'global_payment_response';
+    protected $table = 'global_payment_responses';
 
     // Set timestamps
     public $timestamps = true;

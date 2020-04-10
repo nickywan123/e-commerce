@@ -19,8 +19,7 @@ class CreatePaymentsTable extends Migration
             $table->string('gateway_string_result');
             $table->string('gateway_response_code');
             $table->string('auth_code');
-            $table->string('invoice_number');
-            $table->string('PAN');
+            $table->string('last_4_card_number');
             $table->string('expiry_date');
             $table->integer('amount');
             $table->string('gateway_eci');
