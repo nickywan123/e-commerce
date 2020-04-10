@@ -3,221 +3,105 @@
 
 
 @section('content')
-<!--Plugin CSS file with desired skin-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
- 
-<!--jQuery-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 
-<!--Plugin JavaScript file-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script> 
-
-{{-- 
-<div class="container-fluid pt-3 pb-3">
+<div class="col-12 col-md-10 offset-md-1">
     <div class="row">
-        <div class="col-2 hidden-sm">
-            <div class="p-3 shadow-sm" style="background-color: #ffffff;">
-
-                <h5 class="text-dark ">Panel <small>(WIP)</small></h5>
-
-                <ul class="list-unstyled pl-2 pr-2 ">
-                    <li>
-                        <a class="text-dark" href="">Company A</a>
-                    </li>
-                    <li>
-                        <a class="text-dark" href="">Company B</a>
-                    </li>
-                    <li>
-                        <a class="text-dark" href="">Company C</a>
-                    </li>
-                </ul>
-
-                <h5 class="text-dark">Price <small>(WIP)</small></h5>
-                <ul class="list-unstyled pl-2 pr-2">
-                 <div> <input type="text" id="price-range-slider" name="price-range-slider" value="" /></div>
-                    <li class="p-1">
-                        <form action="" class="form-inline">
-                            <div class="form-inline row">
-                                <input type="text" class="form-control col-4 border-rounded-0" id="price_min" placeholder="Min">
-                                <input type="text" class="form-control col-4 border-rounded-0" id="price_max" placeholder="Max">
-                                <button class="btn border-rounded-0 bg-bujishu-gold"><i class="fa fa-play"></i></button>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
-
-                <h5 class="text-dark">Color <small>(WIP)</small></h5>
-                <ul class="list-unstyled pl-2 pr-2">
-                    <li>
-                        <a class="text-dark" id="white" href="javascript:void(0)">White</a>
-                    </li>
-                    <li>
-                        <a class="text-dark" href="">Beige</a>
-                    </li>
-                    <li>
-                        <a class="text-dark" href="">Red</a>
-                    </li>
-                    <li>
-                        <a class="text-dark" href="">Maroon</a>
-                    </li>
-                    <li>
-                        <a class="text-dark" href="">Grey</a>
-                    </li>
-                    <li>
-                        <a class="text-dark" href="">Black</a>
-                    </li>
-                </ul>
-
-                <h5 class="text-dark">Rating <small>(WIP)</small></h5>
-                <ul class="list-unstyled pl-2 pr-2">
-                    <li>
-                        <a href="">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div> --}}
-
-        <div class="col-12 col-md-10">
-            <div class="row">
-                <div class="col-12 mb-1">
-                    @if($categoryLevel == 1)
-                    {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs', 'shop.category.first', $category) }}
-                    @endif
-
-                    @if($categoryLevel == 2)
-                    {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs', 'shop.category.second', $category) }}
-                    @endif
-
-                    @if($categoryLevel == 3)
-                    {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs', 'shop.category.third', $category, $parentCategory) }}
-                    @endif
-                </div>
-            </div>
-            <div class="row pb-4">
-                <div class="col-12 mb-1">
-                    <h3 class="text-muted">{{ $category->name }} <small>(WIP)</small></h3>
-                </div>
-            </div>
-
-            @if($childCategories->count() > 0)
-            <div class="row pb-1">
-                <div class="col-12 mb-1">
-                    <h3 class="text-dark font-weight-bold">Featured Categories</h3>
-                    <hr>
-                </div>
-            </div>
-
-            <!-- Child Categories -->
-            <div class="row custom-mb-5">
-                @foreach($childCategories as $childCategory)
-                @if($childCategory->childCategories->count() != 0)
-                <div class="col-6 col-md-2 text-center">
-                    <div class="animated-category-container">
-                        <div class="animated-category-image-container">
-                            <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}">
-                            <p>{{ $childCategory->name }}</p>
-                        </div>
-                        <div class="animated-category-list-container">
-                            <hr class="w-50 mt-1 mb-1">
-                            <ul class="list-unstyled">
-                                @foreach($childCategory->childCategories as $anotherChildCategory)
-                                <li>
-                                    <a class="animated-category-list-container-item category-link" data-value="{{ $anotherChildCategory->slug }}" data-name="{{ $anotherChildCategory->name }}" href="javascript:void(0)">{{ $anotherChildCategory->name }}</a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                @else
-                <div class="col-6 col-md-2 text-center">
-                    <a class="category-item category-link" data-value="{{ $childCategory->slug }}" data-name="{{ $childCategory->name }}" href="javascript:void(0)">
-                        <div class="category-container">
-                            <div class="category-image-container">
-                                <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
-                                <p>{{ $childCategory->name }}</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @endif
-                @endforeach
-            </div>
+        <div class="col-12 mb-1">
+            @if($categoryLevel == 1)
+            {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs', 'shop.category.first', $category) }}
             @endif
 
-            <div class="row pb-1">
-                <div class="col-12 mb-1">
-                    <h3 class="text-dark font-weight-bold">Featured Deals <small id="child-category-indicator" class='text-muted text-capitalize'></small></h3>
-                    <div class="boxed">
-                        <input type="radio" class="catalog-quality-filter" id="catalog-quality-all" name="catalog-quality" value="" checked>
-                        <label for="catalog-quality-all">All</label>
+            @if($categoryLevel == 2)
+            {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs', 'shop.category.second', $category) }}
+            @endif
 
-                        <input type="radio" class="catalog-quality-filter" id="catalog-quality-standard" name="catalog-quality" value="standard">
-                        <label for="catalog-quality-standard">Standard</label>
-
-                        <input type="radio" class="catalog-quality-filter" id="catalog-quality-moderate" name="catalog-quality" value="moderate">
-                        <label for="catalog-quality-moderate">Moderate</label>
-
-                        <input type="radio" class="catalog-quality-filter" id="catalog-quality-premium" name="catalog-quality" value="premium">
-                        <label for="catalog-quality-premium">Premium</label>
-                    </div>
-                    <hr style="margin-top: 0.2rem;">
-                </div>
-            </div>
-
-            <div id="loadingDiv" class="text-center">
-                <div class="spinner-border text-warning" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
-
-            <div id="category-product-container">
-                <!-- Ajax response loaded here -->
-            </div>
+            @if($categoryLevel == 3)
+            {{ Breadcrumbs::view('partials.breadcrumbs.breadcrumbs', 'shop.category.third', $category, $parentCategory) }}
+            @endif
         </div>
     </div>
+    <div class="row pb-4">
+        <div class="col-12 mb-1">
+            <h3 class="text-muted">{{ $category->name }} <small>(WIP)</small></h3>
+        </div>
+    </div>
+
+    @if($childCategories->count() > 0)
+    <div class="row pb-1">
+        <div class="col-12 mb-1">
+            <h3 class="text-dark font-weight-bold">Featured Categories</h3>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Child Categories -->
+    <div class="row custom-mb-5">
+        @foreach($childCategories as $childCategory)
+        @if($childCategory->childCategories->count() != 0)
+        <div class="col-6 col-md-2 text-center">
+            <div class="animated-category-container">
+                <div class="animated-category-image-container">
+                    <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}">
+                    <p>{{ $childCategory->name }}</p>
+                </div>
+                <div class="animated-category-list-container">
+                    <hr class="w-50 mt-1 mb-1">
+                    <ul class="list-unstyled">
+                        @foreach($childCategory->childCategories as $anotherChildCategory)
+                        <li>
+                            <a class="animated-category-list-container-item category-link" data-value="{{ $anotherChildCategory->slug }}" data-name="{{ $anotherChildCategory->name }}" href="javascript:void(0)">{{ $anotherChildCategory->name }}</a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @else
+        <div class="col-6 col-md-2 text-center">
+            <a class="category-item category-link" data-value="{{ $childCategory->slug }}" data-name="{{ $childCategory->name }}" href="javascript:void(0)">
+                <div class="category-container">
+                    <div class="category-image-container">
+                        <img src="{{ asset('storage/' . $childCategory->image->path . '/' . $childCategory->image->filename) }}" alt="{{ $childCategory->name }}" alt="{{ $childCategory->name }}">
+                        <p>{{ $childCategory->name }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        @endif
+        @endforeach
+    </div>
+    @endif
+
+    <div class="row pb-1">
+        <div class="col-12 mb-1">
+            <h3 class="text-dark font-weight-bold">Featured Deals <small id="child-category-indicator" class='text-muted text-capitalize'></small></h3>
+            <div class="boxed">
+                <input type="radio" class="catalog-quality-filter" id="catalog-quality-all" name="catalog-quality" value="" checked>
+                <label for="catalog-quality-all">All</label>
+
+                <input type="radio" class="catalog-quality-filter" id="catalog-quality-standard" name="catalog-quality" value="standard">
+                <label for="catalog-quality-standard">Standard</label>
+
+                <input type="radio" class="catalog-quality-filter" id="catalog-quality-moderate" name="catalog-quality" value="moderate">
+                <label for="catalog-quality-moderate">Moderate</label>
+
+                <input type="radio" class="catalog-quality-filter" id="catalog-quality-premium" name="catalog-quality" value="premium">
+                <label for="catalog-quality-premium">Premium</label>
+            </div>
+            <hr style="margin-top: 0.2rem;">
+        </div>
+    </div>
+
+    <div id="loadingDiv" class="text-center">
+        <div class="spinner-border text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div id="category-product-container">
+        <!-- Ajax response loaded here -->
+    </div>
+</div>
+</div>
 </div>
 @endsection
 
@@ -880,18 +764,18 @@
 
 
 
- // Price range slider
+        // Price range slider
 
- $("#price-range-slider").ionRangeSlider({
-    skin: "flat",
-    min: 0,
-    max: 500,
-    from: 0,
-    to: 500,
-    type: 'double',
-    prefix: "RM",
-   
-});
+        $("#price-range-slider").ionRangeSlider({
+            skin: "flat",
+            min: 0,
+            max: 500,
+            from: 0,
+            to: 500,
+            type: 'double',
+            prefix: "RM",
+
+        });
 
 
     });

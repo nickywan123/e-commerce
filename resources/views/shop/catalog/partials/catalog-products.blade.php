@@ -1,7 +1,16 @@
-@if($products->count() > 0)
+<!-- 
+    Check if product is more than 0.
+    If equals 0 or less than 0 there's no product to show.
+ -->
+@if ($products->count() > 0)
 <!-- Products -->
 <div class="row no-gutters">
-    @foreach($products as $key => $product)
+    @foreach ($products as $key => $product)
+    <!-- 
+        Check if product sold by panels is more than 1.
+        If equals 1 then no need to show tooltip. 
+     -->
+    @if ($product->productSoldByPanels->count() > 1)
     <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
         <div class="box">
             <?php
@@ -82,7 +91,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     @foreach($product->productSoldByPanels as $productSoldByPanel)
-                                    <a href="" style="text-decoration: none; color: #212529;">
+                                    <a href="/shop/product/{{ $product->name_slug}}?panel={{ $productSoldByPanel->panel_account_id }}" style="text-decoration: none; color: #212529;">
                                         <div class="card">
                                             <div class="card-body">
                                                 <h5 class="text-dark">{{ $productSoldByPanel->panel->company_name }}</h5>
@@ -143,6 +152,62 @@
             </div>
         </div>
     </div>
+    @elseif ($product->productSoldByPanels->count() == 1)
+    <div class="col-6 col-md-2 pl-2 pr-2 pb-3">
+        <div class="box">
+            <?php
+            $qualityColor = 'linear-gradient(#FCCB34 0%, #FCED14 100%)';
+            if ($product->quality->id == 1) {
+                $ribbonClass = 'linear-gradient(#E3BD9D 0%, #FFD4C9 100%);';
+            }
+            if ($product->quality->id == 2) {
+                $qualityColor = 'linear-gradient(#AFC4E3 0%, #C7D4FF 100%);';
+            }
+
+            if ($product->quality->id == 1) {
+                $ribbonClass = 'standard';
+            }
+            if ($product->quality->id == 2) {
+                $ribbonClass = 'moderate';
+            }
+            if ($product->quality->id == 3) {
+                $ribbonClass = 'premium';
+            }
+            ?>
+            <div class="ribbon {{ $ribbonClass }}"><span>{{ $product->quality->name }}</span></div>
+            <a class="text-dark" href="/shop/product/{{ $product->name_slug }}?panel={{ $product->productSoldByPanels[0]->panel_account_id }}" style="text-decoration: none;">
+                <div class="animated-product-container">
+                    <div class="animated-product-image-container">
+                        <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
+                    </div>
+                    <div class="animated-product-information-container">
+                        <p class="product-name">{{ $product->name }}</p>
+                        <div>
+                            <ul class="list-unstyled product-rating mb-1">
+                                <li>
+                                    <i class="fa fa-star checked"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star checked"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star checked"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star checked"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star checked"></i>
+                                </li>
+                            </ul>
+                            <p class="mb-1">120 ratings</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    @endif
     @endforeach
 </div>
 @else

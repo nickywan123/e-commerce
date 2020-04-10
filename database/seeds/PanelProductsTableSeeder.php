@@ -38,10 +38,62 @@ class PanelProductsTableSeeder extends Seeder
             'color_hex' => null
         ]);
 
+        // Product 1.2
+        $panelProduct1 = new Product;
+        $panelProduct1->global_product_id = 1;
+        $panelProduct1->panel_account_id = 1918000003;
+        $panelProduct1->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
+        $panelProduct1->price = 12000;
+        $panelProduct1->delivery_fee = 0;
+        $panelProduct1->panel_promotion = 'With 15 years experience in manufacturing and serving our customers, we can guarantee that this product will meet your needs and 100% satisfy you.';
+        $panelProduct1->product_materials = 'Carbon fiber plastic, glass, LED, sand blasted plastic';
+        $panelProduct1->product_rating = 0;
+        $panelProduct1->save();
+
+        $panelProduct1->attributes()->create([
+            'panel_product_id' => $panelProduct1->id,
+            'attribute_type' => 'light-temperature',
+            'attribute_name' => 'Daylight 6000K',
+            'color_hex' => null
+        ]);
+
+        $panelProduct1->attributes()->create([
+            'panel_product_id' => $panelProduct1->id,
+            'attribute_type' => 'light-temperature',
+            'attribute_name' => 'Warm White 3000K',
+            'color_hex' => null
+        ]);
+
         // Product 2
         $panelProduct2 = new Product;
         $panelProduct2->global_product_id = 2;
         $panelProduct2->panel_account_id = 1918000001;
+        $panelProduct2->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
+        $panelProduct2->price = 12000;
+        $panelProduct2->delivery_fee = 0;
+        $panelProduct2->panel_promotion = 'With 15 years experience in manufacturing and serving our customers, we can guarantee that this product will meet your needs and 100% satisfy you.';
+        $panelProduct2->product_materials = 'Carbon fiber plastic, glass, LED, sand blasted plastic';
+        $panelProduct2->product_rating = 0;
+        $panelProduct2->save();
+
+        $panelProduct2->attributes()->create([
+            'panel_product_id' => $panelProduct2->id,
+            'attribute_type' => 'light-temperature',
+            'attribute_name' => 'Daylight 6000K',
+            'color_hex' => null
+        ]);
+
+        $panelProduct2->attributes()->create([
+            'panel_product_id' => $panelProduct2->id,
+            'attribute_type' => 'light-temperature',
+            'attribute_name' => 'Warm White 3000K',
+            'color_hex' => null
+        ]);
+
+        // Product 2.2
+        $panelProduct2 = new Product;
+        $panelProduct2->global_product_id = 2;
+        $panelProduct2->panel_account_id = 1918000003;
         $panelProduct2->product_details = 'Manufactured using top quality materials that would last at least 10 years. Our product is handmade and the quality assurance is top notch.';
         $panelProduct2->price = 12000;
         $panelProduct2->delivery_fee = 0;

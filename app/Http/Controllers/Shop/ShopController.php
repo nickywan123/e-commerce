@@ -13,6 +13,7 @@ use App\Models\Globals\Products\Product;
 use Illuminate\Support\Facades\View;
 use App\Models\Users\User;
 use App\Models\PromotionPage\Banner;
+use App\Models\Products\Product as PanelProduct;
 
 class ShopController extends Controller
 {
@@ -60,83 +61,35 @@ class ShopController extends Controller
         return view('shop.index')->with('data', $data)->with('popularCategories', $popularCategories);
     }
 
-
-   
-    /**
-     * Handles /shop/category/{category-slug}
-     */
-    public function category($categorySlug)
-    {
-        // Get matching category with related products and their images.
-        $category = Category::where('slug', $categorySlug)->with('products.images')->first();
-
-        // Get all categories for tree view.
-        $allCategories = Category::all();
-
-        return view('shop.catalog.category')
-            ->with('category', $category)
-            ->with('allCategories', $allCategories);
-    }
-
-    /**
-     * Handles /shop/category/{category-slug}/{subcategory-slug}
-     */
-    public function subcategory($categorySlug, $subcategorySlug)
-    {
-        // Get matching category with related products and their images.
-        $subcategory = SubCategory::where('slug', $subcategorySlug)->with('products.images')->first();
-
-        // Get parent category of the subcategory.
-        $category = $subcategory->parentCategory;
-
-        // Get all categories for tree view.
-        $allCategories = Category::all();
-
-        return view('shop.catalog.subcategory')
-            ->with('subcategory', $subcategory)
-            ->with('category', $category)
-            ->with('allCategories', $allCategories);
-    }
-
-    /**
-     * Handles /shop/product/{category-slug}/{product-type-slug}
-     */
-    // /category/{categorySlug}/{subcategorySlug}/{productTypeSlug}
-    public function productType($categorySlug, $subcategorySlug, $productTypeSlug)
-    {
-        // Get matching product type with related products and their images.
-        $type = ProductType::where('slug', $productTypeSlug)->with('products.images')->first();
-
-        // Get parent subcategory of the product type.
-        $subcategory = $type->parentSubcategory;
-
-        // Get parent category of the product type.
-        $category = $subcategory->parentCategory;
-
-        // Get all categories for tree view.
-        $allCategories = Category::all();
-
-        return view('shop.catalog.type')
-            ->with('type', $type)
-            ->with('subcategory', $subcategory)
-            ->with('category', $category)
-            ->with('allCategories', $allCategories);
-    }
-
     /**
      * Handles /shop/product/{product-slug}
      */
     public function product(Request $request, $slug)
     {
-        if ($request->has('color')) {
-            // TODO: Change image and other related info if color is specified.
-            return 'Work in progress.';
-        } else {
-            // Get matching product.
-            $product = Product::where('name_slug', $slug)->with('images')->first();
-        }
-        // return $product;
-        return view('shop.product')->with('product', $product);
+        // if ($request->has('color')) {
+        //     // TODO: Change image and other related info if color is specified.
+        //     return 'Work in progress.';
+        // } else {
+        //     // Get matching product.
+        //     $product = Product::where('name_slug', $slug)->with('images')->first();
+        // }
+        // // return $product;
+        // return view('shop.product')->with('product', $product);
+
+        // dd($request);
+        $panelId = $request->query('panel');
+
+        $product = Product::where('name_slug', $slug)
+            ->with('images')
+            ->firstOrFail();
+
+        $panelProduct = PanelProduct::where('global_product_id', $product->id)
+            ->where('panel_account_id', $panelId)
+            ->firstOrFail();
+
+        return view('shop.product')
+            ->with('product', $product)
+            ->with('panelProduct', $panelProduct);
     }
 
     /**
