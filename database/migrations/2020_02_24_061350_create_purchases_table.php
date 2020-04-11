@@ -18,7 +18,7 @@ class CreatePurchasesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('purchase_number')->unique();
             $table->integer('purchase_status');
-            $table->string('purchase_type');
+            $table->string('purchase_type')->nullable();
             $table->string('purchase_date');
             $table->integer('purchase_amount');
             $table->string('payment_proof')->nullable();
