@@ -3,14 +3,9 @@
 namespace App\Http\Controllers\Shop;
 
 use Auth;
-use App\Models\Users\User;
-
 use Illuminate\Http\Request;
 use App\Models\Categories\Category;
 use App\Http\Controllers\Controller;
-use App\Models\PromotionPage\Banner;
-use App\Models\Users\Customers\Cart;
-use Illuminate\Support\Facades\View;
 use App\Models\Categories\ProductType;
 use App\Models\Categories\SubCategory;
 use App\Models\Globals\Products\Product;
@@ -18,6 +13,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\Users\User;
 use App\Models\PromotionPage\Banner;
 use App\Models\Products\Product as PanelProduct;
+use App\Models\Users\Customers\Cart;
 
 class ShopController extends Controller
 {
@@ -71,23 +67,25 @@ class ShopController extends Controller
         $data = Banner::all();
         $popularCategories = Category::take(6)->get();
 
-        return view('shop.index')->with('data', $data)->with('popularCategories', $popularCategories)->with('getCartQuantity',$getCartQuantity);
+        return view('shop.index')->with('data', $data)
+            ->with('popularCategories', $popularCategories)
+            ->with('getCartQuantity', $getCartQuantity);
     }
 
 
-   
+
     /**
      * Handles /shop/category/{category-slug}
      */
     public function category($categorySlug)
     {
 
-       // Get user
-       $user = User::find(Auth::user()->id);
-       // Check if the exact item is already in the cart..
-       $getCartQuantity = new Cart;
+        // Get user
+        $user = User::find(Auth::user()->id);
+        // Check if the exact item is already in the cart..
+        $getCartQuantity = new Cart;
 
-       $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
 
         // Get matching category with related products and their images.
         $category = Category::where('slug', $categorySlug)->with('products.images')->first();
@@ -98,7 +96,7 @@ class ShopController extends Controller
         return view('shop.catalog.category')
             ->with('category', $category)
             ->with('allCategories', $allCategories)
-            ->with('getCartQuantity',$getCartQuantity);
+            ->with('getCartQuantity', $getCartQuantity);
     }
 
     /**
@@ -151,21 +149,6 @@ class ShopController extends Controller
      */
     public function product(Request $request, $slug)
     {
-        if ($request->has('color')) {
-            // TODO: Change image and other related info if color is specified.
-            return 'Work in progress.';
-        } else {
-          // Get user
-           $user = User::find(Auth::user()->id);
-          // Check if the exact item is already in the cart..
-            $getCartQuantity = new Cart;
-
-            $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
-            // Get matching product.
-            $product = Product::where('name_slug', $slug)->with('images')->first();
-        }
-        // return $product;
-        return view('shop.product')->with('product', $product)->with('getCartQuantity',$getCartQuantity);
         // if ($request->has('color')) {
         //     // TODO: Change image and other related info if color is specified.
         //     return 'Work in progress.';
@@ -177,6 +160,12 @@ class ShopController extends Controller
         // return view('shop.product')->with('product', $product);
 
         // dd($request);
+        // Get user
+        $user = User::find(Auth::user()->id);
+        // Check if the exact item is already in the cart..
+        $getCartQuantity = new Cart;
+
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
         $panelId = $request->query('panel');
 
         $product = Product::where('name_slug', $slug)
@@ -189,7 +178,8 @@ class ShopController extends Controller
 
         return view('shop.product')
             ->with('product', $product)
-            ->with('panelProduct', $panelProduct);
+            ->with('panelProduct', $panelProduct)
+            ->with('getCartQuantity', $getCartQuantity);
     }
 
     /**
@@ -220,11 +210,11 @@ class ShopController extends Controller
      */
     public function topLevelCategory($topLevelSlug)
     {
-         // Get user
+        // Get user
         $user = User::find(Auth::user()->id);
         // Check if the exact item is already in the cart..
         $getCartQuantity = new Cart;
-  
+
         $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
         $category = Category::where('slug', $topLevelSlug)->first();
         $childCategories = $category->childCategories->take(6);
@@ -234,7 +224,7 @@ class ShopController extends Controller
             ->with('category', $category)
             ->with('childCategories', $childCategories)
             ->with('categoryLevel', $categoryLevel)
-            ->with('getCartQuantity',$getCartQuantity);
+            ->with('getCartQuantity', $getCartQuantity);
     }
 
     /**
@@ -246,7 +236,7 @@ class ShopController extends Controller
         $user = User::find(Auth::user()->id);
         // Check if the exact item is already in the cart..
         $getCartQuantity = new Cart;
-  
+
         $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
         $category = Category::where('slug', $secondLevelSlug)->first();
         $childCategories = $category->childCategories->take(6);
@@ -256,7 +246,7 @@ class ShopController extends Controller
             ->with('category', $category)
             ->with('childCategories', $childCategories)
             ->with('categoryLevel', $categoryLevel)
-            ->with('getCartQuantity',$getCartQuantity);
+            ->with('getCartQuantity', $getCartQuantity);
     }
 
     /**
