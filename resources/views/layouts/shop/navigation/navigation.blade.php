@@ -30,10 +30,10 @@
                             </li>
                             @else
                             <li class="nav-item ">
-                                <div class="dropdown show" style="margin-left: 20px;">
+                                <div class="dropdown show">
                                     <!-- TODO: Create a class for the style mobile devices -->
-                                    <a class="dropdown-toggle dropdown-toggle-position" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="  color: #FBCC34; background-color: #000000; ">
-                                        <i class="fa fa-user" style="font-size:x-large; color:#fbcc34;"></i>
+                                    <a class="dropdown-toggle dropdown-toggle-position" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="  color: #FBCC34; background-color: #000000; padding-right: 10px;">
+                                        <i class="fa fa-user" style="font-size:15px; color:#fbcc34;"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                         <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user" style="color:#fbcc34;"></i> Profile </a>
@@ -60,8 +60,8 @@
                         </ul>
                        
                        
-                        <a style="color:#fbcc34; margin-left: 20px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34; font-size:x-large;"></i>  </a>
-                        <a style="color:#fbcc34; margin-left: 10px;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34;  font-size:x-large;"></i></a>
+                        <a style="color:#fbcc34; margin-left: 20px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34;"></i>  </a>
+                        <a style="color:#fbcc34; margin-left: 10px;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i></a>
 
                     </div>
                     
@@ -81,11 +81,11 @@
 
                                     </optgroup> -->
                                 </select>
-                                <input type="text" id="search-box" name="keyword" class="form-control navigation-input input-lg w-65-md w-80-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size search-bar-size-sm" >
+                                <input type="text" id="search-box" name="keyword" class="form-control navigation-input input-lg w-65-md w-80-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size" >
                                 <button id="search-button" class="btn navigation-input border-right-rounded-10"><i class="fa fa-search"></i></button>
                             </div>
-                           <a class="hidden-md margin-left-icon" style="color:#fbcc34; margin-right:20px;" href="#" ><i class="fa fa-camera" style="color:#fbcc34; font-size: 30px;"></i>  </a>
-                            <a class="hidden-md" style="color:#fbcc34;" href="#" ><i class="fa fa-microphone" style="color:#fbcc34; font-size: 30px;"></i>  </a>
+                           <a class="hidden-md margin-left-icon" style="color:#fbcc34; margin-right:20px;" href="#" ><i class="fa fa-camera" style="color:#fbcc34;"></i>  </a>
+                            <a class="hidden-md" style="color:#fbcc34;" href="#" ><i class="fa fa-microphone" style="color:#fbcc34;"></i>  </a>
                         </div>
                     </div>
                 </form>
@@ -127,14 +127,13 @@
                             </div>
                         </div>
                     </li>
-                  
-                   <div style="margin-top:10px; margin-left: 50px; ">
-                    <a style="color:#fbcc34; margin-right:20px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">0</span></a>
-                    <a style="color:#fbcc34;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">{{$getCartQuantity}}</span> </a>
-                   </div>
+                    
                    
-                  
-                                  
+                    <div style="margin-top:10px; font-size:12px;">
+                        <a style="color:#fbcc34; margin-right:10px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34;"></i> My Perfect List (0) </a>
+                        <a style="color:#fbcc34;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart (0) </a>
+                    </div>
+                   
                 </ul>
             </div>
             @endguest

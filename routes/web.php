@@ -59,6 +59,7 @@ Route::get('/shop/purchase-order', 'Panel\DashboardController@viewPurchaseOrder'
 //Return Work In progress page
 Route::view('/wip', 'errors.wip');
 
+Route::get('/shop/profile', 'Shop\ProfileController@index');
 // // Shop Routes
 // Route::prefix('shop')->group(function () {
 //     // Home/Index page for shop.
@@ -302,10 +303,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
             Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory')->name('shop.category.third');
         });
-  
-        Route::get('/profile', 'Shop\ProfileController@index');
-        
-        Route::get('/profile/orders', 'Shop\OrderController@customerOrders')->name('shop.customer.orders');
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 

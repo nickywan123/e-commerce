@@ -46,9 +46,9 @@ class ProfileController extends Controller
     public function index(){
         
 
-       
+        $popularCategories = Category::take(6)->get();
 
-        return view('shop.profile.index');
+        return view('shop.profile.index')->with('popularCategories', $popularCategories);
     }
 
 }

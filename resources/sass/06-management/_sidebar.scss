@@ -2,7 +2,6 @@
     color: #ffcc00;
 
     letter-spacing: 2px;
-
     .icon-color {
         color: #ffcc00;
     }
@@ -15,7 +14,6 @@
 .sidebar .nav-link:hover {
     background-color: white;
     color: black;
-
     .icon-color {
         color: #ffcc00;
     }
@@ -39,13 +37,4 @@
 
 .sidebar-margin-top {
     margin-top: 30%;
-}
-
-.sidebar .sidebar-nav {
-    width: 150px;
-}
-
-.app-body .sidebar {
-    flex: 0 0 150px;
-    order: -1;
 }

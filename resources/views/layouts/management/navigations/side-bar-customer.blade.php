@@ -2,8 +2,8 @@
     <nav class="sidebar-nav">
         <ul class="nav sidebar-margin-top">
             <li class="nav-item ">
-                <a class="nav-link " href="/shop/profile/orders">
-                    <img class="img-avatar" src="{{asset('/images/order-image.jpg')}}" alt="My Orders" style="height: 100px; width: 100px;">
+                <a class="nav-link " href="#">
+                    <img class="img-avatar" src="{{asset('/images/order-image.jpg')}}" alt="My Orders" style="height: 100px; width: 100px;  margin-left: 30px;">
                 </a>
           
             </li>
@@ -11,7 +11,7 @@
   
             <li class="nav-item">
                 <a class="nav-link" href="/shop">
-                    <img class="img-avatar" src="{{asset('/images/wish-list.png')}}" alt="Wish List" style="height: 100px; width: 100px;">
+                    <img class="img-avatar" src="{{asset('/images/wish-list.png')}}" alt="Wish List" style="height: 100px; width: 100px;  margin-left: 30px;">
                 </a>
                 
             </li>
@@ -19,7 +19,7 @@
            
             <li class="nav-item">
                 <a class="nav-link" href="/shop">
-                    <img class="img-avatar" src="{{asset('/images/shop-icon-2.png')}}" alt="Shop" style="height: 100px; width: 100px;">
+                    <img class="img-avatar" src="{{asset('/images/shop-icon-2.png')}}" alt="Shop" style="height: 100px; width: 100px;  margin-left: 30px;">
                 </a>
                 
             </li>

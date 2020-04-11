@@ -25,7 +25,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine&display=swap" rel="stylesheet">
 </head>
 
 <body class="app header-fixed aside-menu-fixed sidebar-lg-show">
