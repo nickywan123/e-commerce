@@ -644,7 +644,15 @@
                     console.log(result.status + ' ' + result.statusText);
                 }
             });
-        })
+        });
+
+        $(document).on('click', '.catalog-item', function(e) {
+            e.preventDefault();
+            let modal = $(this).data('modal');
+            if ($(window).innerWidth() <= 768) {
+                $(modal).modal('show');
+            }
+        });
 
         /* End Author */
 

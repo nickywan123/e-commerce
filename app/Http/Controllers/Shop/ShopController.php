@@ -176,10 +176,15 @@ class ShopController extends Controller
             ->where('panel_account_id', $panelId)
             ->firstOrFail();
 
+        $category = Category::where('slug', 'lightings')->firstOrFail();
+
+        $products = $category->products;
+
         return view('shop.product')
             ->with('product', $product)
             ->with('panelProduct', $panelProduct)
-            ->with('getCartQuantity', $getCartQuantity);
+            ->with('getCartQuantity', $getCartQuantity)
+            ->with('products', $products);
     }
 
     /**

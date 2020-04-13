@@ -72,6 +72,19 @@ class Product extends Model
     }
 
     /**
+     * Get the states the product is available in.
+     */
+    public function availableIn()
+    {
+        return $this->belongsToMany(
+            'App\Models\Globals\State',
+            'piv_product_state',
+            'product_id',
+            'state_id'
+        );
+    }
+
+    /**
      * Get panel info of a product.
      */
     public function panel()
@@ -85,5 +98,13 @@ class Product extends Model
     public function getDecimalPrice()
     {
         return number_format(($this->price / 100), 2);
+    }
+
+    /**
+     * Get the formatted product's delivery price.
+     */
+    public function getDecimalDeliveryFee()
+    {
+        return number_format(($this->delivery_fee / 100), 2);
     }
 }
