@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-4 col-md-6 text-right my-auto">
                         <a href="/shop">
-                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu-logo.png') }}" alt="">
+                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="">
                         </a>
                     </div>
                     <div class="col-5 hidden-md my-auto">
@@ -37,7 +37,7 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                         <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user" style="color:#fbcc34;"></i> Profile </a>
-                                        <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> My Orders </a>
+                                        <a class="dropdown-item" href="/shop/profile/orders"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> Value Records </a>
                                         @hasrole('panel')
                                         <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
                                         @endhasrole
@@ -108,7 +108,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user " style="color:#fbcc34;"></i> Profile </a>
-                                <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Orders </a>
+                                <a class="dropdown-item" href="/shop/profile/orders"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> Value Records </a>
                                 
                                 @hasrole('panel')
                                 <a href="/management/panel" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
@@ -130,11 +130,9 @@
                   
                    <div style="margin-top:10px; margin-left: 50px; ">
                     <a style="color:#fbcc34; margin-right:20px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">0</span></a>
-                    <a style="color:#fbcc34;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">{{$getCartQuantity}}</span> </a>
+                    <a style="color:#fbcc34;" href="/shop/cart" id="cart-quantity" ><i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">{{$getCartQuantity}}</span> </a>
                    </div>
-                   
-                  
-                                  
+                                       
                 </ul>
             </div>
             @endguest
@@ -160,3 +158,27 @@
         </div>
     </div>
 </div> -->
+
+@push('script')
+
+<script>
+
+
+
+// function removeCartItemQuantity(){
+//             //Make an AJAX request to navigation bar
+//             $.ajax({
+//                 url: '/web/cart/remove-cart',
+//                 type: "get",
+//                 success: function(result) {
+//                     CartQuantity.html(result);
+//                 },
+//                 error: function(result) {
+//                     console.log(result.status + ' ' + result.statusText);
+//                 }
+//             });
+//         }
+
+</script>
+
+@endpush

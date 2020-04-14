@@ -51,7 +51,7 @@ class CartController extends Controller
          // Check if the exact item is already in the cart..
            $getCartQuantity = new Cart;
 
-           $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+           $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
         return view('shop.cart.cart')->with('getCartQuantity',$getCartQuantity);
     }
 

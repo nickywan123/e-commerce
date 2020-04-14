@@ -35,4 +35,17 @@ class CartController extends Controller
 
         return $item;
     }
+
+    /** Update cart quantity after deleting a cart **/
+    public function removeCartQuantity(Request $request){
+        $user = User::find(Auth::user()->id);
+
+        $getCartQuantity = new Cart;
+
+       $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
+
+        // return $carts->where('status', 2001);
+
+        return view('layouts.shop.navigation.navigation')->with('getCartQuantity', $getCartQuantity);
+    }
 }

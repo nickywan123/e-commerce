@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers\Shop;
 
+use Auth;
+use Carbon\Carbon;
+
+use PDF;
+
+use App\Models\Users\User;
+use App\Models\Orders\Order;
 use Illuminate\Http\Request;
+use App\Models\Categories\Category;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Support\Facades\View;
-
-use Auth;
-use App\Models\Categories\Category;
-use App\Models\Orders\Order;
 use App\Models\Users\Customers\Cart;
-use App\Models\Users\User;
 
-use App\Jobs\Emails\Orders\NewOrderSendEmail;
-
+use Illuminate\Support\Facades\View;
 use App\Jobs\Orders\ProcessOrderEmail;
-use Carbon\Carbon;
+use App\Jobs\Emails\Orders\NewOrderSendEmail;
 
 class OrderController extends Controller
 {
@@ -57,7 +58,7 @@ class OrderController extends Controller
        // Check if the exact item is already in the cart..
        $getCartQuantity = new Cart;
 
-       $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+       $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
         $user = User::find(Auth::user()->id);
         $purchases = $user->purchases;
         // return $purchases;
@@ -72,6 +73,9 @@ class OrderController extends Controller
     // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
     return view('shop.profile.orders')->with('purchases', $purchases);
    }
+
+
+   
 
     /**
      * Show the form for creating a new resource.

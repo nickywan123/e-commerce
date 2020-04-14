@@ -37,6 +37,8 @@ Route::get('/login', 'Auth\LoginController@showLoginForm');
 // Return invoice 
 Route::get('/shop/invoice', 'Purchase\PurchaseController@invoiceCustomer');
 
+// Return invoice in customer dashboard (Orders) 
+Route::get('/orders/invoice/{purchase_num}', 'Purchase\PurchaseController@invoice');
 
 Route::get('/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
 //Return Work In progress page
@@ -362,6 +364,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
             // Remove user's cart item.
             Route::put('/remove/{id}', 'WEB\Shop\CartController@remove');
+
+            //Remove user's cart quantity.
+            Route::put('/remove-cart/{id}', 'WEB\Shop\CartController@removeCartQuantity');
         });
 
         Route::group(['prefix' => 'shop'], function () {

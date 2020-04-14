@@ -23,9 +23,11 @@
         });
 
         const ItemContainer = $('#cart-container');
+        const CartQuantity=$('#cart-quantity');
 
         // Run function
         onPageLoad();
+       // removeCartItemQuantity();
 
         function onPageLoad() {
             // Make an AJAX request to /shop/shopping-cart
@@ -34,6 +36,21 @@
                 type: "get",
                 success: function(result) {
                     ItemContainer.html(result);
+                  //  CartQuantity.html(result);
+                },
+                error: function(result) {
+                    console.log(result.status + ' ' + result.statusText);
+                }
+            });
+        }
+
+        function removeCartItemQuantity(){
+            //Make an AJAX request to navigation bar
+            $.ajax({
+                url: '/web/cart',
+                type: "get",
+                success: function(result) {
+                    CartQuantity.html(result);
                 },
                 error: function(result) {
                     console.log(result.status + ' ' + result.statusText);
@@ -53,6 +70,25 @@
         //         }
         //     });
         // }
+        
+        //Remove cart quantity 
+
+        CartQuantity.on('click', '#DeleteCartItem', function() {
+            $.ajax({
+                url: '/web/cart/remove-cart/' + this.value,
+                type: 'PUT',
+                contentType: 'application/json',
+                success: function(result) {
+                    console.log(result);
+                    removeCartItemQuantity();
+                },
+                error: function(result) {
+                    //
+                }
+            });
+        });
+
+
 
         ItemContainer.on('click', '#DeleteCartItem', function() {
             $.ajax({

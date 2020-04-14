@@ -65,7 +65,7 @@
                     <div class="row">
                         <div class="col-4 col-md-6 text-right my-auto">
                             <a href="/shop">
-                                <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
+                                <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="">
                             </a>
                         </div>
                         <div class="col-4 hidden-md my-auto">

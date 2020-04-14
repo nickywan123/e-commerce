@@ -231,7 +231,7 @@
     }
 
     .slick-dots li.slick-active button:before {
-        font-size: 15px;
+        font-size: 10px;
         color: #ffcc00;
 
 

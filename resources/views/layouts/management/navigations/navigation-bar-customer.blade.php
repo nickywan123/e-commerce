@@ -9,9 +9,9 @@
         <i class="fa fa-bars navigation-icon"></i>
     </button>
 
-    <a class="navbar-brand img-logo-margin-left" href="#">
-        <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('images/Bujishu_logo.png')}}" width="89" height="50" alt="Bujishu Logo">
-        <img class="navbar-brand-minimized" src="{{asset('images/Bujishu_logo.png')}}" width="30" height="30" alt="Bujishu Logo">
+    <a class="navbar-brand img-logo-margin-left" href="/shop">
+        <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="89" height="50" alt="Bujishu Logo">
+        <img class="navbar-brand-minimized" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
 
     <div class="col-sm-8 vertical-align text-center my-auto">
@@ -20,7 +20,7 @@
                 <div class="col-12 my-auto display-same-row">
                     <div class="pb-2 nav-content-sidebar-collapse"> 
                   
-                        <input type="text" id="search-box" name="keyword"  class="form-control navigation-input input-lg w-30-md-customer w-80-sm margin-right-border-color  border-left-rounded-10-sm search-bar-height-customer" style="border-radius:100px; border:2px solid #fccb34;" placeholder="Start typing something to search" > 
+                        {{-- <input type="text" id="search-box" name="keyword"  class="form-control navigation-input input-lg w-30-md-customer w-80-sm margin-right-border-color  border-left-rounded-10-sm search-bar-height-customer" style="border-radius:100px; border:2px solid #fccb34;" placeholder="Start typing something to search" >  --}}
                     </div>
                 
                 </div>
@@ -35,7 +35,7 @@
            <img class="img-avatar" src="{{asset('images/zuck.jpg')}}" alt="{{ Auth::user()->userInfo->full_name }}">
          </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-header text-center">
+                {{-- <div class="dropdown-header text-center">
                     <strong>Settings</strong>
                 </div>
                 <a class="dropdown-item" href="#">
@@ -51,9 +51,9 @@
                 </a>
                 <div class="divider"></div>
                 <a class="dropdown-item" href="#">
-                    <i class="fa fa-shield"></i> Lock Account</a>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-lock"></i> Logout</a>
+                    <i class="fa fa-shield"></i> Lock Account</a> --}}
+                {{-- <a class="dropdown-item" href="#">
+                    <i class="fa fa-lock"></i> Logout</a> --}}
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}

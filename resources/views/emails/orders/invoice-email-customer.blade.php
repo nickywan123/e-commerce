@@ -9948,6 +9948,12 @@
                 border: 1px solid #ddd !important
             }
         }
+        .logo-styling{
+            height: auto;
+            width: 150px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
         /*# sourceMappingURL=bootstrap.min.css.map */
     </style>
@@ -9957,21 +9963,22 @@
     <div class="container">
         <div class="row">
             <div class="col-4 offset-4">
-                <img class="mx-auto mw-100" src="{{ asset('storage/logo/Bujishu_logo.png') }}" alt="">
+                <img class="mx-auto mw-100 logo-styling" src="{{ $message->embed(asset('/storage/logo/Bujishu-logo.png')) }}" alt="Bujishu Logo">
             </div>
         </div>
         <div class="card">
-            <div class="card-body">
-                <h3 class="card-title text-center p-4" style="background-color: #fccb34;">Thank you for your order.</h3>
+            <div class="card-body" style="font-family: cursive">       
+                <h3 class="card-title text-center p-4" style="background-color:#fccb34;">Thank you for your order.</h3>
                 <div class="pl-4 pr-4 pt-2 pb-2">
                     <p class="card-text">Hi, {{ $purchase->user->userInfo->full_name}}</p>
                     <br>
                     <p class="card-text">
-                        Just to let you know - we've received your order #{{ $purchase->purchase_number }}, and it is now being processed. Attached herewith your invoice.
+                        Thank you for shopping on Bujishu.We have received your order {{ $purchase->purchase_number }} on {{ $purchase->created_at}}.
+                        Your order is now being processed. Attached here with your invoice & receipt. 
                     </p>
-                    <p class="card-text">Regards,</p>
+                    <p class="card-text">Best Regards,</p>
                     <h5>
-                        DC Living Signature Sdn Bhd
+                        Bujishu
                     </h5>
                 </div>
             </div>

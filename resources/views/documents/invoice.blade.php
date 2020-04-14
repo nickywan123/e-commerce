@@ -8,7 +8,7 @@
     <title>Invoice</title>
 </head>
 
-<body>
+<body >
 
     @php
     $url = URL::signedRoute
@@ -19,25 +19,25 @@
     @endphp
     <div class="container">
         <span class="float-left"> <img src="{{ asset('images/Invoice-Logo.png') }}" style="width:15%;" alt="No Logo"></span>
-        <img style="float:right; margin-bottom:10px;" src="data:images/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate('{$url}')) }} ">
+        <img style="float:right; margin-bottom:10px;" src="data:images/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate($url)) }} ">
     </div> <br> <br>
 
     <div>
 
-        <div style="font-size:10px;float:left; width:50%;">
-            <table style="border: 1px solid black; max-width:300px; ">
-                <tr>
-                    <td>Receiver:</td>
+        <div style="font-size:10px;float:left; width:250px; ">
+            <table style="border: 1px solid black; height:110px;  max-width:300px;  ">
+                <tr >
+                    <td  class="font-weight-style">Receiver:</td>
                     <td>{{$purchase->user->userInfo->full_name}}</td>
                 </tr>
 
                 <tr>
-                    <td>Attention To:</td>
+                    <td class="font-weight-style">Attention To:</td>
                     <td>-</td>
                 </tr>
 
                 <tr>
-                    <td>Contact No:</td>
+                    <td class="font-weight-style">Contact No:</td>
 
                     <td>{{ $purchase->user->userInfo->contacts->where('is_mobile', 1)->first()->contact_num }}</td>
 
@@ -50,9 +50,9 @@
         <div style="font-size:10px;float:right; margin-right:100px; width:50%;">
 
 
-            <table style="border: 1px solid black; max-width:300px;  ">
-                <tr>
-                    <td>Deliver To:</td>
+            <table style="border: 1px solid black; height:110px; max-width:500px;  ">
+                <tr >
+                    <td class="font-weight-style">Deliver To:</td>
                     <td>{{$purchase->user->userInfo->addresses->where('is_shipping_address',1)->first()->address_1}}
                         {{$purchase->user->userInfo->addresses->where('is_shipping_address',1)->first()->address_2}}
                         {{$purchase->user->userInfo->addresses->where('is_shipping_address',1)->first()->address_3}}
@@ -63,12 +63,12 @@
                 </tr>
 
                 <tr>
-                    <td>Attention To:</td>
+                    <td class="font-weight-style">Attention To:</td>
                     <td>empty</td>
                 </tr>
 
                 <tr>
-                    <td>Contact No:</td>
+                    <td class="font-weight-style">Contact No:</td>
                     <td></td>
                 </tr>
             </table>
@@ -108,7 +108,7 @@
         </div>
 
 
-        <div style="font-size:10px; margin-top:15%;   width:100%;">
+        <div style="font-size:10px; margin-top:150px; height:600px;  width:100%; ">
             <table style=" width: 100%;" border="1">
                 <tr>
                     <th style="width:20%;"> No</th>
@@ -119,12 +119,16 @@
                     <th style="width:50%;"> Amount (RM)</th>
                 </tr>
                 <tr>
+                    <?php
+                        $counter = 0;
+                    ?>
                     @foreach($purchase->orders as $order)
                     @foreach($order->items as $item)
+                    <td>{{$counter+=1}}</td>
                     <td>{{ $item->product->parentProduct->id }}</td>
                     <td align="center"> {{ $item->product->parentProduct->name }}</td>
                     <td align="center">{{ $item->quantity }}</td>
-                    <td align="center">{{ $item->product->parentProduct->price}}</td>
+                    <td align="center"> <?php echo number_format(($order->order_amount / 100), 2); ?></td>
                     @endforeach
                     @endforeach
 
@@ -145,7 +149,7 @@
 
             </table>
 
-            <table style="position:relative; left:475px; bottom:250px;" border="0">
+            <table style="font-weight:bold; position:relative; left:475px; bottom:250px;" border="0">
                 <tr>
                     <td style="border:none;">SubTotal</td>
                     <td width="70" style="border: 1px solid #ccc; ">3,000.00</td>
@@ -177,10 +181,7 @@
             </table>
 
 
-        </div>
-
-        <div style="position:absolute; top:710px;   font-size:10px;">
-            <table width="300" border="1">
+            <table style="font-size:10px; position:absolute; top:60px; " width="300" border="1">
                 <tr>
                     <th colspan="2"> Payment Received</th>
                 </tr>
@@ -200,12 +201,35 @@
                 </tr>
 
             </table>
+
         </div>
 
-
-
-
     </div>
+            {{-- <table style="font-size:10px;" width="300" border="1">
+                <tr>
+                    <th colspan="2"> Payment Received</th>
+                </tr>
+                <tr>
+                    <td>Payment Method</td>
+                    <td>Online/Credit Card/FPX</td>
+                </tr>
+
+                <tr>
+                    <td>Reference No</td>
+                    <td>320343243</td>
+                </tr>
+
+                <tr>
+                    <td>Amount Paid:</td>
+                    <td>RM2,0000</td>
+                </tr>
+
+            </table>
+       --}}
+
+
+
+ 
 
     <div style="font-size:10px;">
         <h4>Terms & Condition</h4>
@@ -221,7 +245,7 @@
 
     <div style="font-size:10px; position:absolute; right:100px; float:right;">
         <p>1-26-05-Menara Bangkok Bank,Berjaya Central Park, No 105, Jalan Ampang,50450 Kuala Lumpur,Malaysia</p>
-        <p> 603-21818821&emsp;; bujishu@gmail.com &emsp; www.bujishu.com</p>
+        <p> 603-21818821&emsp; bujishu@gmail.com &emsp; www.bujishu.com</p>
     </div>
 
 
@@ -231,8 +255,7 @@
 </html>
 
 <style>
-    .vl {
-        border-right: 1px solid black;
-        height: 50px;
-    }
+   .font-weight-style{
+    font-weight:bold;
+   }
 </style>

@@ -8,7 +8,7 @@
     <div class="container" style="margin-top: 50px;">
         <div class="row">
             <div class="col-md-9 mt-4">
-                <h3 style="font-size:50px; font-family: Tangerine;"><strong>Value Records</strong></h3>
+                <h3 style="font-size:40px; font-family: Nunito;"><strong>Value Records</strong></h3>
             </div>
            
            
@@ -36,7 +36,7 @@
                 @foreach($purchases as $purchase)
                 @foreach($purchase->orders as $order)
                 <table class="table ">
-                    <tr style="background-color: rgba(0, 0, 0, 0.05);">
+                    <tr style="background-color:rgba(0, 0, 0, 0.05);">
                         
                         <td style="font-weight: bold;">
                             <div> Order #:{{ $purchase->purchase_number }}</div>
@@ -54,7 +54,7 @@
                         </td>
 
                         <td style="">
-                            <div><a href="#">Invoice</a></div>
+                            <div><a href="/orders/invoice/{{$purchase->purchase_number}}">Invoice</a></div>
                             <div><a href="#">Receipt</a></div>
                         </td>
                     </tr>
@@ -73,14 +73,14 @@
                                                 alt="">
                                         </div>
                                         <div class="col-8 my-auto">
-                                            <p class="mb-0 font-weight-bold" ><a style="color:black;"  href="/shop/product/{{ $item->product->parentProduct->name_slug}}">{{ $item->product->parentProduct->name }}</a>
+                                            <p class="mb-0 font-weight-bold" ><a style="color:black;"  href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">{{ $item->product->parentProduct->name }}</a>
                                             </p>
                                             <p class="text-capitalize">Sold by:
                                                 {{ $item->product->panel->company_name }}</p>
                                             <p class="text-capitalize">Unit Price:
                                                 <?php echo 'RM ' . number_format(($item->product->price / 100), 2); ?>
                                             </p>
-                                            <button class="text-capitalize bjsh-btn-gradient"><a style="color:black; text-decoration:none;" href="/shop/product/{{ $item->product->parentProduct->name_slug}}"> Buy It Again</a></button>
+                                            <button class="text-capitalize bjsh-btn-gradient"><a style="color:black; text-decoration:none;" href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}"> Buy It Again</a></button>
                                         </div>
                                     </div>
                                 </li>

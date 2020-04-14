@@ -67,7 +67,7 @@ class PurchaseController extends Controller
         // Assign user to the purchase record.
         $purchase->user_id = $user->id;
         // Generate a unique number used to identify the purchase.
-        $purchase->purchase_number = '0000000BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
+        $purchase->purchase_number = 'BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
         // Assign a status to the purchase. Unpaid, paid.
         $purchase->purchase_status = 1;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
@@ -135,6 +135,10 @@ class PurchaseController extends Controller
                     $item->subtotal_price = $cartItem->total_price;
                     // Assign status of the item. Placed, shipped, delivered.
                     $item->status_id = 1;
+                    // After checkout, cart items should be removed from cart page
+                    $cartItem->status=2002;
+                    $cartItem->save();
+
                     $item->save();
 
                     $orderAmount = $orderAmount + $cartItem->total_price;
@@ -189,6 +193,18 @@ class PurchaseController extends Controller
         return view('shop.payment.index')
             ->with('purchase', $purchase);
     }
+
+
+/** Return invoice for the particular order in PDF format**/
+
+public function invoice($purchase_num){
+    // Get user.
+    $user = User::find(Auth::user()->id);
+    $purchase = $user->purchases->where('purchase_number',$purchase_num)->first();
+    $pdf = PDF::loadView('documents.invoice',compact('purchase'))->setPaper('A4');
+    return $pdf->stream('invoice.pdf');
+   }
+
 
     /**
      * Invoice response after customer purchase item

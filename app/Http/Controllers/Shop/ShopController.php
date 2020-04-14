@@ -61,7 +61,7 @@ class ShopController extends Controller
         // Check if the exact item is already in the cart..
         $getCartQuantity = new Cart;
 
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
 
 
         $data = Banner::all();
@@ -85,7 +85,7 @@ class ShopController extends Controller
         // Check if the exact item is already in the cart..
         $getCartQuantity = new Cart;
 
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
 
         // Get matching category with related products and their images.
         $category = Category::where('slug', $categorySlug)->with('products.images')->first();
@@ -165,7 +165,7 @@ class ShopController extends Controller
         // Check if the exact item is already in the cart..
         $getCartQuantity = new Cart;
 
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
         $panelId = $request->query('panel');
 
         $product = Product::where('name_slug', $slug)
@@ -215,7 +215,7 @@ class ShopController extends Controller
         // Check if the exact item is already in the cart..
         $getCartQuantity = new Cart;
 
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
         $category = Category::where('slug', $topLevelSlug)->first();
         $childCategories = $category->childCategories->take(6);
         $categoryLevel = 1;
@@ -237,7 +237,7 @@ class ShopController extends Controller
         // Check if the exact item is already in the cart..
         $getCartQuantity = new Cart;
 
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->sum('quantity');
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
         $category = Category::where('slug', $secondLevelSlug)->first();
         $childCategories = $category->childCategories->take(6);
         $categoryLevel = 2;
