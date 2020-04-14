@@ -17,4 +17,17 @@ class State extends Model
 
     // Set mass assignable columns
     protected $fillable = [];
+
+    /**
+     * Get all products available to a state.
+     */
+    public function productsAvailableIn()
+    {
+        return $this->belongsToMany(
+            'App\Models\Products\Product',
+            'piv_product_state',
+            'state_id',
+            'product_id'
+        );
+    }
 }

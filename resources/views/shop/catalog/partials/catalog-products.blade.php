@@ -33,8 +33,9 @@
             }
             ?>
             <div class="ribbon {{ $ribbonClass }}"><span>{{ $product->quality->name }}</span></div>
-            <div class=" tooltip-container">
-                <a style="text-decoration: none; color: #212529;" href="javascript:void()" data-toggle="modal" data-target="#modal-{{ $product->id }}">
+            <div class="tooltip-container">
+                <a class="catalog-item" style="text-decoration: none; color: #212529;" href="javascript:void()" data-modal="#modal-{{ $product->id }}">
+
                     <div class="animated-product-container">
                         <div class="animated-product-image-container">
                             <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
@@ -85,7 +86,7 @@
                     }
                     ?>
 
-                    <div class="{{ $tooltipClass }} overflow-auto" style="height: 400px">
+                    <div class="{{ $tooltipClass }} overflow-auto hidden-sm" style="height: 400px">
                         <div class="text-content">
                             <h6 class="font-weight-bold" style="color: #ffffff;">Panels Selling - {{ $product->name }} </h6>
                             <div class="row">
@@ -208,6 +209,86 @@
         </div>
     </div>
     @endif
+    <!-- Modal -->
+    <div class="modal fade" id="modal-{{ $product->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: #444444;">
+                <div class="modal-header" style="border: none;">
+                    <h5 class="modal-title text-light" id="exampleModalLongTitle">Panels Selling - {{ $product->name }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body overflow-auto" style="height: 400px; background-color: #444444;">
+                    <div>
+                        <div class="text-content">
+                            <div class="row">
+                                <div class="col-12">
+                                    @foreach($product->productSoldByPanels as $productSoldByPanel)
+                                    <a href="/shop/product/{{ $product->name_slug}}?panel={{ $productSoldByPanel->panel_account_id }}" style="text-decoration: none; color: #212529;">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="text-dark">{{ $productSoldByPanel->panel->company_name }}</h5>
+                                                <h6 class="text-dark font-weight-bold">{{ $productSoldByPanel->getDecimalPrice() }}</h6>
+                                                <p class="mb-0 text-dark">Panel Rating</p>
+                                                <ul class="list-unstyled product-rating mb-1">
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                </ul>
+                                                <p class="mb-0 text-dark">Rating by Customers</p>
+                                                <ul class="list-unstyled product-rating mb-1">
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fa fa-star checked"></i>
+                                                    </li>
+                                                </ul>
+                                                <p class="mb-0 text-dark">Area of Service</p>
+                                                <p class="mb-1 text-dark font-weight-bold">
+                                                    Kl, Seremban
+                                                </p>
+                                                <p class="mb-0 text-dark">Commitment</p>
+                                                <p class="mb-0 text-dark" style="font-size: 0.8rem;">
+                                                    {{ $productSoldByPanel->panel_promotion }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border: none;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     @endforeach
 </div>
 @else
