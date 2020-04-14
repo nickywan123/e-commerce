@@ -52,6 +52,7 @@ class PurchaseController extends Controller
      */
     public function checkoutItems(Request $request)
     {
+        dd($request);
         // Get user.
         $user = User::find(Auth::user()->id);
         // Get the items in the cart of user.
@@ -136,7 +137,7 @@ class PurchaseController extends Controller
                     // Assign status of the item. Placed, shipped, delivered.
                     $item->status_id = 1;
                     // After checkout, cart items should be removed from cart page
-                    $cartItem->status=2002;
+                    $cartItem->status = 2002;
                     $cartItem->save();
 
                     $item->save();
@@ -195,15 +196,16 @@ class PurchaseController extends Controller
     }
 
 
-/** Return invoice for the particular order in PDF format**/
+    /** Return invoice for the particular order in PDF format**/
 
-public function invoice($purchase_num){
-    // Get user.
-    $user = User::find(Auth::user()->id);
-    $purchase = $user->purchases->where('purchase_number',$purchase_num)->first();
-    $pdf = PDF::loadView('documents.invoice',compact('purchase'))->setPaper('A4');
-    return $pdf->stream('invoice.pdf');
-   }
+    public function invoice($purchase_num)
+    {
+        // Get user.
+        $user = User::find(Auth::user()->id);
+        $purchase = $user->purchases->where('purchase_number', $purchase_num)->first();
+        $pdf = PDF::loadView('documents.invoice', compact('purchase'))->setPaper('A4');
+        return $pdf->stream('invoice.pdf');
+    }
 
 
     /**

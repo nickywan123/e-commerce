@@ -13,7 +13,7 @@ class CartController extends Controller
     /**
      * Get user's cart.
      */
-    public function index(Request $request)
+    public function index()
     {
         $user = User::find(Auth::user()->id);
 
@@ -37,15 +37,31 @@ class CartController extends Controller
     }
 
     /** Update cart quantity after deleting a cart **/
-    public function removeCartQuantity(Request $request){
+    public function removeCartQuantity(Request $request)
+    {
         $user = User::find(Auth::user()->id);
 
         $getCartQuantity = new Cart;
 
-       $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
 
         // return $carts->where('status', 2001);
 
         return view('layouts.shop.navigation.navigation')->with('getCartQuantity', $getCartQuantity);
+    }
+
+
+    /**
+     * Update cart quantity.
+     * 
+     */
+    public function updateQuantity(Request $request, $id)
+    {
+        $cartItem = Cart::find($id);
+        $cartItem->quantity = $request->input('quantity');
+        $cartItem->subtotal_price = $cartItem->quantity * $cartItem->product->price;
+        $cartItem->save();
+
+        return $cartItem;
     }
 }

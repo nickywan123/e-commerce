@@ -19,8 +19,9 @@ class CreateCartsTable extends Migration
             $table->bigInteger('product_id');
             $table->text('product_information');
             $table->integer('quantity');
-            $table->unsignedBigInteger('unit_price');
-            $table->unsignedBigInteger('total_price');
+            $table->unsignedBigInteger('delivery_fee');
+            $table->unsignedBigInteger('installation_fee');
+            $table->unsignedBigInteger('subtotal_price');
             $table->integer('status')->default(2001); // Active
             $table->timestamps();
         });

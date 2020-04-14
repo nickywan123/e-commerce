@@ -46,13 +46,13 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
-         // Get user
-         $user = User::find(Auth::user()->id);
-         // Check if the exact item is already in the cart..
-           $getCartQuantity = new Cart;
+        // Get user
+        $user = User::find(Auth::user()->id);
+        // Check if the exact item is already in the cart..
+        $getCartQuantity = new Cart;
 
-           $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
-        return view('shop.cart.cart')->with('getCartQuantity',$getCartQuantity);
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
+        return view('shop.cart.cart')->with('getCartQuantity', $getCartQuantity);
     }
 
     /**
@@ -163,15 +163,16 @@ class CartController extends Controller
 
             $newCartItem->product_information = $productInformation;
             $newCartItem->quantity = $request->input('productQuantity');
-            $newCartItem->unit_price = $product->price;
-            $newCartItem->total_price = $product->price * $request->input('productQuantity');
+            $newCartItem->delivery_fee = $product->delivery_fee;
+            $newCartItem->installation_fee = $product->installation_fee;
+            $newCartItem->subtotal_price = $product->price * $request->input('productQuantity');
             $newCartItem->save();
         } else {
             // If item exist in cart..
             // Add to the existing quantity.
             $existingCartItem->quantity = $existingCartItem->quantity + $request->input('productQuantity');
             // Re calculate the total price.
-            $existingCartItem->total_price = $existingCartItem->quantity * $existingCartItem->unit_price;
+            $existingCartItem->subtotal_price = $existingCartItem->quantity * $existingCartItem->product->price;
             $existingCartItem->save();
         }
 
@@ -193,11 +194,11 @@ class CartController extends Controller
 
     //     $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->quantity;
 
-       
+
 
     //     return view('layouts.shop.navigation.navigation')->with('getCartQuantity',$getCartQuantity);
 
-        
+
     // }
 
     /**

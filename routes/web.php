@@ -304,9 +304,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
             Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory')->name('shop.category.third');
         });
-  
+
         Route::get('/profile', 'Shop\ProfileController@index');
-        
+
         Route::get('/profile/orders', 'Shop\OrderController@customerOrders')->name('shop.customer.orders');
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
@@ -360,10 +360,14 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'web'], function () {
         Route::group(['prefix' => 'cart'], function () {
             // Get user's cart items.
-            Route::get('/', 'WEB\Shop\CartController@index');
+            Route::get('/', 'WEB\Shop\CartController@index')
+                ->name('web.shop.cart');
 
             // Remove user's cart item.
             Route::put('/remove/{id}', 'WEB\Shop\CartController@remove');
+
+            Route::post('/update-quantity/{id}', 'WEB\Shop\CartController@updateQuantity')
+                ->name('web.shop.cart.update-quantity');
 
             //Remove user's cart quantity.
             Route::put('/remove-cart/{id}', 'WEB\Shop\CartController@removeCartQuantity');
