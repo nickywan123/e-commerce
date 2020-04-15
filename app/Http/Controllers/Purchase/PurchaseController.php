@@ -111,6 +111,7 @@ class PurchaseController extends Controller
             // Assign empty value for order amount first.
             $orderAmount = 0;
             $order->order_amount = 0;
+            $order->delivery_date="Pending";
 
             $order->save();
 

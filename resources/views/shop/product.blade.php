@@ -137,6 +137,7 @@
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.add-item') }}">
                                 @method('POST')
                                 @csrf
+                               
                                 <input type="hidden" name="product_id" value="{{ $panelProduct->id }}">
                                 <input type="hidden" id="product_attribute_color" name="product_attribute_color" value="">
                                 <input type="hidden" id="product_attribute_size" name="product_attribute_size" value="">

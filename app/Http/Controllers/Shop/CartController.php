@@ -117,7 +117,7 @@ class CartController extends Controller
 
         $existingCartItem = $existingCartItem->where('user_id', $user->id);
 
-        $existingCartItem->where('product_id', $product->id);
+    $existingCartItem->where('product_id', $product->id);
 
         if ($color != null) {
             $existingCartItem->where('product_information->product_color_id', $colorId);

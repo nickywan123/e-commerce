@@ -76,6 +76,12 @@ class OrderController extends Controller
 
 
    
+/*** Display order status for customer dashboard*******/
+
+    public function orderStatus(){
+        return "ORDER STATUS";
+    }
+
 
     /**
      * Show the form for creating a new resource.

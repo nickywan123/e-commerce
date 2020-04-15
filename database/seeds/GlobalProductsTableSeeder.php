@@ -56,9 +56,9 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product1_2 = Product::create([
-            'product_code' => 'single round eyeball_white casing_with GU 10_001',
-            'name' => 'Single Round Eyeball White Casing With GU 10001',
-            'name_slug' => 'single-round-eyeball-white-casing-with-gu-10001',
+            'product_code' => 'single round eyeball_white casing_with GU 20_001',
+            'name' => 'Single Round Eyeball White Casing With GU 20001',
+            'name_slug' => 'single-round-eyeball-white-casing-with-gu-20001',
             'details' => 'Lamp Size: Diameter 80mm',
             'description' => 'Eyeball are the  recessed lights that provide a slim, unobtrusive style for quality, controlled lighting in kitchens, living rooms, galleries and more.',
             'quality_id' => 2,

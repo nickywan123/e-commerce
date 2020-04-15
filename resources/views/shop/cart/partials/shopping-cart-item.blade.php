@@ -54,6 +54,9 @@
                             @if(array_key_exists('product_temperature', $cartItem->product_information))
                             <li class="text-capitalize">Color Temperature: {{ $cartItem->product_information['product_temperature'] }}</li>
                             @endif
+                            @if(array_key_exists('product_temperature', $cartItem->product_information))
+                            <li class="text-capitalize">Sold By: {{ $cartItem->product->panel->company_name }}</li>
+                            @endif
                         </ul>
                     </div>
 

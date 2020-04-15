@@ -34,12 +34,13 @@
         <div class="card shadow-sm">
             <div class="card-body">
                 @foreach($purchases as $purchase)
+                <h4 style="font-weight:bold; color:rgb(250, 172, 24);">Purchase ID: {{ $purchase->purchase_number }}</h4>
                 @foreach($purchase->orders as $order)
                 <table class="table ">
                     <tr style="background-color:rgba(0, 0, 0, 0.05);">
                         
                         <td style="font-weight: bold;">
-                            <div> Order #:{{ $purchase->purchase_number }}</div>
+                            <div> Order #:{{ $order->order_number }}</div>
                             <div> Order Date:{{ $purchase->purchase_date }}</div>
                         </td>
 
@@ -62,19 +63,19 @@
                     @foreach($order->items as $item)
                     <tr>
                         <td class="align-top" style="max-width: 400px;">
-                            <ul>
-
-                                <li>
+                           
                                     <div class="row mb-5">
                                         <div class="col-4 my-auto">
+                                            <a href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
                                             <img class="responsive-img p-1"
                                                 style="height:100px;width:100px; max-width:200px;"
                                                 src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename) }}"
-                                                alt="">
+                                                alt="Product Image">
+                                            </a>
                                         </div>
                                         <div class="col-8 my-auto">
-                                            <p class="mb-0 font-weight-bold" ><a style="color:black;"  href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">{{ $item->product->parentProduct->name }}</a>
-                                            </p>
+                                          <a style="color:black; font-weight:bold;"  href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">{{ $item->product->parentProduct->name }}</a>
+                                            
                                             <p class="text-capitalize">Sold by:
                                                 {{ $item->product->panel->company_name }}</p>
                                             <p class="text-capitalize">Unit Price:
@@ -83,10 +84,7 @@
                                             <button class="text-capitalize bjsh-btn-gradient"><a style="color:black; text-decoration:none;" href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}"> Buy It Again</a></button>
                                         </div>
                                     </div>
-                                </li>
-
-
-                            </ul>
+                              
                         </td>
                         <td class="font-weight-bold" style=" max-width: 300px;">
 
@@ -95,7 +93,7 @@
                                     <p>Quantity: {{$item->quantity}}</p>
                                 </div>
                                 <div class="col-12 ">
-                                    <p style="font-family:cursive;">Estimate Delivery Date: Pending </p>
+                                    <p style="font-family:cursive;">Estimate Delivery Date: {{$order->delivery_date}} </p>
                                 </div>
                             </div>
 

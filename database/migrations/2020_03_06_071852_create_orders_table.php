@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('panel_id');
             $table->string('order_status');
             $table->integer('order_amount');
+            $table->string('delivery_date');
             $table->timestamps();
         });
     }
