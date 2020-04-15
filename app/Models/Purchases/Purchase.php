@@ -38,4 +38,9 @@ class Purchase extends Model
     {
         return $this->hasMany('App\Models\Purchases\Payment', 'purchase_number', 'purchase_number');
     }
+
+    public function getFormattedNumber()
+    {
+        return substr($this->purchase_number, 7);
+    }
 }

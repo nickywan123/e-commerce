@@ -12,8 +12,6 @@
 */
 
 // Route for QR Code
-
-use App\Models\Purchases\Order;
 use App\Mail\Orders\CheckoutOrder;
 
 Route::get('qr-code-g', function () {
@@ -300,9 +298,15 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::group(['prefix' => 'category'], function () {
             Route::get('/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory')->name('shop.category.first');
 
-            Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}', 'Shop\ShopController@secondLevelCategory')->name('shop.category.second');
+            Route::get(
+                '/{topLevelCategorySlug}/{secondLevelCategorySlug}',
+                'Shop\ShopController@secondLevelCategory'
+            )->name('shop.category.second');
 
-            Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory')->name('shop.category.third');
+            Route::get(
+                '/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}',
+                'Shop\ShopController@thirdLevelCategory'
+            )->name('shop.category.third');
         });
 
         Route::get('/profile', 'Shop\ProfileController@index');
@@ -401,16 +405,61 @@ Route::get('/register-dealer', 'Auth\RegisterController@showDealerRegistrationFo
 Route::get('/register-panel', 'Auth\RegisterController@showPanelRegistrationForm');
 
 // Test Routes
-Route::get('/test-route/date', function () {
-    return Carbon\Carbon::now()->format('Y') . Carbon\Carbon::now()->format('m') . Carbon\Carbon::now()->format('d');
+Route::get('/tests/send-po-email-job', function () {
+    $order = App\Models\Purchases\Order::where('order_number', 'PO202004 000001')->firstOrFail();
+    $emailAddress = App\Models\Users\User::find(1)->email;
+
+    App\Jobs\Emails\SendPurchaseOrderEmail::dispatch($emailAddress, $order);
+
+    // $email = new App\Mail\Purchase\PurchaseOrderEmail($order);
+    // Mail::to($emailAddress)->send($email);
 });
 
-Route::get('/test-route/email', function () {
-    $order = Order::where('order_number', 'PO202004 000001')->first();
+Route::get('/tests/send-invoice-email-job', function () {
+    $purchase = App\Models\Purchases\Purchase::find(1);
 
-    return (new CheckoutOrder($order))->render();
+    $emailAddress = App\Models\Users\User::find(1)->email;
+
+    App\Jobs\Emails\SendInvoiceAndReceiptEmail::dispatch($emailAddress, $purchase);
 });
 
-Route::get('/test-route/success-payment', function () {
-    return view('shop.payment.success');
+Route::get('/tests/preview-send-po-email', function () {
+    $order = App\Models\Purchases\Order::where('order_number', 'PO202004 000001')->firstOrFail();
+
+    return new App\Mail\Purchase\PurchaseOrderEmail($order);
+});
+
+Route::get('/test/preview-send-invoice-receipt-email', function () {
+    $purchase = App\Models\Purchases\Purchase::find(1);
+
+    return new App\Mail\Purchase\InvoiceAndReceiptEmail($purchase);
+});
+
+Route::get('/tests/create-purchase-order-pdf', function () {
+});
+
+Route::get('/tests/create-invoice-pdf', function () {
+    $purchase = App\Models\Purchases\Purchase::find(1);
+
+    $pdf = PDF::loadView('documents.purchase.invoice', compact('purchase'));
+
+    return $pdf->stream();
+});
+
+Route::get('/tests/create-invoice-pdf-view', function () {
+    $purchase = App\Models\Purchases\Purchase::find(1);
+
+    return view('documents.purchase.invoice')
+        ->with('purchase', $purchase);
+});
+
+Route::get('/tests/create-invoice-pdf-old', function () {
+    $purchase = App\Models\Purchases\Purchase::find(1);
+
+    $pdf = PDF::loadView('documents.invoice', compact('purchase'));
+
+    return $pdf->stream();
+});
+
+Route::get('/tests/create-receipt-pdf', function () {
 });

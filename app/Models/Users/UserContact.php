@@ -21,9 +21,6 @@ class UserContact extends Model
         'is_emergency'
     ];
 
-
-
-
     /**
      * Get the user contact associated with the user.
      */

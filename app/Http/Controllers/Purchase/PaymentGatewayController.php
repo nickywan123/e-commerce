@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Purchase;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Jobs\Emails\SendInvoiceAndReceiptEmail;
+use App\Jobs\Emails\SendPurchaseOrderEmail;
 use App\Models\Globals\Cards\Issuer;
 use App\Models\Globals\PaymentGateway\MerchantID;
 use App\Models\Purchases\Payment;
@@ -54,6 +56,9 @@ class PaymentGatewayController extends Controller
 
         $purchase = Purchase::where('purchase_number', $orderId)->first();
         $user = User::find(Auth::user()->id);
+
+        $purchase->purchase_type = $paymentOption;
+        $purchase->save();
 
         if ($request->input('save_payment_info')) {
             $savePaymentInfo = true;
@@ -145,12 +150,17 @@ class PaymentGatewayController extends Controller
             foreach ($purchase->orders as $order) {
                 $order->order_status = 2;
                 $order->save();
+
+                // Queue sending PO email.
+                SendPurchaseOrderEmail::dispatch($order->panel->company_email, $order);
             }
 
             foreach ($user->carts as $cartItem) {
                 $cartItem->status = 2003;
                 $cartItem->save();
             }
+
+            SendInvoiceAndReceiptEmail($user->email, $purchase);
 
             $purchaseNumberFormatted = $str2 = substr($purchase->purchase_number, 7);
 

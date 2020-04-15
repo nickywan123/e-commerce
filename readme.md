@@ -36,4 +36,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 
 ## App Notes
-    
+    []
+
+## Composer Packages
+    [] Laravel Snappy HTML To PDF - https://github.com/barryvdh/laravel-snappy

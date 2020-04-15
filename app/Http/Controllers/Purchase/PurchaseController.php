@@ -52,7 +52,7 @@ class PurchaseController extends Controller
      */
     public function checkoutItems(Request $request)
     {
-        dd($request);
+        // dd($request);
         // Get user.
         $user = User::find(Auth::user()->id);
         // Get the items in the cart of user.
@@ -68,7 +68,9 @@ class PurchaseController extends Controller
         // Assign user to the purchase record.
         $purchase->user_id = $user->id;
         // Generate a unique number used to identify the purchase.
-        $purchase->purchase_number = 'BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT); // BJN YYYY 00000101
+        $purchase->purchase_number =
+            '0000000BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT);
+
         // Assign a status to the purchase. Unpaid, paid.
         $purchase->purchase_status = 1;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
@@ -76,7 +78,11 @@ class PurchaseController extends Controller
         // Calculate total price of items in cart.
         $purchase_amount = 0;
         foreach ($cartItems as $cartItem) {
-            $purchase_amount = $purchase_amount + $cartItem->total_price;
+            $purchase_amount =
+                $purchase_amount +
+                $cartItem->subtotal_price +
+                $cartItem->delivery_fee +
+                $cartItem->installation_fee;
         }
         $purchase->purchase_amount = $purchase_amount;
 
@@ -133,7 +139,11 @@ class PurchaseController extends Controller
                     // Assign item quantity.
                     $item->quantity = $cartItem->quantity;
                     // Assign subtotal price.
-                    $item->subtotal_price = $cartItem->total_price;
+                    $item->subtotal_price = $cartItem->subtotal_price;
+                    // Assign delivery fee.
+                    $item->delivery_fee = $cartItem->delivery_fee;
+                    // Assign installation fee.
+                    $item->installation_fee = $cartItem->installation_fee;
                     // Assign status of the item. Placed, shipped, delivered.
                     $item->status_id = 1;
                     // After checkout, cart items should be removed from cart page
@@ -149,36 +159,25 @@ class PurchaseController extends Controller
             $order->order_amount = $orderAmount;
             $order->save();
 
-            //Send the email to panel after placing order (attach with PO)
+            // //Send the email to panel after placing order (attach with PO)
+            // Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
 
-            Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));
+            // $pdf = PDF::loadView('documents.invoice', compact('purchase'))->setPaper('a4');
 
-            $pdf = PDF::loadView('documents.invoice', compact('purchase'))->setPaper('a4');
+            // // Make a copy of the PDF invoice and store in public/storage/....
+            // $content = $pdf->download()->getOriginalContent();
+            // $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            // $pdfName = $purchase->purchase_number;
+            // if (!File::isDirectory($pdfDestination)) {
+            //     File::makeDirectory($pdfDestination, 0777, true);
+            // }
+            // File::put($pdfDestination . $pdfName . '.pdf', $content);
 
-            // Make a copy of the PDF invoice and store in public/storage/....
-            $content = $pdf->download()->getOriginalContent();
-            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
-            $pdfName = $purchase->purchase_number;
-            if (!File::isDirectory($pdfDestination)) {
-                File::makeDirectory($pdfDestination, 0777, true);
-            }
-            File::put($pdfDestination . $pdfName . '.pdf', $content);
-
-            //Send email to customer after placing order( attach with invoice)
-            $message = new InvoiceEmailCustomer($purchase);
-            $message->attachData($pdf->output(), "invoice.pdf");
-            Mail::to($purchase->user->email)->send($message);
+            // //Send email to customer after placing order( attach with invoice)
+            // $message = new InvoiceEmailCustomer($purchase);
+            // $message->attachData($pdf->output(), "invoice.pdf");
+            // Mail::to($purchase->user->email)->send($message);
         }
-
-        // $paymentMethod = $request->input('options');
-
-        // if ($paymentMethod == 'offline') {
-        //     return view('shop.payment.offline')->with('purchase', $purchase);
-        // } elseif ($paymentMethod == 'fpx') {
-        //     return view('shop.payment.fpx')->with('purchase', $purchase);
-        // } elseif ($paymentMethod == 'credit') {
-        //     return view('shop.payment.credit')->with('purchase', $purchase);
-        // }
 
         return redirect('/payment/cashier?orderId=' . $purchase->purchase_number);
     }

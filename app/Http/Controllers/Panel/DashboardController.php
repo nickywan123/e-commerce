@@ -5,15 +5,11 @@ namespace App\Http\Controllers\Panel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Orders\Order;
-
 use PDF;
 
 /**
  *  Controller to handle dashboard for panel
  */
-
-
-
 class DashboardController extends Controller
 {
 

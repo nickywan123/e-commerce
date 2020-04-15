@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Mail\Orders;
+namespace App\Mail\Purchase;
 
+use App\Models\Purchases\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
-use App\Models\Purchases\Order;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-
-class CheckoutOrder extends Mailable
+class PurchaseOrderEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -22,18 +21,20 @@ class CheckoutOrder extends Mailable
      */
     public function __construct(Order $order)
     {
+        //
         $this->order = $order;
     }
 
     /**
      * Build the message.
-     * Email to panel after customer make payment
+     *
      * @return $this
      */
-
     public function build()
     {
-        return $this->subject('Bujishu Order Confirmation - ' . $this->order->order_number)
-            ->view('emails.orders.checkout-payment')->with('order', $this->order);
+        return $this->subject('An Order Has Been Placed - ' . $this->order->order_number)
+            ->view('emails.purchases.po-email')
+            ->with('order', $this->order)
+            ->attach(public_path('/storage/documents/purchase-orders/purchase_order.pdf'));
     }
 }

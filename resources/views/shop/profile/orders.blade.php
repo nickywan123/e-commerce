@@ -10,17 +10,17 @@
             <div class="col-md-9 mt-4">
                 <h3 style="font-size:40px; font-family: Nunito;"><strong>Value Records</strong></h3>
             </div>
-           
-           
+
+
             <div class="col-md-3 mt-5"><strong>3</strong> orders placed in
                 <select style="background-color:lightgrey" name="year">
-                  <option value="year">2020 </option>
-                  <option value="year">2019 </option>  
-                  <option value="year">2018 </option>     
+                    <option value="year">2020 </option>
+                    <option value="year">2019 </option>
+                    <option value="year">2018 </option>
                 </select>
             </div>
-           
-          
+
+
         </div>
         <div class="container-fluid" style="margin-top:20px;">
             <a href="#" class="orders-text-style " style="border-bottom: 2px solid rgb(250, 172, 24);"><i><strong>All
@@ -37,7 +37,7 @@
                 @foreach($purchase->orders as $order)
                 <table class="table ">
                     <tr style="background-color:rgba(0, 0, 0, 0.05);">
-                        
+
                         <td style="font-weight: bold;">
                             <div> Order #:{{ $purchase->purchase_number }}</div>
                             <div> Order Date:{{ $purchase->purchase_date }}</div>
@@ -48,7 +48,7 @@
                             <div>WayBill No: xxxxxxxxx</div>
                         </td>
                         <td style="font-weight: bold;">
-                            <div>Order Total: <?php echo 'RM ' . number_format(($order->order_amount / 100), 2); ?>
+                            <div>Order Total: <?php echo 'RM ' . number_format(($purchase->purchase_amount / 100), 2); ?>
                             </div>
                             <div>Order Status: {{$order->order_status}}</div>
                         </td>
@@ -67,13 +67,10 @@
                                 <li>
                                     <div class="row mb-5">
                                         <div class="col-4 my-auto">
-                                            <img class="responsive-img p-1"
-                                                style="height:100px;width:100px; max-width:200px;"
-                                                src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename) }}"
-                                                alt="">
+                                            <img class="responsive-img p-1" style="height:100px;width:100px; max-width:200px;" src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename) }}" alt="">
                                         </div>
                                         <div class="col-8 my-auto">
-                                            <p class="mb-0 font-weight-bold" ><a style="color:black;"  href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">{{ $item->product->parentProduct->name }}</a>
+                                            <p class="mb-0 font-weight-bold"><a style="color:black;" href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">{{ $item->product->parentProduct->name }}</a>
                                             </p>
                                             <p class="text-capitalize">Sold by:
                                                 {{ $item->product->panel->company_name }}</p>
@@ -159,12 +156,10 @@
         margin-right: 45px;
 
     }
-    
+
 
     .fa.fa-star-o {
         color: rgb(250, 172, 24);
     }
-
-    
 </style>
 @endsection
