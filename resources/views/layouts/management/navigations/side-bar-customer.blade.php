@@ -2,7 +2,7 @@
     <nav class="sidebar-nav">
         <ul class="nav sidebar-margin-top">
             <li class="nav-item ">
-                <a class="nav-link " href="/shop/profile/orders">
+                <a class="nav-link " href="/shop/dashboard/orders/index">
                     <img class="img-avatar" src="{{asset('/images/order-image.jpg')}}" alt="My Orders" style="height: 100px; width: 100px;">
                 </a>
           
@@ -10,7 +10,7 @@
          
   
             <li class="nav-item">
-                <a class="nav-link" href="/shop">
+                <a class="nav-link" href="#">
                     <img class="img-avatar" src="{{asset('/images/wish-list.png')}}" alt="Wish List" style="height: 100px; width: 100px;">
                 </a>
                 

@@ -65,21 +65,25 @@ class OrderController extends Controller
         return view('shop.order.index')->with('purchases', $purchases)->with('getCartQuantity',$getCartQuantity);
     }
 
-    /****Display orders for customer dashboard  ****/
+    /****Return ALL ORDERS in customer dashboard  ****/
 
-   public function customerOrders(){
+   public function customerAllOrders(){
     $user = User::find(Auth::user()->id);
     $purchases = $user->purchases;
     // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
-    return view('shop.profile.orders')->with('purchases', $purchases);
+    return view('shop.customer-dashboard.value-records.index')->with('purchases', $purchases);
    }
 
 
    
-/*** Display order status for customer dashboard*******/
 
-    public function orderStatus(){
-        return "ORDER STATUS";
+    /****Return Order Status in customer dashboard  ****/
+
+    public function customerOrderStatus(){
+        $user = User::find(Auth::user()->id);
+        $purchases = $user->purchases;
+        // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
+        return view('shop.customer-dashboard.value-records.order-status')->with('purchases', $purchases);
     }
 
 

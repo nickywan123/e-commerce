@@ -41,11 +41,11 @@ class ProfileController extends Controller
         });
     }
 
-    /***Handles shop/orders ***/ 
+    /***Handles shop->customer profile ***/ 
 
     public function index(){
         
-        return view('shop.profile.index');
+        return view('shop.customer-dashboard.profile.index');
     }
 
 }

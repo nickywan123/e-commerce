@@ -23,10 +23,10 @@
           
         </div>
         <div class="container-fluid" style="margin-top:20px;">
-            <a href="#" class="orders-text-style " style="border-bottom: 2px solid rgb(250, 172, 24);"><i><strong>All
+            <a href="/shop/dashboard/orders/index" class="orders-text-style " style="border-bottom: 2px solid rgb(250, 172, 24);"><i><strong>All
                         Orders</strong></i></a>
             <a href="#" class="orders-text-style"><i><strong>Open Orders</strong></i></a>
-            <a href="#" class="orders-text-style"><i><strong>Order Status</strong></i></a>
+            <a href="/shop/dashboard/orders/orders-status" class="orders-text-style"><i><strong>Order Status</strong></i></a>
             <a href="#" class="orders-text-style"><i><strong>Return Orders</strong></i></a>
             <a href="#" class="orders-text-style"><i><strong>Pending Star Ratings</strong></i></a>
         </div>
@@ -34,7 +34,7 @@
         <div class="card shadow-sm">
             <div class="card-body">
                 @foreach($purchases as $purchase)
-                <h4 style="font-weight:bold; color:rgb(250, 172, 24);">Purchase ID: {{ $purchase->purchase_number }}</h4>
+                <h4 style="font-weight:bold; color:rgb(250, 172, 24);">Purchase #: {{ $purchase->purchase_number }}</h4>
                 @foreach($purchase->orders as $order)
                 <table class="table ">
                     <tr style="background-color:rgba(0, 0, 0, 0.05);">

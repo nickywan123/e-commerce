@@ -305,9 +305,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory')->name('shop.category.third');
         });
   
-        Route::get('/profile', 'Shop\ProfileController@index');
-        
-        Route::get('/profile/orders', 'Shop\OrderController@customerOrders')->name('shop.customer.orders');
+        Route::get('/dashboard/profile/index', 'Shop\ProfileController@index');
+        // Return Customer ->Value Records -> All Orders
+        Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders')->name('shop.customer.orders');
+        // Return Customer ->Value Records -> Orders Status
+        Route::get('/dashboard/orders/orders-status', 'Shop\OrderController@customerOrderStatus')->name('shop.customer.order-status');
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 
