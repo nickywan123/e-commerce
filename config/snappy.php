@@ -36,8 +36,7 @@ return [
     'pdf' => [
         'enabled' => true,
         // Ubuntu
-        // 'binary'  => env('WKHTML_PDF_BINARY', '/usr/local/bin/wkhtmltopdf'),
-        'binary' => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"',
+        'binary'  => env('WKHTML_PDF_BINARY', '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"'),
         'timeout' => false,
         'options' => [],
         'env'     => [],
