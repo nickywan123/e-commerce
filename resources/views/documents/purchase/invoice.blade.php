@@ -8319,9 +8319,14 @@
 
 <body>
     <?php
-    $url = URL::signedRoute('confirm-order', [
-        'purchase_num' => $purchase->purchase_number,
-    ]);
+    // $url = URL::signedRoute('confirm-order', [
+    //     'purchase_num' => $purchase->purchase_number,
+    // ]);
+
+    $url = URL::signedRoute(
+        'guest.order-received',
+        ['purchaseNum' => $purchase->purchase_number]
+    );
     ?>
     <!-- Logo / Letterhead -->
     <table style="table-layout: fixed; border-collapse: collapse; width: 100%;">

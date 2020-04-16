@@ -46,15 +46,16 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(Request $request, $purchase_num)
     {
-        if (! $request->hasValidSignature()) {
+        if (!$request->hasValidSignature()) {
             abort(401);
         }
-       
-        return view('qr.confirm-order')->
-        with(['purchase'=>Purchase::where('purchase_num', $request->purchase_num)->get()]);
-     
+
+        $purchase = Purchase::where('purchase_number', $purchase_num)->first();
+
+        return view('qr.confirm-order')
+            ->with('purchase', $purchase);
     }
 
     /**

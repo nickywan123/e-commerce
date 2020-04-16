@@ -144,7 +144,8 @@ class PurchaseController extends Controller
                     // Assign status of the item. Placed, shipped, delivered.
                     $item->status_id = 1;
                     // After checkout, cart items should be removed from cart page
-                    $cartItem->status = 2002;
+                    // TODO: Change status after payment successful.
+                    // $cartItem->status = 2001;
                     $cartItem->save();
 
                     $item->save();
@@ -193,6 +194,23 @@ class PurchaseController extends Controller
         return view('shop.payment.index')
             ->with('purchase', $purchase);
     }
+
+    /**
+     * Handle QR Code scans.
+     */
+    public function qrScanned(Request $request, $purchaseNum)
+    {
+        if (!$request->hasValidSignature()) {
+            abort(401);
+        }
+
+        $purchase = Purchase::where('purchase_number', $purchaseNum)->first();
+        return $purchase;
+    }
+
+
+
+    // IF NOT USING DELETE THE ITEM BELOW PLEASE!
 
 
     /** Return invoice for the particular order in PDF format**/

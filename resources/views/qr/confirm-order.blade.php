@@ -9964,38 +9964,37 @@
             <div class="card-body">
                 <h3 class="card-title text-center p-4" style="background-color: #fccb34;">Thank you for your order.</h3>
                 <div class="pl-4 pr-4 pt-2 pb-2">
-                    
+
                     <p class="card-text">Hi, {{ $purchase->user->userInfo->full_name}}</p>
                     <br>
-                    @foreach ($purchase as $purchases)
+
                     <p class="card-text">
-                        Please confirm the items for #order{{$purchass->purchase_num}}
+                        Please confirm the items for #order{{$purchase->purchase_num}}
 
                         **Items Ordered**
-                        
-                        @foreach ($purchases->orders as $order)
-                        @foreach ($order->items as $item)                                            
-                         No:{{ $loop->iteration }}
-                         Product ID:{{ $item->product->parentProduct->id}}
-                         Product Name: {{ $item->product->parentProduct->name }}
-                         Product Unit Price(RM):{{ $item->product->price }}
-                         Quantity: {{$item->quantity}}
-                         @endforeach
-                         @endforeach
-                         <?php
-                         $subtotal = 0;
-                         ?>
-                         @foreach($purchase->orders as $order)
-                         @foreach($order->items as $item)
-                         <?php
-                         $subtotal = $subtotal + $item->subtotal_price;
-                         ?>
-                         @endforeach
-                         @endforeach
-                         <?php echo ' Total Amount(RM):' . number_format(($subtotal / 100), 2); ?>
-                        
+
+                        @foreach ($purchase->orders as $order)
+                        @foreach ($order->items as $item)
+                        No:{{ $loop->iteration }}
+                        Product ID:{{ $item->product->parentProduct->id}}
+                        Product Name: {{ $item->product->parentProduct->name }}
+                        Product Unit Price(RM):{{ $item->product->price }}
+                        Quantity: {{$item->quantity}}
+                        @endforeach
+                        @endforeach
+                        <?php
+                        $subtotal = 0;
+                        ?>
+                        @foreach($purchase->orders as $order)
+                        @foreach($order->items as $item)
+                        <?php
+                        $subtotal = $subtotal + $item->subtotal_price;
+                        ?>
+                        @endforeach
+                        @endforeach
+                        <?php echo ' Total Amount(RM):' . number_format(($subtotal / 100), 2); ?>
+
                     </p>
-                    @endforeach
                     <p>Please click Confirm if the items you purchase are correct.</p>
                     <p class="card-text">
                         <button type="button" class="btn btn-success">Confirm</button>
