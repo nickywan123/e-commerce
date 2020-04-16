@@ -298,10 +298,13 @@
                             <p class="card-text">Hi {{ $purchase->user->userInfo->full_name }},</p>
                             <br>
                             <p class="card-text">
-                                Just to let you know - we've received your order #{{ $purchase->purchase_number }}, and it is now being processed.
+                                Thank you for shopping on Bujishu.
                                 <br>
                                 <br>
-                                Attached herewith your invoice and receipt.
+                                We have received your order #{{ $purchase->getFormattedNumber() }} on {{ $purchase->updated_at->format('d/m/Y') }} at {{ $purchase->updated_at->format('g:i A')}}.
+                                <br>
+                                <br>
+                                Your order is now being processed. Attached herewith is your invoice & receipt.
                             </p>
                             <div style="height: 80px;"></div>
                             <p class="card-text mb-1">Regards,</p>

@@ -58,8 +58,6 @@ Route::view('/wip', 'errors.wip');
 /**
  * Real routes.
  */
-// Authentication routes. Verification is set to true.
-Auth::routes(['verify' => true]);
 
 // Guest routes.
 Route::group(['middleware' => ['guest']], function () {
@@ -77,6 +75,9 @@ Route::group(['middleware' => ['guest']], function () {
         ->name('guest.order-received')
         ->middleware('signed');
 });
+
+// Authentication routes. Verification is set to true.
+Auth::routes(['verify' => true]);
 
 /**
  * Any routes that needs a user to be logged in with a verified account,

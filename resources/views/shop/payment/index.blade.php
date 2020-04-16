@@ -175,20 +175,22 @@
                     <!-- Payment options tabs -->
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link text-center" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                                <img src="https://via.placeholder.com/72" alt="">
-                                <p class="mt-2">Credit/Debit Card</p>
+                            <a class="nav-link text-center disabled" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                <img style="width: 72px; height: 72px;" src="{{ asset('storage/icons/payments/payment-card.png') }}" alt="">
+                                <p class="mt-2 mb-0">Credit/Debit Card</p>
+                                <p>(Not Available)</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                                <img src="https://via.placeholder.com/72" alt="">
-                                <p class="mt-2">Online Banking</p>
+                            <a class="nav-link text-center disabled" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                                <img style="width: 72px; height: 72px;" src="{{ asset('storage/icons/payments/payment-fpx.png') }}" alt="">
+                                <p class="mt-2 mb-0">Online Banking</p>
+                                <p>(Not Available)</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-center" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                                <img src="https://via.placeholder.com/72" alt="">
+                                <img style="width: 72px; height: 72px;" src="{{ asset('storage/icons/payments/payment-offline.png') }}" alt="">
                                 <p class="mt-2">Offline Payment</p>
                             </a>
                         </li>
@@ -288,14 +290,14 @@
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="text-muted">
                                 <div>
-                                    <form action="">
+                                    <form id="offline-form" action="/payment?orderId={{ $purchase->purchase_number }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-row">
                                             <div class="col-12 col-md-5 mb-1 form-group">
                                                 <label for="reference_number">Reference Number <small class="text-danger">*</small></label>
                                                 <input type="text" class="form-control" name="reference_number" id="reference_number" placeholder="Payment Reference Number">
                                                 <div class="valid-feedback feedback-icon">
-                                                    <i class="fa"></i>
+                                                    <i class="fa fa-check"></i>
                                                 </div>
                                                 <div class="invalid-feedback feedback-icon">
                                                     <i class="fa fa-times"></i>
@@ -307,9 +309,16 @@
                                             <div class="col-12 col-md-5 mb-1 form-group">
                                                 <label for="payment_proof">Upload Payment Proof <small>*</small></label>
                                                 <div class="custom-file">
-                                                    <input type="file" name="payment_proof" class="custom-file-input" id="payment_proof" required>
+                                                    <input type="file" name="payment_proof" class="custom-file-input" id="payment_proof_input" required>
                                                     <label class="custom-file-label" for="payment_proof">Choose File <small>(.jpg, .png)</small></label>
                                                 </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row mt-2">
+                                            <div class="col-12 col-md-5">
+                                                <input type="hidden" name="payment_option" value="offline">
+                                                <button class="btn btn-warning btn-block" type="submit">Submit Payment</button>
                                             </div>
                                         </div>
                                     </form>
@@ -350,11 +359,13 @@
 
     <script>
         $(document).ready(function() {
+            /* Author: Wan Shahruddin */
             // Display tab pane when anchor tag is clicked.
             $('.nav-link').on('click', function() {
                 $('#myTabContent').css('border', '1px solid #dee2e6');
             });
 
+            // Credit/Debit Card JS
             // Credit card pattern recognition algorithm.
             function detectCardType(number) {
                 var re = {
@@ -378,7 +389,7 @@
                 }
             }
 
-            // Form Validation.
+            // Form Validation - Credit/Debit Card.
             let cardNumber = null;
             let ccIcon = $('.valid-feedback.feedback-icon.with-cc-icon i');
             // Card Number.
@@ -428,30 +439,31 @@
                 }
             });
 
-
-            let error;
-
             $('#card-form').on('submit', function(e) {
-                error = 0;
+                let error = 0;
 
                 if (
                     $('#card_number').val().length < 7 ||
                     cardType == undefined
                 ) {
                     error = error + 1;
-                    $(this).focus();
+                    $('#card_number').addClass('is-invalid');
+                    $('#card_number').focus();
                 }
                 if ($('#name_on_card').val().length == 0) {
                     error = error + 1;
-                    $(this).focus();
+                    $('#name_on_card').addClass('is-invalid');
+                    $('#name_on_card').focus();
                 }
                 if ($('#expiry_date').val().length != 4 || !$.isNumeric($('#expiry_date').val())) {
                     error = error + 1;
-                    $(this).focus();
+                    $('#expiry_date').addClass('is-invalid');
+                    $('#expiry_date').focus();
                 }
                 if ($('#cvv').val().length < 3 || !$.isNumeric($('#cvv').val())) {
                     error = error + 1;
-                    $(this).focus();
+                    $('#cvv').addClass('is-invalid');
+                    $('#cvv').focus();
                 }
 
                 if (error == 0) {
@@ -460,6 +472,58 @@
                     return false;
                 }
             });
+
+            // End Form Validation - Credit/Debit Card
+            // End Credit/Debit Card JS
+
+            // Form Validation - FPX
+
+            // End Form Validation - FPX
+
+
+            // Offline JS
+            let fileName = null;
+            let nextSibling = null;
+
+            // Change file input label to filename when a file has been selected.
+            $('.custom-file-input').on('change', function(e) {
+                fileName = $('#payment_proof_input').val().split('\\').pop();
+                nextSibling = e.target.nextElementSibling;
+                nextSibling.innerText = fileName
+            });
+
+            $('#reference_number').on('keyup', function() {
+                if ($(this).val().length < 1 || $(this).val() == '') {
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                } else {
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                }
+            });
+
+            // Form Validation - Offline
+            $('#offline-form').on('submit', function(e) {
+                let error = 0;
+
+                if (
+                    $('#reference_number').val().length < 1 ||
+                    $('#reference_number').val() == ''
+                ) {
+                    error = error + 1;
+                    $('#reference_number').addClass('is-invalid');
+                }
+
+                if (error == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            // End Offline JS
+            // End Form Validation - Offline
+
+            /* End Author */
 
         });
     </script>

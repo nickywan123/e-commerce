@@ -21,6 +21,7 @@ class CreatePurchasesTable extends Migration
             $table->string('purchase_type')->nullable();
             $table->string('purchase_date');
             $table->integer('purchase_amount');
+            $table->string('offline_reference')->nullable();
             $table->string('payment_proof')->nullable();
             $table->timestamps();
         });

@@ -72,7 +72,7 @@ class PurchaseController extends Controller
             '0000000BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT);
 
         // Assign a status to the purchase. Unpaid, paid.
-        $purchase->purchase_status = 1;
+        $purchase->purchase_status = 3001;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
         $purchase->purchase_date = Carbon::now()->format('d/m/Y');
         // Calculate total price of items in cart.

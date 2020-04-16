@@ -33,6 +33,9 @@ class InvoiceAndReceiptEmail extends Mailable
     {
         return $this->subject('Bujishu Order Confirmation - ' . $this->purchase->purchase_number)
             ->view('emails.purchases.invoice-receipt-email')
-            ->with('purchase', $this->purchase);
+            ->with('purchase', $this->purchase)
+            ->attach(public_path(
+                '/storage/documents/invoice/' . $this->purchase->purchase_number . '/' . $this->purchase->purchase_number . '.pdf'
+            ));
     }
 }
