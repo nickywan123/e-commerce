@@ -9944,7 +9944,8 @@
                 border: 1px solid #ddd !important
             }
         }
-        .logo-styling{
+
+        .logo-styling {
             height: auto;
             width: 150px;
             margin-top: 20px;
@@ -9959,7 +9960,7 @@
     <div class="container">
         <div class="row mb-3 mt-3">
             <div class="col-4 offset-4">
-                <img class="mx-auto mw-100 p-4 logo-styling" src="{{ $message->embed(asset('/storage/logo/Bujishu-logo.png')) }}" alt="Bujishu Logo">
+                <img class="mx-auto mw-100 p-4 logo-styling" src="http://bujishu.test/storage/logo/Bujishu-logo.png" alt="Bujishu Logo">
             </div>
         </div>
         <div class="row">

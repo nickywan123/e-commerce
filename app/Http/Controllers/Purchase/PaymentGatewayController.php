@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Purchase;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Jobs\Emails\SendInvoiceAndReceiptEmail;
+use App\Jobs\Emails\SendPurchaseOrderEmail;
 use App\Models\Globals\Cards\Issuer;
 use App\Models\Globals\PaymentGateway\MerchantID;
 use App\Models\Purchases\Payment;
@@ -13,7 +15,9 @@ use App\Models\Users\User;
 use Auth;
 use Illuminate\Support\Facades\URL;
 use App\Models\Categories\Category;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
+use PDF;
 
 class PaymentGatewayController extends Controller
 {
@@ -28,14 +32,14 @@ class PaymentGatewayController extends Controller
             // Check if user is authenticated or not.
             if (Auth::check()) {
                 // If authenticated, then get their cart.
-                $this->cart = Auth::user()->carts->where('status', 2001);
+                $this->cart = Auth::user()->carts->where('status', 2001)->sum('quantity');
             }
             // Get all categories, with subcategories and its images.
             $categories = Category::topLevelCategory();
 
             // Share the above variable with all views in this controller.
             View::share('categories', $categories);
-            View::share('cart', $this->cart);
+            View::share('getCartQuantity', $this->cart);
 
             // Return the request.
             return $next($request);
@@ -54,6 +58,9 @@ class PaymentGatewayController extends Controller
 
         $purchase = Purchase::where('purchase_number', $orderId)->first();
         $user = User::find(Auth::user()->id);
+
+        $purchase->purchase_type = $paymentOption;
+        $purchase->save();
 
         if ($request->input('save_payment_info')) {
             $savePaymentInfo = true;
@@ -108,7 +115,88 @@ class PaymentGatewayController extends Controller
             // Handle fpx payment option
         }
 
-        return $request;
+        // Handle if payment option offline is selected.
+        if ($paymentOption == 'offline') {
+            $file = $request->file('payment_proof');
+            $fileExtension = $file->getClientOriginalExtension();
+            $fileName = $purchase->purchase_number . '-payment' . '.' . $fileExtension;
+            $destinationPath =
+                public_path('/storage/uploads/images/users/' . $purchase->user->userInfo->account_id . '/payments');
+
+            $filename = $purchase->purchase_number . 'payment-proof';
+
+            if (!File::isDirectory($destinationPath)) {
+                File::makeDirectory($destinationPath, 0777, true);
+            }
+            $file->move($destinationPath, $fileName);
+
+            $purchase->payment_proof =
+                '/storage/uploads/images/users/' . $purchase->user->userInfo->account_id . '/payments' . $fileName;
+
+            $purchase->offline_reference = $request->input('reference_number');
+
+            $purchase->purchase_status = 3004; // Pending Review - Offline
+
+            $purchase->save();
+
+            $purchaseNumberFormatted = $str2 = substr($purchase->purchase_number, 7);
+
+            // TODO: Move this to OfflinePaymentController later!
+            // Admin is supposed to verify offline payment first before it is labeled success.
+            // Temporary solution for deadlines on 17/04/2020.
+            $payment = new Payment;
+            $payment->purchase_number = $purchase->purchase_number;
+            $payment->gateway_string_result = '-';
+            $payment->gateway_response_code = '00';
+            $payment->auth_code = $request->input('reference_number');
+            $payment->last_4_card_number = '-';
+            $payment->expiry_date = '-';
+            $payment->amount = $purchase->purchase_amount;
+            $payment->gateway_eci = '-';
+            $payment->gateway_security_key_res = '-';
+            $payment->gateway_hash = '-';
+            $payment->save();
+
+            foreach ($purchase->orders as $order) {
+                // Generate PO PDF.
+                // 
+
+                // Queue PO email to panels.
+                SendPurchaseOrderEmail::dispatch($order->panel->company_email, $order);
+            }
+
+            // Generate Invoice PDF.
+            // Generate PDF.
+            $pdf = PDF::loadView('documents.purchase.invoice', compact('purchase'));
+            // Get PDF content.
+            $content = $pdf->download()->getOriginalContent();
+            // Set path to store PDF file.
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            // Set PDF file name.
+            $pdfName = $purchase->purchase_number;
+            // Check if directory exist or not.
+            if (!File::isDirectory($pdfDestination)) {
+                // If not exist, create the directory.
+                File::makeDirectory($pdfDestination, 0777, true);
+            }
+            // Place the PDF into directory.
+            File::put($pdfDestination . $pdfName . '.pdf', $content);
+
+            // Queue Invoice email to customer.
+            SendInvoiceAndReceiptEmail::dispatch($user->email, $purchase);
+
+            // TODO: Move this to OfflinePaymentController later!
+            // Admin is supposed to verify offline payment first before it is labeled success.
+            // Temporary solution for deadlines on 17/04/2020.
+            foreach ($user->carts as $cartItem) {
+                $cartItem->status = 2003;
+                $cartItem->save();
+            }
+
+            return view('shop.payment.success')
+                ->with('purchase', $purchase)
+                ->with('purchaseNumberFormatted', $purchaseNumberFormatted);
+        }
         //
     }
 
@@ -145,12 +233,17 @@ class PaymentGatewayController extends Controller
             foreach ($purchase->orders as $order) {
                 $order->order_status = 2;
                 $order->save();
+
+                // Queue sending PO email.
+                SendPurchaseOrderEmail::dispatch($order->panel->company_email, $order);
             }
 
             foreach ($user->carts as $cartItem) {
                 $cartItem->status = 2003;
                 $cartItem->save();
             }
+
+            SendInvoiceAndReceiptEmail($user->email, $purchase);
 
             $purchaseNumberFormatted = $str2 = substr($purchase->purchase_number, 7);
 

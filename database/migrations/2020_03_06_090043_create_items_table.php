@@ -20,6 +20,8 @@ class CreateItemsTable extends Migration
             $table->text('product_information');
             $table->unsignedInteger('quantity');
             $table->unsignedInteger('subtotal_price');
+            $table->unsignedBigInteger('delivery_fee');
+            $table->unsignedBigInteger('installation_fee');
             $table->integer('status_id');
             $table->timestamps();
         });

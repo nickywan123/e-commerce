@@ -16,7 +16,7 @@ class NewOrderSendEmail implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $customerEmailDetails;
-    protected $newOrder;
+    public $newOrder;
 
     /**
      * Create a new job instance.

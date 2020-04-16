@@ -64,4 +64,28 @@ class UserInfo extends Model
     {
         return $query->max('account_id');
     }
+
+    public function shippingAddress()
+    {
+        return $this->hasOne('App\Models\Users\UserAddress', 'account_id', 'account_id')
+            ->where('is_shipping_address', 1);
+    }
+
+    public function mobileContact()
+    {
+        return $this->hasOne('App\Models\Users\UserContact', 'account_id', 'account_id')
+            ->where('is_mobile', 1);
+    }
+
+    public function homeContact()
+    {
+        return $this->hasOne('App\Models\Users\UserContact', 'account_id', 'account_id')
+            ->where('is_home', 1);
+    }
+
+    public function officeContact()
+    {
+        return $this->hasOne('App\Models\Users\UserContact', 'account_id', 'account_id')
+            ->where('is_office', 1);
+    }
 }
