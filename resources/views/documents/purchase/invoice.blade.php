@@ -8462,8 +8462,8 @@
                 <div style="">
                     <table style="width: 100%;">
                         <tr>
-                            <td colspan="2" style="background-color: #ababab; padding: 6px 4px; text-align: center; border: 1px solid #000000;">
-                                <p style="color: #ad000e; margin: 0;">
+                            <td colspan="2" style="background-color: #ababab !important; padding: 6px 4px; text-align: center; border: 1px solid #000000;">
+                                <p style="color: #ad000e !important; margin: 0;">
                                     INVOICE / RECEIPT
                                 </p>
                             </td>
@@ -8627,7 +8627,7 @@
                                 <div style="border: 1px solid #000; display: inline-block;">
                                     <table style="width: 400px; margin: 0 auto;">
                                         <tr>
-                                            <td style="text-align: center; background-color: rgba(0, 0, 0, .175); padding: 6px; border-bottom: 1px solid #000000;">
+                                            <td style="text-align: center; background-color: #ababab !important; padding: 6px; border-bottom: 1px solid #000000;">
                                                 Payment Received
                                             </td>
                                         </tr>
