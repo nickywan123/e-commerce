@@ -40,3 +40,25 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## Composer Packages
     [] Laravel Snappy HTML To PDF - https://github.com/barryvdh/laravel-snappy
+    //Get package
+    wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+
+    sudo apt install wkhtmltopdf
+
+    //create symlink.
+    sudo ln -s /usr/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
+
+    //At this point you can run this command to test that everything works.
+    /usr/local/bin/wkhtmltopdf google.com google.pdf
+
+    //Command above will give you the following error - QXcbConnection: Could not connect to display Aborted (core dumped)
+    //This is due to a bug in the debian packages, or something like that :) 
+    //Solution taken from here - http://unix.stackexchange.com/questions/192642/wkhtmltopdf-qxcbconnection-could-not-connect-to-display
+    sudo apt install xvfb
+
+    //Now in the snappy config file change this
+    'binary'  => '/usr/local/bin/wkhtmltopdf',
+    //To
+    'binary'  => '/usr/bin/xvfb-run -- /usr/local/bin/wkhtmltopdf',
+
+    It should work now.

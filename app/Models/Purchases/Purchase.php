@@ -39,8 +39,19 @@ class Purchase extends Model
         return $this->hasMany('App\Models\Purchases\Payment', 'purchase_number', 'purchase_number');
     }
 
+    public function successfulPayment()
+    {
+        return $this->hasOne('App\Models\Purchases\Payment', 'purchase_number', 'purchase_number')
+            ->where('gateway_response_code', '00');
+    }
+
     public function getFormattedNumber()
     {
         return substr($this->purchase_number, 7);
+    }
+
+    public function getFormattedDate()
+    {
+        return $this->created_at->format('d/m/Y');
     }
 }

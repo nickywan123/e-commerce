@@ -117,9 +117,6 @@ class PurchaseController extends Controller
             $order->order_status = 'Placed';
             // Assign empty value for order amount first.
             $orderAmount = 0;
-            $order->order_amount = 0;
-
-            $order->save();
 
             $panelId = $key;
 
@@ -152,7 +149,10 @@ class PurchaseController extends Controller
 
                     $item->save();
 
-                    $orderAmount = $orderAmount + $cartItem->total_price;
+                    $orderAmount = $orderAmount +
+                        $cartItem->subtotal_price +
+                        $cartItem->delivery_fee +
+                        $cartItem->installation_fee;
                 }
             }
 
