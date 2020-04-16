@@ -138,18 +138,17 @@
                                     My Account
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user " style="color:#fbcc34;"></i> Profile <small>(WIP)</small></a>
-                                    <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Orders <small>(WIP)</small></a>
-                                    <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart " style="color:#fbcc34;"></i> My Cart <small>(WIP)</small></a>
+                                    <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user" style="color:#fbcc34;"></i> Profile </a>
+                                    <a class="dropdown-item" href="/shop/profile/orders"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> Value Records </a>
                                     @hasrole('panel')
-                                    <a href="/management/panel" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
+                                    <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
                                     @endhasrole
                                     @hasrole('dealer')
-                                    <a href="/management/dealer" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
+                                    <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                     @endhasrole
                                     <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                        <i class="fa fa-sign-out-alt" style="color:#fbcc34;"></i> {{ __('Logout') }}
+                                        <i class="fa fa-sign-out-alt" style="color: #fbcc34;"></i> {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -287,8 +286,34 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <div class="text-center text-muted">
-                                Coming Soon!
+                            <div class="text-muted">
+                                <div>
+                                    <form action="">
+                                        @csrf
+                                        <div class="form-row">
+                                            <div class="col-12 col-md-5 mb-1 form-group">
+                                                <label for="reference_number">Reference Number <small class="text-danger">*</small></label>
+                                                <input type="text" class="form-control" name="reference_number" id="reference_number" placeholder="Payment Reference Number">
+                                                <div class="valid-feedback feedback-icon">
+                                                    <i class="fa"></i>
+                                                </div>
+                                                <div class="invalid-feedback feedback-icon">
+                                                    <i class="fa fa-times"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-12 col-md-5 mb-1 form-group">
+                                                <label for="payment_proof">Upload Payment Proof <small>*</small></label>
+                                                <div class="custom-file">
+                                                    <input type="file" name="payment_proof" class="custom-file-input" id="payment_proof" required>
+                                                    <label class="custom-file-label" for="payment_proof">Choose File <small>(.jpg, .png)</small></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
