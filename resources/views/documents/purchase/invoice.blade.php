@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bujishu - Invoce {{ $purchase->purchase_number }}</title>
+    <title>Bujishu - Invoice {{ $purchase->purchase_number }}</title>
     <style>
         /*!
         * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -8330,7 +8330,7 @@
                 <img style="width: 130px; height: auto;" src="{{ asset('images/Invoice-Logo.png') }}" alt="">
             </td>
             <td style="text-align: right;">
-                <img src="data:images/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate($url)) }} ">
+                <img style="height: 200px; width: 200px;" src="data:images/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate($url)) }} ">
             </td>
         </tr>
     </table>
@@ -8564,7 +8564,7 @@
                                 <table>
                                     <tr style="font-size: 10pt;">
                                         <td style="padding: 4px; vertical-align: top;">
-                                            <img src="{{ asset('storage/' . $item->product->parentProduct->defaultImage->path . '/' . $item->product->parentProduct->defaultImage->filename) }}" alt="{{ $item->product->parentProduct->name }}" style="max-width: 35px; height: auto; border-radius: 10px;">
+                                            <img src="{{ asset('storage/' . $item->product->parentProduct->defaultImage->path . '/' . $item->product->parentProduct->defaultImage->filename) }}" alt="{{ $item->product->parentProduct->name }}" style="width: 35px; height: auto; border-radius: 10px;">
                                         </td>
                                         <td style="padding: 4px; vertical-align: top;">
                                             <p style="margin-bottom: 5px;">
