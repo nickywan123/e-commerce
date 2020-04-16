@@ -1,4 +1,4 @@
-<div class="middleBar" style="border-bottom: 3px solid #fccb34;">
+<div class="middleBar" style="border-bottom: 1px solid #fccb34;">
     <div class="container-90">
         <div class="row d-flex">
             <div class="col-sm-2 vertical-align mt-2 mb-3">
@@ -111,7 +111,7 @@
                                 <a class="dropdown-item" href="/shop/dashboard/orders/index"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> Value Records </a>
                                 
                                 @hasrole('panel')
-                                <a href="/management/panel" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
+                                <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
                                 @endhasrole
                                 @hasrole('dealer')
                                 <a href="/management/dealer" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>

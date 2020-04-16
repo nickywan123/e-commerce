@@ -13,7 +13,7 @@
 }
 
 .sidebar .nav-link:hover {
-    background-color: white;
+    background-color: black;
     color: black;
 
     .icon-color {
@@ -22,7 +22,7 @@
 }
 
 .sidebar .nav-link.active {
-    background-color: #fffcfc;
+    background-color: black;
 }
 
 .sidebar .nav-dropdown.open .nav-link {
@@ -38,14 +38,14 @@
 }
 
 .sidebar-margin-top {
-    margin-top: 30%;
+    margin-top: 40%;
 }
 
 .sidebar .sidebar-nav {
-    width: 150px;
+    width: 100px;
 }
 
 .app-body .sidebar {
-    flex: 0 0 150px;
+    flex: 0 0 100px;
     order: -1;
 }

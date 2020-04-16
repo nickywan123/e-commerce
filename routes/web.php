@@ -229,7 +229,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'management', 'middleware' => ['role:dealer|panel|administrator']], function () {
 
         // Dashboard-Panel
-        Route::get('/panel', 'Management\ManagementController@index')->name('management.home');
+        Route::get('/panel/orders', 'Management\ManagementController@index')->name('management.home');
         Route::get('/orders/all', 'Management\ManagementController@allOrders');
         Route::get('/orders/open', 'Management\ManagementController@openOrders');
         Route::get('/orders/in-progress', 'Management\ManagementController@inProgressOrders');
@@ -305,7 +305,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::get('/{topLevelCategorySlug}/{secondLevelCategorySlug}/{thirdLevelCategory}', 'Shop\ShopController@thirdLevelCategory')->name('shop.category.third');
         });
   
-        Route::get('/dashboard/profile/index', 'Shop\ProfileController@index');
+        Route::get('/dashboard/profile/index', 'Shop\ProfileController@index')->name('shop.dashboard.customer.profile');
         // Return Customer ->Value Records -> All Orders
         Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders')->name('shop.customer.orders');
         // Return Customer ->Value Records -> Orders Status

@@ -76,9 +76,9 @@
         </div>
 
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/cabinet"><img class="icon-image"
-                    src="{{asset('/storage/icons/cupboard-icon.png')}}" alt="Icon">
-                <h5 class="margin-left-text" style="font-size:30px; ">Cabinet</h5>
+            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/lightings"><img class="icon-image"
+                    src="{{asset('/storage/icons/lighting.png')}}" alt="Icon">
+                <h5 class="margin-left-text" style="font-size:30px; ">Lighting</h5>
             </a>
 
         </div>

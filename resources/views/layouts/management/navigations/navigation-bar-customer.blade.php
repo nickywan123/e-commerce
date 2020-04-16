@@ -2,15 +2,15 @@
 
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon" ></span>
-    </button>
-
+    </button> 
+     
     <button class="navbar-toggler sidebar-toggler d-md-down-none"  type="button" data-toggle="sidebar-lg-show">
-        {{-- <span class="navbar-toggler-icon"></span> --}}
         <i class="fa fa-bars navigation-icon"></i>
     </button>
+   
 
     <a class="navbar-brand img-logo-margin-left" href="/shop">
-        <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="89" height="50" alt="Bujishu Logo">
+        <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="40" height="40" alt="Bujishu Logo">
         <img class="navbar-brand-minimized" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
 
@@ -54,9 +54,13 @@
                     <i class="fa fa-shield"></i> Lock Account</a> --}}
                 {{-- <a class="dropdown-item" href="#">
                     <i class="fa fa-lock"></i> Logout</a> --}}
+                    <a class="dropdown-item" href="{{ route('shop.dashboard.customer.profile') }}">
+                        <i class="fa fa-user" style="color:#fbcc34;"></i> My Profile
+                        
+                    </a>
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                  <i class="fa fa-lock" style="color:#fbcc34;"></i>  {{ __('Logout') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf

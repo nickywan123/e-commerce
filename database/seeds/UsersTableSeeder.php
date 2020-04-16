@@ -89,7 +89,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1913000001;
+            $largestCustomerId = 1918000001;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -97,7 +97,7 @@ class UsersTableSeeder extends Seeder
         // User_infos table.
         $userInfo = new UserInfo;
         $userInfo->user_id = $user->id;
-        $userInfo->account_id = $largestCustomerId;
+        $userInfo->account_id = 1918000001;
         $userInfo->full_name = 'Bujishu Panel';
         $userInfo->nric = '951119105605';
         $userInfo->referrer_id = 0;
@@ -144,7 +144,7 @@ class UsersTableSeeder extends Seeder
         // Panel_infos table.
         $panelInfo = new PanelInfo;
         $panelInfo->user_id = $user->id;
-        $panelInfo->account_id = $largestPanelId;
+        $panelInfo->account_id = 1918000001;
         $panelInfo->company_name = 'Bujishu Sdn Bhd';
         $panelInfo->ssm_number = '12345-K';
         $panelInfo->company_email = 'bujishupanel@email.com';
@@ -192,7 +192,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1913000001;
+            $largestCustomerId = 1918000001;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -351,7 +351,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1913000001;
+            $largestCustomerId = 1918000001;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }

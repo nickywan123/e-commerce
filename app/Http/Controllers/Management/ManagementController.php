@@ -2,16 +2,34 @@
 
 namespace App\Http\Controllers\Management;
 
+use Auth;
+use Carbon\Carbon;
+use App\Models\Users\User;
 use Illuminate\Http\Request;
+use App\Models\Purchases\Order;
 use App\Http\Controllers\Controller;
 
 class ManagementController extends Controller
 {
 
-    //return home page for panel dashboard
+    // Return Shop -> Panel -> All Orders-> index
     public function index(){
+ 
+        // Get panel
 
-        return view("management.index.index");
+        $panel_id= User::find(Auth::user()->id);
+        $panel_id= $panel_id->userInfo->account_id;
+        $customerOrders = new Order;
+        $customerOrders= $customerOrders->where('panel_id',$panel_id)->get();
+        
+        // Get the order date and current date to return pending days
+    //     $today = Carbon::today()->toDateString();
+    //     $date = Carbon::createFromFormat('d/m/Y',$today);
+    //     $date1 = Carbon::createFromFormat('d/m/Y', '14/04/2020');
+    //    $diff=Carbon::parse($date1)->diffInDays($date);
+
+    //     dd(Carbon::today()->toDateString());
+        return view("management.panel.index")->with('customerOrders',$customerOrders);
     }
 
     // View all orders-panel
