@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->integer('order_amount');
             $table->string('delivery_date')->nullable();;
             $table->string('received_date')->nullable();
-            $table->string('claim_status');
+            $table->string('claim_status')->nullable();
 
             $table->timestamps();
         });
