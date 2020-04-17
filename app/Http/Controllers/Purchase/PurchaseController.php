@@ -43,7 +43,8 @@ class PurchaseController extends Controller
 
             // Share the above variable with all views in this controller.
             View::share('categories', $categories);
-            View::share('cart', $this->cart);
+            // TODO: Check why is it causing an error on the server.
+            //View::share('cart', $this->cart);
 
             // Return the request.
             return $next($request);
