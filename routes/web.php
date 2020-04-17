@@ -208,6 +208,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::post('/checkout/offline', 'Purchase\PurchaseController@offlinePaymentStore');
         });
 
+        Route::group(['prefix' => 'buy'], function () {
+            Route::post('buy-now', 'Purchase\PurchaseController@buyNow')
+                ->name('shop.buy.buy-now');
+        });
+
         Route::group(['prefix' => 'wishlist'], function () {
             Route::get('/', 'Development\ComingSoonController@index');
         });

@@ -131,7 +131,17 @@
                     <!-- Add to cart / buy now -->
                     <div class="row no-gutters">
                         <div class="col-6 p-1 m-0">
-                            <button class="btn btn-lg bjsh-btn-gradient font-weight-bold w-100">Buy Now</button>
+                            <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.buy.buy-now') }}">
+                                @method('POST')
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $panelProduct->id }}">
+                                <input type="hidden" id="product_attribute_color" name="product_attribute_color" value="">
+                                <input type="hidden" id="product_attribute_size" name="product_attribute_size" value="">
+                                <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
+
+                                <input type="hidden" name="productQuantity" value="1">
+                                <button type="submit" class="btn btn-lg bjsh-btn-gradient font-weight-bold w-100" style="color: #1a1a1a;">Buy Now</button>
+                            </form>
                         </div>
                         <div class="col-6 p-1 m-0">
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.add-item') }}">
@@ -145,7 +155,6 @@
                                 <input type="hidden" name="productQuantity" value="1">
                                 <button type="submit" class="btn btn-lg bjsh-btn-gradient font-weight-bold w-100" style="color: #1a1a1a;">Add To Cart</button>
                             </form>
-
                         </div>
                     </div>
                 </div>
