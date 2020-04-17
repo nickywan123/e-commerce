@@ -45,15 +45,14 @@
       @foreach ($customerOrders as $customerOrder)
       @foreach ($customerOrder->items as $item)                  
          <tr >
-            <td>{{$customerOrder->order_number}}</td>
-            <td>{{$item->product_id}}</td>
+            <td><a href="/management/panel/orders/purchase-order-pdf/{{$customerOrder->order_number}}">{{$customerOrder->order_number}}</a></td>
+            <td> {{ $item->product->parentProduct->product_code }}</td>
             <td>{{$item->product->parentProduct->name}}</td>
-            <td>{{$customerOrder->purchase->purchase_date}}</td>
+            <td>{{$customerOrder->getFormattedDate()}}</td>
             <td> <input  name='delivery_date' value="{{$customerOrder->delivery_date}}" class="date form-control" type="text" placeholder="Select delivery date" required autocomplete="off"></td>
            
            
-            <td>     
-            </td>
+            <td> {{$customerOrder->getPendingAttribute()}}    </td>
            
             <td>{{$customerOrder->order_status}}</td>
             <td>{{$customerOrder->received_date}}</td>

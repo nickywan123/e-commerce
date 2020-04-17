@@ -90,6 +90,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         // Dashboard-Panel
         Route::get('/panel/orders', 'Management\ManagementController@index')->name('management.home');
+        Route::get('/panel/company-profile', 'Management\ManagementController@companyProfile')->name('management.company.profile');
+        Route::get('/panel/orders/purchase-order-pdf/{order_num}', 'Management\ManagementController@viewPurchaseOrder');
+        
         Route::get('/orders/all', 'Management\ManagementController@allOrders');
         Route::get('/orders/open', 'Management\ManagementController@openOrders');
         Route::get('/orders/in-progress', 'Management\ManagementController@inProgressOrders');
@@ -294,13 +297,18 @@ Route::get('/test/preview-send-invoice-receipt-email', function () {
 });
 
 Route::get('/tests/create-purchase-order-pdf', function () {
+    $order = App\Models\Purchases\Order::first();
+
+    $pdf = PDF::loadView('documents.order.purchase-order', compact('order'));
+    
+    return $pdf->stream();
 });
 
 Route::get('/tests/create-invoice-pdf', function () {
     $purchase = App\Models\Purchases\Purchase::find(1);
 
     $pdf = PDF::loadView('documents.purchase.invoice', compact('purchase'));
-
+    
     return $pdf->stream();
 });
 

@@ -2,6 +2,7 @@
 
 namespace App\Models\Purchases;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -41,5 +42,30 @@ class Order extends Model
     public function panel()
     {
         return $this->belongsTo('App\Models\Users\Panels\PanelInfo', 'panel_id', 'account_id');
+    }
+
+
+    /***Get pending days of the order ***/
+    public function getPendingAttribute(){
+
+        if($this->delivery_date != 'Pending'){
+            $date = Carbon::parse($this->created_at);
+            $updated_date = Carbon::parse($this->updated_at);
+            return $diff = $date->diffInDays($updated_date);
+        }
+        $date = Carbon::parse($this->created_at);
+        $now = Carbon::now();
+       return $diff = $date->diffInDays($now);
+    }
+
+    /**Get Order Date */
+    public function getFormattedDate()
+    {
+        return $this->created_at->format('d/m/Y');
+    }
+
+    /****Get order number of purchase*** */
+    public function getOrderNumberFormatted(){
+        return substr($this->order_number,0);
     }
 }

@@ -24,39 +24,6 @@ $totalPrice = 10000;
         </div>
     </div> -->
     @foreach($cartItems as $cartItem)
-<<<<<<< HEAD
-    <div class="card mb-2">
-        <div class="card-body">
-            <div class="row">
-
-                <div class="col-4">
-                    <img class="responsive-img" src="{{ asset('storage/' . $cartItem->product->parentProduct->images[0]->path . $cartItem->product->parentProduct->images[0]->filename) }}" alt="">
-                </div>
-
-                <div class="col-8">
-                    <button class="btn btn-sm btn-danger float-right" id="DeleteCartItem" value="{{ $cartItem->id }}">Delete</button>
-                    <h4 style="width: 80%;">{{ $cartItem->product->parentProduct->name }}</h4>
-                    <p>x {{ $cartItem->quantity }}</p>
-                    <h5>RM {{ $cartItem->getDecimalTotalPrice() }}</h5>
-
-                    <div>
-                        <ul class="list-unstyled">
-                            @if(array_key_exists('product_color', $cartItem->product_information))
-                            <li class="text-capitalize">Color: {{ $cartItem->product_information['product_color'] }}</li>
-                            @endif
-                            @if(array_key_exists('product_size', $cartItem->product_information))
-                            <li class="text-capitalize">Size: {{ $cartItem->product_information['product_size'] }}</li>
-                            @endif
-                            @if(array_key_exists('product_temperature', $cartItem->product_information))
-                            <li class="text-capitalize">Color Temperature: {{ $cartItem->product_information['product_temperature'] }}</li>
-                            @endif
-                            @if(array_key_exists('product_temperature', $cartItem->product_information))
-                            <li class="text-capitalize">Sold By: {{ $cartItem->product->panel->company_name }}</li>
-                            @endif
-                        </ul>
-                    </div>
-
-=======
     <div class="card border-radius-0 mb-2 p-2">
         <div class="row no-gutters">
             <div class="col-12 mb-1 px-1">
@@ -123,7 +90,6 @@ $totalPrice = 10000;
                             <span class="fa fa-plus"></span>
                         </button>
                     </span>
->>>>>>> development
                 </div>
             </div>
         </div>
