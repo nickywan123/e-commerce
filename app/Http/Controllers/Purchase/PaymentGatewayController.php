@@ -135,7 +135,7 @@ class PaymentGatewayController extends Controller
 
             $purchase->offline_reference = $request->input('reference_number');
 
-            $purchase->purchase_status = 3004; // Pending Review - Offline
+            $purchase->purchase_status = 3003; // Pending Review - Offline
 
             $purchase->save();
 
@@ -205,7 +205,7 @@ class PaymentGatewayController extends Controller
      */
     public function paymentGatewayResponse(Request $request)
     {
-        // dd($request);
+        // Card payment gateway.
 
         $user = User::find(Auth::user()->id);
 
@@ -227,11 +227,11 @@ class PaymentGatewayController extends Controller
             $payment->gateway_hash = $request->input('hash');
             $payment->save();
 
-            $purchase->purchase_status = 2;
+            $purchase->purchase_status = 3001;
             $purchase->save();
 
             foreach ($purchase->orders as $order) {
-                $order->order_status = 2;
+                $order->order_status = 1001;
                 $order->save();
 
                 // Queue sending PO email.

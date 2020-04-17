@@ -54,4 +54,12 @@ class Purchase extends Model
     {
         return $this->created_at->format('d/m/Y');
     }
+
+    /**
+     * Get purchase status.
+     */
+    public function status()
+    {
+        return $this->belongsTo('App\Models\Globals\Status', 'purchase_status');
+    }
 }

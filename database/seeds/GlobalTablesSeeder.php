@@ -205,6 +205,12 @@ class GlobalTablesSeeder extends Seeder
          * Statutes
          */
         Status::create([
+            'id' => 1000,
+            'name' => 'Record Created',
+            'description' => 'Status for order status.'
+        ]);
+
+        Status::create([
             'id' => 1001,
             'name' => 'Order Placed',
             'description' => 'Status for order status.'
@@ -238,6 +244,30 @@ class GlobalTablesSeeder extends Seeder
             'id' => 2003,
             'name' => 'Item Checked Out',
             'description' => 'Status for cart item status.'
+        ]);
+
+        Status::create([
+            'id' => 3000,
+            'name' => 'Record Created',
+            'description' => 'Status for purchase status.'
+        ]);
+
+        Status::create([
+            'id' => 3001,
+            'name' => 'Payment Made - Card',
+            'description' => 'Status for purchase status.'
+        ]);
+
+        Status::create([
+            'id' => 3002,
+            'name' => 'Payment Made - FPX',
+            'description' => 'Status for purchase status.'
+        ]);
+
+        Status::create([
+            'id' => 3003,
+            'name' => 'Payment Made - Offline',
+            'description' => 'Status for purchase status.'
         ]);
 
         /**

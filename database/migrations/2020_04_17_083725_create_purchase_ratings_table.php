@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrdersTable extends Migration
+class CreatePurchaseRatingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->string('order_number')->unique();
-            $table->unsignedBigInteger('purchase_id');
+        Schema::create('purchase_ratings', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('customer_id');
+            $table->string('order_number');
             $table->unsignedBigInteger('panel_id');
-            $table->unsignedBigInteger('order_status');
-            $table->integer('order_amount');
+            $table->decimal('rating', 2, 1)->default(0);
+            $table->text('comment');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('purchase_ratings');
     }
 }

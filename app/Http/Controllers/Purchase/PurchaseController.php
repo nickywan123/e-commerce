@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\Orders\InvoiceEmailCustomer;
+use App\Models\Purchases\Rating;
+use App\Models\Users\Panels\PanelInfo;
 use File;
 
 class PurchaseController extends Controller
@@ -72,7 +74,7 @@ class PurchaseController extends Controller
             '0000000BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT);
 
         // Assign a status to the purchase. Unpaid, paid.
-        $purchase->purchase_status = 3001;
+        $purchase->purchase_status = 3000;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
         $purchase->purchase_date = Carbon::now()->format('d/m/Y');
         // Calculate total price of items in cart.
@@ -95,7 +97,7 @@ class PurchaseController extends Controller
         foreach ($cartItems as $cartItem) {
             // Create a new PO Number for each different panel belonging to an item.
             if (!array_key_exists($cartItem->product->panel_account_id, $po_numbers)) {
-                $po_numbers[$cartItem->product->panel_account_id] = 'PO' . Carbon::now()->format('Y') . Carbon::now()->format('m') . ' ' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
+                $po_numbers[$cartItem->product->panel_account_id] = 'PO' . Carbon::now()->format('Y') . Carbon::now()->format('m') . '-' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
 
                 $poSequence = $poSequence + 1;
             }
@@ -114,7 +116,7 @@ class PurchaseController extends Controller
             // Assign the panel id to the order record
             $order->panel_id = $key;
             // Assign a status for the order. Placed, Shipped, Delivered.
-            $order->order_status = 'Placed';
+            $order->order_status = 1000;
             // Assign empty value for order amount first.
             $orderAmount = 0;
 
@@ -198,14 +200,59 @@ class PurchaseController extends Controller
     /**
      * Handle QR Code scans.
      */
-    public function qrScanned(Request $request, $purchaseNum)
+    public function qrScanned(Request $request, $orderNum)
     {
         if (!$request->hasValidSignature()) {
             abort(401);
         }
 
-        $purchase = Purchase::where('purchase_number', $purchaseNum)->first();
-        return $purchase;
+        $order = App\Models\Purchases\Order::where('order_number', $orderNum)->first();
+
+        return view('shop.payment.deliveries.qr-scanned')
+            ->with('order', $order);
+    }
+
+    /**
+     * Handle QR Code submit.
+     */
+    public function qrSubmit(Request $request)
+    {
+        $order = Order::where('order_number', $request->input('order_number'))->firstOrFail();
+        $order->order_status = 1003;
+        $order->save();
+
+        $rating = new Rating();
+        $rating->customer_id = $order->purchase->user->userInfo->account_id;
+        $rating->order_number = $order->order_number;
+        $rating->panel_id = $order->panel_id;
+        $rating->rating = $request->input('stars');
+        $rating->comment = $request->input('rating_comment');
+        $rating->save();
+        // return $rating;
+
+        $panel = PanelInfo::where('account_id', $order->panel_id)->firstOrFail();
+        // return $panel;
+
+        $allRatings = Rating::where('panel_id', $panel->account_id)->get();
+
+        $averageRating = 0;
+
+        if ($allRatings->count() == 0) {
+            $allRatings = 1;
+
+            $averageRating = $averageRating / $allRatings;
+        } else {
+            foreach ($allRatings as $rating) {
+                $averageRating = $averageRating + $rating->rating;
+            }
+
+            $averageRating = $averageRating / $allRatings->count();
+        }
+
+        $panel->panel_rating = $averageRating;
+        $panel->save();
+
+        return view('shop.payment.deliveries.qr-submitted');
     }
 
 
