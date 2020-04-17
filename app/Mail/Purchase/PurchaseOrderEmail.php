@@ -35,6 +35,8 @@ class PurchaseOrderEmail extends Mailable
         return $this->subject('An Order Has Been Placed - ' . $this->order->order_number)
             ->view('emails.purchases.po-email')
             ->with('order', $this->order)
-            ->attach(public_path('/storage/documents/invoice/' . $this->order->purchase->purchase_number . '/purchase-orders/' . $this->order->order_number . '.pdf'));
+            ->attach(public_path(
+                '/storage/documents/invoice/' . $this->order->purchase->purchase_number . '/purchase-orders/' . $this->order->order_number . '.pdf'
+            ));
     }
 }

@@ -50,18 +50,20 @@ class Order extends Model
     public function status()
     {
         return $this->belongsTo('App\Models\Globals\Status', 'order_status', 'id');
+    }
 
     /***Get pending days of the order ***/
-    public function getPendingAttribute(){
+    public function getPendingAttribute()
+    {
 
-        if($this->delivery_date != 'Pending'){
+        if ($this->delivery_date != 'Pending') {
             $date = Carbon::parse($this->created_at);
             $updated_date = Carbon::parse($this->updated_at);
             return $diff = $date->diffInDays($updated_date);
         }
         $date = Carbon::parse($this->created_at);
         $now = Carbon::now();
-       return $diff = $date->diffInDays($now);
+        return $diff = $date->diffInDays($now);
     }
 
     /**Get Order Date */
@@ -71,7 +73,8 @@ class Order extends Model
     }
 
     /****Get order number of purchase*** */
-    public function getOrderNumberFormatted(){
-        return substr($this->order_number,0);
+    public function getOrderNumberFormatted()
+    {
+        return substr($this->order_number, 0);
     }
 }

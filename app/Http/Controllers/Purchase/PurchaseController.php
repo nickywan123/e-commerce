@@ -240,9 +240,9 @@ class PurchaseController extends Controller
             // Assign empty value for order amount first.
             $orderAmount = 0;
             $order->order_amount = 0;
-            $order->delivery_date="Pending";
-            $order->received_date="";
-            $order->claim_status="Processing";
+            $order->delivery_date = "Pending";
+            $order->received_date = "";
+            $order->claim_status = "Processing";
 
             $order->save();
 
@@ -332,7 +332,7 @@ class PurchaseController extends Controller
             abort(401);
         }
 
-        $order = App\Models\Purchases\Order::where('order_number', $orderNum)->first();
+        $order = Order::where('order_number', $orderNum)->first();
 
         return view('shop.payment.deliveries.qr-scanned')
             ->with('order', $order);
@@ -394,11 +394,11 @@ class PurchaseController extends Controller
         $user = User::find(Auth::user()->id);
         $purchase = $user->purchases->where('purchase_number', $purchase_num)->first();
         $pdf = PDF::loadView('documents.purchase.invoice', compact('purchase'))->setPaper('A4');
-        return $pdf->stream('purchase-order.'.$purchase_num.'.pdf');
+        return $pdf->stream('purchase-order.' . $purchase_num . '.pdf');
     }
 
 
-  
+
 
     /**
      * Return invoice for Dealer

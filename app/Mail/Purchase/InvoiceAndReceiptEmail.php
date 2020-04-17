@@ -31,7 +31,7 @@ class InvoiceAndReceiptEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Bujishu Order Confirmation - ' . $this->purchase->purchase_number)
+        return $this->subject('Bujishu Order Confirmation - ' . $this->purchase->getFormattedNumber())
             ->view('emails.purchases.invoice-receipt-email')
             ->with('purchase', $this->purchase)
             ->attach(public_path(
