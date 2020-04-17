@@ -160,13 +160,13 @@ class PaymentGatewayController extends Controller
             foreach ($purchase->orders as $order) {
                 // Generate PO PDF.
                 // Generate PDF.
-                $pdf = PDF::loadView('documents.purchase.invoice', compact('purchase'));
+                $pdf = PDF::loadView('documents.order.purchase-order', compact('purchase'));
                 // Get PDF content.
                 $content = $pdf->download()->getOriginalContent();
                 // Set path to store PDF file.
-                $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+                $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/purchase-orders');
                 // Set PDF file name.
-                $pdfName = $purchase->purchase_number;
+                $pdfName = $order->order_number;
                 // Check if directory exist or not.
                 if (!File::isDirectory($pdfDestination)) {
                     // If not exist, create the directory.
