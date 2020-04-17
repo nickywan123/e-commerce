@@ -12,6 +12,9 @@
 */
 
 // Route for QR Code
+
+use Illuminate\Http\Request;
+
 Route::get('qr-code-g', function () {
     QrCode::size(500)
         ->format('png')
@@ -59,7 +62,9 @@ Route::view('/wip', 'errors.wip');
  * Real routes.
  */
 
-// Guest routes.
+/**
+ * Guests Routes.
+ */
 Route::group(['middleware' => ['guest']], function () {
     // Landing page.
     Route::get('/', 'Guest\GuestController@index');
@@ -70,11 +75,20 @@ Route::group(['middleware' => ['guest']], function () {
     // Registration page.
     Route::get('/register-dealer', 'Auth\RegisterController@showDealerRegistrationForm');
     Route::get('/register-panel', 'Auth\RegisterController@showPanelRegistrationForm');
-
-    Route::get('/order-received/{purchaseNum}', 'Purchase\PurchaseController@qrScanned')
-        ->name('guest.order-received')
-        ->middleware('signed');
 });
+
+/**
+ * Public Signed Routes.
+ */
+Route::get('/order-received/{orderNum}', 'Purchase\PurchaseController@qrScanned')
+    ->name('guest.order-received')
+    ->middleware('signed');
+
+/**
+ * Public Routes.
+ */
+Route::post('/order-received', 'Purchase\PurchaseController@qrSubmit')
+    ->name('guest.order-received.post');
 
 // Authentication routes. Verification is set to true.
 Auth::routes(['verify' => true]);
@@ -197,6 +211,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::get('/checkout/offline', 'Purchase\PurchaseController@offlinePayment');
 
             Route::post('/checkout/offline', 'Purchase\PurchaseController@offlinePaymentStore');
+        });
+
+        Route::group(['prefix' => 'buy'], function () {
+            Route::post('buy-now', 'Purchase\PurchaseController@buyNow')
+                ->name('shop.buy.buy-now');
         });
 
         Route::group(['prefix' => 'wishlist'], function () {
@@ -328,4 +347,15 @@ Route::get('/tests/create-invoice-pdf-old', function () {
 });
 
 Route::get('/tests/create-receipt-pdf', function () {
+});
+
+Route::get('/tests/order-received/{purchaseNum}', function () {
+    $order = App\Models\Purchases\Order::where('order_number', 'PO202004 000001')->first();
+
+    return view('shop.payment.deliveries.qr-scanned')
+        ->with('order', $order);
+});
+
+Route::post('/tests/order-received', function (Request $request) {
+    return $request;
 });

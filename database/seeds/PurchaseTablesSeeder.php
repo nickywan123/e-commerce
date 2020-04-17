@@ -18,7 +18,7 @@ class PurchaseTablesSeeder extends Seeder
         $purchase = new Purchase;
         $purchase->user_id = 1;
         $purchase->purchase_number = '0000000BSN2020000001';
-        $purchase->purchase_status = 1;
+        $purchase->purchase_status = 3003;
         $purchase->purchase_type = 'card';
         $purchase->purchase_date = '15/04/2020';
         $purchase->purchase_amount = 39000;
@@ -28,7 +28,7 @@ class PurchaseTablesSeeder extends Seeder
         $order1->order_number = 'PO202004 000001';
         $order1->purchase_id = 1;
         $order1->panel_id = 1918000003;
-        $order1->order_status = 'Placed';
+        $order1->order_status = 1001;
         $order1->order_amount = 13000;
         $order1->delivery_date = "Pending";
         $order1->received_date = "";
@@ -39,7 +39,7 @@ class PurchaseTablesSeeder extends Seeder
         $order2->order_number = 'PO202004 000002';
         $order2->purchase_id = 1;
         $order2->panel_id = 1918000001;
-        $order2->order_status = 'Placed';
+        $order2->order_status = 1001;
         $order2->order_amount = 26000;
         $order2->delivery_date = "Pending";
         $order2->received_date = "";

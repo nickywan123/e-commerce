@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\Orders\InvoiceEmailCustomer;
+use App\Models\Purchases\Rating;
+use App\Models\Users\Panels\PanelInfo;
+use App\Models\Products\Product as PanelProduct;
 use File;
 
 class PurchaseController extends Controller
@@ -47,6 +50,125 @@ class PurchaseController extends Controller
         });
     }
 
+    public function buyNow(Request $request)
+    {
+
+        $user = User::find(Auth::user()->id);
+
+        $product = PanelProduct::find($request->input('product_id'));
+
+        $po_numbers = array();
+
+        $invoiceSequence = Purchase::all()->count() + 1;
+
+        $purchase = new Purchase;
+
+        $purchase->user_id = $user->id;
+
+        $purchase->purchase_number =
+            '0000000BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT);
+
+        $purchase->purchase_status = 3000;
+
+        $purchase->purchase_date = Carbon::now()->format('d/m/Y');
+
+        $purchase->purchase_amount = $product->price;
+
+        $purchase->save();
+
+        $poSequence = Order::all()->count() + 1;
+
+        $order = new Order;
+        // Assign PO Number to the order.
+        $order->order_number =
+            'PO' . Carbon::now()->format('Y') . Carbon::now()->format('m') . '-' . str_pad($poSequence, 6, "0", STR_PAD_LEFT);
+        // Assign purchase id to the order
+        $order->purchase_id = $purchase->id;
+        // Assign the panel id to the order record
+        $order->panel_id = $product->panel_account_id;
+        // Assign a status for the order. Placed, Shipped, Delivered.
+        $order->order_status = 1000;
+        // Assign empty value for order amount first.
+        $order->order_amount = ($product->price * $request->input('productQuantity')) + $product->delivery_fee + $product->installation_fee;
+
+        $order->save();
+
+        // Variables initiliazation.
+        $color = null;
+        $size = null;
+        $temperature = null;
+
+        // If the post request has product color id value in it..
+        if ($request->input('product_attribute_color') != null) {
+            // Get selected product color.
+            $color = $product->colorAttributes->where('id', $request->input('product_attribute_color'))->first();
+
+            // Set color id for checking purposes.
+            $colorId = $color->id;
+        }
+
+        // If the post request has product dimension id value in it..
+        if ($request->input('product_attribute_size') != null) {
+            // Get selected product dimension.
+            $size = $product->sizeAttributes->where('id', $request->input('product_attribute_size'))->first();
+
+            // Set dimension id for checking purposes.
+            $sizeId = $size->id;
+        }
+
+        // If the post request has product length id value in it..
+        if ($request->input('product_attribute_temperature') != null) {
+            // Get selected product length.
+            $temperature = $product->lightTemperatureAttributes
+                ->where('id', $request->input('product_attribute_temperature'))->first();
+
+            // Set length id for checking purposes.
+            $temperatureId = $temperature->id;
+        }
+
+        // Check if the post request has product color id in it..
+        if ($color != null) {
+            // If yes, assign the color id and name
+            $productInformation['product_color_id'] = $color->id;
+            $productInformation['product_color_name'] = $color->attribute_name;
+        }
+        // Check if the post request has product dimension id in it..
+        if ($size != null) {
+            // If yes, assign the dimension id and concate the width, height, depth and measurement unit.
+            $productInformation['product_size_id'] = $size->id;
+            $productInformation['product_size'] = $size->attribute_name;
+        }
+        // Check if the post request has product length id in it..
+        if ($temperature != null) {
+            // If yes, assign the length id and concate the length and measurement unit.
+            $productInformation['product_temperature_id'] = $temperature->id;
+            $productInformation['product_temperature'] = $temperature->attribute_name;
+        }
+
+        // Create a new item record.
+        $item = new Item;
+        // Assign an order number to the item
+        $item->order_number = $order->order_number;
+        // Assign a product id to the item
+        $item->product_id = $product->id;
+        // Get the cart product's information. Color, dimension or length..
+        // Store it in an array, easier to access later and avoid creating another column just for an attribute of a product
+        $item->product_information = $productInformation;
+        // Assign item quantity.
+        $item->quantity = $request->input('productQuantity');
+        // Assign subtotal price.
+        $item->subtotal_price = $product->price * $request->input('productQuantity');
+        // Assign delivery fee.
+        $item->delivery_fee = $product->delivery_fee;
+        // Assign installation fee.
+        $item->installation_fee = $product->installation_fee;
+        // Assign status of the item. Placed, shipped, delivered.
+        $item->status_id = 1;
+        $item->save();
+
+        return redirect('/payment/cashier?orderId=' . $purchase->purchase_number);
+    }
+
     /**
      * Handle what happens after user clicks checkout
      */
@@ -72,7 +194,7 @@ class PurchaseController extends Controller
             '0000000BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT);
 
         // Assign a status to the purchase. Unpaid, paid.
-        $purchase->purchase_status = 3001;
+        $purchase->purchase_status = 3000;
         // Assign the current date to the purchase in the form of DD/MM/YYYY.
         $purchase->purchase_date = Carbon::now()->format('d/m/Y');
         // Calculate total price of items in cart.
@@ -95,7 +217,7 @@ class PurchaseController extends Controller
         foreach ($cartItems as $cartItem) {
             // Create a new PO Number for each different panel belonging to an item.
             if (!array_key_exists($cartItem->product->panel_account_id, $po_numbers)) {
-                $po_numbers[$cartItem->product->panel_account_id] = 'PO' . Carbon::now()->format('Y') . Carbon::now()->format('m') . ' ' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
+                $po_numbers[$cartItem->product->panel_account_id] = 'PO' . Carbon::now()->format('Y') . Carbon::now()->format('m') . '-' . str_pad($poSequence, 6, "0", STR_PAD_LEFT); // PO YYYY MM 000001
 
                 $poSequence = $poSequence + 1;
             }
@@ -114,7 +236,7 @@ class PurchaseController extends Controller
             // Assign the panel id to the order record
             $order->panel_id = $key;
             // Assign a status for the order. Placed, Shipped, Delivered.
-            $order->order_status = 'Placed';
+            $order->order_status = 1000;
             // Assign empty value for order amount first.
             $orderAmount = 0;
             $order->order_amount = 0;
@@ -152,7 +274,7 @@ class PurchaseController extends Controller
                     // After checkout, cart items should be removed from cart page
                     // TODO: Change status after payment successful.
                     // $cartItem->status = 2001;
-                    $cartItem->save();
+                    // $cartItem->save();
 
                     $item->save();
 
@@ -204,14 +326,59 @@ class PurchaseController extends Controller
     /**
      * Handle QR Code scans.
      */
-    public function qrScanned(Request $request, $purchaseNum)
+    public function qrScanned(Request $request, $orderNum)
     {
         if (!$request->hasValidSignature()) {
             abort(401);
         }
 
-        $purchase = Purchase::where('purchase_number', $purchaseNum)->first();
-        return $purchase;
+        $order = App\Models\Purchases\Order::where('order_number', $orderNum)->first();
+
+        return view('shop.payment.deliveries.qr-scanned')
+            ->with('order', $order);
+    }
+
+    /**
+     * Handle QR Code submit.
+     */
+    public function qrSubmit(Request $request)
+    {
+        $order = Order::where('order_number', $request->input('order_number'))->firstOrFail();
+        $order->order_status = 1003;
+        $order->save();
+
+        $rating = new Rating();
+        $rating->customer_id = $order->purchase->user->userInfo->account_id;
+        $rating->order_number = $order->order_number;
+        $rating->panel_id = $order->panel_id;
+        $rating->rating = $request->input('stars');
+        $rating->comment = $request->input('rating_comment');
+        $rating->save();
+        // return $rating;
+
+        $panel = PanelInfo::where('account_id', $order->panel_id)->firstOrFail();
+        // return $panel;
+
+        $allRatings = Rating::where('panel_id', $panel->account_id)->get();
+
+        $averageRating = 0;
+
+        if ($allRatings->count() == 0) {
+            $allRatings = 1;
+
+            $averageRating = $averageRating / $allRatings;
+        } else {
+            foreach ($allRatings as $rating) {
+                $averageRating = $averageRating + $rating->rating;
+            }
+
+            $averageRating = $averageRating / $allRatings->count();
+        }
+
+        $panel->panel_rating = $averageRating;
+        $panel->save();
+
+        return view('shop.payment.deliveries.qr-submitted');
     }
 
 

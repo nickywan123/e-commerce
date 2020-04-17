@@ -116,23 +116,24 @@
                                                     </li>
                                                 </ul>
                                                 <p class="mb-0 text-dark">Rating by Customers</p>
-                                                <ul class="list-unstyled product-rating mb-1">
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                </ul>
+                                                <div class="mb-1">
+                                                    @php $rating = $productSoldByPanel->panel->panel_rating; @endphp
+
+                                                    @foreach(range(1,5) as $i)
+                                                    <span class="fa-stack" style="width:1em">
+                                                        <i class="far fa-star fa-stack-1x" style="color: #fccb34;"></i>
+
+                                                        @if($rating >0)
+                                                        @if($rating >0.5)
+                                                        <i class="fas fa-star fa-stack-1x" style="color: #fccb34;"></i>
+                                                        @else
+                                                        <i class="fas fa-star-half fa-stack-1x" style="color: #fccb34;"></i>
+                                                        @endif
+                                                        @endif
+                                                        @php $rating--; @endphp
+                                                    </span>
+                                                    @endforeach
+                                                </div>
                                                 <p class="mb-0 text-dark">Area of Service</p>
                                                 <p class="mb-1 text-dark font-weight-bold">
                                                     Kl, Seremban
@@ -249,23 +250,24 @@
                                                     </li>
                                                 </ul>
                                                 <p class="mb-0 text-dark">Rating by Customers</p>
-                                                <ul class="list-unstyled product-rating mb-1">
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-star checked"></i>
-                                                    </li>
-                                                </ul>
+                                                <div class="mb-1">
+                                                    @php $rating = $productSoldByPanel->panel->panel_rating; @endphp
+
+                                                    @foreach(range(1,5) as $i)
+                                                    <span class="fa-stack" style="width:1em">
+                                                        <i class="far fa-star fa-stack-1x" style="color: #fccb34;"></i>
+
+                                                        @if($rating >0)
+                                                        @if($rating >0.5)
+                                                        <i class="fas fa-star fa-stack-1x" style="color: #fccb34;"></i>
+                                                        @else
+                                                        <i class="fas fa-star-half fa-stack-1x" style="color: #fccb34;"></i>
+                                                        @endif
+                                                        @endif
+                                                        @php $rating--; @endphp
+                                                    </span>
+                                                    @endforeach
+                                                </div>
                                                 <p class="mb-0 text-dark">Area of Service</p>
                                                 <p class="mb-1 text-dark font-weight-bold">
                                                     Kl, Seremban

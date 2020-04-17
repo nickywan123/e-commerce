@@ -1,7 +1,7 @@
 @extends('layouts.shop.main')
 
 @section('content')
-<div class="container" style="position: relative; height: 85vh;">
+<div class="container" style="position: relative; min-height: 85vh;">
     <div class="card container" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
         <div class="card-body">
             <h1 class="text-center">

@@ -135,7 +135,7 @@ class PaymentGatewayController extends Controller
 
             $purchase->offline_reference = $request->input('reference_number');
 
-            $purchase->purchase_status = 3004; // Pending Review - Offline
+            $purchase->purchase_status = 3003; // Pending Review - Offline
 
             $purchase->save();
 
@@ -159,7 +159,21 @@ class PaymentGatewayController extends Controller
 
             foreach ($purchase->orders as $order) {
                 // Generate PO PDF.
-                // 
+                // Generate PDF.
+                $pdf = PDF::loadView('documents.order.purchase-order', compact('purchase'));
+                // Get PDF content.
+                $content = $pdf->download()->getOriginalContent();
+                // Set path to store PDF file.
+                $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/purchase-orders');
+                // Set PDF file name.
+                $pdfName = $order->order_number;
+                // Check if directory exist or not.
+                if (!File::isDirectory($pdfDestination)) {
+                    // If not exist, create the directory.
+                    File::makeDirectory($pdfDestination, 0777, true);
+                }
+                // Place the PDF into directory.
+                File::put($pdfDestination . $pdfName . '.pdf', $content);
 
                 // Queue PO email to panels.
                 SendPurchaseOrderEmail::dispatch($order->panel->company_email, $order);
@@ -205,7 +219,7 @@ class PaymentGatewayController extends Controller
      */
     public function paymentGatewayResponse(Request $request)
     {
-        // dd($request);
+        // Card payment gateway.
 
         $user = User::find(Auth::user()->id);
 
@@ -227,11 +241,11 @@ class PaymentGatewayController extends Controller
             $payment->gateway_hash = $request->input('hash');
             $payment->save();
 
-            $purchase->purchase_status = 2;
+            $purchase->purchase_status = 3001;
             $purchase->save();
 
             foreach ($purchase->orders as $order) {
-                $order->order_status = 2;
+                $order->order_status = 1001;
                 $order->save();
 
                 // Queue sending PO email.

@@ -44,6 +44,12 @@ class Order extends Model
         return $this->belongsTo('App\Models\Users\Panels\PanelInfo', 'panel_id', 'account_id');
     }
 
+    /**
+     * Get order status.
+     */
+    public function status()
+    {
+        return $this->belongsTo('App\Models\Globals\Status', 'order_status', 'id');
 
     /***Get pending days of the order ***/
     public function getPendingAttribute(){
