@@ -3,7 +3,7 @@
         <ul class="nav sidebar-margin-top">
             <li class="nav-item ">
                 <a class="nav-link " href="/shop/dashboard/orders/index">
-                    <img class="img-avatar" src="{{asset('/images/order-image.jpg')}}" alt="My Orders" style="height: 100px; width: 100px;">
+                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/orders.png')}}" alt="My Orders" style="height: 50px; width: 50px; border-radius:0px;">
                 </a>
           
             </li>
@@ -11,7 +11,7 @@
   
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <img class="img-avatar" src="{{asset('/images/wish-list.png')}}" alt="Wish List" style="height: 100px; width: 100px;">
+                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/wishlist.png')}}" alt="Wish List" style="height: 50px; width: 50px; border-radius:0px;">
                 </a>
                 
             </li>
@@ -19,7 +19,7 @@
            
             <li class="nav-item">
                 <a class="nav-link" href="/shop">
-                    <img class="img-avatar" src="{{asset('/images/shop-icon-2.png')}}" alt="Shop" style="height: 100px; width: 100px;">
+                    <img class="img-avatar" src="{{asset('/images/shop-icon-2.png')}}" alt="Shop" style="height: 50px; width: 50px; border-radius:0px;">
                 </a>
                 
             </li>

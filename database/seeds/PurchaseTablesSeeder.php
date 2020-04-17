@@ -30,6 +30,9 @@ class PurchaseTablesSeeder extends Seeder
         $order1->panel_id = 1918000003;
         $order1->order_status = 'Placed';
         $order1->order_amount = 13000;
+        $order1->delivery_date = "Pending";
+        $order1->received_date = "";
+        $order1->claim_status = "Processing";
         $order1->save();
 
         $order2 = new Order;
@@ -38,6 +41,9 @@ class PurchaseTablesSeeder extends Seeder
         $order2->panel_id = 1918000001;
         $order2->order_status = 'Placed';
         $order2->order_amount = 26000;
+        $order2->delivery_date = "Pending";
+        $order2->received_date = "";
+        $order2->claim_status = "Processing";
         $order2->save();
 
         $item1 = new Item;

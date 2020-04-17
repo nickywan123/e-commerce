@@ -29,7 +29,7 @@
 </head>
 
 <body class="app header-fixed aside-menu-fixed sidebar-lg-show">
-    @include('layouts.management.navigations.navigation-bar-customer')
+    @include('layouts.management.navigations.navigation-bar-panel')
     <div class="app-body">
         @include('layouts.management.navigations.side-bar-panel')
         <main class="main " style="margin-top:2%;">

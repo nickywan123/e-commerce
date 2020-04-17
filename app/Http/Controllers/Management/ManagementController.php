@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Management;
 
+use PDF;
 use Auth;
 use Carbon\Carbon;
 use App\Models\Users\User;
 use Illuminate\Http\Request;
 use App\Models\Purchases\Order;
+use App\Models\Purchases\Purchase;
 use App\Http\Controllers\Controller;
 
 class ManagementController extends Controller
@@ -21,6 +23,7 @@ class ManagementController extends Controller
         $panel_id= $panel_id->userInfo->account_id;
         $customerOrders = new Order;
         $customerOrders= $customerOrders->where('panel_id',$panel_id)->get();
+      
         
         // Get the order date and current date to return pending days
     //     $today = Carbon::today()->toDateString();
@@ -30,6 +33,26 @@ class ManagementController extends Controller
 
     //     dd(Carbon::today()->toDateString());
         return view("management.panel.index")->with('customerOrders',$customerOrders);
+    }
+
+
+    /***Return purchase order(pdf) for the order  **/
+
+    public function viewPurchaseOrder($orderNum){
+        
+        $order=new Order();
+        $order = $order->where('order_number',$orderNum)->first();
+
+        $pdf = PDF::loadView('documents.order.purchase-order', compact('order'))->setPaper('A4');
+        return $pdf->stream('purchase-order.'.$orderNum.'.pdf');
+    }
+
+
+
+    /****Return company profile for panel***/
+
+    public function companyProfile(){
+        return view("management.panel.company-profile");
     }
 
     // View all orders-panel

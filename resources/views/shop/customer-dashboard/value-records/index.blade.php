@@ -34,7 +34,7 @@
         <div class="card shadow-sm">
             <div class="card-body">
                 @foreach($purchases as $purchase)
-                <h4 style="font-weight:bold; color:rgb(250, 172, 24);">Purchase #: {{ $purchase->purchase_number }}</h4>
+                <h4 style="font-weight:bold; color:rgb(250, 172, 24);">Purchase #: {{ $purchase->getFormattedNumber()}}</h4>
                 @foreach($purchase->orders as $order)
                 <table class="table ">
                     <tr style="background-color:rgba(0, 0, 0, 0.05);">
@@ -66,7 +66,6 @@
                            
                                     <div class="row mb-5">
                                         <div class="col-4 my-auto">
-<<<<<<< HEAD:resources/views/shop/customer-dashboard/value-records/index.blade.php
                                             <a href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
                                             <img class="responsive-img p-1"
                                                 style="height:100px;width:100px; max-width:200px;"
@@ -77,13 +76,6 @@
                                         <div class="col-8 my-auto">
                                           <a style="color:black; font-weight:bold;"  href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">{{ $item->product->parentProduct->name }}</a>
                                             
-=======
-                                            <img class="responsive-img p-1" style="height:100px;width:100px; max-width:200px;" src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename) }}" alt="">
-                                        </div>
-                                        <div class="col-8 my-auto">
-                                            <p class="mb-0 font-weight-bold"><a style="color:black;" href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">{{ $item->product->parentProduct->name }}</a>
-                                            </p>
->>>>>>> development:resources/views/shop/profile/orders.blade.php
                                             <p class="text-capitalize">Sold by:
                                                 {{ $item->product->panel->company_name }}</p>
                                             <p class="text-capitalize">Unit Price:

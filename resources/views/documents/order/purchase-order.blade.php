@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bujishu - Invoice {{ $purchase->purchase_number }}</title>
+    <title>Bujishu - Purchase Order {{ $order->order_number}}</title>
     <style>
         /*!
         * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -8325,7 +8325,7 @@
 
     $url = URL::signedRoute(
         'guest.order-received',
-        ['purchaseNum' => $purchase->purchase_number]
+        ['purchaseNum' => $order->order_number]
     );
     ?>
     <!-- Logo / Letterhead -->
@@ -8334,11 +8334,11 @@
             <td>
                 <img style="width: 130px; height: auto;" src="{{ asset('images/Invoice-Logo.png') }}" alt="">
             </td>
-            {{-- <td style="text-align: right;">
+            <td style="text-align: right;">
                 <img style="height: 100px; width: 100px;" src="data:images/png;base64, {{ base64_encode(QrCode::format('png')->size(100)->generate($url)) }} ">
-            </td> --}}
+            </td>
         </tr>
-    </table> <br>
+    </table>
     <!-- End Logo / Letterhead -->
 
     <!-- Document Header -->
@@ -8350,37 +8350,37 @@
                     <table style="width: 100%;">
                         <tr>
                             <td colspan="2" style="font-weight: 600; padding: 6px 4px;">
-                                Receiver
+                                Purchase From
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->address_1 }}
+                                {{ $order->purchase->user->userInfo->shippingAddress->address_1 }}
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->address_2 }}
+                                {{ $order->purchase->user->userInfo->shippingAddress->address_2 }}
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->postcode }},
-                                {{ $purchase->user->userInfo->shippingAddress->city }}
+                                {{ $order->purchase->user->userInfo->shippingAddress->postcode }},
+                                {{ $order->purchase->user->userInfo->shippingAddress->city }}
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->state->name }},
+                                {{ $order->purchase->user->userInfo->shippingAddress->state->name }},
                                 Malaysia
                             </td>
                         </tr>
                         <tr>
                             <td style="font-size: 9pt; font-weight: 600; padding: 4px;">
-                                Attention To
+                                Person In Charge
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->full_name }}
+                                {{ $order->purchase->user->userInfo->full_name }}
                             </td>
                         </tr>
                         <tr>
@@ -8388,7 +8388,7 @@
                                 Contact No.
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->mobileContact->contact_num }}
+                                {{ $order->purchase->user->userInfo->mobileContact->contact_num }}
                             </td>
                         </tr>
                         <tr>
@@ -8412,23 +8412,23 @@
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->address_1 }}
+                                {{ $order->purchase->user->userInfo->shippingAddress->address_1 }}
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->address_2 }}
+                                {{ $order->purchase->user->userInfo->shippingAddress->address_2 }}
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->postcode }},
-                                {{ $purchase->user->userInfo->shippingAddress->city }}
+                                {{ $order->purchase->user->userInfo->shippingAddress->postcode }},
+                                {{ $order->purchase->user->userInfo->shippingAddress->city }}
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->state->name }},
+                                {{ $order->purchase->user->userInfo->shippingAddress->state->name }},
                                 Malaysia
                             </td>
                         </tr>
@@ -8437,7 +8437,7 @@
                                 Attention To
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->full_name }}
+                                {{ $order->purchase->user->userInfo->full_name }}
                             </td>
                         </tr>
                         <tr>
@@ -8445,7 +8445,7 @@
                                 Contact No.
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->mobileContact->contact_num }}
+                                {{ $order->purchase->user->userInfo->mobileContact->contact_num }}
                             </td>
                         </tr>
                         <tr>
@@ -8469,7 +8469,7 @@
                         <tr>
                             <td colspan="2" style="background-color: #ababab !important; padding: 6px 4px; text-align: center; border: 1px solid #000000;">
                                 <p style="color: #ad000e !important; margin: 0;">
-                                    INVOICE / RECEIPT
+                                    PURCHASE ORDER
                                 </p>
                             </td>
                         </tr>
@@ -8478,7 +8478,7 @@
                                 Number
                             </td>
                             <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                {{ $purchase->getFormattedNumber() }}
+                                {{ $order->getOrderNumberFormatted() }}
                             </td>
                         </tr>
                         <tr>
@@ -8486,7 +8486,7 @@
                                 Date
                             </td>
                             <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                {{ $purchase->getFormattedDate() }}
+                                {{ $order->getFormattedDate() }}
                             </td>
                         </tr>
                         <tr>
@@ -8553,7 +8553,7 @@
                         <?php
                         $iterationNo = 0;
                         ?>
-                        @foreach($purchase->orders as $order)
+                      
                         @foreach($order->items as $item)
                         <tr style="font-size: 10pt;">
                             <td style="padding: 6px; text-align: center; vertical-align: top;">
@@ -8601,7 +8601,6 @@
                             </td>
                         </tr>
                         @endforeach
-                        @endforeach
                     </table>
                 </div>
             </div>
@@ -8628,40 +8627,23 @@
                             <td>
 
                             </td>
-                            <td rowspan="6" style="text-align: center;">
-                                <div style="border: 1px solid #000; display: inline-block;">
-                                    <table style="width: 400px; margin: 0 auto;">
-                                        <tr>
-                                            <td style="text-align: center; background-color: #ababab !important; padding: 6px; border-bottom: 1px solid #000000;">
-                                                Payment Received
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: center;">
-                                                <p style="padding: 6px; margin: 0; text-transform: capitalize;">
-                                                    Payment Method: {{ $purchase->purchase_type }}
-                                                </p>
-                                                <p style="padding: 6px; margin: 0; text-transform: capitalize;">
-                                                    Reference No: {{ $purchase->successfulPayment->auth_code }}
-                                                </p>
-                                                <p style="padding: 6px; margin: 0;">
-                                                    Amount Paid: RM {{ number_format(($purchase->successfulPayment->amount / 100), 2)}}
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </table>
+                            <td rowspan="6" style=" ">
+                                <label for="textarea">Remarks:</label> <br>
+                                <textarea name="remarks" id="" cols="70" rows="8">
+                                </textarea>
                             </td>
+
                             <td style="padding: 6px;">
                                 Subtotal
                             </td>
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $subtotal = 0;
-                                foreach ($purchase->orders as $order) {
+                               
                                     foreach ($order->items as $item) {
                                         $subtotal = $subtotal + $item->subtotal_price;
                                     }
-                                }
+                                
                                 ?>
                                 RM {{ number_format(($subtotal / 100), 2)}}
                             </td>
@@ -8677,11 +8659,11 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $deliveryFee = 0;
-                                foreach ($purchase->orders as $order) {
+                              
                                     foreach ($order->items as $item) {
                                         $deliveryFee = $deliveryFee + $item->delivery_fee;
                                     }
-                                }
+                                
                                 ?>
                                 RM {{ number_format(($deliveryFee / 100), 2) }}
                             </td>
@@ -8697,11 +8679,11 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $installationFee = 0;
-                                foreach ($purchase->orders as $order) {
+                               
                                     foreach ($order->items as $item) {
                                         $installationFee = $installationFee + $item->installation_fee;
                                     }
-                                }
+                                
                                 ?>
                                 RM {{ number_format(($installationFee / 100), 2) }}
                             </td>
@@ -8717,11 +8699,11 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $grandTotal = 0;
-                                foreach ($purchase->orders as $order) {
+                               
                                     foreach ($order->items as $item) {
                                         $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
                                     }
-                                }
+                                
                                 ?>
                                 RM {{ number_format(($grandTotal / 100), 2) }}
                             </td>
@@ -8737,13 +8719,13 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $grandTotal = 0;
-                                foreach ($purchase->orders as $order) {
+                                
                                     foreach ($order->items as $item) {
                                         $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
                                     }
-                                }
+                                
                                 ?>
-                                RM {{ number_format(($purchase->successfulPayment->amount / 100), 2) }}
+                                RM {{ number_format(($order->purchase->successfulPayment->amount / 100), 2) }}
                             </td>
                         </tr>
 
@@ -8757,7 +8739,7 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $balance = $grandTotal;
-                                $balance = $purchase->successfulPayment->amount - $balance;
+                                $balance = $order->purchase->successfulPayment->amount - $balance;
                                 ?>
                                 RM {{ number_format(($balance / 100) , 2)}}
                             </td>
@@ -8783,7 +8765,7 @@
         <div class="row">
             <div class="col-xs-12 pl-1 pr-1">
                 <p style="font-size: 9pt; font-weight: 600; text-align: center;">
-                    This invoice is computer generated, no signature is required.
+                    This is computer generated, no signature is required.
                 </p>
                 <div style="width: 100%; border-bottom: 1px solid #000000;">
 

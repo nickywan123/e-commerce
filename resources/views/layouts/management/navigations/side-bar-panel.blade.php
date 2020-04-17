@@ -21,8 +21,8 @@
                 <a class="nav-link" href="/shop">
                     <img class="img-avatar" src="{{asset('/images/shop-icon-2.png')}}" alt="Shop" style="height: 50px; width: 50px; border-radius:0px;">
                 </a>
-                
             </li>
+            
             
            
        
