@@ -601,6 +601,5 @@ class RegisterController extends Controller
         //     $user->assignRole('1');
         //     $user->assignRole('2');
         // }
-        return $user;
     }
 }

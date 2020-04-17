@@ -15,7 +15,7 @@ class GlobalProductsTableSeeder extends Seeder
     public function run()
     {
         $product1 = Product::create([
-            'product_code' => 'single round eyeball_white casing_with GU 10_001',
+            'product_code' => 'BU0417 0701 0100 0001',
             'name' => 'Single Round Eyeball White Casing With GU 10001',
             'name_slug' => 'single-round-eyeball-white-casing-with-gu-10001',
             'details' => 'Lamp Size: Diameter 80mm',
@@ -56,7 +56,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product1_2 = Product::create([
-            'product_code' => 'single round eyeball_white casing_with GU 20_001',
+            'product_code' => 'BU0417 0701 0100 0002',
             'name' => 'Single Round Eyeball White Casing With GU 20001',
             'name_slug' => 'single-round-eyeball-white-casing-with-gu-20001',
             'details' => 'Lamp Size: Diameter 80mm',
@@ -97,7 +97,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product2 = Product::create([
-            'product_code' => 'single round eyeball_white casing_with GU 10_002',
+            'product_code' => 'BU0417 0701 0100 0003',
             'name' => 'Single Round Eyeball White Casing With GU 10002',
             'name_slug' => 'single-round-eyeball-white-casing-with-gu-10002',
             'details' => 'Lamp Size: Diameter 90mm, Height 55mm, Cut-Hole Size: 75mm',
@@ -138,7 +138,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product3 = Product::create([
-            'product_code' => 'single round downlight_white casing_12w_001',
+            'product_code' => 'BU0417 0701 0200 0004',
             'name' => 'Single Round Downlight White Casing 12W 001',
             'name_slug' => 'single-round-downlight-white-casing-12w-001',
             'details' => 'Lamp Size: Diameter 105mm, Height 60mm, Cut-Hole Size: 90mm.',
@@ -179,7 +179,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product3_2 = Product::create([
-            'product_code' => 'single round downlight_white casing_12w_001',
+            'product_code' => 'BU0417 0701 0200 0005',
             'name' => 'Single Round Downlight White Casing 12W 001',
             'name_slug' => 'single-round-downlight-white-casing-12w-001',
             'details' => 'Lamp Size: Diameter 105mm, Height 60mm, Cut-Hole Size: 90mm.',
@@ -220,7 +220,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product4 = Product::create([
-            'product_code' => 'single round downlight_white casing_15w_002',
+            'product_code' => 'BU0417 0701 0200 0006',
             'name' => 'Single Round Downlight White Casing 15W 002',
             'name_slug' => 'single-round-downlight-white-casing-15w-002',
             'details' => 'Lamp Size: Diameter 130mm, Height 66mm, Cut-Hole Size: 110mm.',
@@ -261,7 +261,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product5 = Product::create([
-            'product_code' => 'recessed t-bar mirror reflector fitting_with led T8 glass tube_3*36w_001',
+            'product_code' => 'BU0417 0702 0007',
             'name' => 'Recessed T-Bar Mirror Reflector Fitting With LED T8 Glass Tube 3 36W 001',
             'name_slug' => 'recessed-t-bar-mirror-reflector-fitting-with-led-t8-glass-tube-3-36w-001',
             'details' => 'Lamp Size : Length 1222mm, Width 605mm, Height 85mm',
@@ -301,7 +301,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product6 = Product::create([
-            'product_code' => 'table light 001',
+            'product_code' => 'BU0417 0705 0008',
             'name' => 'Table Light 001',
             'name_slug' => 'table-light-001',
             'details' => 'lamp Shade Size: xxx Lamp Base: xxxx',
