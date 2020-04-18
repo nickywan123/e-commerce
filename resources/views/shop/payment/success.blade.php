@@ -46,19 +46,6 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="align-top font-weight-bold">
-                            <?php
-                            $subtotal = 0;
-                            ?>
-                            @foreach($purchase->orders as $order)
-                            @foreach($order->items as $item)
-                            <?php
-                            $subtotal = $subtotal + $item->subtotal_price;
-                            ?>
-                            @endforeach
-                            @endforeach
-                            <?php echo 'RM ' . number_format(($subtotal / 100), 2); ?>
-                        </td>
                     </tr>
                     @endforeach
                     @endforeach
