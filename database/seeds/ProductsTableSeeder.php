@@ -800,5 +800,82 @@ class ProductsTableSeeder extends Seeder
                 'filename' => $product->slug . '_' . $color->color_name . '.jpg'
             ]);
         }
+
+        // -- 
+        $product = null;
+        // --
+
+        $product = Product::create([
+            'unique_id' => mt_rand(1000000, 9999999),
+            'name' => 'Cloth Curtain Multi Colored',
+            'price' => '0',
+            'slug' => 'cloth-curtain-multi-colored',
+            'summary' => 'Curtain that blocks lights and make your home feel comfy.',
+            'description' => 'Curtain that blocks lights and make your home feel comfy.',
+            'quality_id' => '1',
+            'panel_id' => '1',
+            'amount_sold' => '0',
+            'average_rating' => '0'
+        ]);
+
+        $product->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product->slug . '/',
+                'filename' => $product->slug . '_1.jpg'
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product->slug . '/',
+                'filename' => $product->slug . '_2.jpg'
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product->slug . '/',
+                'filename' => $product->slug . '_3.jpg'
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product->slug . '/',
+                'filename' => $product->slug . '_4.jpg'
+            ]
+        ]);
+
+        $product->categories()->attach([
+            Category::where('name', 'Curtains')->first()->id
+        ]);
+
+        $product->colors()->createMany([
+            [
+                'color_name' => 'black',
+                'name_slug' => 'black',
+                'color_hex' => '#000000',
+                'is_default' => 1
+            ],
+            [
+                'color_name' => 'white',
+                'name_slug' => 'white',
+                'color_hex' => '#ffffff'
+            ]
+        ]);
+
+        $product->lengths()->createMany([
+            [
+                'length' => '1000',
+                'measurement_unit' => 'cm',
+                'is_default' => 1
+            ],
+            [
+                'length' => '2000',
+                'measurement_unit' => 'cm'
+            ],
+            [
+                'length' => '3000',
+                'measurement_unit' => 'cm'
+            ]
+        ]);
+
+        foreach ($product->colors as $color) {
+            $color->image()->create([
+                'path' => 'uploads/images/products/' . $product->slug . '/' . $color->color_name . '/',
+                'filename' => $product->slug . '_' . $color->color_name . '.jpg'
+            ]);
+        }
     }
 }
