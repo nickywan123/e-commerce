@@ -303,9 +303,6 @@
                                 Thank you for shopping on Bujishu.
                                 <br>
                                 <br>
-                                We have received your order #{{ $purchase->getFormattedNumber() }} on {{ $purchase->updated_at->format('d/m/Y') }} at {{ $purchase->updated_at->format('g:i A') }}.
-                                <br>
-                                <br>
                                 Your order number is {{ $purchase->getFormattedNumber() }}. Please refer attachment for the invoice and receipt.
                             </p>
                             <div style="height: 80px;"></div>
