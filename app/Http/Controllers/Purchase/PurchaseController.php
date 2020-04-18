@@ -192,7 +192,7 @@ class PurchaseController extends Controller
         $purchase->user_id = $user->id;
         // Generate a unique number used to identify the purchase.
         $purchase->purchase_number =
-            '0000000BSN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT);
+            '0000000BJN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT);
 
         // Assign a status to the purchase. Unpaid, paid.
         $purchase->purchase_status = 3000;
@@ -400,17 +400,18 @@ class PurchaseController extends Controller
 
 
     /***Return receipt for the particular order (PDF)***/
-     
-    public function receipt($purchase_num){
 
-           // Get user.
-           $user = User::find(Auth::user()->id);
-           $purchase = $user->purchases->where('purchase_number', $purchase_num)->first();
-           $pdf = PDF::loadView('documents.receipt.receipt', compact('purchase'))->setPaper('A4');
-           return $pdf->stream('receipt-.' . $purchase_num . '.pdf');
+    public function receipt($purchase_num)
+    {
+
+        // Get user.
+        $user = User::find(Auth::user()->id);
+        $purchase = $user->purchases->where('purchase_number', $purchase_num)->first();
+        $pdf = PDF::loadView('documents.receipt.receipt', compact('purchase'))->setPaper('A4');
+        return $pdf->stream('receipt-.' . $purchase_num . '.pdf');
     }
 
-   
+
 
     /**
      * Return invoice for Dealer
