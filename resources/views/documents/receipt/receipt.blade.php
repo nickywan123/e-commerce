@@ -8354,8 +8354,8 @@
                             </td>
                         </tr>
                         <tr>
-                            @foreach ($purchase->orders as $order)             
-                            
+                            @foreach ($purchase->orders as $order)
+
                             <td colspan="4" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
                                 {{ $order->panel->company_name }}
                             </td>
@@ -8376,10 +8376,10 @@
                                 state,
                                 Malaysia
                             </td>
-                           
+
                             @endforeach
                         </tr>
-                       
+
                         <tr>
                             <td style="font-size: 9pt; padding:35px 4px 10px;">
                                 Agent Code:
@@ -8387,7 +8387,7 @@
                             <td style="font-size: 9pt; padding: 35px 4px 10px; border-bottom: 1px solid #cccccc; margin: 0;">
                                 {{ $purchase->user->userInfo->full_name }}
                             </td>
-                       
+
                             <td style="font-size: 9pt;  padding:35px 4px 10px;">
                                 Area:
                             </td>
@@ -8417,223 +8417,223 @@
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
                                 {{ $purchase->user->userInfo->shippingAddress->address_1 }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->address_2 }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->postcode }},
-                                {{ $purchase->user->userInfo->shippingAddress->city }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->state->name }},
-                                Malaysia
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 9pt; font-weight: 600; padding: 4px;">
-                                Attention To
-                            </td>
-                            <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->full_name }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 9pt; font-weight: 600; padding: 4px;">
-                                Contact No.
-                            </td>
-                            <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->mobileContact->contact_num }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="border-bottom: 1px solid #000000;">
-                                <div style="height: 5px; width: 100%;">
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+            </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                    {{ $purchase->user->userInfo->shippingAddress->address_2 }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                    {{ $purchase->user->userInfo->shippingAddress->postcode }},
+                    {{ $purchase->user->userInfo->shippingAddress->city }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                    {{ $purchase->user->userInfo->shippingAddress->state->name }},
+                    Malaysia
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 9pt; font-weight: 600; padding: 4px;">
+                    Attention To
+                </td>
+                <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                    {{ $purchase->user->userInfo->full_name }}
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 9pt; font-weight: 600; padding: 4px;">
+                    Contact No.
+                </td>
+                <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                    {{ $purchase->user->userInfo->mobileContact->contact_num }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border-bottom: 1px solid #000000;">
+                    <div style="height: 5px; width: 100%;">
+                    </div>
+                </td>
+            </tr>
+            </table>
+        </div>
+    </div> --}}
+
+    {{-- <div class="col-xs-1 pl-1 pr-1">
+
             </div> --}}
 
-            {{-- <div class="col-xs-1 pl-1 pr-1">
+    <!-- 3rd Box -->
+    <div class="col-xs-5 pl-1 pr-1">
+        <div>
+            <table style="width: 100%;">
+                <tr>
+                    <td colspan="2" style="background-color: #ababab !important; padding: 6px 4px; text-align: center; border: 1px solid #000000;">
+                        <p style="color: #ad000e !important; margin: 0;">
+                            OFFICIAL RECEIPT NO.
+                        </p>
+                        ORBJS1029492
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="1" colspan="2" style=" padding: 6px 4px; text-align: center; border: 1px solid #000000;">
 
-            </div> --}}
+                        Payment Details
 
-            <!-- 3rd Box -->
-            <div class="col-xs-5 pl-1 pr-1">
-                <div >
-                    <table style="width: 100%;">
-                        <tr>
-                            <td colspan="2" style="background-color: #ababab !important; padding: 6px 4px; text-align: center; border: 1px solid #000000;">
-                                <p style="color: #ad000e !important; margin: 0;">
-                                    OFFICIAL RECEIPT NO.                         
-                                </p>
-                               ORBJS1029492
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="1" colspan="2" style=" padding: 6px 4px; text-align: center; border: 1px solid #000000;">
-                               
-                                Payment Details
-                                
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                Date
-                            </td>
-                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                               {{$purchase->purchase_date}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                Payment Method
-                            </td>
-                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                {{$purchase->purchase_type}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                Reference No.
-                            </td>
-                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                {{$purchase->offline_reference}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                Received In
-                            </td>
-                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                PBB
-                            </td>
-                        </tr>
-                       
-                    </table>
-                </div>
-            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
+                        Date
+                    </td>
+                    <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
+                        {{$purchase->purchase_date}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
+                        Payment Method
+                    </td>
+                    <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
+                        {{$purchase->purchase_type}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
+                        Reference No.
+                    </td>
+                    <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
+                        {{$purchase->offline_reference}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
+                        Received In
+                    </td>
+                    <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
+                        PBB
+                    </td>
+                </tr>
+
+            </table>
         </div>
+    </div>
+    </div>
 
-        <div style="width: 100%; margin-top: 15px;">
+    <div style="width: 100%; margin-top: 15px;">
 
-        </div>
+    </div>
 
-        <div class="row">
-            <div class="col-xs-12 pl-1 pr-1">
-                <div style="border: 1px solid #000; width: 100%; height: 625px;">
-                    <table  style="width: 100%;">
-                        <tr style="text-align: center; font-weight: 600; background-color:#DCDCDC;">
-                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 5%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
-                                Invoice Date
-                            </td>
-                            <td style="position:relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 12%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
-                                Invoice No.
-                            </td>
-                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 33%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
-                                Description
-                            </td>
-                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 16%">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
-                                Original Amount (RM)
-                            </td>
-                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 12%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
-                                Paid Amount (RM)
-                            </td>
-                           
-                        </tr>
+    <div class="row">
+        <div class="col-xs-12 pl-1 pr-1">
+            <div style="border: 1px solid #000; width: 100%; height: 625px;">
+                <table style="width: 100%;">
+                    <tr style="text-align: center; font-weight: 600; background-color:#DCDCDC;">
+                        <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 5%;">
+                            <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                            Invoice Date
+                        </td>
+                        <td style="position:relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 12%;">
+                            <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                            Invoice No.
+                        </td>
+                        <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 33%;">
+                            <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                            Description
+                        </td>
+                        <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 16%">
+                            <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                            Original Amount (RM)
+                        </td>
+                        <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 12%;">
+                            <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                            Paid Amount (RM)
+                        </td>
 
-                        
-                       
-                        <tr style="font-size: 10pt;">
-                            <td style="padding: 6px; text-align: center; vertical-align: top;">
-                                {{$purchase->purchase_date}}
-                            </td>
-                            <td style="padding: 6px; vertical-align: top;">
-                                {{$purchase->getFormattedNumber()}}
-                            </td>
-                            <td style="padding: 6px; vertical-align: top; ">
-                               Partial Payment (wip)
-                            </td>
-                            <td style="padding: 6px; text-align: center; vertical-align: top;">
+                    </tr>
+
+
+
+                    <tr style="font-size: 10pt;">
+                        <td style="padding: 6px; text-align: center; vertical-align: top;">
+                            {{$purchase->purchase_date}}
+                        </td>
+                        <td style="padding: 6px; vertical-align: top;">
+                            {{$purchase->getFormattedNumber()}}
+                        </td>
+                        <td style="padding: 6px; vertical-align: top; ">
+                            Partial Payment (wip)
+                        </td>
+                        <td style="padding: 6px; text-align: center; vertical-align: top;">
                             {{ number_format(($purchase->purchase_amount / 100), 2)}}
-                            </td>
-                            <td style="padding: 6px; text-align: center; vertical-align: top;">
-                                {{ number_format(($purchase->successfulPayment->amount / 100), 2)}}                      
-                            </td>
-                           
-                        </tr>
-                      
-                    </table>
-                </div>
+                        </td>
+                        <td style="padding: 6px; text-align: center; vertical-align: top;">
+                            {{ number_format(($purchase->successfulPayment->amount / 100), 2)}}
+                        </td>
+
+                    </tr>
+
+                </table>
             </div>
+        </div>
 
 
-            <div class="col-xs-12 pl-1 pr-1">
-                <div style="width: 100%;">
-                    <table style="width: 100%; font-size: 10pt;">
-                        <tr>
-                            <td style="padding: 4px; width: 50%;">
+        <div class="col-xs-12 pl-1 pr-1">
+            <div style="width: 100%;">
+                <table style="width: 100%; font-size: 10pt;">
+                    <tr>
+                        <td style="padding: 4px; width: 50%;">
 
-                            </td>
-                            <td style="padding: 4px; width: 15%;">
+                        </td>
+                        <td style="padding: 4px; width: 15%;">
 
-                            </td>
-                            <td style="padding: 4px; width: 15.2%">
+                        </td>
+                        <td style="padding: 4px; width: 15.2%">
 
-                            </td>
-                            <td style="border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 4px; width: 13.9%;">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="6" colspan="1" style="">
-                               
-                                <p style="font-size:10px; font-weight:bold; ">N.B Validity of this receipt is subject to realisation of your payment</p>  
-                           </td>
-                          
-                            <td rowspan="6" style="text-align:center;">
-                                
-                               
-                            </td>
-                            <td style="padding: 6px; font-weight:bold;">
-                                Total Received
-                            </td>
-                            <td style="text-align:center; padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
-                                <?php
-                                $subtotal = 0;
-                                foreach ($purchase->orders as $order) {
-                                    foreach ($order->items as $item) {
-                                        $subtotal = $subtotal + $item->subtotal_price;
-                                    }
+                        </td>
+                        <td style="border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 4px; width: 13.9%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6" colspan="1" style="">
+
+                            <p style="font-size:10px; font-weight:bold; ">N.B Validity of this receipt is subject to realisation of your payment</p>
+                        </td>
+
+                        <td rowspan="6" style="text-align:center;">
+
+
+                        </td>
+                        <td style="padding: 6px; font-weight:bold;">
+                            Total Received
+                        </td>
+                        <td style="text-align:center; padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
+                            <?php
+                            $subtotal = 0;
+                            foreach ($purchase->orders as $order) {
+                                foreach ($order->items as $item) {
+                                    $subtotal = $subtotal + $item->subtotal_price;
                                 }
-                                ?>
-                                {{ number_format(($purchase->successfulPayment->amount / 100), 2)}}
-                                 {{-- {{ number_format(($subtotal / 100), 2)}} --}}
-                            </td>
-                        </tr>
+                            }
+                            ?>
+                            {{ number_format(($purchase->successfulPayment->amount / 100), 2)}}
+                            {{-- {{ number_format(($subtotal / 100), 2)}} --}}
+                        </td>
+                    </tr>
 
-                      
-                    </table>
-                </div>
+
+                </table>
             </div>
         </div>
+    </div>
 
-        <div style="margin-top: 250px; width: 100%;">
+    <div style="margin-top: 250px; width: 100%;">
 
-        </div>
-{{-- 
+    </div>
+    {{--
         <div class="row">
             <div class="col-xs-12 pl-1 pr-1">
                 <p style="font-size: 10pt; font-weight: 600; margin-bottom: 5px;">Terms & Conditions</p>
@@ -8641,49 +8641,49 @@
             </div>
         </div> --}}
 
-        <div style="margin-top: 35px; width: 100%;"></div>
+    <div style="margin-top: 35px; width: 100%;"></div>
 
-        <div class="row">
-            <div class="col-xs-12 pl-1 pr-1">
-                <p style="font-size: 9pt; font-weight: 600; text-align: center;">
-                    This receipt is computer generated, no signature is required.
-                </p>
-                <div style="width: 100%; border-bottom: 1px solid #000000;">
+    <div class="row">
+        <div class="col-xs-12 pl-1 pr-1">
+            <p style="font-size: 9pt; font-weight: 600; text-align: center;">
+                This receipt is computer generated, no signature is required.
+            </p>
+            <div style="width: 100%; border-bottom: 1px solid #000000;">
 
-                </div>
             </div>
         </div>
+    </div>
 
-        <div style="margin-top: 5px; width: 100%;">
+    <div style="margin-top: 5px; width: 100%;">
 
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4 pl-1 pr-1" style="border-right: 1px solid #000000;">
+            <p style="padding-top: 5px; margin: 0; font-size: 10pt; font-weight: 600;">
+                DC SIGNATURE LIVINGSTYLE SDN BHD
+            </p>
+            <p style="padding-top: 5px; margin: 0; font-size: 7pt; font-weight: 600;">
+                Company No: 202001002917 (1359236-K)
+            </p>
         </div>
-
-        <div class="row">
-            <div class="col-xs-4 pl-1 pr-1" style="border-right: 1px solid #000000;">
-                <p style="padding-top: 5px; margin: 0; font-size: 10pt; font-weight: 600;">
-                    DC SIGNATURE LIVINGSTYLE SDN BHD
-                </p>
-                <p style="padding-top: 5px; margin: 0; font-size: 7pt; font-weight: 600;">
-                    Company No: 202001002917 (1359236-K)
-                </p>
-            </div>
-            <div class="col-xs-8 pl-1 pr-1" style="text-align: center;">
-                <p style="font-size: 7pt; margin: 0; padding: 5px 0; text-align: center;">
-                    1-26-05 Menara Bangkok Bank, Berjaya Central Park, No 105, Jalan Ampang, 50450 Kuala Lumpur, Malaysia
-                </p>
-                <p>
-                    <span style="width: 33%; text-align: center; margin-right: 10px;">
-                        &#9743; 603-2181 8821
-                    </span>
-                    <span style="width: 33%; text-align: center; margin-right: 10px;">
-                        bujishu@gmail.com
-                    </span>
-                    <span style="width: 33%;">
-                        www.bujishu.com
-                    </span>
-                </p>
-            </div>
+        <div class="col-xs-8 pl-1 pr-1" style="text-align: center;">
+            <p style="font-size: 7pt; margin: 0; padding: 5px 0; text-align: center;">
+                1-26-05 Menara Bangkok Bank, Berjaya Central Park, No 105, Jalan Ampang, 50450 Kuala Lumpur, Malaysia
+            </p>
+            <p>
+                <span style="width: 33%; text-align: center; margin-right: 10px;">
+                    &#9743; 603-2181 8821
+                </span>
+                <span style="width: 33%; text-align: center; margin-right: 10px;">
+                    bujishu@gmail.com
+                </span>
+                <span style="width: 33%;">
+                    www.bujishu.com
+                </span>
+            </p>
         </div>
+    </div>
     </div>
 
 </body>

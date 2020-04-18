@@ -8553,7 +8553,7 @@
                         <?php
                         $iterationNo = 0;
                         ?>
-                      
+
                         @foreach($order->items as $item)
                         <tr style="font-size: 10pt;">
                             <td style="padding: 6px; text-align: center; vertical-align: top;">
@@ -8639,11 +8639,11 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $subtotal = 0;
-                               
-                                    foreach ($order->items as $item) {
-                                        $subtotal = $subtotal + $item->subtotal_price;
-                                    }
-                                
+
+                                foreach ($order->items as $item) {
+                                    $subtotal = $subtotal + $item->subtotal_price;
+                                }
+
                                 ?>
                                 RM {{ number_format(($subtotal / 100), 2)}}
                             </td>
@@ -8659,11 +8659,11 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $deliveryFee = 0;
-                              
-                                    foreach ($order->items as $item) {
-                                        $deliveryFee = $deliveryFee + $item->delivery_fee;
-                                    }
-                                
+
+                                foreach ($order->items as $item) {
+                                    $deliveryFee = $deliveryFee + $item->delivery_fee;
+                                }
+
                                 ?>
                                 RM {{ number_format(($deliveryFee / 100), 2) }}
                             </td>
@@ -8679,11 +8679,11 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $installationFee = 0;
-                               
-                                    foreach ($order->items as $item) {
-                                        $installationFee = $installationFee + $item->installation_fee;
-                                    }
-                                
+
+                                foreach ($order->items as $item) {
+                                    $installationFee = $installationFee + $item->installation_fee;
+                                }
+
                                 ?>
                                 RM {{ number_format(($installationFee / 100), 2) }}
                             </td>
@@ -8699,11 +8699,11 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $grandTotal = 0;
-                               
-                                    foreach ($order->items as $item) {
-                                        $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
-                                    }
-                                
+
+                                foreach ($order->items as $item) {
+                                    $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
+                                }
+
                                 ?>
                                 RM {{ number_format(($grandTotal / 100), 2) }}
                             </td>
@@ -8719,11 +8719,11 @@
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
                                 $grandTotal = 0;
-                                
-                                    foreach ($order->items as $item) {
-                                        $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
-                                    }
-                                
+
+                                foreach ($order->items as $item) {
+                                    $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
+                                }
+
                                 ?>
                                 RM {{ number_format(($order->purchase->successfulPayment->amount / 100), 2) }}
                             </td>

@@ -196,6 +196,23 @@ class PaymentGatewayController extends Controller
             // Place the PDF into directory.
             File::put($pdfDestination . $pdfName . '.pdf', $content);
 
+            // Generate Receipt PDF.
+            // Generate PDF.
+            $pdf = PDF::loadView('documents.receipt.receipt', compact('purchase'));
+            // Get PDF content.
+            $content = $pdf->download()->getOriginalContent();
+            // Set path to store PDF file.
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            // Set PDF file name.
+            $pdfName = $purchase->purchase_number . '-receipt';
+            // Check if directory exist or not.
+            if (!File::isDirectory($pdfDestination)) {
+                // If not exist, create the directory.
+                File::makeDirectory($pdfDestination, 0777, true);
+            }
+            // Place the PDF into directory.
+            File::put($pdfDestination . $pdfName . '.pdf', $content);
+
             // Queue Invoice email to customer.
             SendInvoiceAndReceiptEmail::dispatch($user->email, $purchase);
 

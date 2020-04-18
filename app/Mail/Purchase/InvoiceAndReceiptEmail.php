@@ -36,6 +36,9 @@ class InvoiceAndReceiptEmail extends Mailable
             ->with('purchase', $this->purchase)
             ->attach(public_path(
                 '/storage/documents/invoice/' . $this->purchase->purchase_number . '/' . $this->purchase->purchase_number . '.pdf'
+            ))
+            ->attach(public_path(
+                '/storage/documents/invoice/' . $this->purchase->purchase_number . '/' . $this->purchase->purchase_number . '-receipt.pdf'
             ));
     }
 }
