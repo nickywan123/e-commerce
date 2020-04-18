@@ -60,45 +60,38 @@
             </div>
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style="color:#ffcc00; font-family: 'Tangerine'; "
-                href="/shop/category/bedsheets-and-mattresses/bedsheets"><img class="icon-image"
-                    src="{{asset('/storage/icons/bedsheet-icon.png')}}" alt="Icon">
+            <a style="color:#ffcc00; font-family: 'Tangerine'; " href="/shop/category/bedsheets-and-mattresses/bedsheets"><img class="icon-image" src="{{asset('/storage/icons/bedsheet-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text" style="font-size:30px;">Bedsheet</h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href=" /shop/category/curtains"><img class="icon-image"
-                    src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
+            <a style=" color:#ffcc00; font-family: 'Tangerine';" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text" style="font-size:30px; ">Curtains</h5>
             </a>
 
         </div>
 
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/lightings"><img class="icon-image"
-                    src="{{asset('/storage/icons/lighting.png')}}" alt="Icon">
+            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/lightings"><img class="icon-image" src="{{asset('/storage/icons/lighting.png')}}" alt="Icon">
                 <h5 class="margin-left-text" style="font-size:30px; ">Lighting</h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/wip"><img class="icon-image"
-                    src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
-                <h5  style="font-size:30px;">Renovation</h5>
+            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/wip"><img class="icon-image" src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
+                <h5 style="font-size:30px;">Renovation</h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/carpet"><img class="icon-image"
-                    src="{{asset('/storage/icons/carpet-icon.png')}} " alt="Icon">
+            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/carpets"><img class="icon-image" src="{{asset('/storage/icons/carpet-icon.png')}} " alt="Icon">
                 <h5 class="margin-left-text" style="font-size:30px; ">Carpet</h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/paint"><img class="icon-image"
-                    src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
+            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/paints"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text" style="font-size:30px; ">Paint</h5>
             </a>
 
@@ -175,8 +168,8 @@
             height: 100px;
         }
 
-        .margin-left-text{
-          margin-left: 10px;
+        .margin-left-text {
+            margin-left: 10px;
         }
     }
 
@@ -198,7 +191,8 @@
         .w-50-md {
             width: 50%;
         }
-        .margin-bottom-md{
+
+        .margin-bottom-md {
             margin-bottom: 20px;
         }
     }
@@ -207,12 +201,12 @@
     @media(max-width:325px) {
 
         .icon-image {
-          width: 90px;
-         height: 90px;
+            width: 90px;
+            height: 90px;
         }
 
-        .margin-left-text{
-          margin-left: 10px;
+        .margin-left-text {
+            margin-left: 10px;
         }
     }
 
@@ -236,7 +230,6 @@
 
 
     }
-
 </style>
 @endpush
 
@@ -258,6 +251,5 @@
 
 
     });
-
 </script>
 @endpush
