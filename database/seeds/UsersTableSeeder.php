@@ -308,7 +308,7 @@ class UsersTableSeeder extends Seeder
         $panelInfo->account_id = $largestPanelId;
         $panelInfo->company_name = 'Lafayette Trading Sdn Bhd';
         $panelInfo->ssm_number = '12445-K';
-        $panelInfo->company_email = 'delhubdigital@g@email.com';
+        $panelInfo->company_email = 'delhubdigital@gmail.com';
         $panelInfo->company_phone = '0194039056';
         $panelInfo->pic_name = 'Wan Shahruddin';
         $panelInfo->pic_nric = '951119105605';

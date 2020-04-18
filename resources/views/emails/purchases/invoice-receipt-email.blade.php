@@ -293,18 +293,20 @@
             <div class="col-8 offset-2">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title text-center p-4" style="background-color: #fccb34;">Thank you for your order.</h3>
+                        <h3 class="card-title text-center p-4 text-uppercase" style="background-color: #fccb34;">Order confirmation</h3>
                         <div class="pl-4 pr-4 pt-2 pb-2">
-                            <p class="card-text">Hi {{ $purchase->user->userInfo->full_name }},</p>
+                            <p class="card-text">Hello {{ $purchase->user->userInfo->full_name }}!</p>
                             <br>
                             <p class="card-text">
+                                Thanks for placing order with us.
+                                We’ll let you know once your item(s) have dispatched.
                                 Thank you for shopping on Bujishu.
                                 <br>
                                 <br>
-                                We have received your order #{{ $purchase->getFormattedNumber() }} on {{ $purchase->updated_at->format('d/m/Y') }} at {{ $purchase->updated_at->format('g:i A')}}.
+                                We have received your order #{{ $purchase->getFormattedNumber() }} on {{ $purchase->updated_at->format('d/m/Y') }} at {{ $purchase->updated_at->format('g:i A') }}.
                                 <br>
                                 <br>
-                                Your order is now being processed. Attached herewith is your invoice & receipt.
+                                Your order number is {{ $purchase->getFormattedNumber() }}. Please refer attachment for the invoice and receipt.
                             </p>
                             <div style="height: 80px;"></div>
                             <p class="card-text mb-1">Regards,</p>

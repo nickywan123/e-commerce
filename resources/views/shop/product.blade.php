@@ -135,9 +135,9 @@
                                 @method('POST')
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $panelProduct->id }}">
-                                <input type="hidden" id="product_attribute_color" name="product_attribute_color" value="">
-                                <input type="hidden" id="product_attribute_size" name="product_attribute_size" value="">
-                                <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
+                                <input type="hidden" id="product_attribute_color_buyNow" name="product_attribute_color" value="">
+                                <input type="hidden" id="product_attribute_size_buyNow" name="product_attribute_size" value="">
+                                <input type="hidden" id="product_attribute_temperature_buyNow" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
                                 <button type="submit" class="btn btn-lg bjsh-btn-gradient font-weight-bold w-100" style="color: #1a1a1a;">Buy Now</button>
@@ -147,7 +147,7 @@
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.add-item') }}">
                                 @method('POST')
                                 @csrf
-                               
+
                                 <input type="hidden" name="product_id" value="{{ $panelProduct->id }}">
                                 <input type="hidden" id="product_attribute_color" name="product_attribute_color" value="">
                                 <input type="hidden" id="product_attribute_size" name="product_attribute_size" value="">
@@ -618,11 +618,14 @@
         })
 
         function onPageload() {
+            inputColorBuy = $('#product_attribute_color_buyNow');
+            inputSizeBuy = $('#product_attribute_size_buyNow');
+            inputTemperatureBuy = $('#product_attribute_temperature_buyNow');
+
             inputColor = $('#product_attribute_color');
             inputSize = $('#product_attribute_size');
             inputTemperature = $('#product_attribute_temperature');
 
-            console.log($('input[name="temperature"]:checked').val());
             if ($('input[name="color"]:checked').val()) {
                 panelColor = $('input[name="color"]:checked').val();
             } else {
@@ -641,9 +644,15 @@
                 panelTemperature = null;
             }
 
+
+
             inputColor.val(panelColor);
             inputSize.val(panelSize);
             inputTemperature.val(panelTemperature);
+
+            inputColorBuy.val(panelColor);
+            inputSizeBuy.val(panelSize);
+            inputTemperatureBuy.val(panelTemperature);
         }
 
         $('.panel-product-attributes').on('click', function(e) {

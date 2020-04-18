@@ -293,15 +293,17 @@
             <div class="col-8 offset-2">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title text-center p-4" style="background-color: #fccb34;">An Order has been placed.</h3>
+                        <h3 class="card-title text-center p-4 text-uppercase" style="background-color: #fccb34;">Placement of order</h3>
                         <div class="pl-4 pr-4 pt-2 pb-2">
-                            <p class="card-text">Hi {{ $order->panel->company_name }},</p>
+                            <p class="card-text text-uppercase"> {{ $order->panel->company_name }},</p>
                             <br>
                             <p class="card-text">
-                                An order with the document number <strong>{{ $order->order_number }}</strong> has been placed. Please proceed to take action accordingly.
+                                An order had been placed as per Doc No : <strong>{{ $order->order_number }}</strong>.
+                                Kindly pick-up the order and arrange for dispatched.
+                                Please advise us the estimated delivery date.
                                 <br>
                                 <br>
-                                Attached herewith is the Purchase Order document.
+                                Please refer attachment for PO details
                             </p>
                             <div style="height: 80px;"></div>
                             <p class="card-text mb-1">Regards,</p>

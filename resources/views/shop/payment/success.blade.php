@@ -12,7 +12,7 @@
             </h3>
             <div class="text-center mt-3">
                 <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
-                <a class="btn bjsh-btn-gradient" href="/shop/order">View Orders</a>
+                <a class="btn bjsh-btn-gradient" href="/shop/dashboard/orders/index">View Orders</a>
             </div>
             <div class="mt-3">
                 <table class="table">

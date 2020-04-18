@@ -785,8 +785,8 @@ class PanelProductsTableSeeder extends Seeder
             ],
             [
                 'attribute_type' => 'color',
-                'attribute_name' => 'Grey',
-                'color_hex' => '#808080'
+                'attribute_name' => 'Beige',
+                'color_hex' => '#f5f5dc'
             ],
             [
                 'attribute_type' => 'color',

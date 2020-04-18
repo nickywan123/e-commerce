@@ -52,7 +52,7 @@ $totalPrice = 10000;
                     {{ $cartItem->product_information['product_temperature'] }},
                     @endif
                     @if(array_key_exists('product_size', $cartItem->product_information))
-                    {{ $cartItem->product_information['product_size'] }}
+                    {{ $cartItem->product_information['product_size'] }},
                     @endif
                     @if(array_key_exists('product_color_name', $cartItem->product_information))
                     {{ $cartItem->product_information['product_color_name']}}
