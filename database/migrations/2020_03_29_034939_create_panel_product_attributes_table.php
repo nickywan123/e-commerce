@@ -19,7 +19,8 @@ class CreatePanelProductAttributesTable extends Migration
             $table->string('attribute_type');
             $table->string('attribute_name');
             $table->string('color_hex')->nullable();
-            $table->integer('price')->default(0);
+            $table->unsignedBiginteger('price')->default(0);
+            $table->unsignedBiginteger('member_price')->default(0);
             $table->timestamps();
         });
     }

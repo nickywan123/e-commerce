@@ -102,6 +102,8 @@ class CartController extends Controller
             $sizeId = $size->id;
         }
 
+
+
         // If the post request has product length id value in it..
         if ($request->input('product_attribute_temperature') != null) {
             // Get selected product length.
@@ -132,6 +134,8 @@ class CartController extends Controller
         $existingCartItem = $existingCartItem->where('status', 2001)->first();
 
 
+
+
         // If item doesn't exist in cart..
         if ($existingCartItem == null) {
             // Initialize product information array.
@@ -142,6 +146,7 @@ class CartController extends Controller
             $newCartItem->user_id = $user->id;
             $newCartItem->product_id = $product->id;
 
+            $price = 0;
             // Check if the post request has product color id in it..
             if ($color != null) {
                 // If yes, assign the color id and name
@@ -161,18 +166,29 @@ class CartController extends Controller
                 $productInformation['product_temperature'] = $temperature->attribute_name;
             }
 
+            if ($color->price != 0) {
+                $price = $color->price;
+            } elseif ($size->price != 0) {
+                $price = $size->price;
+            } elseif ($temperature->price != 0) {
+                $price = $temperature->price;
+            } else {
+                $price = $product->price;
+            }
+
             $newCartItem->product_information = $productInformation;
             $newCartItem->quantity = $request->input('productQuantity');
             $newCartItem->delivery_fee = $product->delivery_fee;
             $newCartItem->installation_fee = $product->installation_fee;
-            $newCartItem->subtotal_price = $product->price * $request->input('productQuantity');
+            $newCartItem->unit_price = $price;
+            $newCartItem->subtotal_price = $price * $request->input('productQuantity');
             $newCartItem->save();
         } else {
             // If item exist in cart..
             // Add to the existing quantity.
             $existingCartItem->quantity = $existingCartItem->quantity + $request->input('productQuantity');
             // Re calculate the total price.
-            $existingCartItem->subtotal_price = $existingCartItem->quantity * $existingCartItem->product->price;
+            $existingCartItem->subtotal_price = $existingCartItem->quantity * $existingCartItem->unit_price;
             $existingCartItem->save();
         }
 

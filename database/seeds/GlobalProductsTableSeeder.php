@@ -731,7 +731,7 @@ class GlobalProductsTableSeeder extends Seeder
                 'default' => 1
             ],
             [
-                'path' => 'uploads/images/products/' . $product11->name_slug . '/',
+                'path' => 'uploads/images/products/' . $product12->name_slug . '/',
                 'filename' => $product12->name_slug . '_2.jpg'
             ]
         ]);
@@ -783,13 +783,13 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product13->images()->createMany([
             [
-                'path' => 'uploads/images/products/' . $product12->name_slug . '/',
-                'filename' => $product12->name_slug . '_1.jpg',
+                'path' => 'uploads/images/products/' . $product13->name_slug . '/',
+                'filename' => $product13->name_slug . '_1.jpg',
                 'default' => 1
             ],
             [
-                'path' => 'uploads/images/products/' . $product11->name_slug . '/',
-                'filename' => $product12->name_slug . '_2.jpg'
+                'path' => 'uploads/images/products/' . $product13->name_slug . '/',
+                'filename' => $product13->name_slug . '_2.jpg'
             ]
         ]);
 

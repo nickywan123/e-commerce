@@ -61,7 +61,7 @@ $totalPrice = 10000;
             </div>
             <div class="col-2 px-2 text-center my-auto">
                 <p style="font-size: 1.1rem; color: #f0c230;" class="font-weight-bold my-1">
-                    RM {{ $cartItem->product->getDecimalPrice() }}
+                    RM {{ number_format(($cartItem->unit_price / 100), 2) }}
                 </p>
                 <p class="my-1">
                     <span class="mx-2">

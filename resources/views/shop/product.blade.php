@@ -47,13 +47,13 @@
                         <span class="text-muted">Fixed Price</span>
                         <br>
                         @endif
-                        <h4 style="display: inline-block; font-weight: 700; color: #474747;" class="mt-1 mb-3">RM {{ $panelProduct->getDecimalPrice() }}</h4>
+                        <h4 id="price_tag" style="display: inline-block; font-weight: 700; color: #474747;" class="mt-1 mb-3">RM {{ $panelProduct->getDecimalPrice() }}</h4>
                     </div>
                     @if($panelProduct->member_price != 0)
                     <div>
                         <span class="text-muted">DC Customer Price</span>
                         <br>
-                        <h4 style="display: inline-block; font-weight: 700; color: #cccc00;" class="mt-1 mb-3">RM {{ $panelProduct->getDecimalPrice() }}</h4>
+                        <h4 id="member_price_tag" style="display: inline-block; font-weight: 700; color: #cccc00;" class="mt-1 mb-3">RM {{ $panelProduct->getDecimalPrice() }}</h4>
                     </div>
                     @endif
 
@@ -71,7 +71,20 @@
                             <p class="mb-1">Colors</p>
                             <div class="boxed">
                                 @foreach($panelProduct->colorAttributes as $key => $colorAttribute)
-                                <input type="radio" id="color-{{ $colorAttribute->id }}" class="panel-product-attributes" name="color" value="{{ $colorAttribute->id }}" {{ ($key == 1) ? 'checked' : '' }}>
+                                <?php
+                                if ($colorAttribute->price != 0) {
+                                    $attributePrice = number_format(($sizeAttribute->price / 100), 2);
+                                } else {
+                                    $attributePrice = 0;
+                                }
+
+                                if ($colorAttribute->member_price != 0) {
+                                    $attributeMemberPrice = number_format(($sizeAttribute->member_price / 100), 2);
+                                } else {
+                                    $attributeMemberPrice = 0;
+                                }
+                                ?>
+                                <input type="radio" id="color-{{ $colorAttribute->id }}" class="panel-product-attributes" name="color" value="{{ $colorAttribute->id }}" {{ ($key == 1) ? 'checked' : '' }} {{ ($attributePrice != 0) ? 'data-price=' . $attributePrice : '' }} {{ ($attributeMemberPrice != 0) ? 'data-member-price' . $attributeMemberPrice : '' }}>
                                 <label class="color-options" for="color-{{ $colorAttribute->id }}" style="background-color: {{ $colorAttribute->color_hex }}"></label>
                                 @endforeach
                             </div>
@@ -86,7 +99,20 @@
                             <p class="mb-1">Sizes</p>
                             <div class="boxed">
                                 @foreach($panelProduct->sizeAttributes as $key => $sizeAttribute)
-                                <input type="radio" id="size-{{ $sizeAttribute->id }}" class="panel-product-attributes" name="size" value="{{ $sizeAttribute->id }}" {{ ($key == 0) ? 'checked' : '' }}>
+                                <?php
+                                if ($sizeAttribute->price != 0) {
+                                    $attributePrice = number_format(($sizeAttribute->price / 100), 2);
+                                } else {
+                                    $attributePrice = 0;
+                                }
+
+                                if ($sizeAttribute->member_price != 0) {
+                                    $attributeMemberPrice = number_format(($sizeAttribute->member_price / 100), 2);
+                                } else {
+                                    $attributeMemberPrice = 0;
+                                }
+                                ?>
+                                <input type="radio" id="size-{{ $sizeAttribute->id }}" class="panel-product-attributes" name="size" value="{{ $sizeAttribute->id }}" {{ ($key == 0) ? 'checked' : '' }} {{ ($attributePrice != 0) ? 'data-price=' . $attributePrice : '' }} {{ ($attributeMemberPrice != 0) ? 'data-member-price=' . $attributeMemberPrice : '' }}>
                                 <label for="size-{{ $sizeAttribute->id }}">{{ $sizeAttribute->attribute_name }}</label>
                                 @endforeach
                             </div>
@@ -101,7 +127,20 @@
                             <p class="mb-1 text-muted">Color Temperature</p>
                             <div class="boxed">
                                 @foreach($panelProduct->lightTemperatureAttributes as $key => $lightTemperatureAttribute)
-                                <input type="radio" id="temperature-{{ $lightTemperatureAttribute->id }}" class="panel-product-attributes" name="temperature" value="{{ $lightTemperatureAttribute->id }}" {{ ($key == 0) ? 'checked' : '' }}>
+                                <?php
+                                if ($lightTemperatureAttribute->price != 0) {
+                                    $attributePrice = number_format(($sizeAttribute->price / 100), 2);
+                                } else {
+                                    $attributePrice = 0;
+                                }
+
+                                if ($lightTemperatureAttribute->member_price != 0) {
+                                    $attributeMemberPrice = number_format(($sizeAttribute->member_price / 100), 2);
+                                } else {
+                                    $attributeMemberPrice = 0;
+                                }
+                                ?>
+                                <input type="radio" id="temperature-{{ $lightTemperatureAttribute->id }}" class="panel-product-attributes" name="temperature" value="{{ $lightTemperatureAttribute->id }}" {{ ($key == 0) ? 'checked' : '' }} {{ ($attributePrice != 0) ? 'data-price=' . $attributePrice : '' }} {{ ($attributeMemberPrice != 0) ? 'data-member-price' . $attributeMemberPrice : '' }}>
                                 <label for="temperature-{{ $lightTemperatureAttribute->id }}">{{ $lightTemperatureAttribute->attribute_name }}</label>
                                 @endforeach
                             </div>
@@ -626,6 +665,9 @@
             inputSize = $('#product_attribute_size');
             inputTemperature = $('#product_attribute_temperature');
 
+            priceTag = $('#price_tag');
+            memberPriceTag = $('#member_price_tag');
+
             if ($('input[name="color"]:checked').val()) {
                 panelColor = $('input[name="color"]:checked').val();
             } else {
@@ -644,7 +686,29 @@
                 panelTemperature = null;
             }
 
+            let priceByAttr;
+            let mmbrPriceByAttr;
 
+            if (
+                $('input[name="color"]:checked').data('price')) {
+                priceByAttr = $('input[name="color"]:checked').data('price');
+            } else if ($('input[name="size"]:checked').data('price')) {
+                priceByAttr = $('input[name="size"]:checked').data('price');
+            } else if ($('input[name="temperature"]:checked').data('price')) {
+                priceByAttr = $('input[name="temperature"]:checked').data('price')
+            } else {
+                priceByAttr = 0;
+            }
+
+            if ($('input[name="color"]:checked').data('member-price')) {
+                mmbrPriceByAttr = $('input[name="color"]:checked').data('member-price');
+            } else if ($('input[name="size"]:checked').data('price')) {
+                mmbrPriceByAttr = $('input[name="size"]:checked').data('member-price');
+            } else if ($('input[name="temperature"]:checked').data('member-price')) {
+                mmbrPriceByAttr = $('input[name="temperature"]:checked').data('member-price')
+            } else {
+                mmbrPriceByAttr = 0;
+            }
 
             inputColor.val(panelColor);
             inputSize.val(panelSize);
@@ -653,6 +717,14 @@
             inputColorBuy.val(panelColor);
             inputSizeBuy.val(panelSize);
             inputTemperatureBuy.val(panelTemperature);
+
+            if (priceByAttr != 0) {
+                priceTag.text('RM ' + priceByAttr);
+            }
+
+            if (mmbrPriceByAttr != 0) {
+                memberPriceTag.text('RM ' + mmbrPriceByAttr);
+            }
         }
 
         $('.panel-product-attributes').on('click', function(e) {
@@ -678,9 +750,38 @@
                 panelTemperature = null;
             }
 
+            if (
+                $('input[name="color"]:checked').data('price')) {
+                priceByAttr = $('input[name="color"]:checked').data('price');
+            } else if ($('input[name="size"]:checked').data('price')) {
+                priceByAttr = $('input[name="size"]:checked').data('price');
+            } else if ($('input[name="temperature"]:checked').data('price')) {
+                priceByAttr = $('input[name="temperature"]:checked').data('price')
+            } else {
+                priceByAttr = 0;
+            }
+
+            if ($('input[name="color"]:checked').data('member-price')) {
+                mmbrPriceByAttr = $('input[name="color"]:checked').data('member-price');
+            } else if ($('input[name="size"]:checked').data('price')) {
+                mmbrPriceByAttr = $('input[name="size"]:checked').data('member-price');
+            } else if ($('input[name="temperature"]:checked').data('member-price')) {
+                mmbrPriceByAttr = $('input[name="temperature"]:checked').data('member-price')
+            } else {
+                mmbrPriceByAttr = 0;
+            }
+
             inputColor.val(panelColor);
             inputSize.val(panelSize);
             inputTemperature.val(panelTemperature);
+
+            if (priceByAttr != 0) {
+                priceTag.text('RM ' + priceByAttr);
+            }
+
+            if (mmbrPriceByAttr != 0) {
+                memberPriceTag.text('RM ' + mmbrPriceByAttr);
+            }
         });
 
         onPageload();

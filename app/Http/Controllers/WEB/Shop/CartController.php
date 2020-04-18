@@ -59,7 +59,7 @@ class CartController extends Controller
     {
         $cartItem = Cart::find($id);
         $cartItem->quantity = $request->input('quantity');
-        $cartItem->subtotal_price = $cartItem->quantity * $cartItem->product->price;
+        $cartItem->subtotal_price = $cartItem->quantity * $cartItem->unit_price;
         $cartItem->save();
 
         return $cartItem;
