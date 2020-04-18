@@ -8,8 +8,21 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
 <br>
+
+@if(Session::has('successful_message'))
+<div class="alert alert-success">
+{{ Session::get('successful_message') }}
+</div>
+@endif
+
+@if(Session::has('error_message'))
+<div class="alert alert-danger">
+{{ Session::get('error_message') }}
+</div>
+@endif
+
+
 <div class="row">
  <div class="col-12 mb-3"><h1 style="font-weight:bold;">Orders Tracking</h1></div>
 </div>
@@ -38,24 +51,22 @@
         <th scope="col">Claim Status </th>
       </tr>
     </thead>
-    <tbody class="">  
-      
+    <tbody class="">      
       @foreach ($customerOrders as $customerOrder)
       @foreach ($customerOrder->items as $item)                  
          <tr>
-           <form action="#" method="POST" > 
+           <form action="{{route('update.order.panel',[$customerOrder->order_number])}}" method="POST" > 
            <input type="hidden" name="_method" value="PUT">
            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <td><a href="/management/panel/orders/purchase-order-pdf/{{$customerOrder->order_number}}">{{$customerOrder->order_number}}</a></td>
             <td> {{ $item->product->parentProduct->product_code }}</td>
             <td>{{$item->product->parentProduct->name}}</td>
             <td>{{$customerOrder->getFormattedDate()}}</td>
-            <td> <input name='delivery_date' value="{{$customerOrder->delivery_date}}" class="date form-control" type="text" placeholder="Select delivery date" required autocomplete="off"> <input type="submit" class="bjsh-btn-gradient" value="Submit">  </td>
+            <td style="display:flex;"> <input name='delivery_date' value="{{$customerOrder->delivery_date}}" class="date form-control" type="text" placeholder="Select delivery date" required autocomplete="off"> <input type="submit" class="bjsh-btn-gradient" value="Submit">  </td>
             <td>{{$customerOrder->getPendingAttribute()}}</td> 
             <td>{{$customerOrder->order_status}}</td>
             <td>{{$customerOrder->received_date}}</td>
-            <td>{{$customerOrder->claim_status}}</td> 
-              
+            <td>{{$customerOrder->claim_status}}</td>              
           </form>
          </tr>
       @endforeach

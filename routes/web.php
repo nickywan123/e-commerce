@@ -108,6 +108,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         // Dashboard-Panel
         Route::get('/panel/orders', 'Management\ManagementController@index')->name('management.home');
+        Route::put('/panel/update-order/{order_num}','Management\ManagementController@updateOrder')->name('update.order.panel');
         Route::get('/panel/company-profile', 'Management\ManagementController@companyProfile')->name('management.company.profile');
         Route::get('/panel/change-password', 'Management\ChangePasswordController@index');
         Route::post('/panel/change-password', 'Management\ChangePasswordController@store')->name('change.password');
@@ -201,8 +202,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // Return Customer ->Value Records -> Orders Status
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
+        Route::get('/dashboard/reset-password', 'Shop\ForgotPasswordController@sendEmailReset')->name('shop.forgot.password');
 
-        //Return Change Password Form
+       
         Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders');
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');

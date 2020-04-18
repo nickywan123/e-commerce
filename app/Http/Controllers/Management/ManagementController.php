@@ -26,13 +26,7 @@ class ManagementController extends Controller
         $customerOrders= $customerOrders->where('panel_id',$panel_id)->get();
       
         
-        // Get the order date and current date to return pending days
-    //     $today = Carbon::today()->toDateString();
-    //     $date = Carbon::createFromFormat('d/m/Y',$today);
-    //     $date1 = Carbon::createFromFormat('d/m/Y', '14/04/2020');
-    //    $diff=Carbon::parse($date1)->diffInDays($date);
-
-    //     dd(Carbon::today()->toDateString());
+      
         return view("management.panel.index")->with('customerOrders',$customerOrders);
     }
 
@@ -48,7 +42,21 @@ class ManagementController extends Controller
         return $pdf->stream('purchase-order.'.$orderNum.'.pdf');
     }
 
+    // Update estimate delivery date (orders)
+    public function updateOrder(Request $request,$order_num){
+        $order = new Order();
+        $order = Order::findOrFail($order_num);
+        $order->delivery_date = $request->input('delivery_date');
+        $order->order_status = 1002;
+        // $order->updated_at=
+        $order->save();
+        if ($order) {
+            return back()->with(['successful_message' => 'Order updated successfully']);
+        } else {
+            return back()->with(['error_message' => 'Failed to update order']);
+        }
 
+    }
 
     /****Return company profile for panel***/
 

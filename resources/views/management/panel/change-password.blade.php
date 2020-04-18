@@ -6,7 +6,7 @@
 
 @if(Session::has('successful_message'))
 <div class="alert alert-success">
-<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
 {{ Session::get('successful_message') }}
 </div>
 @endif
@@ -59,7 +59,7 @@
                                 </button>
                             </div>
                             <div class="col-md-4 col-form-label ">
-                                <a class="" href="{{ route('password.request') }}">Forgot Password?</a>
+                                <a class="" target="_blank" rel="noopener noreferrer" href="{{ route('shop.forgot.password') }}">Forgot Password?</a>
                             </div>
                            
                         </div>
