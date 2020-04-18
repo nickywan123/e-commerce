@@ -1,10 +1,12 @@
 @component('mail::message')
 
-Thank you for registering!
+Dear {{ $user->userInfo->full_name }},
 
-Your account ID is: {{$user->userInfo->account_id}} 
+Your account ID is: {{$user->userInfo->account_id}}.
 
-Please click on the below link to verify your account.
+Thank you for registering with us!
+
+Verify your account so that you may start enjoying the special privileges given to registered customer.
 
 @component('mail::button', ['url' => $url])
 Verify Email
