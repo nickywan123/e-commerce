@@ -35,7 +35,7 @@ class PanelInfo extends Model
      */
     public function addresses()
     {
-        return $this->hasMany('App\Models\User\UserAddress', 'account_id', 'account_id');
+        return $this->hasMany('App\Models\Users\UserAddress', 'account_id', 'account_id');
     }
 
     /**
@@ -45,4 +45,17 @@ class PanelInfo extends Model
     {
         return $query->max('account_id');
     }
+
+    /**Get Panel Address**/
+    public function correspondenceAddress()
+    {
+        return $this->hasOne('App\Models\Users\Panels\PanelAddress', 'account_id', 'account_id')
+            ->where('is_correspondence_address', 1);
+    }
+     /**Get Panel Billing Address**/
+     public function billingAddress()
+     {
+         return $this->hasOne('App\Models\Users\Panels\PanelAddress', 'account_id', 'account_id')
+             ->where('is_billing_address', 1);
+     }
 }

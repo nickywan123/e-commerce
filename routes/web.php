@@ -37,6 +37,10 @@ Route::get('/shop/invoice', 'Purchase\PurchaseController@invoiceCustomer');
 // Return invoice in customer dashboard (Orders) 
 Route::get('/orders/invoice/{purchase_num}', 'Purchase\PurchaseController@invoice');
 
+//Return receipt in customer dashboard(Receipt)
+
+Route::get('/orders/receipt/{purchase_num}', 'Purchase\PurchaseController@receipt');
+
 Route::get('/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
 //Return Work In progress page
 Route::view('/wip', 'errors.wip');
@@ -105,6 +109,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // Dashboard-Panel
         Route::get('/panel/orders', 'Management\ManagementController@index')->name('management.home');
         Route::get('/panel/company-profile', 'Management\ManagementController@companyProfile')->name('management.company.profile');
+        Route::get('/panel/change-password', 'Management\ChangePasswordController@index');
+        Route::post('/panel/change-password', 'Management\ChangePasswordController@store')->name('change.password');
+
         Route::get('/panel/orders/purchase-order-pdf/{order_num}', 'Management\ManagementController@viewPurchaseOrder');
         
         Route::get('/orders/all', 'Management\ManagementController@allOrders');
@@ -192,7 +199,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // Return Customer ->Value Records -> All Orders
         Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders')->name('shop.customer.orders');
         // Return Customer ->Value Records -> Orders Status
-        Route::get('/dashboard/orders/orders-status', 'Shop\OrderController@customerOrderStatus')->name('shop.customer.order-status');
+        Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
+        Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
+
+        //Return Change Password Form
+        Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders');
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 

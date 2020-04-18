@@ -387,7 +387,7 @@ class PurchaseController extends Controller
     // IF NOT USING DELETE THE ITEM BELOW PLEASE!
 
 
-    /** Return invoice for the particular order in PDF format**/
+    /** Return invoice for the particular order (PDF)**/
 
     public function invoice($purchase_num)
     {
@@ -399,7 +399,18 @@ class PurchaseController extends Controller
     }
 
 
+    /***Return receipt for the particular order (PDF)***/
+     
+    public function receipt($purchase_num){
 
+           // Get user.
+           $user = User::find(Auth::user()->id);
+           $purchase = $user->purchases->where('purchase_number', $purchase_num)->first();
+           $pdf = PDF::loadView('documents.receipt.receipt', compact('purchase'))->setPaper('A4');
+           return $pdf->stream('receipt-.' . $purchase_num . '.pdf');
+    }
+
+   
 
     /**
      * Return invoice for Dealer

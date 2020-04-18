@@ -69,7 +69,8 @@ class OrderController extends Controller
 
    public function customerAllOrders(){
     $user = User::find(Auth::user()->id);
-    $purchases = $user->purchases->where('purchase_status',3004);
+    // Return purchases that user have paid
+    $purchases = $user->purchases->where('purchase_status',3003);
     // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
     return view('shop.customer-dashboard.value-records.index')->with('purchases', $purchases);
    }

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Shop;
 
+use Auth;
+use App\Models\Users\User;
 use Illuminate\Http\Request;
 use App\Models\Categories\Category;
 use App\Http\Controllers\Controller;
-use Auth;
 use Illuminate\Support\Facades\View;
 
 class ProfileController extends Controller
@@ -44,8 +45,12 @@ class ProfileController extends Controller
     /***Handles shop->customer profile ***/ 
 
     public function index(){
+        $customerInfo= User::find(Auth::user()->id);
+        //$customerInfo= $customerInfo->userInfo->account_id;
+      
+        //$customerInfo= $customerInfo->where('bujishu_id',$bujishu_id)->first();
         
-        return view('shop.customer-dashboard.profile.index');
+        return view('shop.customer-dashboard.profile.index')->with('customerInfo',$customerInfo);
     }
 
 }

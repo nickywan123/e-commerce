@@ -25,7 +25,7 @@
 </div>
 
 <table class="table table-bordered">
-    <thead class="thead-light" >  
+    <thead style="background-color:	#E8E8E8;" >  
       <tr>
         <th class="thead-font" scope="col">PO No.</th>
         <th scope="col">Product ID</th>
@@ -39,28 +39,28 @@
       </tr>
     </thead>
     <tbody class="">  
-        <form action="#" method="POST" > 
-            <input type="hidden" name="_method" value="PUT">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      
       @foreach ($customerOrders as $customerOrder)
       @foreach ($customerOrder->items as $item)                  
-         <tr >
+         <tr>
+           <form action="#" method="POST" > 
+           <input type="hidden" name="_method" value="PUT">
+           <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <td><a href="/management/panel/orders/purchase-order-pdf/{{$customerOrder->order_number}}">{{$customerOrder->order_number}}</a></td>
             <td> {{ $item->product->parentProduct->product_code }}</td>
             <td>{{$item->product->parentProduct->name}}</td>
             <td>{{$customerOrder->getFormattedDate()}}</td>
-            <td> <input  name='delivery_date' value="{{$customerOrder->delivery_date}}" class="date form-control" type="text" placeholder="Select delivery date" required autocomplete="off"></td>
-           
-           
-            <td> {{$customerOrder->getPendingAttribute()}}    </td>
-           
+            <td> <input name='delivery_date' value="{{$customerOrder->delivery_date}}" class="date form-control" type="text" placeholder="Select delivery date" required autocomplete="off"> <input type="submit" class="bjsh-btn-gradient" value="Submit">  </td>
+            <td>{{$customerOrder->getPendingAttribute()}}</td> 
             <td>{{$customerOrder->order_status}}</td>
             <td>{{$customerOrder->received_date}}</td>
-            <td>{{$customerOrder->claim_status}}</td>     
+            <td>{{$customerOrder->claim_status}}</td> 
+              
+          </form>
          </tr>
       @endforeach
       @endforeach 
-    </form>
+  
      
  
     </tbody>

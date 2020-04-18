@@ -56,7 +56,7 @@
 
                         <td style="">
                             <div><a href="/orders/invoice/{{$purchase->purchase_number}}">Invoice</a></div>
-                            <div><a href="#">Receipt</a></div>
+                            <div><a href="/orders/receipt/{{$purchase->purchase_number}}">Receipt</a></div>
                         </td>
                     </tr>
                     <!-- Starting Item Template -->
@@ -112,7 +112,7 @@
                                     <button class="text-capitalize bjsh-btn-gradient">Submit</button>
                                 </div>
                             </div>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-12">
                                     <span style="min-width:87px; display:inline-block;">Rate Supplier</span>
                                     <span class="fa fa-star-o "></span>
@@ -133,7 +133,7 @@
                                     <span class="fa fa-star-o "></span>
                                     <button class="text-capitalize bjsh-btn-gradient">Submit</button>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </td>
                     </tr>

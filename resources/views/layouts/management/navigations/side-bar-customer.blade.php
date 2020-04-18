@@ -23,6 +23,13 @@
                 </a>
                 
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/shop/dashboard/change-password">
+                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/change-password-icon.png')}}" alt="Change Password" style="height: 50px; width: 50px; border-radius:0px;">
+                </a>
+            </li>
+            
             
            
        

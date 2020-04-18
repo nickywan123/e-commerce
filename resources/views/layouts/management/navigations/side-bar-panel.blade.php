@@ -22,6 +22,13 @@
                     <img class="img-avatar" src="{{asset('/images/shop-icon-2.png')}}" alt="Shop" style="height: 50px; width: 50px; border-radius:0px;">
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/management/panel/change-password">
+                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/change-password-icon.png')}}" alt="Change Password" style="height: 50px; width: 50px; border-radius:0px;">
+                </a>
+            </li>
+            
             
             
            

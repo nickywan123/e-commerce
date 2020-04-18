@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Purchases\Order;
 use App\Models\Purchases\Purchase;
 use App\Http\Controllers\Controller;
+use App\Models\Users\Panels\PanelInfo;
 
 class ManagementController extends Controller
 {
@@ -52,7 +53,11 @@ class ManagementController extends Controller
     /****Return company profile for panel***/
 
     public function companyProfile(){
-        return view("management.panel.company-profile");
+        $panel_id= User::find(Auth::user()->id);
+        $panel_id= $panel_id->userInfo->account_id;
+        $companyProfile= new PanelInfo();
+        $companyProfile= $companyProfile->where('account_id',$panel_id)->first();
+        return view("management.panel.company-profile")->with('companyProfile',$companyProfile);
     }
 
     // View all orders-panel
