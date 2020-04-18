@@ -19,7 +19,6 @@
                     <tr>
                         <th>No</th>
                         <th>Items</th>
-                        <th>Price</th>
                     </tr>
                     @foreach($purchase->orders as $order)
                     @foreach($order->items as $item)
