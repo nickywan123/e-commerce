@@ -904,5 +904,79 @@ class PanelProductsTableSeeder extends Seeder
             '5',
             '6'
         ]);
+
+        // Product 15
+        $panelProduct15 = new Product;
+        $panelProduct15->global_product_id = 7;
+        $panelProduct15->panel_account_id = 1918000002;
+        $panelProduct15->product_description = '
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
+        <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
+        <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
+        ';
+        $panelProduct15->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct15->product_consistency = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct15->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct15->price = 20000;
+        $panelProduct15->member_price = 20000;
+        $panelProduct15->delivery_fee = 1000;
+        $panelProduct15->product_rating = 3;
+        $panelProduct15->save();
+
+        $panelProduct15->attributes()->createMany([
+            [
+                'attribute_type' => 'light-temperature',
+                'attribute_name' => 'Cool White'
+            ],
+            [
+                'attribute_type' => 'light-temperature',
+                'attribute_name' => 'Warm White'
+            ]
+        ]);
+
+        $panelProduct15->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 16
+        $panelProduct16 = new Product;
+        $panelProduct16->global_product_id = 8;
+        $panelProduct16->panel_account_id = 1918000002;
+        $panelProduct16->product_description = '
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
+        <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
+        <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
+        ';
+        $panelProduct16->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct16->product_consistency = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct16->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct16->price = 159900;
+        $panelProduct16->member_price = 159900;
+        $panelProduct16->delivery_fee = 1000;
+        $panelProduct16->product_rating = 5;
+        $panelProduct16->save();
+
+        $panelProduct16->attributes()->createMany([
+            [
+                'attribute_type' => 'light-temperature',
+                'attribute_name' => 'Cool White'
+            ],
+            [
+                'attribute_type' => 'light-temperature',
+                'attribute_name' => 'Warm White'
+            ]
+        ]);
+
+        $panelProduct16->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
     }
 }

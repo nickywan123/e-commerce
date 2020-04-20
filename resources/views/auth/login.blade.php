@@ -81,7 +81,7 @@
                         <div class="row">
                             <div class="col-6 mb-1">
                                 <div class="form-check">
-                                    <input class="form-check-input remember-check" type="checkbox" name="remember-me" id="remember-me" {{ old('remember') ? 'checked' : '' }}>
+                                    <input class="form-check-input remember-check" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                     <label class="form-check-label text-dark" style="padding-top: 1px;" for="remember">
                                         Remember me
                                     </label>

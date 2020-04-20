@@ -257,9 +257,194 @@
     <div class="card w-100" style="border-radius: 0;">
         <div class="row no-gutters">
             <div class="col-12 p-2">
-                <h1 class="text-center">Product Details</h1>
+                <h1 class="text-center mb-4 mt-2">Product Details</h1>
+                <hr style="width: 60%;">
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="accordion" id="accordionDescription">
+                            <div class="card" style="border: 1px solid rgba(0, 0, 0, 0.125);">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="font-size: 1.1rem;">
+                                            Description
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionDescription">
+                                    <div class="card-body">
+                                        <div class="p-4 product-details text-justify">
+                                            {!! $panelProduct->product_description !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+
+                        <div class="accordion" id="accordionMaterial">
+                            <div class="card" style="border: 1px solid rgba(0, 0, 0, 0.125);">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="font-size: 1.1rem;">
+                                            Material
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionMaterial">
+                                    <div class="card-body">
+                                        <div class="p-4 product-details text-justify">
+                                            {!! $panelProduct->product_material !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+
+                        <div class="accordion" id="accordionSize">
+                            <div class="card" style="border: 1px solid rgba(0, 0, 0, 0.125);">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" style="font-size: 1.1rem;">
+                                            Size
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSize">
+                                    <div class="card-body">
+                                        <div class="p-4 product-details text-justify">
+                                            @if ($panelProduct->sizeAttributes->count() > 0)
+                                            <p class="mb-1">Sizes</p>
+                                            @foreach($panelProduct->sizeAttributes as $sizeAttribute)
+                                            <span>{{ $sizeAttributes->attribute_name }}</span>
+                                            @endforeach
+                                            @endif
+
+                                            @if ($panelProduct->colorAttributes->count() > 0)
+                                            <p class="mb-1">Colors</p>
+                                            @foreach($panelProduct->colorAttributes as $$colorAttribute)
+                                            <span>{{ $sizeAttributes->attribute_name }}</span>
+                                            @endforeach
+                                            @endif
+
+                                            @if ($panelProduct->lightTemperatureAttributes->count() > 0)
+                                            <p class="mb-3 font-weight-bold">Light Temperature</p>
+                                            @foreach($panelProduct->lightTemperatureAttributes as $lightTemperatureAttribute)
+                                            <span class="p-2 rounded shadow-sm" style="background-color: #ffff00;">{{ $lightTemperatureAttribute->attribute_name }}</span>
+                                            @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-6">
+
+                        <div class="accordion" id="accordionConsistency">
+                            <div class="card" style="border: 1px solid rgba(0, 0, 0, 0.125);">
+                                <div class="card-header" id="headingFour">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" style="font-size: 1.1rem;">
+                                            Consistency
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionConsistency">
+                                    <div class="card-body">
+                                        <div class="p-4 product-details text-justify">
+                                            <p>
+                                                {{ $panelProduct->product_consistency }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6">
+
+                        <div class="accordion" id="accordionPackage">
+                            <div class="card" style="border: 1px solid rgba(0, 0, 0, 0.125);">
+                                <div class="card-header" id="headingFive">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" style="font-size: 1.1rem;">
+                                            Package
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionPackage">
+                                    <div class="card-body">
+                                        <div class="p-4 product-details text-justify">
+                                            <p>
+                                                {{ $panelProduct->product_package }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-6">
+
+                        <div class="accordion" id="accordionAvailability">
+                            <div class="card" style="border: 1px solid rgba(0, 0, 0, 0.125);">
+                                <div class="card-header" id="headingSix">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix" style="font-size: 1.1rem;">
+                                            Availability
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionAvailability">
+                                    <div class="card-body">
+                                        <div class="p-4 product-details text-justify">
+                                            @if($panelProduct->availableIn->count() > 0)
+                                            @foreach($panelProduct->availableIn as $availableIn)
+                                            <span class="d-inline-block shadow-sm" style="background-color: #ffff33; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->name }}</span>
+                                            @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card w-100" style="border-radius: 0;">
+        <div class="row no-gutters">
+            <div class="col-12 p-2">
+                <h1 class="text-center mb-4 mt-2">Know More</h1>
+                <hr style="width: 60%;">
                 <div class="p-4 product-details text-justify">
-                    {!! $panelProduct->product_details !!}
+                    {!! $panelProduct->product_description !!}
                 </div>
             </div>
         </div>

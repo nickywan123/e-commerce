@@ -261,23 +261,23 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product5 = Product::create([
-            'product_code' => 'BU0417 0702 0007',
+            'product_code' => 'BU0417 0702 0001',
             'name' => 'Recessed T-Bar Mirror Reflector Fitting With LED T8 Glass Tube 3 36W 001',
             'name_slug' => 'recessed-t-bar-mirror-reflector-fitting-with-led-t8-glass-tube-3-36w-001',
-            'details' => 'Lamp Size : Length 1222mm, Width 605mm, Height 85mm',
+            'details' => 'Lamp Size: Length 1222mm, Width 605mm, Height 85mm. 3 * 18W LED T8 Tube 1 year warranty.',
             'description' => 'Mainly used for general lighting in offices, hypermarkets, hospital, complexes.',
-            'quality_id' => 2,
+            'quality_id' => 1,
             'product_rating' => 0
         ]);
 
         $product5->attributes()->createMany([
             [
                 'attribute_type' => 'light-temperature',
-                'attribute_name' => 'Daylight 6000K'
+                'attribute_name' => 'Daylight'
             ],
             [
                 'attribute_type' => 'light-temperature',
-                'attribute_name' => 'Warm White 3000K'
+                'attribute_name' => 'Warm White'
             ]
         ]);
 
@@ -301,13 +301,13 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product6 = Product::create([
-            'product_code' => 'BU0417 0705 0008',
+            'product_code' => 'BU0417 0705 0001',
             'name' => 'Table Light 001',
             'name_slug' => 'table-light-001',
-            'details' => 'lamp Shade Size: xxx Lamp Base: xxxx',
+            'details' => 'lamp Shade Size: xxx, Lamp Base: xxxx, comes with led bulb.',
             'description' => 'A table lamp can have many functions. It can be used practically and functionally at a work table or desk where direct light is important. A table lamp can also be used as a reading light in the home\'s coziest nook, and a table lamp can create nice and soothing lighting in all the rooms of the home.',
-            'quality_id' => 1,
-            'product_rating' => 0
+            'quality_id' => 3,
+            'product_rating' => 5
         ]);
 
         $product6->attributes()->createMany([
