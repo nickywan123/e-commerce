@@ -13,17 +13,23 @@
         {{ session()->get('message') }}
     </div>
     @endif
-    <form action="" method="post">
-        @csrf
+    
+   
+    <form action="" method="POST">
+        {{ csrf_field() }}
+        {{ method_field('patch') }}
         <div class="row">
             <div class="col-12 col-md-10">
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <div class="form-group row ">
                             <label for="company_propaganda" class="col-md-2 col-form-label">Avatar:</label>
-                            <div class="col-md-9">
-                                <img src="{{asset('/images/zuck.jpg')}}" style="max-width:100px; max-height:100px;"
+                            <div class="col-md-1">
+                                <img src="{{asset('/storage/avatar/default-avatar.jpg')}}" style="max-width:80px; max-height:80px;"
                                     alt="avatar">
+                            </div>
+                            <div class="col-md-1 mt-3 col-form-label">
+                                <i class="fa fa-pencil bujishu-gold"></i>
                             </div>
 
 
@@ -47,24 +53,16 @@
 
 
                         <div class="form-group row ">
-                            <label for="company_name" class="col-md-2 col-form-label">First Name</label>
+                            <label for="company_name" class="col-md-2 col-form-label">Full Name(NRIC)</label>
                             <div class="col-md-3">
                                 <input type="text" name="company_name" id="company_name" value="{{$customerInfo->userInfo->full_name}}"
                                     class="form-control @error('company_name') is-invalid @enderror"
                                     value="{{ old('company_name') }}" readonly>
                             </div>
                             <div class="col-md-1 col-form-label">
-                                <i class="fa fa-pencil bujishu-gold"></i>
+                               <a href="{{route('shop.dashboard.customer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
                             </div>
-                            <label for="company_name" class="col-md-2 col-form-label">Last Name</label>
-                            <div class="col-md-3">
-                                <input type="text" name="company_name" id="company_name" value="{{$customerInfo->userInfo->full_name}}"
-                                    class="form-control @error('company_name') is-invalid @enderror"
-                                    value="{{ old('company_name') }}" readonly>
-                            </div>
-                            <div class="col-md-1 col-form-label">
-                                <i class="fa fa-pencil bujishu-gold"></i>
-                            </div>
+                           
 
                             @error('company_name')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -150,12 +148,12 @@
                             <div class="col-md-1 col-form-label">
                                 <i class="fa fa-pencil bujishu-gold"></i>
                             </div>
-                            <label for="company_name" class="col-md-2 col-form-label">Gender</label>
+                            {{-- <label for="company_name" class="col-md-2 col-form-label">Gender</label>
                             <div class="col-md-3">
                                 <input type="text" name="company_name" id="company_name"
                                     class="form-control @error('company_name') is-invalid @enderror"
                                     value="{{ old('company_name') }}" readonly>
-                            </div>
+                            </div> --}}
 
 
                             @error('company_name')
@@ -163,7 +161,7 @@
                             @enderror
                         </div>
 
-                        <div class="form-group row ">
+                        {{-- <div class="form-group row ">
                             <label for="company_address" class="col-md-2 col-form-label">User ID Information</label>
                             <div class="col-md-9">
                                 <input type="text" name="company_name" id="company_name" value="WIP"
@@ -176,7 +174,7 @@
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-
+ --}}
 
 
 
@@ -216,8 +214,9 @@
                 </div>
             </div>
 
-
+           
         </div>
+      
     </form>
 </div>
 

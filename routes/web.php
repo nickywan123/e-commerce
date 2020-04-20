@@ -197,6 +197,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         });
   
         Route::get('/dashboard/profile/index', 'Shop\ProfileController@index')->name('shop.dashboard.customer.profile');
+        Route::get('/dashboard/profile/edit','Shop\ProfileController@edit')->name('shop.dashboard.customer.profile.edit');
+        Route::patch('dashboard/profile/update/{id}','Shop\ProfileController@updateProfile')->name('profile.update');
+
         // Return Customer ->Value Records -> All Orders
         Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders')->name('shop.customer.orders');
         // Return Customer ->Value Records -> Orders Status
