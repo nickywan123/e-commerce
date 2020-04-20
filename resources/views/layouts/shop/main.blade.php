@@ -41,7 +41,9 @@
     @include('layouts.shop.navigation.sidebar')
 
     <main class="mt-3" id="body-content-collapse-sidebar">
-        @yield('content')
+        <div id="app">
+            @yield('content')
+        </div>
     </main>
 
     <!-- Footer -->

@@ -190,6 +190,7 @@ class ShopController extends Controller
             return view('shop.cart.partials.shopping-cart-item')->with('cartItems', $cartItems);
         }
 
+
         // Return view.
         // After finished loading, the view will submit an AJAX request that will be handled by the statement above.
         return view('shop.shopping-cart');

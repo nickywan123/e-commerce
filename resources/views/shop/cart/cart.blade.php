@@ -5,27 +5,83 @@
     <!-- Breadcrumb here -->
     <div class="container">
         <h1 class="mt-2 pl-1 pr-1" style="font-size: 1.5rem; color: #000;">Shopping Cart</h1>
-
+        {{ app('request')->query('name') }}
         <div class="row no-gutters" id="cart-container">
             <div class="col-12">
 
-                <!-- Loading Spinners -->
-                <div class="row no-gutters">
-                    <div class="col-12 p-1 m-0">
-                        <div id="loadingSpinnerDiv" class="card border-radius-0 mb-2 p-2">
-                            <div class="row no-gutters py-2">
-                                <div class="col-12 px-1 text-center">
-                                    <div class="spinner-border text-warning" role="status" style="width: 150px; height: 150px;">
-                                        <span class="sr-only">Loading...</span>
+                <form method="POST" action="/shop/cart/checkout">
+                    @csrf
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-8 p-1 m-0">
+                            <div id="loadingSpinnerDiv" class="card border-radius-0 mb-2 p-2" style="position: absolute; top: 0.25rem; left: 0; width: 100%;">
+                                <div class="row no-gutters py-2">
+                                    <div class="col-12 px-1 text-center">
+                                        <div class="spinner-border text-warning" role="status" style="width: 150px; height: 150px;">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <form method="POST" action="/shop/cart/checkout">
-                    @csrf
-                    <div id="cart-item-container" class="row no-gutters">
+
+                        <div id="cart-item-container" class="col-12 col-md-8 p-1 m-0">
+
+                        </div>
+
+                        <div class="col-12 col-md-4 p-1 m-0">
+                            <div class="card border-radius-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p class="h5 mb-2">Order Summary</p>
+                                            <hr class="my-1">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-2 mb-1">
+                                        <div class="col-6">
+                                            <p style="font-size: 1.05rem;" class="text-muted m-0">Subtotal <span>( Items)</span></p>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <p id="subtotal_price_tag" style="font-size: 1.05rem;" class="m-0">RM</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p style="font-size: 1.05rem;" class="text-muted">Shipping Fee</p>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <p id="shipping_price_tag" style="font-size: 1.05rem;">RM</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p style="font-size: 1.05rem;" class="text-muted">Installation Fee</p>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <p id="installation_price_tag" style="font-size: 1.05rem;">RM</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <p style="font-size: 1.1rem;">Total</p>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <p id="grand_total_tag" style="font-size: 1.15rem;">RM</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-12">
+                                            <button class="btn bjsh-btn-gradient d-block w-100 text-uppercase" type="submit">Proceed To Checkout</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Ajax response will be loaded here. -->
                     </div>
                 </form>
@@ -56,6 +112,11 @@
         // Element to load ajax response into.
         const ItemContainer = $('#cart-item-container');
 
+        const subtotalPriceTag = $('#subtotal_price_tag');
+        const shippingPriceTag = $('#shipping_price_tag');
+        const installationPriceTag = $('#installation_price_tag');
+        const grandTotalPriceTag = $('#grand_total_tag');
+
         // Setup ajax to include csrf token.
         $.ajaxSetup({
             headers: {
@@ -65,6 +126,11 @@
 
         // Function that make an ajax request to get cart items after the page loads.
         function onPageLoad() {
+            let checkedCartItem = [];
+            let subtotalPrice = 0;
+            let shippingPrice = 0;
+            let installationPrice = 0;
+
             $.ajax({
                 async: true,
                 beforeSend: function() {
@@ -84,6 +150,17 @@
                     ItemContainer.html(result);
 
                     buttonNumber = $(result).filter('.btn-number');
+
+                    if ($("input[name='cartItemId[]']:checked")) {
+                        $.each($("input[name='cartItemId[]']:checked"), function() {
+                            checkedCartItem.push($(this).val());
+                            subtotalPrice = subtotalPrice + $(this).data('unit-price') * $(this).data('quantity');
+                            shippingPrice = shippingPrice + $(this).data('shipping-price');
+                            installationPrice = installationPrice + $(this).data('installation-price');
+                        });
+
+                        updatePrice(subtotalPrice, shippingPrice, installationPrice);
+                    }
                 },
                 error: function(result) {
                     // Log into console if there's an error.
@@ -154,7 +231,6 @@
             }
 
             newQuantity = $(this).val();
-            console.log(newQuantity);
 
             $.ajax({
                 async: true,
@@ -217,10 +293,64 @@
             });
         });
 
-        // web.shop.cart.update - quantity
+        function number_format(number, decimals, dec_point, thousands_sep) {
+            // Strip all characters but numerical ones.
+            number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+            var n = !isFinite(+number) ? 0 : +number,
+                prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+                sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+                dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+                s = '',
+                toFixedFix = function(n, prec) {
+                    var k = Math.pow(10, prec);
+                    return '' + Math.round(n * k) / k;
+                };
+            // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+            s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+            if (s[0].length > 3) {
+                s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+            }
+            if ((s[1] || '').length < prec) {
+                s[1] = s[1] || '';
+                s[1] += new Array(prec - s[1].length + 1).join('0');
+            }
+            return s.join(dec);
+        }
+
+        function updatePrice(subtotalPrice, totalShipping, totalInstallation) {
+            let grandTotal = 0;
+
+            grandTotal = subtotalPrice + totalShipping + totalInstallation;
+
+            subtotalPrice = number_format(subtotalPrice / 100, 2, '.', ',');
+            totalShipping = number_format(totalShipping / 100, 2, '.', ',');
+            totalInstallation = number_format(totalInstallation / 100, 2, '.', ',');
+            grandTotal = number_format(grandTotal / 100, 2, '.', ',');
+
+            subtotalPriceTag.text((subtotalPrice == 0) ? 'RM 0.00' : 'RM ' + subtotalPrice);
+            shippingPriceTag.text((totalShipping == 0) ? 'RM 0.00' : 'RM ' + totalShipping);
+            installationPriceTag.text((totalInstallation == 0) ? 'RM 0.00' : 'RM ' + totalInstallation);
+            grandTotalPriceTag.text((grandTotal == 0) ? 'RM 0.00' : 'RM ' + grandTotal);
+        }
+
+        ItemContainer.on('change', '.item-checkbox', function() {
+            let checkedCartItem = [];
+
+            let subtotalPrice = 0;
+            let shippingPrice = 0;
+            let installationPrice = 0;
+
+            $.each($("input[name='cartItemId[]']:checked"), function() {
+                checkedCartItem.push($(this).val());
+                subtotalPrice = subtotalPrice + $(this).data('unit-price') * $(this).data('quantity');
+                shippingPrice = shippingPrice + $(this).data('shipping-price');
+                installationPrice = installationPrice + $(this).data('installation-price');
+            });
+
+            updatePrice(subtotalPrice, shippingPrice, installationPrice);
+        });
 
         /* End Author */
-
 
     });
 </script>

@@ -170,7 +170,7 @@
                     <!-- Add to cart / buy now -->
                     <div class="row no-gutters">
                         <div class="col-6 p-1 m-0">
-                            <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.buy.buy-now') }}">
+                            <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.buy-now') }}">
                                 @method('POST')
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $panelProduct->id }}">

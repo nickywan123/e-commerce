@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\Orders\InvoiceEmailCustomer;
+use App\Models\Globals\State;
 use App\Models\Purchases\Rating;
 use App\Models\Users\Panels\PanelInfo;
 use App\Models\Products\Product as PanelProduct;
@@ -53,7 +54,6 @@ class PurchaseController extends Controller
 
     public function buyNow(Request $request)
     {
-
         $user = User::find(Auth::user()->id);
 
         $product = PanelProduct::find($request->input('product_id'));
@@ -175,7 +175,6 @@ class PurchaseController extends Controller
      */
     public function checkoutItems(Request $request)
     {
-        // dd($request);
         // Get user.
         $user = User::find(Auth::user()->id);
         // Get the items in the cart of user.
@@ -318,10 +317,42 @@ class PurchaseController extends Controller
     public function paymentOption(Request $request)
     {
         $purchase = Purchase::where('purchase_number', $request->query('orderId'))
-            ->first();
+            ->firstOrFail();
+        $user = User::find(Auth::user()->id);
+        $states = State::all();
+
 
         return view('shop.payment.index')
-            ->with('purchase', $purchase);
+            ->with('purchase', $purchase)
+            ->with('user', $user)
+            ->with('states', $states);
+    }
+
+    public function updateCustomerPaymentDetail(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+
+        $userInfo = $user->userInfo;
+
+        $userInfo->full_name = $request->input('attention_to');
+        $userInfo->save();
+
+        $userMobileContact = $user->userInfo->mobileContact;
+
+        $userMobileContact->contact_num = $request->input('attention_contact');
+        $userMobileContact->save();
+
+        $userAddress = $user->userInfo->shippingAddress;
+
+        $userAddress->address_1 = $request->input('attention_address_1');
+        $userAddress->address_2 = $request->input('attention_address_2');
+        $userAddress->address_3 = $request->input('attention_address_3');
+        $userAddress->postcode = $request->input('attention_postcode');
+        $userAddress->city = $request->input('attention_city');
+        $userAddress->state_id = $request->input('state');
+        $userAddress->save();
+
+        return redirect('/payment/cashier?orderId=' . $request->input('orderId'));
     }
 
     /**

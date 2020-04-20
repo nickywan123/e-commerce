@@ -113,7 +113,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::post('/panel/change-password', 'Management\ChangePasswordController@store')->name('change.password');
 
         Route::get('/panel/orders/purchase-order-pdf/{order_num}', 'Management\ManagementController@viewPurchaseOrder');
-        
+
         Route::get('/orders/all', 'Management\ManagementController@allOrders');
         Route::get('/orders/open', 'Management\ManagementController@openOrders');
         Route::get('/orders/in-progress', 'Management\ManagementController@inProgressOrders');
@@ -194,7 +194,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
                 'Shop\ShopController@thirdLevelCategory'
             )->name('shop.category.third');
         });
-  
+
         Route::get('/dashboard/profile/index', 'Shop\ProfileController@index')->name('shop.dashboard.customer.profile');
         // Return Customer ->Value Records -> All Orders
         Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders')->name('shop.customer.orders');
@@ -213,6 +213,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             // POST route for adding item to cart.
             Route::post('/add-item', 'Shop\CartController@store')->name('shop.cart.add-item');
 
+            Route::post('/buy-now', 'Shop\CartController@buyNowStore')->name('shop.cart.buy-now');
+
             // DELETE route for deleting cart item.
             Route::put('/delete-item/{id}', 'Shop\CartController@destroy')->name('shop.cart.delete-item');
 
@@ -222,11 +224,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::get('/checkout/offline', 'Purchase\PurchaseController@offlinePayment');
 
             Route::post('/checkout/offline', 'Purchase\PurchaseController@offlinePaymentStore');
-        });
-
-        Route::group(['prefix' => 'buy'], function () {
-            Route::post('buy-now', 'Purchase\PurchaseController@buyNow')
-                ->name('shop.buy.buy-now');
         });
 
         Route::group(['prefix' => 'wishlist'], function () {
@@ -249,6 +246,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'payment'], function () {
         // View for user to select payment option and provide their payment information.
         Route::get('/cashier', 'Purchase\PurchaseController@paymentOption');
+
+        Route::put('/update-customer-details/{id}', 'Purchase\PurchaseController@updateCustomerPaymentDetail')
+            ->name('payment.update-details');
 
         // Handle POST request after user selected payment option and provided their payment information.
         Route::post('/', 'Purchase\PaymentGatewayController@paymentGatewayRequest');
@@ -330,7 +330,7 @@ Route::get('/tests/create-purchase-order-pdf', function () {
     $order = App\Models\Purchases\Order::first();
 
     $pdf = PDF::loadView('documents.order.purchase-order', compact('order'));
-    
+
     return $pdf->stream();
 });
 
@@ -338,7 +338,7 @@ Route::get('/tests/create-invoice-pdf', function () {
     $purchase = App\Models\Purchases\Purchase::find(1);
 
     $pdf = PDF::loadView('documents.purchase.invoice', compact('purchase'));
-    
+
     return $pdf->stream();
 });
 

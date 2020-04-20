@@ -19,20 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- Expanded Side Menu -->
-    <link rel="stylesheet" href="{{ asset('assets/css/expandedsidemenu/expandedsidemenu.css') }}">
-    <!-- Custom Scrollbar CDN -->
-    <!-- TODO: Import using mix. -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     @stack('style')
 
-    <script>
-        jQuery(function() {
-            expandedsidemenu.init({
-                menuid: 'mysidebarmenu'
-            })
-        })
-    </script>
     <style>
         /* Make sure the background image covers the screen */
         html {
@@ -70,7 +58,14 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fa fa-user bujishu-gold"></i></span>
                                 </div>
-                                <input class="form-control" type="email" name="email" id="email" placeholder="Your email address">
+                                <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" id="email" placeholder="Your email address">
+                            </div>
+                            <div class="col-12">
+                                @error('email')
+                                <span class="text-danger mt-1" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
                         </div>
 

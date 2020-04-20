@@ -57999,6 +57999,10 @@ a.grad2 {
   margin-bottom: 5rem;
 }
 
+.border-radius-0 {
+  border-radius: 0;
+}
+
 .responsive-img {
   max-width: 100%;
 }

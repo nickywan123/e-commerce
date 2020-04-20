@@ -52,7 +52,9 @@ class CartController extends Controller
         $getCartQuantity = new Cart;
 
         $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
-        return view('shop.cart.cart')->with('getCartQuantity', $getCartQuantity);
+
+        return view('shop.cart.cart')
+            ->with('getCartQuantity', $getCartQuantity);
     }
 
     /**
@@ -166,12 +168,24 @@ class CartController extends Controller
                 $productInformation['product_temperature'] = $temperature->attribute_name;
             }
 
-            if ($color->price != 0) {
-                $price = $color->price;
-            } elseif ($size->price != 0) {
-                $price = $size->price;
-            } elseif ($temperature->price != 0) {
-                $price = $temperature->price;
+            if ($color != null) {
+                if ($color->price != 0) {
+                    $price = $color->price;
+                } else {
+                    $price = $product->price;
+                }
+            } elseif ($size != null) {
+                if ($size->price != 0) {
+                    $price = $size->price;
+                } else {
+                    $price = $product->price;
+                }
+            } elseif ($temperature != null) {
+                if ($temperature->price != 0) {
+                    $price = $temperature->price;
+                } else {
+                    $price = $product->price;
+                }
             } else {
                 $price = $product->price;
             }
@@ -193,6 +207,149 @@ class CartController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    /**
+     * 
+     */
+    public function buyNowStore(Request $request)
+    {
+        // Get user
+        $user = User::find(Auth::user()->id);
+
+        // Get product
+        $product = PanelProduct::find($request->input('product_id'));
+
+        // Variables initiliazation.
+        $color = null;
+        $size = null;
+        $temperature = null;
+
+        // If the post request has product color id value in it..
+        if ($request->input('product_attribute_color') != null) {
+            // Get selected product color.
+            $color = $product->colorAttributes->where('id', $request->input('product_attribute_color'))->first();
+
+            // Set color id for checking purposes.
+            $colorId = $color->id;
+        }
+
+        // If the post request has product dimension id value in it..
+        if ($request->input('product_attribute_size') != null) {
+            // Get selected product dimension.
+            $size = $product->sizeAttributes->where('id', $request->input('product_attribute_size'))->first();
+
+            // Set dimension id for checking purposes.
+            $sizeId = $size->id;
+        }
+
+
+
+        // If the post request has product length id value in it..
+        if ($request->input('product_attribute_temperature') != null) {
+            // Get selected product length.
+            $temperature = $product->lightTemperatureAttributes
+                ->where('id', $request->input('product_attribute_temperature'))->first();
+
+            // Set length id for checking purposes.
+            $temperatureId = $temperature->id;
+        }
+
+        // Check if the exact item is already in the cart..
+        $existingCartItem = new Cart;
+
+        $existingCartItem = $existingCartItem->where('user_id', $user->id);
+
+        $existingCartItem->where('product_id', $product->id);
+
+        if ($color != null) {
+            $existingCartItem->where('product_information->product_color_id', $colorId);
+        }
+        if ($size != null) {
+            $existingCartItem->where('product_information->product_size_id', $sizeId);
+        }
+        if ($temperature != null) {
+            $existingCartItem->where('product_information->product_temperature_id', $temperatureId);
+        }
+
+        $existingCartItem = $existingCartItem->where('status', 2001)->first();
+
+
+
+
+        // If item doesn't exist in cart..
+        if ($existingCartItem == null) {
+            // Initialize product information array.
+            $productInformation = array();
+
+            // Create a new cart item.
+            $newCartItem = new Cart;
+            $newCartItem->user_id = $user->id;
+            $newCartItem->product_id = $product->id;
+
+            $price = 0;
+            // Check if the post request has product color id in it..
+            if ($color != null) {
+                // If yes, assign the color id and name
+                $productInformation['product_color_id'] = $color->id;
+                $productInformation['product_color_name'] = $color->attribute_name;
+            }
+            // Check if the post request has product dimension id in it..
+            if ($size != null) {
+                // If yes, assign the dimension id and concate the width, height, depth and measurement unit.
+                $productInformation['product_size_id'] = $size->id;
+                $productInformation['product_size'] = $size->attribute_name;
+            }
+            // Check if the post request has product length id in it..
+            if ($temperature != null) {
+                // If yes, assign the length id and concate the length and measurement unit.
+                $productInformation['product_temperature_id'] = $temperature->id;
+                $productInformation['product_temperature'] = $temperature->attribute_name;
+            }
+
+            if ($color != null) {
+                if ($color->price != 0) {
+                    $price = $color->price;
+                } else {
+                    $price = $product->price;
+                }
+            } elseif ($size != null) {
+                if ($size->price != 0) {
+                    $price = $size->price;
+                } else {
+                    $price = $product->price;
+                }
+            } elseif ($temperature != null) {
+                if ($temperature->price != 0) {
+                    $price = $temperature->price;
+                } else {
+                    $price = $product->price;
+                }
+            } else {
+                $price = $product->price;
+            }
+
+            $newCartItem->product_information = $productInformation;
+            $newCartItem->quantity = $request->input('productQuantity');
+            $newCartItem->delivery_fee = $product->delivery_fee;
+            $newCartItem->installation_fee = $product->installation_fee;
+            $newCartItem->unit_price = $price;
+            $newCartItem->subtotal_price = $price * $request->input('productQuantity');
+            $newCartItem->save();
+
+            $cartItemId = $newCartItem->id;
+        } else {
+            // If item exist in cart..
+            // Add to the existing quantity.
+            $existingCartItem->quantity = $existingCartItem->quantity + $request->input('productQuantity');
+            // Re calculate the total price.
+            $existingCartItem->subtotal_price = $existingCartItem->quantity * $existingCartItem->unit_price;
+            $existingCartItem->save();
+
+            $cartItemId = $existingCartItem->id;
+        }
+
+        return redirect('/shop/cart?buynow=' . $cartItemId);
     }
 
     /**
