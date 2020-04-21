@@ -9,7 +9,7 @@
         <div class="row no-gutters" id="cart-container">
             <div class="col-12">
 
-                <form method="POST" action="/shop/cart/checkout">
+                <form id="checkout-form" method="POST" action="/shop/cart/checkout">
                     @csrf
                     <div class="row no-gutters">
                         <div class="col-12 col-md-8 p-1 m-0">
@@ -76,7 +76,7 @@
 
                                     <div class="row mt-4">
                                         <div class="col-12">
-                                            <button class="btn bjsh-btn-gradient d-block w-100 text-uppercase" type="submit">Proceed To Checkout</button>
+                                            <button id="proceed-to-checkout-button" class="btn bjsh-btn-gradient d-block w-100 text-uppercase disabled" type="submit">Proceed To Checkout</button>
                                         </div>
                                     </div>
                                 </div>
@@ -333,8 +333,11 @@
             grandTotalPriceTag.text((grandTotal == 0) ? 'RM 0.00' : 'RM ' + grandTotal);
         }
 
+        let checkedCartItem;
+
         ItemContainer.on('change', '.item-checkbox', function() {
-            let checkedCartItem = [];
+            checkedCartItem = [];
+
 
             let subtotalPrice = 0;
             let shippingPrice = 0;
@@ -347,8 +350,26 @@
                 installationPrice = installationPrice + $(this).data('installation-price');
             });
 
+            console.log(checkedCartItem.length);
+
+            if (checkedCartItem.length == 0) {
+                $('#proceed-to-checkout-button').addClass('disabled')
+            } else {
+                $('#proceed-to-checkout-button').removeClass('disabled')
+            }
+
             updatePrice(subtotalPrice, shippingPrice, installationPrice);
         });
+
+        $('#checkout-form').on('submit', function() {
+
+            if (checkedCartItem.length != 0) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
 
         /* End Author */
 
