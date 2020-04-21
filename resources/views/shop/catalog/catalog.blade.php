@@ -560,11 +560,17 @@
             });
         }
 
+        let categorySlug = "{{ $category->slug }}";
+        console.log(categorySlug);
+
         // Handle click event on element with category-link as its class.
         $('.category-link').on('click', function(e) {
             // Prevent default behavior.
             // <a> tag is used here, prevent it from linking to another page or refreshing the page.
             e.preventDefault();
+
+            $("#catalog-quality-all").prop("checked", true);
+
 
             categorySlug = $(this).data('value');
             categoryName = $(this).data('name');
@@ -595,6 +601,7 @@
                     console.log(result.status + ' ' + result.statusText);
                 }
             });
+
         });
 
         // Handle click event on element with the class of catalog-quality-filter.
@@ -602,6 +609,10 @@
         $('.catalog-quality-filter').on('click', function(e) {
             // Get checked radio button value and put into a variable.
             productQuality = $('input[name="catalog-quality"]:checked').val();
+
+            let baseUrl = '{{ route("web.shop.category.filter", ["categorySlug" => ":categorySlug"]) }}';
+
+            baseUrl = baseUrl.replace(':categorySlug', categorySlug);
 
             $.ajax({
                 async: true,
@@ -615,7 +626,7 @@
                     loading.hide();
                     ItemContainer.show();
                 },
-                url: "{{ route('web.shop.category.filter', ['categorySlug' => $category->slug])}}",
+                url: baseUrl,
                 type: "POST",
                 data: {
                     // POST data.
