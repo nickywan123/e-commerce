@@ -327,7 +327,7 @@
                                             @if ($panelProduct->sizeAttributes->count() > 0)
                                             <p class="mb-1">Sizes</p>
                                             @foreach($panelProduct->sizeAttributes as $sizeAttribute)
-                                            <span>{{ $sizeAttributes->attribute_name }}</span>
+                                            <span>{{ $sizeAttribute->attribute_name }}</span>
                                             @endforeach
                                             @endif
 
