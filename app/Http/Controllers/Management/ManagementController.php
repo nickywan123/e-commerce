@@ -21,7 +21,8 @@ class ManagementController extends Controller
         // Get panel
 
         $panel_id= User::find(Auth::user()->id);
-        $panel_id= $panel_id->userInfo->account_id;
+        //wrong filter
+        $panel_id= $panel_id->panelInfo->account_id;
         $customerOrders = new Order;
         $customerOrders= $customerOrders->where('panel_id',$panel_id)->get();
       
@@ -62,7 +63,7 @@ class ManagementController extends Controller
 
     public function companyProfile(){
         $panel_id= User::find(Auth::user()->id);
-        $panel_id= $panel_id->userInfo->account_id;
+        $panel_id= $panel_id->panelInfo->account_id;
         $companyProfile= new PanelInfo();
         $companyProfile= $companyProfile->where('account_id',$panel_id)->first();
         return view("management.panel.company-profile")->with('companyProfile',$companyProfile);
@@ -73,7 +74,7 @@ class ManagementController extends Controller
 
     public function editProfile(){
         $panel_id= User::find(Auth::user()->id);
-        $panel_id= $panel_id->userInfo->account_id;
+        $panel_id= $panel_id->panelInfo->account_id;
         $companyProfile= new PanelInfo();
         $companyProfile= $companyProfile->where('account_id',$panel_id)->first();
         return view("management.panel.company-profile-edit")->with('companyProfile',$companyProfile);

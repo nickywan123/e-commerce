@@ -49,8 +49,10 @@
                             <div>WayBill No: xxxxxxxxx</div>
                         </td>
                         <td style="font-weight: bold;">
-                            <div>Order Total: <?php echo 'RM ' . number_format(($purchase->purchase_amount / 100), 2); ?>
+                              
+                            <div style="display:none;">Order Total: <?php echo 'RM ' . number_format(($purchase->purchase_amount / 100), 2); ?>
                             </div>
+
                             <div>Order Status: {{$order->order_status}}</div>
                         </td>
 
@@ -78,7 +80,7 @@
                                             
                                             <p class="text-capitalize">Sold by:
                                                 {{ $item->product->panel->company_name }}</p>
-                                            <p class="text-capitalize">Unit Price:
+                                            <p style="display:none;" class="text-capitalize">Unit Price:
                                                 <?php echo 'RM ' . number_format(($item->product->price / 100), 2); ?>
                                             </p>
                                             <button class="text-capitalize bjsh-btn-gradient"><a style="color:black; text-decoration:none;" href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}"> Buy It Again</a></button>

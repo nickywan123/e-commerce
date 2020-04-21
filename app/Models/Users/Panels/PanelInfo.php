@@ -38,6 +38,7 @@ class PanelInfo extends Model
         return $this->hasMany('App\Models\Users\UserAddress', 'account_id', 'account_id');
     }
 
+
     /**
      * Get largest panel account id.
      */

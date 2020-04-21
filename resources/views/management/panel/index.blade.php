@@ -64,7 +64,16 @@
             <td>{{$customerOrder->getFormattedDate()}}</td>
             <td style="display:flex;"> <input name='delivery_date' value="{{$customerOrder->delivery_date}}" class="date form-control" type="text" placeholder="Select delivery date" required autocomplete="off"> <input type="submit" class="bjsh-btn-gradient" value="Submit">  </td>
             <td>{{$customerOrder->getPendingAttribute()}}</td> 
-            <td>{{$customerOrder->order_status}}</td>
+            @if ($customerOrder->order_status === 1000)
+             <td>Record Created</td>
+            @elseif ($customerOrder->order_status === 1001)
+             <td>Order Placed</td>
+            @elseif($customerOrder->order_status === 1002)
+             <td>Order Shipped</td>
+            @else
+            <td>Order Delivered</td>
+            @endif
+           
             <td>{{$customerOrder->received_date}}</td>
             <td>{{$customerOrder->claim_status}}</td>              
           </form>

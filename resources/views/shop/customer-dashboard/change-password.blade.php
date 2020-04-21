@@ -60,10 +60,10 @@
                                     Update Password
                                 </button>
                             </div>
-                            <div class="col-md-4 col-form-label ">
+                            {{-- <div class="col-md-4 col-form-label ">
                                 <a class="" target="_blank" rel="noopener noreferrer" href="{{ route('shop.forgot.password') }}">Forgot Password?</a>
                             </div>
-                           
+                            --}}
                         </div>
                     </form>
                 </div>

@@ -242,7 +242,7 @@ class PurchaseController extends Controller
             $order->order_amount = 0;
             $order->delivery_date = "Pending";
             $order->received_date = "";
-            $order->claim_status = "Processing";
+            $order->claim_status = "";
 
             $order->save();
 
