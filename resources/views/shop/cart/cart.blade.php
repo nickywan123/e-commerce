@@ -333,7 +333,7 @@
             grandTotalPriceTag.text((grandTotal == 0) ? 'RM 0.00' : 'RM ' + grandTotal);
         }
 
-        let checkedCartItem;
+        let checkedCartItem = [];
 
         ItemContainer.on('change', '.item-checkbox', function() {
             checkedCartItem = [];
@@ -362,11 +362,13 @@
         });
 
         $('#checkout-form').on('submit', function() {
+            return false;
+            console.log(checkedCartItem.length);
 
-            if (checkedCartItem.length != 0) {
-                return true;
-            } else {
+            if (checkedCartItem.length == 0) {
                 return false;
+            } else {
+                return true;
             }
         });
 
