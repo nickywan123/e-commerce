@@ -40,13 +40,13 @@ $totalPrice = 10000;
         <div class="col-2 px-1">
             <img class="mw-100 rounded d-inline" src="{{ asset('storage/' . $cartItem->product->parentProduct->defaultImage->path . '/' . $cartItem->product->parentProduct->defaultImage->filename) }}" alt="">
         </div>
-        <div class="col-6 px-2">
+        <div class="col-10 col-md-6 px-2 mb-0">
             <a href="/shop/product/{{ $cartItem->product->parentProduct->name_slug}}?panel={{ $cartItem->product->panel_account_id }}">
-                <p class="text-dark" style="font-size: 1.1rem;">
+                <p class="text-dark text-left" style="font-size: 1.1rem;">
                     {{ $cartItem->product->parentProduct->name }}
                 </p>
             </a>
-            <p style="font-size: 0.8rem;">
+            <p class="text-left" style="font-size: 0.8rem;">
                 @if(array_key_exists('product_temperature', $cartItem->product_information))
                 {{ $cartItem->product_information['product_temperature'] }},
                 @endif
@@ -58,7 +58,7 @@ $totalPrice = 10000;
                 @endif
             </p>
         </div>
-        <div class="col-2 px-2 text-center my-auto">
+        <div class="col-6 col-md-2 px-2 text-center my-auto">
             <p style="font-size: 1.1rem; color: #f0c230;" class="font-weight-bold my-1">
                 RM {{ number_format(($cartItem->unit_price / 100), 2) }}
             </p>
@@ -77,7 +77,7 @@ $totalPrice = 10000;
                     </span> -->
             </p>
         </div>
-        <div class="col-2 my-auto">
+        <div class="col-6 col-md-2 my-auto">
             <div class="input-group">
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[{{ $cartItem->id }}]">
