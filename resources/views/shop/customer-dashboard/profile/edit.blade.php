@@ -8,11 +8,11 @@
 <br>
 <div>
     <h4 class="text-capitalize text-dark">Edit Your Profile</h4>
-    @if(session()->has('message'))
+    {{-- @if(session()->has('message'))
     <div class="alert alert-success">
         {{ session()->get('message') }}
     </div>
-    @endif
+    @endif --}}
 
     <!--Edit Form Submit -->
     <form action="{{route('profile.update',[$customerInfo->id])}}" method="POST">
@@ -70,11 +70,11 @@
                         </div>
 
                         <div class="form-group row ">
-                            <label for="billing_address_1" class="col-md-2 col-form-label">Billing Address 1</label>
+                            <label for="billing_address_1" class="col-md-2 col-form-label">Billing Address </label>
                             <div class="col-md-9">
                                 <input type="text" name="billing_address_1"
                                     value="{{$customerInfo->userInfo->mailingAddress->address_1}}"
-                                    class="form-control @error('billing_address_3') is-invalid @enderror"
+                                    class="form-control @error('billing_address_1') is-invalid @enderror"
                                     value="{{ old('billing_address_1') }}">
                             </div>
                             <div class="col-md-1 col-form-label">
@@ -82,14 +82,14 @@
                             </div>
 
 
-                            @error('billing_address_3')
+                            @error('billing_address_1')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-group row ">
-                            <label for="billing_address_2" class="col-md-2 col-form-label">Billing Address 2</label>
-                            <div class="col-md-9">
+                            {{-- <label for="billing_address_2" class="col-md-2 col-form-label">Billing Address </label> --}}
+                            <div class=" offset-2 col-md-9">
                                 <input type="text" name="billing_address_2"
                                     value="{{$customerInfo->userInfo->mailingAddress->address_2}}"
                                     class="form-control @error('billing_address_2') is-invalid @enderror">
@@ -105,8 +105,8 @@
                         </div>
 
                         <div class="form-group row ">
-                            <label for="billing_address_3" class="col-md-2 col-form-label">Billing Address 3</label>
-                            <div class="col-md-9">
+                            {{-- <label for="billing_address_3" class="col-md-2 col-form-label">Billing Address </label> --}}
+                            <div class="offset-2 col-md-9">
                                 <input type="text" name="billing_address_3"
                                     value="{{$customerInfo->userInfo->mailingAddress->address_3}}"
                                     class="form-control @error('billing_address_3') is-invalid @enderror">
@@ -160,7 +160,7 @@
 
 
                         <div class="form-group row ">
-                            <label for="company_address" class="col-md-2 col-form-label">Shipping Address 1</label>
+                            <label for="company_address" class="col-md-2 col-form-label">Shipping Address </label>
                             <div class="col-md-9">
                                 <input type="text" name="shipping_address_1"
                                     value="{{$customerInfo->userInfo->shippingAddress->address_1}}"
@@ -178,8 +178,8 @@
                         </div>
 
                         <div class="form-group row ">
-                            <label for="company_address" class="col-md-2 col-form-label">Shipping Address 2</label>
-                            <div class="col-md-9">
+                            {{-- <label for="company_address" class="col-md-2 col-form-label">Shipping Address </label> --}}
+                            <div class="offset-2 col-md-9">
                                 <input type="text" name="shipping_address_2"
                                     value="{{$customerInfo->userInfo->shippingAddress->address_2}}"
                                     class="form-control @error('shipping_address_2') is-invalid @enderror"
@@ -196,8 +196,8 @@
                         </div>
 
                         <div class="form-group row ">
-                            <label for="company_address" class="col-md-2 col-form-label">Shipping Address 3</label>
-                            <div class="col-md-9">
+                            {{-- <label for="company_address" class="col-md-2 col-form-label">Shipping Address </label> --}}
+                            <div class="offset-2 col-md-9">
                                 <input type="text" name="shipping_address_3"
                                     value="{{$customerInfo->userInfo->shippingAddress->address_3}}"
                                     class="form-control @error('shipping_address_3') is-invalid @enderror"

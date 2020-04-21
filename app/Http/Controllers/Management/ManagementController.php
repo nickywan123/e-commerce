@@ -68,6 +68,84 @@ class ManagementController extends Controller
         return view("management.panel.company-profile")->with('companyProfile',$companyProfile);
     }
 
+
+    /**Return edit page for company profile */
+
+    public function editProfile(){
+        $panel_id= User::find(Auth::user()->id);
+        $panel_id= $panel_id->userInfo->account_id;
+        $companyProfile= new PanelInfo();
+        $companyProfile= $companyProfile->where('account_id',$panel_id)->first();
+        return view("management.panel.company-profile-edit")->with('companyProfile',$companyProfile);
+    }
+
+
+
+    /** Update company profile**/
+
+    public function updateProfile(Request $request,$id){
+
+        $this->validate($request, array(
+            
+            'company_billing_address_1' => 'required',
+            'company_billing_address_2' => 'required',
+            'company_billing_address_3' => 'required',
+            'company_billing_postcode' => 'required|digits:5',
+            'company_billing_city' => 'required',
+            'company_address_1' => 'required',
+            'company_address_2' => 'required',
+            'company_address_3' => 'required',
+            'postcode' => 'required|digits:5',
+            'city' => 'required',
+            'company_phone_number' => 'required|digits:10'
+        ));
+
+        
+        $companyProfile= new PanelInfo();
+        $companyProfile= $companyProfile->where('account_id',$id)->first();
+
+        $correspondence_address= $companyProfile->correspondenceAddress;
+        $correspondence_address->address_1=$request->input('company_address_1');
+        $correspondence_address->address_2=$request->input('company_address_2');
+        $correspondence_address->address_3=$request->input('company_address_3');
+        $correspondence_address->postcode=$request->input('postcode');
+        $correspondence_address->city=$request->input('city');
+        $correspondence_address->save();
+
+
+
+
+        $billing_address= $companyProfile->billingAddress;
+        $billing_address->address_1=$request->input('company_billing_address_1');
+        $billing_address->address_2=$request->input('company_billing_address_2');
+        $billing_address->address_3=$request->input('company_billing_address_3');
+        $billing_address->postcode=$request->input('company_billing_postcode');
+        $billing_address->city=$request->input('company_billing_city');
+        $billing_address->save();
+
+
+      
+        $companyProfile->company_phone=$request->input('company_phone_number');
+        $companyProfile->save();
+     
+
+
+
+
+     
+ 
+ 
+       
+        if ($companyProfile && $correspondence_address && $billing_address) {
+            return view("management.panel.company-profile")->with('companyProfile',$companyProfile)->with(['successful_message' => 'Profile updated successfully']);
+     
+        } else {
+            return view("management.panel.company-profile")->with('companyProfile',$companyProfile)->with(['error_message' => 'Failed to update profile']);
+           
+        }
+
+    }
+
     // View all orders-panel
     public function allOrders(){
      return view('management.orders.allCustOrders');

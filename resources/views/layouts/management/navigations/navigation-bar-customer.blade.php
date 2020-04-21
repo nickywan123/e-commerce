@@ -14,7 +14,7 @@
         <img class="navbar-brand-minimized" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
 
-    <div class="col-sm-8 vertical-align text-center my-auto">
+    {{-- <div class="col-sm-8 vertical-align text-center my-auto">
         <form>
             <div class="row grid-space-1">
                 <div class="col-12 my-auto display-same-row">
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </form>
-    </div>
+    </div> --}}
 
     <ul class="nav navbar-nav ml-auto">      
       <h5 style="margin-right:10px" class="welcome-text"  >Welcome, {{Auth::user()->userInfo->full_name}}</h5> 
