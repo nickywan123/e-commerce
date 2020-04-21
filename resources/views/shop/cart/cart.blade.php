@@ -362,9 +362,6 @@
         });
 
         $('#checkout-form').on('submit', function() {
-            return false;
-            console.log(checkedCartItem.length);
-
             if (checkedCartItem.length == 0) {
                 return false;
             } else {
