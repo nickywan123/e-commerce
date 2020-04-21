@@ -133,10 +133,7 @@
                                     value="{{ old('company_billing_postcode') }}" readonly>
                             </div>
 
-                            <div class="col-md-1 col-form-label">
-                                <i class="fa fa-pencil bujishu-gold"></i>
-                            </div>
-
+   
                             @error('company_billing_postcode')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
