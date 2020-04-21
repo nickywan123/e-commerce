@@ -26,7 +26,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct1->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct1->price = 12000;
         $panelProduct1->member_price = 12000;
-        $panelProduct1->delivery_fee = 1000;
+        $panelProduct1->delivery_fee = 0;
         $panelProduct1->product_rating = 0;
         $panelProduct1->save();
 
@@ -73,7 +73,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct1->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct1->price = 12000;
         $panelProduct1->member_price = 12000;
-        $panelProduct1->delivery_fee = 1000;
+        $panelProduct1->delivery_fee = 0;
         $panelProduct1->product_rating = 0;
         $panelProduct1->save();
 
@@ -120,7 +120,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct2->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct2->price = 12000;
         $panelProduct2->member_price = 12000;
-        $panelProduct2->delivery_fee = 1000;
+        $panelProduct2->delivery_fee = 0;
         $panelProduct2->product_rating = 0;
         $panelProduct2->save();
 
@@ -167,7 +167,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct2->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct2->price = 12000;
         $panelProduct2->member_price = 12000;
-        $panelProduct2->delivery_fee = 1000;
+        $panelProduct2->delivery_fee = 0;
         $panelProduct2->product_rating = 0;
         $panelProduct2->save();
 
@@ -214,7 +214,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct3->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct3->price = 12000;
         $panelProduct3->member_price = 12000;
-        $panelProduct3->delivery_fee = 1000;
+        $panelProduct3->delivery_fee = 0;
         $panelProduct3->product_rating = 0;
         $panelProduct3->save();
 
@@ -261,7 +261,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct4->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct4->price = 12000;
         $panelProduct4->member_price = 12000;
-        $panelProduct4->delivery_fee = 1000;
+        $panelProduct4->delivery_fee = 0;
         $panelProduct4->product_rating = 0;
         $panelProduct4->save();
 
@@ -308,7 +308,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct5->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct5->price = 12000;
         $panelProduct5->member_price = 12000;
-        $panelProduct5->delivery_fee = 1000;
+        $panelProduct5->delivery_fee = 0;
         $panelProduct5->product_rating = 0;
         $panelProduct5->save();
 
@@ -355,7 +355,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct6->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct6->price = 12000;
         $panelProduct6->member_price = 12000;
-        $panelProduct6->delivery_fee = 1000;
+        $panelProduct6->delivery_fee = 0;
         $panelProduct6->product_rating = 0;
         $panelProduct6->save();
 
@@ -402,7 +402,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct7->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct7->price = 35900;
         $panelProduct7->member_price = 35900;
-        $panelProduct7->delivery_fee = 1000;
+        $panelProduct7->delivery_fee = 0;
         $panelProduct7->product_rating = 5;
         $panelProduct7->save();
 
@@ -489,7 +489,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct8->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct8->price = 99900;
         $panelProduct8->member_price = 99900;
-        $panelProduct8->delivery_fee = 1000;
+        $panelProduct8->delivery_fee = 0;
         $panelProduct8->product_rating = 5;
         $panelProduct8->save();
 
@@ -576,7 +576,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct9->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct9->price = 169900;
         $panelProduct9->member_price = 169900;
-        $panelProduct9->delivery_fee = 1000;
+        $panelProduct9->delivery_fee = 0;
         $panelProduct9->product_rating = 5;
         $panelProduct9->save();
 
@@ -663,7 +663,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct10->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct10->price = 139900;
         $panelProduct10->member_price = 139900;
-        $panelProduct10->delivery_fee = 1000;
+        $panelProduct10->delivery_fee = 0;
         $panelProduct10->product_rating = 5;
         $panelProduct10->save();
 
@@ -696,7 +696,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct11->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct11->price = 299900;
         $panelProduct11->member_price = 299900;
-        $panelProduct11->delivery_fee = 1000;
+        $panelProduct11->delivery_fee = 0;
         $panelProduct11->product_rating = 5;
         $panelProduct11->save();
 
@@ -729,7 +729,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct12->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct12->price = 12000;
         $panelProduct12->member_price = 12000;
-        $panelProduct12->delivery_fee = 1000;
+        $panelProduct12->delivery_fee = 0;
         $panelProduct12->product_rating = 5;
         $panelProduct12->save();
 
@@ -787,7 +787,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct13->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct13->price = 12000;
         $panelProduct13->member_price = 12000;
-        $panelProduct13->delivery_fee = 1000;
+        $panelProduct13->delivery_fee = 0;
         $panelProduct13->product_rating = 5;
         $panelProduct13->save();
 
@@ -845,7 +845,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct14->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct14->price = 145000;
         $panelProduct14->member_price = 145000;
-        $panelProduct14->delivery_fee = 1000;
+        $panelProduct14->delivery_fee = 0;
         $panelProduct14->product_rating = 5;
         $panelProduct14->save();
 
@@ -919,7 +919,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct15->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct15->price = 20000;
         $panelProduct15->member_price = 20000;
-        $panelProduct15->delivery_fee = 1000;
+        $panelProduct15->delivery_fee = 0;
         $panelProduct15->product_rating = 3;
         $panelProduct15->save();
 
@@ -956,7 +956,7 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct16->product_package = 'Lorem ipsum sit dolor amet consectetur.';
         $panelProduct16->price = 159900;
         $panelProduct16->member_price = 159900;
-        $panelProduct16->delivery_fee = 1000;
+        $panelProduct16->delivery_fee = 0;
         $panelProduct16->product_rating = 5;
         $panelProduct16->save();
 
