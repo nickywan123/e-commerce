@@ -107,4 +107,12 @@ class Product extends Model
     {
         return number_format(($this->delivery_fee / 100), 2);
     }
+
+    /**
+     * Get the formatted product's installation price.
+     */
+    public function getDecimalInstallationFee()
+    {
+        return number_format(($this->installation_fee / 100), 2);
+    }
 }

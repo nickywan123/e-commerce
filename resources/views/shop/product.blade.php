@@ -245,7 +245,7 @@
                                 <span>Installation Fee</span>
                             </div>
                             <div class="col-4 text-right">
-                                <p class="font-weight-bold">RM 30.90</p>
+                                <p class="font-weight-bold">RM {{ $panelProduct->getDecimalInstallationFee() }}</p>
                             </div>
                         </div>
                     </section>
