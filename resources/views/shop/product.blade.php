@@ -334,7 +334,7 @@
                                             @if ($panelProduct->colorAttributes->count() > 0)
                                             <p class="mb-1">Colors</p>
                                             @foreach($panelProduct->colorAttributes as $$colorAttribute)
-                                            <span>{{ $sizeAttributes->attribute_name }}</span>
+                                            <span>{{ $colorAttribute->attribute_name }}</span>
                                             @endforeach
                                             @endif
 
