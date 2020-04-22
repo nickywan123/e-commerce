@@ -368,7 +368,7 @@
                                     <div class="card-body">
                                         <div class="p-4 product-details text-justify">
                                             <p>
-                                                {{ $panelProduct->product_consistency }}
+                                                {!! $panelProduct->product_consistency !!}
                                             </p>
                                         </div>
                                     </div>

@@ -251,21 +251,6 @@ class CategoriesTableSeeder extends Seeder
         $category = null;
         // --
 
-        $category = Category::create([
-            'name' => 'Paints',
-            'slug' => 'paints',
-            'parent_category_id' => 0
-        ]);
-
-        $category->image()->create([
-            'path' => 'uploads/images/categories/' . $category->slug . '/',
-            'filename' => $category->slug . '.jpg'
-        ]);
-
-        // --
-        $category = null;
-        // --
-
         // -- End Top Level Categories
         // --
         // --
@@ -1099,8 +1084,8 @@ class CategoriesTableSeeder extends Seeder
         // --
 
         $category = Category::create([
-            'name' => 'Paint',
-            'slug' => 'paint',
+            'name' => 'Paints',
+            'slug' => 'paints',
             'parent_category_id' => $parentCategory->id
         ]);
 

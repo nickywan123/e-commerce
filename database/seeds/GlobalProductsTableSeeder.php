@@ -935,6 +935,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product15->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -990,6 +991,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product16->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1057,6 +1059,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product17->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1129,6 +1132,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product18->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1196,6 +1200,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product19->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1253,6 +1258,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product20->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1310,6 +1316,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product21->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1365,6 +1372,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product22->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1429,6 +1437,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product23->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1485,6 +1494,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product23->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1536,7 +1546,7 @@ class GlobalProductsTableSeeder extends Seeder
         $product24->images()->createMany([
             [
                 'path' => 'uploads/images/products/' . $product24->name_slug . '/',
-                'filename' => $product23->name_slug . '_1.jpg',
+                'filename' => $product24->name_slug . '_1.jpg',
                 'default' => 1
             ],
             [
@@ -1547,6 +1557,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product24->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1636,6 +1647,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product25->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1698,6 +1710,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product26->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1760,6 +1773,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product27->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
 
         // ---
@@ -1818,6 +1832,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product28->categories()->attach([
             Category::where('name', 'Paints')->first()->id,
+            Category::where('name', 'Products & Services')->first()->id,
         ]);
     }
 }

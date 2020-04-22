@@ -8565,7 +8565,7 @@
                             {{$purchase->getFormattedNumber()}}
                         </td>
                         <td style="padding: 6px; vertical-align: top; ">
-                            Partial Payment (wip)
+                            Partial Payment
                         </td>
                         <td style="padding: 6px; text-align: center; vertical-align: top;">
                             {{ number_format(($purchase->purchase_amount / 100), 2)}}

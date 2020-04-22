@@ -107,7 +107,7 @@
                     </div>
 
                     <div class="col-12 col-md-8 offset-md-4 mb-3 text-center text-md-left">
-                        <p class="mb-1">Colors <small>(WIP)</small></p>
+                        <p class="mb-1">Colors</p>
                         <div class="boxed">
                             @foreach($productByPanels->colorAttributes as $colorAttribute)
                             <input type="radio" class="product-attributes" id="panelProductColor-{{ $colorAttribute->id }}" name="modal-color" value="{{ $colorAttribute->id }}">
@@ -127,7 +127,7 @@
                     </div>
 
                     <div class="col-12 col-md-8 offset-md-4 mb-3 text-center text-md-left">
-                        <p class="mb-1">Sizes <small>(WIP)</small></p>
+                        <p class="mb-1">Sizes</p>
                         <div class="boxed">
                             @foreach($productByPanels->sizeAttributes as $sizeAttribute)
                             <input type="radio" class="product-attributes" id="panelProductSize-{{ $sizeAttribute->id }}" name="modal-size" value="{{ $sizeAttribute->id }}">
@@ -147,7 +147,7 @@
                     </div>
 
                     <div class="col-12 col-md-8 offset-md-4 mb-3 text-center text-md-left">
-                        <p class="mb-1">Color Temperatures <small>(WIP)</small></p>
+                        <p class="mb-1">Color Temperatures</p>
                         <div class="boxed">
                             @foreach($productByPanels->lightTemperatureAttributes as $lightTemperatureAttribute)
                             <input type="radio" class="product-attributes" id="panelProductTemperature-{{ $lightTemperatureAttribute->id }}" name="modal-temperature" value="{{ $lightTemperatureAttribute->id }}">
@@ -183,7 +183,7 @@
                 </div>
 
                 <div class="modal-footer justify-center-sm">
-                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist <br> <small>(WIP)</small></button>
+                    <button style="color: #000; background-color: #fccb34;" type="button" class="btn btn-primary">Add to wishlist</button>
                     <form id="add-to-cart-form" method="POST" action="{{ route('shop.cart.add-item') }}">
                         @method('POST')
                         @csrf
