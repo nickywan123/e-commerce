@@ -23,12 +23,18 @@
 }
 
 .nav-height {
-    min-height: 13%;
+    min-height: 10%;
+}
+
+@media(min-height:900px) {
+    .nav-height {
+        min-height: 7%;
+    }
 }
 
 .img-logo-resize {
-    min-width: 80%;
-    min-height: 120%;
+    min-width: 60%;
+    min-height: 100%;
 }
 
 .img-logo-margin-left {

@@ -53,7 +53,17 @@
                             <div style="display:none;">Order Total: <?php echo 'RM ' . number_format(($purchase->purchase_amount / 100), 2); ?>
                             </div>
 
-                            <div>Order Status: {{$order->order_status}}</div>
+                            <div> 
+                              @if ($order->order_status === 1000)
+                                Order Status: Record Created
+                              @elseif ($order->order_status === 1001)
+                               Order Status: Order Placed
+                              @elseif($order->order_status === 1002)
+                               Order Status: Order Shipped
+                              @else
+                               Order Status: Order Delivered
+                               @endif
+                             </div>
                         </td>
 
                         <td style="">

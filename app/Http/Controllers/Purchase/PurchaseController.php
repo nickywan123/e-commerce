@@ -415,45 +415,11 @@ class PurchaseController extends Controller
 
 
 
-    // IF NOT USING DELETE THE ITEM BELOW PLEASE!
+ 
 
-
-    /** Return invoice for the particular order (PDF)**/
-
-    public function invoice($purchase_num)
-    {
-        // Get user.
-        $user = User::find(Auth::user()->id);
-        $purchase = $user->purchases->where('purchase_number', $purchase_num)->first();
-        $pdf = PDF::loadView('documents.purchase.invoice', compact('purchase'))->setPaper('A4');
-        return $pdf->stream('purchase-order.' . $purchase_num . '.pdf');
-    }
-
-
-    /***Return receipt for the particular order (PDF)***/
-
-    public function receipt($purchase_num)
-    {
-
-        // Get user.
-        $user = User::find(Auth::user()->id);
-        $purchase = $user->purchases->where('purchase_number', $purchase_num)->first();
-        $pdf = PDF::loadView('documents.receipt.receipt', compact('purchase'))->setPaper('A4');
-        return $pdf->stream('receipt-.' . $purchase_num . '.pdf');
-    }
+   
 
 
 
-    /**
-     * Return invoice for Dealer
-     */
-    public function viewInvoice()
-    {
-        // $user = User::find(Auth::user()->id);
-        // $purchases = $user->purchases;
-        $pdf = PDF::loadView('documents.invoice');
-        ob_end_clean();
-        return $pdf->download('invoice.pdf');
-        //return view('dashboard_receipts.invoice');
-    }
+
 }

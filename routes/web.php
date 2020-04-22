@@ -32,14 +32,14 @@ Route::get('/orders/confirm/{purchase_num}', 'Order\OrderController@show')
 //   Route::get('/QR-Completed','SomeControllerMethod');
 
 // Return invoice 
-Route::get('/shop/invoice', 'Purchase\PurchaseController@invoiceCustomer');
+// Route::get('/shop/invoice', 'Purchase\PurchaseController@invoiceCustomer');
 
 // Return invoice in customer dashboard (Orders) 
-Route::get('/orders/invoice/{purchase_num}', 'Purchase\PurchaseController@invoice');
+Route::get('/orders/invoice/{purchase_num}', 'Shop\ValueRecordsController@invoice');
 
 //Return receipt in customer dashboard(Receipt)
 
-Route::get('/orders/receipt/{purchase_num}', 'Purchase\PurchaseController@receipt');
+Route::get('/orders/receipt/{purchase_num}', 'Shop\ValueRecordsController@receipt');
 
 Route::get('/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
 //Return Work In progress page
