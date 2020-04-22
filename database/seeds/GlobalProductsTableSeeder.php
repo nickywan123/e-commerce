@@ -867,5 +867,957 @@ class GlobalProductsTableSeeder extends Seeder
         $product14->categories()->attach([
             Category::where('name', 'Curtains')->first()->id,
         ]);
+
+
+        // ---
+
+        $product15 = Product::create([
+            'product_code' => 'BU0321  1307 0001',
+            'name' => 'ALES Anti-MosQ',
+            'name_slug' => 'ales-anti-mosq',
+            'details' => 'ALES Anti-MosA acts on the nervous system of mosquitoes (also other insects) by interfering with the neuron functions.',
+            'description' => 'ALES Anti-MosA acts on the nervous system of mosquitoes (also other insects) by interfering with the neuron functions.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product15->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102K',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Pebble White 10A01K',
+                'color_hex' => '#f0e9da'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Butter Cream 7549K',
+                'color_hex' => '#f0e6cf'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Camelia 6649K',
+                'color_hex' => '#a85c61'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Orchid White 8578K',
+                'color_hex' => '#f1ebd9'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product15->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product15->name_slug . '/',
+                'filename' => $product15->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product15->name_slug . '/',
+                'filename' => $product15->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product15->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product16 = Product::create([
+            'product_code' => 'BU0321  1307 0002',
+            'name' => 'ALES Shiquy',
+            'name_slug' => 'ales-shiquy',
+            'details' => 'ALES Shiquy is a water based paint with slaked lime as its main component.',
+            'description' => 'ALES Shiquy is a water based paint with slaked lime as its main component.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product16->attributes()->createMany([
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product16->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product16->name_slug . '/',
+                'filename' => $product16->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product16->name_slug . '/',
+                'filename' => $product16->name_slug . '_2.jpg'
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product16->name_slug . '/',
+                'filename' => $product16->name_slug . '_3.jpg'
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product16->name_slug . '/',
+                'filename' => $product16->name_slug . '_4.jpg'
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product16->name_slug . '/',
+                'filename' => $product16->name_slug . '_5.jpg'
+            ]
+        ]);
+
+        $product16->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product17 = Product::create([
+            'product_code' => 'BU0321  1307 0003',
+            'name' => 'ALES Weathercoat Hybrid',
+            'name_slug' => 'ales-weathercoat-hybrid',
+            'details' => 'ALES Weathercoat Hybrid is an acrylic, high performance, superior quality
+            exterior-grade emulsion; that gives a lively coat that exceeds conventional
+            acrylic emulsion finish.',
+            'description' => 'ALES Weathercoat Hybrid is an acrylic, high performance, superior quality
+            exterior-grade emulsion; that gives a lively coat that exceeds conventional
+            acrylic emulsion finish.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product17->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Daylight 1107K',
+                'color_hex' => '#f8e5dd'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Beige 08B17K',
+                'color_hex' => '#f5f5dc'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product17->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product17->name_slug . '/',
+                'filename' => $product17->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product17->name_slug . '/',
+                'filename' => $product17->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product17->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product18 = Product::create([
+            'product_code' => 'BU0321  1307 0004',
+            'name' => 'CROWN Emulsion',
+            'name_slug' => 'crown-emulsion',
+            'details' => 'CROWN Emulsion is a matt emulsion specially formulated for housing
+            projects where economy is important. It smooth matt finish hides surface
+            imperfections and avoid reflection of uneven plastered surfaces.',
+            'description' => 'CROWN Emulsion is a matt emulsion specially formulated for housing
+            projects where economy is important. It smooth matt finish hides surface
+            imperfections and avoid reflection of uneven plastered surfaces.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product18->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Vanilla 6607',
+                'color_hex' => '#f9edc9'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Cool White 10B15',
+                'color_hex' => '#dbe9f4'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Cream 3040',
+                'color_hex' => '#fffdd0'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product18->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product18->name_slug . '/',
+                'filename' => $product18->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product18->name_slug . '/',
+                'filename' => $product18->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product18->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product19 = Product::create([
+            'product_code' => 'BU0321  1307 0005',
+            'name' => 'CROWN Gloss',
+            'name_slug' => 'crown-gloss',
+            'details' => 'CROWN Gloss is a solvent based gloss finish specially formulated for
+            housing project where economy is important. It is easy to apply and forms
+            a smooth, tough paint film.',
+            'description' => 'CROWN Gloss is a solvent based gloss finish specially formulated for
+            housing project where economy is important. It is easy to apply and forms
+            a smooth, tough paint film.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product19->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Papyrus 0028',
+                'color_hex' => '#c99868'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Chablis 3164',
+                'color_hex' => '#e0bd8e'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Genie 0032',
+                'color_hex' => '#d6b9ae'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product19->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product19->name_slug . '/',
+                'filename' => $product19->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product19->name_slug . '/',
+                'filename' => $product19->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product19->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product20 = Product::create([
+            'product_code' => 'BU0321  1307 0006',
+            'name' => 'Goody Easy Clean',
+            'name_slug' => 'goody-easy-clean',
+            'details' => 'GOODY Easy Clean is a high grade emulsion that gives a bright, smooth and attractive mid sheen pearl finish for interior use.',
+            'description' => 'GOODY Easy Clean is a high grade emulsion that gives a bright, smooth and attractive mid sheen pearl finish for interior use.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product20->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Coral Reel 9',
+                'color_hex' => '#f97976'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White Sage 79',
+                'color_hex' => '#d2d4c3'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product20->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product20->name_slug . '/',
+                'filename' => $product20->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product20->name_slug . '/',
+                'filename' => $product20->name_slug . '_2.jpg'
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product20->name_slug . '/',
+                'filename' => $product20->name_slug . '_3.jpg'
+            ]
+        ]);
+
+        $product20->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product21 = Product::create([
+            'product_code' => 'BU0321  1307 0007',
+            'name' => 'Goody Matt Extra',
+            'name_slug' => 'goody-matt-extra',
+            'details' => 'GOODY Matt Extra is a durable emulsion with smooth matt finish, does not contain lead, mercury and heavy metals.',
+            'description' => 'GOODY Matt Extra is a durable emulsion with smooth matt finish, does not contain lead, mercury and heavy metals.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product21->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Coral Reel 9',
+                'color_hex' => '#f97976'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White Sage 79',
+                'color_hex' => '#d2d4c3'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product21->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product21->name_slug . '/',
+                'filename' => $product21->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product21->name_slug . '/',
+                'filename' => $product21->name_slug . '_2.jpg'
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product21->name_slug . '/',
+                'filename' => $product21->name_slug . '_3.jpg'
+            ]
+        ]);
+
+        $product21->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product22 = Product::create([
+            'product_code' => 'BU0321  1307 0008',
+            'name' => 'Goody Weather Top',
+            'name_slug' => 'goody-weather-top',
+            'details' => 'GOODY Weather Top is an exterior wall emulsion that gives a tough water
+            repellent finish when dry.',
+            'description' => 'GOODY Weather Top is an exterior wall emulsion that gives a tough water
+            repellent finish when dry.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product22->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Coral Reel 9',
+                'color_hex' => '#f97976'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White Sage 79',
+                'color_hex' => '#d2d4c3'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product22->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product22->name_slug . '/',
+                'filename' => $product22->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product22->name_slug . '/',
+                'filename' => $product22->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product22->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product23 = Product::create([
+            'product_code' => 'BU0321  1307 0009',
+            'name' => 'Par Silk',
+            'name_slug' => 'par-silk',
+            'details' => 'PAR Silk is a premium grade emulsion that gives a brilliant, smooth and
+            luxurious silk finish for interior use.',
+            'description' => 'PAR Silk is a premium grade emulsion that gives a brilliant, smooth and
+            luxurious silk finish for interior use.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product23->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Camelia 6649K',
+                'color_hex' => '#a85c61'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product23->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product23->name_slug . '/',
+                'filename' => $product23->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product23->name_slug . '/',
+                'filename' => $product23->name_slug . '_2.jpg'
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product23->name_slug . '/',
+                'filename' => $product23->name_slug . '_3.jpg'
+            ]
+        ]);
+
+        $product23->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product23 = Product::create([
+            'product_code' => 'BU0321  1307 0010',
+            'name' => 'Par Supergloss',
+            'name_slug' => 'par-supergloss',
+            'details' => 'PAR Supergloss is a premium grade, high performance enamel suitable for
+            use on all types of wood and metal. PAR Supergloss gives a tough, mirrorlike high gloss finish.',
+            'description' => 'PAR Supergloss is a premium grade, high performance enamel suitable for
+            use on all types of wood and metal. PAR Supergloss gives a tough, mirrorlike high gloss finish.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product23->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Vanilla White 6607K',
+                'color_hex' => '#a85c61'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ]
+        ]);
+
+        $product23->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product23->name_slug . '/',
+                'filename' => $product23->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product23->name_slug . '/',
+                'filename' => $product23->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product23->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product24 = Product::create([
+            'product_code' => 'BU0321  1307 0011',
+            'name' => 'Par Supermatt',
+            'name_slug' => 'par-supermatt',
+            'details' => 'PAR Supermatt is a premium quality, highly durable, anti-bacterial matt
+            emulsion that gives a brilliant, smooth and rich matt finish. Its reduced
+            shine avoids visible reflection of uneven plastered surfaces.',
+            'description' => 'PAR Supermatt is a premium quality, highly durable, anti-bacterial matt
+            emulsion that gives a brilliant, smooth and rich matt finish. Its reduced
+            shine avoids visible reflection of uneven plastered surfaces.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product24->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lily White 8567K',
+                'color_hex' => '#e9eeeb'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product24->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product24->name_slug . '/',
+                'filename' => $product23->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product24->name_slug . '/',
+                'filename' => $product24->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product24->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product25 = Product::create([
+            'product_code' => 'BU0321  1307 0012',
+            'name' => 'Par Timbercote',
+            'name_slug' => 'par-timbercote',
+            'details' => 'PAR Timbercote is a premium grade, translucent pigmented varnish which
+            brings out the natural beauty of the grain of timber. It contains special
+            preservatives to protect exterior timber surfaces against rot and mould
+            growth.',
+            'description' => 'PAR Timbercote is a premium grade, translucent pigmented varnish which
+            brings out the natural beauty of the grain of timber. It contains special
+            preservatives to protect exterior timber surfaces against rot and mould
+            growth.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product25->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Golden Pine 103K',
+                'color_hex' => '#8d6f2f'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Rust 105K',
+                'color_hex' => '#b7410e'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Rosewood 108K',
+                'color_hex' => '#65000b'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Redwood 107K',
+                'color_hex' => '#a45a52'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Mahogany 102K',
+                'color_hex' => '#c04000'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Teak 104K',
+                'color_hex' => '#c29467'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Meranti 101K',
+                'color_hex' => '#6b342a'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Charcoal 110K',
+                'color_hex' => '#36454f'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product25->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product25->name_slug . '/',
+                'filename' => $product25->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product25->name_slug . '/',
+                'filename' => $product25->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product25->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product26 = Product::create([
+            'product_code' => 'BU0321  1307 0013',
+            'name' => 'Par Weathercoat',
+            'name_slug' => 'par-weathercoat',
+            'details' => 'PAR Weathercoat is a pure acrylic paint, high performance, superior quality
+            exterior grade emulsion that gives a brilliant smooth and ultra-luxurious
+            finish.',
+            'description' => 'PAR Weathercoat is a pure acrylic paint, high performance, superior quality
+            exterior grade emulsion that gives a brilliant smooth and ultra-luxurious
+            finish.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product26->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Daylight 1107K',
+                'color_hex' => '#f8e5dd'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product26->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product26->name_slug . '/',
+                'filename' => $product26->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product26->name_slug . '/',
+                'filename' => $product26->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product26->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product27 = Product::create([
+            'product_code' => 'BU0321  1307 0014',
+            'name' => 'Par Roofcote',
+            'name_slug' => 'par-roofcote',
+            'details' => 'PAR Roofcote is a premium grade coating designed to restore weathered
+            concrete roof to look new again. It’s tough and durable finish gives long
+            lasting protection against the tropical climate.',
+            'description' => 'PAR Roofcote is a premium grade coating designed to restore weathered
+            concrete roof to look new again. It’s tough and durable finish gives long
+            lasting protection against the tropical climate.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product27->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Idaman Grey DRC 2044',
+                'color_hex' => '#b6afac'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Casa Blue DRC 2041',
+                'color_hex' => '#cdd0e7'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Texas Brown DRC 5779',
+                'color_hex' => '#584734'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product27->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product27->name_slug . '/',
+                'filename' => $product27->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product27->name_slug . '/',
+                'filename' => $product27->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product27->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
+
+        // ---
+
+        $product28 = Product::create([
+            'product_code' => 'BU0321  1307 0015',
+            'name' => 'Par Heat Reduction Roofcote',
+            'name_slug' => 'par-heat-reduction-rootcote',
+            'details' => 'PAR Heat Reduction Roofcote is a high performance coating designed to reflect heat and prevent heat build-up on your roofs.',
+            'description' => 'PAR Heat Reduction Roofcote is a high performance coating designed to reflect heat and prevent heat build-up on your roofs.',
+            'quality_id' => 3,
+            'product_rating' => 5
+        ]);
+
+        $product28->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Chimney Grey DRC 1129HR',
+                'color_hex' => '#b6afac'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Sailor Blue DRC 2763HR',
+                'color_hex' => '#cdd0e7'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Organic Charcoal DRC 5866 HR',
+                'color_hex' => '#584734'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter'
+            ]
+        ]);
+
+        $product28->images()->createMany([
+            [
+                'path' => 'uploads/images/products/' . $product28->name_slug . '/',
+                'filename' => $product28->name_slug . '_1.jpg',
+                'default' => 1
+            ],
+            [
+                'path' => 'uploads/images/products/' . $product28->name_slug . '/',
+                'filename' => $product28->name_slug . '_2.jpg'
+            ]
+        ]);
+
+        $product28->categories()->attach([
+            Category::where('name', 'Paints')->first()->id,
+        ]);
     }
 }

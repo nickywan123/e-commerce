@@ -32,7 +32,7 @@
                 $ribbonClass = 'premium';
             }
             ?>
-            <div class="ribbon {{ $ribbonClass }}"><span>{{ $product->quality->name }}</span></div>
+            <!-- <div class="ribbon {{ $ribbonClass }}"><span>{{ $product->quality->name }}</span></div> -->
             <div class="tooltip-container">
                 <a class="catalog-item" style="text-decoration: none; color: #212529;" href="javascript:void()" data-modal="#modal-{{ $product->id }}">
 
@@ -176,7 +176,7 @@
                 $ribbonClass = 'premium';
             }
             ?>
-            <div class="ribbon {{ $ribbonClass }}"><span>{{ $product->quality->name }}</span></div>
+            <!-- <div class="ribbon {{ $ribbonClass }}"><span>{{ $product->quality->name }}</span></div> -->
             <a class="text-dark" href="/shop/product/{{ $product->name_slug }}?panel={{ $product->productSoldByPanels[0]->panel_account_id }}" style="text-decoration: none;">
                 <div class="animated-product-container">
                     <div class="animated-product-image-container">
