@@ -978,5 +978,1042 @@ class PanelProductsTableSeeder extends Seeder
             '5',
             '6'
         ]);
+
+        // Product 17
+        $panelProduct17 = new Product;
+        $panelProduct17->global_product_id = 17;
+        $panelProduct17->panel_account_id = 1918000005;
+        $panelProduct17->product_description = '
+        ALES Anti-MosA acts on the nervous system of mosquitoes (also other insects) by interfering with the neuron functions.';
+        $panelProduct17->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct17->product_consistency = '<p><ul><li>Mosquito-repellent properties.</li><li>waterbased interior paint.</li><li>sheen luxurious finish.</li><li>good washability.</li><li>enviromental friendly.</li><li>interior use.</li></ul></p>';
+        $panelProduct17->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct17->price = 10000;
+        $panelProduct17->member_price = 10000;
+        $panelProduct17->delivery_fee = 0;
+        $panelProduct17->product_rating = 5;
+        $panelProduct17->save();
+
+        $panelProduct17->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102K',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Pebble White 10A01K',
+                'color_hex' => '#f0e9da'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Butter Cream 7549K',
+                'color_hex' => '#f0e6cf'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Camelia 6649K',
+                'color_hex' => '#a85c61'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Orchid White 8578K',
+                'color_hex' => '#f1ebd9'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct17->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 18
+        $panelProduct18 = new Product;
+        $panelProduct18->global_product_id = 18;
+        $panelProduct18->panel_account_id = 1918000005;
+        $panelProduct18->product_description = 'ALES Shiquy is a water based paint with slaked lime as its main component.';
+        $panelProduct18->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct18->product_consistency = '<p><ul><li>Excellent air purifying through CO² adsorption.</li><li>Excellent air detoxification for indoor air pollution.</li><li>Excellent odor eliminator.</li><li>Anti-bacteria property reduces E.coli, MRSA, Staphylococcus aureus
+        and Pseudomonas aeruginosa effectively</li><li>Anti-virus property reduces Canine parvovirus, Influenza virus,
+        Vesicular stomatitis virus Bovine popular stomatitis virus effectively.</li><li>Humidity control.</li><li>Non-flammable.</li><li>Low VOC</li></ul></p>';
+        $panelProduct18->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct18->price = 10000;
+        $panelProduct18->member_price = 10000;
+        $panelProduct18->delivery_fee = 0;
+        $panelProduct18->product_rating = 5;
+        $panelProduct18->save();
+
+        $panelProduct18->attributes()->createMany([
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct18->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 19
+        $panelProduct19 = new Product;
+        $panelProduct19->global_product_id = 19;
+        $panelProduct19->panel_account_id = 1918000005;
+        $panelProduct19->product_description = 'ALES Weathercoat Hybrid is an acrylic, high performance, superior quality
+        exterior-grade emulsion; that gives a lively coat that exceeds conventional
+        acrylic emulsion finish.';
+        $panelProduct19->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct19->product_consistency = '<p><ul><li>8 Years Performance Warranty.</li><li>Excellent fungal and algae growth resistance.</li><li>Excellent colour retention.</li><li>Tough synthetic finish - washable.</li><li>No added lead or mercury.</li><li>Humidity control.</li><li>Approved by SIRIM to Malaysian Standard MS 134:2007.</li></ul></p>';
+        $panelProduct19->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct19->price = 10000;
+        $panelProduct19->member_price = 10000;
+        $panelProduct19->delivery_fee = 0;
+        $panelProduct19->product_rating = 5;
+        $panelProduct19->save();
+
+        $panelProduct19->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Daylight 1107K',
+                'color_hex' => '#f8e5dd'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Beige 08B17K',
+                'color_hex' => '#f5f5dc'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct19->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 20
+        $panelProduct20 = new Product;
+        $panelProduct20->global_product_id = 20;
+        $panelProduct20->panel_account_id = 1918000005;
+        $panelProduct20->product_description = 'CROWN Emulsion is a matt emulsion specially formulated for housing
+        projects where economy is important. It smooth matt finish hides surface
+        imperfections and avoid reflection of uneven plastered surfaces.';
+        $panelProduct20->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct20->product_consistency = '<p>
+        <ul>
+        <li>Economy – suitable for large-scale housing projects.</li>
+        <li>Good adhesion property.</li>
+        <li>Good hiding power.</li>
+        <li>Easy to apply.</li>
+        <li>Formaldehyde free.</li>
+        <li>Wide colour range.</li>
+        <li>No added lead or mercury.</li>
+        <li>Low VOC and odour.</li>
+        <li>Approved by SIRIM to Malaysian Standard MS 903:1984.</li>
+        </ul>
+        </p>';
+        $panelProduct20->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct20->price = 10000;
+        $panelProduct20->member_price = 10000;
+        $panelProduct20->delivery_fee = 0;
+        $panelProduct20->product_rating = 5;
+        $panelProduct20->save();
+
+        $panelProduct20->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Vanilla 6607',
+                'color_hex' => '#f9edc9'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Cool White 10B15',
+                'color_hex' => '#dbe9f4'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Cream 3040',
+                'color_hex' => '#fffdd0'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct20->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 21
+        $panelProduct21 = new Product;
+        $panelProduct21->global_product_id = 21;
+        $panelProduct21->panel_account_id = 1918000005;
+        $panelProduct21->product_description = 'CROWN Gloss is a solvent based gloss finish specially formulated for
+        housing project where economy is important. It is easy to apply and forms
+        a smooth, tough paint film.';
+        $panelProduct21->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct21->product_consistency = '<p>
+        <ul>
+        <li>Economy – suitable for large-scale housing projects.</li>
+        <li>High gloss finish.</li>
+        <li>Good hiding power.</li>
+        <li>Good brush loading and good sag resistant.</li>
+        <li>Quick hard drying – quick recoating.</li>
+        </ul>
+        </p>';
+        $panelProduct21->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct21->price = 10000;
+        $panelProduct21->member_price = 10000;
+        $panelProduct21->delivery_fee = 0;
+        $panelProduct21->product_rating = 5;
+        $panelProduct21->save();
+
+        $panelProduct21->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Papyrus 0028',
+                'color_hex' => '#c99868'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Chablis 3164',
+                'color_hex' => '#e0bd8e'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Genie 0032',
+                'color_hex' => '#d6b9ae'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct21->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 22
+        $panelProduct22 = new Product;
+        $panelProduct22->global_product_id = 22;
+        $panelProduct22->panel_account_id = 1918000005;
+        $panelProduct22->product_description = 'GOODY Easy Clean is a high grade emulsion that gives a bright, smooth and attractive mid sheen pearl finish for interior use.';
+        $panelProduct22->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct22->product_consistency = '<p>
+        <ul>
+        <li>Easy wipe up to 5,000 times.</li>
+        <li>Bright, smooth, pearl finish.</li>
+        <li>Withstand moderate washing.</li>
+        <li>Dirty hand marks can be wiped clean.</li>
+        <li>No added lead or mercury.</li>
+        <li>Low VOC and odour.</li>
+        </ul>
+        </p>';
+        $panelProduct22->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct22->price = 10000;
+        $panelProduct22->member_price = 10000;
+        $panelProduct22->delivery_fee = 0;
+        $panelProduct22->product_rating = 5;
+        $panelProduct22->save();
+
+        $panelProduct22->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Coral Reel 9',
+                'color_hex' => '#f97976'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White Sage 79',
+                'color_hex' => '#d2d4c3'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct22->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 23
+        $panelProduct23 = new Product;
+        $panelProduct23->global_product_id = 23;
+        $panelProduct23->panel_account_id = 1918000005;
+        $panelProduct23->product_description = 'GOODY Matt Extra is a durable emulsion with smooth matt finish, does not contain lead, mercury and heavy metals.';
+        $panelProduct23->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct23->product_consistency = '<p>
+        <ul>
+        <li>With anti-mould property.</li>
+        <li>Good whiteness.</li>
+        <li>Good dry hiding property.</li>
+        <li>Environmentally friendly product.</li>
+        <li>No added lead or mercury.</li>
+        <li>Low VOC and odour.</li>
+        <li>Approved by SIRIM to Malaysian Standard MS 903:1984.</li>
+        </ul>
+        </p>';
+        $panelProduct23->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct23->price = 10000;
+        $panelProduct23->member_price = 10000;
+        $panelProduct23->delivery_fee = 0;
+        $panelProduct23->product_rating = 5;
+        $panelProduct23->save();
+
+        $panelProduct23->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Coral Reel 9',
+                'color_hex' => '#f97976'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White Sage 79',
+                'color_hex' => '#d2d4c3'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct23->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 24
+        $panelProduct24 = new Product;
+        $panelProduct24->global_product_id = 24;
+        $panelProduct24->panel_account_id = 1918000005;
+        $panelProduct24->product_description = 'GOODY Weather Top is an exterior wall emulsion that gives a tough water
+        repellent finish when dry.';
+        $panelProduct24->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct24->product_consistency = '<p>
+        <ul>
+        <li>5 Years Performance Warranty.</li>
+        <li>Good fungal and algae growth resistance.</li>
+        <li>Good colour retention.</li>
+        <li>Tough synthetic finish – washable.</li>
+        <li>Good weathering property.</li>
+        <li>Low VOC and odour.</li>
+        <li>No added lead or mercury.</li>
+        <li>Low VOC and odour.</li>
+        <li>Approved by SIRIM to Malaysian Standard MS 134:200.</li>
+        </ul>
+        </p>';
+        $panelProduct24->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct24->price = 10000;
+        $panelProduct24->member_price = 10000;
+        $panelProduct24->delivery_fee = 0;
+        $panelProduct24->product_rating = 5;
+        $panelProduct24->save();
+
+        $panelProduct24->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Coral Reel 9',
+                'color_hex' => '#f97976'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White Sage 79',
+                'color_hex' => '#d2d4c3'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct24->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 25
+        $panelProduct25 = new Product;
+        $panelProduct25->global_product_id = 25;
+        $panelProduct25->panel_account_id = 1918000005;
+        $panelProduct25->product_description = 'PAR Silk is a premium grade emulsion that gives a brilliant, smooth and
+        luxurious silk finish for interior use.';
+        $panelProduct25->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct25->product_consistency = '<p>
+        <ul>
+        <li>High durability.</li>
+        <li>Withstand vigorous washing.</li>
+        <li>Dirty hand marks can be wiped clean easily.</li>
+        <li>Bright, smooth, luxurious finish.</li>
+        <li>Excellent colour retention.</li>
+        <li>Low VOC and odour.</li>
+        <li>No added lead or mercury.</li>
+        <li>No added lead or mercury.</li>
+        </ul>
+        </p>';
+        $panelProduct25->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct25->price = 10000;
+        $panelProduct25->member_price = 10000;
+        $panelProduct25->delivery_fee = 0;
+        $panelProduct25->product_rating = 5;
+        $panelProduct25->save();
+
+        $panelProduct25->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Camelia 6649K',
+                'color_hex' => '#a85c61'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct25->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 26
+        $panelProduct26 = new Product;
+        $panelProduct26->global_product_id = 26;
+        $panelProduct26->panel_account_id = 1918000005;
+        $panelProduct26->product_description = 'PAR Supergloss is a premium grade, high performance enamel suitable for
+        use on all types of wood and metal. PAR Supergloss gives a tough, mirrorlike high gloss finish.';
+        $panelProduct26->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct26->product_consistency = '<p>
+        <ul>
+        <li>Brilliant gloss enamel.</li>
+        <li>Outstanding weathering resistance.</li>
+        <li>Excellent fungus resistance.</li>
+        <li>Excellent hiding power.</li>
+        <li>Excellent colour retention.</li>
+        <li>Low VOC and odour.</li>
+        <li>No added lead or mercury.</li>
+        <li>Approved by SIRIM to Malaysian Standard MS 125:199.</li>
+        </ul>
+        </p>';
+        $panelProduct26->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct26->price = 10000;
+        $panelProduct26->member_price = 10000;
+        $panelProduct26->delivery_fee = 0;
+        $panelProduct26->product_rating = 5;
+        $panelProduct26->save();
+
+        $panelProduct26->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Vanilla White 6607K',
+                'color_hex' => '#a85c61'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct26->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 27
+        $panelProduct27 = new Product;
+        $panelProduct27->global_product_id = 27;
+        $panelProduct27->panel_account_id = 1918000005;
+        $panelProduct27->product_description = 'PAR Supermatt is a premium quality, highly durable, anti-bacterial matt
+        emulsion that gives a brilliant, smooth and rich matt finish. Its reduced
+        shine avoids visible reflection of uneven plastered surfaces.';
+        $panelProduct27->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct27->product_consistency = '<p>
+        <ul>
+        <li>Excellent anti-bacterial property.</li>
+        <li>High durability.</li>
+        <li>Excellent hiding power.</li>
+        <li>Excellent hiding power.</li>
+        <li>Excellent colour retention.</li>
+        <li>Low VOC and odour.</li>
+        <li>No added lead or mercury.</li>
+        <li>Approved by SIRIM to Malaysian Standard MS 903:198.</li>
+        </ul>
+        </p>';
+        $panelProduct27->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct27->price = 10000;
+        $panelProduct27->member_price = 10000;
+        $panelProduct27->delivery_fee = 0;
+        $panelProduct27->product_rating = 5;
+        $panelProduct27->save();
+
+        $panelProduct27->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lily White 8567K',
+                'color_hex' => '#e9eeeb'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct27->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 28
+        $panelProduct28 = new Product;
+        $panelProduct28->global_product_id = 28;
+        $panelProduct28->panel_account_id = 1918000005;
+        $panelProduct28->product_description = 'PAR Timbercote is a premium grade, translucent pigmented varnish which
+        brings out the natural beauty of the grain of timber. It contains special
+        preservatives to protect exterior timber surfaces against rot and mould
+        growth.';
+        $panelProduct28->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct28->product_consistency = '<p>
+        <ul>
+        <li>Excellent resistance against wood rot and mould growth.</li>
+        <li>Allow timber to breathe, thus will not blister or crack.</li>
+        <li>Will filter out UV rays reducing degradation of timber.</li>
+        <li>Excellent abrasion resistance.</li>
+        <li>Excellent colour retention.</li>
+        <li>Long lasting protection and water resistance.</li>
+        </ul>
+        </p>';
+        $panelProduct28->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct28->price = 10000;
+        $panelProduct28->member_price = 10000;
+        $panelProduct28->delivery_fee = 0;
+        $panelProduct28->product_rating = 5;
+        $panelProduct28->save();
+
+        $panelProduct28->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Golden Pine 103K',
+                'color_hex' => '#8d6f2f'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Rust 105K',
+                'color_hex' => '#b7410e'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Rosewood 108K',
+                'color_hex' => '#65000b'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Redwood 107K',
+                'color_hex' => '#a45a52'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Mahogany 102K',
+                'color_hex' => '#c04000'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Teak 104K',
+                'color_hex' => '#c29467'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Meranti 101K',
+                'color_hex' => '#6b342a'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Charcoal 110K',
+                'color_hex' => '#36454f'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct28->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 29
+        $panelProduct29 = new Product;
+        $panelProduct29->global_product_id = 29;
+        $panelProduct29->panel_account_id = 1918000005;
+        $panelProduct29->product_description = 'PAR Weathercoat is a pure acrylic paint, high performance, superior quality
+        exterior grade emulsion that gives a brilliant smooth and ultra-luxurious
+        finish.';
+        $panelProduct29->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct29->product_consistency = '<p>
+        <ul>
+        <li>6 Years Performance Warranty.</li>
+        <li>Pure acrylic resins - outlast ordinary emulsion.</li>
+        <li>Excellent fungal and algae growth resistance.</li>
+        <li>Excellent colour retention.</li>
+        <li>Tough synthetic finish - washable.</li>
+        <li>No added lead or mercury.</li>
+        <li>Low VOC and odour.</li>
+        <li>Approved by SIRIM to Malaysian Standard MS 134:200.</li>
+        </ul>
+        </p>';
+        $panelProduct29->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct29->price = 10000;
+        $panelProduct29->member_price = 10000;
+        $panelProduct29->delivery_fee = 0;
+        $panelProduct29->product_rating = 5;
+        $panelProduct29->save();
+
+        $panelProduct29->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Daylight 1107K',
+                'color_hex' => '#f8e5dd'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'White 9102',
+                'color_hex' => '#ffffff'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Lychee 08B15K',
+                'color_hex' => '#dc5349'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct29->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 30
+        $panelProduct30 = new Product;
+        $panelProduct30->global_product_id = 30;
+        $panelProduct30->panel_account_id = 1918000005;
+        $panelProduct30->product_description = 'PAR Roofcote is a premium grade coating designed to restore weathered
+        concrete roof to look new again. It’s tough and durable finish gives long
+        lasting protection against the tropical climate.';
+        $panelProduct30->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct30->product_consistency = '<p>
+        <ul>
+        <li>Restores weathered tiles to their clean, bright & shiny state.</li>
+        <li>Excellent fungal and algae growth resistant.</li>
+        <li>Excellent fungal and algae growth resistance.</li>
+        <li>Excellent colour retention.</li>
+        <li>Tough synthetic finish - washable.</li>
+        <li>No added lead or mercury.</li>
+        </ul>
+        </p>';
+        $panelProduct30->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct30->price = 10000;
+        $panelProduct30->member_price = 10000;
+        $panelProduct30->delivery_fee = 0;
+        $panelProduct30->product_rating = 5;
+        $panelProduct30->save();
+
+        $panelProduct30->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Idaman Grey DRC 2044',
+                'color_hex' => '#b6afac'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Casa Blue DRC 2041',
+                'color_hex' => '#cdd0e7'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Texas Brown DRC 5779',
+                'color_hex' => '#584734'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct30->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 31
+        $panelProduct31 = new Product;
+        $panelProduct31->global_product_id = 31;
+        $panelProduct31->panel_account_id = 1918000005;
+        $panelProduct31->product_description = 'PAR Heat Reduction Roofcote is a high performance coating designed to reflect heat and prevent heat build-up on your roofs.';
+        $panelProduct31->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct31->product_consistency = '<p>
+        <ul>
+        <li>Excellent heat reduction property, up to 5˚C reduction.</li>
+        <li>Excellent fungal and algae growth resistance.</li>
+        <li>Excellent colour retention.</li>
+        <li>Tough synthetic finish - washable.</li>
+        <li>No added lead or mercury.</li>
+        </ul>
+        </p>';
+        $panelProduct31->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct31->price = 10000;
+        $panelProduct31->member_price = 10000;
+        $panelProduct31->delivery_fee = 0;
+        $panelProduct31->product_rating = 5;
+        $panelProduct31->save();
+
+        $panelProduct31->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Chimney Grey DRC 1129HR',
+                'color_hex' => '#b6afac'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Sailor Blue DRC 2763HR',
+                'color_hex' => '#cdd0e7'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Organic Charcoal DRC 5866 HR',
+                'color_hex' => '#584734'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '10000',
+                'member_price' => '10000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '13000',
+                'member_price' => '13000'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '16000',
+                'member_price' => '16000'
+            ]
+        ]);
+
+        $panelProduct31->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
     }
 }

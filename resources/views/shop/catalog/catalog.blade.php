@@ -3,7 +3,7 @@
 
 
 @section('content')
-<div class="col-12 col-md-10 offset-md-1">
+<div class="col-12 col-md-10 offset-md-1" style="min-height: 65vh;">
     <div class="row">
         <div class="col-12 mb-1">
             @if($categoryLevel == 1)
