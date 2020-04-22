@@ -3,9 +3,9 @@
     @foreach ($breadcrumbs as $breadcrumb)
 
     @if ($breadcrumb->url && !$loop->last)
-    <li class="breadcrumb-item "><a class="text-color-breadcrumb" href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}(WIP)</a></li>
+    <li class="breadcrumb-item "><a class="text-color-breadcrumb" href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a></li>
     @else
-    <li class="breadcrumb-item  active">{{ $breadcrumb->title }} (WIP)</li>
+    <li class="breadcrumb-item  active">{{ $breadcrumb->title }}</li>
     @endif
 
     @endforeach
@@ -14,17 +14,17 @@
         {{-- <div class="btn-group" role="group" aria-label="Button group">
                   
             <a class="btn text-color-breadcrumb" href="#">
-                <i class="icon-settings"></i> Settings(WIP)</a>
+                <i class="icon-settings"></i> Settings</a>
         </div> --}}
-          <a style="color:black;" href="{{ route('logout') }}" onclick="event.preventDefault();
+        <a style="color:black;" href="{{ route('logout') }}" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();">Logout</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </li>
 </ol>
-@endif  
+@endif
 
 <style>
-    
+
 </style>

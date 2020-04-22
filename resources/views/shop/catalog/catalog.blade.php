@@ -21,7 +21,7 @@
     </div>
     <div class="row pb-4">
         <div class="col-12 mb-1">
-            <h3 class="text-muted">{{ $category->name }} <small>(WIP)</small></h3>
+            <h3 class="text-muted">{{ $category->name }}</h3>
         </div>
     </div>
 

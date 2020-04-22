@@ -91,9 +91,9 @@
                                             My Account
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="/shop/profile"><i class="fa fa-user"></i> Profile <small>(WIP)</small></a>
-                                            <a class="dropdown-item" href="/shop/order"><i class="fa fa-credit-card"></i> My Orders <small>(WIP)</small></a>
-                                            <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart(WIP)</a>
+                                            <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user"></i> Profile</a>
+                                            <a class="dropdown-item" href="/shop/dashboard/orders/index"><i class="fa fa-credit-card"></i> My Orders</a>
+                                            <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
                                             @hasrole('panel')
                                             <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Panel</a>
                                             @endhasrole
