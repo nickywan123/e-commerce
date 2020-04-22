@@ -204,14 +204,14 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::patch('dashboard/profile/update/{id}','Shop\ProfileController@updateProfile')->name('profile.update');
 
         // Return Customer ->Value Records -> All Orders
-        Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders')->name('shop.customer.orders');
+        Route::get('/dashboard/orders/index', 'Shop\ValueRecordsController@customerAllOrders')->name('shop.customer.orders');
         // Return Customer ->Value Records -> Orders Status
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
         Route::get('/dashboard/reset-password', 'Shop\ForgotPasswordController@sendEmailReset')->name('shop.forgot.password');
 
        
-        Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders');
+        // Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders');
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 
