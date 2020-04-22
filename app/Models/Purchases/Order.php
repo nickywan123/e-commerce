@@ -56,14 +56,17 @@ class Order extends Model
     public function getPendingAttribute()
     {
 
-        if ($this->delivery_date != 'Pending') {
+        if ($this->received_date != '') {
             $date = Carbon::parse($this->created_at);
             $updated_date = Carbon::parse($this->updated_at);
             return $diff = $date->diffInDays($updated_date);
+        }else{
+
+            $date = Carbon::parse($this->created_at);
+            $now = Carbon::now();
+            return $diff = $date->diffInDays($now);
         }
-        $date = Carbon::parse($this->created_at);
-        $now = Carbon::now();
-        return $diff = $date->diffInDays($now);
+ 
     }
 
     /**Get Order Date */

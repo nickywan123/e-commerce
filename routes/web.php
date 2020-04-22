@@ -32,14 +32,14 @@ Route::get('/orders/confirm/{purchase_num}', 'Order\OrderController@show')
 //   Route::get('/QR-Completed','SomeControllerMethod');
 
 // Return invoice 
-Route::get('/shop/invoice', 'Purchase\PurchaseController@invoiceCustomer');
+// Route::get('/shop/invoice', 'Purchase\PurchaseController@invoiceCustomer');
 
 // Return invoice in customer dashboard (Orders) 
-Route::get('/orders/invoice/{purchase_num}', 'Purchase\PurchaseController@invoice');
+Route::get('/orders/invoice/{purchase_num}', 'Shop\ValueRecordsController@invoice');
 
 //Return receipt in customer dashboard(Receipt)
 
-Route::get('/orders/receipt/{purchase_num}', 'Purchase\PurchaseController@receipt');
+Route::get('/orders/receipt/{purchase_num}', 'Shop\ValueRecordsController@receipt');
 
 Route::get('/purchase-order', 'Panel\DashboardController@viewPurchaseOrder');
 //Return Work In progress page
@@ -204,14 +204,14 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::patch('dashboard/profile/update/{id}','Shop\ProfileController@updateProfile')->name('profile.update');
 
         // Return Customer ->Value Records -> All Orders
-        Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders')->name('shop.customer.orders');
+        Route::get('/dashboard/orders/index', 'Shop\ValueRecordsController@customerAllOrders')->name('shop.customer.orders');
         // Return Customer ->Value Records -> Orders Status
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
         Route::get('/dashboard/reset-password', 'Shop\ForgotPasswordController@sendEmailReset')->name('shop.forgot.password');
 
        
-        Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders');
+        // Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders');
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 

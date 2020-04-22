@@ -8556,23 +8556,23 @@
                         @foreach($purchase->orders as $order)
                         @foreach($order->items as $item)
                         <tr style="font-size: 10pt;">
-                            <td style="padding: 6px; text-align: center; vertical-align: top;">
+                            <td style="padding: 16px; text-align: center; vertical-align: top;">
                                 <?php
                                 $iterationNo = $iterationNo + 1;
                                 ?>
                                 {{ $iterationNo }}
                             </td>
-                            <td style="padding: 6px; vertical-align: top;">
+                            <td style="padding: 16px; vertical-align: top;">
                                 {{ $item->product->parentProduct->product_code }}
                             </td>
                             <td style="padding: 6px; vertical-align: top;">
                                 <table>
                                     <tr style="font-size: 10pt;">
                                         <td style="padding: 4px; vertical-align: top;">
-                                            <img src="{{ asset('storage/' . $item->product->parentProduct->defaultImage->path . '/' . $item->product->parentProduct->defaultImage->filename) }}" alt="{{ $item->product->parentProduct->name }}" style="width: 35px; height: auto; border-radius: 10px;">
+                                            <img src="{{ asset('storage/' . $item->product->parentProduct->defaultImage->path . '/' . $item->product->parentProduct->defaultImage->filename) }}" alt="{{ $item->product->parentProduct->name }}" style="width: 105px; height: 90px; border-radius: 10px;">
                                         </td>
-                                        <td style="padding: 4px; vertical-align: top;">
-                                            <p style="margin-bottom: 5px;">
+                                        <td style="padding: 14px; vertical-align: top;">
+                                            <p style="margin-bottom: 10px;">
                                                 {{ $item->quantity }} x {{ $item->product->parentProduct->name }}
                                             </p>
                                             <p style="margin: 0;">
@@ -8590,13 +8590,13 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td style="padding: 6px; text-align: center; vertical-align: top;">
+                            <td style="padding: 16px; text-align: center; vertical-align: top;">
                                 {{ $item->quantity }}
                             </td>
-                            <td style="padding: 6px; text-align: center; vertical-align: top;">
+                            <td style="padding: 16px; text-align: center; vertical-align: top;">
                                 {{ $item->product->getDecimalPrice() }}
                             </td>
-                            <td style="padding: 6px; text-align: center; vertical-align: top;">
+                            <td style="padding: 16px; text-align: center; vertical-align: top;">
                                 {{ number_format(($item->subtotal_price / 100), 2) }}
                             </td>
                         </tr>
