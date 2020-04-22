@@ -47,4 +47,10 @@ class ValueRecordsController extends Controller
          $pdf = PDF::loadView('documents.receipt.receipt', compact('purchase'))->setPaper('A4');
          return $pdf->stream('receipt-.' . $purchase_num . '.pdf');
      }
+
+
+     /**Return wishlist for user */
+     public function wishlist(){
+         return view('shop.customer-dashboard.value-records.wishlist');
+     }
 }

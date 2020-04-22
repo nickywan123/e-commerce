@@ -32,7 +32,7 @@
       <h5 style="margin-right:10px" class="welcome-text"  >Welcome, {{Auth::user()->userInfo->full_name}}</h5> 
       <li class="nav-item dropdown">
          <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-           <img class="img-avatar" src="{{asset('images/zuck.jpg')}}" alt="{{ Auth::user()->userInfo->full_name }}">
+           <img class="img-avatar" src="{{asset('storage/avatar/default-avatar.jpg')}}" alt="{{ Auth::user()->userInfo->full_name }}">
          </a>
             <div class="dropdown-menu dropdown-menu-right">
                 {{-- <div class="dropdown-header text-center">

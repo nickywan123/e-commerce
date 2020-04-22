@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'ses'),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'email–smtp.ap-south–1.amazonaws.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@bujishu.com'),
         'name' => env('MAIL_FROM_NAME', 'Bujishu'),
     ],
 
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('MAIL_USERNAME','AKIAYS75QFETCWTSQSCB'),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('MAIL_PASSWORD','BEW7OJS73kayFz95PuM/rH2fDy0UAoeTetnFfKAJPcl4'),
 
     /*
     |--------------------------------------------------------------------------
