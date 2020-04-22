@@ -32,7 +32,7 @@ class PurchaseTablesSeeder extends Seeder
         $order1->order_amount = 13000;
         $order1->delivery_date = "Pending";
         $order1->received_date = "";
-        $order1->claim_status = "Processing";
+        $order1->claim_status = "";
         $order1->save();
 
         $order2 = new Order;
@@ -43,7 +43,7 @@ class PurchaseTablesSeeder extends Seeder
         $order2->order_amount = 26000;
         $order2->delivery_date = "Pending";
         $order2->received_date = "";
-        $order2->claim_status = "Processing";
+        $order2->claim_status = "";
         $order2->save();
 
         $item1 = new Item;

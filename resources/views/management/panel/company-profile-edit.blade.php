@@ -19,6 +19,8 @@
             <div class="col-12 col-md-10">
                 <div class="card shadow-sm">
                     <div class="card-body">
+
+{{--                         
                         <div class="form-group row ">
                             <label for="company_propaganda" class="col-md-2 col-form-label">Company Propaganda</label>
                             <div class="col-md-9">
@@ -31,7 +33,7 @@
                             @error('company_propaganda')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
-                        </div>
+                        </div> --}}
 
 
 

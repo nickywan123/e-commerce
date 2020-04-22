@@ -203,8 +203,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/dashboard/profile/edit','Shop\ProfileController@edit')->name('shop.dashboard.customer.profile.edit');
         Route::patch('dashboard/profile/update/{id}','Shop\ProfileController@updateProfile')->name('profile.update');
 
-        // Return Customer ->Value Records -> All Orders
+        // Return Customer ->Value Records 
         Route::get('/dashboard/orders/index', 'Shop\ValueRecordsController@customerAllOrders')->name('shop.customer.orders');
+
+        // Return My Perfect List
+        Route::get('/dashboard/wishlist/index', 'Shop\ValueRecordsController@wishlist');
         // Return Customer ->Value Records -> Orders Status
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
