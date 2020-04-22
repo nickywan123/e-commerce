@@ -104,8 +104,6 @@ class CartController extends Controller
             $sizeId = $size->id;
         }
 
-
-
         // If the post request has product length id value in it..
         if ($request->input('product_attribute_temperature') != null) {
             // Get selected product length.
@@ -134,9 +132,6 @@ class CartController extends Controller
         }
 
         $existingCartItem = $existingCartItem->where('status', 2001)->first();
-
-
-
 
         // If item doesn't exist in cart..
         if ($existingCartItem == null) {
@@ -168,26 +163,34 @@ class CartController extends Controller
                 $productInformation['product_temperature'] = $temperature->attribute_name;
             }
 
-            if ($color != null) {
-                if ($color->price != 0) {
-                    $price = $color->price;
-                } else {
-                    $price = $product->price;
-                }
-            } elseif ($size != null) {
+            // if ($color != null) {
+            //     if ($color->price != 0) {
+            //         $price = $color->price;
+            //     } else {
+            //         $price = $product->price;
+            //     }
+            // } elseif ($size != null) {
+            //     if ($size->price != 0) {
+            //         $price = $size->price;
+            //     } else {
+            //         $price = $product->price;
+            //     }
+            // } elseif ($temperature != null) {
+            //     if ($temperature->price != 0) {
+            //         $price = $temperature->price;
+            //     } else {
+            //         $price = $product->price;
+            //     }
+            // } else {
+            //     $price = $product->price;
+            // }
+
+            if ($size != null) {
                 if ($size->price != 0) {
                     $price = $size->price;
                 } else {
                     $price = $product->price;
                 }
-            } elseif ($temperature != null) {
-                if ($temperature->price != 0) {
-                    $price = $temperature->price;
-                } else {
-                    $price = $product->price;
-                }
-            } else {
-                $price = $product->price;
             }
 
             $newCartItem->product_information = $productInformation;
