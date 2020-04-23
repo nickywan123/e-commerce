@@ -5,8 +5,7 @@
 @section('content')
 
 <br>
-<div>
-    <h4 class="text-capitalize text-dark">Company Profile</h4>
+
  
 
 
@@ -22,7 +21,11 @@
     </div>
     @endif
     
-    
+
+    {{---Desktop Layout----}}
+
+    <div class="hidden-sm">
+        <h4 class="text-capitalize text-dark">Company Profile</h4>
         <div class="row">
             <div class="col-12 col-md-10">
                 <div class="card shadow-sm">
@@ -200,6 +203,248 @@
 </div>
 
 
+{{--Mobile Layout--}}
 
+
+ <div class="mt-4 hidden-md">
+    <h4 class="text-capitalize text-dark font-family-style">Company Profile</h4>
+    <div class="row">
+        <div class="col-12 col-md-10">
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+
+
+                    <div class="form-group row ">
+                        <label for="company_name" class="col-md-2 col-form-label">Company Name</label>
+                        <div class="col-md-4">
+                            <input type="text" name="company_name" id="company_name"
+                                value="{{$companyProfile->company_name}}"
+                                class="form-control @error('company_name') is-invalid @enderror"
+                                value="{{ old('company_name') }}" readonly>
+                        </div>
+                        <label for="company_ssm" class="col-md-2 col-form-label">Company SSM</label>
+                        <div class="col-md-3">
+                            <input type="text" name="company_ssm" id="company_ssm"
+                                value="{{$companyProfile->ssm_number}}"
+                                class="form-control @error('company_ssm') is-invalid @enderror"
+                                value="{{ old('company_ssm') }}" readonly>
+                        </div>
+
+                        @error('company_ssm')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+
+
+
+                    <div class="form-group row ">
+                        <label for="company_address" class="col-md-2 col-form-label">Company Address</label>
+                        <div class="col-md-9">
+                            <input type="text" name="company_address" id="company_address"
+                                value="{{$companyProfile->correspondenceAddress->address_1}}"
+                                class="form-control @error('company_address') is-invalid @enderror"
+                                value="{{ old('company_address') }}" readonly>
+
+                        </div>
+                                          
+                    </div>
+
+                    <div class="form-group row ">
+                     
+                        <div class="col-md-9">
+                            <input type="text" 
+                                value="{{$companyProfile->correspondenceAddress->address_2}}"
+                                class="form-control @error('company_address') is-invalid @enderror"
+                                value="{{ old('company_address') }}" readonly>
+
+                        </div>
+                                          
+                    </div>
+
+                    <div class="form-group row ">
+                       
+                        <div class="col-md-9">
+                            <input type="text" 
+                                value="{{$companyProfile->correspondenceAddress->address_3}}"
+                                class="form-control @error('company_address') is-invalid @enderror"
+                                value="{{ old('company_address') }}" readonly>
+
+                        </div>
+                                          
+                    </div>
+
+                    <div class="form-group row">
+                        
+                        <div class="col-md-9">
+                            <input type="text" 
+                                value="{{$companyProfile->correspondenceAddress->postcode}},{{$companyProfile->correspondenceAddress->city}},Malaysia"
+                                class="form-control @error('company_address') is-invalid @enderror"
+                                value="{{ old('company_address') }}" readonly>
+
+                        </div>
+                                          
+                    </div>
+
+
+
+                    <div class="form-group row ">
+                        <label for="postcode" class="col-md-2 col-form-label">Postcode</label>
+                        <div class="col-md-4">
+                            <input type="text" name="postcode"
+                                value="{{$companyProfile->correspondenceAddress->postcode}}" id="postcode"
+                                class="form-control @error('postcode') is-invalid @enderror"
+                                value="{{ old('postcode') }}" readonly>
+                        </div>
+
+
+                     
+                    </div>
+
+                    <div class="form-group row ">
+                        <label for="company_billing_address" class="col-md-2 col-form-label">Billing Address</label>
+                        <div class="col-md-9">
+                            <input type="text" name="company_billing_address" id="company_billing_address"
+                                value="{{$companyProfile->billingAddress->address_1}}"
+                                class="form-control @error('company_billing_address') is-invalid @enderror"
+                                value="{{ old('company_billing_address') }}" readonly>
+                        </div>
+                                       
+                    </div>
+
+                    
+                    <div class="form-group row ">
+                        
+                        <div class="col-md-9">
+                            <input type="text" 
+                                value="{{$companyProfile->billingAddress->address_2}}"
+                                class="form-control @error('company_billing_address') is-invalid @enderror"
+                                value="{{ old('company_billing_address') }}" readonly>
+                        </div>
+                                       
+                    </div>
+
+                    
+                    <div class="form-group row ">
+                        
+                        <div class="col-md-9">
+                            <input type="text" 
+                                value="{{$companyProfile->billingAddress->address_3}}"
+                                class="form-control @error('company_billing_address') is-invalid @enderror"
+                                value="{{ old('company_billing_address') }}" readonly>
+                        </div>
+                                       
+                    </div>
+
+                    
+                    <div class="form-group row ">
+                       
+                        <div class="col-md-9">
+                            <input type="text" 
+                                value="{{$companyProfile->billingAddress->city}},Malaysia"
+                                class="form-control @error('company_billing_address') is-invalid @enderror"
+                                value="{{ old('company_billing_address') }}" readonly>
+                        </div>
+                                       
+                    </div>
+
+
+                    
+                    <div class="form-group row ">
+                        <label for="company_billing_postcode" class="col-md-2 col-form-label">Billing
+                            Postcode</label>
+                        <div class="col-md-4">
+                            <input type="text" name="company_billing_postcode" id="company_billing_postcode"
+                                value="{{$companyProfile->billingAddress->postcode}}"
+                                class="form-control @error('company_billing_postcode') is-invalid @enderror"
+                                value="{{ old('company_billing_postcode') }}" readonly>
+                        </div>
+
+
+                     
+                    </div>
+
+
+                    <div class="form-group row ">
+                        <label for="company_phone_number" class="col-md-2 col-form-label">Company Number</label>
+                        <div class="col-md-4">
+                            <input type="text" name="company_phone_number" id="company_phone_number"
+                                value="{{$companyProfile->company_phone}}"
+                                class="form-control @error('company_phone_number') is-invalid @enderror"
+                                value="{{ old('company_phone_number') }}" readonly>
+                        </div>
+                    
+
+
+                    </div>
+
+                    <div class="form-group row ">
+
+                        <label for="company_email" class="col-md-2 col-form-label">Company Email</label>
+                        <div class="col-md-4">
+                            <input type="text" name="company_email" id="company_email"
+                                value="{{$companyProfile->company_email}}"
+                                class="form-control @error('company_email') is-invalid @enderror"
+                                value="{{ old('company_email') }}" readonly>
+                        </div>
+
+                  
+                    </div>
+
+                    <div class="form-group row ">
+                        <label for="company_information" class="col-md-2 col-form-label">ID Information</label>
+                        <div class="col-md-9">
+                            <input type="text" name="company_information" id="company_information" value="WIP"
+                                class="form-control @error('company_information') is-invalid @enderror"
+                                value="{{ old('company_information') }}" readonly>
+                        </div>                    
+                    </div>
+
+                    <div class="form-group row ">
+                        <div class="offset-5 col-5">
+                          <a href="{{route('management.company.profile.edit')}}" class="btn grad2 bjsh-btn-gradient btn-small-screen"><b>Edit Profile</b></a>
+                        </div>  
+                      </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<style>
+
+
+.text-bold{
+  font-weight: bold;
+}
+.font-family-style{
+  font-family:cursive;
+}
+      @media(max-width:767px) {
+            .hidden-sm {
+                display: none;
+            }
+
+        }
+
+        @media(min-width:767px) {
+            .hidden-md {
+                display: none;
+            }
+        }
+
+</style>
 
 @endsection

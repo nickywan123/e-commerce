@@ -43,10 +43,15 @@
 
 @media (max-width: 767px) {
     .margin-right-logo-mobile {
-        margin-right: 170px;
+        margin-right: 100px;
+        margin-top: 20px;
     }
 
     .welcome-panel-text {
         font-size: 10px;
+    }
+
+    .welcome-text {
+        display: none;
     }
 }

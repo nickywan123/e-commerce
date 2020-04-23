@@ -1,9 +1,11 @@
 <header class="app-header navbar navbar-bg-color navbar-border-bottom-color nav-height ">
 
+    {{--Navbar icon mobile--}}
     <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
-        <span class="navbar-toggler-icon" ></span>
+        <i class="fa fa-bars navigation-icon"></i>
     </button> 
      
+    {{--Navbar icon desktop--}}
     <button class="navbar-toggler sidebar-toggler d-md-down-none"  type="button" data-toggle="sidebar-lg-show">
         <i class="fa fa-bars navigation-icon"></i>
     </button>
@@ -14,19 +16,7 @@
         <img class="navbar-brand-minimized" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
 
-    <div class="col-sm-8 vertical-align text-center my-auto">
-        <form>
-            <div class="row grid-space-1">
-                <div class="col-12 my-auto display-same-row">
-                    <div class="pb-2 nav-content-sidebar-collapse"> 
-                  
-                        {{-- <input type="text" id="search-box" name="keyword"  class="form-control navigation-input input-lg w-30-md-customer w-80-sm margin-right-border-color  border-left-rounded-10-sm search-bar-height-customer" style="border-radius:100px; border:2px solid #fccb34;" placeholder="Start typing something to search" >  --}}
-                    </div>
-                
-                </div>
-            </div>
-        </form>
-    </div>
+  
 
     <ul class="nav navbar-nav ml-auto">      
       <h5 style="margin-right:10px" class="welcome-text"  >Welcome, {{Auth::user()->userInfo->full_name}}</h5> 
@@ -54,10 +44,11 @@
                     <i class="fa fa-shield"></i> Lock Account</a> --}}
                 {{-- <a class="dropdown-item" href="#">
                     <i class="fa fa-lock"></i> Logout</a> --}}
-                    <a class="dropdown-item" href="{{ route('management.company.profile') }}">
-                        <i class="fa fa-user" style="color:#fbcc34;"></i> Company Profile
-                        
-                    </a>
+                    
+
+                <a class="dropdown-item" href="{{ route('management.company.profile') }}">
+                    <i class="fa fa-user" style="color:#fbcc34;"></i> Company Profile             
+                </a>
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                   <i class="fa fa-lock" style="color:#fbcc34;"></i>  {{ __('Logout') }}
