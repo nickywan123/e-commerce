@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'email–smtp.ap-south–1.amazonaws.com'),
+    'host' => env('MAIL_HOST', 'email–smtp.ap-south-1.amazonaws.com'),
 
     /*
     |--------------------------------------------------------------------------

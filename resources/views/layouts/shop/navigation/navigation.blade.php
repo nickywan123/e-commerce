@@ -39,7 +39,7 @@
                                         <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user" style="color:#fbcc34;"></i> Profile </a>
                                         <a class="dropdown-item" href="/shop/dashboard/orders/index"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> Value Records </a>
                                         @hasrole('panel')
-                                        <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
+                                        <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
                                         @endhasrole
                                         @hasrole('dealer')
                                         <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
