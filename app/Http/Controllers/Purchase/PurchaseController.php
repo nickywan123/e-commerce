@@ -208,6 +208,7 @@ class PurchaseController extends Controller
         }
         $purchase->purchase_amount = $purchase_amount;
 
+        $purchase->receipt_number= 'BOR20 ' . str_pad($invoiceSequence, 7, "0", STR_PAD_LEFT);
         $purchase->save();
 
         $price = 0;

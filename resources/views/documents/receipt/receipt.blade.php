@@ -8475,7 +8475,7 @@
                         <p style="color: #ad000e !important; margin: 0;">
                             OFFICIAL RECEIPT NO.
                         </p>
-                        ORBJS1029492
+                        {{$purchase->receipt_number}}
                     </td>
                 </tr>
                 <tr>

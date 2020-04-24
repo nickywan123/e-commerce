@@ -15,9 +15,11 @@ class ValueRecordsController extends Controller
     /****Return ALL ORDERS in customer dashboard  ****/
 
     public function customerAllOrders(){
+        $statuses = [3001, 3002, 3003];
+
         $user = User::find(Auth::user()->id);
         // Return purchases that user have paid
-        $purchases = $user->purchases->where('purchase_status',3003);
+        $purchases = $user->purchases->whereIn('purchase_status', $statuses);
         // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
         return view('shop.customer-dashboard.value-records.index')->with('purchases', $purchases);
        }

@@ -630,7 +630,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product10 = Product::create([
             'product_code' => 'BU0321 0203 0001',
-            'name' => 'Cabinet - Storage Unit',
+            'name' => 'Armadio',
             'name_slug' => 'cabinet-storage-unit',
             'details' => 'Cabinet\'s height: 1219.2mm, width: 457.2mm, length: 914.4mm. Colour white.',
             'description' => 'Suitable for storing varities of items.',
@@ -688,7 +688,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product12 = Product::create([
             'product_code' => 'BU0321 0401 0001',
-            'name' => 'Carpet Moderate 1',
+            'name' => 'Tappeto Piccolo',
             'name_slug' => 'carpet-moderate-1',
             'details' => 'Length: 609.6mm(2\') Width: 304.8mm(1\')',
             'description' => 'Suitable for homes.',
@@ -745,7 +745,7 @@ class GlobalProductsTableSeeder extends Seeder
 
         $product13 = Product::create([
             'product_code' => 'BU0321 0401 0002',
-            'name' => 'Carpet Moderate 2',
+            'name' => 'Tappeto Medio',
             'name_slug' => 'carpet-moderate-1',
             'details' => 'Length: 914.4mm(3\') Width: 609.6mm(2\')',
             'description' => 'Suitable for homes.',

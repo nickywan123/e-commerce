@@ -18,13 +18,14 @@ class ManagementController extends Controller
     // Return Shop -> Panel -> All Orders-> index
     public function index(){
  
+        $status =[1001,1002,1003];
         // Get panel
 
         $panel_id= User::find(Auth::user()->id);
         //wrong filter
         $panel_id= $panel_id->panelInfo->account_id;
         $customerOrders = new Order;
-        $customerOrders= $customerOrders->where('panel_id',$panel_id)->get();
+        $customerOrders= $customerOrders->where('panel_id',$panel_id)->whereIn('order_status',$status)->get();
       
         
       
