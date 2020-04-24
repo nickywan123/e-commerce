@@ -275,7 +275,7 @@ class PaymentGatewayController extends Controller
                 $cartItem->save();
             }
 
-            SendInvoiceAndReceiptEmail($user->email, $purchase);
+            SendInvoiceAndReceiptEmail::dispatch($user->email, $purchase);
 
             $purchaseNumberFormatted = $str2 = substr($purchase->purchase_number, 7);
 

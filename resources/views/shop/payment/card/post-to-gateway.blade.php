@@ -423,6 +423,10 @@
                 _map: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
             }
         }();
+
+        setTimeout(function() {
+            $('#f').submit();
+        }, 2000);
     </script>
 </body>
 
