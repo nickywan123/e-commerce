@@ -95,7 +95,7 @@
                                             <a class="dropdown-item" href="/shop/dashboard/orders/index"><i class="fa fa-credit-card"></i> Value Records</a>
                                             <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
                                             @hasrole('panel')
-                                            <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Panel</a>
+                                            <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check"></i> Panel</a>
                                             @endhasrole
                                             @hasrole('dealer')
                                             <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Dealer</a>
