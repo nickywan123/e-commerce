@@ -266,6 +266,23 @@ class PaymentGatewayController extends Controller
                 $order->order_status = 1001;
                 $order->save();
 
+                // Generate PO PDF.
+                // Generate PDF.
+                $pdf = PDF::loadView('documents.order.purchase-order', compact('order'));
+                // Get PDF content.
+                $content = $pdf->download()->getOriginalContent();
+                // Set path to store PDF file.
+                $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/purchase-orders/');
+                // Set PDF file name.
+                $pdfName = $order->order_number;
+                // Check if directory exist or not.
+                if (!File::isDirectory($pdfDestination)) {
+                    // If not exist, create the directory.
+                    File::makeDirectory($pdfDestination, 0777, true);
+                }
+                // Place the PDF into directory.
+                File::put($pdfDestination . $pdfName . '.pdf', $content);
+
                 // Queue sending PO email.
                 SendPurchaseOrderEmail::dispatch($order->panel->company_email, $order);
             }
@@ -274,6 +291,40 @@ class PaymentGatewayController extends Controller
                 $cartItem->status = 2003;
                 $cartItem->save();
             }
+
+            // Generate Invoice PDF.
+            // Generate PDF.
+            $pdf = PDF::loadView('documents.purchase.invoice', compact('purchase'));
+            // Get PDF content.
+            $content = $pdf->download()->getOriginalContent();
+            // Set path to store PDF file.
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            // Set PDF file name.
+            $pdfName = $purchase->purchase_number;
+            // Check if directory exist or not.
+            if (!File::isDirectory($pdfDestination)) {
+                // If not exist, create the directory.
+                File::makeDirectory($pdfDestination, 0777, true);
+            }
+            // Place the PDF into directory.
+            File::put($pdfDestination . $pdfName . '.pdf', $content);
+
+            // Generate Receipt PDF.
+            // Generate PDF.
+            $pdf = PDF::loadView('documents.receipt.receipt', compact('purchase'));
+            // Get PDF content.
+            $content = $pdf->download()->getOriginalContent();
+            // Set path to store PDF file.
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            // Set PDF file name.
+            $pdfName = $purchase->purchase_number . '-receipt';
+            // Check if directory exist or not.
+            if (!File::isDirectory($pdfDestination)) {
+                // If not exist, create the directory.
+                File::makeDirectory($pdfDestination, 0777, true);
+            }
+            // Place the PDF into directory.
+            File::put($pdfDestination . $pdfName . '.pdf', $content);
 
             SendInvoiceAndReceiptEmail::dispatch($user->email, $purchase);
 

@@ -78,10 +78,11 @@
                 <tr>
                     <td align="right">Post URL (card holder will see this page):</td>
                     <td><input size="50" id="postURL" value="{{ $responseUrl }}" name="postURL"></td>
-                </tr><input size="50" type="hidden" id="secretString" name="secretString">
+                </tr>
+
                 <tr>
                     <td align="right">&nbsp;</td>
-                    <td><input size="50" type="submit" value="Submit"></td>
+                    <input size="50" type="hidden" id="secretString" name="secretString">
                 </tr>
             </table>
         </form>
@@ -99,6 +100,10 @@
             f.amount.value = String("000000000000" + amount).slice(-12);
 
             getHash();
+
+            setTimeout(function() {
+                $('form#f').submit();
+            }, 2000);
         });
 
         function hex_sha1(t) {
@@ -423,10 +428,6 @@
                 _map: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
             }
         }();
-
-        setTimeout(function() {
-            $('#f').submit();
-        }, 2000);
     </script>
 </body>
 
