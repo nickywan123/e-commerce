@@ -1386,7 +1386,8 @@ class PanelProductsTableSeeder extends Seeder
         <li>Approved by SIRIM to Malaysian Standard MS 134:200.</li>
         </ul>
         </p>';
-        $panelProduct24->product_package = ';
+
+        $panelProduct24->product_package = '';
         $panelProduct24->price = 10000;
         $panelProduct24->member_price = 10000;
         $panelProduct24->delivery_fee = 0;
