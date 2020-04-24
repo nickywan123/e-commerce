@@ -178,7 +178,6 @@
                             <a class="nav-link text-center" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
                                 <img style="width: 72px; height: 72px;" src="{{ asset('storage/icons/payments/payment-card.png') }}" alt="">
                                 <p class="mt-2 mb-0">Credit/Debit Card</p>
-                                <p>(Not Available)</p>
                             </a>
                         </li>
                         <li class="nav-item">
