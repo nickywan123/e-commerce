@@ -131,8 +131,9 @@
 
                     <!-- Rate Panel -->
                     <div>
-                        <form action="/order-received" method="POST">
-                            @csrf
+                        <form action="{{route('update.order.panel.received.date',[$order->order_number])}}" method="POST">
+                            <input type="hidden" name="_method" value="PUT">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="text-center text-md-left">
                                 <p class="mb-2">Experience Rating (1 - 5)</p>
                                 <div class="rating">

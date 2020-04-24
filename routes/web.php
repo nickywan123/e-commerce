@@ -109,6 +109,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // Dashboard-Panel
         Route::get('/panel/orders', 'Management\ManagementController@index')->name('management.home');
         Route::put('/panel/update-order/{order_num}', 'Management\ManagementController@updateOrder')->name('update.order.panel');
+        Route::put('/panel/update-qr-submitted/{order_num}', 'Purchase\PurchaseController@qrSubmit')->name('update.order.panel.received.date');
         Route::get('/panel/company-profile', 'Management\ManagementController@companyProfile')->name('management.company.profile');
         Route::get('/panel/company-profile-edit', 'Management\ManagementController@editProfile')->name('management.company.profile.edit');
         Route::patch('/panel/company-profile-update/{id}', 'Management\ManagementController@updateProfile')->name('management.company.profile.update');

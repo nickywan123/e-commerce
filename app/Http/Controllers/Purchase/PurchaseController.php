@@ -374,9 +374,10 @@ class PurchaseController extends Controller
     /**
      * Handle QR Code submit.
      */
-    public function qrSubmit(Request $request)
+    public function qrSubmit(Request $request,$order_num)
     {
-        $order = Order::where('order_number', $request->input('order_number'))->firstOrFail();
+        $order = Order::where('order_number', $order_num)->firstOrFail();
+        $order->received_date=Carbon::now()->format('d/m/Y');
         $order->order_status = 1003;
         $order->save();
 
