@@ -22,6 +22,7 @@ class PurchaseTablesSeeder extends Seeder
         $purchase->purchase_type = 'card';
         $purchase->purchase_date = '15/04/2020';
         $purchase->purchase_amount = 39000;
+        $purchase->receipt_number="BOR20 0000000";
         $purchase->save();
 
         $order1 = new Order;
