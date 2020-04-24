@@ -710,7 +710,7 @@ class UsersTableSeeder extends Seeder
 
         // Users table.
         $user = new User;
-        $user->email = 'kklee.dc@gmail.com';
+        $user->email = 'kklee.dc@yahoo.com';
         $user->password = Hash::make('kklee.dc123');
         $user->email_verified_at = '2020-03-28 12:12:40';
         $user->save();
@@ -776,7 +776,7 @@ class UsersTableSeeder extends Seeder
         $panelInfo->account_id = 1918000008;
         $panelInfo->company_name = 'KK Lee';
         $panelInfo->ssm_number = '12345-K';
-        $panelInfo->company_email = 'kklee.dc@gmail.com';
+        $panelInfo->company_email = 'kklee.dc@yahoo.com';
         $panelInfo->company_phone = '0194039056';
         $panelInfo->pic_name = 'KK Lee';
         $panelInfo->pic_nric = '951119105605';
