@@ -15,7 +15,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 1
         $panelProduct1 = new Product;
         $panelProduct1->global_product_id = 1;
-        $panelProduct1->panel_account_id = 1918000001;
+        $panelProduct1->panel_account_id = 1918000101;
         $panelProduct1->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -62,7 +62,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 1.2
         $panelProduct1 = new Product;
         $panelProduct1->global_product_id = 1;
-        $panelProduct1->panel_account_id = 1918000003;
+        $panelProduct1->panel_account_id = 1918000103;
         $panelProduct1->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -109,7 +109,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 2
         $panelProduct2 = new Product;
         $panelProduct2->global_product_id = 2;
-        $panelProduct2->panel_account_id = 1918000001;
+        $panelProduct2->panel_account_id = 1918000101;
         $panelProduct2->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -156,7 +156,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 2.2
         $panelProduct2 = new Product;
         $panelProduct2->global_product_id = 2;
-        $panelProduct2->panel_account_id = 1918000003;
+        $panelProduct2->panel_account_id = 1918000103;
         $panelProduct2->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -203,7 +203,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 3
         $panelProduct3 = new Product;
         $panelProduct3->global_product_id = 3;
-        $panelProduct3->panel_account_id = 1918000001;
+        $panelProduct3->panel_account_id = 1918000101;
         $panelProduct3->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -250,7 +250,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 4
         $panelProduct4 = new Product;
         $panelProduct4->global_product_id = 4;
-        $panelProduct4->panel_account_id = 1918000001;
+        $panelProduct4->panel_account_id = 1918000101;
         $panelProduct4->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -297,7 +297,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 5
         $panelProduct5 = new Product;
         $panelProduct5->global_product_id = 5;
-        $panelProduct5->panel_account_id = 1918000001;
+        $panelProduct5->panel_account_id = 1918000101;
         $panelProduct5->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -344,7 +344,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 6
         $panelProduct6 = new Product;
         $panelProduct6->global_product_id = 6;
-        $panelProduct6->panel_account_id = 1918000001;
+        $panelProduct6->panel_account_id = 1918000101;
         $panelProduct6->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -391,7 +391,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 7
         $panelProduct7 = new Product;
         $panelProduct7->global_product_id = 9;
-        $panelProduct7->panel_account_id = 1918000004;
+        $panelProduct7->panel_account_id = 1918000104;
         $panelProduct7->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -478,7 +478,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 8
         $panelProduct8 = new Product;
         $panelProduct8->global_product_id = 10;
-        $panelProduct8->panel_account_id = 1918000004;
+        $panelProduct8->panel_account_id = 1918000104;
         $panelProduct8->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -565,7 +565,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 9
         $panelProduct9 = new Product;
         $panelProduct9->global_product_id = 11;
-        $panelProduct9->panel_account_id = 1918000004;
+        $panelProduct9->panel_account_id = 1918000104;
         $panelProduct9->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -652,7 +652,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 10
         $panelProduct10 = new Product;
         $panelProduct10->global_product_id = 12;
-        $panelProduct10->panel_account_id = 1918000001;
+        $panelProduct10->panel_account_id = 1918000101;
         $panelProduct10->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -685,7 +685,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 11
         $panelProduct11 = new Product;
         $panelProduct11->global_product_id = 13;
-        $panelProduct11->panel_account_id = 1918000001;
+        $panelProduct11->panel_account_id = 1918000101;
         $panelProduct11->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -718,7 +718,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 12
         $panelProduct12 = new Product;
         $panelProduct12->global_product_id = 14;
-        $panelProduct12->panel_account_id = 1918000001;
+        $panelProduct12->panel_account_id = 1918000101;
         $panelProduct12->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -776,7 +776,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 13
         $panelProduct13 = new Product;
         $panelProduct13->global_product_id = 15;
-        $panelProduct13->panel_account_id = 1918000001;
+        $panelProduct13->panel_account_id = 1918000101;
         $panelProduct13->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -834,7 +834,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 14
         $panelProduct14 = new Product;
         $panelProduct14->global_product_id = 16;
-        $panelProduct14->panel_account_id = 1918000002;
+        $panelProduct14->panel_account_id = 1918000102;
         $panelProduct14->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -908,7 +908,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 15
         $panelProduct15 = new Product;
         $panelProduct15->global_product_id = 7;
-        $panelProduct15->panel_account_id = 1918000002;
+        $panelProduct15->panel_account_id = 1918000102;
         $panelProduct15->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -945,7 +945,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 16
         $panelProduct16 = new Product;
         $panelProduct16->global_product_id = 8;
-        $panelProduct16->panel_account_id = 1918000002;
+        $panelProduct16->panel_account_id = 1918000102;
         $panelProduct16->product_description = '
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, quod reiciendis explicabo exercitationem eius soluta nobis expedita ea voluptatum, ad unde error blanditiis dicta quos. Asperiores repellat, animi saepe quod deleniti vero ipsa veritatis, excepturi sed quisquam neque necessitatibus sint porro sequi rerum similique quas, illo suscipit hic! Quibusdam sequi exercitationem, laudantium et, tenetur nam sit neque aliquam animi cum voluptas corrupti eligendi quia velit deserunt culpa recusandae repellat deleniti enim! Reiciendis dolorem incidunt distinctio deserunt unde minus necessitatibus reprehenderit nisi praesentium excepturi iusto dignissimos veniam quibusdam consequuntur, architecto, saepe dolores, corporis eum porro illo? Laborum, quidem dolorum non ad dignissimos blanditiis porro. Quae vel doloribus doloremque explicabo, officia libero vitae eaque ab eligendi reprehenderit ratione neque eveniet perspiciatis dolorum tenetur fugiat expedita modi soluta quisquam. Fugit sunt voluptatem, totam, vitae repellat culpa minus, quis voluptates magnam corporis recusandae ipsa.</p>
         <p><img src="https://loremflickr.com/640/360" alt="" width="640" height="360" /></p>
@@ -982,7 +982,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 17
         $panelProduct17 = new Product;
         $panelProduct17->global_product_id = 17;
-        $panelProduct17->panel_account_id = 1918000005;
+        $panelProduct17->panel_account_id = 1918000105;
         $panelProduct17->product_description = '
         ALES Anti-MosA acts on the nervous system of mosquitoes (also other insects) by interfering with the neuron functions.';
         $panelProduct17->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
@@ -1051,7 +1051,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 18
         $panelProduct18 = new Product;
         $panelProduct18->global_product_id = 18;
-        $panelProduct18->panel_account_id = 1918000005;
+        $panelProduct18->panel_account_id = 1918000105;
         $panelProduct18->product_description = 'ALES Shiquy is a water based paint with slaked lime as its main component.';
         $panelProduct18->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
         $panelProduct18->product_consistency = '<p><ul><li>Excellent air purifying through CO² adsorption.</li><li>Excellent air detoxification for indoor air pollution.</li><li>Excellent odor eliminator.</li><li>Anti-bacteria property reduces E.coli, MRSA, Staphylococcus aureus
@@ -1096,7 +1096,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 19
         $panelProduct19 = new Product;
         $panelProduct19->global_product_id = 19;
-        $panelProduct19->panel_account_id = 1918000005;
+        $panelProduct19->panel_account_id = 1918000105;
         $panelProduct19->product_description = 'ALES Weathercoat Hybrid is an acrylic, high performance, superior quality
         exterior-grade emulsion; that gives a lively coat that exceeds conventional
         acrylic emulsion finish.';
@@ -1161,7 +1161,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 20
         $panelProduct20 = new Product;
         $panelProduct20->global_product_id = 20;
-        $panelProduct20->panel_account_id = 1918000005;
+        $panelProduct20->panel_account_id = 1918000105;
         $panelProduct20->product_description = 'CROWN Emulsion is a matt emulsion specially formulated for housing
         projects where economy is important. It smooth matt finish hides surface
         imperfections and avoid reflection of uneven plastered surfaces.';
@@ -1243,7 +1243,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 21
         $panelProduct21 = new Product;
         $panelProduct21->global_product_id = 21;
-        $panelProduct21->panel_account_id = 1918000005;
+        $panelProduct21->panel_account_id = 1918000105;
         $panelProduct21->product_description = 'CROWN Gloss is a solvent based gloss finish specially formulated for
         housing project where economy is important. It is easy to apply and forms
         a smooth, tough paint film.';
@@ -1316,7 +1316,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 22
         $panelProduct22 = new Product;
         $panelProduct22->global_product_id = 22;
-        $panelProduct22->panel_account_id = 1918000005;
+        $panelProduct22->panel_account_id = 1918000105;
         $panelProduct22->product_description = 'GOODY Easy Clean is a high grade emulsion that gives a bright, smooth and attractive mid sheen pearl finish for interior use.';
         $panelProduct22->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
         $panelProduct22->product_consistency = '<p>
@@ -1378,7 +1378,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 23
         $panelProduct23 = new Product;
         $panelProduct23->global_product_id = 23;
-        $panelProduct23->panel_account_id = 1918000005;
+        $panelProduct23->panel_account_id = 1918000105;
         $panelProduct23->product_description = 'GOODY Matt Extra is a durable emulsion with smooth matt finish, does not contain lead, mercury and heavy metals.';
         $panelProduct23->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
         $panelProduct23->product_consistency = '<p>
@@ -1441,7 +1441,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 24
         $panelProduct24 = new Product;
         $panelProduct24->global_product_id = 24;
-        $panelProduct24->panel_account_id = 1918000005;
+        $panelProduct24->panel_account_id = 1918000105;
         $panelProduct24->product_description = 'GOODY Weather Top is an exterior wall emulsion that gives a tough water
         repellent finish when dry.';
         $panelProduct24->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
@@ -1507,7 +1507,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 25
         $panelProduct25 = new Product;
         $panelProduct25->global_product_id = 25;
-        $panelProduct25->panel_account_id = 1918000005;
+        $panelProduct25->panel_account_id = 1918000105;
         $panelProduct25->product_description = 'PAR Silk is a premium grade emulsion that gives a brilliant, smooth and
         luxurious silk finish for interior use.';
         $panelProduct25->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
@@ -1577,7 +1577,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 26
         $panelProduct26 = new Product;
         $panelProduct26->global_product_id = 26;
-        $panelProduct26->panel_account_id = 1918000005;
+        $panelProduct26->panel_account_id = 1918000105;
         $panelProduct26->product_description = 'PAR Supergloss is a premium grade, high performance enamel suitable for
         use on all types of wood and metal. PAR Supergloss gives a tough, mirrorlike high gloss finish.';
         $panelProduct26->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
@@ -1647,7 +1647,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 27
         $panelProduct27 = new Product;
         $panelProduct27->global_product_id = 27;
-        $panelProduct27->panel_account_id = 1918000005;
+        $panelProduct27->panel_account_id = 1918000105;
         $panelProduct27->product_description = 'PAR Supermatt is a premium quality, highly durable, anti-bacterial matt
         emulsion that gives a brilliant, smooth and rich matt finish. Its reduced
         shine avoids visible reflection of uneven plastered surfaces.';
@@ -1718,7 +1718,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 28
         $panelProduct28 = new Product;
         $panelProduct28->global_product_id = 28;
-        $panelProduct28->panel_account_id = 1918000005;
+        $panelProduct28->panel_account_id = 1918000105;
         $panelProduct28->product_description = 'PAR Timbercote is a premium grade, translucent pigmented varnish which
         brings out the natural beauty of the grain of timber. It contains special
         preservatives to protect exterior timber surfaces against rot and mould
@@ -1813,7 +1813,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 29
         $panelProduct29 = new Product;
         $panelProduct29->global_product_id = 29;
-        $panelProduct29->panel_account_id = 1918000005;
+        $panelProduct29->panel_account_id = 1918000105;
         $panelProduct29->product_description = 'PAR Weathercoat is a pure acrylic paint, high performance, superior quality
         exterior grade emulsion that gives a brilliant smooth and ultra-luxurious
         finish.';
@@ -1884,7 +1884,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 30
         $panelProduct30 = new Product;
         $panelProduct30->global_product_id = 30;
-        $panelProduct30->panel_account_id = 1918000005;
+        $panelProduct30->panel_account_id = 1918000105;
         $panelProduct30->product_description = 'PAR Roofcote is a premium grade coating designed to restore weathered
         concrete roof to look new again. It’s tough and durable finish gives long
         lasting protection against the tropical climate.';
@@ -1953,7 +1953,7 @@ class PanelProductsTableSeeder extends Seeder
         // Product 31
         $panelProduct31 = new Product;
         $panelProduct31->global_product_id = 31;
-        $panelProduct31->panel_account_id = 1918000005;
+        $panelProduct31->panel_account_id = 1918000105;
         $panelProduct31->product_description = 'PAR Heat Reduction Roofcote is a high performance coating designed to reflect heat and prevent heat build-up on your roofs.';
         $panelProduct31->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
         $panelProduct31->product_consistency = '<p>
@@ -2009,6 +2009,72 @@ class PanelProductsTableSeeder extends Seeder
         ]);
 
         $panelProduct31->availableIn()->attach([
+            '10',
+            '9',
+            '7',
+            '5',
+            '6'
+        ]);
+
+        // Product 32
+        $panelProduct32 = new Product;
+        $panelProduct32->global_product_id = 31;
+        $panelProduct32->panel_account_id = 1918000101;
+        $panelProduct32->product_description = 'PAR Heat Reduction Roofcote is a high performance coating designed to reflect heat and prevent heat build-up on your roofs.';
+        $panelProduct32->product_material = 'Lorem ipsum, sit dolor, amet consectetur.';
+        $panelProduct32->product_consistency = '<p>
+        <ul>
+        <li>Excellent heat reduction property, up to 5˚C reduction.</li>
+        <li>Excellent fungal and algae growth resistance.</li>
+        <li>Excellent colour retention.</li>
+        <li>Tough synthetic finish - washable.</li>
+        <li>No added lead or mercury.</li>
+        </ul>
+        </p>';
+        $panelProduct32->product_package = 'Lorem ipsum sit dolor amet consectetur.';
+        $panelProduct32->price = 100;
+        $panelProduct32->member_price = 100;
+        $panelProduct32->delivery_fee = 0;
+        $panelProduct32->product_rating = 5;
+        $panelProduct32->save();
+
+        $panelProduct32->attributes()->createMany([
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Chimney Grey DRC 1129HR',
+                'color_hex' => '#b6afac'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Sailor Blue DRC 2763HR',
+                'color_hex' => '#cdd0e7'
+            ],
+            [
+                'attribute_type' => 'color',
+                'attribute_name' => 'Organic Charcoal DRC 5866 HR',
+                'color_hex' => '#584734'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '1 Liter',
+                'price' => '100',
+                'member_price' => '100'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '5 Liter',
+                'price' => '100',
+                'member_price' => '100'
+            ],
+            [
+                'attribute_type' => 'size',
+                'attribute_name' => '15 Liter',
+                'price' => '100',
+                'member_price' => '100'
+            ]
+        ]);
+
+        $panelProduct32->availableIn()->attach([
             '10',
             '9',
             '7',

@@ -32,7 +32,7 @@
 
 <body>
     <div style="display: none;">
-        <form id="f" name="f" action="https://uattds2.pbebank.com/PGW/Pay/Process" method="POST">
+        <form id="f" name="f" action="https://ecom.pbebank.com/PGW/Pay/Process" method="POST">
             <table id=Table1 cellspacing=0 cellpadding=3 width=100% border=0>
                 <tr>
                     <td align="right" width="30%">Merchant ID:</td>
@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <td align="right">secretCode:</td>
-                    <td><input size="50" id="secretCode" value="APPLE001" name="secretCode"></td>
+                    <td><input size="50" id="secretCode" value="DCSGLVP01" name="secretCode"></td>
                 </tr>
                 <tr>
                     <td align="right">PAN</td>

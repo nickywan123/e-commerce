@@ -258,4 +258,17 @@ class ShopController extends Controller
             ->with('parentCategory', $parentCategory)
             ->with('categoryLevel', $categoryLevel);
     }
+
+    public function renovationCategory()
+    {
+        // Get user
+        $user = User::find(Auth::user()->id);
+        // Check if the exact item is already in the cart..
+        $getCartQuantity = new Cart;
+
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
+
+        return view('shop.renovation.renovation')
+            ->with('getCartQuantity', $getCartQuantity);
+    }
 }

@@ -30,7 +30,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1913000001;
+            $largestCustomerId = 1913000101;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -77,7 +77,7 @@ class UsersTableSeeder extends Seeder
         $user->assignRole('customer');
         $user->assignRole('administrator');
 
-        // Administrator Account
+        // Test Account Account
 
         // Users table.
         $user = new User;
@@ -89,7 +89,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1913000001;
+            $largestCustomerId = 1913000101;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -147,7 +147,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1918000001;
+            $largestCustomerId = 1913000101;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -155,7 +155,7 @@ class UsersTableSeeder extends Seeder
         // User_infos table.
         $userInfo = new UserInfo;
         $userInfo->user_id = $user->id;
-        $userInfo->account_id = 1918000001;
+        $userInfo->account_id = $largestCustomerId;
         $userInfo->full_name = 'Bujishu Panel';
         $userInfo->nric = '951119105605';
         $userInfo->referrer_id = 0;
@@ -194,7 +194,7 @@ class UsersTableSeeder extends Seeder
         // Generating new panel account id.
         $largestPanelId = 0;
         if (PanelInfo::all()->count() == 0) {
-            $largestPanelId = 1918000001;
+            $largestPanelId = 1918000101;
         } else {
             $largestPanelId = PanelInfo::largestPanelId() + 1;
         }
@@ -202,7 +202,7 @@ class UsersTableSeeder extends Seeder
         // Panel_infos table.
         $panelInfo = new PanelInfo;
         $panelInfo->user_id = $user->id;
-        $panelInfo->account_id = 1918000001;
+        $panelInfo->account_id = $largestPanelId;
         $panelInfo->company_name = 'Bujishu Sdn Bhd';
         $panelInfo->ssm_number = '12345-K';
         $panelInfo->company_email = 'delhubdigital@gmail.com';
@@ -250,7 +250,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1918000001;
+            $largestCustomerId = 1913000101;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -297,7 +297,7 @@ class UsersTableSeeder extends Seeder
         // Generating new panel account id.
         $largestPanelId = 0;
         if (PanelInfo::all()->count() == 0) {
-            $largestPanelId = 1918000001;
+            $largestPanelId = 1918000101;
         } else {
             $largestPanelId = PanelInfo::largestPanelId() + 1;
         }
@@ -353,7 +353,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1913000001;
+            $largestCustomerId = 1913000101;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -409,7 +409,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1918000001;
+            $largestCustomerId = 1913000101;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -456,7 +456,7 @@ class UsersTableSeeder extends Seeder
         // Generating new panel account id.
         $largestPanelId = 0;
         if (PanelInfo::all()->count() == 0) {
-            $largestPanelId = 1918000001;
+            $largestPanelId = 1918000101;
         } else {
             $largestPanelId = PanelInfo::largestPanelId() + 1;
         }
@@ -512,7 +512,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1918000001;
+            $largestCustomerId = 1913000101;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -559,7 +559,7 @@ class UsersTableSeeder extends Seeder
         // Generating new panel account id.
         $largestPanelId = 0;
         if (PanelInfo::all()->count() == 0) {
-            $largestPanelId = 1918000001;
+            $largestPanelId = 1918000101;
         } else {
             $largestPanelId = PanelInfo::largestPanelId() + 1;
         }
@@ -615,7 +615,7 @@ class UsersTableSeeder extends Seeder
         // Generating new customer account id.
         $largestCustomerId = 0;
         if (UserInfo::all()->count() == 0) {
-            $largestCustomerId = 1918000001;
+            $largestCustomerId = 1913000101;
         } else {
             $largestCustomerId = UserInfo::largestCustomerId() + 1;
         }
@@ -702,6 +702,98 @@ class UsersTableSeeder extends Seeder
         $panelAddressBilling->state_id = 1;
         $panelAddressBilling->is_billing_address = 1;
         $panelAddressBilling->save();
+
+        $user->assignRole('customer');
+        $user->assignRole('panel');
+
+        // KK Lee Account
+
+        // Users table.
+        $user = new User;
+        $user->email = 'kklee.dc@gmail.com';
+        $user->password = Hash::make('kklee.dc123');
+        $user->email_verified_at = '2020-03-28 12:12:40';
+        $user->save();
+
+        // Generating new customer account id.
+        $largestCustomerId = 0;
+        if (UserInfo::all()->count() == 0) {
+            $largestCustomerId = 1913000101;
+        } else {
+            $largestCustomerId = UserInfo::largestCustomerId() + 1;
+        }
+
+        // User_infos table.
+        $userInfo = new UserInfo;
+        $userInfo->user_id = $user->id;
+        $userInfo->account_id = 1913000008;
+        $userInfo->full_name = 'KK Lee';
+        $userInfo->nric = '951119105605';
+        $userInfo->referrer_id = 0;
+        // Signature to image.
+        $userInfo->signature = '-';
+        $userInfo->save();
+
+        // User_addresses table.
+        $userAddress = new UserAddress;
+        $userAddress->account_id = $userInfo->account_id;
+        $userAddress->address_1 = '1.26.5,';
+        $userAddress->address_2 = 'Menara Bangkok Bank';
+        $userAddress->address_3 = '-';
+        $userAddress->postcode = '50450 ';
+        $userAddress->city = 'Kuala Lumpur';
+        $userAddress->state_id = 14;
+        $userAddress->is_shipping_address = 1;
+        $userAddress->is_residential_address = 1;
+        $userAddress->is_mailing_address = 1;
+        $userAddress->save();
+
+        // User_contacts table (Home).
+        $userContactHome = new UserContact;
+        $userContactHome->account_id = $userInfo->account_id;
+        $userContactHome->contact_num = '0166929202';
+        $userContactHome->is_home = 1;
+        $userContactHome->save();
+
+        // User_contacts table (Mobile).
+        $userContactMobile = new UserContact;
+        $userContactMobile->account_id = $userInfo->account_id;
+        $userContactMobile->contact_num = '0194039056';
+        $userContactMobile->is_mobile = 1;
+        $userContactMobile->save();
+
+        // Generating new panel account id.
+        $largestPanelId = 0;
+        if (PanelInfo::all()->count() == 0) {
+            $largestPanelId = 1918000001;
+        } else {
+            $largestPanelId = PanelInfo::largestPanelId() + 1;
+        }
+
+        // Panel_infos table.
+        $panelInfo = new PanelInfo;
+        $panelInfo->user_id = $user->id;
+        $panelInfo->account_id = 1918000008;
+        $panelInfo->company_name = 'KK Lee';
+        $panelInfo->ssm_number = '12345-K';
+        $panelInfo->company_email = 'kklee.dc@gmail.com';
+        $panelInfo->company_phone = '0194039056';
+        $panelInfo->pic_name = 'KK Lee';
+        $panelInfo->pic_nric = '951119105605';
+        $panelInfo->pic_contact = '0166929202';
+        $panelInfo->pic_email = 'kklee.dc@gmail.com';
+        $panelInfo->save();
+
+        $panelAddressCorrespondence = new PanelAddress;
+        $panelAddressCorrespondence->account_id = $panelInfo->account_id;
+        $panelAddressCorrespondence->address_1 = '1.26.5,';
+        $panelAddressCorrespondence->address_2 = 'Menara Bangkok Bank';
+        $panelAddressCorrespondence->address_3 = '-';
+        $panelAddressCorrespondence->postcode = '50450';
+        $panelAddressCorrespondence->city = 'Kuala Lumpur';
+        $panelAddressCorrespondence->state_id = 14;
+        $panelAddressCorrespondence->is_correspondence_address = 1;
+        $panelAddressCorrespondence->save();
 
         $user->assignRole('customer');
         $user->assignRole('panel');

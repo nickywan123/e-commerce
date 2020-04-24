@@ -134,6 +134,7 @@ class PaymentGatewayController extends Controller
                 '/storage/uploads/images/users/' . $purchase->user->userInfo->account_id . '/payments' . $fileName;
 
             $purchase->offline_reference = $request->input('reference_number');
+            $purchase->offline_payment_amount = $request->input('payment_amount');
 
             $purchase->purchase_status = 3003; // Pending Review - Offline
 
@@ -283,12 +284,20 @@ class PaymentGatewayController extends Controller
                 ->with('purchaseNumberFormatted', $purchaseNumberFormatted);
         } else {
             // Error
-            return 'Failed' . $request->input('result');
+            $errorMessage = $request->input('result');
+
+            return view('shop.payment.failed')
+                ->with('errorMessage', $errorMessage);
         }
 
 
         // Receive payment gateway response.
         // Update Purchase & Order model.
         // Update Cart model (Set item status to 2003 => Item Checked Out).
+    }
+
+    public function errorPage()
+    {
+        return view('shop.payment.failed');
     }
 }

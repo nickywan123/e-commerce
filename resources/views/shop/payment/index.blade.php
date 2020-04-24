@@ -396,6 +396,13 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-row">
+                                                <div class="col-12 mb-1 form-group">
+                                                    <label for="payment_amount">Payment Amount <small>*</small></label>
+                                                    <input type="number" class="form-control" name="payment_amount" id="payment_amount" placeholder="Payment amount">
+                                                </div>
+                                            </div>
+
                                             <div class="form-row mt-2">
                                                 <div class="col-12">
                                                     <input type="hidden" name="payment_option" value="offline">

@@ -28,10 +28,10 @@
                         </td>
                         <td style="max-width: 400px;">
                             <div class="row mb-2">
-                                <div class="col-2 my-auto">
+                                <div class="col-4 col-md-2 my-auto">
                                     <img class="responsive-img p-1" src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename) }}" alt="">
                                 </div>
-                                <div class="col-10 my-auto">
+                                <div class="col-8 col-md-10 my-auto">
                                     <p class="mb-0 font-weight-bold">{{ $item->product->parentProduct->name }} x {{ $item->quantity }}</p>
                                     @if(array_key_exists('product_color', $item->product_information))
                                     <p class="text-capitalize">Color: {{ $item->product_information['product_color'] }}</p>

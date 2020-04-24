@@ -191,6 +191,8 @@ class CartController extends Controller
                 } else {
                     $price = $product->price;
                 }
+            } else {
+                $price = $product->price;
             }
 
             $newCartItem->product_information = $productInformation;
