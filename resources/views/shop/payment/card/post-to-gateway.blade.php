@@ -102,7 +102,7 @@
             getHash();
 
             setTimeout(function() {
-                document.getElementById('frm1').submit()
+                document.getElementById('f').submit()
             }, 2000);
         });
 

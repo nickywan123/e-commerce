@@ -8509,8 +8509,8 @@
                             <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
                                 Credit Terms
                             </td>
-                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                -
+                            <td style="font-size: 12pt; padding: 2px 4px; border: 1px solid #000000; margin: 0; text-transform: capitalize;">
+                                {{ $purchase->purchase_type }}
                             </td>
                         </tr>
                     </table>
