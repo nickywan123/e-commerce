@@ -15,7 +15,7 @@ class GlobalProductsTableSeeder extends Seeder
     public function run()
     {
         $product1 = Product::create([
-            'product_code' => 'BU0417 0701 0100 0001',
+            'product_code' => 'BU0321 0701 0100 ',
             'name' => 'Single Round Eyeball White Casing With GU 10001',
             'name_slug' => 'single-round-eyeball-white-casing-with-gu-10001',
             'details' => 'Lamp Size: Diameter 80mm',
@@ -56,7 +56,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product1_2 = Product::create([
-            'product_code' => 'BU0417 0701 0100 0002',
+            'product_code' => 'BU0321 0701 0101',
             'name' => 'Single Round Eyeball White Casing With GU 20001',
             'name_slug' => 'single-round-eyeball-white-casing-with-gu-20001',
             'details' => 'Lamp Size: Diameter 80mm',
@@ -179,7 +179,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product3_2 = Product::create([
-            'product_code' => 'BU0417 0701 0200 0005',
+            'product_code' => 'BU0320 0701 0200 ',
             'name' => 'Single Round Downlight White Casing 12W 001',
             'name_slug' => 'single-round-downlight-white-casing-12w-001',
             'details' => 'Lamp Size: Diameter 105mm, Height 60mm, Cut-Hole Size: 90mm.',
@@ -220,7 +220,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product4 = Product::create([
-            'product_code' => 'BU0417 0701 0200 0006',
+            'product_code' => 'BU0321 0701 0201',
             'name' => 'Single Round Downlight White Casing 15W 002',
             'name_slug' => 'single-round-downlight-white-casing-15w-002',
             'details' => 'Lamp Size: Diameter 130mm, Height 66mm, Cut-Hole Size: 110mm.',
@@ -261,7 +261,7 @@ class GlobalProductsTableSeeder extends Seeder
         // ---
 
         $product5 = Product::create([
-            'product_code' => 'BU0417 0702 0001',
+            'product_code' => 'BU0321 0702 0001',
             'name' => 'Recessed T-Bar Mirror Reflector Fitting With LED T8 Glass Tube 3 36W 001',
             'name_slug' => 'recessed-t-bar-mirror-reflector-fitting-with-led-t8-glass-tube-3-36w-001',
             'details' => 'Lamp Size: Length 1222mm, Width 605mm, Height 85mm. 3 * 18W LED T8 Tube 1 year warranty.',

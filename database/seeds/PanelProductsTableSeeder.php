@@ -20,8 +20,8 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct1->product_material = '';
         $panelProduct1->product_consistency = '';
         $panelProduct1->product_package = '';
-        $panelProduct1->price = 12000;
-        $panelProduct1->member_price = 12000;
+        $panelProduct1->price = 9000;
+        $panelProduct1->member_price = 9000;
         $panelProduct1->delivery_fee = 0;
         $panelProduct1->product_rating = 0;
         $panelProduct1->save();
@@ -63,8 +63,8 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct1->product_material = '';
         $panelProduct1->product_consistency = '';
         $panelProduct1->product_package = '';
-        $panelProduct1->price = 12000;
-        $panelProduct1->member_price = 12000;
+        $panelProduct1->price = 9000;
+        $panelProduct1->member_price = 9000;
         $panelProduct1->delivery_fee = 0;
         $panelProduct1->product_rating = 0;
         $panelProduct1->save();
@@ -235,8 +235,8 @@ class PanelProductsTableSeeder extends Seeder
         $panelProduct4->product_material = '';
         $panelProduct4->product_consistency = '';
         $panelProduct4->product_package = '';
-        $panelProduct4->price = 12000;
-        $panelProduct4->member_price = 12000;
+        $panelProduct4->price = 14000;
+        $panelProduct4->member_price = 14000;
         $panelProduct4->delivery_fee = 0;
         $panelProduct4->product_rating = 0;
         $panelProduct4->save();
