@@ -18,7 +18,7 @@ class CreatePanelAddressesTable extends Migration
             $table->unsignedBigInteger('account_id');
             $table->string('address_1');
             $table->string('address_2');
-            $table->string('address_3');
+            $table->string('address_3')->nullable();
             $table->integer('postcode');
             $table->string('city');
             $table->integer('state_id');

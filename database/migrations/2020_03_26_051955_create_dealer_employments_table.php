@@ -20,7 +20,7 @@ class CreateDealerEmploymentsTable extends Migration
             $table->string('company_name');
             $table->string('company_address_1');
             $table->string('company_address_2');
-            $table->string('company_address_3');
+            $table->string('company_address_3')->nullable();
             $table->string('company_postcode');
             $table->string('company_city');
             $table->string('company_state_id');
