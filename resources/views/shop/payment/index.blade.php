@@ -440,6 +440,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <div>
+                        <h5 class="mb-1 font-weight-bold" style="font-size: 1.1rem;">We Accept: </h5>
+                        <img src="{{ asset('storage/icons/payments/visa-mastercard.png') }}" class="mw-100" alt="">
+                    </div>
                 </div>
             </div>
         </div>
