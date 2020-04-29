@@ -59138,11 +59138,17 @@ a.hover-white:hover {
 }
 
 .sidebar .sidebar-nav {
-  width: 100px;
+  width: 120px;
 }
 
 .app-body .sidebar {
   flex: 0 0 100px;
   order: -1;
+}
+
+@media (max-width: 990px) {
+  .sidebar {
+    width: 120px;
+  }
 }
 

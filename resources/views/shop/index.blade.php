@@ -91,7 +91,7 @@
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/paints"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
+            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/products-and-services"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text" style="font-size:30px; ">Paint</h5>
             </a>
 
