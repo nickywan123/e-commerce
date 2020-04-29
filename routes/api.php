@@ -40,3 +40,11 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('getuser', 'API\Auth\AuthController@getUser');
     });
 });
+
+
+/**
+ * Public Routes
+ * TODO: Move to auth:api middleware group.
+ */
+// Get category.
+Route::get('/category/{categoryId}', 'API\Shop\CategoryController@getCategory');
