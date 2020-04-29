@@ -14,7 +14,11 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        // Permissions
+        // Permissions.
+        Permission::create([
+            'name' => 'manage products'
+        ]);
+
         Permission::create([
             'name' => 'view all products'
         ]);
@@ -28,7 +32,27 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         Permission::create([
+            'name' => 'delete a product'
+        ]);
+
+        Permission::create([
             'name' => 'manage users'
+        ]);
+
+        Permission::create([
+            'name' => 'view all users'
+        ]);
+
+        Permission::create([
+            'name' => 'create a user'
+        ]);
+
+        Permission::create([
+            'name' => 'edit a user'
+        ]);
+
+        Permission::create([
+            'name' => 'delete a user'
         ]);
 
         // Permission::create([
@@ -72,5 +96,14 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         $administrator->givePermissionTo('manage users');
+        $administrator->givePermissionTo('view all users');
+        $administrator->givePermissionTo('create a user');
+        $administrator->givePermissionTo('edit a user');
+        $administrator->givePermissionTo('delete a user');
+        $administrator->givePermissionTo('manage products');
+        $administrator->givePermissionTo('view all products');
+        $administrator->givePermissionTo('create a product');
+        $administrator->givePermissionTo('edit a product');
+        $administrator->givePermissionTo('delete a product');
     }
 }
