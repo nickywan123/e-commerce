@@ -56,47 +56,47 @@ class PanelProductsTableSeeder extends Seeder
         ]);
 
         // Product 1.2
-        $panelProduct1 = new Product;
-        $panelProduct1->global_product_id = 1;
-        $panelProduct1->panel_account_id = 1918000103;
-        $panelProduct1->product_description = '';
-        $panelProduct1->product_material = '';
-        $panelProduct1->product_consistency = '';
-        $panelProduct1->product_package = '';
-        $panelProduct1->price = 9000;
-        $panelProduct1->member_price = 9000;
-        $panelProduct1->delivery_fee = 0;
-        $panelProduct1->product_rating = 0;
-        $panelProduct1->save();
+        // $panelProduct1 = new Product;
+        // $panelProduct1->global_product_id = 1;
+        // $panelProduct1->panel_account_id = 1918000103;
+        // $panelProduct1->product_description = '';
+        // $panelProduct1->product_material = '';
+        // $panelProduct1->product_consistency = '';
+        // $panelProduct1->product_package = '';
+        // $panelProduct1->price = 9000;
+        // $panelProduct1->member_price = 9000;
+        // $panelProduct1->delivery_fee = 0;
+        // $panelProduct1->product_rating = 0;
+        // $panelProduct1->save();
 
-        $panelProduct1->attributes()->create([
-            'panel_product_id' => $panelProduct1->id,
-            'attribute_type' => 'light-temperature',
-            'attribute_name' => 'Cool White',
-            'color_hex' => null
-        ]);
+        // $panelProduct1->attributes()->create([
+        //     'panel_product_id' => $panelProduct1->id,
+        //     'attribute_type' => 'light-temperature',
+        //     'attribute_name' => 'Cool White',
+        //     'color_hex' => null
+        // ]);
 
-        $panelProduct1->attributes()->create([
-            'panel_product_id' => $panelProduct1->id,
-            'attribute_type' => 'light-temperature',
-            'attribute_name' => 'Warm White',
-            'color_hex' => null
-        ]);
+        // $panelProduct1->attributes()->create([
+        //     'panel_product_id' => $panelProduct1->id,
+        //     'attribute_type' => 'light-temperature',
+        //     'attribute_name' => 'Warm White',
+        //     'color_hex' => null
+        // ]);
 
-        $panelProduct1->attributes()->create([
-            'panel_product_id' => $panelProduct1->id,
-            'attribute_type' => 'light-temperature',
-            'attribute_name' => 'Yellow',
-            'color_hex' => null
-        ]);
+        // $panelProduct1->attributes()->create([
+        //     'panel_product_id' => $panelProduct1->id,
+        //     'attribute_type' => 'light-temperature',
+        //     'attribute_name' => 'Yellow',
+        //     'color_hex' => null
+        // ]);
 
-        $panelProduct1->availableIn()->attach([
-            '15',
-            '13',
-            '12',
-            '5',
-            '1'
-        ]);
+        // $panelProduct1->availableIn()->attach([
+        //     '15',
+        //     '13',
+        //     '12',
+        //     '5',
+        //     '1'
+        // ]);
 
         // Product 2
         $panelProduct2 = new Product;
@@ -142,47 +142,47 @@ class PanelProductsTableSeeder extends Seeder
         ]);
 
         // Product 2.2
-        $panelProduct2 = new Product;
-        $panelProduct2->global_product_id = 2;
-        $panelProduct2->panel_account_id = 1918000103;
-        $panelProduct2->product_description = '';
-        $panelProduct2->product_material = '';
-        $panelProduct2->product_consistency = '';
-        $panelProduct2->product_package = '';
-        $panelProduct2->price = 12000;
-        $panelProduct2->member_price = 12000;
-        $panelProduct2->delivery_fee = 0;
-        $panelProduct2->product_rating = 0;
-        $panelProduct2->save();
+        // $panelProduct2 = new Product;
+        // $panelProduct2->global_product_id = 2;
+        // $panelProduct2->panel_account_id = 1918000103;
+        // $panelProduct2->product_description = '';
+        // $panelProduct2->product_material = '';
+        // $panelProduct2->product_consistency = '';
+        // $panelProduct2->product_package = '';
+        // $panelProduct2->price = 12000;
+        // $panelProduct2->member_price = 12000;
+        // $panelProduct2->delivery_fee = 0;
+        // $panelProduct2->product_rating = 0;
+        // $panelProduct2->save();
 
-        $panelProduct2->attributes()->create([
-            'panel_product_id' => $panelProduct2->id,
-            'attribute_type' => 'light-temperature',
-            'attribute_name' => 'Cool White',
-            'color_hex' => null
-        ]);
+        // $panelProduct2->attributes()->create([
+        //     'panel_product_id' => $panelProduct2->id,
+        //     'attribute_type' => 'light-temperature',
+        //     'attribute_name' => 'Cool White',
+        //     'color_hex' => null
+        // ]);
 
-        $panelProduct2->attributes()->create([
-            'panel_product_id' => $panelProduct2->id,
-            'attribute_type' => 'light-temperature',
-            'attribute_name' => 'Warm White',
-            'color_hex' => null
-        ]);
+        // $panelProduct2->attributes()->create([
+        //     'panel_product_id' => $panelProduct2->id,
+        //     'attribute_type' => 'light-temperature',
+        //     'attribute_name' => 'Warm White',
+        //     'color_hex' => null
+        // ]);
 
-        $panelProduct2->attributes()->create([
-            'panel_product_id' => $panelProduct2->id,
-            'attribute_type' => 'light-temperature',
-            'attribute_name' => 'Yellow',
-            'color_hex' => null
-        ]);
+        // $panelProduct2->attributes()->create([
+        //     'panel_product_id' => $panelProduct2->id,
+        //     'attribute_type' => 'light-temperature',
+        //     'attribute_name' => 'Yellow',
+        //     'color_hex' => null
+        // ]);
 
-        $panelProduct2->availableIn()->attach([
-            '12',
-            '14',
-            '16',
-            '13',
-            '1'
-        ]);
+        // $panelProduct2->availableIn()->attach([
+        //     '12',
+        //     '14',
+        //     '16',
+        //     '13',
+        //     '1'
+        // ]);
 
         // Product 3
         $panelProduct3 = new Product;
