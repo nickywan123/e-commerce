@@ -71,7 +71,7 @@
     </div>
     @endif
 
-    <div class="row pb-1">
+    <div class="row pb-1" id="scroll-to">
         <div class="col-12 mb-1">
             <h3 class="text-dark font-weight-bold">Featured Deals <small id="child-category-indicator" class='text-muted text-capitalize'></small></h3>
             <div class="boxed">
@@ -575,6 +575,10 @@
             categorySlug = $(this).data('value');
             categoryName = $(this).data('name');
 
+            var jump = ('#scroll-to');
+            var new_position = $(jump).offset();
+
+
             $.ajax({
                 async: true,
                 beforeSend: function() {
@@ -595,6 +599,9 @@
                 success: function(result) {
                     // Load ajax response into specified element.
                     ItemContainer.html(result);
+                    $('html, body').stop().animate({
+                        scrollTop: new_position.top
+                    }, 500);
                 },
                 error: function(result) {
                     // Log into console if there's an error.

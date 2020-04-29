@@ -707,10 +707,9 @@ class UsersTableSeeder extends Seeder
         $user->assignRole('panel');
 
         // KK Lee Account
-
         // Users table.
         $user = new User;
-        $user->email = 'kklee.dc@yahoo.com';
+        $user->email = 'kklee.dc@gmail.com';
         $user->password = Hash::make('kklee.dc123');
         $user->email_verified_at = '2020-03-28 12:12:40';
         $user->save();
@@ -762,40 +761,6 @@ class UsersTableSeeder extends Seeder
         $userContactMobile->is_mobile = 1;
         $userContactMobile->save();
 
-        // Generating new panel account id.
-        $largestPanelId = 0;
-        if (PanelInfo::all()->count() == 0) {
-            $largestPanelId = 1918000001;
-        } else {
-            $largestPanelId = PanelInfo::largestPanelId() + 1;
-        }
-
-        // Panel_infos table.
-        $panelInfo = new PanelInfo;
-        $panelInfo->user_id = $user->id;
-        $panelInfo->account_id = 1918000008;
-        $panelInfo->company_name = 'KK Lee';
-        $panelInfo->ssm_number = '12345-K';
-        $panelInfo->company_email = 'kklee.dc@yahoo.com';
-        $panelInfo->company_phone = '0194039056';
-        $panelInfo->pic_name = 'KK Lee';
-        $panelInfo->pic_nric = '951119105605';
-        $panelInfo->pic_contact = '0166929202';
-        $panelInfo->pic_email = 'kklee.dc@gmail.com';
-        $panelInfo->save();
-
-        $panelAddressCorrespondence = new PanelAddress;
-        $panelAddressCorrespondence->account_id = $panelInfo->account_id;
-        $panelAddressCorrespondence->address_1 = '1.26.5,';
-        $panelAddressCorrespondence->address_2 = 'Menara Bangkok Bank';
-        $panelAddressCorrespondence->address_3 = '-';
-        $panelAddressCorrespondence->postcode = '50450';
-        $panelAddressCorrespondence->city = 'Kuala Lumpur';
-        $panelAddressCorrespondence->state_id = 14;
-        $panelAddressCorrespondence->is_correspondence_address = 1;
-        $panelAddressCorrespondence->save();
-
         $user->assignRole('customer');
-        $user->assignRole('panel');
     }
 }

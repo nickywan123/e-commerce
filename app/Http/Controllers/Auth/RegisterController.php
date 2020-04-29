@@ -147,9 +147,6 @@ class RegisterController extends Controller
                 'address_2' => [
                     'required'
                 ],
-                'address_3' => [
-                    'required'
-                ],
                 'postcode' => [
                     'required'
                 ],
@@ -158,10 +155,6 @@ class RegisterController extends Controller
                 ],
                 'state' => [
                     'required'
-                ],
-                'contact_number_home' => [
-                    'required',
-                    'min:10',
                 ],
                 'contact_number_mobile' => [
                     'required',
@@ -217,9 +210,6 @@ class RegisterController extends Controller
                 'address_2' => [
                     'required'
                 ],
-                'address_3' => [
-                    'required'
-                ],
                 'postcode' => [
                     'required'
                 ],
@@ -228,10 +218,6 @@ class RegisterController extends Controller
                 ],
                 'state' => [
                     'required'
-                ],
-                'contact_number_home' => [
-                    'required',
-                    'min:10'
                 ],
                 'contact_number_mobile' => [
                     'required',
@@ -272,9 +258,6 @@ class RegisterController extends Controller
                     'required'
                 ],
                 'company_address_2' => [
-                    'required'
-                ],
-                'company_address_3' => [
                     'required'
                 ],
                 'company_postcode' => [
@@ -372,12 +355,14 @@ class RegisterController extends Controller
             $userAddress->is_mailing_address = 1;
             $userAddress->save();
 
-            // User_contacts table (Home).
-            $userContactHome = new UserContact;
-            $userContactHome->account_id = $userInfo->account_id;
-            $userContactHome->contact_num = $data['contact_number_home'];
-            $userContactHome->is_home = 1;
-            $userContactHome->save();
+            if ($data['contact_number_home'] != null) {
+                // User_contacts table (Home).
+                $userContactHome = new UserContact;
+                $userContactHome->account_id = $userInfo->account_id;
+                $userContactHome->contact_num = $data['contact_number_home'];
+                $userContactHome->is_home = 1;
+                $userContactHome->save();
+            }
 
             // User_contacts table (Mobile).
             $userContactMobile = new UserContact;
@@ -469,11 +454,13 @@ class RegisterController extends Controller
             $userAddress->save();
 
             // User_contacts table (Home).
-            $userContactHome = new UserContact;
-            $userContactHome->account_id = $userInfo->account_id;
-            $userContactHome->contact_num = $data['contact_number_home'];
-            $userContactHome->is_home = 1;
-            $userContactHome->save();
+            if ($data['contact_number_home'] != null) {
+                $userContactHome = new UserContact;
+                $userContactHome->account_id = $userInfo->account_id;
+                $userContactHome->contact_num = $data['contact_number_home'];
+                $userContactHome->is_home = 1;
+                $userContactHome->save();
+            }
 
             // User_contacts table (Mobile).
             $userContactMobile = new UserContact;
@@ -490,11 +477,13 @@ class RegisterController extends Controller
             $dealerContactMobile->save();
 
             // Dealer_contacts table (Home).
-            $dealerContactHome = new DealerContact;
-            $dealerContactHome->account_id = $userInfo->account_id;
-            $dealerContactHome->contact_num = $data['contact_number_home'];
-            $dealerContactHome->is_home = 1;
-            $dealerContactHome->save();
+            if ($data['contact_number_home'] != null) {
+                $dealerContactHome = new DealerContact;
+                $dealerContactHome->account_id = $userInfo->account_id;
+                $dealerContactHome->contact_num = $data['contact_number_home'];
+                $dealerContactHome->is_home = 1;
+                $dealerContactHome->save();
+            }
 
             $dealerSpouse = new DealerSpouse;
             $dealerSpouse->account_id = $userInfo->account_id;

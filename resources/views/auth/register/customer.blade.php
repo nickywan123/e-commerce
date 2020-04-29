@@ -655,7 +655,7 @@
                 minlength: 3
             },
             address_3: {
-                required: true,
+                required: false,
                 minlength: 3
             },
             postcode: {
@@ -669,7 +669,7 @@
                 required: true
             },
             contact_number_home: {
-                required: true,
+                required: false,
                 digits: true,
                 minlength: 10,
                 maxlength: 15
