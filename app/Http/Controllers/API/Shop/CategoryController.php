@@ -9,10 +9,22 @@ use Illuminate\Http\Request;
 
 class CategoryController extends ResponseController
 {
+    public function getCategories(Request $request)
+    {
+        try {
+            $category = Category::all();
+        } catch (ModelNotFoundException $e) {
+            $error = 'The requested resource is not available.';
+            return $this->sendError($error, 404);
+        }
+
+        return $this->sendResponse($category);
+    }
+
     /**
      * Return category with products, product images, product sold by panels.
      */
-    public function getCategory(Request $request, $categoryId)
+    public function getCategoryWithChildAndProduct(Request $request, $categoryId)
     {
         try {
             $category = Category::where('id', $categoryId)

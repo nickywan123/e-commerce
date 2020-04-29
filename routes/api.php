@@ -46,5 +46,13 @@ Route::group(['prefix' => 'auth'], function () {
  * Public Routes
  * TODO: Move to auth:api middleware group.
  */
-// Get category.
-Route::get('/category/{categoryId}', 'API\Shop\CategoryController@getCategory');
+// Get categories.
+Route::get(
+    '/categories',
+    'API\Shop\CategoryController@getCategories'
+);
+// Get category with child and products.
+Route::get(
+    '/category/{categoryId}',
+    'API\Shop\CategoryController@getCategoryWithChildAndProduct'
+);
