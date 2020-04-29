@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="card p-2">
+<div class="card p-3">
     <product-table />
 </div>
 @endsection

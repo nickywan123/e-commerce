@@ -186,7 +186,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::get('/', 'Administrator\Product\ProductController@index')
                 ->name('administrator.products');
             // Return JSON response of all products
-            Route::get('/json', 'WEB\Administrator\ProductJSONController@getProducts')
+            Route::get('/resource', 'WEB\Administrator\ProductJSONController@getProducts')
                 ->name('administrator.products.json');
 
             // Create product.

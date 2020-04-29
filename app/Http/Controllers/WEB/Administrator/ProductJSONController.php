@@ -10,7 +10,7 @@ class ProductJSONController extends Controller
 {
     public function getProducts()
     {
-        $product = Product::with('images')->with('categories')->get();
+        $product = Product::with('images')->with('categories')->paginate(10);
 
         return response()->json($product, 200);
     }
