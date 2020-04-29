@@ -139,7 +139,7 @@ class UsersTableSeeder extends Seeder
 
         // Users table.
         $user = new User;
-        $user->email = 'bujishupanel@email.com';
+        $user->email = 'bujishupanel@gmail.com';
         $user->password = Hash::make('account123');
         $user->email_verified_at = '2020-03-28 12:12:40';
         $user->save();
@@ -205,7 +205,7 @@ class UsersTableSeeder extends Seeder
         $panelInfo->account_id = $largestPanelId;
         $panelInfo->company_name = 'Bujishu Sdn Bhd';
         $panelInfo->ssm_number = '12345-K';
-        $panelInfo->company_email = 'delhubdigital@gmail.com';
+        $panelInfo->company_email = 'bujishupanel@gmail.com';
         $panelInfo->company_phone = '0194039056';
         $panelInfo->pic_name = 'Wan Shahruddin';
         $panelInfo->pic_nric = '951119105605';
