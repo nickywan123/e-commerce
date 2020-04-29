@@ -27,7 +27,7 @@
                     <a class="bujishu-gold" href="">Privacy Policy</a>
                 </li>
                 <li>
-                    <a class="bujishu-gold" href="">Track an Order</a>
+                    <a class="bujishu-gold" href="/shop/dashboard/orders/order-status">Track an Order</a>
                 </li>
                 <li>
                     <a class="bujishu-gold" href="">FAQ</a>

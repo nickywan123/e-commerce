@@ -23,13 +23,13 @@
 @endif
 
 {{--Desktop layout--}}
-<div class="hidden-sm">
+<div class="hidden-sm" style="font-size:small;">
   <div class="row">
     <div class="col-12 mb-3"><h1 style="font-weight:bold;">Orders Tracking</h1></div>
   </div>
 
   <div class="row mt-2 mb-3">
-    <div class="col-12  ">
+    <div class="col-12">
       <a href="/management/panel/orders" class="orders-text-style " style="border-bottom: 2px solid rgb(250, 172, 24);"><i><strong>All Orders</strong></i></a>        
       <a href="#" class="orders-text-style"><i><strong>New Orders</strong></i></a>
       <a href="#" class="orders-text-style"><i><strong>Pending Shipping</strong></i></a>
@@ -229,7 +229,7 @@
   font-weight: bold;
 }
 .font-family-style{
-  font-family:cursive;
+  font-family: 'Nunito', sans-serif;
 }
   .orders-text-style {
         color: rgb(250, 172, 24);
@@ -238,7 +238,7 @@
     }
     .table .thead-light th{
      font-weight: bold;
-     font-family: cursive;
+     font-family: 'Nunito', sans-serif;
     }
     @media(max-width:767px) {
             .hidden-sm {
@@ -255,7 +255,7 @@
 
 
         .text-font-family {
-            font-family: cursive;
+          font-family: 'Nunito', sans-serif;
         }
 
 </style>

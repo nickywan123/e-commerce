@@ -286,7 +286,7 @@
     <div class="container">
         <div class="row mb-3 mt-3">
             <div class="col-4 offset-4 text-center">
-                <img class="email-logo" src="{{ $message->embed(public_path('storage/logo/bujishu.png'))}}" alt="Bujishu Logo">
+                <img class="email-logo" src="{{ $message->embed(public_path('storage/logo/bujishu.png'))}}" alt="Bujishu Logo" style="width:150px;">
             </div>
         </div>
         <div class="row">

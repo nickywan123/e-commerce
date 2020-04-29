@@ -9,7 +9,7 @@
 
 {{--Template for desktop screen--}}
 <div class="mt-3 mt-md-0 hidden-sm">
-    <h4 class="text-capitalize text-dark text-font-family">My Profile</h4>
+   
 
 
     @if(Session::has('successful_message'))
@@ -27,7 +27,8 @@
 
 
     <div class="row ">
-        <div class="col-12 col-md-10">
+        <div class="col-12 offset-1 col-md-10">
+            <h4 class="text-capitalize text-dark text-font-family">My Profile</h4>
             <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="form-group row ">

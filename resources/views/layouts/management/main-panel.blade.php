@@ -26,13 +26,22 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine&display=swap" rel="stylesheet">
+
+<style>
+    @media(min-width:767px){
+        .main{
+            margin-left:80px;
+        }
+    }
+</style>
+
 </head>
 
 <body class="app header-fixed aside-menu-fixed sidebar-lg-show">
     @include('layouts.management.navigations.navigation-bar-panel')
     <div class="app-body">
         @include('layouts.management.navigations.side-bar-panel')
-        <main class="main " style="margin-top:2%;">
+        <main class="main" style="margin-top:2%;">
 
             @yield('breadcrumbs')
             <div class="container-fluid">

@@ -49,6 +49,7 @@
     .icon-text-align{
         display: inline-block;
          text-align: center;
+         margin-left:10px;
     }
 
 

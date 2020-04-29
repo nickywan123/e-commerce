@@ -6,7 +6,7 @@
 
 {{--Desktop layout--}}
 
-<div class="mt-3 hidden-sm" style="min-height: 100vh;">
+<div class="mt-3 hidden-sm" style="min-height: 100vh; margin-right: 120px;">
     <div class="container">
         <div class="row">
             <div class="col-md-9 mt-4">
@@ -28,10 +28,10 @@
             <a href="/shop/dashboard/orders/index" class="orders-text-style "
                 style="border-bottom: 2px solid rgb(250, 172, 24);"><i><strong>All
                         Orders</strong></i></a>
-            <a href="#" class="orders-text-style"><i><strong>Open Orders</strong></i></a>
-            <a href="/shop/dashboard/orders/orders-status" class="orders-text-style"><i><strong>Order
+            <a href="/shop/dashboard/orders/open-orders" class="orders-text-style"><i><strong>Open Orders</strong></i></a>
+            <a href="/shop/dashboard/orders/order-status" class="orders-text-style"><i><strong>Order
                         Status</strong></i></a>
-            <a href="#" class="orders-text-style"><i><strong>Return Orders</strong></i></a>
+            {{-- <a href="#" class="orders-text-style"><i><strong>Return Orders</strong></i></a> --}}
             <a href="#" class="orders-text-style"><i><strong>Pending Star Ratings</strong></i></a>
         </div>
         <hr>
@@ -125,6 +125,7 @@
 
                         </td>
 
+                        @if($order->order_status === 1003)
                         <td colspan="2" class="font-weight-bold">
                             <div class="row">
                                 <div class="col-12 ">
@@ -137,30 +138,8 @@
                                     <button class="text-capitalize bjsh-btn-gradient">Submit</button>
                                 </div>
                             </div>
-                            {{-- <div class="row">
-                                <div class="col-12">
-                                    <span style="min-width:87px; display:inline-block;">Rate Supplier</span>
-                                    <span class="fa fa-star-o "></span>
-                                    <span class="fa fa-star-o "></span>
-                                    <span class="fa fa-star-o "></span>
-                                    <span class="fa fa-star-o "></span>
-                                    <span class="fa fa-star-o "></span>
-                                    <button class="text-capitalize bjsh-btn-gradient">Submit</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span style="min-width:87px; display:inline-block;">Rate Dealer</span>
-                                    <span class="fa fa-star-o "></span>
-                                    <span class="fa fa-star-o "></span>
-                                    <span class="fa fa-star-o "></span>
-                                    <span class="fa fa-star-o "></span>
-                                    <span class="fa fa-star-o "></span>
-                                    <button class="text-capitalize bjsh-btn-gradient">Submit</button>
-                                </div>
-                            </div> --}}
-
                         </td>
+                        @endif
                     </tr>
                     @endforeach
                     <!-- Ending Item Template -->
@@ -192,13 +171,13 @@
                     <button class="btn btn-secondary  bjsh-btn-gradient" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style="background-color:rgb(250, 172, 24); color:black;">
-                        Filter Orders <i style="font-size: 10px;" class="fa fa-arrow-down"> </i>
+                        All Orders <i style="font-size: 10px;" class="fa fa-arrow-down"> </i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">All Orders</a>
-                        <a class="dropdown-item" href="#">Open Orders</a>
-                        <a class="dropdown-item" href="#">Order Status</a>
-                        <a class="dropdown-item" href="#">Return Orders</a>
+                        {{-- <a class="dropdown-item" href="#">All Orders</a> --}}
+                        <a class="dropdown-item" href="/shop/dashboard/orders/open-orders">Open Orders</a>
+                        <a class="dropdown-item" href="/shop/dashboard/orders/order-status">Order Status</a>
+                        {{-- <a class="dropdown-item" href="#">Return Orders</a> --}}
                         <a class="dropdown-item" href="#">Pending Star Ratings</a>
                     </div>
             
@@ -325,7 +304,7 @@
 
 
 
-                       
+                        @if($order->order_status === 1003)
                         <div class="row">
                             <div class="col-12 ">
                                 <span style="min-width:87px; display:inline-block">Rate Product</span>
@@ -337,6 +316,7 @@
                                 <button class="text-capitalize bjsh-btn-gradient mt-2">Submit Rating</button>
                             </div>
                         </div>
+                        @endif
                     <hr style="background-color:black;">
 
 
@@ -398,7 +378,14 @@
 
 
         .text-font-family {
-            font-family: cursive;
+            font-family: 'Nunito', sans-serif;
+        }
+
+
+        @media (min-width:800px) and (max-width:1030px) {
+            .card-body{
+                font-size: 10px;
+            }
         }
 
     </style>
