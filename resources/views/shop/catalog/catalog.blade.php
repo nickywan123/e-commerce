@@ -28,7 +28,7 @@
     @if($childCategories->count() > 0)
     <div class="row pb-1">
         <div class="col-12 mb-1">
-            <h3 class="text-dark font-weight-bold">Featured Categories</h3>
+            <h3 class="text-dark font-weight-bold">Multi Needs</h3>
             <hr>
         </div>
     </div>
@@ -73,10 +73,10 @@
 
     <div class="row pb-1" id="scroll-to">
         <div class="col-12 mb-1">
-            <h3 class="text-dark font-weight-bold">Featured Deals <small id="child-category-indicator" class='text-muted text-capitalize'></small></h3>
+            <h3 class="text-dark font-weight-bold">Focus Deals <small id="child-category-indicator" class='text-muted text-capitalize'></small></h3>
             <div class="boxed">
-                <input type="radio" class="catalog-quality-filter" id="catalog-quality-all" name="catalog-quality" value="" checked>
-                <label for="catalog-quality-all">All</label>
+                <!-- <input type="radio" class="catalog-quality-filter" id="catalog-quality-all" name="catalog-quality" value="" checked>
+                <label for="catalog-quality-all">All</label> -->
 
                 <input type="radio" class="catalog-quality-filter" id="catalog-quality-standard" name="catalog-quality" value="standard">
                 <label for="catalog-quality-standard">Standard</label>
@@ -84,7 +84,7 @@
                 <input type="radio" class="catalog-quality-filter" id="catalog-quality-moderate" name="catalog-quality" value="moderate">
                 <label for="catalog-quality-moderate">Moderate</label>
 
-                <input type="radio" class="catalog-quality-filter" id="catalog-quality-premium" name="catalog-quality" value="premium">
+                <input type="radio" class="catalog-quality-filter" id="catalog-quality-premium" name="catalog-quality" value="premium" checked>
                 <label for="catalog-quality-premium">Premium</label>
             </div>
             <hr style="margin-top: 0.2rem;">
@@ -516,11 +516,58 @@
             }
         });
 
+        let categorySlug = "{{ $category->slug }}";
+
         // Function to run on page load.
         onPageLoad();
 
         // Make an ajax request to get all product beloging to a category.
         function onPageLoad() {
+            // $.ajax({
+            //     async: true,
+            //     beforeSend: function() {
+            //         // Show loading spinner.
+            //         loading.show();
+            //         ItemContainer.hide();
+            //     },
+            //     complete: function() {
+            //         // Hid loading spinner.
+            //         loading.hide();
+            //         ItemContainer.show();
+            //     },
+            //     url: "{{ route('web.shop.category', ['categorySlug' => $category->slug])}}",
+            //     type: "GET",
+            //     success: function(result) {
+            //         // Load response into specified element.
+            //         ItemContainer.html(result);
+
+            //         // Assign element with left/right class into a variable.
+            //         left = ItemContainer.find('.left');
+            //         right = ItemContainer.find('.right')
+
+            //         // Initialize mCustomScrollbar
+            //         left.mCustomScrollbar({
+            //             'theme': 'minimal'
+            //         });
+
+            //         // Initialize mCustomScrollbar
+            //         right.mCustomScrollbar({
+            //             'theme': 'minimal'
+            //         });
+            //     },
+            //     error: function(result) {
+            //         // Log into console if there's an error.
+            //         console.log(result.status + ' ' + result.statusText);
+            //     }
+            // });
+
+            // Get checked radio button value and put into a variable.
+            productQuality = $('input[name="catalog-quality"]:checked').val();
+
+            let baseUrl = '{{ route("web.shop.category.filter", ["categorySlug" => ":categorySlug"]) }}';
+
+            baseUrl = baseUrl.replace(':categorySlug', categorySlug);
+
             $.ajax({
                 async: true,
                 beforeSend: function() {
@@ -529,14 +576,18 @@
                     ItemContainer.hide();
                 },
                 complete: function() {
-                    // Hid loading spinner.
+                    // Hide loading spinner.
                     loading.hide();
                     ItemContainer.show();
                 },
-                url: "{{ route('web.shop.category', ['categorySlug' => $category->slug])}}",
-                type: "GET",
+                url: baseUrl,
+                type: "POST",
+                data: {
+                    // POST data.
+                    quality: productQuality,
+                },
                 success: function(result) {
-                    // Load response into specified element.
+                    // Load ajax response into specified element.
                     ItemContainer.html(result);
 
                     // Assign element with left/right class into a variable.
@@ -559,9 +610,6 @@
                 }
             });
         }
-
-        let categorySlug = "{{ $category->slug }}";
-        console.log(categorySlug);
 
         // Handle click event on element with category-link as its class.
         $('.category-link').on('click', function(e) {

@@ -55,7 +55,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 style="color: #ffcc00; font-family: 'Tangerine'; font-size:50px;">Popular Categories</h1>
+            <h1 style="color: #ffcc00; font-size: 1.9rem;">Hot Selections</h1>
             <div style="border-top: 1px solid #ffcc00;" class="w-50-md w-100-sm margin-bottom-md">
             </div>
         </div>

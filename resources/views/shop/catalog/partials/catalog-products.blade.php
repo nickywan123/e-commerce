@@ -43,8 +43,24 @@
 
                         <div class="animated-product-information-container">
                             <p class="product-name">{{ $product->name }}</p>
-                            <div>
-                                <ul class="list-unstyled product-rating mb-1">
+                            <div class="mt-2 mb-1">
+                                @if ($product->productSoldByPanels->count() > 1)
+                                @if ($product->productSoldByPanels->min('price') == $product->productSoldByPanels->max('price'))
+                                <p class="mb-1">
+                                    <span class="text-muted" style="font-size: 1.2rem; font-weight: 600;">RM {{ number_format(($product->productSoldByPanels->min('price') / 100) , 2) }}</span>
+                                </p>
+                                @else
+                                <p class="mb-1">
+                                    <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">RM {{ number_format(( $product->productSoldByPanels->min('price') / 100), 2) }}</span>
+                                    -
+                                    <span class="text-muted" style="font-size: 0.8rem; font-weight: 600;">
+                                        RM {{ number_format(($product->productSoldByPanels->max('price') / 100), 2) }}
+                                    </span>
+                                </p>
+                                @endif
+                                @endif
+                                <!-- TODO: Will use later. -->
+                                <!-- <ul class="list-unstyled product-rating mb-1">
                                     <li>
                                         <i class="fa fa-star checked"></i>
                                     </li>
@@ -61,7 +77,7 @@
                                         <i class="fa fa-star checked"></i>
                                     </li>
                                 </ul>
-                                <p class="mb-1">120 ratings</p>
+                                <p class="mb-1">120 ratings</p> -->
                             </div>
                         </div>
                     </div>
@@ -184,8 +200,14 @@
                     </div>
                     <div class="animated-product-information-container">
                         <p class="product-name">{{ $product->name }}</p>
-                        <div>
-                            <ul class="list-unstyled product-rating mb-1">
+                        <div class="mt-2 mb-1">
+                            <p class="mb-1">
+                                <span class="text-muted" style="font-size: 1.2rem; font-weight: 600;">
+                                    RM {{ number_format(($product->productSoldByPanels->min('price') / 100), 2) }}
+                                </span>
+                            </p>
+                            <!-- TODO: Will use later. -->
+                            <!-- <ul class="list-unstyled product-rating mb-1">
                                 <li>
                                     <i class="fa fa-star checked"></i>
                                 </li>
@@ -202,7 +224,7 @@
                                     <i class="fa fa-star checked"></i>
                                 </li>
                             </ul>
-                            <p class="mb-1">120 ratings</p>
+                            <p class="mb-1">120 ratings</p> -->
                         </div>
                     </div>
                 </div>
