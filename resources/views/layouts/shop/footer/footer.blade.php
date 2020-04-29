@@ -37,14 +37,9 @@
                 </li>
             </ul>
         </div>
-    </div>
 
-    <div class="row">
         <div class="col-6 col-md-2 text-center text-md-left">
             <ul class="list-unstyled pr-2 pl-2">
-                <li>
-                    <p class="bujishu-gold mb-1" style="font-size: 0.9rem;">Tel: 017-582 4257</p>
-                </li>
                 <li>
                     <p class="bujishu-gold mb-1" style="font-size: 0.9rem;">Address:</p>
                     <p class="bujishu-gold mb-1" style="font-size: 0.9rem;">
@@ -54,6 +49,9 @@
                         <br>
                         Kuala Lumpur, Malaysia
                     </p>
+                </li>
+                <li>
+                    <p class="bujishu-gold mb-1" style="font-size: 0.9rem;">Tel: 017-582 4257</p>
                 </li>
             </ul>
         </div>
