@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 
 class CategoryController extends ResponseController
 {
+    /**
+     * Return all category.
+     */
     public function getCategories(Request $request)
     {
         try {
@@ -24,13 +27,10 @@ class CategoryController extends ResponseController
     /**
      * Return category with products, product images, product sold by panels.
      */
-    public function getCategoryWithChildAndProduct(Request $request, $categoryId)
+    public function getChildCategory(Request $request, $categoryId)
     {
         try {
             $category = Category::where('id', $categoryId)
-                ->with('childCategories')
-                ->with('products.images')
-                ->with('products.productSoldByPanels')
                 ->firstOrFail();
         }
         // catch(Exception $e) catch any exception
@@ -39,6 +39,8 @@ class CategoryController extends ResponseController
             return $this->sendError($error, 404);
         }
 
-        return $this->sendResponse($category);
+        $childCategories = $category->childCategories;
+
+        return $this->sendResponse($childCategories);
     }
 }
