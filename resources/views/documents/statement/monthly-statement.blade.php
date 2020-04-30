@@ -8529,24 +8529,48 @@
                 </div>
             </div>
 
-
             <div class="col-xs-12 pl-1 pr-1">
                 <div style="width: 100%;">
                     <table style="width: 100%; font-size: 10pt;">
-                   
-                        <tr>    
-                                          
-                            <td style="padding: 6px; width:30%;">
-                               TOTAL SALES
+                        <tr>
+                            <td style="padding: 4px; width: 5%;">
+
                             </td>
-                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; width:5%;">
-                               xxxx
-                               
+                            <td style="padding: 4px; width: 63%;">
+
                             </td>
-                        </tr>                    
+                            <td style="padding: 4px; width: 20.2%">
+
+                            </td>
+                            <td style="border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 4px; width: 13%;">
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td rowspan="6" style="text-align: center;">
+                             
+                            </td>
+                            <td style="padding: 6px;">
+                                TOTAL SALES
+                            </td>
+                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
+                                <?php
+                                $subtotal = 0;
+                             
+                                ?>
+                                RM1221
+                            </td>
+                        </tr>
+                      
+             
                     </table>
                 </div>
-            </div>            
+            </div>         
+            
         </div>
         <br>
         <div class="row" >
@@ -8625,32 +8649,55 @@
             </div>
 
 
-            <div class="col-xs-12 pl-1 pr-1">
-                <div style="width: 100%;">
-                    <table style="width: 100%; font-size: 10pt;">
-                  
+             <div class="col-xs-12 pl-1 pr-1">
+                <div style="width: 100%; height:40px;">
+                    <table style="width: 100%; font-size: 10pt; ">
                         <tr>
-                 
-                            <td style="padding: 6px;">
-                                Subtotal
+                            <td style="padding: 4px; width: 5%;">
+
                             </td>
-                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; width:10%;">
-                              
-                                RM 123
+                            <td style="padding: 4px; width: 63%;">
+
+                            </td>
+                            <td style="padding: 4px; width: 20.2%">
+
+                            </td>
+                            <td style="border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 4px; width: 13%;">
+
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td rowspan="6" style="text-align: center;">
+                             
+                            </td>
+                            <td style="padding: 6px;">
+                                TOTAL SALES
+                            </td>
+                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
+                                <?php
+                                $subtotal = 0;
+                             
+                                ?>
+                                RM1221
                             </td>
                         </tr>
                       
+             
                     </table>
                 </div>
-            </div>
+            </div>         
 
 
         <div style="margin-top: 45px; width: 100%;">
 
         </div>
-<br>
+
        
-        <div style="margin-top: 35px; width: 100%;"></div>
+        <div style="margin-top: 55px; width: 100%;"></div>
 
         <div class="row">
             <div class="col-xs-12 pl-1 pr-1">
