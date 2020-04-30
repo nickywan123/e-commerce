@@ -10,6 +10,7 @@ require("@coreui/coreui");
 require("signature_pad");
 require("slick-carousel");
 require("ion-rangeslider");
+require("select2");
 
 window.Vue = require('vue');
 
@@ -47,4 +48,14 @@ Vue.component(
 
 const app = new Vue({
     el: '#app',
+});
+
+
+/* 
+* Custom scripts
+*/
+
+// Initialize select2 when 'select2' class is used.
+$(document).ready(function () {
+    $('.select2').select2();
 });
