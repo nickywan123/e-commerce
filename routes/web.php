@@ -190,7 +190,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
                 ->name('administrator.products.json');
 
             // Create product.
-            Route::get('/create', 'Management\Product\ProductController@create')
+            Route::get('/create', 'Administrator\Product\ProductController@create')
                 ->name('administrator.products.create');
         });
     });

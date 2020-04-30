@@ -27,11 +27,13 @@
             </div>
           </td>
           <td class="my-auto" style="width: 20%;">
-            <span
-              style="margin-right: 2px; padding: 5px; background-color: #fafafa; border-radius: 5px;"
-              v-for="category in item.categories"
-              :key="category.id"
-            >{{ category.name }}</span>
+            <ul class="list-unstyled">
+              <li class="mb-1" v-for="category in item.categories" :key="category.id">
+                <span
+                  style="background-color: #fafafa; padding: 4px 8px; border-radius: 10px;"
+                >{{ category.name }}</span>
+              </li>
+            </ul>
           </td>
           <td class="my-auto" style="width: 15%;">
             <button class="btn btn-sm btn-secondary" style="display: inline-block;">Edit</button>
