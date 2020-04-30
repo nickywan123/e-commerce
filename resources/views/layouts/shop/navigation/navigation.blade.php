@@ -1,3 +1,4 @@
+{{---Mobile Layout--}}
 <div class="middleBar" style="border-bottom: 1px solid #fccb34;">
     <div class="container-90">
         <div class="row d-flex">
@@ -42,7 +43,7 @@
                                         <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
                                         @endhasrole
                                         @hasrole('dealer')
-                                        <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
+                                        <a href="/management/dealer/index" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                         @endhasrole
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -70,6 +71,8 @@
                 @endguest
             </div>
             <!-- end col -->
+
+            {{--Desktop layout---}}
             <div class="col-sm-8 vertical-align text-center my-auto">
                 <form>
                     <div class="row grid-space-1">
@@ -114,7 +117,7 @@
                                 <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
                                 @endhasrole
                                 @hasrole('dealer')
-                                <a href="/management/dealer" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
+                                <a href="/management/dealer/index" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                 @endhasrole
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
