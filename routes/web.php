@@ -223,12 +223,19 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/dashboard/profile/edit', 'Shop\ProfileController@edit')->name('shop.dashboard.customer.profile.edit');
         Route::patch('dashboard/profile/update/{id}', 'Shop\ProfileController@updateProfile')->name('profile.update');
 
-        // Return Customer ->Value Records 
+        // Return Customer ->All Orders
         Route::get('/dashboard/orders/index', 'Shop\ValueRecordsController@customerAllOrders')->name('shop.customer.orders');
+        // Return Customer -> Open Orders
+        Route::get('/dashboard/orders/open-orders', 'Shop\ValueRecordsController@openOrders')->name('shop.customer.open-orders');
+
+        // Return Customer -> Orders Status
+        Route::get('/dashboard/orders/order-status', 'Shop\ValueRecordsController@orderStatus')->name('shop.customer.order-status');
+
+
 
         // Return My Perfect List
         Route::get('/dashboard/wishlist/index', 'Shop\ValueRecordsController@wishlist');
-        // Return Customer ->Value Records -> Orders Status
+        
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
         Route::get('/dashboard/reset-password', 'Shop\ForgotPasswordController@sendEmailReset')->name('shop.forgot.password');

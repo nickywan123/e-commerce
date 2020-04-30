@@ -12,7 +12,7 @@ class ValueRecordsController extends Controller
 {
 
 
-    /****Return ALL ORDERS in customer dashboard  ****/
+    /****Return All Orders in customer dashboard  ****/
 
     public function customerAllOrders()
     {
@@ -23,6 +23,34 @@ class ValueRecordsController extends Controller
         // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
         return view('shop.customer-dashboard.value-records.index')->with('purchases', $purchases);
     }
+
+    /*******Return Open Orders in customer dashboard******/
+
+    public function openOrders()
+    {
+        $user = User::find(Auth::user()->id);
+        // Return purchases that user have paid
+        // $statuses = [3001, 3002, 3003];
+        $purchases = $user->purchases->where('purchase_status', 3000);
+        // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
+        return view('shop.customer-dashboard.value-records.open-orders')->with('purchases', $purchases);
+    }
+
+     /*******Return Order Status in customer dashboard******/
+
+     public function orderStatus()
+     {
+         $user = User::find(Auth::user()->id);
+         // Return purchases that user have paid
+         $statuses = [3001, 3002, 3003];
+         $purchases = $user->purchases->whereIn('purchase_status', $statuses);
+         // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
+         return view('shop.customer-dashboard.value-records.order-status')->with('purchases', $purchases);
+     }
+ 
+
+
+
 
 
 

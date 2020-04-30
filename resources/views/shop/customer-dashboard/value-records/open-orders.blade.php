@@ -25,10 +25,9 @@
 
         </div>
         <div class="container-fluid" style="margin-top:20px;">
-            <a href="/shop/dashboard/orders/index" class="orders-text-style "
-                style="border-bottom: 2px solid rgb(250, 172, 24);"><i><strong>All
+            <a href="/shop/dashboard/orders/index" class="orders-text-style "><i><strong>All
                         Orders</strong></i></a>
-            <a href="/shop/dashboard/orders/open-orders" class="orders-text-style"><i><strong>Open Orders</strong></i></a>
+            <a href="/shop/dashboard/orders/open-orders" class="orders-text-style" style="border-bottom: 2px solid rgb(250, 172, 24);"><i><strong>Open Orders</strong></i></a>
             <a href="/shop/dashboard/orders/order-status" class="orders-text-style"><i><strong>Order
                         Status</strong></i></a>
             {{-- <a href="#" class="orders-text-style"><i><strong>Return Orders</strong></i></a> --}}
@@ -47,7 +46,7 @@
 
                         <td style="font-weight: bold;">
                             <div> Order #:{{ $order->order_number }}</div>
-                            <div> Order Date:{{ $purchase->purchase_date }}</div>
+                            <div> Order Created:{{ $purchase->purchase_date }}</div>
                         </td>
 
                         <td style="font-weight: bold;">
@@ -73,10 +72,10 @@
                             </div>
                         </td>
 
-                        <td style="">
+                        {{-- <td style="">
                             <div><a href="/orders/invoice/{{$purchase->purchase_number}}">Invoice</a></div>
                             <div><a href="/orders/receipt/{{$purchase->purchase_number}}">Receipt</a></div>
-                        </td>
+                        </td> --}}
                     </tr>
                     <!-- Starting Item Template -->
                     @foreach($order->items as $item)
@@ -104,8 +103,8 @@
                                     </p>
                                     <button class="text-capitalize bjsh-btn-gradient"><a
                                             style="color:black; text-decoration:none;"
-                                            href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
-                                            Buy It Again</a></button>
+                                            href="/payment/cashier?orderId={{$purchase->purchase_number}}" >
+                                            Proceed to Checkout</a></button>
                                 </div>
                             </div>
 
@@ -116,17 +115,16 @@
                                 <div class="col-12 ">
                                     <p>Quantity: {{$item->quantity}}</p>
                                 </div>
-                                <div class="col-12 ">
+                                {{-- <div class="col-12 ">
                                     <p style="font-family:cursive;">Estimate Delivery Date: {{$order->delivery_date}}
                                     </p>
-                                </div>
+                                </div> --}}
                             </div>
 
 
                         </td>
 
-                        @if($order->order_status === 1003)
-                        <td colspan="2" class="font-weight-bold">
+                        {{-- <td colspan="2" class="font-weight-bold">
                             <div class="row">
                                 <div class="col-12 ">
                                     <span style="min-width:87px; display:inline-block">Rate Product</span>
@@ -138,8 +136,8 @@
                                     <button class="text-capitalize bjsh-btn-gradient">Submit</button>
                                 </div>
                             </div>
-                        </td>
-                        @endif
+                          
+                        </td> --}}
                     </tr>
                     @endforeach
                     <!-- Ending Item Template -->
@@ -171,11 +169,11 @@
                     <button class="btn btn-secondary  bjsh-btn-gradient" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style="background-color:rgb(250, 172, 24); color:black;">
-                        All Orders <i style="font-size: 10px;" class="fa fa-arrow-down"> </i>
+                        Open Orders <i style="font-size: 10px;" class="fa fa-arrow-down"> </i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        {{-- <a class="dropdown-item" href="#">All Orders</a> --}}
-                        <a class="dropdown-item" href="/shop/dashboard/orders/open-orders">Open Orders</a>
+                        <a class="dropdown-item" href="#">All Orders</a>
+                        {{-- <a class="dropdown-item" href="#">Open Orders</a> --}}
                         <a class="dropdown-item" href="/shop/dashboard/orders/order-status">Order Status</a>
                         {{-- <a class="dropdown-item" href="#">Return Orders</a> --}}
                         <a class="dropdown-item" href="#">Pending Star Ratings</a>
@@ -210,14 +208,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8">
-                            Order Date:{{ $purchase->purchase_date }}
+                        <div class="col-8 ml-2">
+                            Order Created:{{ $purchase->purchase_date }}
                         </div>
                     </div>
 
 
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-9 mr-1">
                             Courier Service: Placeholder
                         </div>
                     </div>
@@ -230,7 +228,7 @@
 
 
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-9 ml-1">
                             @if ($order->order_status === 1000)
                             Order Status: Record Created
                             @elseif ($order->order_status === 1001)
@@ -243,13 +241,13 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-6">
                             <a href="/orders/invoiceinvoice/{{$purchase->purchase_number}}">Invoice</a>
                             <a style="margin-left: 10px;"
                                 href="/orders/receipt/{{$purchase->purchase_number}}">Receipt</a>
                         </div>
-                    </div>
+                    </div> --}}
 
 
 
@@ -285,27 +283,27 @@
                             <p>Quantity: {{$item->quantity}}</p>
                             <button class="text-capitalize bjsh-btn-gradient"><a
                                 style="color:black; text-decoration:none;"
-                                href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
-                                Buy It Again</a></button>
+                                href="/payment/cashier?orderId={{$purchase->purchase_number}}">
+                                Proceed to Checkout</a></button>
                                 
                         </div>
                     </div>
                       
 
                     
-                   
+{{--                    
                         <div class="row ">
                             <div class="col-12 ">
                                 <p style="font-family:cursive;">Estimate Delivery Date: {{$order->delivery_date}} </p>
                             </div>
                         </div>
-                  
+                   --}}
 
 
 
 
-                        @if($order->order_status === 1003)
-                        <div class="row">
+                       
+                        {{-- <div class="row">
                             <div class="col-12 ">
                                 <span style="min-width:87px; display:inline-block">Rate Product</span>
                                 <span class="fa fa-star-o "></span>
@@ -315,8 +313,7 @@
                                 <span class="fa fa-star-o"></span>
                                 <button class="text-capitalize bjsh-btn-gradient mt-2">Submit Rating</button>
                             </div>
-                        </div>
-                        @endif
+                        </div> --}}
                     <hr style="background-color:black;">
 
 
