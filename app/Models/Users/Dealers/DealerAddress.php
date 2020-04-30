@@ -13,7 +13,7 @@ class DealerAddress extends Model
     public $timestamps = true;
 
     // Set primary key
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'id';
 
     // Set mass assignable columns
     protected $fillable = [];

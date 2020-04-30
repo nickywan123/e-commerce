@@ -769,7 +769,7 @@ class UsersTableSeeder extends Seeder
   
   // Dealer_address table..
   $dealerAddress = new DealerAddress;
-  $dealerAddress->account_id = $userInfo->account_id;
+  $dealerAddress->account_id = $largestDealerId;
   $dealerAddress->address_1 = 'dealer_address_1';
   $dealerAddress->address_2 = 'dealer_address_2';
   $dealerAddress->address_3 = 'dealer_address_3';
@@ -813,21 +813,21 @@ class UsersTableSeeder extends Seeder
 
   // Dealer_contacts table (Mobile).
   $dealerContactMobile = new DealerContact;
-  $dealerContactMobile->account_id = $userInfo->account_id;
+  $dealerContactMobile->account_id = $largestDealerId;
   $dealerContactMobile->contact_num = 2135255655544;
   $dealerContactMobile->is_mobile = 1;
   $dealerContactMobile->save();
 
   // Dealer_contacts table (Home).
       $dealerContactHome = new DealerContact;
-      $dealerContactHome->account_id = $userInfo->account_id;
+      $dealerContactHome->account_id = $largestDealerId;
       $dealerContactHome->contact_num = 43544545423232323;
       $dealerContactHome->is_home = 1;
       $dealerContactHome->save();
   
 
   $dealerSpouse = new DealerSpouse;
-  $dealerSpouse->account_id = $userInfo->account_id;
+  $dealerSpouse->account_id = $largestDealerId;
   $dealerSpouse->spouse_name = 'xxxxxxxxxx';
   $dealerSpouse->spouse_nric ='xxxxxxxxxx';
   $dealerSpouse->spouse_date_of_birth = 'xxxxxxxxxx';
@@ -838,7 +838,7 @@ class UsersTableSeeder extends Seeder
   $dealerSpouse->save();
 
   $dealerEmployment = new DealerEmployment;
-  $dealerEmployment->account_id = $userInfo->account_id;
+  $dealerEmployment->account_id = $largestDealerId;
   $dealerEmployment->employment_type = 2;
   $dealerEmployment->company_name = 'xxxxxxxxxx';
   $dealerEmployment->company_address_1 = 'xxxxxxxxxx';

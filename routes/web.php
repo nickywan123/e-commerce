@@ -132,7 +132,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         //Dashboard-Dealer (Group them in future)
         Route::get('/dealer/index', 'Management\ManagementController@index_dealer');
-        Route::get('/profile', 'Management\ManagementController@profile');
+        Route::get('/dealer/profile', 'Management\ManagementController@dealerProfile')->name('shop.dashboard.dealer.profile');
+        Route::get('/dealer/profile/edit', 'Management\ManagementController@editdealerProfile')->name('shop.dashboard.dealer.profile.edit');
+        Route::patch('/dealer/profile-update/{id}', 'Management\ManagementController@updateDealerProfile')->name('shop.dashboard.dealer.profile.update');
         Route::get('/password', 'Management\ManagementController@modifyPassword');
         Route::get('/dealer/statements', 'Management\ManagementController@statements');
 

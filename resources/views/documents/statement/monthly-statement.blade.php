@@ -8576,7 +8576,7 @@
                                 <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
                                 Invoice No.
                             </td>
-                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 43%;">
+                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 33%;">
                                 <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
                                 Description
                             </td>
@@ -8588,7 +8588,7 @@
                                 <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
                                 Quantity
                             </td>
-                            <td style="font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; width: 12%;">Total Price (RM)</td>
+                            <td style="font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; width: 35%;">Total Price (RM)</td>
                         </tr>
 
                     
@@ -8674,10 +8674,12 @@
 
 
 
+       <div class="row">
+           <div class="col-xs-12"></div>
+       </div>
        
-       
-
-        <div class="row">
+ 
+        <div class="row" style="margin-top:100px;">
             <div class="col-xs-12 pl-1 pr-1 mt-2">
                 <p style="font-size: 9pt; font-weight: 600; text-align: center;">
                     This statement is computer generated, no signature is required.

@@ -11,6 +11,7 @@ use App\Models\Purchases\Order;
 use App\Models\Purchases\Purchase;
 use App\Http\Controllers\Controller;
 use App\Models\Users\Panels\PanelInfo;
+use App\Models\Users\Dealers\DealerInfo;
 
 class ManagementController extends Controller
 {
@@ -188,11 +189,96 @@ class ManagementController extends Controller
         return view('management.dealer.index');
     }
 
-    // View Profile of the dealer/panel
-    public function profile(){
-       //$user=Auth::user();
-        return view('management.dealer.profile');
+    // Profile for Dealer
+    public function dealerProfile(){
+        $dealer_id= User::find(Auth::user()->id);
+        $dealer_id= $dealer_id->dealerInfo->account_id;
+        $dealerProfile= new DealerInfo();
+        $dealerProfile= $dealerProfile->where('account_id',$dealer_id)->first();
+      
+        return view('management.dealer.profile')->with('dealerProfile',$dealerProfile);
     }
+
+    
+    //Edit Profile for Dealer
+    public function editdealerProfile(){
+        $dealer_id= User::find(Auth::user()->id);
+        $dealer_id= $dealer_id->dealerInfo->account_id;
+        $dealerProfile= new DealerInfo();
+        $dealerProfile= $dealerProfile->where('account_id',$dealer_id)->first();
+      
+        return view('management.dealer.edit-profile')->with('dealerProfile',$dealerProfile);
+    }
+
+    /** Update company profile**/
+
+    public function updateDealerProfile(Request $request,$id){
+
+        $this->validate($request, array(
+            
+            'dealer_billing_address_1' => 'required',
+            'dealer_billing_address_2' => 'required',
+            'dealer_billing_address_3' => 'required',
+            'dealer_billing_postcode' => 'required|digits:5',
+            'dealer_billing_city' => 'required',
+            'dealer_shipping_address_1' => 'required',
+            'dealer_shipping_address_2' => 'required',
+            'dealer_shipping_address_3' => 'required',
+            'dealer_shipping_postcode' => 'required|digits:5',
+            'dealer_shipping_city' => 'required',
+            'dealer_mobile_contact' => 'required|digits:10'
+        ));
+
+        
+        $dealerProfile= new DealerInfo();
+        $dealerProfile= $dealerProfile->where('account_id',$id)->first();
+        $dealerProfile->full_name=$request->input('dealer_name');
+        $dealerProfile->save();
+
+        $billing_address= $dealerProfile->billingAddress;
+        $billing_address->address_1=$request->input('dealer_billing_address_1');
+        $billing_address->address_2=$request->input('dealer_billing_address_2');
+        $billing_address->address_3=$request->input('dealer_billing_address_3');
+        $billing_address->postcode=$request->input('dealer_billing_postcode');
+        $billing_address->city=$request->input('dealer_billing_city');
+        $billing_address->save();
+
+
+
+
+        $shipping_address= $dealerProfile->shippingAddress;
+        $shipping_address->address_1=$request->input('dealer_shipping_address_1');
+        $shipping_address->address_2=$request->input('dealer_shipping_address_2');
+        $shipping_address->address_3=$request->input('dealer_shipping_address_3');
+        $shipping_address->postcode=$request->input('dealer_shipping_postcode');
+        $shipping_address->city=$request->input('dealer_shipping_city');
+        $shipping_address->save();
+
+
+       $dealer_mobile_contact= $dealerProfile->dealerMobileContact;
+       $dealer_mobile_contact->contact_num=$request->input('dealer_mobile_contact');
+       $dealer_mobile_contact->save();
+     
+
+
+
+
+     
+ 
+ 
+       
+        if ($dealerProfile && $billing_address && $shipping_address && $dealer_mobile_contact) {
+            return redirect()->route('shop.dashboard.dealer.profile')->with('dealerProfile',$dealerProfile)->with(['successful_message' => 'Profile updated successfully']);
+     
+        } else {
+            return redirect()->route('shop.dashboard.dealer.profile')->with('dealerProfile',$dealerProfile)->with(['error_message' => 'Failed to update profile']);
+           
+        }
+
+    }
+
+
+
 
     // Change Password
     public function modifyPassword(){
