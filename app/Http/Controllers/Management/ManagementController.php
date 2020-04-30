@@ -183,8 +183,8 @@ class ManagementController extends Controller
 
 
 
- // Home Page for Dealer
-    public function index_dealer(){
+      // Home Page for Dealer
+   public function index_dealer(){
         return view('management.dealer.index');
     }
 
@@ -199,9 +199,12 @@ class ManagementController extends Controller
         return view('management.dealer.modifypassword');
     }
 
-    // View Statments for dealers
+ // View Statments for dealers
 public function statements(){
-    return view('management.dealer.statements');
+
+    $pdf = PDF::loadView('documents.statement.monthly-statement')->setPaper('A4');
+    return $pdf->stream('statement.pdf');
+   
 }
 
 // View Person In Charge for panel
@@ -214,3 +217,4 @@ public function personInCharge(){
 
 
 } 
+

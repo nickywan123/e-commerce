@@ -131,10 +131,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::view('/statement', 'management.panel.statement');
 
         //Dashboard-Dealer (Group them in future)
-        Route::get('/dealer', 'Management\ManagementController@index_dealer');
+        Route::get('/dealer/index', 'Management\ManagementController@index_dealer');
         Route::get('/profile', 'Management\ManagementController@profile');
         Route::get('/password', 'Management\ManagementController@modifyPassword');
-        Route::get('/statements', 'Management\ManagementController@statements');
+        Route::get('/dealer/statements', 'Management\ManagementController@statements');
 
         // Product Management
         Route::group(
