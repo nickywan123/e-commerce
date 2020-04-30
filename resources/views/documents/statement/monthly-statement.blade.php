@@ -8466,69 +8466,51 @@
                 <h4 style="text-align:center; background-color:grey; color:black; border-style: solid;  border-color: black; ">MONTHLY SUMMARY</h4>
             </div>
         </div>
-    
+   
+        {{---Monthly Summary box--}}
 
         <div class="row">
             <div class="col-xs-12 pl-1 pr-1">
                 <div style="border: 1px solid #000; width: 100%; height: 225px;">
                     <table style="width: 110%;">
                         <tr style="text-align: left; font-weight: 600;">
-                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 40%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 624px;"></div>
+                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 50%;">
+                                <div style="position: absolute; top: 0; right: 0; margin-right: 0px;  height: 624px;"></div>
                                 Categories
                             </td>
                            
                            
-                            <td style="text-align:right; position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;width: 20%">
+                            <td style="text-align:left; position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;width: 20%">
                                 <div style="position: absolute; top: 0; right: 0; margin-right: -1px; height: 624px;"></div>
                                 Quantity
                             </td>
                            
-                            <td style="text-align:right; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; width: 40%;">Amount (RM)</td>
+                            <td style="text-align:left; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; width: 20%;">Amount (RM)</td>
                         </tr>
 
 
                        
                         <tr style="font-size: 10pt;">
-                            <td style="padding: 16px; text-align: center; vertical-align: top;">
-                            
-                              
+                           
+                            <td style=" padding: 16px; vertical-align: top;">
+                               Bed & Mattresses
                             </td>
-                            <td style="padding: 16px; vertical-align: top;">
-                               
+                           
+                          
+                            <td style="padding: 16px; text-align: left; vertical-align: top;">
+                             1
                             </td>
-                            <td style="padding: 6px; vertical-align: top;">
-                                <table>
-                                    <tr style="font-size: 10pt;">
-                                        <td style="padding: 4px; vertical-align: top;">
-                                            {{-- <img src="{{ asset('storage/' . $item->product->parentProduct->defaultImage->path . '/' . $item->product->parentProduct->defaultImage->filename) }}" alt="{{ $item->product->parentProduct->name }}" style="width: 105px; height: 90px; border-radius: 10px;"> --}}
-                                        </td>
-                                        <td style="padding: 14px; vertical-align: top;">
-                                            <p style="margin-bottom: 5px;">
-                                             
-                                            </p>
-                                            <p style="margin: 0;">
-                                              
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td style="padding: 16px; text-align: center; vertical-align: top;">
-                        
-                            </td>
-                            <td style="padding: 16px; text-align: center; vertical-align: top;">
-                             
-                            </td>
-                            <td style="padding: 16px; text-align: center; vertical-align: top;">
-                              
+                            <td style="padding: 16px; text-align: left; vertical-align: top;">
+                             3,999 
                             </td>
                         </tr>
+                        
                        
                     </table>
                 </div>
             </div>
 
+           
             <div class="col-xs-12 pl-1 pr-1">
                 <div style="width: 100%;">
                     <table style="width: 100%; font-size: 10pt;">
@@ -8583,27 +8565,27 @@
 
         <div class="row">
             <div class="col-xs-12 pl-1 pr-1">
-                <div style="border: 1px solid #000; width: 100%; height: 625px;">
+                <div style="border: 1px solid #000; width: 100%; height: 525px;">
                     <table style="width: 100%;">
                         <tr style="text-align: center; font-weight: 600;">
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 10%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 624px;"></div>
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
                                 Date.
                             </td>
                             <td style="position:relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 12%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 624px;"></div>
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
                                 Invoice No.
                             </td>
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 43%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 624px;"></div>
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
                                 Description
                             </td>
-                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 16%">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 624px;"></div>
+                            <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 15%">
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
                                 Unit Price (RM)
                             </td>
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 12%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 624px;"></div>
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
                                 Quantity
                             </td>
                             <td style="font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; width: 12%;">Total Price (RM)</td>
@@ -8685,22 +8667,18 @@
                                 RM1221
                             </td>
                         </tr>
-                      
-             
+                       
                     </table>
                 </div>
             </div>         
 
 
-        <div style="margin-top: 45px; width: 100%;">
-
-        </div>
 
        
-        <div style="margin-top: 55px; width: 100%;"></div>
+       
 
         <div class="row">
-            <div class="col-xs-12 pl-1 pr-1">
+            <div class="col-xs-12 pl-1 pr-1 mt-2">
                 <p style="font-size: 9pt; font-weight: 600; text-align: center;">
                     This statement is computer generated, no signature is required.
                 </p>
@@ -8715,7 +8693,7 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-4 pl-1 pr-1" style="border-right: 1px solid #000000;">
+            <div class="col-xs-4 pl-3 pr-1" style="border-right: 1px solid #000000;">
                 <p style="padding-top: 5px; margin: 0; font-size: 10pt; font-weight: 600;">
                     DC SIGNATURE LIVINGSTYLE SDN BHD
                 </p>
