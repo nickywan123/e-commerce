@@ -19,8 +19,13 @@ class ValueRecordsController extends Controller
         $user = User::find(Auth::user()->id);
         // Return purchases that user have paid
         $statuses = [3001, 3002, 3003];
+        $order_status = [1000];
         $purchases = $user->purchases->whereIn('purchase_status', $statuses);
-        // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
+        // $orders = $user->purchases->orders->whereIn('order_status', $order_status)->get();
+        // $orderCount = $orders->count();
+        // dd($orderCount);
+
+
         return view('shop.customer-dashboard.value-records.index')->with('purchases', $purchases);
     }
 
@@ -36,18 +41,18 @@ class ValueRecordsController extends Controller
         return view('shop.customer-dashboard.value-records.open-orders')->with('purchases', $purchases);
     }
 
-     /*******Return Order Status in customer dashboard******/
+    /*******Return Order Status in customer dashboard******/
 
-     public function orderStatus()
-     {
-         $user = User::find(Auth::user()->id);
-         // Return purchases that user have paid
-         $statuses = [3001, 3002, 3003];
-         $purchases = $user->purchases->whereIn('purchase_status', $statuses);
-         // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
-         return view('shop.customer-dashboard.value-records.order-status')->with('purchases', $purchases);
-     }
- 
+    public function orderStatus()
+    {
+        $user = User::find(Auth::user()->id);
+        // Return purchases that user have paid
+        $statuses = [3001, 3002, 3003];
+        $purchases = $user->purchases->whereIn('purchase_status', $statuses);
+        // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
+        return view('shop.customer-dashboard.value-records.order-status')->with('purchases', $purchases);
+    }
+
 
 
 

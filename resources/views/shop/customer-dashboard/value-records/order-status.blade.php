@@ -149,7 +149,8 @@
             </div>
         </div>
         @else
-        <div>There are no orders found.</div>
+        <strong class="mr-2"> There are no orders found.</strong>
+        <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
         @endif
     </div>
 </div>
@@ -330,12 +331,25 @@
                 </div>
                 @else
                  
-                        <div class="row">
-                            <div class="col-12">
-                                <h4>There are no orders found.</h4>
-                            </div>
-                            
-                        </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                      
+                           <h6>  There are no orders found.</h6>
+                         
+                       
+                    </div>
+                    
+                </div>
+
+                <div class="row ml-2 mb-4">
+                    <div class="col-12">
+                      
+                        <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
+                         
+                       
+                    </div>
+                    
+                </div>
                        
               
                 @endif
