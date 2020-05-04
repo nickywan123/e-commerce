@@ -14,11 +14,10 @@
             </div>
 
 
-            <div class="col-md-3 mt-5"><strong>3</strong> orders placed in
+            <div class="col-md-3 mt-5"><strong> {{$purchases->sum('orders_count')}}</strong> orders placed in
                 <select style="background-color:lightgrey" name="year">
                     <option value="year">2020 </option>
-                    <option value="year">2019 </option>
-                    <option value="year">2018 </option>
+        
                 </select>
             </div>
 

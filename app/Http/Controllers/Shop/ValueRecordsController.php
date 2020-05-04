@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Shop;
 
 use PDF;
 use App\Models\Users\User;
+use App\Models\Purchases\Purchase;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -19,11 +20,11 @@ class ValueRecordsController extends Controller
         $user = User::find(Auth::user()->id);
         // Return purchases that user have paid
         $statuses = [3001, 3002, 3003];
-        $order_status = [1000];
-        $purchases = $user->purchases->whereIn('purchase_status', $statuses);
-        // $orders = $user->purchases->orders->whereIn('order_status', $order_status)->get();
-        // $orderCount = $orders->count();
-        // dd($orderCount);
+        // $order_status = [1000];
+        // $purchases = $user->purchases->whereIn('purchase_status', $statuses);
+        // $totalOrders = $purchases->sum('orders_count');
+        $purchases = Purchase::where('user_id', $user->id)->whereIn('purchase_status', $statuses)
+            ->withCount('orders')->get();
 
 
         return view('shop.customer-dashboard.value-records.index')->with('purchases', $purchases);
@@ -36,8 +37,11 @@ class ValueRecordsController extends Controller
         $user = User::find(Auth::user()->id);
         // Return purchases that user have paid
         // $statuses = [3001, 3002, 3003];
-        $purchases = $user->purchases->where('purchase_status', 3000);
+        // $purchases = $user->purchases->where('purchase_status', 3000)->withCount('orders')->get();
         // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
+        $purchases = Purchase::where('user_id', $user->id)->where('purchase_status', 3000)
+            ->withCount('orders')->get();
+
         return view('shop.customer-dashboard.value-records.open-orders')->with('purchases', $purchases);
     }
 
@@ -48,8 +52,10 @@ class ValueRecordsController extends Controller
         $user = User::find(Auth::user()->id);
         // Return purchases that user have paid
         $statuses = [3001, 3002, 3003];
-        $purchases = $user->purchases->whereIn('purchase_status', $statuses);
-        // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();
+        // $purchases = $user->purchases->whereIn('purchase_status', $statuses);
+        $purchases = Purchase::where('user_id', $user->id)->whereIn('purchase_status', $statuses)
+            ->withCount('orders')->get();
+
         return view('shop.customer-dashboard.value-records.order-status')->with('purchases', $purchases);
     }
 
