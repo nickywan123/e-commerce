@@ -103,6 +103,42 @@
                         @endforeach
                     </div>
 
+                    <h5 class="mt-4">Product Variations</h5>
+
+                    <div class="row">
+                        <div class="col-12 col-md-12">
+                            <div class="form-row">
+                                <div class="col-12 col-md-3 form-group">
+                                    <label for="attribute_type">Variation Type</label>
+                                    <select name="attribute_type" id="attribute_type" class="form-control select2 my-auto">
+                                        <option value="color">Color</option>
+                                        <option value="size">Size</option>
+                                        <option value="light-temperature">Light Temperature</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 col-md-3 form-group">
+                                    <label for="attribute_name">Variation Name</label>
+                                    <input type="text" name="attribute_name" id="attribute_name" class="form-control" placeholder="Yellow / 120cm * 200cm / Daylight">
+                                </div>
+
+                                <div class="col-12 col-md-3 form-group">
+                                    <label for="color_hex">Variation Color <small>(Leave blank if not applicable.)</small></label>
+                                    <div id="color_picker" class="input-group">
+                                        <input type="text" name="color_hex" id="color_hex" class="form-control">
+                                        <span class="input-group-append">
+                                            <span class="input-group-text colorpicker-input-addon"><i></i></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-3 text-center text-md-left">
+                                    <button type="button" id="add_more_variation" class="btn btn-primary add-more-button">Add more</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="row">
                         <div class="col-12 text-right">
@@ -123,6 +159,16 @@
     .dz-image img {
         max-width: 100%;
     }
+
+    .add-more-button {
+        margin-top: 30px;
+    }
+
+    @media (max-width: 767px) {
+        .add-more-button {
+            margin-top: 0;
+        }
+    }
 </style>
 @endpush
 
@@ -137,6 +183,8 @@
             minHeight: null, // set minimum height of editor
             maxHeight: null, // set maximum height of editor
         });
+
+        $('#color_picker').colorpicker();
     });
 
     // Dropzone

@@ -215,12 +215,22 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::put('/update/{productId}', 'Administrator\Product\ProductController@update')
                 ->name('administrator.products.update');
 
-
             // Publish Product
             Route::get('/product-publish/{productId}', 'Administrator\Product\ProductController@publishProduct');
 
             // Unpublish Product
             Route::get('/product-unpublish/{productId}', 'Administrator\Product\ProductController@unpublishProduct');
+
+            // Panels
+            Route::group(['prefix' => 'panels'], function () {
+                // Index
+                Route::get('/', 'Administrator\Product\PanelProductController@index')
+                    ->name('administrator.products.panels');
+
+                // Create
+                Route::post('/create', 'Administrator\Product\PanelProductController@create')
+                    ->name('administrator.products.panels.create');
+            });
         });
     });
 

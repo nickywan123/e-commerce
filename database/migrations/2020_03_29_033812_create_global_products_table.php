@@ -22,7 +22,7 @@ class CreateGlobalProductsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('quality_id')->default(1);
             $table->decimal('product_rating', 2, 1)->default(0);
-            $table->integer('product_status')->default(1);
+            $table->integer('product_status')->default(0);
             $table->timestamps();
         });
     }

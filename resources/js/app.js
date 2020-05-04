@@ -12,6 +12,8 @@ require("slick-carousel");
 require("ion-rangeslider");
 require("select2");
 require("dropzone");
+require("bootstrap-colorpicker");
+require("inputmask");
 
 window.Dropzone = require('dropzone');
 window.Vue = require('vue');

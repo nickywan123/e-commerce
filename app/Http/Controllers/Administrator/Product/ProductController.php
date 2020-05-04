@@ -29,7 +29,7 @@ class ProductController extends Controller
     {
         $products = Product::where('product_status', '!=', 0)->paginate(20);
 
-        return view('administrator.products.index')
+        return view('administrator.products.global.index')
             ->with('products', $products);
     }
 
@@ -42,9 +42,10 @@ class ProductController extends Controller
     {
         //
         $newProduct = new Product();
+        $newProduct->product_status = 0;
         $newProduct->save();
 
-        return redirect(route('administrator.products.edit', ['productId' => $newProduct->id]));
+        return redirect(route('administrator.products.global.edit', ['productId' => $newProduct->id]));
     }
 
     /**
@@ -132,7 +133,7 @@ class ProductController extends Controller
             return response()->json($result);
         }
 
-        return view('administrator.products.edit')
+        return view('administrator.products.global.edit')
             ->with('product', $product)
             ->with('categories', $categories);
     }
@@ -153,6 +154,7 @@ class ProductController extends Controller
         $product->details = $request->input('product_details');
         $product->description = $request->input('product_description');
         $product->quality_id = $request->input('product_quality');
+        $product->product_status = 0;
         $product->save();
 
         $product->categories()->sync($categories);
