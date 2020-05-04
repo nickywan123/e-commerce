@@ -12,12 +12,12 @@
                     <i class="nav-icon icon-drop"></i> Products</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="/administrator/products" class="nav-link">
                             <i class="nav-icon icon-puzzle"></i> All Products
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="/administrator/products/create" class="nav-link">
                             <i class="nav-icon icon-puzzle"></i> New Products
                         </a>
                     </li>

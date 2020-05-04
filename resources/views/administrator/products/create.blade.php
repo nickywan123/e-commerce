@@ -5,19 +5,24 @@
 @endsection
 
 @section('content')
+{{ $newProduct }}
 <div class="card shadow-sm">
     <div class="card-body">
-        <form action="">
-            <div class="row">
-                <div class="col-12 col-md-4">
 
-                </div>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <form method="post" action="{{ route('administrator.products.store-image', ['productId' => $newProduct->id]) }}" enctype="multipart/form-data" class="dropzone" id="dropzone">
+                    @csrf
+                </form>
+            </div>
 
-                <div class="col-12 col-md-8">
+
+            <div class="col-12 col-md-8">
+                <form method="post" action="{{ route('administrator.products.update', ['productId' => $newProduct->id]) }}">
                     <div class="form-row">
                         <div class="col-12 col-md-6 form-group">
                             <label for="product_name">Product Name</label>
-                            <input type="text" name="product_name" id="product_name" class="form-control">
+                            <input type="text" name="product_name" id="product_name" class="form-control" value="{{ $newProduct->name }}">
                         </div>
 
                         <div class="col-12 col-md-6 form-group">
@@ -59,9 +64,17 @@
                             </select>
                         </div>
                     </div>
-                </div>
+
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <button type="button" class="btn btn-danger">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+
+        </div>
     </div>
 </div>
 @endsection
@@ -71,6 +84,54 @@
 <script>
     $(document).ready(function() {
         $('.select2').select2();
+
+        // Dropzone
+        Dropzone.options.dropzone = {
+            maxFilesize: 12,
+            renameFile: function(file) {
+                var dt = new Date();
+                var time = dt.getTime();
+                return time + file.name;
+            },
+            acceptedFiles: ".jpeg,.jpg,.png,.gif",
+            addRemoveLinks: true,
+            timeout: 50000,
+            removedfile: function(file) {
+                var name = file.upload.filename;
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    },
+                    type: 'POST',
+                    url: '{{ url("delete") }}',
+                    data: {
+                        filename: name
+                    },
+                    success: function(data) {
+                        console.log("File has been successfully removed!!");
+                    },
+                    error: function(e) {
+                        console.log(e);
+                    }
+                });
+                var fileRef;
+                return (fileRef = file.previewElement) != null ?
+                    fileRef.parentNode.removeChild(file.previewElement) : void 0;
+            },
+
+            success: function(file, response) {
+                console.log(response);
+            },
+            error: function(file, response) {
+                return false;
+            }
+        };
+
+        $('#addProductForm').on('submit', function(e) {
+            e.preventDefault();
+            alert('Hello');
+        })
+
     });
 </script>
 @endpush

@@ -16,6 +16,8 @@
     <!-- Main styles for this application-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Summernote Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-bs4.min.css" rel="stylesheet">
     <style>
         .sidebar .sidebar-nav {
             width: 100%;
@@ -44,6 +46,8 @@
             color: #ffffff;
         }
     </style>
+    @stack('style')
+
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -71,6 +75,9 @@
 
     <!-- Main scripts for this application -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!-- Summernote -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-bs4.min.js"></script>
+    @stack('script')
 </body>
 
 </html>

@@ -11,7 +11,9 @@ require("signature_pad");
 require("slick-carousel");
 require("ion-rangeslider");
 require("select2");
+require("dropzone");
 
+window.Dropzone = require('dropzone');
 window.Vue = require('vue');
 
 /**

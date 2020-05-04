@@ -13,7 +13,9 @@
 
 // Route for QR Code
 
+use App\Models\Globals\Products\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 Route::get('qr-code-g', function () {
     QrCode::size(500)
@@ -192,6 +194,33 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             // Create product.
             Route::get('/create', 'Administrator\Product\ProductController@create')
                 ->name('administrator.products.create');
+
+            // Image upload.
+            Route::post('/image-upload/{productId}', 'Administrator\Product\ProductController@storeImage')
+                ->name('administrator.products.store-image');
+
+            // Image delete.
+            Route::post('/image-delete/{productId}', 'Administrator\Product\ProductController@deleteImage')
+                ->name('administrator.products.delete-image');
+
+            // Store product.
+            Route::post('/store', 'Administrator\Product\ProductController@store')
+                ->name('administrator.products.store');
+
+            // Edit product.
+            Route::get('/edit/{productId}', 'Administrator\Product\ProductController@edit')
+                ->name('administrator.products.edit');
+
+            // Update product.
+            Route::put('/update/{productId}', 'Administrator\Product\ProductController@update')
+                ->name('administrator.products.update');
+
+
+            // Publish Product
+            Route::get('/product-publish/{productId}', 'Administrator\Product\ProductController@publishProduct');
+
+            // Unpublish Product
+            Route::get('/product-unpublish/{productId}', 'Administrator\Product\ProductController@unpublishProduct');
         });
     });
 
@@ -235,7 +264,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         // Return My Perfect List
         Route::get('/dashboard/wishlist/index', 'Shop\ValueRecordsController@wishlist');
-        
+
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
         Route::get('/dashboard/reset-password', 'Shop\ForgotPasswordController@sendEmailReset')->name('shop.forgot.password');
@@ -336,4 +365,18 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 // Test Routes
 Route::get('/administrator', function () {
     return view('layouts.administrator.main');
+});
+
+Route::get('/delete-image', function () {
+    $product = Product::findOrFail(62);
+    $path = public_path('/storage/uploads/images/products/' . $product->id . '/');
+    $filename = '62-1588318949.png';
+    $imagePath = $path . $filename;
+    if (File::exists($path . $filename)) {
+        File::delete($path . $filename);
+        $message = 'true';
+    } else {
+        $message = 'false';
+    }
+    return $message;
 });
