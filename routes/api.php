@@ -56,3 +56,10 @@ Route::get(
     '/category/{categoryId}',
     'API\Shop\CategoryController@getChildCategory'
 );
+
+// Get category details with child and products.
+
+Route::get(
+    '/category/test/{categoryId}',
+    'API\Shop\CategoryController@test'
+);

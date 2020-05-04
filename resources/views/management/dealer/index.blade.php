@@ -12,6 +12,7 @@
  </div>
 </div>
 
+<br>
 
 <div class="row">
  <div class="offset-1 col-11">
@@ -39,51 +40,22 @@
         <tbody>
           <tr>
             <th scope="row">2020</th>
-            <td><a href="/management/dealer/statements">Statement</a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td >-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="/management/dealer/statements/{{$dealer_statement->month}}">{{$dealer_statement->month}}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
 
             
           </tr>
-          <tr>
-            <th scope="row">2021</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">2022</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+         
         </tbody>
       </table>
  </div>

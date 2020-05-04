@@ -41,15 +41,17 @@ class DealerInfo extends Model
     /**
      * Get dealer billing address.
      */
-    public function billingAddress(){
-        return $this->hasOne('App\Models\Users\Dealers\DealerAddress','account_id','account_id')->where('is_mailing_address', 1);
+    public function billingAddress()
+    {
+        return $this->hasOne('App\Models\Users\Dealers\DealerAddress', 'account_id', 'account_id')->where('is_mailing_address', 1);
     }
 
-      /**
+    /**
      * Get dealer shipping address.
      */
-    public function shippingAddress(){
-        return $this->hasOne('App\Models\Users\Dealers\DealerAddress','account_id','account_id')->where('is_shipping_address', 1);
+    public function shippingAddress()
+    {
+        return $this->hasOne('App\Models\Users\Dealers\DealerAddress', 'account_id', 'account_id')->where('is_shipping_address', 1);
     }
 
     /**
@@ -64,10 +66,10 @@ class DealerInfo extends Model
     /*****
      * Get mobile contact number of dealer
      ***/
- public function dealerMobileContact(){
-    return $this->hasOne('App\Models\Users\Dealers\DealerContact','account_id','account_id')->where('is_mobile', 1);
-    
- }
+    public function dealerMobileContact()
+    {
+        return $this->hasOne('App\Models\Users\Dealers\DealerContact', 'account_id', 'account_id')->where('is_mobile', 1);
+    }
 
     /**
      * Get largest dealer account id.

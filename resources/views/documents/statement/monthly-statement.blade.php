@@ -8357,7 +8357,7 @@
                                NAME
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0; min-width:120px; ">
-                                Dealer
+                                {{$dealerProfile->full_name}}
                             </td>
                         </tr>
                                           
@@ -8367,7 +8367,7 @@
                               ADDRESS
                          </td>
                          <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                              Address1
+                              {{$dealerProfile->billingAddress->address_1}}
                          </td>
                        </tr>
            
@@ -8376,7 +8376,7 @@
                                
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                Address2
+                                {{$dealerProfile->billingAddress->address_2}}
                             </td>
                         </tr>
                         <tr>  
@@ -8384,7 +8384,7 @@
                                
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                Address3
+                                {{$dealerProfile->billingAddress->address_3}}
                             </td>
                         </tr>
                         <tr>  
@@ -8392,7 +8392,7 @@
                                
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                Kuala Lumpur
+                                 {{$dealerProfile->billingAddress->postcode}}, {{$dealerProfile->billingAddress->city}}
                             </td>
                         </tr>
                         <tr>
@@ -8400,7 +8400,7 @@
                                 CONTACT NO.
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                             012-3940293
+                                {{$dealerProfile->dealerMobileContact->contact_num}}
                             </td>
                         </tr>
                         
@@ -8424,7 +8424,7 @@
                                 DATE
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0; width:200px;">
-                                                 
+                                  {{$dealer_statement->purchase_date}}               
                             </td>
                         </tr>
                         <tr>
@@ -8432,7 +8432,7 @@
                                 BUSINESS MONTH
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                          
+                                 {{$dealer_statement->month}}         
                             </td>
                         </tr>
                         <tr>
@@ -8440,7 +8440,7 @@
                                 DEALER CODE
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                -
+                                {{$dealer_statement->account_id}}    
                             </td>
                         </tr>
                         <tr>

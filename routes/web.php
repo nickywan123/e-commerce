@@ -136,7 +136,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/dealer/profile/edit', 'Management\ManagementController@editdealerProfile')->name('shop.dashboard.dealer.profile.edit');
         Route::patch('/dealer/profile-update/{id}', 'Management\ManagementController@updateDealerProfile')->name('shop.dashboard.dealer.profile.update');
         Route::get('/password', 'Management\ManagementController@modifyPassword');
-        Route::get('/dealer/statements', 'Management\ManagementController@statements');
+        Route::get('/dealer/statements/{month}', 'Management\ManagementController@statements');
 
         // Product Management
         Route::group(
@@ -223,7 +223,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         // Return My Perfect List
         Route::get('/dashboard/wishlist/index', 'Shop\ValueRecordsController@wishlist');
-        
+
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
         Route::get('/dashboard/reset-password', 'Shop\ForgotPasswordController@sendEmailReset')->name('shop.forgot.password');
