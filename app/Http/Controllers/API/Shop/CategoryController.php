@@ -4,43 +4,34 @@ namespace App\Http\Controllers\API\Shop;
 
 use App\Http\Controllers\API\ResponseController;
 use App\Models\Categories\Category;
+use App\Http\Resources\Category as CategoryResource;
+use App\Http\Resources\CategoryCollection as CategoryResourceCollection;
+use App\Http\Resources\Image as ImageResource;
+use App\Models\Globals\Image;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class CategoryController extends ResponseController
 {
     /**
-     * Return all category.
+     * Return all categories.
+     * api/categories/
      */
-    public function getCategories(Request $request)
+    public function getCategories()
     {
-        try {
-            $category = Category::all();
-        } catch (ModelNotFoundException $e) {
-            $error = 'The requested resource is not available.';
-            return $this->sendError($error, 404);
-        }
+        $categories = new CategoryResourceCollection(Category::all());
 
-        return $this->sendResponse($category);
+        return $this->sendResponse($categories);
     }
 
     /**
-     * Return category with products, product images, product sold by panels.
+     * Return a category based on passed id.
+     * api/categories/{id}
      */
-    public function getChildCategory(Request $request, $categoryId)
+    public function getCategory($id)
     {
-        try {
-            $category = Category::where('id', $categoryId)
-                ->firstOrFail();
-        }
-        // catch(Exception $e) catch any exception
-        catch (ModelNotFoundException $e) {
-            $error = 'The requested resource is not available.';
-            return $this->sendError($error, 404);
-        }
+        $category = new CategoryResource(Category::find($id));
 
-        $childCategories = $category->childCategories;
-
-        return $this->sendResponse($childCategories);
+        return $this->sendResponse($category);
     }
 }
