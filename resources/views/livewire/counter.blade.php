@@ -130,12 +130,12 @@
                             </div>
                         </div>
                     </li>
-                  
+                    
                    <div style="margin-top:10px; margin-left: 50px; ">
                     <a style="color:#fbcc34; margin-right:20px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">0</span></a>
-                    <a style="color:#fbcc34;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes"  id="cart-quantity">{{$getCartQuantity}} </span> </a>
                     
-                </div>
+                    <a style="color:#fbcc34;" href="/shop/cart" id="cart-quantity" ><i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">{{ $count }}</span> </a>
+                   </div>
                                        
                 </ul>
             </div>
@@ -146,43 +146,3 @@
     </div>
 </div>
 
-<!-- <div class="bottom-bar shadow-sm" style="border-bottom: 3px solid #fccb34;">
-    <div class="container-90">
-        <div class="row">
-            <div class="col-sm-12 justify-content-end-md justify-content-center-sm mb-1">
-                <ul class="nav justify-content-center-sm justify-content-end-md float-right-md">
-                    <li class="nav-item m-1">
-                        <a class="nav-link" href="/shop/wishlist"><i class="fa fa-heart-o font-15 mr-1"></i> My Wishlist</a>
-                    </li>
-                    <li class="nav-item m-1">
-                        <a class="nav-link" href="/shop/cart"><i class="fa fa-shopping-cart font-15 mr-1"></i> My Cart</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-@push('script')
-
-<script>
-
-
-
-// function removeCartItemQuantity(){
-//             //Make an AJAX request to navigation bar
-//             $.ajax({
-//                 url: '/web/cart/remove-cart',
-//                 type: "get",
-//                 success: function(result) {
-//                     CartQuantity.html(result);
-//                 },
-//                 error: function(result) {
-//                     console.log(result.status + ' ' + result.statusText);
-//                 }
-//             });
-//         }
-
-</script>
-
-@endpush
