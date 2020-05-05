@@ -28,7 +28,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('product_status', '!=', 0)->paginate(20);
+        $products = Product::where('product_status', '!=', 0)
+            ->orderBy('id', 'ASC')
+            ->paginate(20);
 
         return view('administrator.products.global.index')
             ->with('products', $products);
@@ -149,24 +151,33 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $categories =  $request->input('categories');
+        $postAttributes = $request->input('attribute_id');
+
         $product = Product::findOrFail($id);
         $product->name = $request->input('product_name');
         $product->product_code = $request->input('product_code');
         $product->details = $request->input('product_details');
         $product->description = $request->input('product_description');
         $product->quality_id = $request->input('product_quality');
-        $product->product_status = 0;
         $product->save();
 
         $product->categories()->sync($categories);
 
+        $productAttributes = $product->attributes;
+
+        foreach ($productAttributes as $productAttribute) {
+            if (!in_array($productAttribute->id, $postAttributes)) {
+                $productAttribute->delete();
+            }
+        }
+
         foreach ($request->input('attribute_type') as $key => $attributeType) {
-            $attribute = new ProductAttribute;
-            $attribute->product_id = $product->id;
-            $attribute->attribute_type = $attributeType;
-            $attribute->attribute_name = $request->input('attribute_name')[$key];
-            $attribute->color_hex = $request->input('color_hex')[$key];
-            $attribute->save();
+            $newAttribute = new ProductAttribute;
+            $newAttribute->product_id = $product->id;
+            $newAttribute->attribute_type = $attributeType;
+            $newAttribute->attribute_name = $request->input('attribute_name')[$key];
+            $newAttribute->color_hex = $request->input('color_hex')[$key];
+            $newAttribute->save();
         }
 
         return redirect('/administrator/products');

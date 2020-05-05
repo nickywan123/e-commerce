@@ -77,6 +77,19 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- Summernote -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-bs4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            <?php
+            if (Session::has('success')) {
+                echo 'toastr.success("' . Session::get('success') . '");';
+            }
+
+            if (Session::has('error')) {
+                echo 'toastr.error("' . Session::get('error') . '");';
+            }
+            ?>
+        });
+    </script>
     @stack('script')
 </body>
 

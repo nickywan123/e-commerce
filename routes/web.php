@@ -230,6 +230,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
                 // Create
                 Route::post('/create', 'Administrator\Product\PanelProductController@create')
                     ->name('administrator.products.panels.create');
+
+                // Store
+                Route::post('/store', 'Administrator\Product\PanelProductController@store')
+                    ->name('administrator.products.panels.store');
             });
         });
     });

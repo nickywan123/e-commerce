@@ -107,6 +107,7 @@
 
                     @if($product->attributes->count() > 0)
                     @foreach($product->attributes as $attribute)
+                    <input type="hidden" name="attribute_id[]" value="{{ $attribute->id }}">
                     <div class="row add-more-div">
                         <div class="col-12 col-md-12">
                             <div class="form-row">

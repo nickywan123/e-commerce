@@ -61,7 +61,8 @@
             </div>
 
             <div class="col-12 col-md-8">
-                <form action="">
+                <form action="/administrator/products/panels/store" method="POST">
+                    @csrf
                     <div class="form-row">
                         <div class="col-12 col-md-6 form-group">
                             <label for="panel_id">Panel Account Id</label>
@@ -134,7 +135,7 @@
                             <div class="form-row">
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_type">Variation Type</label>
-                                    <select name="attribute_type[1]" id="attribute_type" class="form-control my-auto">
+                                    <select name="attribute_type[]" id="attribute_type" class="form-control my-auto">
                                         <option value="">Select Variation Type</option>
                                         <option value="color">Color</option>
                                         <option value="size">Size</option>
@@ -144,13 +145,13 @@
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_name">Variation Name</label>
-                                    <input type="text" name="attribute_name[1]" id="attribute_name" class="form-control" placeholder="Yellow / 120cm * 200cm / Daylight">
+                                    <input type="text" name="attribute_name[]" id="attribute_name" class="form-control" placeholder="Yellow / 120cm * 200cm / Daylight">
                                 </div>
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="color_hex">Variation Color <small>(Leave blank if not applicable.)</small></label>
                                     <div class="input-group color_picker">
-                                        <input type="text" name="color_hex[1]" id="color_hex" class="form-control">
+                                        <input type="text" name="color_hex[]" id="color_hex" class="form-control">
                                         <span class="input-group-append">
                                             <span class="input-group-text colorpicker-input-addon"><i></i></span>
                                         </span>
@@ -159,12 +160,12 @@
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_price">Price <small>(Leave blank if not applicable.)</small></label>
-                                    <input type="text" name="attribute_price" id="attribute_price" class="form-control" placeholder="1000">
+                                    <input type="text" name="attribute_price[]" id="attribute_price" class="form-control" placeholder="1000">
                                 </div>
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_member_price">Member Price <small>(Leave blank if not applicable.)</small></label>
-                                    <input type="text" name="attribute_member_price" id="attribute_member_price" class="form-control" placeholder="1000">
+                                    <input type="text" name="attribute_member_price[]" id="attribute_member_price" class="form-control" placeholder="1000">
                                 </div>
 
                                 <div class="col-12 col-md-3 text-center text-md-left change-to-remove">
@@ -176,6 +177,7 @@
 
                     <div class="form-row">
                         <div class="col-12 text-right">
+                            <input type="hidden" name="global_product_id" value="{{ $product->id }}">
                             <button type="submit" class="btn btn-primary">Create Product</button>
                         </div>
                     </div>
@@ -220,6 +222,8 @@
             minHeight: null, // set minimum height of editor
             maxHeight: null, // set maximum height of editor
         });
+
+        $('.color_picker').colorpicker();
 
         $('body').on('click', '#add_more_variation', function() {
             var html = $('.add-more-div').last().clone(false);

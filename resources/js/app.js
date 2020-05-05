@@ -16,6 +16,7 @@ require("bootstrap-colorpicker");
 require("inputmask");
 
 window.Dropzone = require('dropzone');
+window.toastr = require('toastr');
 window.Vue = require('vue');
 
 /**
