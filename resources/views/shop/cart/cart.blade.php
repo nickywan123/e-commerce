@@ -1,6 +1,11 @@
 @extends('layouts.shop.main')
 
 @section('content')
+
+
+
+
+
 <div class="min-vh-100">
     <!-- Breadcrumb here -->
     <div class="container">
@@ -121,7 +126,13 @@
 
 @push('script')
 <script>
+
+
     $(document).ready(function() {
+
+       
+
+
         /* Author: Wan Shahruddin */
 
         // Assign the div with the id of loadingSpinnerDiv into a variable.
@@ -206,6 +217,7 @@
 
                     if (currentVal > input.attr('min')) {
                         input.val(currentVal - 1).change();
+                       
                     }
                     if (parseInt(input.val()) == input.attr('min')) {
                         $(this).attr('disabled', true);
@@ -215,16 +227,21 @@
 
                     if (currentVal < input.attr('max')) {
                         input.val(currentVal + 1).change();
+
                     }
                     if (parseInt(input.val()) == input.attr('max')) {
                         $(this).attr('disabled', true);
                     }
-
+                  
                 }
             } else {
                 input.val(0);
             }
         });
+
+
+
+
 
         ItemContainer.on('focusin', '.input-number', function() {
             $(this).data('oldValue', $(this).val());

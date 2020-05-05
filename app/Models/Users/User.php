@@ -65,15 +65,17 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**Get panel account id of panel**/
-    public function panelInfo(){
+    public function panelInfo()
+    {
         return $this->hasOne('App\Models\Users\Panels\PanelInfo', 'user_id');
     }
 
     /***Get dealer account id of dealer**/
 
-    public function dealerInfo(){
-         return $this->hasOne('App\Models\Users\Dealers\DealerInfo', 'user_id');
-     }
+    public function dealerInfo()
+    {
+        return $this->hasOne('App\Models\Users\Dealers\DealerInfo', 'user_id');
+    }
 
 
     /**

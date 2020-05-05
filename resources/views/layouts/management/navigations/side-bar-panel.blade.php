@@ -4,7 +4,7 @@
             <li class="nav-item ">
                 <div class="icon-text-align">
                 <a class="nav-link " href="/management/panel/orders">
-                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/orders.png')}}" alt="My Orders" style="height: 50px; width: 50px; border-radius:0px;">
+                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/value-orders.png')}}" alt="My Orders" style="height: 100px; width: 100px; border-radius:0px;">
                 </a>
                 <p class="text-color">Orders Tracking</p>
             </div>
@@ -13,7 +13,7 @@
             {{-- <li class="nav-item ">
                 <div class="icon-text-align">
                 <a class="nav-link " href="#">
-                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/wishlist.png')}}" alt="My WishList" style="height: 50px; width: 50px;  border-radius:0px;">
+                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/wishlist.png')}}" alt="My WishList" style="height: 100px; width: 100px;  border-radius:0px;">
                 </a>
                 <p>My Perfect List</p>
                 </div>
@@ -24,7 +24,7 @@
             <li class="nav-item">
                 <div class="icon-text-align">
                 <a class="nav-link" href="/shop">
-                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/shop.png')}}" alt="Shop" style="height: 50px; width: 50px; border-radius:0px;">
+                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/shop-icon.png')}}" alt="Shop" style="height: 100px; width: 100px; border-radius:0px;">
                 </a>
                 <p class="text-color">Shop</p>
                 </div>
@@ -33,7 +33,7 @@
             <li class="nav-item">
                 <div class="icon-text-align">
                 <a class="nav-link" href="/management/panel/change-password">
-                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/change-password-icon.png')}}" alt="Change Password" style="height: 50px; width: 50px; border-radius:0px;">
+                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/change-password.png')}}" alt="Change Password" style="height: 100px; width: 100px; border-radius:0px;">
                 </a>
                 <p class="text-color">Password</p>
                 </div>
@@ -49,7 +49,7 @@
     .icon-text-align{
         display: inline-block;
          text-align: center;
-         margin-left:10px;
+       
     }
 
 

@@ -36,6 +36,7 @@
 
     <!-- Navigation bar -->
     @include('layouts.shop.navigation.navigation')
+    {{-- @livewire('counter') --}}
 
     <!-- Side bar -->
     @include('layouts.shop.navigation.sidebar')

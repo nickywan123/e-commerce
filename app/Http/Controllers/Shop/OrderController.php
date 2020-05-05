@@ -53,24 +53,25 @@ class OrderController extends Controller
      */
     public function index()
     {
-         // Get user
-       $user = User::find(Auth::user()->id);
-       // Check if the exact item is already in the cart..
-       $getCartQuantity = new Cart;
+        // Get user
+        $user = User::find(Auth::user()->id);
+        // Check if the exact item is already in the cart..
+        $getCartQuantity = new Cart;
 
-       $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status',2001)->sum('quantity');
+        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
         $user = User::find(Auth::user()->id);
         $purchases = $user->purchases;
         // return $purchases;
-        return view('shop.order.index')->with('purchases', $purchases)->with('getCartQuantity',$getCartQuantity);
+        return view('shop.order.index')->with('purchases', $purchases)->with('getCartQuantity', $getCartQuantity);
     }
 
 
-   
+
 
     /****Return Order Status in customer dashboard  ****/
 
-    public function customerOrderStatus(){
+    public function customerOrderStatus()
+    {
         $user = User::find(Auth::user()->id);
         $purchases = $user->purchases;
         // $annualOrders= $user->purchases->orders->whereYear('created_at', '=', 2020)->get();

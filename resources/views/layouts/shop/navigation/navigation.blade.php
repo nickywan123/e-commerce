@@ -133,8 +133,9 @@
                   
                    <div style="margin-top:10px; margin-left: 50px; ">
                     <a style="color:#fbcc34; margin-right:20px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">0</span></a>
-                    <a style="color:#fbcc34;" href="/shop/cart" id="cart-quantity" ><i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">{{$getCartQuantity}}</span> </a>
-                   </div>
+                    <a style="color:#fbcc34;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes"  id="cart-quantity">{{$getCartQuantity}} </span> </a>
+                    
+                </div>
                                        
                 </ul>
             </div>

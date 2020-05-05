@@ -14,11 +14,12 @@
             </div>
 
 
-            <div class="col-md-3 mt-5"><strong>3</strong> orders placed in
+            <div class="col-md-3 mt-5"><strong>
+               {{$purchases->sum('orders_count')}}
+        </strong> orders placed in
                 <select style="background-color:lightgrey" name="year">
                     <option value="year">2020 </option>
-                    <option value="year">2019 </option>
-                    <option value="year">2018 </option>
+                  
                 </select>
             </div>
 
@@ -149,7 +150,10 @@
             </div>
         </div>
         @else
-        <div>There are no orders found.</div>
+        <div>
+        <strong class="mr-2"> There are no orders found.</strong>
+        <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
+        </div>
         @endif
     </div>
 </div>
@@ -330,9 +334,22 @@
                 </div>
                 @else
                  
-                        <div class="row">
+                        <div class="row mt-2">
                             <div class="col-12">
-                                <h4>There are no orders found.</h4>
+                              
+                                   <h6>  There are no orders found.</h6>
+                                 
+                               
+                            </div>
+                            
+                        </div>
+
+                        <div class="row ml-2 mb-4">
+                            <div class="col-12">
+                              
+                                <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
+                                 
+                               
                             </div>
                             
                         </div>
