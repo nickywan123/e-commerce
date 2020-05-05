@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Categories\Category;
 use App\Models\Globals\Products\Product;
+use App\Models\Globals\Products\ProductAttribute;
 use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
@@ -158,6 +159,15 @@ class ProductController extends Controller
         $product->save();
 
         $product->categories()->sync($categories);
+
+        foreach ($request->input('attribute_type') as $key => $attributeType) {
+            $attribute = new ProductAttribute;
+            $attribute->product_id = $product->id;
+            $attribute->attribute_type = $attributeType;
+            $attribute->attribute_name = $request->input('attribute_name')[$key];
+            $attribute->color_hex = $request->input('color_hex')[$key];
+            $attribute->save();
+        }
 
         return redirect('/administrator/products');
     }

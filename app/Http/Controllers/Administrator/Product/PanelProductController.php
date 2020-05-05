@@ -48,6 +48,7 @@ class PanelProductController extends Controller
      */
     public function store(Request $request)
     {
+
         // 
     }
 
