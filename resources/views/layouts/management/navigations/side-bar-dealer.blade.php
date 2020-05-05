@@ -7,7 +7,7 @@
                  <a class="nav-link " href="/shop/dashboard/orders/index">
                     <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/value-orders.png')}}" alt="My Orders" style="height: 100px; width: 100px; border-radius:0px;">
                  </a>
-                 <p class="text-color">Placeholder</p>
+          
              </div>
             </li>
          
@@ -17,7 +17,7 @@
                  <a class="nav-link" href="/shop/dashboard/wishlist/index">
                     <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/perfect-list.png')}}" alt="Wish List" style="height: 100px; width: 100px; border-radius:0px;">
                  </a>
-                 <p class="text-color">Placeholder</p>
+                
             </div>
             </li>
         
@@ -26,7 +26,7 @@
                  <a class="nav-link" href="/shop/dashboard/change-password">
                     <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/change-password.png')}}" alt="Change Password" style="height: 100px; width: 100px; border-radius:0px;">
                  </a>
-                 <p class="text-color"  style="text-align:center;">Placeholder</p>
+      
               </div>
             </li>
             
@@ -36,9 +36,22 @@
                  <a class="nav-link" href="/shop">
                   <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/shop-icon.png')}}" alt="Shop" style="height: 100px; width: 100px; border-radius:0px;">
                  </a>
-                 <p class="text-color" style="text-align:center;">Shop</p>
+                 
               </div>          
             </li>
+
+            <li class="nav-item">
+              <div class="icon-text-align">
+                 <a class="nav-link" href="/management/dealer/sales-summary">
+                  <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/panel.png')}}" alt="Sales" style="height: 100px; width: 100px; border-radius:0px;">
+                
+                </a>
+                <p style="font-size: small;">Sales Summary</p>
+                
+                 
+              </div>          
+            </li>
+
 
             @hasrole('panel')
             <li class="nav-item">
@@ -46,7 +59,7 @@
                    <a class="nav-link" href="/management/panel/orders">
                     <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/panel-page.png')}}" alt="Panel" style="height: 100px; width: 100px; border-radius:0px;">
                    </a>
-                   <p class="text-color" style="text-align:center;">Panel</p>
+                 
                 </div>          
               </li>
             @endhasrole

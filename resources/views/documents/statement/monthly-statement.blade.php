@@ -8424,7 +8424,7 @@
                                 DATE
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0; width:200px;">
-                                  {{$dealer_statement->purchase_date}}               
+                                 01/placeholder/placeholder             
                             </td>
                         </tr>
                         <tr>
@@ -8432,16 +8432,22 @@
                                 BUSINESS MONTH
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                 {{$dealer_statement->month}}         
+                                 placeholder       
                             </td>
                         </tr>
                         <tr>
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
                                 DEALER CODE
                             </td>
+                            
+                                
+                           
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                {{$dealer_statement->account_id}}    
+                          
+                                {{$dealerProfile->account_id}}    
+                                
                             </td>
+                           
                         </tr>
                         <tr>
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
@@ -8488,23 +8494,30 @@
                             <td style="text-align:left; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; width: 20%;">Amount (RM)</td>
                         </tr>
 
-
-                       
-                        <tr style="font-size: 10pt;">
+                        @foreach($customerPurchase as $purchases)
+                         @foreach($purchases->orders as $order)
+                          @foreach ($order->items as $item)
+                                                     
+                           <tr style="font-size: 10pt;">
                            
-                            <td style=" padding: 16px; vertical-align: top;">
-                               Bed & Mattresses
-                            </td>
+                              <td style=" padding: 16px; vertical-align: top;">
+                                {{$item->product->parentProduct->categories[0]->name}}
+
+                              </td>
                            
                           
                             <td style="padding: 16px; text-align: left; vertical-align: top;">
-                             1
+                             {{$item->quantity}}
                             </td>
                             <td style="padding: 16px; text-align: left; vertical-align: top;">
-                             3,999 
+
+                             {{ number_format(($item->subtotal_price / 100), 2)}}
+                            
                             </td>
-                        </tr>
-                        
+                           </tr>
+                          @endforeach
+                         @endforeach
+                        @endforeach
                        
                     </table>
                 </div>
@@ -8541,10 +8554,14 @@
                             </td>
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
-                                $subtotal = 0;
+                                $totalSales = 0;
+                                foreach($customerPurchase as $purchase)
+                                 foreach($purchase->orders as $order)
+                                  foreach($order->items as $item)
+                                $totalSales=$totalSales + $item->subtotal_price;
                              
                                 ?>
-                                RM1221
+                                  {{ number_format(($totalSales / 100), 2)}}
                             </td>
                         </tr>
                       
@@ -8568,6 +8585,9 @@
                 <div style="border: 1px solid #000; width: 100%; height: 525px;">
                     <table style="width: 100%;">
                         <tr style="text-align: center; font-weight: 600;">
+                            
+                                
+                           
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 10%;">
                                 <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
                                 Date.
@@ -8578,27 +8598,29 @@
                             </td>
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 33%;">
                                 <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
-                                Description
+                             
                             </td>
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 15%">
                                 <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
-                                Unit Price (RM)
+                                
                             </td>
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000;  width: 12%;">
                                 <div style="position: absolute; top: 0; right: 0; margin-right: -1px;  height: 524px;"></div>
-                                Quantity
+                                
                             </td>
                             <td style="font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; width: 35%;">Total Price (RM)</td>
                         </tr>
 
                     
+                        @foreach ($customerPurchase as $purchase)
+                                                
                         <tr style="font-size: 10pt;">
                             <td style="padding: 16px; text-align: center; vertical-align: top;">
                               
-                                xxxx
+                                {{$purchase->purchase_date}}
                             </td>
                             <td style="padding: 16px; vertical-align: top;">
-                               BJN1210212
+                               {{ltrim($purchase->purchase_number, '0')}}
                             </td>
                             <td style="padding: 6px; vertical-align: top;">
                                 <table>
@@ -8608,7 +8630,7 @@
                                         </td>
                                         <td style="padding: 14px; vertical-align: top;">
                                             <p style="margin-bottom: 10px;">
-                                               Bed Pillow Grey
+                                               
                                             </p>
                                            
                                         </td>
@@ -8616,16 +8638,17 @@
                                 </table>
                             </td>
                             <td style="padding: 16px; text-align: center; vertical-align: top;">
-                                3
+                                
                             </td>
                             <td style="padding: 16px; text-align: center; vertical-align: top;">
-                                12
+                                
                             </td>
                             <td style="padding: 16px; text-align: center; vertical-align: top;">
-                                20
+                                {{ number_format(($purchase->purchase_amount / 100), 2)}}
+                               
                             </td>
                         </tr>
-                       
+                        @endforeach
                     </table>
                 </div>
             </div>
@@ -8661,10 +8684,12 @@
                             </td>
                             <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
                                 <?php
-                                $subtotal = 0;
+                                $totalSales = 0;
+                                foreach($customerPurchase as $purchase)
+                                $totalSales=$totalSales + $purchase->purchase_amount;
                              
                                 ?>
-                                RM1221
+                                  {{ number_format(($totalSales / 100), 2)}}
                             </td>
                         </tr>
                        

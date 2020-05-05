@@ -207,8 +207,9 @@ class PurchaseController extends Controller
                 $cartItem->installation_fee;
         }
         $purchase->purchase_amount = $purchase_amount;
+        $purchase->dealer_id =  $user->dealerInfo->account_id;
 
-        $purchase->receipt_number= 'BOR20 ' . str_pad($invoiceSequence, 7, "0", STR_PAD_LEFT);
+        $purchase->receipt_number = 'BOR20 ' . str_pad($invoiceSequence, 7, "0", STR_PAD_LEFT);
         $purchase->save();
 
         $price = 0;
@@ -374,10 +375,10 @@ class PurchaseController extends Controller
     /**
      * Handle QR Code submit.
      */
-    public function qrSubmit(Request $request,$order_num)
+    public function qrSubmit(Request $request, $order_num)
     {
         $order = Order::where('order_number', $order_num)->firstOrFail();
-        $order->received_date=Carbon::now()->format('d/m/Y');
+        $order->received_date = Carbon::now()->format('d/m/Y');
         $order->order_status = 1003;
         $order->save();
 
@@ -414,14 +415,4 @@ class PurchaseController extends Controller
 
         return view('shop.payment.deliveries.qr-submitted');
     }
-
-
-
- 
-
-   
-
-
-
-
 }

@@ -30,6 +30,12 @@ class DealerInfo extends Model
         return $this->belongsTo('App\Models\Users\User', 'user_id');
     }
 
+    //**Get the purchases tied to the dealer***/
+    public function purchase()
+    {
+        return $this->hasMany('App\Models\Purchases\Purchase', 'account_id', 'dealer_id');
+    }
+
     /**
      * Get all of the user's addresses.
      */

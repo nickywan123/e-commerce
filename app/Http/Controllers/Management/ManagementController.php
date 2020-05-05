@@ -195,13 +195,21 @@ class ManagementController extends Controller
 
 
     // Home Page for Dealer
-    public function index_dealer()
+    public function indexDealer()
     {
         $dealer_id = User::find(Auth::user()->id);
         $dealer_id = $dealer_id->dealerInfo->account_id;
         $dealer_statement = new Statement;
         $dealer_statement = $dealer_statement->where('account_id', $dealer_id)->first();
         return view('management.dealer.index')->with('dealer_statement', $dealer_statement);
+    }
+
+    //Sales Summary for Dealer
+
+    public function salesSummary()
+    {
+
+        return view('management.dealer.sales-summary');
     }
 
     // Profile for Dealer
@@ -304,15 +312,21 @@ class ManagementController extends Controller
     // View Statments for dealers
     public function statements($month)
     {
-        $dealer_id = User::find(Auth::user()->id);
-        $dealer_id = $dealer_id->dealerInfo->account_id;
-        $dealerProfile = new DealerInfo();
-        $dealerProfile = $dealerProfile->where('account_id', $dealer_id)->first();
 
-        $dealer_statement = new Statement;
-        $dealer_statement = $dealer_statement->where('account_id', $dealer_id)->where('month', $month)->first();
 
-        $pdf = PDF::loadView('documents.statement.monthly-statement', compact('dealerProfile', 'dealer_statement'))->setPaper('A4');
+        $dealer_id = Auth::user()->dealerInfo->account_id;
+
+
+        $dealerProfile = DealerInfo::where('account_id', $dealer_id)->first();
+
+
+        $customerPurchase = Purchase::where('dealer_id', $dealer_id)->get();
+
+
+
+
+
+        $pdf = PDF::loadView('documents.statement.monthly-statement', compact('dealerProfile', 'customerPurchase'))->setPaper('A4');
         return $pdf->stream('statement.pdf');
     }
 
