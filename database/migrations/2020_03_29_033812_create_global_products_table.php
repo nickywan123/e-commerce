@@ -15,14 +15,13 @@ class CreateGlobalProductsTable extends Migration
     {
         Schema::create('global_products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('product_code')->nullable();
-            $table->string('name')->nullable();
-            $table->string('name_slug')->nullable();
-            $table->text('details')->nullable();
-            $table->text('description')->nullable();
+            $table->string('product_code');
+            $table->string('name');
+            $table->string('name_slug');
+            $table->text('details');
+            $table->text('description');
             $table->integer('quality_id')->default(1);
             $table->decimal('product_rating', 2, 1)->default(0);
-            $table->integer('product_status')->default(0);
             $table->timestamps();
         });
     }
