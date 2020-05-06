@@ -10,6 +10,10 @@ use App\Models\Categories\Category;
 use App\Http\Resources\Category\Category as CategoryResource;
 use App\Http\Resources\Category\CategoryCollection as CategoryResourceCollection;
 use App\Http\Resources\Category\CategoryWithChild as CategoryWithChildResource;
+use App\Http\Resources\Category\CategoryWithProduct as CategoryWithProductResource;
+use App\Http\Resources\Category\CategoryWithProductCollection as CategoryWithProductCollectionResource;
+use App\Http\Resources\Category\CategoryWithChildWithProduct as CategoryWithChildWithProductResource;
+use App\Http\Resources\Category\CategoryWithChildWithProductCollection as CategoryWithChildWithProductCollectionResource;
 
 class CategoryController extends ResponseController
 {
@@ -21,7 +25,9 @@ class CategoryController extends ResponseController
     {
         if ($request->query('products') && $request->query('products') == 'true') {
             try {
-                $categories = new CategoryResourceCollection(Category::all());
+                $categories = new CategoryWithProductCollectionResource(Category::all());
+
+                return $this->sendResponse($categories);
             } catch (ModelNotFoundException $exception) {
                 $error = 'The requested resource couldn\'t be found.';
 
@@ -46,14 +52,26 @@ class CategoryController extends ResponseController
      */
     public function getCategory(Request $request, $id)
     {
-        try {
-            $category = new CategoryResource(Category::findOrFail($id));
+        if ($request->query('products') && $request->query('products') == 'true') {
+            try {
+                $category = new CategoryWithProductResource(Category::findOrFail($id));
 
-            return $this->sendResponse($category);
-        } catch (ModelNotFoundException $exception) {
-            $error = 'The requested resource couldn\'t be found.';
+                return $this->sendResponse($category);
+            } catch (ModelNotFoundException $exception) {
+                $error = 'The requested resource couldn\'t be found.';
 
-            return $this->sendError($error, 404);
+                return $this->sendError($error, 404);
+            }
+        } else {
+            try {
+                $category = new CategoryResource(Category::findOrFail($id));
+
+                return $this->sendResponse($category);
+            } catch (ModelNotFoundException $exception) {
+                $error = 'The requested resource couldn\'t be found.';
+
+                return $this->sendError($error, 404);
+            }
         }
     }
 
@@ -63,14 +81,26 @@ class CategoryController extends ResponseController
      */
     public function getCategoryWithChilds(Request $request, $id)
     {
-        try {
-            $category = new CategoryWithChildResource(Category::findOrFail($id));
+        if ($request->query('products') && $request->query('products') == 'true') {
+            try {
+                $category = new CategoryWithChildWithProductResource(Category::findOrFail($id));
 
-            return $this->sendResponse($category);
-        } catch (ModelNotFoundException $exception) {
-            $error = 'The requested resource couldn\'t be found.';
+                return $this->sendResponse($category);
+            } catch (ModelNotFoundException $exception) {
+                $error = 'The requested resource couldn\'t be found.';
 
-            return $this->sendError($error, 404);
+                return $this->sendError($error, 404);
+            }
+        } else {
+            try {
+                $category = new CategoryWithChildResource(Category::findOrFail($id));
+
+                return $this->sendResponse($category);
+            } catch (ModelNotFoundException $exception) {
+                $error = 'The requested resource couldn\'t be found.';
+
+                return $this->sendError($error, 404);
+            }
         }
     }
 }
