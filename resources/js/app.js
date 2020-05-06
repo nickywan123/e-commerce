@@ -4,14 +4,20 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require("./bootstrap");
+require('./bootstrap');
 require("@fortawesome/fontawesome-free");
 require("@coreui/coreui");
 require("signature_pad");
 require("slick-carousel");
 require("ion-rangeslider");
+require("select2");
+require("dropzone");
+require("bootstrap-colorpicker");
+require("inputmask");
 
-window.Vue = require("vue");
+window.Dropzone = require('dropzone');
+window.toastr = require('toastr');
+window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,12 +27,22 @@ window.Vue = require("vue");
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component(
-    "example-component",
-    require("./components/ExampleComponent.vue").default
+    'example-component',
+    require('./components/ExampleComponent.vue').default
+);
+
+Vue.component(
+    'product-table',
+    require('./components/administator/products/ProductTableComponent.vue').default
+);
+
+Vue.component(
+    'create-product',
+    require('./components/administator/products/create/CreateProductComponent.vue').default
 );
 
 /**
@@ -36,5 +52,15 @@ Vue.component(
  */
 
 const app = new Vue({
-    el: "#app"
+    el: '#app',
+});
+
+
+/* 
+* Custom scripts
+*/
+
+// Initialize select2 when 'select2' class is used.
+$(document).ready(function () {
+    $('.select2').select2();
 });

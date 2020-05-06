@@ -28,6 +28,15 @@
 @import "~slick-carousel/slick/slick";
 @import "~slick-carousel/slick/slick-theme";
 
+// Select 2
+@import '~select2/src/scss/core';
+
+// Dropzone
+@import '~dropzone/src/dropzone';
+
+// Colorpicker
+@import '~bootstrap-colorpicker/src/sass/colorpicker.scss';
+
 //01- Landing Page
 @import 
     "./01-landing-page/landing_page";
@@ -61,3 +70,7 @@
 @import 
     "./06-management/navigation-bar",
     "./06-management/sidebar";
+
+
+// 07-Vendors
+@import '~toastr/toastr.scss';

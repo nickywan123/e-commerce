@@ -13,7 +13,9 @@
 
 // Route for QR Code
 
+use App\Models\Globals\Products\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 Route::get('qr-code-g', function () {
     QrCode::size(500)
@@ -160,29 +162,84 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
                 Route::get('/edit/{id}', 'Management\ProductManagementController@edit');
             }
         );
+    });
+    // End Management
 
-        // Administrator
-        Route::group(['prefix' => 'administrator', 'middleware' => ['role:administrator']], function () {
-            // User management.
-            Route::group(['prefix' => 'user', 'middleware' => ['permission:manage users']], function () {
-                // Panel.
-                Route::group(['prefix' => 'panel'], function () {
-                    // Index.
-                    Route::get('/', 'Administrator\User\PanelController@index')
-                        ->name('management.user.panel');
+    // Administrator
+    Route::group(['prefix' => 'administrator', 'middleware' => ['role:administrator']], function () {
 
-                    // Create.
-                    Route::get('/create', 'Administrator\User\PanelController@create')
-                        ->name('management.user.panel.create');
+        // User management.
+        Route::group(['prefix' => 'users', 'middleware' => ['permission:manage users']], function () {
+            // Panel.
+            Route::group(['prefix' => 'panel'], function () {
+                // Index.
+                Route::get('/', 'Administrator\User\PanelController@index')
+                    ->name('management.user.panel');
 
-                    // Store.
-                    Route::post('/store', 'Administrator\User\PanelController@store')
-                        ->name('management.user.panel.store');
-                });
+                // Create.
+                Route::get('/create', 'Administrator\User\PanelController@create')
+                    ->name('management.user.panel.create');
+
+                // Store.
+                Route::post('/store', 'Administrator\User\PanelController@store')
+                    ->name('management.user.panel.store');
+            });
+        });
+
+        Route::group(['prefix' => 'products', 'middleware' => ['permission:manage products']], function () {
+            // Product index.
+            Route::get('/', 'Administrator\Product\ProductController@index')
+                ->name('administrator.products');
+            // Return JSON response of all products
+            Route::get('/resource', 'WEB\Administrator\ProductJSONController@getProducts')
+                ->name('administrator.products.json');
+
+            // Create product.
+            Route::get('/create', 'Administrator\Product\ProductController@create')
+                ->name('administrator.products.create');
+
+            // Image upload.
+            Route::post('/image-upload/{productId}', 'Administrator\Product\ProductController@storeImage')
+                ->name('administrator.products.store-image');
+
+            // Image delete.
+            Route::post('/image-delete/{productId}', 'Administrator\Product\ProductController@deleteImage')
+                ->name('administrator.products.delete-image');
+
+            // Store product.
+            Route::post('/store', 'Administrator\Product\ProductController@store')
+                ->name('administrator.products.store');
+
+            // Edit product.
+            Route::get('/edit/{productId}', 'Administrator\Product\ProductController@edit')
+                ->name('administrator.products.edit');
+
+            // Update product.
+            Route::put('/update/{productId}', 'Administrator\Product\ProductController@update')
+                ->name('administrator.products.update');
+
+            // Publish Product
+            Route::get('/product-publish/{productId}', 'Administrator\Product\ProductController@publishProduct');
+
+            // Unpublish Product
+            Route::get('/product-unpublish/{productId}', 'Administrator\Product\ProductController@unpublishProduct');
+
+            // Panels
+            Route::group(['prefix' => 'panels'], function () {
+                // Index
+                Route::get('/', 'Administrator\Product\PanelProductController@index')
+                    ->name('administrator.products.panels');
+
+                // Create
+                Route::post('/create', 'Administrator\Product\PanelProductController@create')
+                    ->name('administrator.products.panels.create');
+
+                // Store
+                Route::post('/store', 'Administrator\Product\PanelProductController@store')
+                    ->name('administrator.products.panels.store');
             });
         });
     });
-    // End Management
 
     // Shop
     Route::group(['prefix' => 'shop'], function () {
@@ -323,79 +380,20 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
 
 // Test Routes
-Route::get('/tests/send-po-email-job', function () {
-    $order = App\Models\Purchases\Order::where('order_number', 'PO202004 000001')->firstOrFail();
-    $emailAddress = App\Models\Users\User::find(1)->email;
-
-    App\Jobs\Emails\SendPurchaseOrderEmail::dispatch($emailAddress, $order);
-
-    // $email = new App\Mail\Purchase\PurchaseOrderEmail($order);
-    // Mail::to($emailAddress)->send($email);
+Route::get('/administrator', function () {
+    return view('layouts.administrator.main');
 });
 
-Route::get('/tests/send-invoice-email-job', function () {
-    $purchase = App\Models\Purchases\Purchase::find(1);
-
-    $emailAddress = App\Models\Users\User::find(1)->email;
-
-    App\Jobs\Emails\SendInvoiceAndReceiptEmail::dispatch($emailAddress, $purchase);
+Route::get('/delete-image', function () {
+    $product = Product::findOrFail(62);
+    $path = public_path('/storage/uploads/images/products/' . $product->id . '/');
+    $filename = '62-1588318949.png';
+    $imagePath = $path . $filename;
+    if (File::exists($path . $filename)) {
+        File::delete($path . $filename);
+        $message = 'true';
+    } else {
+        $message = 'false';
+    }
+    return $message;
 });
-
-Route::get('/tests/preview-send-po-email', function () {
-    $order = App\Models\Purchases\Order::where('order_number', 'PO202004 000001')->firstOrFail();
-
-    return new App\Mail\Purchase\PurchaseOrderEmail($order);
-});
-
-Route::get('/test/preview-send-invoice-receipt-email', function () {
-    $purchase = App\Models\Purchases\Purchase::find(1);
-
-    return new App\Mail\Purchase\InvoiceAndReceiptEmail($purchase);
-});
-
-Route::get('/tests/create-purchase-order-pdf', function () {
-    $order = App\Models\Purchases\Order::first();
-
-    $pdf = PDF::loadView('documents.order.purchase-order', compact('order'));
-
-    return $pdf->stream();
-});
-
-Route::get('/tests/create-invoice-pdf', function () {
-    $purchase = App\Models\Purchases\Purchase::find(1);
-
-    $pdf = PDF::loadView('documents.purchase.invoice', compact('purchase'));
-
-    return $pdf->stream();
-});
-
-Route::get('/tests/create-invoice-pdf-view', function () {
-    $purchase = App\Models\Purchases\Purchase::find(1);
-
-    return view('documents.purchase.invoice')
-        ->with('purchase', $purchase);
-});
-
-Route::get('/tests/create-invoice-pdf-old', function () {
-    $purchase = App\Models\Purchases\Purchase::find(1);
-
-    $pdf = PDF::loadView('documents.invoice', compact('purchase'));
-
-    return $pdf->stream();
-});
-
-Route::get('/tests/create-receipt-pdf', function () {
-});
-
-Route::get('/tests/order-received/{purchaseNum}', function () {
-    $order = App\Models\Purchases\Order::where('order_number', 'PO202004 000001')->first();
-
-    return view('shop.payment.deliveries.qr-scanned')
-        ->with('order', $order);
-});
-
-Route::post('/tests/order-received', function (Request $request) {
-    return $request;
-});
-
-Route::get('/tests/payment-failed', 'Purchase\PaymentGatewayController@errorPage');

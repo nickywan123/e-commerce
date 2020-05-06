@@ -13,26 +13,31 @@
         "axios": "^0.19",
         "bootstrap": "^4.1.0",
         "cross-env": "^5.1",
-        "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.13",
         "popper.js": "^1.12",
-        "prettier": "^2.0.2",
+        "prettier": "^2.0.5",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.26.3",
+        "sass": "^1.26.5",
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
         "@coreui/coreui": "^2.1.16",
-        "@fortawesome/fontawesome-free": "^5.12.1",
+        "@fortawesome/fontawesome-free": "^5.13.0",
+        "bootstrap-colorpicker": "^3.2.0",
+        "dropzone": "^5.7.0",
         "flag-icon-css": "^3.4.6",
+        "inputmask": "^5.0.3",
         "ion-rangeslider": "^2.3.1",
+        "jquery": "^3.2.1",
         "jquery-validation": "^1.19.1",
         "perfect-scrollbar": "^1.5.0",
+        "select2": "^4.0.13",
         "signature_pad": "^3.0.0-beta.3",
         "simple-line-icons": "^2.4.1",
-        "slick-carousel": "^1.8.1"
+        "slick-carousel": "^1.8.1",
+        "toastr": "^2.1.4"
     }
 }
