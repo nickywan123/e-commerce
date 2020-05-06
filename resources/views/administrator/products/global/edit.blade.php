@@ -78,7 +78,7 @@
                     <div class="row">
                         @foreach($categories as $category)
                         <div class="col-12 col-md-6 form-check mb-2 mt-2">
-                            <input type="checkbox" name="categories" id="category_check{{ $category->id }}" value="{{ $category->id }}" class="form-check-input" {{ ($product->categories->contains($category->id)) ? 'checked' : '' }}>
+                            <input type="checkbox" name="categories[]" id="category_check{{ $category->id }}" value="{{ $category->id }}" class="form-check-input" {{ ($product->categories->contains($category->id)) ? 'checked' : '' }}>
                             <label class="font-weight-bold form-check-label" for="category_check{{ $category->id }}">{{ $category->name }}</label>
 
                             @foreach($category->childCategories as $childCategory)
