@@ -29,8 +29,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('product_status', '!=', 0)
-            ->orderBy('id', 'ASC')
+        $products = Product::orderBy('id', 'ASC')
             ->paginate(20);
 
         return view('administrator.products.global.index')
