@@ -61,7 +61,7 @@
 
                     <!-- Description -->
                     <p class="mb-3 text-justify">
-                        {!! $product->description !!}
+                        {!! $product->details !!}
                     </p>
 
                     <!-- Colors -->
@@ -275,7 +275,7 @@
                                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionDescription">
                                     <div class="card-body">
                                         <div class="p-4 product-details text-justify">
-                                            {!! $panelProduct->product_description !!}
+                                            {!! $product->description !!}
                                         </div>
                                     </div>
                                 </div>

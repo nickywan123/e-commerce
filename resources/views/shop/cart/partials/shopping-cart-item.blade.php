@@ -38,7 +38,7 @@ $totalPrice = 10000;
     <hr class="m-0">
     <div class="row no-gutters py-2">
         <div class="col-2 px-1">
-            <img class="mw-100 rounded d-inline" src="{{ asset('storage/' . $cartItem->product->parentProduct->defaultImage->path . '/' . $cartItem->product->parentProduct->defaultImage->filename) }}" alt="">
+            <img class="mw-100 rounded d-inline" src="{{ asset('storage/' . $cartItem->product->parentProduct->images[0]->path . '/' . $cartItem->product->parentProduct->images[0]->filename) }}" alt="">
         </div>
         <div class="col-10 col-md-6 px-2 mb-0">
             <a href="/shop/product/{{ $cartItem->product->parentProduct->name_slug}}?panel={{ $cartItem->product->panel_account_id }}">
