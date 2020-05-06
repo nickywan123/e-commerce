@@ -8,6 +8,7 @@ use App\Models\Categories\Category;
 use App\Models\Globals\Products\Product;
 use App\Models\Globals\Products\ProductAttribute;
 use Illuminate\Support\Facades\File;
+use Str;
 
 class ProductController extends Controller
 {
@@ -155,6 +156,7 @@ class ProductController extends Controller
 
         $product = Product::findOrFail($id);
         $product->name = $request->input('product_name');
+        $product->name_slug = Str::slug($request->input('product_name'), '-');
         $product->product_code = $request->input('product_code');
         $product->details = $request->input('product_details');
         $product->description = $request->input('product_description');
