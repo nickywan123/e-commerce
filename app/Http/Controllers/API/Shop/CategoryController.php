@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\API\Shop;
 
 use App\Http\Controllers\API\ResponseController;
-use App\Models\Categories\Category;
-use App\Http\Resources\Category as CategoryResource;
-use App\Http\Resources\CategoryCollection as CategoryResourceCollection;
-use App\Http\Resources\Image as ImageResource;
-use App\Models\Globals\Image;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+use App\Models\Categories\Category;
+use App\Http\Resources\Category\Category as CategoryResource;
+use App\Http\Resources\Category\CategoryCollection as CategoryResourceCollection;
+use App\Http\Resources\Category\CategoryWithChild as CategoryWithChildResource;
 
 class CategoryController extends ResponseController
 {
@@ -17,21 +17,60 @@ class CategoryController extends ResponseController
      * Return all categories.
      * api/categories/
      */
-    public function getCategories()
+    public function getCategories(Request $request)
     {
-        $categories = new CategoryResourceCollection(Category::all());
+        if ($request->query('products') && $request->query('products') == 'true') {
+            try {
+                $categories = new CategoryResourceCollection(Category::all());
+            } catch (ModelNotFoundException $exception) {
+                $error = 'The requested resource couldn\'t be found.';
 
-        return $this->sendResponse($categories);
+                return $this->sendError($error, 404);
+            }
+        } else {
+            try {
+                $categories = new CategoryResourceCollection(Category::all());
+
+                return $this->sendResponse($categories);
+            } catch (ModelNotFoundException $exception) {
+                $error = 'The requested resource couldn\'t be found.';
+
+                return $this->sendError($error, 404);
+            }
+        }
     }
 
     /**
      * Return a category based on passed id.
      * api/categories/{id}
      */
-    public function getCategory($id)
+    public function getCategory(Request $request, $id)
     {
-        $category = new CategoryResource(Category::find($id));
+        try {
+            $category = new CategoryResource(Category::findOrFail($id));
 
-        return $this->sendResponse($category);
+            return $this->sendResponse($category);
+        } catch (ModelNotFoundException $exception) {
+            $error = 'The requested resource couldn\'t be found.';
+
+            return $this->sendError($error, 404);
+        }
+    }
+
+    /**
+     * Return a category with other categories belonging to it.
+     * api/categories/{id}/childs
+     */
+    public function getCategoryWithChilds(Request $request, $id)
+    {
+        try {
+            $category = new CategoryWithChildResource(Category::findOrFail($id));
+
+            return $this->sendResponse($category);
+        } catch (ModelNotFoundException $exception) {
+            $error = 'The requested resource couldn\'t be found.';
+
+            return $this->sendError($error, 404);
+        }
     }
 }
