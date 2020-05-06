@@ -207,7 +207,7 @@ class PurchaseController extends Controller
                 $cartItem->installation_fee;
         }
         $purchase->purchase_amount = $purchase_amount;
-        $purchase->dealer_id =  $user->dealerInfo->account_id;
+        // $purchase->dealer_id =  $user->dealerInfo->account_id;
 
         $purchase->receipt_number = 'BOR20 ' . str_pad($invoiceSequence, 7, "0", STR_PAD_LEFT);
         $purchase->save();
