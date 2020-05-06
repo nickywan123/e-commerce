@@ -122,6 +122,9 @@
                                 @hasrole('dealer')
                                 <a href="/management/dealer/index" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                 @endhasrole
+                                @hasrole('administrator')
+                                <a href="/administrator" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Administrator</a>
+                                @endhasrole
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                     <i class="fa fa-sign-out-alt" style="color:#fbcc34;"></i> {{ __('Logout') }}
