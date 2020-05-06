@@ -169,7 +169,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'administrator', 'middleware' => ['role:administrator']], function () {
 
         // User management.
-        Route::group(['prefix' => 'users', 'middleware' => ['permission:manage users']], function () {
+        Route::group(['prefix' => 'users'], function () {
             // Panel.
             Route::group(['prefix' => 'panel'], function () {
                 // Index.
@@ -186,7 +186,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             });
         });
 
-        Route::group(['prefix' => 'products', 'middleware' => ['permission:manage products']], function () {
+        Route::group(['prefix' => 'products'], function () {
             // Product index.
             Route::get('/', 'Administrator\Product\ProductController@index')
                 ->name('administrator.products');
