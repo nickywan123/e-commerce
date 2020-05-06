@@ -45,6 +45,9 @@
                                         @hasrole('dealer')
                                         <a href="/management/dealer/index" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                         @endhasrole
+                                        @hasrole('administrator')
+                                        <a href="/administrator" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Administrator</a>
+                                        @endhasrole
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             <i class="fa fa-sign-out-alt" style="color: #fbcc34;"></i> {{ __('Logout') }}
@@ -57,16 +60,16 @@
 
                                 </div>
                             </li>
-                           
+
                         </ul>
-                       
-                       
-                        <a style="color:#fbcc34; margin-left: 20px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34; font-size:x-large;"></i>  </a>
-                        <a style="color:#fbcc34; margin-left: 10px;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34;  font-size:x-large;"></i></a>
+
+
+                        <a style="color:#fbcc34; margin-left: 20px;" href="#"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:x-large;"></i> </a>
+                        <a style="color:#fbcc34; margin-left: 10px;" href="/shop/cart"><i class="fa fa-shopping-cart " style="color:#fbcc34;  font-size:x-large;"></i></a>
 
                     </div>
-                    
-                    
+
+
                 </div>
                 @endguest
             </div>
@@ -84,11 +87,11 @@
 
                                     </optgroup> -->
                                 </select>
-                                <input type="text" id="search-box" name="keyword" class="form-control navigation-input input-lg w-65-md w-80-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size search-bar-size-sm" >
+                                <input type="text" id="search-box" name="keyword" class="form-control navigation-input input-lg w-65-md w-80-sm margin-right-negative-with-border  margin-right-border-color border-rounded-0-md border-left-rounded-10-sm search-bar-size search-bar-size-sm">
                                 <button id="search-button" class="btn navigation-input border-right-rounded-10"><i class="fa fa-search"></i></button>
                             </div>
-                           <a class="hidden-md margin-left-icon" style="color:#fbcc34; margin-right:20px;" href="#" ><i class="fa fa-camera" style="color:#fbcc34; font-size: 30px;"></i>  </a>
-                            <a class="hidden-md" style="color:#fbcc34;" href="#" ><i class="fa fa-microphone" style="color:#fbcc34; font-size: 30px;"></i>  </a>
+                            <a class="hidden-md margin-left-icon" style="color:#fbcc34; margin-right:20px;" href="#"><i class="fa fa-camera" style="color:#fbcc34; font-size: 30px;"></i> </a>
+                            <a class="hidden-md" style="color:#fbcc34;" href="#"><i class="fa fa-microphone" style="color:#fbcc34; font-size: 30px;"></i> </a>
                         </div>
                     </div>
                 </form>
@@ -107,12 +110,12 @@
                         <div class="dropdown show">
                             <!-- TODO: Create a class for the style -->
                             <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px; margin-left: 30px;">
-                                My Account  
+                                My Account
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user " style="color:#fbcc34;"></i> Profile </a>
                                 <a class="dropdown-item" href="/shop/dashboard/orders/index"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> Value Records </a>
-                                
+
                                 @hasrole('panel')
                                 <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
                                 @endhasrole
@@ -130,13 +133,13 @@
                             </div>
                         </div>
                     </li>
-                  
-                   <div style="margin-top:10px; margin-left: 50px; ">
-                    <a style="color:#fbcc34; margin-right:20px;" href="#" ><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">0</span></a>
-                    <a style="color:#fbcc34;" href="/shop/cart" ><i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes"  id="cart-quantity">{{$getCartQuantity}} </span> </a>
-                    
-                </div>
-                                       
+
+                    <div style="margin-top:10px; margin-left: 50px; ">
+                        <a style="color:#fbcc34; margin-right:20px;" href="#"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">0</span></a>
+                        <a style="color:#fbcc34;" href="/shop/cart"><i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes" id="cart-quantity">{{$getCartQuantity}} </span> </a>
+
+                    </div>
+
                 </ul>
             </div>
             @endguest
@@ -166,23 +169,19 @@
 @push('script')
 
 <script>
-
-
-
-// function removeCartItemQuantity(){
-//             //Make an AJAX request to navigation bar
-//             $.ajax({
-//                 url: '/web/cart/remove-cart',
-//                 type: "get",
-//                 success: function(result) {
-//                     CartQuantity.html(result);
-//                 },
-//                 error: function(result) {
-//                     console.log(result.status + ' ' + result.statusText);
-//                 }
-//             });
-//         }
-
+    // function removeCartItemQuantity(){
+    //             //Make an AJAX request to navigation bar
+    //             $.ajax({
+    //                 url: '/web/cart/remove-cart',
+    //                 type: "get",
+    //                 success: function(result) {
+    //                     CartQuantity.html(result);
+    //                 },
+    //                 error: function(result) {
+    //                     console.log(result.status + ' ' + result.statusText);
+    //                 }
+    //             });
+    //         }
 </script>
 
 @endpush
