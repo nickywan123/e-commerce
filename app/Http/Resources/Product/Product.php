@@ -4,6 +4,7 @@ namespace App\Http\Resources\Product;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Image\ImageCollection as ImageCollectionResource;
+use App\Http\Resources\Product\ProductByPanelCollection as ProductByPanelCollectionResource;
 
 class Product extends JsonResource
 {
@@ -24,7 +25,7 @@ class Product extends JsonResource
             'quality' => $this->quality->name,
             'rating' => $this->product_rating,
             'images' => new ImageCollectionResource($this->images),
-            'soldBy' => 
+            'soldBy' => new ProductByPanelCollectionResource($this->productSoldByPanels),
         ];
     }
 }

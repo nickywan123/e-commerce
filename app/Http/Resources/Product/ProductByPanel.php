@@ -19,7 +19,13 @@ class ProductByPanel extends JsonResource
             'panelAccountId' => $this->panel_account_id,
             'description' => $this->product_description,
             'material' => $this->product_material,
-            'consistency' => 
-        ]
+            'consistency' => $this->product_consistency,
+            'package' => $this->product_package,
+            'price' => $this->price,
+            'memberPrice' => $this->member_price,
+            'deliveryFee' => $this->delivery_fee,
+            'installationFee' => $this->installation_fee,
+            'rating' => $this->product_rating
+        ];
     }
 }

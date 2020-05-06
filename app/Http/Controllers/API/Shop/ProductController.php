@@ -28,7 +28,6 @@ class ProductController extends ResponseController
 
     public function getProduct($id)
     {
-        return $product = Product::findOrFail($id)->productSoldByPanels;
         try {
             $product = Product::findOrFail($id);
 
