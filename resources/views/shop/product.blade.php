@@ -61,7 +61,7 @@
 
                     <!-- Description -->
                     <p class="mb-3 text-justify">
-                        {{ $product->description }}
+                        {!! $product->description !!}
                     </p>
 
                     <!-- Colors -->
