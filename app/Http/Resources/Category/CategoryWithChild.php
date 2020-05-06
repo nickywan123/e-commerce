@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Category;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\Image as ImageResource;
+use App\Http\Resources\Image\Image as ImageResource;
+use App\Http\Resources\Category\CategoryWithChildCollection as CategoryWithChildCollectionResource;
 
-class Category extends JsonResource
+class CategoryWithChild extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -20,7 +21,7 @@ class Category extends JsonResource
             'name' => $this->name,
             'parentCategoryId' => $this->parent_category_id,
             'image' => new ImageResource($this->image),
-
+            'childCategories' => new CategoryWithChildCollectionResource($this->childCategories),
         ];
     }
 }

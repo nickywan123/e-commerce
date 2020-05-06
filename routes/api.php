@@ -49,9 +49,20 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::group(['prefix' => 'categories'], function () {
 
-    // Return all categories
+    // Return all categories.
     Route::get('/', 'API\Shop\CategoryController@getCategories');
 
-    // Return a category based in it's ID.
+    // Return a category based on it's ID.
     Route::get('/{id}', 'API\Shop\CategoryController@getCategory');
+
+    // Return the child of a category based on it's ID.
+    Route::get('/{id}/childs', 'API\Shop\CategoryController@getCategoryWithChilds');
+});
+
+Route::group(['prefix' => 'products'], function () {
+    // Return all products.
+    Route::get('/', 'API\Shop\ProductController@getProducts');
+
+    // Return a category based on it's ID.
+    Route::get('/{id}', 'API\Shop\ProductController@getProduct');
 });

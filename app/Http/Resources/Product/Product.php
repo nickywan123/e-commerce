@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Product;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Image extends JsonResource
+class Product extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,8 +14,6 @@ class Image extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'imageUrl' => env('APP_URL') . '/storage/' . $this->path . $this->filename,
-        ];
+        // 
     }
 }
