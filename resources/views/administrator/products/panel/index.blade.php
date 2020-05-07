@@ -68,7 +68,7 @@
                         {{ $product->parentProduct->product_code }}
                     </td>
                     <td style="width: 10%">
-                        @if($product->parentProduct->images)
+                        @if($product->parentProduct->images->count() > 0)
                         <img class="mw-100" style="border-radius: 100%;" src="{{ asset('storage/' . $product->parentProduct->images[0]->path . $product->parentProduct->images[0]->filename) }}" alt="">
                         @endif
                     </td>

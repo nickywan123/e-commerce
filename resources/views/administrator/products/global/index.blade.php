@@ -24,7 +24,7 @@
                     <td style="width: 5%;">{{ $loop->iteration }}</td>
                     <td style="width: 15%;">{{ $product->product_code }}</td>
                     <td style="width: 10%">
-                        @if($product->images)
+                        @if($product->images->count() > 0)
                         <img class="mw-100" style="border-radius: 100%;" src="{{ asset('storage/' . $product->images[0]->path . $product->images[0]->filename) }}" alt="">
                         @endif
                     </td>
