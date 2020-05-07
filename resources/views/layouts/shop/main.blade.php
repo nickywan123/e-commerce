@@ -78,9 +78,6 @@
                     $('.overlay').removeClass('active');
                 }
             });
-
-
-
         });
     </script>
     @stack('script')

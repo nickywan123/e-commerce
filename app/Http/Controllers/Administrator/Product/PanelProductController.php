@@ -102,7 +102,12 @@ class PanelProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $panels = PanelInfo::all();
+
+        return view('administrator.products.panel.edit')
+            ->with('product', $product)
+            ->with('panels', $panels);
     }
 
     /**
@@ -114,7 +119,49 @@ class PanelProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $postAttributes = $request->input('attribute_id');
+
+        $product = Product::findOrFail($id);
+        $product->global_product_id = $request->input('global_product_id');
+        $product->panel_account_id = $request->input('panel_id');
+        $product->product_description = $request->input('product_description');
+        $product->product_material = $request->input('product_material');
+        $product->product_consistency = $request->input('product_consistency');
+        $product->product_package = $request->input('product_package');
+        $product->price = $request->input('price');
+        $product->member_price = $request->input('member_price');
+        $product->delivery_fee = $request->input('delivery_fee');
+        $product->installation_fee = $request->input('installation_fee');
+        $product->save();
+
+        $productAttributes = $product->attributes;
+
+        foreach ($productAttributes as $productAttribute) {
+            if (!in_array($productAttribute->id, $postAttributes)) {
+                $productAttribute->delete();
+            }
+        }
+
+        foreach ($request->input('attribute_type') as $key => $attributeType) {
+            $attribute = new ProductAttribute;
+            $attribute->panel_product_id = $product->id;
+            $attribute->attribute_type = $attributeType;
+            $attribute->attribute_name = $request->input('attribute_name')[$key];
+            $attribute->color_hex = $request->input('color_hex')[$key];
+            $attribute->price = $request->input('attribute_price')[$key];
+            $attribute->member_price = $request->input('attribute_member_price')[$key];
+            $attribute->save();
+        }
+
+        if ($product->save()) {
+            return redirect('/administrator/products/panels')
+                ->with('success', 'Product created for panel ' . $product->panel->company_name);
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', 'Something went wrong.');
+        }
     }
 
     /**
@@ -125,6 +172,17 @@ class PanelProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        $product->delete();
+
+        $attributes = ProductAttribute::where('panel_product_id', $id)->get();
+
+        foreach ($attributes as $attribute) {
+            $attribute->delete();
+        }
+
+        return redirect('/administrator/products/panels')
+            ->with('success', 'Product deleted.');
     }
 }

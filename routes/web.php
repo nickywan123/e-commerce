@@ -237,6 +237,18 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
                 // Store
                 Route::post('/store', 'Administrator\Product\PanelProductController@store')
                     ->name('administrator.products.panels.store');
+
+                // Edit
+                Route::get('/edit/{productId}', 'Administrator\Product\PanelProductController@edit')
+                    ->name('administrator.products.panels.edit');
+
+                // Update
+                Route::put('/update/{productId}', 'Administrator\Product\PanelProductController@update')
+                    ->name('administrator.products.update');
+
+                // Delete
+                Route::delete('/delete/{productId}', 'Administrator\Product\PanelProductController@destroy')
+                    ->name('administrator.products.delete');
             });
         });
     });

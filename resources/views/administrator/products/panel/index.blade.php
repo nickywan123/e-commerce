@@ -88,9 +88,37 @@
                         {{ $product->panel->company_name }}
                     </td>
                     <td>
-                        <a style="color: white; font-style: normal; border-radius: 5px;" href="/administrator/products/edit/{{ $product->id }}" class="btn btn-primary shadow-sm">Edit</a>
+                        <a style="color: white; font-style: normal; border-radius: 5px;" href="/administrator/products/panels/edit/{{ $product->id }}" class="btn btn-primary shadow-sm">Edit</a>
 
-                        <a style="color: white; font-style: normal; border-radius: 5px;" href="/administrator/products/product-unpublish/{{ $product->id }}" class="btn btn-danger shadow-sm">Disable</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $product->id }}">
+                            Delete
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteModal{{ $product->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteModalLabel">Delete {{ $product->parentProduct->name }}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="/administrator/products/panels/delete/{{ $product->id }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class="modal-body">
+                                            Are you sure? Item {{ $product->parentProduct->name }} by {{ $product->panel->company_name }} will be deleted.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Confirm</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 @endforeach
@@ -103,7 +131,9 @@
 @push('script')
 <script>
     $(document).ready(function() {
-        $('.select2').select2();
+        $('.select2').select2({
+            dropdownParent: $('#newProductModal')
+        });
     });
 </script>
 @endpush

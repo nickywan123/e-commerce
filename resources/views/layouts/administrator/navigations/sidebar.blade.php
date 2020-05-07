@@ -33,11 +33,6 @@
                             <i class="nav-icon icon-puzzle"></i> All Products
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/administrator/products/panels/create" class="nav-link">
-                            <i class="nav-icon icon-puzzle"></i> New Products
-                        </a>
-                    </li>
                 </ul>
             </li>
             <li class="divider"></li>
