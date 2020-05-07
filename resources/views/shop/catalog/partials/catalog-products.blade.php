@@ -6,6 +6,7 @@
 <!-- Products -->
 <div class="row no-gutters">
     @foreach ($products as $key => $product)
+    @if($product->productSoldByPanels->count() > 0)
     <!-- 
         Check if product sold by panels is more than 1.
         If equals 1 then no need to show tooltip. 
@@ -313,6 +314,7 @@
             </div>
         </div>
     </div>
+    @endif
     @endforeach
 </div>
 @else
