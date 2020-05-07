@@ -310,7 +310,7 @@ class ManagementController extends Controller
     }
 
     // View Statments for dealers
-    public function statements($month)
+    public function statements($month,$month_num,$year)
     {
 
 
@@ -326,7 +326,7 @@ class ManagementController extends Controller
 
 
 
-        $pdf = PDF::loadView('documents.statement.monthly-statement', compact('dealerProfile', 'customerPurchase'))->setPaper('A4');
+        $pdf = PDF::loadView('documents.statement.monthly-statement', compact('dealerProfile', 'customerPurchase','month','month_num','year'))->setPaper('A4');
         return $pdf->stream('statement.pdf');
     }
 

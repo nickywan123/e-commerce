@@ -136,7 +136,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/dealer/profile/edit', 'Management\ManagementController@editdealerProfile')->name('shop.dashboard.dealer.profile.edit');
         Route::patch('/dealer/profile-update/{id}', 'Management\ManagementController@updateDealerProfile')->name('shop.dashboard.dealer.profile.update');
         Route::get('/password', 'Management\ManagementController@modifyPassword');
-        Route::get('/dealer/statements/{month}', 'Management\ManagementController@statements');
+        Route::get('/dealer/statements/{month}/{month_num}/{year}', 'Management\ManagementController@statements')->name('dealer.statement');
         Route::get('/dealer/sales-summary', 'Management\ManagementController@salesSummary');
 
         // Product Management
