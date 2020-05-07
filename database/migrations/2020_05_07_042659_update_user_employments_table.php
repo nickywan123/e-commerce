@@ -13,7 +13,7 @@ class UpdateUserEmploymentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dealer_employments', function (Blueprint $table) {
+        Schema::table('dealer_employments', function (Blueprint $table) {
             $table->string('company_address_3')->nullable()->change();
         });
     }
