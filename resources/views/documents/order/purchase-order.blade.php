@@ -8569,7 +8569,7 @@
                                 <table>
                                     <tr style="font-size: 10pt;">
                                         <td style="padding: 4px; vertical-align: top;">
-                                            <img src="{{ asset('storage/' . $item->product->parentProduct->defaultImage->path . '/' . $item->product->parentProduct->defaultImage->filename) }}" alt="{{ $item->product->parentProduct->name }}" style="width: 105px; height: 90px; border-radius: 10px;">
+                                            <img src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . '/' . $item->product->parentProduct->images[0]->filename) }}" alt="{{ $item->product->parentProduct->name }}" style="width: 105px; height: 90px; border-radius: 10px;">
                                         </td>
                                         <td style="padding: 14px; vertical-align: top;">
                                             <p style="margin-bottom: 5px;">
