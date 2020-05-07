@@ -6,6 +6,7 @@
 <!-- Products -->
 <div class="row no-gutters">
     @foreach ($products as $key => $product)
+    @if($product->productSoldByPanels->count() > 0)
     <!-- 
         Check if product sold by panels is more than 1.
         If equals 1 then no need to show tooltip. 
@@ -311,6 +312,13 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
+        </div>
+    </div>
+    @else
+    <!-- No product found message -->
+    <div class="row">
+        <div class="col-12">
+            <p class="no-product-found-message">We're sorry, there's no available product under this category yet.</p>
         </div>
     </div>
     @endforeach

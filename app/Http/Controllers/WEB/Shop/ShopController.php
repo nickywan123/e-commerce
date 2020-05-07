@@ -16,6 +16,8 @@ class ShopController extends Controller
 
         $products = $category->products;
 
+        $products = $products->where('product_status', 1);
+
         return view('shop.catalog.partials.catalog-products')
             ->with('products', $products);
     }
@@ -44,6 +46,8 @@ class ShopController extends Controller
         }
 
         $products = $products->get();
+
+        $products = $products->where('product_status', 1);
 
         return view('shop.catalog.partials.catalog-products')
             ->with('products', $products);
