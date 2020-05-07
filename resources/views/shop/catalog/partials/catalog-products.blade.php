@@ -314,6 +314,11 @@
             </div>
         </div>
     </div>
+    @else
+    <!-- No product found message -->
+    <div class="col-12">
+        <p class="no-product-found-message">We're sorry, there's no available product under this category yet.</p>
+    </div>
     @endif
     @endforeach
 </div>
