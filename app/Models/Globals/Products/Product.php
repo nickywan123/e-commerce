@@ -26,6 +26,11 @@ class Product extends Model
         'product_rating'
     ];
 
+    // Casts
+    protected $casts = [
+        'product_rating' => 'double',
+    ];
+
     /**
      * Get all images of a product.
      *

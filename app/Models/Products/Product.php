@@ -18,6 +18,11 @@ class Product extends Model
     // Set mass assignable columns
     protected $fillable = [];
 
+    // Casts
+    protected $casts = [
+        'product_rating' => 'double',
+    ];
+
     /**
      *  Get product's categories.
      */

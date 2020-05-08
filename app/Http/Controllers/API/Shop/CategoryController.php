@@ -21,6 +21,12 @@ class CategoryController extends ResponseController
      * Return all categories.
      * api/categories/
      */
+    /**
+     * @OA\Get(
+     *     path="/categories",
+     *     summary="Get list of categories.
+     * )
+     */
     public function getCategories(Request $request)
     {
         if ($request->query('products') && $request->query('products') == 'true') {
