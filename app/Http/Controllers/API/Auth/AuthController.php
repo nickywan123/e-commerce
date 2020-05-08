@@ -11,34 +11,105 @@ use App\Models\Users\User;
 use App\Models\Users\UserAddress;
 use App\Models\Users\UserContact;
 use App\Models\Users\UserInfo;
+use Illuminate\Support\Facades\Hash;
 use Validator;
 
 class AuthController extends ResponseController
 {
-    //create user
-    public function signup(Request $request)
+    /**
+     * @SWG\Post(
+     *      path="/api/auth/register",
+     *      tags={"Auth"},
+     *      summary="Register user",
+     *      description="Returns token of registered user",
+     *      consumes={"multipart/form-data"},
+     *      produces={"application/json"},
+     *      @SWG\Response(
+     *          response=200,
+     *          description="OK",
+     *      ),
+     *      @SWG\Response(
+     *          response=401,
+     *          description="Bad Request",
+     *      ),
+     *      @SWG\Response(
+     *          response=500,
+     *          description="Internal Server Error",
+     *      ),
+     * )
+     */
+    public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|',
             'email' => 'required|string|email|unique:users',
             'password' => 'required',
-            'confirm_password' => 'required|same:password'
+            'confirm_password' => 'required|same:password',
+            'fullName' => 'required|string',
+            'nric' => 'required|min:12|max:12',
+            'address1' => 'required',
+            'address2' => 'required',
+            'postcode' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'contactMobile' => 'required|min:10',
+            'existingCustomer' => 'required',
         ]);
 
         if ($validator->fails()) {
-            return $this->sendError($validator->errors());
+            return $this->sendError($validator->errors(), 401);
         }
 
-        $input = $request->all();
-        $input['password'] = bcrypt($input['password']);
-        $user = User::create($input);
-        if ($user) {
+        $data = $request->all();
+
+        $user = new User;
+        $user->email = $data['email'];
+        $user->password = Hash::make($data['password']);
+        $user->save();
+
+        $largestCustomerId = 0;
+        if (UserInfo::all()->count() == 0) {
+            $largestCustomerId = 1913000001;
+        } else {
+            $largestCustomerId = UserInfo::largestCustomerId() + 1;
+        }
+
+        // User information
+        $userInfo = new UserInfo;
+        $userInfo->user_id = $user->id;
+        $userInfo->account_id = $largestCustomerId;
+        $userInfo->full_name = $data['full_name'];
+        $userInfo->nric = $data['nric'];
+        $userInfo->referrer_id = 0;
+        $userInfo->save();
+
+        // User address
+        $userAddress = new UserAddress;
+        $userAddress->account_id = $userInfo->account_id;
+        $userAddress->address_1 = $data['address_1'];
+        $userAddress->address_2 = $data['address_2'];
+        $userAddress->address_3 = $data['address_3'];
+        $userAddress->postcode = $data['postcode'];
+        $userAddress->city = $data['city'];
+        $userAddress->state_id = $data['state'];
+        $userAddress->is_shipping_address = 1;
+        $userAddress->is_residential_address = 0;
+        $userAddress->is_mailing_address = 1;
+        $userAddress->save();
+
+        $userContactMobile = new UserContact;
+        $userContactMobile->account_id = $userInfo->account_id;
+        $userContactMobile->contact_num = $data['contactMobile'];
+        $userContactMobile->is_mobile = 1;
+        $userContactMobile->save();
+
+        if ($user && $userAddress && $userContactMobile) {
             $success['token'] =  $user->createToken('token')->accessToken;
-            $success['message'] = "Registration successfull..";
+            $success['message'] = "Registration successfull";
+
             return $this->sendResponse($success);
         } else {
-            $error = "Sorry! Registration is not successfull.";
-            return $this->sendError($error, 401);
+            $error = "Registration is not successfull.";
+            return $this->sendError($error, 500);
         }
     }
 

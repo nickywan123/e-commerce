@@ -20,13 +20,17 @@ class Controller
      *
      * @OA\Server(
      *      url=L5_SWAGGER_CONST_HOST,
-     *      description="Demo API Server"
+     *      description="Bujishu E-Commerce"
      * )
-
      *
      * @OA\Tag(
-     *     name="Projects",
-     *     description="API Endpoints of Projects"
+     *     name="Categories",
+     *     description="API Endpoints of Categories"
+     * )
+     * 
+     * @OA\Tag(
+     *      name="Products",
+     *      description="API Endpoint of Products"
      * )
      */
 }

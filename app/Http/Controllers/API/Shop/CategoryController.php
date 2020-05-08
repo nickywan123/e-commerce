@@ -18,14 +18,53 @@ use App\Http\Resources\Category\CategoryWithChildWithProductCollection as Catego
 class CategoryController extends ResponseController
 {
     /**
-     * Return all categories.
-     * api/categories/
+     * @OA\Get(
+     *      path="/api/categories",
+     *      tags={"Categories"},
+     *      summary="Get list of categories",
+     *      description="Returns list of categories",
+     *      @OA\Response(
+     *          response=200,
+     *          description="OK",
+     *          @OA\MediaType(
+     *              mediaType="application/json",
+     *          ),
+     *      ),
+     *      @OA\Response(
+     *          response=404,
+     *          description="Resource not found",
+     *          @OA\MediaType(
+     *              mediaType="application/json",
+     *          ),
+     *      ),
+     * ),
      */
     /**
      * @OA\Get(
-     *     path="/categories",
-     *     summary="Get list of categories.
-     * )
+     *      path="/api/categories?products=true",
+     *      tags={"Categories"},
+     *      summary="Get list of categories with products",
+     *      description="Returns list of categories with products",
+     *      @OA\Response(
+     *          response=200,
+     *          description="OK",
+     *          @OA\MediaType(
+     *              mediaType="application/json",
+     *          ),
+     *      ),
+     *      @OA\Response(
+     *          response=404,
+     *          description="Resource not found",
+     *          @OA\MediaType(
+     *              mediaType="application/json",
+     *          ),
+     *      ),
+     * ),
+     * 
+     */
+    /**
+     * Return categories / categories with products.
+     * /api/categories & /api/categories?products=true
      */
     public function getCategories(Request $request)
     {

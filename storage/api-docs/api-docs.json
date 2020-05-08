@@ -14,17 +14,53 @@
     },
     "servers": [
         {
-            "url": "http://my-default-host.com",
-            "description": "Demo API Server"
+            "url": "http://bujishu.test",
+            "description": "Bujishu E-Commerce"
         }
     ],
     "paths": {
-        "/projects": {
+        "/api/categories": {
             "get": {
-                "operationId": "App\\Http\\Controllers\\API\\Shop\\CategoryController::getCategories",
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Get list of categories",
+                "description": "Returns list of categories",
                 "responses": {
                     "200": {
-                        "description": "Display a listing of projects."
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/categories?products=true": {
+            "get": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Get list of categories with products",
+                "description": "Returns list of categories with products",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {}
+                        }
                     }
                 }
             }
@@ -32,8 +68,12 @@
     },
     "tags": [
         {
-            "name": "Projects",
-            "description": "API Endpoints of Projects"
+            "name": "Categories",
+            "description": "API Endpoints of Categories"
+        },
+        {
+            "name": "Products",
+            "description": "API Endpoint of Products"
         }
     ]
 }
