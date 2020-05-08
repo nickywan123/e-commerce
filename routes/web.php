@@ -244,11 +244,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
                 // Update
                 Route::put('/update/{productId}', 'Administrator\Product\PanelProductController@update')
-                    ->name('administrator.products.update');
+                    ->name('administrator.products.panels.update');
 
                 // Delete
                 Route::delete('/delete/{productId}', 'Administrator\Product\PanelProductController@destroy')
-                    ->name('administrator.products.delete');
+                    ->name('administrator.products.panels.delete');
             });
         });
     });
