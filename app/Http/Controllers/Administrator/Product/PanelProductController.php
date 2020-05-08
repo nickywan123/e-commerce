@@ -123,7 +123,6 @@ class PanelProductController extends Controller
         $postAttributes = $request->input('attribute_id');
 
         $product = Product::findOrFail($id);
-        $product->global_product_id = $request->input('global_product_id');
         $product->panel_account_id = $request->input('panel_id');
         $product->product_description = $request->input('product_description');
         $product->product_material = $request->input('product_material');

@@ -69,7 +69,7 @@
                             <label for="panel_id">Panel Account Id</label>
                             <select name="panel_id" id="panel_id" class="select2 form-control">
                                 @foreach($panels as $panel)
-                                <option value="{{ $panel->account_id }}">{{ $panel->account_id}} - {{ $panel->company_name }}</option>
+                                <option value="{{ $panel->account_id }}" {{ ($panel->account_id == $product->panel_account_id) ? 'selected' : '' }}>{{ $panel->account_id}} - {{ $panel->company_name }}</option>
                                 @endforeach
                             </select>
                         </div>
