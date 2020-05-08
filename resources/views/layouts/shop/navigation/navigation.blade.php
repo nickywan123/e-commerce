@@ -43,7 +43,7 @@
                                         <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
                                         @endhasrole
                                         @hasrole('dealer')
-                                        <a href="/management/dealer/index" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
+                                        <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                         @endhasrole
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -117,7 +117,7 @@
                                 <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
                                 @endhasrole
                                 @hasrole('dealer')
-                                <a href="/management/dealer/index" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
+                                <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
                                 @endhasrole
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

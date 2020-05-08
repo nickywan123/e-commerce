@@ -35621,7 +35621,7 @@ canvas {
   align-items: center;
   padding: 0 1rem;
   color: #212529;
-  background: #f8f9fa;
+  background: black;
   border-top: 1px solid #dee2e6;
 }
 
@@ -35648,10 +35648,10 @@ canvas {
 .app-header {
   position: relative;
   flex-direction: row;
-  height: 55px;
+  height: 75px;
   padding: 0;
   margin: 0;
-  background-color: #fff;
+  background-color: black;
   border-bottom: 1px solid #dee2e6;
 }
 
@@ -35660,7 +35660,7 @@ canvas {
   align-items: center;
   justify-content: center;
   width: 155px;
-  height: 55px;
+  height: 75px;
   padding: 0;
   margin-right: 0;
   background-color: transparent;
@@ -35717,7 +35717,7 @@ canvas {
 
 .app-header .nav-item .nav-link > .img-avatar,
 .app-header .nav-item .avatar.nav-link > img {
-  height: 35px;
+  height: 55px;
   margin: 0 10px;
 }
 
@@ -36088,7 +36088,7 @@ canvas {
   flex-direction: column;
   padding: 0;
   color: #fff;
-  background: #343a40;
+  background: black;
 }
 
 .sidebar .sidebar-close {
@@ -36098,7 +36098,7 @@ canvas {
   padding: 0 1rem;
   font-size: 24px;
   font-weight: 800;
-  line-height: 55px;
+  line-height: 75px;
   color: #fff;
   background: 0;
   border: 0;
@@ -36118,7 +36118,7 @@ canvas {
 
 .sidebar .sidebar-form .form-control {
   color: #fff;
-  background: #1d2124;
+  background: black;
   border: 0;
 }
 
@@ -36223,7 +36223,7 @@ canvas {
 
 .sidebar .nav-link.active {
   color: #fff;
-  background: #3f474e;
+  background: #0d0d0d;
 }
 
 .sidebar .nav-link.active .nav-icon {
@@ -36472,13 +36472,13 @@ canvas {
 }
 
 .sidebar .progress {
-  background-color: #56606a !important;
+  background-color: #262626 !important;
 }
 
 .sidebar .sidebar-footer {
   flex: 0 0 auto;
   padding: 0.75rem 1rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(197, 241, 0, 0.2);
 }
 
 .sidebar .sidebar-minimizer {
@@ -36592,7 +36592,7 @@ canvas {
     bottom: 0;
     width: 50px;
     height: 50px;
-    background-color: #292d32;
+    background-color: black;
   }
 
   .sidebar-minimized .sidebar .sidebar-nav {
@@ -36624,7 +36624,7 @@ canvas {
 
   .sidebar-minimized .sidebar .nav-item:hover .nav-link.disabled,
   .sidebar-minimized .sidebar .nav-item:hover .nav-link :disabled {
-    background: #343a40;
+    background: black;
   }
 
   .sidebar-minimized .sidebar .nav-item:hover .nav-link.disabled .nav-icon,
@@ -36683,7 +36683,7 @@ canvas {
   .sidebar-minimized .sidebar .nav > .nav-dropdown > .nav-dropdown-items {
     display: none;
     max-height: 1000px;
-    background: #343a40;
+    background: black;
   }
 
   .sidebar-minimized .sidebar .nav > .nav-dropdown:hover {
@@ -36729,7 +36729,7 @@ canvas {
   *[dir=rtl] .sidebar-minimized .sidebar .nav > .nav-dropdown > .nav-dropdown-items {
     display: none;
     max-height: 1000px;
-    background: #343a40;
+    background: black;
   }
 
   *[dir=rtl] .sidebar-minimized .sidebar .nav > .nav-dropdown:hover {
@@ -37316,7 +37316,7 @@ app-root {
 }
 
 .app-header {
-  flex: 0 0 55px;
+  flex: 0 0 75px;
 }
 
 .app-footer {
@@ -37370,7 +37370,7 @@ html[dir=rtl] .aside-menu {
   }
 
   .header-fixed .app-body {
-    margin-top: 55px;
+    margin-top: 75px;
   }
 
   .sidebar-fixed .sidebar {
@@ -37381,7 +37381,7 @@ html[dir=rtl] .aside-menu {
   }
 
   .sidebar-fixed .app-header + .app-body .sidebar {
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   .sidebar-compact .sidebar {
@@ -37411,7 +37411,7 @@ html[dir=rtl] .aside-menu {
   }
 
   .sidebar-off-canvas .app-header + .app-body .sidebar {
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   html:not([dir=rtl]) .sidebar-compact .sidebar {
@@ -37436,11 +37436,11 @@ html[dir=rtl] .aside-menu {
   }
 
   .aside-menu-fixed .aside-menu .tab-content {
-    height: calc(100vh - 2.4rem - 55px);
+    height: calc(100vh - 2.4rem - 75px);
   }
 
   .aside-menu-fixed .app-header + .app-body .aside-menu {
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   .aside-menu-off-canvas .aside-menu {
@@ -37450,7 +37450,7 @@ html[dir=rtl] .aside-menu {
   }
 
   .aside-menu-off-canvas .app-header + .app-body .aside-menu {
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   html:not([dir=rtl]) .aside-menu-fixed .aside-menu,
@@ -37470,7 +37470,7 @@ html[dir=rtl] .aside-menu {
 
 .breadcrumb-fixed .breadcrumb {
   position: fixed;
-  top: 55px;
+  top: 75px;
   right: 0;
   left: 0;
   z-index: 1017;
@@ -38256,7 +38256,7 @@ html[dir=rtl] .aside-menu-show .aside-menu {
     z-index: 1020;
     width: 100%;
     text-align: center;
-    background-color: #fff;
+    background-color: black;
   }
 
   .app-header .navbar-toggler {
@@ -38271,14 +38271,14 @@ html[dir=rtl] .aside-menu-show .aside-menu {
   }
 
   .app-body {
-    margin-top: 55px;
+    margin-top: 75px;
   }
 
   .sidebar {
     position: fixed;
     z-index: 1019;
     width: 200px;
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   .sidebar-minimizer {
@@ -53125,7 +53125,7 @@ canvas {
   align-items: center;
   padding: 0 1rem;
   color: #212529;
-  background: #f8f9fa;
+  background: black;
   border-top: 1px solid #dee2e6;
 }
 
@@ -53152,10 +53152,10 @@ canvas {
 .app-header {
   position: relative;
   flex-direction: row;
-  height: 55px;
+  height: 75px;
   padding: 0;
   margin: 0;
-  background-color: #fff;
+  background-color: black;
   border-bottom: 1px solid #dee2e6;
 }
 
@@ -53164,7 +53164,7 @@ canvas {
   align-items: center;
   justify-content: center;
   width: 155px;
-  height: 55px;
+  height: 75px;
   padding: 0;
   margin-right: 0;
   background-color: transparent;
@@ -53221,7 +53221,7 @@ canvas {
 
 .app-header .nav-item .nav-link > .img-avatar,
 .app-header .nav-item .avatar.nav-link > img {
-  height: 35px;
+  height: 55px;
   margin: 0 10px;
 }
 
@@ -53592,7 +53592,7 @@ canvas {
   flex-direction: column;
   padding: 0;
   color: #fff;
-  background: #343a40;
+  background: black;
 }
 
 .sidebar .sidebar-close {
@@ -53602,7 +53602,7 @@ canvas {
   padding: 0 1rem;
   font-size: 24px;
   font-weight: 800;
-  line-height: 55px;
+  line-height: 75px;
   color: #fff;
   background: 0;
   border: 0;
@@ -53622,7 +53622,7 @@ canvas {
 
 .sidebar .sidebar-form .form-control {
   color: #fff;
-  background: #1d2124;
+  background: black;
   border: 0;
 }
 
@@ -53727,7 +53727,7 @@ canvas {
 
 .sidebar .nav-link.active {
   color: #fff;
-  background: #3f474e;
+  background: #0d0d0d;
 }
 
 .sidebar .nav-link.active .nav-icon {
@@ -53976,13 +53976,13 @@ canvas {
 }
 
 .sidebar .progress {
-  background-color: #56606a !important;
+  background-color: #262626 !important;
 }
 
 .sidebar .sidebar-footer {
   flex: 0 0 auto;
   padding: 0.75rem 1rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(197, 241, 0, 0.2);
 }
 
 .sidebar .sidebar-minimizer {
@@ -54096,7 +54096,7 @@ canvas {
     bottom: 0;
     width: 50px;
     height: 50px;
-    background-color: #292d32;
+    background-color: black;
   }
 
   .sidebar-minimized .sidebar .sidebar-nav {
@@ -54128,7 +54128,7 @@ canvas {
 
   .sidebar-minimized .sidebar .nav-item:hover .nav-link.disabled,
   .sidebar-minimized .sidebar .nav-item:hover .nav-link :disabled {
-    background: #343a40;
+    background: black;
   }
 
   .sidebar-minimized .sidebar .nav-item:hover .nav-link.disabled .nav-icon,
@@ -54187,7 +54187,7 @@ canvas {
   .sidebar-minimized .sidebar .nav > .nav-dropdown > .nav-dropdown-items {
     display: none;
     max-height: 1000px;
-    background: #343a40;
+    background: black;
   }
 
   .sidebar-minimized .sidebar .nav > .nav-dropdown:hover {
@@ -54233,7 +54233,7 @@ canvas {
   *[dir=rtl] .sidebar-minimized .sidebar .nav > .nav-dropdown > .nav-dropdown-items {
     display: none;
     max-height: 1000px;
-    background: #343a40;
+    background: black;
   }
 
   *[dir=rtl] .sidebar-minimized .sidebar .nav > .nav-dropdown:hover {
@@ -54820,7 +54820,7 @@ app-root {
 }
 
 .app-header {
-  flex: 0 0 55px;
+  flex: 0 0 75px;
 }
 
 .app-footer {
@@ -54874,7 +54874,7 @@ html[dir=rtl] .aside-menu {
   }
 
   .header-fixed .app-body {
-    margin-top: 55px;
+    margin-top: 75px;
   }
 
   .sidebar-fixed .sidebar {
@@ -54885,7 +54885,7 @@ html[dir=rtl] .aside-menu {
   }
 
   .sidebar-fixed .app-header + .app-body .sidebar {
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   .sidebar-compact .sidebar {
@@ -54915,7 +54915,7 @@ html[dir=rtl] .aside-menu {
   }
 
   .sidebar-off-canvas .app-header + .app-body .sidebar {
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   html:not([dir=rtl]) .sidebar-compact .sidebar {
@@ -54940,11 +54940,11 @@ html[dir=rtl] .aside-menu {
   }
 
   .aside-menu-fixed .aside-menu .tab-content {
-    height: calc(100vh - 2.4rem - 55px);
+    height: calc(100vh - 2.4rem - 75px);
   }
 
   .aside-menu-fixed .app-header + .app-body .aside-menu {
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   .aside-menu-off-canvas .aside-menu {
@@ -54954,7 +54954,7 @@ html[dir=rtl] .aside-menu {
   }
 
   .aside-menu-off-canvas .app-header + .app-body .aside-menu {
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   html:not([dir=rtl]) .aside-menu-fixed .aside-menu,
@@ -54974,7 +54974,7 @@ html[dir=rtl] .aside-menu {
 
 .breadcrumb-fixed .breadcrumb {
   position: fixed;
-  top: 55px;
+  top: 75px;
   right: 0;
   left: 0;
   z-index: 1017;
@@ -55750,7 +55750,7 @@ html[dir=rtl] .aside-menu-show .aside-menu {
     z-index: 1020;
     width: 100%;
     text-align: center;
-    background-color: #fff;
+    background-color: black;
   }
 
   .app-header .navbar-toggler {
@@ -55765,14 +55765,14 @@ html[dir=rtl] .aside-menu-show .aside-menu {
   }
 
   .app-body {
-    margin-top: 55px;
+    margin-top: 75px;
   }
 
   .sidebar {
     position: fixed;
     z-index: 1019;
     width: 200px;
-    height: calc(100vh - 55px);
+    height: calc(100vh - 75px);
   }
 
   .sidebar-minimizer {
@@ -59038,8 +59038,7 @@ a.hover-white:hover {
 }
 
 .navbar-bg-color,
-.footer-bg-color,
-.sidebar-bg-color {
+.footer-bg-color {
   background-color: black;
 }
 
@@ -59067,7 +59066,7 @@ a.hover-white:hover {
 
 @media (min-height: 900px) {
   .nav-height {
-    min-height: 7%;
+    min-height: 8%;
   }
 }
 
@@ -59138,12 +59137,21 @@ a.hover-white:hover {
 }
 
 .sidebar .sidebar-nav {
-  width: 120px;
+  width: 230px;
+}
+
+html:not([dir=rtl]) .sidebar {
+  margin-left: -230px;
 }
 
 .app-body .sidebar {
   flex: 0 0 100px;
   order: -1;
+}
+
+.sidebar-bg-color {
+  background-color: #f8fafc;
+  border-right: 1px solid #ffcc00;
 }
 
 @media (max-width: 990px) {

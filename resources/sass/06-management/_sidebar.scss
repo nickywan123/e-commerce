@@ -42,12 +42,22 @@
 }
 
 .sidebar .sidebar-nav {
-    width: 120px;
+    width: 230px;
 }
+// Sidebar collapse
+html:not([dir=rtl]) .sidebar {
+    margin-left: -230px;
+  }
+  
 
 .app-body .sidebar {
     flex: 0 0 100px;
     order: -1;
+}
+
+.sidebar-bg-color{
+    background-color: #f8fafc;
+    border-right: 1px solid #ffcc00;
 }
 
 

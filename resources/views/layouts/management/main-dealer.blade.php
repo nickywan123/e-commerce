@@ -32,7 +32,7 @@
     @include('layouts.management.navigations.navigation-bar-dealer')
     <div class="app-body">
         @include('layouts.management.navigations.side-bar-dealer')
-        <main class="main " style="margin-top:2%;">
+        <main class="main" style="margin-top:2%;">
 
             @yield('breadcrumbs')
             <div class="container-fluid">

@@ -7,6 +7,7 @@ use App\Models\Users\User;
 use App\Models\Purchases\Purchase;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Users\Customers\Favorite;
 use Illuminate\Support\Facades\Auth;
 
 class ValueRecordsController extends Controller
@@ -93,6 +94,12 @@ class ValueRecordsController extends Controller
     /**Return wishlist for user */
     public function wishlist()
     {
-        return view('shop.customer-dashboard.value-records.wishlist');
+        // Get user.
+        $user = User::find(Auth::user()->id);
+        //Get favourite item for user
+        $favourite = $user->favorites->all();
+        // dd($favourite);
+
+        return view('shop.customer-dashboard.value-records.wishlist')->with('favourite', $favourite);
     }
 }

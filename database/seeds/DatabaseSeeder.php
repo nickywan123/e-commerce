@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             // QualitiesTableSeeder::class, // Important -> Need to have all of the rows to correctly show product's quality.
             // ProductsTableSeeder::class, // Important -> Need to have at least 1 for /shop to work.
             StatementsTableSeeder::class, // for dealer statement
-
+            FavouritesTableSeeder::class, // add favourite product to user
         ]);
     }
 }

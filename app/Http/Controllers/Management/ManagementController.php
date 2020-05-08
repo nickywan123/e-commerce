@@ -193,8 +193,14 @@ class ManagementController extends Controller
     }
 
 
+    // Home Page -Dealer
 
-    // Home Page for Dealer
+    public function homeDealer()
+    {
+        return view('management.dealer.home');
+    }
+
+    // Statement Summary Page for Dealer
     public function indexDealer()
     {
         $dealer_id = User::find(Auth::user()->id);
@@ -310,7 +316,7 @@ class ManagementController extends Controller
     }
 
     // View Statments for dealers
-    public function statements($month,$month_num,$year)
+    public function statements($month, $month_num, $year)
     {
 
 
@@ -326,7 +332,7 @@ class ManagementController extends Controller
 
 
 
-        $pdf = PDF::loadView('documents.statement.monthly-statement', compact('dealerProfile', 'customerPurchase','month','month_num','year'))->setPaper('A4');
+        $pdf = PDF::loadView('documents.statement.monthly-statement', compact('dealerProfile', 'customerPurchase', 'month', 'month_num', 'year'))->setPaper('A4');
         return $pdf->stream('statement.pdf');
     }
 
