@@ -157,7 +157,7 @@
                                 </div>
 
                                 <div class="col-12 col-md-3 form-group">
-                                    <label for="color_hex">Variation Color <small>(Leave blank if not applicable.)</small></label>
+                                    <label for="color_hex">Variation Color</label>
                                     <div class="input-group color_picker">
                                         <input type="text" name="color_hex[]" id="color_hex" class="form-control" value="{{ $attribute->color_hex }}">
                                         <span class="input-group-append">
@@ -167,12 +167,12 @@
                                 </div>
 
                                 <div class="col-12 col-md-3 form-group">
-                                    <label for="attribute_price">Price <small>(Leave blank if not applicable.)</small></label>
+                                    <label for="attribute_price">Price</label>
                                     <input type="text" name="attribute_price[]" id="attribute_price" class="form-control" placeholder="1000" value="{{ $attribute->price }}">
                                 </div>
 
                                 <div class="col-12 col-md-3 form-group">
-                                    <label for="attribute_member_price">Member Price <small>(Leave blank if not applicable.)</small></label>
+                                    <label for="attribute_member_price">Member Price</label>
                                     <input type="text" name="attribute_member_price[]" id="attribute_member_price" class="form-control" placeholder="1000" value="{{ $attribute->member_price }}">
                                 </div>
 
@@ -293,9 +293,9 @@
 
             $(html).find('#color_hex').val('');
 
-            $(html).find('#attribute_price').val('');
+            $(html).find('#attribute_price').val('0');
 
-            $(html).find('#attribute_member_price').val('');
+            $(html).find('#attribute_member_price').val('0');
 
             $('.add-more-div').last().after(html);
 
