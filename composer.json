@@ -12,6 +12,7 @@
         "anhskohbo/no-captcha": "^3.1",
         "aws/aws-sdk-php": "^3.135",
         "barryvdh/laravel-snappy": "^0.4.7",
+        "darkaonline/l5-swagger": "5.8.*",
         "davejamesmiller/laravel-breadcrumbs": "5.x",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.0",

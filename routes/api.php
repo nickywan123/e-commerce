@@ -17,19 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('shop')->group(function () {
-    Route::get('/get-cart', 'APIControllers\CartController@index');
-
-    Route::prefix('cart')->group(function () {
-        Route::get('/', 'APIControllers\CartController@index');
-        Route::delete('/delete/{id}', 'APIControllers\CartController@destroy');
-    });
-});
-
 Route::group(['prefix' => 'auth'], function () {
     Route::group(['middleware' => ['guest:api']], function () {
-        Route::post('login', 'API\Auth\AuthController@login');
-        Route::post('signup', 'API\Auth\AuthController@signup');
+        Route::post('/login', 'API\Auth\AuthController@login');
+        Route::post('/register', 'API\Auth\AuthController@register');
 
         Route::group(['prefix' => 'customer'], function () {
             Route::post('register', 'API\Auth\AuthController@customerRegister');
@@ -65,4 +56,11 @@ Route::group(['prefix' => 'products'], function () {
 
     // Return a category based on it's ID.
     Route::get('/{id}', 'API\Shop\ProductController@getProduct');
+});
+
+Route::group(['prefix' => 'globals'], function () {
+    // States
+    Route::group(['prefix' => 'states'], function () {
+        Route::get('/', 'API\Master\StateController@getStates');
+    });
 });
