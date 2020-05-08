@@ -123,7 +123,6 @@ class PanelProductController extends Controller
         $postAttributes = $request->input('attribute_id');
 
         $product = Product::findOrFail($id);
-        $product->global_product_id = $request->input('global_product_id');
         $product->panel_account_id = $request->input('panel_id');
         $product->product_description = $request->input('product_description');
         $product->product_material = $request->input('product_material');
@@ -138,9 +137,7 @@ class PanelProductController extends Controller
         $productAttributes = $product->attributes;
 
         foreach ($productAttributes as $productAttribute) {
-            if (!in_array($productAttribute->id, $postAttributes)) {
-                $productAttribute->delete();
-            }
+            $productAttribute->delete();
         }
 
         foreach ($request->input('attribute_type') as $key => $attributeType) {
