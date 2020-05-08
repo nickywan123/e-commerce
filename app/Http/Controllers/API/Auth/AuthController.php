@@ -17,24 +17,146 @@ use Validator;
 class AuthController extends ResponseController
 {
     /**
-     * @SWG\Post(
+     * @OA\Post(
      *      path="/api/auth/register",
      *      tags={"Auth"},
      *      summary="Register user",
      *      description="Returns token of registered user",
-     *      consumes={"multipart/form-data"},
-     *      produces={"application/json"},
-     *      @SWG\Response(
+     *      @OA\RequestBody(
+     *          description="Form data for user registration",
+     *          @OA\MediaType(
+     *              mediaType="formData",
+     *              @OA\Schema(
+     *                  required={
+     *                      "email",
+     *                      "password",
+     *                      "fullName",
+     *                      "nric",
+     *                      "address1",
+     *                  },
+     *                  @OA\Property(
+     *                      property="email",
+     *                      type="string",
+     *                      example="johndoe@email.com",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="password",
+     *                      type="string",
+     *                      minProperties="8",
+     *                      example="p@ssw0rd",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="fullName",
+     *                      type="string",
+     *                      example="John Doe",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="nric",
+     *                      type="string",
+     *                      example="95115107832",
+     *                      minProperties="12",
+     *                      maxProperties="12",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="address1",
+     *                      type="string",
+     *                      example="Level 1M Menara Bangkok Bank",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="address2",
+     *                      type="string",
+     *                      example="Laman Sentral Berjaya",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="address3",
+     *                      type="string",
+     *                      example="No 105, Jalan Ampang",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="postcode",
+     *                      type="integer",
+     *                      example="50450",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="city",
+     *                      type="string",
+     *                      example="Kuala Lumpur",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="state",
+     *                      type="integer",
+     *                      example="6 (Selangor)",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="contactMobile",
+     *                      type="string",
+     *                      example="0194039055",
+     *                  ),
+     *                  @OA\Property(
+     *                      property="existingCustomer",
+     *                      type="integer",
+     *                      example="0(False), 1(True)",
+     *                  ),
+     *              ),
+     *          ),
+     *      ),
+     *      @OA\Response(
      *          response=200,
      *          description="OK",
+     *          @OA\MediaType(
+     *              mediaType="application/json",
+     *              @OA\Schema(
+     *                      type="object",
+     *                  @OA\Property(
+     *                      property="token",
+     *                      type="string",
+     *                      example="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVlMTdlNjZiYWQwMTcxZTdmZmZhMmI3NjAwN",
+     *                  ),
+     *              ),
+     *          ),
      *      ),
-     *      @SWG\Response(
+     *      @OA\Response(
      *          response=401,
      *          description="Bad Request",
+     *          @OA\MediaType(
+     *              mediaType="application/json",
+     *              @OA\Schema(
+     *                  type="object",
+     *                  @OA\Property(
+     *                      property="error",
+     *                      type="object",
+     *                      @OA\Property(
+     *                          property="email",
+     *                          type="array",
+     *                          @OA\Items(
+     *                              example="The email field is required.",
+     *                          ),
+     *                      ),
+     *                      @OA\Property(
+     *                          property="password",
+     *                          type="array",
+     *                          @OA\Items(
+     *                              example="The password field is required.",
+     *                          ),
+     *                      ),
+     *                  ),
+     *              ),
+     *          ),
      *      ),
-     *      @SWG\Response(
+     *      @OA\Response(
      *          response=500,
      *          description="Internal Server Error",
+     *          @OA\MediaType(
+     *              mediaType="application/json",
+     *              @OA\Schema(
+     *                  type="object",
+     *                  @OA\Property(
+     *                      property="error",
+     *                      type="string",
+     *                      example="Registration is not successfull.",
+     *                  ),
+     *              ),
+     *          ),
      *      ),
      * )
      */

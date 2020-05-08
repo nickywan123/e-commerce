@@ -57,3 +57,10 @@ Route::group(['prefix' => 'products'], function () {
     // Return a category based on it's ID.
     Route::get('/{id}', 'API\Shop\ProductController@getProduct');
 });
+
+Route::group(['prefix' => 'globals'], function () {
+    // States
+    Route::group(['prefix' => 'states'], function () {
+        Route::get('/', 'API\Master\StateController@getStates');
+    });
+});

@@ -1,10 +1,10 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Laravel OpenApi Demo Documentation",
-        "description": "L5 Swagger OpenApi description",
+        "title": "Bujishu Open API Documentation",
+        "description": "Bujishu Swagger Open API Document",
         "contact": {
-            "email": "admin@admin.com"
+            "email": "wanshahruddin95@gmail.com"
         },
         "license": {
             "name": "Apache 2.0",
@@ -19,6 +19,194 @@
         }
     ],
     "paths": {
+        "/api/auth/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register user",
+                "description": "Returns token of registered user",
+                "operationId": "App\\Http\\Controllers\\API\\Auth\\AuthController::register",
+                "requestBody": {
+                    "description": "Form data for user registration",
+                    "content": {
+                        "formData": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password",
+                                    "fullName",
+                                    "nric",
+                                    "address1"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "johndoe@email.com"
+                                    },
+                                    "password": {
+                                        "minProperties": "8",
+                                        "type": "string",
+                                        "example": "p@ssw0rd"
+                                    },
+                                    "fullName": {
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "nric": {
+                                        "maxProperties": "12",
+                                        "minProperties": "12",
+                                        "type": "string",
+                                        "example": "95115107832"
+                                    },
+                                    "address1": {
+                                        "type": "string",
+                                        "example": "Level 1M Menara Bangkok Bank"
+                                    },
+                                    "address2": {
+                                        "type": "string",
+                                        "example": "Laman Sentral Berjaya"
+                                    },
+                                    "address3": {
+                                        "type": "string",
+                                        "example": "No 105, Jalan Ampang"
+                                    },
+                                    "postcode": {
+                                        "type": "integer",
+                                        "example": "50450"
+                                    },
+                                    "city": {
+                                        "type": "string",
+                                        "example": "Kuala Lumpur"
+                                    },
+                                    "state": {
+                                        "type": "integer",
+                                        "example": "6 (Selangor)"
+                                    },
+                                    "contactMobile": {
+                                        "type": "string",
+                                        "example": "0194039055"
+                                    },
+                                    "existingCustomer": {
+                                        "type": "integer",
+                                        "example": "0(False), 1(True)"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "token": {
+                                            "type": "string",
+                                            "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVlMTdlNjZiYWQwMTcxZTdmZmZhMmI3NjAwN"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "email": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "example": "The email field is required."
+                                                    }
+                                                },
+                                                "password": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "example": "The password field is required."
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Registration is not successfull."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/globals/states": {
+            "get": {
+                "tags": [
+                    "Globals"
+                ],
+                "summary": "Get list of states",
+                "description": "Returns list of states",
+                "operationId": "App\\Http\\Controllers\\API\\Master\\StateController::getStates",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Johor"
+                                            },
+                                            "abbr": {
+                                                "type": "string",
+                                                "example": "JHR"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
         "/api/categories": {
             "get": {
                 "tags": [
@@ -67,6 +255,10 @@
         }
     },
     "tags": [
+        {
+            "name": "Globals",
+            "description": "API Endpoints for resources that doesn't belongs to any one tags"
+        },
         {
             "name": "Categories",
             "description": "API Endpoints of Categories"
