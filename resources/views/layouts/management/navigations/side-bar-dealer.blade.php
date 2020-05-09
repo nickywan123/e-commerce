@@ -107,7 +107,7 @@
     .sidebar-text-color{
       
         font-family:"Times New Roman", Times, serif;
-        font-size: 16pt;
+        font-size: 14pt;
         color: black;
         margin-left:10px;
     }
