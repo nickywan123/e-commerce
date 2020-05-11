@@ -17,6 +17,7 @@ require("inputmask");
 
 window.Dropzone = require('dropzone');
 window.toastr = require('toastr');
+window.DataTable = require('datatables.net-bs4');
 window.Vue = require('vue');
 
 /**

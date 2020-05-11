@@ -21,7 +21,9 @@ class PanelProductController extends Controller
         $globalProducts = GlobalProduct::where('product_status', '!=', '0')
             ->orWhere('product_status', '!=', '2')
             ->get();
+
         $panelProducts = Product::all();
+
         return view('administrator.products.panel.index')
             ->with('panelProducts', $panelProducts)
             ->with('globalProducts', $globalProducts);

@@ -27,6 +27,7 @@
         "@coreui/coreui": "^2.1.16",
         "@fortawesome/fontawesome-free": "^5.13.0",
         "bootstrap-colorpicker": "^3.2.0",
+        "datatables.net-bs4": "^1.10.20",
         "dropzone": "^5.7.0",
         "flag-icon-css": "^3.4.6",
         "inputmask": "^5.0.3",

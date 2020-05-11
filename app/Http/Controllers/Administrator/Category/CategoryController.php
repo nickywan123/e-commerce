@@ -15,4 +15,9 @@ class CategoryController extends Controller
         return view('administrator.categories.index')
             ->with('categories', $categories);
     }
+
+    public function create()
+    {
+        return view('administrator.categories.create');
+    }
 }
