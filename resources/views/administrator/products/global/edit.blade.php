@@ -153,7 +153,7 @@
                             <div class="form-row">
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_type">Variation Type</label>
-                                    <select name="attribute_type[1]" id="attribute_type" class="form-control my-auto">
+                                    <select name="attribute_type[]" id="attribute_type" class="form-control my-auto">
                                         <option value="">Select Variation Type</option>
                                         <option value="color">Color</option>
                                         <option value="size">Size</option>
@@ -163,13 +163,13 @@
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_name">Variation Name</label>
-                                    <input type="text" name="attribute_name[1]" id="attribute_name" class="form-control" placeholder="Yellow / 120cm * 200cm / Daylight">
+                                    <input type="text" name="attribute_name[]" id="attribute_name" class="form-control" placeholder="Yellow / 120cm * 200cm / Daylight">
                                 </div>
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="color_hex">Variation Color <small>(Leave blank if not applicable.)</small></label>
                                     <div class="input-group color_picker">
-                                        <input type="text" name="color_hex[1]" id="color_hex" class="form-control">
+                                        <input type="text" name="color_hex[]" id="color_hex" class="form-control">
                                         <span class="input-group-append">
                                             <span class="input-group-text colorpicker-input-addon"><i></i></span>
                                         </span>
