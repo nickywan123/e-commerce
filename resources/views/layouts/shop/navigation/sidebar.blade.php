@@ -8,11 +8,11 @@
     </div>
 
     <ul class="list-unstyled components ">
-        <h4 style="color: #212529; padding: 5px 10px;"><strong>Shop By Category</strong></h4>
+        <h4 class="font-family-lato" style="color: #212529; padding: 5px 10px;"><strong>Shop By Category</strong></h4>
         <li>
-            <a style="text-decoration: none;" href="/shop/product/panel-registration?panel=1918000101">Panel Registration</a>
+            <a  href="/shop/product/panel-registration?panel=1918000101">Panel Registration</a>
             @foreach($categories as $category)
-            <a style="text-decoration:none;" href="/shop/category/{{ $category->slug }}">{{ $category->name }}</a>
+            <a  href="/shop/category/{{ $category->slug }}">{{ $category->name }}</a>
             @endforeach
             <!-- <a href="/category/bedsheet-mattress">Bedsheet & Mattress</a>
             <a href="/category/bedsheet-mattress">Cupboard</a>

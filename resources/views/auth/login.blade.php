@@ -48,8 +48,8 @@
             </div>
         </div>
         <div>
-            <div class="card border-rounded-0 bg-bujishu-gold mt-4 guests-card">
-                <h5 class="text-center bujishu-gold form-card-title">Sign in</h5>
+            <div class="card border-rounded-0 bg-bujishu-gold mt-4 guests-card" style="border-radius: 10px;">
+                <h5 class="text-center bujishu-gold form-card-title font-family-lato" style="border-radius: 10px;"><b>SIGN IN</b></h5>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

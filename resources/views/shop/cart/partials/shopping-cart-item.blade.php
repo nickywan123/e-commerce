@@ -9,7 +9,7 @@ $totalPrice = 10000;
         <div class="row no-gutters py-2">
             <div class="col-12 px-1 text-center">
                 <p class="m-2 h5">There's no item in your cart.</p>
-                <a href="/shop" class="btn bjsh-btn-gradient">Continue Shopping</a>
+                <a href="/shop" class="btn bjsh-btn-gradient font-family-lato">Continue Shopping</a>
             </div>
 
         </div>

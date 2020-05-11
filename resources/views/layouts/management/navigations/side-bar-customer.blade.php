@@ -74,4 +74,9 @@
         font-size: 10pt;
         color: #ffcc00;
     }
+
+.sidebar .sidebar-nav {
+    width: 120px;
+}
+
 </style>

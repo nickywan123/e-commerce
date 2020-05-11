@@ -8,17 +8,17 @@
         </div>
     </div>
     <div>
-        <div class="card border-rounded-0 bg-bujishu-gold guests-card">
-            <h5 class="text-center bujishu-gold form-card-title">Registration</h5>
+        <div class="card border-rounded-0 bg-bujishu-gold guests-card" style="border-radius: 10px;">
+            <h5 class="text-center bujishu-gold form-card-title font-family-lato" style="border-radius: 10px;"><b>REGISTRATION</b></h5>
             <ul class="nav nav-tabs nav-fill" role="tablist">
                 <li class="nav-item active">
-                    <a class="nav-link register-tab-active active" id="home-tab" data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
+                    <a class="nav-link register-tab-active active font-family-lato" id="home-tab" data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link register-tab-active" id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Information</a>
+                    <a class="nav-link register-tab-active font-family-lato" id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Information</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link register-tab-active" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="agreement" aria-selected="false">Agreement</a>
+                    <a class="nav-link register-tab-active font-family-lato" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="agreement" aria-selected="false">Agreement</a>
                 </li>
             </ul>
             <div class="card-body">
@@ -29,17 +29,17 @@
                     <div class="tab-content " id="myTabContent">
                         <!-- Registration  Tab-->
                         <div class="tab-pane fade show active " id="registration" role="tabpanel" aria-labelledby="registration-tab">
-                            <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Account Particulars</h5>
+                            <h5 class="text-center font-family-lato" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;"><b>ACCOUNT PARTICULARS</b></h5>
                             <div class="form-row register-info">
                                 <div class="form-group col-md-12">
-                                    <label for="email">Email</label>
+                                    <label for="email" class="font-family-lato">Email</label>
                                     <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" required id="email" placeholder="Email" value="{{ old('email') }}">
                                     @error('email')
                                     <small class="form-text text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="password">Password</label>
+                                    <label for="password" class="font-family-lato">Password</label>
                                     <input type="password" name="password" class="form-control " required id="password">
                                     @error('password')
                                     <small class="form-text text-danger">{{ $message }}</small>
@@ -47,7 +47,7 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="password-confirm">Confirm Password</label>
+                                    <label for="password-confirm" class="font-family-lato">Confirm Password</label>
                                     <input id="password-confirm" type="password" class="form-control " name="password_confirmation" required autocomplete="new-password">
                                     @error('password_confirmation')
                                     <small class="form-text text-danger">{{ $message }}</small>
@@ -58,7 +58,7 @@
                             <!-- Next Button -->
                             <div class="text-right">
                                 <!-- <a class="btn btn-secondary next-button" id="information-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Next</a> -->
-                                <a class="btn btn-secondary next-button bjsh-btn-gradient" id="next-btn">Next</a>
+                                <a class="btn btn-secondary next-button bjsh-btn-gradient font-family-lato" id="next-btn"><b>Next</b></a>
                             </div>
                         </div>
 
@@ -170,7 +170,7 @@
                             <!-- Next Button -->
                             <div class="text-right">
                                 <!-- <a class="btn btn-secondary next-button" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="profile" aria-selected="false">Next</a> -->
-                                <a class="btn btn-secondary next-button bjsh-btn-gradient" id="next-btn2">Next</a>
+                                <a class="btn btn-secondary next-button bjsh-btn-gradient font-family-lato" id="next-btn2"><b>Next</b></a>
                             </div>
                         </div>
 
@@ -483,7 +483,7 @@
                                     <!-- Submit Button -->
                                     <div class="text-right">
                                         <input type="hidden" name="registrationFor" value="customer">
-                                        <button type="submit" id="submit" class=" btn next-button bjsh-btn-gradient text-right">Sign Up</button>
+                                        <button type="submit" id="submit" class=" btn next-button bjsh-btn-gradient text-right font-family-lato"><b>Sign Up</b></button>
                                     </div>
                                 </div>
                             </div>

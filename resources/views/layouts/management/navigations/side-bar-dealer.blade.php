@@ -1,8 +1,8 @@
 
 
-<div class="sidebar sidebar-bg-color-dealer ">
+<div class="sidebar sidebar-bg-color-dealer" style=" width: 240px;">
     <nav class="sidebar-nav">
-      <ul class="list-unstyled components">
+      <ul class="list-unstyled components" style="padding-left: 10px;">
          <br>
          <h4 class="font-family-lato" style="font-family:bold; color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
          
@@ -108,7 +108,7 @@
 
     .sidebar-text-color{
       
-        font-family:"Times New Roman", Times, serif;
+        font-family:'Lato', sans-serif;
         font-size: 14pt;
         color: black;
         margin-left:10px;

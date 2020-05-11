@@ -42,11 +42,12 @@
 }
 
 .sidebar .sidebar-nav {
-    width: 230px;
+    width: 240px;
 }
+
 // Sidebar collapse
 html:not([dir="rtl"]) .sidebar {
-    margin-left: -230px;
+    margin-left: -240px;
 }
 
 .app-body .sidebar {
@@ -56,11 +57,15 @@ html:not([dir="rtl"]) .sidebar {
 
 .sidebar-bg-color-dealer {
     background-color: #f8fafc;
-    border-right: 1px solid #ffcc00;
+    border-right: 1pt solid #ffcc00;
 }
 
 @media (max-width: 990px) {
     .sidebar {
         width: 120px;
+    }
+
+    .sidebar-mobile-dealer {
+        width: 240px;
     }
 }
