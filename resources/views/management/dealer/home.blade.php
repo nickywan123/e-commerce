@@ -128,7 +128,7 @@
              <div class="col-6">
               <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Today Sales</h4>
              </div>
-             <div class="col-6 mt-1">
+             <div class="col-6 ">
               <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
               </div>
            </div>
@@ -153,7 +153,7 @@
               <div class="col-6">
                <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Sales Summary</h4>
               </div>
-              <div class="col-6 mt-1">
+              <div class="col-6">
                <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
                </div>
             </div>
@@ -172,13 +172,13 @@
          </div>  
 
 
-         <div class="card border-radius-card shadow" style="margin-top: 30px;" >
+         <div class="card border-radius-card shadow" style="margin-top: 50px;" >
           <div class="card-body"  >
             <div class="row">
               <div class="col-8">
                <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Group Performance</h4>
               </div>
-              <div class="col-4 mt-1">
+              <div class="col-4">
                <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
                </div>
             </div>
@@ -234,7 +234,7 @@
             <div class="col-6">
              <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Monthly Income</h4>
             </div>
-            <div class="col-6 mt-1">
+            <div class="col-6 ">
              <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
              </div>
           </div>
@@ -251,13 +251,13 @@
        {{--Card-4--}}
 
 
-       <div class="card border-radius-card shadow" >
-        <div class="card-body" style="min-height: 315px;">
+       <div class="card border-radius-card shadow" style="margin-top: 35px;height: 350px;" >
+        <div class="card-body">
           <div class="row">
             <div class="col-6">
              <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Profile</h4>
             </div>
-            <div class="col-6 mt-1">
+            <div class="col-6 ">
              <p class="card-title" style="float: right; color:#ffcc00;">Edit</p>
              </div>
           </div>
@@ -326,13 +326,13 @@
       </div>
     </div>
 
-    <div class="card border-radius-card shadow" style=" margin-top: 105px;">
+    <div class="card border-radius-card shadow" style=" margin-top: 60px;">
       <div class="card-body " style="min-height: 315px;">
         <div class="row">
           <div class="col-6">
            <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Feedback</h4>
           </div>
-          <div class="col-6 mt-1">
+          <div class="col-6 ">
            <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
           </div>
         </div>
