@@ -140,7 +140,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function favorites()
     {
-        return $this->hasMany('App\Models\Users\Favorite', 'user_id', 'id');
+        return $this->hasMany('App\Models\Users\Customers\Favorite', 'user_id', 'id');
     }
 
     // Eloquent Scopes

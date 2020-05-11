@@ -22,6 +22,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -32,7 +33,7 @@
     @include('layouts.management.navigations.navigation-bar-dealer')
     <div class="app-body">
         @include('layouts.management.navigations.side-bar-dealer')
-        <main class="main " style="margin-top:2%;">
+        <main class="main" style="margin-top:2%;">
 
             @yield('breadcrumbs')
             <div class="container-fluid">

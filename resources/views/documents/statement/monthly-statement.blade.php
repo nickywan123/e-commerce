@@ -8424,7 +8424,7 @@
                                 DATE
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0; width:200px;">
-                                 01/placeholder/placeholder             
+                                 1/{{$month_num}}/{{$year}}           
                             </td>
                         </tr>
                         <tr>
@@ -8432,7 +8432,7 @@
                                 BUSINESS MONTH
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border: 1px solid #000000; margin: 0;">
-                                 placeholder       
+                                 {{$month}}    
                             </td>
                         </tr>
                         <tr>
