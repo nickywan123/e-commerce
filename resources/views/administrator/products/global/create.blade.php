@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-{{ $newProduct }}
 <div class="card shadow-sm">
     <div class="card-body">
 

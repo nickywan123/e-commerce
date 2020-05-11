@@ -251,6 +251,33 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
                     ->name('administrator.products.panels.delete');
             });
         });
+
+        // Category
+        Route::group(['prefix' => 'categories'], function () {
+            // Index
+            Route::get('/', 'Administrator\Category\CategoryController@index')
+                ->name('administrator.categories');
+
+            // Create
+            Route::get('/create', 'Administrator\Category\CategoryController@create')
+                ->name('administrator.categories.create');
+
+            // Store
+            Route::post('/store', 'Administrator\Category\CategoryController@store')
+                ->name('administrator.categories.store');
+
+            // Edit
+            Route::get('/edit/{id}', 'Administrator\Category\CategoryController@edit')
+                ->name('administrator.categories.edit');
+
+            // Update
+            Route::put('/update/{id}', 'Administrator\Category\CategoryController@update')
+                ->name('administrator.categories.update');
+
+            // Delete
+            Route::delete('/delete/{id}', 'Administrator\Category\CategoryController@destroy')
+                ->name('administrator.categories.delete');
+        });
     });
 
     // Shop
