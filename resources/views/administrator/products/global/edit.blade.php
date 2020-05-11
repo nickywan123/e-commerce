@@ -36,9 +36,9 @@
                         <div class="col-12 col-md-4 form-group">
                             <label for="product_quality">Product Quality</label>
                             <select name="product_quality" id="product_quality" class="select2 form-control">
-                                <option value="1">Standard</option>
-                                <option value="2">Moderate</option>
-                                <option value="3">Premium</option>
+                                <option value="1" {{ ($product->quality_id == 1) ? 'selected' : '' }}>Standard</option>
+                                <option value="2" {{ ($product->quality_id == 2) ? 'selected' : '' }}>Moderate</option>
+                                <option value="3" {{ ($product->quality_id == 3) ? 'selected' : '' }}>Premium</option>
                             </select>
                         </div>
                     </div>
