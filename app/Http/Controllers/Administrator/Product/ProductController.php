@@ -167,9 +167,7 @@ class ProductController extends Controller
         $productAttributes = $product->attributes;
 
         foreach ($productAttributes as $productAttribute) {
-            if (!in_array($productAttribute->id, $postAttributes)) {
-                $productAttribute->delete();
-            }
+            $productAttribute->delete();
         }
 
         foreach ($request->input('attribute_type') as $key => $attributeType) {

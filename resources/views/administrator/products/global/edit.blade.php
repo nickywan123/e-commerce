@@ -36,9 +36,9 @@
                         <div class="col-12 col-md-4 form-group">
                             <label for="product_quality">Product Quality</label>
                             <select name="product_quality" id="product_quality" class="select2 form-control">
-                                <option value="1">Standard</option>
-                                <option value="2">Moderate</option>
-                                <option value="3">Premium</option>
+                                <option value="1" {{ ($product->quality_id == 1) ? 'selected' : '' }}>Standard</option>
+                                <option value="2" {{ ($product->quality_id == 2) ? 'selected' : '' }}>Moderate</option>
+                                <option value="3" {{ ($product->quality_id == 3) ? 'selected' : '' }}>Premium</option>
                             </select>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                             <div class="form-row">
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_type">Variation Type</label>
-                                    <select name="attribute_type[1]" id="attribute_type" class="form-control my-auto">
+                                    <select name="attribute_type[]" id="attribute_type" class="form-control my-auto">
                                         <option value="">Select Variation Type</option>
                                         <option value="color" {{ ($attribute->attribute_type == 'color') ? 'selected' : '' }}>Color</option>
                                         <option value="size" {{ ($attribute->attribute_type == 'size') ? 'selected' : '' }}>Size</option>
@@ -123,13 +123,13 @@
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_name">Variation Name</label>
-                                    <input type="text" name="attribute_name[1]" id="attribute_name" class="form-control" placeholder="Yellow / 120cm * 200cm / Daylight" value="{{ $attribute->attribute_name }}">
+                                    <input type="text" name="attribute_name[]" id="attribute_name" class="form-control" placeholder="Yellow / 120cm * 200cm / Daylight" value="{{ $attribute->attribute_name }}">
                                 </div>
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="color_hex">Variation Color <small>(Leave blank if not applicable.)</small></label>
                                     <div class="input-group color_picker">
-                                        <input type="text" name="color_hex[1]" id="color_hex" class="form-control" value="{{ $attribute->color_hex }}">
+                                        <input type="text" name="color_hex[]" id="color_hex" class="form-control" value="{{ $attribute->color_hex }}">
                                         <span class="input-group-append">
                                             <span class="input-group-text colorpicker-input-addon"><i></i></span>
                                         </span>
@@ -153,7 +153,7 @@
                             <div class="form-row">
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_type">Variation Type</label>
-                                    <select name="attribute_type[1]" id="attribute_type" class="form-control my-auto">
+                                    <select name="attribute_type[]" id="attribute_type" class="form-control my-auto">
                                         <option value="">Select Variation Type</option>
                                         <option value="color">Color</option>
                                         <option value="size">Size</option>
@@ -163,13 +163,13 @@
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="attribute_name">Variation Name</label>
-                                    <input type="text" name="attribute_name[1]" id="attribute_name" class="form-control" placeholder="Yellow / 120cm * 200cm / Daylight">
+                                    <input type="text" name="attribute_name[]" id="attribute_name" class="form-control" placeholder="Yellow / 120cm * 200cm / Daylight">
                                 </div>
 
                                 <div class="col-12 col-md-3 form-group">
                                     <label for="color_hex">Variation Color <small>(Leave blank if not applicable.)</small></label>
                                     <div class="input-group color_picker">
-                                        <input type="text" name="color_hex[1]" id="color_hex" class="form-control">
+                                        <input type="text" name="color_hex[]" id="color_hex" class="form-control">
                                         <span class="input-group-append">
                                             <span class="input-group-text colorpicker-input-addon"><i></i></span>
                                         </span>
