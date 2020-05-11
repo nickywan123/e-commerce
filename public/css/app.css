@@ -60597,7 +60597,8 @@ a.hover-white:hover {
 }
 
 .navbar-bg-color,
-.footer-bg-color {
+.footer-bg-color,
+.sidebar-bg-color {
   background-color: black;
 }
 
@@ -60708,7 +60709,7 @@ html:not([dir=rtl]) .sidebar {
   order: -1;
 }
 
-.sidebar-bg-color {
+.sidebar-bg-color-dealer {
   background-color: #f8fafc;
   border-right: 1px solid #ffcc00;
 }

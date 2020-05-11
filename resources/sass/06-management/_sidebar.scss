@@ -45,23 +45,21 @@
     width: 230px;
 }
 // Sidebar collapse
-html:not([dir=rtl]) .sidebar {
+html:not([dir="rtl"]) .sidebar {
     margin-left: -230px;
-  }
-  
+}
 
 .app-body .sidebar {
     flex: 0 0 100px;
     order: -1;
 }
 
-.sidebar-bg-color{
+.sidebar-bg-color-dealer {
     background-color: #f8fafc;
     border-right: 1px solid #ffcc00;
 }
 
-
-@media(max-width:990px) {
+@media (max-width: 990px) {
     .sidebar {
         width: 120px;
     }

@@ -1,6 +1,6 @@
 
 
-<div class="sidebar sidebar-bg-color ">
+<div class="sidebar sidebar-bg-color-dealer ">
     <nav class="sidebar-nav">
       <ul class="list-unstyled components">
          <br>

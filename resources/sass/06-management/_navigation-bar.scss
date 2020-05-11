@@ -1,8 +1,8 @@
 .navbar-bg-color,
-.footer-bg-color{
+.footer-bg-color,
+.sidebar-bg-color {
     background-color: black;
 }
-
 
 .breadcrumb-bg-color {
     background-color: #ffcc00;
@@ -26,7 +26,7 @@
     min-height: 10%;
 }
 
-@media(min-height:900px) {
+@media (min-height: 900px) {
     .nav-height {
         min-height: 8%;
     }
