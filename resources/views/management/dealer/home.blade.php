@@ -186,14 +186,14 @@
               <div class="col-6 text-bold" >
                 <p class="ml-2">Member A</p>
                 <div class="card border-radius-card mt-1 border-warning" >
-                  <div class="card-body" style="max-height: 170px;">  
+                  <div class="card-body" style="max-height: 200px;">  
                    <div class="row" style="border-bottom: 1px solid #ffc107 ;">
                     <p class="card-title" style="font-weight:bold; font-size:14pt;">RM 5,888</P>
-                     <p style="font-size:small; color: #d6d4d4;"> Sales Revenue | Today</p>
+                     <p style="font-size:15px; color: #d6d4d4;"> Sales Revenue | Today</p>
                    </div>
                    <div class="row mt-2" >
                     <p class="card-title" style="font-weight:bold; font-size:13pt;">RM 20,888</P>
-                     <p style="font-size:small; color: #d6d4d4;"> Sales Revenue | Month</p>
+                     <p style="font-size:15px; color: #d6d4d4;"> Sales Revenue | Month</p>
                    </div>    
                   </div>
                 </div>
@@ -202,16 +202,16 @@
               <div class="col-6 text-bold" >
                 <p class="ml-2">Member B</p>
                 <div class="card border-radius-card mt-1 border-warning" >
-                  <div class="card-body" style="max-height: 170px;">
+                  <div class="card-body" style="max-height: 200px;">
                  
                    <div class="row" style="border-bottom: 1px solid #ffc107 ;">
                     <p class="card-title" style="font-weight:bold; font-size:14pt;">RM 8,888</P>
-                     <p style="font-size:small; color: #d6d4d4;"> Sales Revenue | Today</p>
+                     <p style="font-size:15px; color: #d6d4d4;"> Sales Revenue | Today</p>
                    </div>
                    
                    <div class="row mt-2" >
                     <p class="card-title" style="font-weight:bold; font-size:13pt;">RM 68,888</P>
-                     <p style="font-size:small; color: #d6d4d4;"> Sales Revenue | Month</p>
+                     <p style="font-size:15px; color: #d6d4d4;"> Sales Revenue | Month</p>
                    </div>
                    
                   </div>
@@ -251,7 +251,7 @@
        {{--Card-4--}}
 
 
-       <div class="card border-radius-card shadow" style="margin-top: 35px;height: 350px;" >
+       <div class="card border-radius-card shadow" style="margin-top: 43px;height: 375px;" >
         <div class="card-body">
           <div class="row">
             <div class="col-6">
@@ -326,8 +326,8 @@
       </div>
     </div>
 
-    <div class="card border-radius-card shadow" style=" margin-top: 60px;">
-      <div class="card-body " style="min-height: 315px;">
+    <div class="card border-radius-card shadow" style=" margin-top: 63px;">
+      <div class="card-body " style="min-height: 375px;">
         <div class="row">
           <div class="col-6">
            <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Feedback</h4>

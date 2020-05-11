@@ -1,24 +1,26 @@
+
+
 <div class="sidebar sidebar-bg-color ">
     <nav class="sidebar-nav">
       <ul class="list-unstyled components">
          <br>
-         <h4 style="font-family:bold; color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
+         <h4 class="font-family-lato" style="font-family:bold; color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
          
          
          <li>
-          <a href="/category/bedsheet-mattress" class="sidebar-text-color">Profile</a>
+          <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Profile</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color">Sales Summary</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Sales Summary</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color">Monthly Income</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Monthly Income</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color">Notice</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Notice</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color">Promotion/Special Offer</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Promotion/Special Offer</a>
          </li>
          
       </ul>
@@ -110,5 +112,9 @@
         font-size: 14pt;
         color: black;
         margin-left:10px;
+    }
+
+    .font-family-lato{
+      font-family: 'Lato', sans-serif;
     }
 </style>
