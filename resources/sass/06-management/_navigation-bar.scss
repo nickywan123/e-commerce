@@ -1,8 +1,8 @@
 .navbar-bg-color,
-.footer-bg-color,
-.sidebar-bg-color {
+.footer-bg-color{
     background-color: black;
 }
+
 
 .breadcrumb-bg-color {
     background-color: #ffcc00;
@@ -28,7 +28,7 @@
 
 @media(min-height:900px) {
     .nav-height {
-        min-height: 7%;
+        min-height: 8%;
     }
 }
 

@@ -18,7 +18,7 @@
  <div class="offset-1 col-11">
     <table class="table">
         <thead>
-          <tr>
+          <tr class="text-align-center" >
             <th scope="col">Year</th>
             <th scope="col">Jan</th>
             <th scope="col">Feb</th>
@@ -38,20 +38,20 @@
         </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">2020</th>
-            <td >-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td><a href="/management/dealer/statements/{{$dealer_statement->month}}">{{$dealer_statement->month}}</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+          <tr class="text-align-center">
+            <th scope="row" >2020</th>
+            <td><a href="{{route('dealer.statement',['Jan','02','2020'])}}">STM-01</a></td>
+            <td><a href="{{route('dealer.statement',['Feb','03','2020'])}}">STM-02</a></td>
+            <td><a href="{{route('dealer.statement',['Mar','04','2020'])}}">STM-03</a></td>
+            <td><a href="{{route('dealer.statement',['Apr','05','2020'])}}">STM-04</a></td>
+            <td><a href="{{route('dealer.statement',['May','06','2020'])}}">STM-05</a></td>
+            <td><a href="{{route('dealer.statement',['Jun','07','2020'])}}">STM-06</a></td>
+            <td><a href="{{route('dealer.statement',['Jul','08','2020'])}}">STM-07</a></td>
+            <td><a href="{{route('dealer.statement',['Aug','09','2020'])}}">STM-08</a></td>
+            <td><a href="{{route('dealer.statement',['Sep','10','2020'])}}">STM-09</a></td>
+            <td><a href="{{route('dealer.statement',['Oct','11','2020'])}}">STM-10</a></td>
+            <td><a href="{{route('dealer.statement',['Nov','12','2020'])}}">STM-11</a></td>
+            <td><a href="{{route('dealer.statement',['Dec','01','2021'])}}">STM-12</a></td>
 
             
           </tr>
@@ -63,6 +63,13 @@
 
 
 
+<style>
+
+.text-align-center{
+text-align: center;
+}
+
+</style>
 
 
 @endsection

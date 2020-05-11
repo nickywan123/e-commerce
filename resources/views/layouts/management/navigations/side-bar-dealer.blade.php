@@ -1,6 +1,34 @@
-<div class="sidebar sidebar-bg-color">
+
+
+<div class="sidebar sidebar-bg-color ">
     <nav class="sidebar-nav">
-        <ul class="nav sidebar-margin-top">
+      <ul class="list-unstyled components">
+         <br>
+         <h4 class="font-family-lato" style="font-family:bold; color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
+         
+         
+         <li>
+          <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Profile</a>
+         </li>
+         <li>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Sales Summary</a>
+         </li>
+         <li>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Monthly Income</a>
+         </li>
+         <li>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Notice</a>
+         </li>
+         <li>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Promotion/Special Offer</a>
+         </li>
+         
+      </ul>
+    </nav> 
+</div>
+
+
+        {{-- <ul class="nav sidebar-margin-top">
 
             <li class="nav-item" >
               <div class="icon-text-align">
@@ -65,26 +93,28 @@
             @endhasrole
 
 
-        </ul>
-    </nav>
+        </ul> --}}
+   
     {{-- <button class="sidebar-minimizer brand-minimizer" type="button"></button> --}}
-</div>
+
 
 
 
 
 
 <style>
-    .icon-text-align{
-        display: inline-block;
-       /* text-align: center; */
+
    
+
+    .sidebar-text-color{
+      
+        font-family:"Times New Roman", Times, serif;
+        font-size: 14pt;
+        color: black;
+        margin-left:10px;
     }
 
-    .text-color{
-      
-        font-family:Corbel;
-        font-size: 10pt;
-        color: #ffcc00;
+    .font-family-lato{
+      font-family: 'Lato', sans-serif;
     }
 </style>

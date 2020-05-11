@@ -28,6 +28,8 @@
         "@fortawesome/fontawesome-free": "^5.13.0",
         "bootstrap-colorpicker": "^3.2.0",
         "dropzone": "^5.7.0",
+        "@fortawesome/fontawesome-free": "^5.12.1",
+        "chart.js": "^2.9.3",
         "flag-icon-css": "^3.4.6",
         "inputmask": "^5.0.3",
         "ion-rangeslider": "^2.3.1",
