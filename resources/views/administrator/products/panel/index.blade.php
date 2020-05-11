@@ -7,9 +7,9 @@
 @section('content')
 <div class="card shadow-sm">
     <div class="card-body">
-        <div class="mb-3">
-            <div class="text-right">
-                <button type="button" class="btn btn-info text-light" data-toggle="modal" data-target="#newProductModal">New Product</button>
+        <div class="row">
+            <div class="col-12 text-right p-2">
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#newProductModal">Create New Product</button>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="newProductModal" tabindex="-1" role="dialog" aria-labelledby="newProductModal" aria-hidden="true">
@@ -49,7 +49,7 @@
         </div>
 
         <div class="table-responsive">
-            <table class="table table-striped" style="min-width: 1366px;">
+            <table id="panel-products-table" class="table table-striped table-bordered" style="min-width: 1366px;">
                 <thead>
                     <tr>
                         <td>No.</td>
@@ -136,6 +136,8 @@
         $('.select2').select2({
             dropdownParent: $('#newProductModal')
         });
+
+        $('#panel-products-table').DataTable();
     });
 </script>
 @endpush

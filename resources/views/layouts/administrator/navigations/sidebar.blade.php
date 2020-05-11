@@ -16,11 +16,6 @@
                             <i class="nav-icon icon-puzzle"></i> All Products
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/administrator/products/create" class="nav-link">
-                            <i class="nav-icon icon-puzzle"></i> New Products
-                        </a>
-                    </li>
                 </ul>
             </li>
 
@@ -31,6 +26,18 @@
                     <li class="nav-item">
                         <a href="/administrator/products/panels" class="nav-link">
                             <i class="nav-icon icon-puzzle"></i> All Products
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="nav-icon icon-drop"></i> Categories</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="/administrator/categories" class="nav-link">
+                            <i class="nav-icon icon-puzzle"></i> All Categories
                         </a>
                     </li>
                 </ul>

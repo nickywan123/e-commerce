@@ -7,8 +7,15 @@
 @section('content')
 <div class="card shadow-sm">
     <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-striped" style="min-width: 1366px;">
+        <div>
+            <div class="row">
+                <div class="col-12 text-right p-2">
+                    <a href="{{ route('administrator.products.create') }}" style="color: white; font-style: normal; border-radius: 5px;" class="btn btn-dark">Create New Product</a>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive m-2">
+            <table id="global-products-table" class="table table-striped table-bordered" style="min-width: 1366px;">
                 <thead>
                     <tr>
                         <td>No.</td>
@@ -55,9 +62,14 @@
                 </tbody>
             </table>
         </div>
-        <div>
-            {{ $products->links() }}
-        </div>
     </div>
 </div>
 @endsection
+
+@push('script')
+<script>
+    $(document).ready(function() {
+        $('#global-products-table').DataTable();
+    });
+</script>
+@endpush

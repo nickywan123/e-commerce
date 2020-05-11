@@ -18,6 +18,7 @@
 
     <!-- Summernote Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-bs4.min.css" rel="stylesheet">
+
     <style>
         .sidebar .sidebar-nav {
             width: 100%;
