@@ -31,7 +31,11 @@
                             {{ $loop->iteration }}
                         </td>
                         <td style="width: 10%;">
+                            @if (!$category->image->exists())
+                            <img src="https://lh3.googleusercontent.com/proxy/DM7DPY5CxARB_roAaPghZdcl0a3gRPK_FPBckZSY48wSvSS5GhID8MplL8mDjOhYiCadLj0AkUIyG28OPLAR6TYc5vD86QW6fzRmdFI9tS6aztKcuNKVETiwzpHKnHZHNNV65ZcX-qbo0bE" class="mw-100" style="border-radius: 10px" alt="">
+                            @else
                             <img class="mw-100" style="border-radius: 10px;" src="{{ asset('storage/' . $category->image->path . $category->image->filename) }}" alt="">
+                            @endif
                         </td>
                         <td>
                             {{ $category->name }}
