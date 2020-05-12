@@ -18,17 +18,19 @@ class ValueRecordsController extends Controller
 
     public function customerAllOrders()
     {
-        $user = User::find(Auth::user()->id);
-        // Return purchases that user have paid
-        $statuses = [3001, 3002, 3003];
-        // $order_status = [1000];
-        // $purchases = $user->purchases->whereIn('purchase_status', $statuses);
-        // $totalOrders = $purchases->sum('orders_count');
-        $purchases = Purchase::where('user_id', $user->id)->whereIn('purchase_status', $statuses)
-            ->withCount('orders')->get();
+        // $user = User::find(Auth::user()->id);
+        // // Return purchases that user have paid
+        // $statuses = [3001, 3002, 3003];
+        // // $order_status = [1000];
+        // // $purchases = $user->purchases->whereIn('purchase_status', $statuses);
+        // // $totalOrders = $purchases->sum('orders_count');
+        // $purchases = Purchase::where('user_id', $user->id)->whereIn('purchase_status', $statuses)
+        //     ->withCount('orders')->get();
 
 
-        return view('shop.customer-dashboard.value-records.index')->with('purchases', $purchases);
+        // return view('shop.customer-dashboard.value-records.index')->with('purchases', $purchases);
+
+        return view('shop.customer-dashboard.home');
     }
 
     /*******Return Open Orders in customer dashboard******/

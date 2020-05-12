@@ -1,13 +1,23 @@
+<div class="wrapper" style="height: 100%; ">
 <div class="sidebar sidebar-bg-color">
     <nav class="sidebar-nav">
         <ul class="nav sidebar-margin-top">
+
+            <li class="nav-item" style="margin-left: 18px;" >
+                <div class="icon-text-align">
+                   <a class="nav-link " href="{{ route('shop.dashboard.customer.profile') }}">
+                      <img class="img-avatar" src="{{asset('/storage/customer/profile-icon.png')}}" alt="Profile" style="height: 60px; width: 60px; border-radius:0px;">
+                   </a>          
+               </div>
+              </li>
+           
+    
 
             <li class="nav-item" >
               <div class="icon-text-align">
                  <a class="nav-link " href="/shop/dashboard/orders/index">
                     <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/value-records.png')}}" alt="My Orders" style="height: 100px; width: 100px; border-radius:0px;">
-                 </a>
-                
+                 </a>          
              </div>
             </li>
          
@@ -21,20 +31,20 @@
             </div>
             </li>
         
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <div class="icon-text-align">
                  <a class="nav-link" href="/shop/dashboard/change-password">
                     <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/change-password.png')}}" alt="Change Password" style="height: 100px; width: 100px; border-radius:0px;">
                  </a>
                
               </div>
-            </li>
+            </li> --}}
             
             
-            <li class="nav-item">
+            <li class="nav-item" style="margin-left: 18px;">
               <div class="icon-text-align">
                  <a class="nav-link" href="/shop">
-                  <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/shop-icon.png')}}" alt="Shop" style="height: 100px; width: 100px; border-radius:0px;">
+                  <img class="img-avatar" src="{{asset('/storage/customer/shopping.png')}}" alt="Shop" style="height: 60px; width: 60px; border-radius:0px;">
                  </a>
                 
               </div>          
@@ -51,6 +61,17 @@
               </li>
             @endhasrole
 
+            <li class="nav-item" style="margin-left: 18px;">
+                <div class="icon-text-align">
+                   <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+                      <img class="img-avatar" src="{{asset('/storage/customer/logout-icon.png')}}" alt="Logout" style="height: 60px; width: 60px; border-radius:0px;">
+                   </a>
+                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                </div>
+              </li>
 
         </ul>
     </nav>
@@ -58,7 +79,7 @@
 </div>
 
 
-
+</div>
 
 
 <style>
@@ -75,8 +96,12 @@
         color: #ffcc00;
     }
 
-.sidebar .sidebar-nav {
+  .sidebar .sidebar-nav {
     width: 120px;
-}
+   }
+
+   .sidebar{
+       height: 1110px;
+   }
 
 </style>
