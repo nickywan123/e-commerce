@@ -160,6 +160,7 @@ class ProductController extends Controller
         $product->details = $request->input('product_details');
         $product->description = $request->input('product_description');
         $product->quality_id = $request->input('product_quality');
+        $product->product_status = 2;
         $product->save();
 
         $product->categories()->sync($categories);
