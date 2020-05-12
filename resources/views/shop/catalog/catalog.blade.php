@@ -28,7 +28,13 @@
     @if($childCategories->count() > 0)
     <div class="row pb-1">
         <div class="col-12 mb-1">
-            <h3 class="text-dark font-weight-bold">Multi Needs</h3>
+            <h3 class="text-dark font-weight-bold">
+                @if ($category->name == 'Products & Services')
+                Hot Selections
+                @else
+                Multi Needs
+                @endif
+            </h3>
             <hr>
         </div>
     </div>
