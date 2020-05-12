@@ -85,7 +85,7 @@
                                 }
                                 ?>
                                 <input type="radio" id="color-{{ $colorAttribute->id }}" class="panel-product-attributes" name="color" value="{{ $colorAttribute->id }}" {{ ($key == 1) ? 'checked' : '' }} {{ ($attributePrice != 0) ? 'data-price=' . $attributePrice : '' }} {{ ($attributeMemberPrice != 0) ? 'data-member-price' . $attributeMemberPrice : '' }}>
-                                <label class="color-options" for="color-{{ $colorAttribute->id }}" style="background-color: {{ $colorAttribute->color_hex }}"></label>
+                                <label class="color-options" for="color-{{ $colorAttribute->id }}" style="background-color: {{ $colorAttribute->color_hex }}" data-toggle="tooltip" data-placement="top" title="{{ $colorAttribute->attribute_name }}"></label>
                                 @endforeach
                             </div>
                         </div>
@@ -495,8 +495,8 @@
         display: inline-block;
         margin-right: 5px;
         min-width: 0;
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         padding: 10px;
         border: solid 1px #ccc;
         border-radius: 100%;
@@ -978,6 +978,9 @@
                 $(modal).modal('show');
             }
         });
+
+
+        $('.color-options').tooltip()
         /* End Author */
 
     });
