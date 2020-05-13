@@ -187,6 +187,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             });
         });
 
+        // Products
         Route::group(['prefix' => 'products'], function () {
             // Product index.
             Route::get('/', 'Administrator\Product\ProductController@index')
