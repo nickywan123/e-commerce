@@ -32,7 +32,7 @@
                 </p>
             </div>
             <div class="col-12 col-md-6 form-group">
-                <select name="parent_category_id" id="parent_category_id" class="select2 form-control" style="width: 100%;">
+                <select name="parent_category_id" id="parent_category_id" class="select2 select2-edit form-control" style="width: 100%;">
                     <option value="0" {{ ($category->parent_category_id == 0) ? 'selected' : '' }}>None</option>
                     @foreach($categories as $item)
                     <option value="{{ $item->id}}" {{ ($item->id == $category->parent_category_id) ? 'selected' : ''}}>{{ $item->name }}</option>
