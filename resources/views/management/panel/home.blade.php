@@ -98,17 +98,17 @@ var myChart = new Chart(ctx,{
  <div class="hidden-sm">
     <div class="row">
         <div class="col-8">
-        <img src="{{asset('/storage/panel/panel-welcome-banner.png')}}" style="height:100%; width:100%;" alt="welcome-banner">
+        <img src="{{asset('/storage/panel/panel-welcome-banner.png')}}" style="height:90%; width:100%;" alt="welcome-banner">
         </div>
-        <div class="col-4">
-            <div class="card border-radius-card shadow" style="width:100%;height:100%; background-color:#ffcc00;" >
+        <div class="col-4 font-family">
+            <div class="card border-radius-card shadow" style="width:100%;height:90%; background-color:#ffcc00;" >
                 <div class="card-body">
                   <div class="row">
                     <div class="col-6">
                      <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Profile</h4>
                     </div>
                     <div class="col-6 ">
-                     <p class="card-title" style="float: right;margin-right:30px; color:#ffcc00;">Edit</p>
+                     <p class="card-title" style="float: right; color:black;">Edit</p>
                      </div>
                   </div>
                   <div class="row mt-2">
@@ -116,15 +116,15 @@ var myChart = new Chart(ctx,{
                       <img src="{{asset('/storage/dealer/icons/img_avatar.png')}}" style="border-radius:50%; max-width: 70px;" alt="Dealer-Image">
                     </div>
                     <div class="col-9 mt-3"> 
-                       <p><b>Panel</b></p>
+                       <p style="font-size:15pt;"><b>Panel</b></p>
                     </div>
                   </div>
-                  <div class="row mt-5">
-                    <div class="col-12">
+                  <div class="row mt-3">
+                    <div class="col-12" style="font-size: 11pt;">
                         <p style="color: black; line-height:10px;">Billing Address:</p>
-                        <p style="font-size:11px; font-weight:bold; line-height: 1px;">Manas Hotel 285-287, Jalan Tunku Abdul Rahman 50100</p>
-                        <p style="font-size:11px; font-weight:bold; line-height: 1px;">Kuala Lumpur,Malaysia</p>
-                        <p style="font-size:11px; font-weight:bold; line-height: 1px;">012-2351232</p>
+                        <p style=" font-weight:bold; line-height: 1px;">Manas Hotel 285-287, Jalan Tunku Abdul Rahman 50100</p>
+                        <p style=" font-weight:bold; line-height: 1px;">Kuala Lumpur,Malaysia</p>
+                        <p style=" font-weight:bold; line-height: 1px;">012-2351232</p>
                     </div>
                   </div>
                 </div>
@@ -133,8 +133,8 @@ var myChart = new Chart(ctx,{
     </div>
 
 
-<div class="row mt-4">
-    <div class="col-8">
+<div class="row">
+    <div class="col-8 font-family">
         <div class="row">
             <div class="col-6">
                 <div class="row">
@@ -151,11 +151,11 @@ var myChart = new Chart(ctx,{
                          
                           <div class="row">
                             <div class="col-1 ml-4">
-                             <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
+                             <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
                             </div>
-                            <div class="col-7 ml-4" style="line-height: 20px;">   
+                            <div class="col-7 ml-5 mt-2" style="line-height: 20px;">   
                              <p class="card-title" style="font-weight:bold; font-size:30pt;">RM 28,888</P>
-                             <p>Daily Revenue: 08/05/2020</p>
+                             <p style="color: #939598;">Daily Revenue: 08/05/2020</p>
                             </div>
                           </div>       
                         </div>
@@ -175,11 +175,11 @@ var myChart = new Chart(ctx,{
                          
                           <div class="row">
                             <div class="col-1 ml-4">
-                             <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
+                             <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
                             </div>
-                            <div class="col-7 ml-4" style="line-height: 20px;">
-                             <p class="card-title" style="font-weight:bold; font-size:30pt;">RM 88,888</P>
-                             Month Revenue: May 2020
+                            <div class="col-7 ml-5 mt-2" style="line-height: 20px;">
+                             <p class="card-title" style="font-weight:bold; font-size:30pt;">RM 88,888</p>
+                             <p style="color: #939598;"> Monthly Revenue: May 2020</p>
                             </div>
                           </div> 
                         </div>
@@ -228,7 +228,7 @@ var myChart = new Chart(ctx,{
            </div>
                
 
-            <div class="col-6">
+            <div class="col-6 font-family">
                 <div class="row ml-1">
                     <div class="card border-radius-card shadow" style="width: 100%; height:100%;" >
                         <div class="card-body" >
@@ -271,7 +271,7 @@ var myChart = new Chart(ctx,{
                     </div>  
                 </div>
 
-                <div class="row ml-1">
+                <div class="row ml-1 font-family">
                     <div class="card border-radius-card shadow" style="width: 100%; height:100%;" >
                         <div class="card-body">
                           <div class="row">
@@ -292,7 +292,7 @@ var myChart = new Chart(ctx,{
         </div>
     </div>
 
-    <div class="col-4 mt-1">
+    <div class="col-4 mt-1 font-family">
         <div class="row ml-1" >
             <div class="col-12">
              <p class="text-bold" style="font-size:15pt; border-bottom:1px solid black;">Announcement</p>

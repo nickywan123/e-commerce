@@ -76,6 +76,14 @@ class UserInfo extends Model
         return $this->hasOne('App\Models\Users\UserAddress', 'account_id', 'account_id')
             ->where('is_mailing_address', 1);
     }
+
+    public function residentialAddress()
+    {
+        return $this->hasOne('App\Models\Users\UserAddress', 'account_id', 'account_id')
+            ->where('is_residential_address', 1);
+    }
+
+
     public function mobileContact()
     {
         return $this->hasOne('App\Models\Users\UserContact', 'account_id', 'account_id')

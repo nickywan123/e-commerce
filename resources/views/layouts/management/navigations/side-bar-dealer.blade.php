@@ -4,23 +4,23 @@
     <nav class="sidebar-nav">
       <ul class="list-unstyled components" style="padding-left: 10px;">
          <br>
-         <h4 class="font-family-lato" style="font-family:bold; color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
+         <h4 class="font-family" style="color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
          
          
          <li>
-          <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Profile</a>
+          <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Profile</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Sales Summary</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Sales Summary</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Monthly Income</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Monthly Income</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Notice</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Notice</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family-lato">Promotion/Special Offer</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Promotion/Special Offer</a>
          </li>
          
       </ul>

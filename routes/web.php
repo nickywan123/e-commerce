@@ -309,6 +309,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/dashboard/profile/edit', 'Shop\ProfileController@edit')->name('shop.dashboard.customer.profile.edit');
         Route::patch('dashboard/profile/update/{id}', 'Shop\ProfileController@updateProfile')->name('profile.update');
 
+        Route::get('/dashboard/home', 'Shop\ValueRecordsController@homePageCustomer')->name('shop.dashboard.customer.home');
+
         // Return Customer ->All Orders
         Route::get('/dashboard/orders/index', 'Shop\ValueRecordsController@customerAllOrders')->name('shop.customer.orders');
         // Return Customer -> Open Orders

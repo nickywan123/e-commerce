@@ -213,10 +213,10 @@
          <div class="card-body" style="height: 150px;">
            <div class="row">
              <div class="col-6">
-              <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Today Sales</h4>
+              <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Today Sales</h4>
              </div>
              <div class="col-6 ">
-              <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
+              <p class="card-title font-family" style="float: right; color:#ffcc00;">Show more</p>
               </div>
            </div>
           
@@ -225,8 +225,8 @@
               <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
              </div>
              <div class="col-7 ml-4" style="line-height: 20px;">   
-              <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 28,888</P>
-              <p>Daily Revenue: 08/05/2020</p>
+              <p class="card-title font-family" style="font-weight:bold; font-size:15pt;">RM 28,888</P>
+              <p class="font-family">Daily Revenue: 08/05/2020</p>
              </div>
            </div> 
 
@@ -237,10 +237,10 @@
           <div class="card-body" style="height: 150px;">
             <div class="row">
               <div class="col-6">
-               <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Sales Summary</h4>
+               <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Sales Summary</h4>
               </div>
               <div class="col-6">
-               <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
+               <p class="card-title font-family" style="float: right; color:#ffcc00;">Show more</p>
                </div>
             </div>
            
@@ -249,7 +249,7 @@
                <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
               </div>
               <div class="col-7 ml-4" style="line-height: 20px;">
-               <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 88,888</P>
+               <p class="card-title font-family" style="font-weight:bold; font-size:15pt;">RM 88,888</P>
                Month Revenue: May 2020
               </div>
             </div> 
@@ -262,10 +262,10 @@
             <div class="card-body" style="min-height: 325px;">
               <div class="row">
                 <div class="col-6">
-                  <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Monthly Income</h4>
+                  <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Monthly Income</h4>
                 </div>
                 <div class="col-6 ">
-                 <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
+                 <p class="card-title font-family" style="float: right; color:#ffcc00;">Show more</p>
                 </div>
               </div>
               <div class="row">
@@ -282,35 +282,35 @@
   <div class="col-4 ml-5">
     <div class="row" >
       <div class="col-12">
-       <p class="text-bold" style="font-size:15pt; border-bottom:1px solid black;">Announcement</p>
+       <p class="text-bold font-family" style="font-size:15pt; border-bottom:1px solid black;">Announcement</p>
       </div>
     </div>
 
     <div class="row">
       <div class="col-12">
-        <p style="color:#d6d4d4;">4 minutes ago</p>
-        <p class="text-bold" style="line-height: 1px; font-size:20px;">Message Title</p>
-        <p style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+        <p class="font-family" style="color:#d6d4d4;">4 minutes ago</p>
+        <p class="text-bold font-family" style="line-height: 1px; font-size:20px;">Message Title</p>
+        <p class="font-family" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
         <p style="border-bottom:1px solid black;"></p>
       </div>
     </div>
 
     <div class="row">
       <div class="col-12">
-        <p style="color:#d6d4d4;">1.00 PM</p>
-        <p class="text-bold" style="line-height: 1px; font-size:20px;">Message Title</p>
-        <p style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+        <p class="font-family" style="color:#d6d4d4;">1.00 PM</p>
+        <p class="text-bold font-family" style="line-height: 1px; font-size:20px;">Message Title</p>
+        <p class="font-family" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
         <p style="border-bottom:1px solid black;"></p>
       </div>
     </div>
 
     <div class="row">
       <div class="col-12">
-        <p style="color:#d6d4d4;">Yesterday 10.00 AM</p>
-        <p class="text-bold" style="line-height: 1px; font-size:20px;">Message Title</p>
-        <p style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-        <p style="border-bottom:1px solid black;"></p>
-        <p  style="color:#ffcc00; text-align:center;">Show more</p>
+        <p class="font-family" style="color:#d6d4d4;">Yesterday 10.00 AM</p>
+        <p class="text-bold font-family" style="line-height: 1px; font-size:20px;">Message Title</p>
+        <p class="font-family" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+        <p class="font-family"  style="border-bottom:1px solid black;"></p>
+        <p class="font-family"  style="color:#ffcc00; text-align:center;">Show more</p>
       </div>
     </div>
   </div>
@@ -323,15 +323,15 @@
     <div class="card border-radius-card shadow" >
       <div class="card-body">
         <div class="row">
-          <div class="col-8">
+          <div class="col-8 font-family">
            <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Group Performance</h4>
           </div>
-          <div class="col-4">
+          <div class="col-4 font-family">
            <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
            </div>
         </div>
         <div class="row">
-          <div class="col-6 text-bold" >
+          <div class="col-6 text-bold font-family" >
             <p class="ml-2">Member A</p>
             <div class="card border-radius-card mt-1 border-warning sub-border-color" >
               <div class="card-body" style="max-height: 200px;">  
@@ -346,7 +346,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 text-bold" >
+          <div class="col-6 text-bold font-family" >
             <p class="ml-2">Member B</p>
             <div class="card border-radius-card mt-1 border-warning sub-border-color" >
               <div class="card-body" style="max-height: 200px;">        
@@ -366,7 +366,7 @@
      </div>  
    </div>
 
-   <div class="col-4">
+   <div class="col-4 font-family">
     <div class="card border-radius-card shadow" style="width:490px;height: 345px;" >
       <div class="card-body">
         <div class="row">
@@ -378,15 +378,15 @@
            </div>
         </div>
         <div class="row mt-2">
-          <div class="col-4">
+          <div class="col-3">
             <img src="{{asset('/storage/dealer/icons/img_avatar.png')}}" style="border-radius:50%; max-width: 70px;" alt="Dealer-Image">
           </div>
-          <div class="col-8"> 
+          <div class="col-9"> 
               <p class="text-bold" >Dealer</p> 
-              <p style="color: #d6d4d4; line-height:10px;">Billing Address:</p>
-              <p style="font-size:11px; font-weight:bold; line-height: 1px;">Manas Hotel 285-287, Jalan Tunku Abdul</p>
-              <p style="font-size:11px; font-weight:bold; line-height: 1px;">Rahman 50100 Kuala Lumpur,Malaysia</p>
-              <p style="font-size:11px; font-weight:bold; line-height: 1px;">012-2351232</p>
+              <p style="color: #d6d4d4; line-height:10px; font-size:14pt;">Billing Address:</p>
+              <p style="font-size:11px; font-weight:bold; line-height: 1px; font-size:11pt;">Manas Hotel 285-287, Jalan Tunku Abdul</p>
+              <p style="font-size:11px; font-weight:bold; line-height: 1px; font-size:11pt;">Rahman 50100 Kuala Lumpur,Malaysia</p>
+              <p style="font-size:11px; font-weight:bold; line-height: 1px; font-size:11pt;">012-2351232</p>
           </div>
         </div>
         <div class="row mt-5">
@@ -399,7 +399,7 @@
    </div>
 
 
-  <div class="col-4">
+  <div class="col-4 font-family">
     <div class="card border-radius-card shadow" style="height:340px; ">
       <div class="card-body">
         <div class="row">

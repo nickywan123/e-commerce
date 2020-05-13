@@ -1,40 +1,40 @@
 
 
-<div class="sidebar sidebar-bg-color-panel" style=" width: 240px;">
+<div class="sidebar sidebar-bg-color-panel font-family" style=" width: 240px;">
     <nav class="sidebar-nav">
       <ul class="list-unstyled components" style="padding-left: 10px;">
          <br>
-         <h4 class="font-family-lato" style="font-family:bold; color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
+         <h4 style="color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
          
          
          <li>
-          <a href="#" class="sidebar-text-color font-family-lato">Profile</a>
+          <a href="#" class="sidebar-text-color">Profile</a>
          </li>
          <li>
-            <a href="#" class="sidebar-text-color font-family-lato">Value Tracking</a>
+            <a href="#" class="sidebar-text-color">Value Tracking</a>
          </li>
          <li>
-            <a href="#" class="sidebar-text-color font-family-lato">Products</a>
-                <ul class="list-unstyled components font-family-lato" style=" padding-left: 10px;">
+            <a href="#" class="sidebar-text-color">Products</a>
+                <ul class="list-unstyled components sidebar-text-color" >
                     <li>
-                        <a class="sidebar-text-color font-family-lato" href="#">New Products</a>
+                        <a class="sidebar-text-color" href="#">New Products</a>
                     </li>
                     <li>
-                        <a class="sidebar-text-color font-family-lato" href="#">Update Products</a>
+                        <a class="sidebar-text-color" href="#">Update Products</a>
                     </li>
                     <li>
-                        <a class="sidebar-text-color font-family-lato" href="#">Product Expired</a>
+                        <a class="sidebar-text-color" href="#">Product Expired</a>
                     </li>         
                 </ul>
          </li>
          <li>
-            <a href="#" class="sidebar-text-color font-family-lato">KPIR</a>
+            <a href="#" class="sidebar-text-color">KPIR</a>
          </li>
          <li>
-            <a href="#" class="sidebar-text-color font-family-lato">Notice</a>
+            <a href="#" class="sidebar-text-color">Notice</a>
          </li>
          <li>
-            <a href="#" class="sidebar-text-color font-family-lato">Promotion/Special Offer</a>
+            <a href="#" class="sidebar-text-color">Promotion/Special Offer</a>
          </li>
          
       </ul>
@@ -122,13 +122,11 @@
 
     .sidebar-text-color{
       
-        font-family:'Lato', sans-serif;
-        font-size: 15pt;
+       
+        font-size: 14pt;
         color: black;
         margin-left:10px;
     }
 
-    .font-family-lato{
-      font-family: 'Lato', sans-serif;
-    }
+   
 </style>
