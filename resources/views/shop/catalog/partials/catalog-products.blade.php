@@ -202,6 +202,11 @@
                     <div class="animated-product-information-container">
                         <p class="product-name">{{ $product->name }}</p>
                         <div class="mt-2 mb-1">
+                            @if($product->categories->where('name', 'Paints')->count() > 0)
+                            <p class="mb-0" style="font-size: 1.05rem;">
+                                1 Liter
+                            </p>
+                            @endif
                             <p class="mb-1">
                                 <span class="text-muted" style="font-size: 1.2rem; font-weight: 600;">
                                     RM {{ number_format(($product->productSoldByPanels->min('price') / 100), 2) }}
