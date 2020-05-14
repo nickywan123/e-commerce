@@ -53,7 +53,7 @@
                     <div>
                         <span class="text-muted">DC Customer Price</span>
                         <br>
-                        <h4 id="member_price_tag" style="display: inline-block; font-weight: 700; color: #cccc00;" class="mt-1 mb-3">RM {{ $panelProduct->getDecimalPrice() }}</h4>
+                        <h4 id="member_price_tag" style="display: inline-block; font-weight: 700; color: #cccc00;" class="mt-1 mb-3">RM {{ number_format(($panelProduct->member_price / 100), 2) }}</h4>
                     </div>
                     @endif
 
@@ -316,7 +316,7 @@
                                 <div class="card-header" id="headingThree">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" style="font-size: 1.1rem;">
-                                            Size
+                                            Product Variation
                                         </button>
                                     </h2>
                                 </div>
@@ -325,16 +325,16 @@
                                     <div class="card-body">
                                         <div class="p-4 product-details text-justify">
                                             @if ($panelProduct->sizeAttributes->count() > 0)
-                                            <p class="mb-1">Sizes</p>
+                                            <p class="mb-3 font-weight-bold">Sizes</p>
                                             @foreach($panelProduct->sizeAttributes as $sizeAttribute)
-                                            <span>{{ $sizeAttribute->attribute_name }}</span>
+                                            <span class="p-2 rounded shadow-sm" style="background-color: #ffff00;">{{ $sizeAttribute->attribute_name }}</span>
                                             @endforeach
                                             @endif
 
                                             @if ($panelProduct->colorAttributes->count() > 0)
-                                            <p class="mb-1">Colors</p>
-                                            @foreach($panelProduct->colorAttributes as $$colorAttribute)
-                                            <span>{{ $colorAttribute->attribute_name }}</span>
+                                            <p class="mb-3 font-weight-bold">Colors</p>
+                                            @foreach($panelProduct->colorAttributes as $colorAttribute)
+                                            <span class="p-2 rounded shadow-sm" style="background-color: #ffff00;">{{ $colorAttribute->attribute_name }}</span>
                                             @endforeach
                                             @endif
 
