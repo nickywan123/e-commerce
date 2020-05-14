@@ -323,7 +323,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 
         // Return My Perfect List
-        Route::get('/dashboard/wishlist/index', 'Shop\ValueRecordsController@wishlist');
+        Route::get('/dashboard/wishlist/index', 'Shop\ValueRecordsController@wishlist')->name('shop.wishlist.home');
 
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
