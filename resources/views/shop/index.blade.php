@@ -55,44 +55,44 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 style="color: #ffcc00; font-size: 1.9rem;">Hot Selections</h1>
+            <h1 style="color: #ffcc00; font-size: 1.9rem;" class="font-family"><b>Hot Selections</b></h1>
             <div style="border-top: 1px solid #ffcc00;" class="w-50-md w-100-sm margin-bottom-md">
             </div>
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style="color:#ffcc00; font-family: 'Tangerine'; " href="/shop/category/bedsheets-and-mattresses/bedsheets"><img class="icon-image" src="{{asset('/storage/icons/bedsheet-icon.png')}}" alt="Icon">
-                <h5 class="margin-left-text" style="font-size:30px;">Bedsheet</h5>
+            <a style="color:#ffcc00; " href="/shop/category/bedsheets-and-mattresses/bedsheets"><img class="icon-image" src="{{asset('/storage/icons/bedsheet-icon.png')}}" alt="Icon">
+                <h5 class="margin-left-text font-family" style="font-size:15px;"><b>BEDSHEET</b></h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
-                <h5 class="margin-left-text" style="font-size:30px; ">Curtains</h5>
+            <a style=" color:#ffcc00;" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
+                <h5 class="margin-left-text font-family" style="font-size:15px; "><b>CURTAINS</b></h5>
             </a>
 
         </div>
 
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/lightings"><img class="icon-image" src="{{asset('/storage/icons/lighting.png')}}" alt="Icon">
-                <h5 class="margin-left-text" style="font-size:30px; ">Lighting</h5>
+            <a style=" color:#ffcc00; " href="/shop/category/lightings"><img class="icon-image" src="{{asset('/storage/icons/lighting.png')}}" alt="Icon">
+                <h5 class="margin-left-text font-family" style="font-size:15px; "><b>LIGHTING</b></h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/wip"><img class="icon-image" src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
-                <h5 style="font-size:30px;">Renovation</h5>
+            <a style=" color:#ffcc00; " href="/wip"><img class="icon-image" src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
+                <h5 style="font-size:15px;" class="font-family"><b>RENOVATION</b></h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/carpets"><img class="icon-image" src="{{asset('/storage/icons/carpet-icon.png')}} " alt="Icon">
-                <h5 class="margin-left-text" style="font-size:30px; ">Carpet</h5>
+            <a style=" color:#ffcc00;" href="/shop/category/carpets"><img class="icon-image" src="{{asset('/storage/icons/carpet-icon.png')}} " alt="Icon">
+                <h5 class="margin-left-text font-family" style="font-size:15px;"><b>CARPET</b></h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; font-family: 'Tangerine';" href="/shop/category/products-and-services"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
-                <h5 class="margin-left-text" style="font-size:30px; ">Paint</h5>
+            <a style=" color:#ffcc00;" href="/shop/category/products-and-services"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
+                <h5 class="margin-left-text font-family" style="font-size:15px; "><b>PAINT</b></h5>
             </a>
 
         </div>

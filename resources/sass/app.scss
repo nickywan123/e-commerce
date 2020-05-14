@@ -1,5 +1,6 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
 
 // Variables
 @import "variables";
@@ -38,41 +39,34 @@
 @import '~bootstrap-colorpicker/src/sass/colorpicker.scss';
 
 //01- Landing Page
-@import 
-    "./01-landing-page/landing_page";
+@import "./01-landing-page/landing_page";
 
 // 02-Base
-@import 
-    "./02-base/widths",
-    "./02-base/margins",
-    "./02-base/borders";
+@import "./02-base/widths",
+"./02-base/margins",
+"./02-base/borders";
 
 // 03-Components
-@import 
-    "./03-components/images",
-    "./03-components/buttons",
-    "./03-components/category",
-    "./03-components/animated-category",
-    "./03-components/product",
-    "./03-components/animated-product";
+@import "./03-components/images",
+"./03-components/buttons",
+"./03-components/category",
+"./03-components/animated-category",
+"./03-components/product",
+"./03-components/animated-product";
 
 // 04-Layouts
-@import 
-    "./04-layouts/shop/navigation",
-    "./04-layouts/shop/sidebar";
+@import "./04-layouts/shop/navigation",
+"./04-layouts/shop/sidebar";
 
 // 05-Pages
-@import 
-    "./05-pages/guests-main",
-    "./05-pages/guests_login";
+@import "./05-pages/guests-main",
+"./05-pages/guests_login";
 
 // 06-Management Panel
-@import 
-    "./06-management/navigation-bar",
-    "./06-management/sidebar";
+@import "./06-management/navigation-bar",
+"./06-management/sidebar";
 
 
 // 07-Vendors
-@import 
-    '~toastr/toastr.scss',
-    '~datatables.net-bs4/css/dataTables.bootstrap4';
+@import '~toastr/toastr.scss',
+'~datatables.net-bs4/css/dataTables.bootstrap4';

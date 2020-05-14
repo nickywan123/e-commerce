@@ -22,18 +22,20 @@ class ManagementController extends Controller
     public function index()
     {
 
-        $status = [1001, 1002, 1003];
-        // Get panel
+        // $status = [1001, 1002, 1003];
+        // // Get panel
 
-        $panel_id = User::find(Auth::user()->id);
-        //wrong filter
-        $panel_id = $panel_id->panelInfo->account_id;
-        $customerOrders = new Order;
-        $customerOrders = $customerOrders->where('panel_id', $panel_id)->whereIn('order_status', $status)->get();
+        // $panel_id = User::find(Auth::user()->id);
+        // //wrong filter
+        // $panel_id = $panel_id->panelInfo->account_id;
+        // $customerOrders = new Order;
+        // $customerOrders = $customerOrders->where('panel_id', $panel_id)->whereIn('order_status', $status)->get();
 
 
 
-        return view("management.panel.index")->with('customerOrders', $customerOrders);
+        // return view("management.panel.index")->with('customerOrders', $customerOrders);
+
+        return view('management.panel.home');
     }
 
 

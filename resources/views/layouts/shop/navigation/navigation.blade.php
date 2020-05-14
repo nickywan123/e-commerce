@@ -9,12 +9,12 @@
                             <i class="fa fa-bars navigation-icon"></i>
                         </button>
                     </div>
-                    <div class="col-4 col-md-6 text-right my-auto">
+                    <div class="col-3 col-md-6 text-right my-auto">
                         <a href="/shop">
                             <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="">
                         </a>
                     </div>
-                    <div class="col-5 hidden-md my-auto">
+                    <div class="col-6 hidden-md my-auto">
                         <ul class="nav float-left ">
                             @guest
                             <li class="nav-item m-1">
@@ -38,7 +38,7 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                         <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user" style="color:#fbcc34;"></i> Profile </a>
-                                        <a class="dropdown-item" href="/shop/dashboard/orders/index"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> Value Records </a>
+                                        <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> Value Records </a>
                                         @hasrole('panel')
                                         <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
                                         @endhasrole
@@ -64,8 +64,8 @@
                         </ul>
 
 
-                        <a style="color:#fbcc34; margin-left: 20px;" href="#"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:x-large;"></i> </a>
-                        <a style="color:#fbcc34; margin-left: 10px;" href="/shop/cart"><i class="fa fa-shopping-cart " style="color:#fbcc34;  font-size:x-large;"></i></a>
+                        <a style="color:#fbcc34; margin-left: 20px; " href="#"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:x-large;"></i> 0</a>
+                        <a style="color:#fbcc34; margin-left: 10px; " href="/shop/cart"><i class="fa fa-shopping-cart " style="color:#fbcc34;  font-size:x-large;"></i> 0</a>
 
                     </div>
 
@@ -109,12 +109,12 @@
                     <li class="nav-item m-1">
                         <div class="dropdown show">
                             <!-- TODO: Create a class for the style -->
-                            <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px; margin-left: 30px;">
-                                My Account
+                            <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse font-family" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px; margin-left: 30px;">
+                               <b> MY ACCOUNT</b>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user " style="color:#fbcc34;"></i> Profile </a>
-                                <a class="dropdown-item" href="/shop/dashboard/orders/index"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> Value Records </a>
+                                <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> Value Records </a>
 
                                 @hasrole('panel')
                                 <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
@@ -171,6 +171,21 @@
         </div>
     </div>
 </div> -->
+
+<style>
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+</style>
+
+
 
 @push('script')
 

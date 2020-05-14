@@ -1,4 +1,4 @@
-@extends('layouts.management.main-panel')
+@extends('layouts.management.main-customer')
 
 
 

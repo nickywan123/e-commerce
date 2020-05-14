@@ -32,7 +32,7 @@
     @include('layouts.management.navigations.navigation-bar-customer')
     <div class="app-body">
         @include('layouts.management.navigations.side-bar-customer')
-        <main class="main " style="margin-top:2%;">
+        <main class="main">
 
             @yield('breadcrumbs')
             <div class="container-fluid">
