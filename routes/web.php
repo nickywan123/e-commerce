@@ -389,13 +389,17 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::get('/', 'WEB\Shop\CartController@index')
                 ->name('web.shop.cart');
 
+            // Get total items in user's cart.
+            Route::get('/get-quantity/{id}', 'WEB\Shop\CartController@getTotalCartQuantity')
+                ->name('web.shop.cart.quantity');
+
             // Remove user's cart item.
             Route::put('/remove/{id}', 'WEB\Shop\CartController@remove');
 
             Route::post('/update-quantity/{id}', 'WEB\Shop\CartController@updateQuantity')
                 ->name('web.shop.cart.update-quantity');
 
-            //Remove user's cart quantity.
+            // Remove user's cart quantity.
             Route::put('/remove-cart/{id}', 'WEB\Shop\CartController@removeCartQuantity');
         });
 
