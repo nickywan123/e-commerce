@@ -9,7 +9,7 @@
 <div class="min-vh-100">
     <!-- Breadcrumb here -->
     <div class="container">
-        <h1 class="mt-2 pl-1 pr-1 font-family-lato" style="font-size: 1.5rem; color: #000;"><b>Shopping Cart</b></h1>
+        <h1 class="mt-2 pl-1 pr-1 font-family" style="font-size: 1.5rem; color: #000;"><b>Shopping Cart</b></h1>
         {{ app('request')->query('name') }}
         <div class="row no-gutters" id="cart-container">
             <div class="col-12">

@@ -114,7 +114,5 @@
         margin-left:10px;
     }
 
-    .font-family-lato{
-      font-family: 'Lato', sans-serif;
-    }
+
 </style>

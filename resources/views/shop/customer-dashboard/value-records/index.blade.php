@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9 mt-4">
-                <h3 style="font-size:40px;" class="font-family-lato"><strong>Value Records</strong></h3>
+                <h3 style="font-size:40px;" class="font-family"><strong>Value Records</strong></h3>
             </div>
 
 
@@ -27,14 +27,14 @@
 
         </div>
         <div class="container-fluid" style="margin-top:20px;">
-            <a href="/shop/dashboard/orders/index" class="orders-text-style font-family-lato"
+            <a href="/shop/dashboard/orders/index" class="orders-text-style font-family"
                 style="border-bottom: 2px solid rgb(250, 172, 24);" ><i><strong>All
                         Orders</strong></i></a>
-            <a href="/shop/dashboard/orders/open-orders" class="orders-text-style font-family-lato" ><i><strong>Open Orders</strong></i></a>
-            <a href="/shop/dashboard/orders/order-status" class="orders-text-style font-family-lato" ><i><strong>Order
+            <a href="/shop/dashboard/orders/open-orders" class="orders-text-style font-family" ><i><strong>Open Orders</strong></i></a>
+            <a href="/shop/dashboard/orders/order-status" class="orders-text-style font-family" ><i><strong>Order
                         Status</strong></i></a>
             {{-- <a href="#" class="orders-text-style"><i><strong>Return Orders</strong></i></a> --}}
-            <a href="#" class="orders-text-style font-family-lato"><i><strong>Pending Star Ratings</strong></i></a>
+            <a href="#" class="orders-text-style font-family"><i><strong>Pending Star Ratings</strong></i></a>
         </div>
         <hr>
         @if(!$purchases->isEmpty())

@@ -109,7 +109,7 @@
                     <li class="nav-item m-1">
                         <div class="dropdown show">
                             <!-- TODO: Create a class for the style -->
-                            <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse font-family-lato" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px; margin-left: 30px;">
+                            <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse font-family" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px; margin-left: 30px;">
                                <b> MY ACCOUNT</b>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

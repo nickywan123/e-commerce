@@ -200,7 +200,7 @@ var myChart = new Chart(ctx,{
                          
                           <div class="row" style="border-bottom: 1px solid #ffcc00; ">
                             <div class="col-6">
-                                <p class="font-family-lato">New Products</p>                     
+                                <p class="font-family">New Products</p>                     
                             </div>
                             <div class="offset-5 col-1">
                                 <p>2</p>
@@ -208,7 +208,7 @@ var myChart = new Chart(ctx,{
                           </div> 
                           <div class="row mt-3" style="border-bottom: 1px solid #ffcc00; ">
                             <div class="col-6">
-                                <p class="font-family-lato">Update Products</p>                     
+                                <p class="font-family">Update Products</p>                     
                             </div>
                             <div class="offset-5 col-1">
                                 <p>-</p>
@@ -216,7 +216,7 @@ var myChart = new Chart(ctx,{
                           </div> 
                           <div class="row mt-3" style="border-bottom: 1px solid #ffcc00; ">
                             <div class="col-6">
-                                <p class="font-family-lato">Product Expired</p>                     
+                                <p class="font-family">Product Expired</p>                     
                             </div>
                             <div class="offset-5 col-1">
                                 <p>-</p>
@@ -438,7 +438,7 @@ var myChart = new Chart(ctx,{
              
               <div class="row" style="border-bottom: 1px solid #ffcc00; ">
                 <div class="col-6">
-                    <p class="font-family-lato">New Products</p>                     
+                    <p class="font-family">New Products</p>                     
                 </div>
                 <div class="offset-3 col-1">
                     <p>2</p>
@@ -446,7 +446,7 @@ var myChart = new Chart(ctx,{
               </div> 
               <div class="row mt-3" style="border-bottom: 1px solid #ffcc00; ">
                 <div class="col-6">
-                    <p class="font-family-lato">Update Products</p>                     
+                    <p class="font-family">Update Products</p>                     
                 </div>
                 <div class="offset-3 col-1">
                     <p>-</p>
@@ -454,7 +454,7 @@ var myChart = new Chart(ctx,{
               </div> 
               <div class="row mt-3" style="border-bottom: 1px solid #ffcc00; ">
                 <div class="col-6">
-                    <p class="font-family-lato">Product Expired</p>                     
+                    <p class="font-family">Product Expired</p>                     
                 </div>
                 <div class="offset-3 col-1">
                     <p>-</p>
