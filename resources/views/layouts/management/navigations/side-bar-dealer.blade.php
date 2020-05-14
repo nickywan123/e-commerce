@@ -22,7 +22,9 @@
          <li>
             <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Promotion/Special Offer</a>
          </li>
-         
+         <li>
+            <a href="/shop" class="sidebar-text-color font-family">Continue Shopping</a>
+         </li>
       </ul>
     </nav> 
 </div>

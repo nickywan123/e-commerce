@@ -26,9 +26,9 @@
 
 
 
-    <div class="row ">
+    <div class="row font-family">
         <div class="col-12 offset-1 col-md-10">
-            <h4 class="text-capitalize text-dark text-font-family">My Profile</h4>
+            <h4 class="text-capitalize text-dark font-family">My Profile</h4>
             <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="form-group row ">
@@ -53,7 +53,7 @@
                         <div class="col-12 col-md-9">
                             <input type="text" name="company_name" id="company_name"
                                 value="{{$customerInfo->userInfo->account_id}}"
-                                class="form-control @error('company_name') is-invalid @enderror"
+                                class="form-control font-family @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
 
@@ -68,7 +68,7 @@
                         <div class="col-11 col-md-3">
                             <input type="text" name="company_name" id="company_name"
                                 value="{{$customerInfo->userInfo->full_name}}"
-                                class="form-control @error('company_name') is-invalid @enderror"
+                                class="form-control font-family @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
                         <div class="col-1 col-md-1 col-form-label">
@@ -87,7 +87,7 @@
                         <div class="col-md-9">
                             <input type="text" name="company_name" id="company_name"
                                 value="{{$customerInfo->userInfo->mailingAddress->address_1}},{{$customerInfo->userInfo->mailingAddress->address_2}},{{$customerInfo->userInfo->mailingAddress->address_3}},{{$customerInfo->userInfo->mailingAddress->postcode}},{{$customerInfo->userInfo->mailingAddress->city}},Malaysia"
-                                class="form-control @error('company_name') is-invalid @enderror"
+                                class="form-control font-family @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
                         <div class="col-md-1 col-form-label">
@@ -105,7 +105,7 @@
                         <div class="col-md-4">
                             <input type="text" name="company_name" id="company_name"
                                 value="{{$customerInfo->userInfo->mailingAddress->postcode}}"
-                                class="form-control @error('company_name') is-invalid @enderror"
+                                class="form-control font-family @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
 
@@ -123,7 +123,7 @@
                         <div class="col-md-9">
                             <input type="text" name="company_name" id="company_name"
                                 value="{{$customerInfo->userInfo->shippingAddress->address_1}},{{$customerInfo->userInfo->shippingAddress->address_2}},{{$customerInfo->userInfo->shippingAddress->address_3}},{{$customerInfo->userInfo->shippingAddress->postcode}},{{$customerInfo->userInfo->shippingAddress->city}},Malaysia"
-                                class="form-control @error('company_name') is-invalid @enderror"
+                                class="form-control font-family @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
                         <div class="col-md-1 col-form-label">
@@ -141,7 +141,7 @@
                         <div class="col-md-4">
                             <input type="text" name="company_name" id="company_name"
                                 value="{{$customerInfo->userInfo->shippingAddress->postcode}}"
-                                class="form-control @error('company_name') is-invalid @enderror"
+                                class="form-control font-family @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
 
@@ -158,7 +158,7 @@
                         <div class="col-md-3">
                             <input type="text" name="company_name" id="company_name"
                                 value="{{$customerInfo->userInfo->mobileContact->contact_num}}"
-                                class="form-control @error('company_name') is-invalid @enderror"
+                                class="form-control font-family @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
                         <div class="col-md-1 col-form-label">
@@ -183,7 +183,7 @@
                         <label for="company_name" class="col-md-2 col-form-label">Email Address</label>
                         <div class="col-md-4">
                             <input type="text" name="company_name" id="company_name" value="{{$customerInfo->email}}"
-                                class="form-control @error('company_name') is-invalid @enderror"
+                                class="form-control font-family @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
 
@@ -196,7 +196,7 @@
                         <label for="company_address" class="col-md-2 col-form-label">ID Information</label>
                         <div class="col-md-9">
                             <input type="text" name="company_name" id="company_name" value="WIP"
-                                class="form-control @error('company_name') is-invalid @enderror"
+                                class="form-control font-family @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
 
@@ -224,7 +224,7 @@
 
 {{--Mobile Layout--}}
 <div class="mt-3 mt-md-0 hidden-md">
-    <h4 class="text-capitalize text-dark text-font-family">My Profile</h4>
+    <h4 class="text-capitalize text-dark font-family ">My Profile</h4>
 
 
     @if(Session::has('successful_message'))
@@ -246,7 +246,7 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="form-group row ">
-                        <label for="avatar" class="col-12 col-md-2 col-form-label text-font-family">Avatar</label>
+                        <label for="avatar" class="col-12 col-md-2 col-form-label font-family">Avatar</label>
                         <div class="col-4 col-md-1">
                             <img src="{{asset('/storage/avatar/default-avatar.jpg')}}"
                                 style="max-width:80px; max-height:80px;" alt="avatar">
@@ -260,11 +260,11 @@
                 </div>
 
                 <div class="form-group row ">
-                    <label for="company_name" class="col-12 col-md-2 col-form-label text-font-family">Bujishu ID</label>
+                    <label for="company_name" class="col-12 col-md-2 col-form-label font-family">Bujishu ID</label>
                     <div class="col-12 col-md-9">
                         <input type="text" name="company_name" id="company_name"
                             value="{{$customerInfo->userInfo->account_id}}"
-                            class="form-control @error('company_name') is-invalid @enderror"
+                            class="form-control font-family @error('company_name') is-invalid @enderror"
                             value="{{ old('company_name') }}" readonly>
                     </div>
 
@@ -273,21 +273,21 @@
 
 
                 <div class="form-group row ">
-                  <label class="col-12 col-md-2 col-form-label text-font-family" for="company_name">Full Name(NRIC)</label>
+                  <label class="col-12 col-md-2 col-form-label font-family" for="company_name">Full Name(NRIC)</label>
                   <div class="col-12 col-md-3">
                         <input type="text" name="company_name" id="company_name"
                             value="{{$customerInfo->userInfo->full_name}}"
-                            class="form-control @error('company_name') is-invalid @enderror"
+                            class="form-control font-family @error('company_name') is-invalid @enderror"
                             value="{{ old('company_name') }}" readonly>
                   </div>
                 </div>
 
                 <div class="form-group row ">
-                    <label for="company_address" class="col-md-2 col-form-label text-font-family">Billing Address</label>
+                    <label for="company_address" class="col-md-2 col-form-label font-family">Billing Address</label>
                     <div class="col-md-9">
                         <input type="text" name="company_name" id="company_name"
                             value="{{$customerInfo->userInfo->mailingAddress->address_1}}"
-                            class="form-control @error('company_name') is-invalid @enderror"
+                            class="form-control font-family @error('company_name') is-invalid @enderror"
                             value="{{ old('company_name') }}" readonly>
                     </div>                  
                 </div>
@@ -298,7 +298,7 @@
                     <div class="col-md-9">
                         <input type="text" name="company_name" id="company_name"
                             value="{{$customerInfo->userInfo->mailingAddress->address_2}}"
-                            class="form-control @error('company_name') is-invalid @enderror"
+                            class="form-control font-family @error('company_name') is-invalid @enderror"
                             value="{{ old('company_name') }}" readonly>
                     </div>                  
                 </div>
@@ -307,7 +307,7 @@
                     <div class="col-md-9">
                         <input type="text" name="company_name" id="company_name"
                             value="{{$customerInfo->userInfo->mailingAddress->address_3}}"
-                            class="form-control @error('company_name') is-invalid @enderror"
+                            class="form-control font-family @error('company_name') is-invalid @enderror"
                             value="{{ old('company_name') }}" readonly>
                     </div>                  
                 </div>
@@ -317,7 +317,7 @@
                     <div class="col-md-9">
                         <input type="text" name="company_name" id="company_name"
                             value="{{$customerInfo->userInfo->mailingAddress->postcode}},{{$customerInfo->userInfo->mailingAddress->city}},Malaysia"
-                            class="form-control @error('company_name') is-invalid @enderror"
+                            class="form-control font-family @error('company_name') is-invalid @enderror"
                             value="{{ old('company_name') }}" readonly>
                     </div>                  
                 </div>
@@ -327,11 +327,11 @@
 
 
             <div class="form-group row ">
-                <label for="company_address" class="col-md-2 col-form-label text-font-family">Billing Postcode</label>
+                <label for="company_address" class="col-md-2 col-form-label font-family">Billing Postcode</label>
                 <div class="col-md-4">
                     <input type="text" name="company_name" id="company_name"
                         value="{{$customerInfo->userInfo->mailingAddress->postcode}}"
-                        class="form-control @error('company_name') is-invalid @enderror"
+                        class="form-control font-family @error('company_name') is-invalid @enderror"
                         value="{{ old('company_name') }}" readonly>
                 </div>
 
@@ -343,11 +343,11 @@
 
 
             <div class="form-group row ">
-                <label for="company_address" class="col-md-2 col-form-label text-font-family">Shipping Address</label>
+                <label for="company_address" class="col-md-2 col-form-label font-family">Shipping Address</label>
                 <div class="col-md-9">
                     <input type="text" name="company_name" id="company_name"
                         value="{{$customerInfo->userInfo->shippingAddress->address_1}}"
-                        class="form-control @error('company_name') is-invalid @enderror"
+                        class="form-control font-family @error('company_name') is-invalid @enderror"
                         value="{{ old('company_name') }}" readonly>
                 </div> 
             </div>
@@ -357,7 +357,7 @@
                 <div class="col-md-9">
                     <input type="text" name="company_name" id="company_name"
                         value="{{$customerInfo->userInfo->shippingAddress->address_2}}"
-                        class="form-control @error('company_name') is-invalid @enderror"
+                        class="form-control font-family @error('company_name') is-invalid @enderror"
                         value="{{ old('company_name') }}" readonly>
                 </div> 
             </div>
@@ -367,7 +367,7 @@
                 <div class="col-md-9">
                     <input type="text" name="company_name" id="company_name"
                         value="{{$customerInfo->userInfo->shippingAddress->address_3}}"
-                        class="form-control @error('company_name') is-invalid @enderror"
+                        class="form-control font-family @error('company_name') is-invalid @enderror"
                         value="{{ old('company_name') }}" readonly>
                 </div> 
             </div>
@@ -377,7 +377,7 @@
                 <div class="col-md-9">
                     <input type="text" name="company_name" id="company_name"
                         value="{{$customerInfo->userInfo->shippingAddress->postcode}},{{$customerInfo->userInfo->shippingAddress->city}},Malaysia"
-                        class="form-control @error('company_name') is-invalid @enderror"
+                        class="form-control font-family @error('company_name') is-invalid @enderror"
                         value="{{ old('company_name') }}" readonly>
                 </div> 
             </div>
@@ -385,11 +385,11 @@
 
 
         <div class="form-group row ">
-            <label for="company_address" class="col-md-2 col-form-label text-font-family">Shipping Postcode</label>
+            <label for="company_address" class="col-md-2 col-form-label font-family">Shipping Postcode</label>
             <div class="col-md-4">
                 <input type="text" name="company_name" id="company_name"
                     value="{{$customerInfo->userInfo->shippingAddress->postcode}}"
-                    class="form-control @error('company_name') is-invalid @enderror" value="{{ old('company_name') }}"
+                    class="form-control font-family @error('company_name') is-invalid @enderror" value="{{ old('company_name') }}"
                     readonly>
             </div>
 
@@ -399,11 +399,11 @@
 
 
         <div class="form-group row ">
-            <label for="company_name" class="col-md-2 col-form-label text-font-family">Mobile Phone</label>
+            <label for="company_name" class="col-md-2 col-form-label font-family">Mobile Phone</label>
             <div class="col-md-3">
                 <input type="text" name="company_name" id="company_name"
                     value="{{$customerInfo->userInfo->mobileContact->contact_num}}"
-                    class="form-control @error('company_name') is-invalid @enderror" value="{{ old('company_name') }}"
+                    class="form-control font-family @error('company_name') is-invalid @enderror" value="{{ old('company_name') }}"
                     readonly>
             </div>
             {{-- <div class="col-md-1 col-form-label">
@@ -423,10 +423,10 @@
 
     <div class="form-group row ">
 
-        <label for="company_name" class="col-md-2 col-form-label text-font-family">Email Address</label>
+        <label for="company_name" class="col-md-2 col-form-label font-family">Email Address</label>
         <div class="col-md-4">
             <input type="text" name="company_name" id="company_name" value="{{$customerInfo->email}}"
-                class="form-control @error('company_name') is-invalid @enderror" value="{{ old('company_name') }}"
+                class="form-control font-family @error('company_name') is-invalid @enderror" value="{{ old('company_name') }}"
                 readonly>
         </div>
 
@@ -434,10 +434,10 @@
     </div>
 
     <div class="form-group row ">
-        <label for="company_address" class="col-md-2 col-form-label text-font-family">ID Information</label>
+        <label for="company_address" class="col-md-2 col-form-label font-family">ID Information</label>
         <div class="col-md-9">
             <input type="text" name="company_name" id="company_name" value="WIP"
-                class="form-control @error('company_name') is-invalid @enderror" value="{{ old('company_name') }}"
+                class="form-control font-family @error('company_name') is-invalid @enderror" value="{{ old('company_name') }}"
                 readonly>
         </div>
        
@@ -472,9 +472,7 @@
     }
 
 
-    .text-font-family{
-        font-family: cursive;
-    }
+ 
 
 </style>
 @endsection

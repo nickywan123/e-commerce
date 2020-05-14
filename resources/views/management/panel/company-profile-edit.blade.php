@@ -13,7 +13,7 @@
 @endif
 
 {{--Desktop Layout--}}
-<div class="hidden-sm">
+<div class="hidden-sm font-family">
     <h4 class="text-capitalize text-dark">Edit Company Profile</h4>
 
     <form action="{{route('management.company.profile.update',[$companyProfile->account_id])}}" method="POST">

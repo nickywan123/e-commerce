@@ -24,7 +24,7 @@
 
     {{---Desktop Layout----}}
 
-    <div class="hidden-sm">
+    <div class="hidden-sm font-family">
         <h4 class="text-capitalize text-dark">Company Profile</h4>
         <div class="row">
             <div class="col-12 col-md-10">

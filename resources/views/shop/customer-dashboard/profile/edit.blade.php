@@ -9,7 +9,7 @@
 
 {{--Desktop layout--}}
 
-<div class="mt-3 mt-md-0 hidden-sm">
+<div class="mt-3 mt-md-0 hidden-sm font-family">
     <h4 class="text-capitalize text-dark">Edit Your Profile</h4>
     {{-- @if(session()->has('message'))
     <div class="alert alert-success">
@@ -21,7 +21,7 @@
 <form action="{{route('profile.update',[$customerInfo->id])}}" method="POST">
     <input type="hidden" name="_method" value="PATCH">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <div class="row">
+    <div class="row font-family">
         <div class="col-12 col-md-10">
             <div class="card shadow-sm">
                 <div class="card-body">
@@ -325,7 +325,7 @@
 {{------MOBILE LAYOUT-------}}
 
 
-<div class="mt-3 mt-md-0 hidden-md">
+<div class="mt-3 mt-md-0 hidden-md font-family">
     <h4 class="text-capitalize text-dark text-font-family">Edit Your Profile</h4>
     {{-- @if(session()->has('message'))
     <div class="alert alert-success">
@@ -337,7 +337,7 @@
 <form action="{{route('profile.update',[$customerInfo->id])}}" method="POST">
     <input type="hidden" name="_method" value="PATCH">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <div class="row">
+    <div class="row font-family">
         <div class="col-12 col-md-10">
             <div class="card shadow-sm">
                 <div class="card-body">
@@ -357,7 +357,7 @@
                         @enderror --}}
                     </div>
 
-                    <div class="form-group row ">
+                    <div class="form-group row">
                         <label for="account_id" class="col-md-2 col-form-label text-font-family">Bujishu ID</label>
                         <div class="col-md-9">
                             <input type="text" name="account_id" value="{{$customerInfo->userInfo->account_id}}"

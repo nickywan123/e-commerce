@@ -81,7 +81,7 @@
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto display-same-row">
                             <div class="pb-2 nav-content-sidebar-collapse">
-                                <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size " name="category">
+                                <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size font-family" name="category">
                                     <option value="all">All Categories </option>
                                     <!-- <optgroup label="Mens">
 
@@ -138,7 +138,7 @@
                     </li>
 
                     <div style="margin-top:10px; margin-left: 50px;">
-                        <a style="color:#fbcc34; margin-right:20px;" href="#"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">0</span></a>
+                        <a style="color:#fbcc34; margin-right:20px;" href="{{route('shop.wishlist.home')}}"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">0</span></a>
                         <a style="color:#fbcc34;" href="/shop/cart">
                             <i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i>
                             <span class="icon-attributes" id="cart-quantity"></span>

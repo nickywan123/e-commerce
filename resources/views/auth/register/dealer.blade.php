@@ -1,14 +1,14 @@
 @extends('layouts.guest.main')
 
 @section('content')
-<div class="bg-md bg-sm">
+<div class="bg-md bg-sm font-family">
     <div class="row">
         <div class="col-6 offset-3 col-md-2 offset-md-5 mb-0 pt-2 pb-3">
             <img class="mw-100" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="">
         </div>
     </div>
     <div>
-        <div class="card border-rounded-0 bg-bujishu-gold guests-card" style="border-radius: 10px;">
+        <div class="card border-rounded-0 bg-bujishu-gold guests-card font-family" style="border-radius: 10px;">
             <h5 class="text-center bujishu-gold form-card-title font-family" style="border-radius: 10px;">Dealer Registration</h5>
             <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
                 <li class="nav-item active">
@@ -21,7 +21,7 @@
                     <a class="nav-link register-tab-active font-family" id="contact-tab" data-toggle="tab" href="#introducer" role="tab" aria-controls="contact" aria-selected="false">Introducer</a>
                 </li>
             </ul>
-            <div class="card-body">
+            <div class="card-body font-family">
 
                 <!-- Dealer Registration Form -->
                 <form method="POST" action="{{ route('register') }}" id="register-form" enctype="multipart/form-data">

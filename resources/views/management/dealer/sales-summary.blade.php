@@ -110,7 +110,7 @@ new Chart(document.getElementById("doughnut-chart"), {
 <br>
 
 
-<div class="row ">
+<div class="row font-family">
     <div class="col-12">
         <h2>SALES SUMMARY</h2>
     </div>
@@ -118,7 +118,7 @@ new Chart(document.getElementById("doughnut-chart"), {
 <br>
 
 
-<div class="row">   
+<div class="row font-family">   
      <div class="col-6">         
         <div class="card">      
           <div class="card-body"  style="height:550px;">

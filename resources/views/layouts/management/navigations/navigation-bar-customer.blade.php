@@ -11,7 +11,7 @@
     </button>
    
 
-    <a class="navbar-brand " href="/shop">
+    <a class="navbar-brand " href="{{route('shop.dashboard.customer.home')}}">
         <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="40" height="40" alt="Bujishu Logo">
         <img class="navbar-brand-minimized" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>

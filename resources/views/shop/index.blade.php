@@ -60,38 +60,38 @@
             </div>
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style="color:#ffcc00; " href="/shop/category/bedsheets-and-mattresses/bedsheets"><img class="icon-image" src="{{asset('/storage/icons/bedsheet-icon.png')}}" alt="Icon">
+            <a style="color:#e0b555; " href="/shop/category/bedsheets-and-mattresses/bedsheets"><img class="icon-image" src="{{asset('/storage/icons/bedsheet-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text font-family" style="font-size:15px;"><b>BEDSHEET</b></h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00;" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
+            <a style=" color:#e0b555;" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text font-family" style="font-size:15px; "><b>CURTAINS</b></h5>
             </a>
 
         </div>
 
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; " href="/shop/category/lightings"><img class="icon-image" src="{{asset('/storage/icons/lighting.png')}}" alt="Icon">
+            <a style=" color:#e0b555; " href="/shop/category/lightings"><img class="icon-image" src="{{asset('/storage/icons/lighting.png')}}" alt="Icon">
                 <h5 class="margin-left-text font-family" style="font-size:15px; "><b>LIGHTING</b></h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00; " href="/wip"><img class="icon-image" src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
+            <a style=" color:#e0b555; " href="/wip"><img class="icon-image" src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
                 <h5 style="font-size:15px;" class="font-family"><b>RENOVATION</b></h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00;" href="/shop/category/carpets"><img class="icon-image" src="{{asset('/storage/icons/carpet-icon.png')}} " alt="Icon">
+            <a style="color:#e0b555;" href="/shop/category/carpets"><img class="icon-image" src="{{asset('/storage/icons/carpet-icon.png')}} " alt="Icon">
                 <h5 class="margin-left-text font-family" style="font-size:15px;"><b>CARPET</b></h5>
             </a>
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#ffcc00;" href="/shop/category/products-and-services"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
+            <a style="color:#e0b555;" href="/shop/category/products-and-services"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text font-family" style="font-size:15px; "><b>PAINT</b></h5>
             </a>
 
