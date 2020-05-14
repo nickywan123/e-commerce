@@ -19,28 +19,34 @@
         }
     ],
     "paths": {
-        "/api/auth/register": {
+        "/api/auth/customer/register": {
             "post": {
                 "tags": [
                     "Auth"
                 ],
-                "summary": "Register user",
+                "summary": "Customer registration endpoint.",
                 "description": "Returns token of registered user",
-                "operationId": "App\\Http\\Controllers\\API\\Auth\\AuthController::register",
                 "requestBody": {
                     "description": "Form data for user registration",
                     "content": {
-                        "formData": {
+                        "form-data": {
                             "schema": {
                                 "required": [
                                     "email",
                                     "password",
                                     "fullName",
                                     "nric",
-                                    "address1"
+                                    "address1",
+                                    "address2",
+                                    "postcode",
+                                    "city",
+                                    "state",
+                                    "contactMobile",
+                                    "existingCustomer"
                                 ],
                                 "properties": {
                                     "email": {
+                                        "maxProperties": "255",
                                         "type": "string",
                                         "example": "johndoe@email.com"
                                     },
@@ -50,6 +56,7 @@
                                         "example": "p@ssw0rd"
                                     },
                                     "fullName": {
+                                        "maxProperties": "255",
                                         "type": "string",
                                         "example": "John Doe"
                                     },
@@ -60,10 +67,12 @@
                                         "example": "95115107832"
                                     },
                                     "address1": {
+                                        "maxProperties": "255",
                                         "type": "string",
                                         "example": "Level 1M Menara Bangkok Bank"
                                     },
                                     "address2": {
+                                        "maxProperties": "255",
                                         "type": "string",
                                         "example": "Laman Sentral Berjaya"
                                     },
@@ -87,9 +96,282 @@
                                         "type": "string",
                                         "example": "0194039055"
                                     },
+                                    "contactHome": {
+                                        "type": "string",
+                                        "example": "0378419400"
+                                    },
                                     "existingCustomer": {
                                         "type": "integer",
                                         "example": "0(False), 1(True)"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "token": {
+                                            "type": "string",
+                                            "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVlMTdlNjZiYWQwMTcxZTdmZmZhMmI3NjAwN"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "email": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "example": "The email field is required."
+                                                    }
+                                                },
+                                                "password": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "example": "The password field is required."
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Registration is not successfull."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/dealer/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Dealer registration endpoint.",
+                "description": "Returns token of registered user",
+                "requestBody": {
+                    "description": "Form data for user registration",
+                    "content": {
+                        "form-data": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password",
+                                    "fullName",
+                                    "nric",
+                                    "birthDate",
+                                    "genderId",
+                                    "raceId",
+                                    "maritalId",
+                                    "address1",
+                                    "address2",
+                                    "postcode",
+                                    "city",
+                                    "state",
+                                    "contactMobile",
+                                    "spouseName",
+                                    "spouseNric",
+                                    "spouseBirtDate",
+                                    "spouseOccupation",
+                                    "spouseContactMobile",
+                                    "spouseEmail",
+                                    "employmentId",
+                                    "companyName",
+                                    "companyAddress1",
+                                    "companyAddress2",
+                                    "companyPostcode",
+                                    "companyCity",
+                                    "companyState",
+                                    "introducerName",
+                                    "introducerAccountId"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "maxProperties": "255",
+                                        "type": "string",
+                                        "example": "johndoe@email.com"
+                                    },
+                                    "password": {
+                                        "minProperties": "8",
+                                        "type": "string",
+                                        "example": "p@ssw0rd"
+                                    },
+                                    "fullName": {
+                                        "maxProperties": "255",
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "nric": {
+                                        "maxProperties": "12",
+                                        "minProperties": "12",
+                                        "type": "string",
+                                        "example": "95115107832"
+                                    },
+                                    "birthDate": {
+                                        "type": "string",
+                                        "example": "19/11/1995"
+                                    },
+                                    "genderID": {
+                                        "type": "integer",
+                                        "example": "1 (Male)/ 2 (Female)"
+                                    },
+                                    "raceID": {
+                                        "type": "integer",
+                                        "example": "1 (Chinese), 2 (Malay), 3 (Indian)"
+                                    },
+                                    "maritalId": {
+                                        "type": "integer",
+                                        "example": "1 (Single), 2 (Married), 3 (Divorced)"
+                                    },
+                                    "address1": {
+                                        "maxProperties": "255",
+                                        "type": "string",
+                                        "example": "Level 1M Menara Bangkok Bank"
+                                    },
+                                    "address2": {
+                                        "maxProperties": "255",
+                                        "type": "string",
+                                        "example": "Laman Sentral Berjaya"
+                                    },
+                                    "address3": {
+                                        "type": "string",
+                                        "example": "No 105, Jalan Ampang"
+                                    },
+                                    "postcode": {
+                                        "type": "integer",
+                                        "example": "50450"
+                                    },
+                                    "city": {
+                                        "type": "string",
+                                        "example": "Kuala Lumpur"
+                                    },
+                                    "state": {
+                                        "type": "integer",
+                                        "example": "6 (Selangor)"
+                                    },
+                                    "contactMobile": {
+                                        "type": "string",
+                                        "example": "0194039055"
+                                    },
+                                    "contactHome": {
+                                        "type": "string",
+                                        "example": "0378419400"
+                                    },
+                                    "spouseName": {
+                                        "maxProperties": "255",
+                                        "type": "string",
+                                        "example": "Joe Lee"
+                                    },
+                                    "spouseNric": {
+                                        "maxProperties": "12",
+                                        "minProperties": "12",
+                                        "type": "string",
+                                        "example": "951119105660"
+                                    },
+                                    "spouseBirthdate": {
+                                        "type": "string",
+                                        "example": "19/12/1990"
+                                    },
+                                    "spouseOccupation": {
+                                        "maxProperties": "255",
+                                        "type": "string",
+                                        "example": "Doctor"
+                                    },
+                                    "spouseContactMobile": {
+                                        "maxProperties": "15",
+                                        "minProperties": "10",
+                                        "type": "string",
+                                        "example": "0194039056"
+                                    },
+                                    "spouseContactOffice": {
+                                        "maxProperties": "15",
+                                        "minProperties": "10",
+                                        "type": "string",
+                                        "example": "0389111000"
+                                    },
+                                    "spouseEmail": {
+                                        "maxProperties": "255",
+                                        "type": "string",
+                                        "example": "joeleetan@gmail.com"
+                                    },
+                                    "employmentId": {
+                                        "type": "integer",
+                                        "example": "1 (Self-employed), 2 (Employed)"
+                                    },
+                                    "companyName": {
+                                        "maxProperties": "255",
+                                        "type": "string",
+                                        "example": "Delhub Digtial Sdn Bhd"
+                                    },
+                                    "companyAddress1": {
+                                        "type": "string",
+                                        "example": "Level 1M Menara Bangkok Bank"
+                                    },
+                                    "companyAddress2": {
+                                        "type": "string",
+                                        "example": "Laman Sentral Berjaya"
+                                    },
+                                    "companyAddress3": {
+                                        "type": "string",
+                                        "example": "No 105, Jalan Ampang"
+                                    },
+                                    "companyPostcode": {
+                                        "maxProperties": "5",
+                                        "minProperties": "5",
+                                        "type": "integer",
+                                        "example": "50450"
+                                    },
+                                    "companyCity": {
+                                        "type": "string",
+                                        "example": "Ampang"
+                                    },
+                                    "companyState": {
+                                        "type": "integer",
+                                        "example": "6 (Selangor)"
+                                    },
+                                    "introducerName": {
+                                        "maxProperties": "255",
+                                        "type": "string",
+                                        "example": "Kamal"
+                                    },
+                                    "introducerAccountId": {
+                                        "maxProperties": "10",
+                                        "minProperties": "10",
+                                        "type": "integer",
+                                        "example": "1910000001"
                                     }
                                 },
                                 "type": "object"

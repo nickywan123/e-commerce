@@ -20,15 +20,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'auth'], function () {
     Route::group(['middleware' => ['guest:api']], function () {
         Route::post('/login', 'API\Auth\AuthController@login');
-        Route::post('/register', 'API\Auth\AuthController@register');
 
+        // Customer
         Route::group(['prefix' => 'customer'], function () {
+            // Register - POST
             Route::post('register', 'API\Auth\AuthController@customerRegister');
         });
+
+        // Dealer
+        Route::group(['prefix' => 'dealer'], function () {
+            // Register - POST
+            Route::post('register', 'API\Auth\AuthController@dealerRegister');
+        });
     });
+
+    // Require authentication token.
     Route::group(['middleware' => 'auth:api'], function () {
-        Route::get('logout', 'API\Auth\AuthController@logout');
-        Route::get('getuser', 'API\Auth\AuthController@getUser');
+        // Logout - POST
+        Route::post('/logout', 'API\Auth\AuthController@logout');
     });
 });
 
