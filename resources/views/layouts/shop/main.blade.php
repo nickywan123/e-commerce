@@ -80,6 +80,35 @@
             });
         });
     </script>
+    <script type="text/javascript">
+        function onPageLoadGetQuantity() {
+            let getQuantityURL = "{{ route('web.shop.cart.quantity', ['id' => Auth::user()->id]) }}";
+            const cartQuantityElement = $('#cart-quantity');
+
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    console.log('Request starting.');
+                },
+                complete: function() {
+                    console.log('Request complete.');
+                },
+                url: getQuantityURL,
+                type: 'GET',
+                success: function(response) {
+                    cartQuantityElement.text(response.data);
+                },
+                error: function(response) {
+                    console.log('Error');
+                    console.log(response);
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            onPageLoadGetQuantity();
+        });
+    </script>
     @stack('script')
 </body>
 

@@ -358,28 +358,6 @@ class CartController extends Controller
     }
 
     /**
-     * Display the number of quantity in the cart for the user.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function getCartQuantity()
-    // {
-    //      // Get user
-    //      $user = User::find(Auth::user()->id);
-    //     // Check if the exact item is already in the cart..
-    //     $getCartQuantity = new Cart;
-
-    //     $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->quantity;
-
-
-
-    //     return view('layouts.shop.navigation.navigation')->with('getCartQuantity',$getCartQuantity);
-
-
-    // }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

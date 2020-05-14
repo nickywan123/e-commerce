@@ -1,16 +1,10 @@
 @extends('layouts.shop.main')
 
 @section('content')
-
-
-
-
-
 <div class="min-vh-100">
     <!-- Breadcrumb here -->
     <div class="container">
         <h1 class="mt-2 pl-1 pr-1" style="font-size: 1.5rem; color: #000;">Shopping Cart</h1>
-        {{ app('request')->query('name') }}
         <div class="row no-gutters" id="cart-container">
             <div class="col-12">
 
@@ -87,7 +81,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Ajax response will be loaded here. -->
                     </div>
                 </form>
             </div>
@@ -126,13 +119,7 @@
 
 @push('script')
 <script>
-
-
     $(document).ready(function() {
-
-       
-
-
         /* Author: Wan Shahruddin */
 
         // Assign the div with the id of loadingSpinnerDiv into a variable.
@@ -157,6 +144,7 @@
 
         // Function that make an ajax request to get cart items after the page loads.
         function onPageLoad() {
+            console.log('This is onPageLoad');
             let checkedCartItem = [];
             let subtotalPrice = 0;
             let shippingPrice = 0;
@@ -217,7 +205,7 @@
 
                     if (currentVal > input.attr('min')) {
                         input.val(currentVal - 1).change();
-                       
+
                     }
                     if (parseInt(input.val()) == input.attr('min')) {
                         $(this).attr('disabled', true);
@@ -232,16 +220,12 @@
                     if (parseInt(input.val()) == input.attr('max')) {
                         $(this).attr('disabled', true);
                     }
-                  
+
                 }
             } else {
                 input.val(0);
             }
         });
-
-
-
-
 
         ItemContainer.on('focusin', '.input-number', function() {
             $(this).data('oldValue', $(this).val());
@@ -289,6 +273,7 @@
                 },
                 success: function(result) {
                     onPageLoad();
+                    onPageLoadGetQuantity();
                 },
                 error: function(result) {
                     // Log into console if there's an error.
@@ -321,8 +306,8 @@
                 type: 'PUT',
                 contentType: 'application/json',
                 success: function(result) {
-                    console.log(result);
                     onPageLoad();
+                    onPageLoadGetQuantity();
                 },
                 error: function(result) {
                     //
@@ -406,10 +391,7 @@
                 return true;
             }
         });
-
-
         /* End Author */
-
     });
 </script>
 @endpush

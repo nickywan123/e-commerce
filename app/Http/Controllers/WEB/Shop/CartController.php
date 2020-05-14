@@ -19,9 +19,22 @@ class CartController extends Controller
 
         $carts = $user->carts->where('status', 2001);
 
-        // return $carts->where('status', 2001);
-
         return view('shop.cart.partials.shopping-cart-item')->with('cartItems', $carts);
+    }
+
+    /**
+     * Get total item count in a user's cart.
+     */
+    public function getTotalCartQuantity($id)
+    {
+        $user = User::find($id);
+        $cartQuantity = $user->carts->where('status', 2001)->sum('quantity');
+
+        $data['status'] = 'OK';
+        $data['message'] = 'Get request successful.';
+        $data['data'] = $cartQuantity;
+
+        return response()->json($data, 200);
     }
 
     /**
@@ -36,24 +49,8 @@ class CartController extends Controller
         return $item;
     }
 
-    /** Update cart quantity after deleting a cart **/
-    public function removeCartQuantity(Request $request)
-    {
-        $user = User::find(Auth::user()->id);
-
-        $getCartQuantity = new Cart;
-
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
-
-        // return $carts->where('status', 2001);
-
-        return view('layouts.shop.navigation.navigation')->with('getCartQuantity', $getCartQuantity);
-    }
-
-
     /**
      * Update cart quantity.
-     * 
      */
     public function updateQuantity(Request $request, $id)
     {
