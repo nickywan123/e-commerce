@@ -59482,7 +59482,6 @@ body {
 a.btn {
   color: black;
   border-radius: 10px;
-  font-style: italic;
   min-width: 90px;
 }
 
@@ -60698,6 +60697,10 @@ a.hover-white:hover {
 
 .sidebar-margin-top {
   margin-top: 40%;
+}
+
+.sidebar-margin-top-customer {
+  margin-top: 10%;
 }
 
 .sidebar .sidebar-nav {
