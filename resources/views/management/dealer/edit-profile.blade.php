@@ -24,7 +24,7 @@
 
     {{---Desktop Layout----}}
 
-    <div class="hidden-sm">
+    <div class="hidden-sm font-family">
         <form action="{{route('shop.dashboard.dealer.profile.update',[$dealerProfile->account_id])}}" method="POST">
             <input type="hidden" name="_method" value="PATCH">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">

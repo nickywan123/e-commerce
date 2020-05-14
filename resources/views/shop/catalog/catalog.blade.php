@@ -3,7 +3,7 @@
 
 
 @section('content')
-<div class="col-12 col-md-10 offset-md-1" style="min-height: 65vh;">
+<div class="col-12 col-md-10 offset-md-1 font-family" style="min-height: 65vh;">
     <div class="row">
         <div class="col-12 mb-1">
             @if($categoryLevel == 1)
@@ -19,14 +19,14 @@
             @endif
         </div>
     </div>
-    <div class="row pb-4">
+    <div class="row pb-4 font-family">
         <div class="col-12 mb-1">
             <h3 class="text-muted">{{ $category->name }}</h3>
         </div>
     </div>
 
     @if($childCategories->count() > 0)
-    <div class="row pb-1">
+    <div class="row pb-1 font-family">
         <div class="col-12 mb-1">
             <h3 class="text-dark font-weight-bold">
                 @if ($category->name == 'Products & Services')
@@ -40,7 +40,7 @@
     </div>
 
     <!-- Child Categories -->
-    <div class="row custom-mb-5">
+    <div class="row custom-mb-5 font-family">
         @foreach($childCategories as $childCategory)
         @if($childCategory->childCategories->count() != 0)
         <div class="col-6 col-md-2 text-center">
@@ -77,7 +77,7 @@
     </div>
     @endif
 
-    <div class="row pb-1" id="scroll-to">
+    <div class="row pb-1 font-family" id="scroll-to">
         <div class="col-12 mb-1">
             <h3 class="text-dark font-weight-bold">Focus Deals <small id="child-category-indicator" class='text-muted text-capitalize'></small></h3>
             <div class="boxed">
@@ -97,7 +97,7 @@
         </div>
     </div>
 
-    <div id="loadingDiv" class="text-center">
+    <div id="loadingDiv" class="text-center font-family">
         <div class="spinner-border text-warning" role="status">
             <span class="sr-only">Loading...</span>
         </div>

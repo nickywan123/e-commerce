@@ -23,7 +23,7 @@
 @endif
 
 {{--Desktop layout--}}
-<div class="hidden-sm" style="font-size:small;">
+<div class="hidden-sm font-family" style="font-size:small;">
   <div class="row">
     <div class="col-12 mb-3"><h1 style="font-weight:bold;">Orders Tracking</h1></div>
   </div>

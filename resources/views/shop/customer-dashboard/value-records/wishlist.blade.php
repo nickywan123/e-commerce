@@ -6,7 +6,7 @@
 
 <br>
 
-<div class="row">
+<div class="row font-family">
     <div class="offset-1 col-11">
         <h2><strong>Perfect List</strong></h2>
     </div> 
@@ -14,31 +14,34 @@
 
 <br>
 
-<div class="row">
-    <div class="offset-1 col-1">
+
+<div class="row font-family">
+    <div class="offset-1 col-2">
         <a href="#" class="header-text-style"
         style="border-bottom: 2px solid rgb(250, 172, 24);">
         <i><strong >My Favourite</strong></i>
         </a>
     </div>
 
-    <div class="col-1">
+    <div class="col-2">
         <a href="#" class="header-text-style"><i><strong>My Home List</strong></i>
         </a>
     </div>
-    <div class="col-1">
+    <div class="col-3">
         <a href="#" class="header-text-style"><i><strong>Perfect Home List</strong></i>
         </a>
     
     </div>  
 </div>
+
+
 <hr>
 
 
 {{--Template for wish list--}}
 
 
-<div class="card shadow-sm">
+<div class="card shadow-sm font-family">
     <div class="card-body">
        
         {{-- <h4 style="font-weight:bold; color:rgb(250, 172, 24);">Purchase #: 
@@ -47,9 +50,8 @@
         <table class="table">
     
             <!-- Starting Item Template -->
-         @foreach ($favourite as $item)
-             
-         
+        @if(count($favourite))
+         @foreach ($favourite as $item)   
             <tr>
                 <td  class="align-top" style="max-width: 400px; border-top:white;">
 
@@ -101,22 +103,20 @@
                            
                             <i class="fa fa-trash-o fa-2x text-muted mt-4 ml-5"></i>
                         </div>
-
-
-
                     </div>
-
                 </td>
-            
-
-               
-                
-              
             </tr>
           
             @endforeach
             <!-- Ending Item Template -->
-        
+            @else
+            <div class="row">
+                <div class="col-6">
+                    <strong style="font-size: 15pt;">Your Perfect List is empty</strong>
+                </div>
+               
+            </div>
+            @endif
         </table>
      
     </div>

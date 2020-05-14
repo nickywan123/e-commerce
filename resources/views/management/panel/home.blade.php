@@ -95,7 +95,7 @@ var myChart = new Chart(ctx,{
 
 {{----------------Desktop Layout-------------------}}
 
- <div class="hidden-sm">
+ <div class="hidden-sm font-family">
     <div class="row">
         <div class="col-8">
         <img src="{{asset('/storage/panel/panel-welcome-banner.png')}}" style="height:90%; width:100%;" alt="welcome-banner">

@@ -199,7 +199,7 @@
 
 {{------------------DESKTOP Layout-----------------------}}
 
-<div class="hidden-sm" >
+<div class="hidden-sm font-family" >
  <div class="row">
   <div class="row">
    <div class="col-12">
@@ -672,13 +672,13 @@
 .sub-border-color{
   border: 2pt solid #fbcc34;
 }
-
+/*Mobile*/
 @media(max-width:767px) {
   .hidden-sm {
     display: none;
      }
   }
-
+ /*Desktop*/
 @media(min-width:767px) {
    .hidden-md {
        display: none;

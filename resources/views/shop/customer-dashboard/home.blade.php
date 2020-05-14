@@ -7,7 +7,7 @@
 <br>
 
 {{----------Desktop Layout---------------------}}
-<div class="row hidden-sm">
+<div class="row hidden-sm font-family">
 
     <div class="col-3">
          <div class="row ml-1">

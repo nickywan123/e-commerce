@@ -24,7 +24,7 @@
 
     {{---Desktop Layout----}}
 
-    <div class="hidden-sm">
+    <div class="hidden-sm font-family">
         
         <div class="row">
             <div class="offset-1 col-12 col-md-10">

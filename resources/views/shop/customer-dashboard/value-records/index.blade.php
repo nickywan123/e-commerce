@@ -38,7 +38,7 @@
         </div>
         <hr>
         @if(!$purchases->isEmpty())
-        <div class="card shadow-sm">
+        <div class="card shadow-sm font-family">
             <div class="card-body">
                 @foreach($purchases as $purchase)
                 <h4 style="font-weight:bold; color:rgb(250, 172, 24);">Purchase #: {{ $purchase->getFormattedNumber()}}
@@ -152,7 +152,7 @@
         </div>
         @else
         <div>
-        <strong class="mr-2"> There are no orders found.</strong>
+        <strong class="mr-2 font-family" style="font-size:15pt;"> There are no orders found.</strong>
         <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
         </div>
         @endif
@@ -164,7 +164,7 @@
 
 
 
-<div class="mt-3 mt-md-0 hidden-md" style="min-height: 100vh;">
+<div class="mt-3 mt-md-0 hidden-md font-family" style="min-height: 100vh;">
     <div class="container" style="margin-top: 50px;">
         <div class="row">        
             <div class="row">

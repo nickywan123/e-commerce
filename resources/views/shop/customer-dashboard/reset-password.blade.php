@@ -40,7 +40,7 @@
     {{-- {{$resetPassword}} --}}
     
 
-    <div class="container" style="    position: relative; top: 150px;">
+    <div class="container font-family" style="position: relative; top: 150px;">
         <div class="row justify-content-center" align="center">
             <div class="col-md-8">
                 <div class="card">

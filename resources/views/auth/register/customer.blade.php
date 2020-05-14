@@ -1,7 +1,7 @@
 @extends('layouts.guest.main')
 
 @section('content')
-<div class="bg-md bg-sm">
+<div class="bg-md bg-sm font-family">
     <div class="row">
         <div class="col-6 offset-3 col-md-2 offset-md-5 mb-0 pt-2 pb-3">
             <img class="mw-100" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="">
@@ -174,11 +174,11 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="agreement" role="tabpanel" aria-labelledby="agreement-tab">
+                        <div class="tab-pane fade font-family" id="agreement" role="tabpanel" aria-labelledby="agreement-tab">
                             <h5 class="text-center" style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;">Agreement</h5>
 
                             <!-- Registration Agreement -->
-                            <div class="row">
+                            <div class="row font-family">
                                 <div class="col-12 mb-0">
                                     <div class="overflow-auto agreement">
                                         <h5 class="header">Bujishu Terms & Condition</h5>
@@ -502,7 +502,6 @@
         background-color: #ffffff;
         border: 2px solid #e6e6e6;
         padding: 0.75rem;
-        font-family: Arial, Helvetica, sans-serif;
         max-height: 85vh;
     }
 

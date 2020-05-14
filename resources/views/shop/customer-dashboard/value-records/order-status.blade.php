@@ -6,11 +6,11 @@
 
 {{--Desktop layout--}}
 
-<div class="mt-3 hidden-sm" style="min-height: 100vh; margin-right: 120px;">
+<div class="mt-3 hidden-sm font-family" style="min-height: 100vh; margin-right: 120px;">
     <div class="container">
         <div class="row">
             <div class="col-md-9 mt-4">
-                <h3 style="font-size:40px; font-family: Nunito;"><strong>Value Records</strong></h3>
+                <h3 style="font-size:40px;"><strong>Value Records</strong></h3>
             </div>
 
 
@@ -148,7 +148,7 @@
             </div>
         </div>
         @else
-        <strong class="mr-2"> There are no orders found.</strong>
+        <strong class="mr-2 font-family" style="font-size:15pt;"> There are no orders found.</strong>
         <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
         @endif
     </div>
