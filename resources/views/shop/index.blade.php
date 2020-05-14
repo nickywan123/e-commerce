@@ -56,7 +56,7 @@
     <div class="row">
         <div class="col-12">
             <h1 style="color: #ffcc00; font-size: 1.9rem;" class="font-family"><b>Hot Selections</b></h1>
-            <div style="border-top: 1px solid #ffcc00;" class="w-50-md w-100-sm margin-bottom-md">
+            <div style="border-top: 1px solid #ffcc00;" class="w-150-md w-100-sm margin-bottom-md">
             </div>
         </div>
         <div class="col-4 col-md-2 text-alignment">
