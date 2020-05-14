@@ -222,10 +222,10 @@
           
            <div class="row">
              <div class="col-1 ml-4">
-              <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
+              <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
              </div>
-             <div class="col-7 ml-4" style="line-height: 20px;">   
-              <p class="card-title font-family" style="font-weight:bold; font-size:15pt;">RM 28,888</P>
+             <div class="col-7 ml-4 mt-2" style="line-height: 20px;">   
+              <p class="card-title font-family" style="font-weight:bold; font-size:30pt;">RM 28,888</P>
               <p class="font-family">Daily Revenue: 08/05/2020</p>
              </div>
            </div> 
@@ -246,10 +246,10 @@
            
             <div class="row">
               <div class="col-1 ml-4">
-               <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
+               <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
               </div>
-              <div class="col-7 ml-4" style="line-height: 20px;">
-               <p class="card-title font-family" style="font-weight:bold; font-size:15pt;">RM 88,888</P>
+              <div class="col-7 ml-4 mt-2" style="line-height: 20px;">
+               <p class="card-title font-family" style="font-weight:bold; font-size:30pt;">RM 88,888</P>
                Month Revenue: May 2020
               </div>
             </div> 
@@ -374,8 +374,8 @@
            <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Profile</h4>
           </div>
           <div class="col-6 ">
-           <p class="card-title" style="float: right;margin-right:30px; color:#ffcc00;">Edit</p>
-           </div>
+           <a href="{{route('shop.dashboard.customer.profile.edit')}}"><p class="card-title" style="float: right;margin-right:30px; color:#ffcc00;">Edit</p></a>
+          </div>
         </div>
         <div class="row mt-2">
           <div class="col-3">

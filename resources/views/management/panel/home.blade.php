@@ -101,7 +101,7 @@ var myChart = new Chart(ctx,{
         <img src="{{asset('/storage/panel/panel-welcome-banner.png')}}" style="height:90%; width:100%;" alt="welcome-banner">
         </div>
         <div class="col-4 font-family">
-            <div class="card border-radius-card shadow" style="width:100%;height:90%; background-color:#ffcc00;" >
+            <div class="card border-radius-card shadow" style="width:100%;height:90%; background-color:#ffcc00;">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-6">
@@ -214,7 +214,7 @@ var myChart = new Chart(ctx,{
                                 <p>-</p>
                             </div>
                           </div> 
-                          <div class="row mt-3" style="border-bottom: 1px solid #ffcc00; ">
+                          <div class="row mt-3">
                             <div class="col-6">
                                 <p class="font-family">Product Expired</p>                     
                             </div>
@@ -452,7 +452,7 @@ var myChart = new Chart(ctx,{
                     <p>-</p>
                 </div>
               </div> 
-              <div class="row mt-3" style="border-bottom: 1px solid #ffcc00; ">
+              <div class="row mt-3">
                 <div class="col-6">
                     <p class="font-family">Product Expired</p>                     
                 </div>

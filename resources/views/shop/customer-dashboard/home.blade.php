@@ -18,8 +18,8 @@
                      <h4 class="card-title font-family" style="font-weight:bold; font-size:18pt;">Profile</h4>
                     </div>
                     <div class="col-6 ">
-                     <p class="card-title font-family" style="float: right; color:#ffcc00;">Edit</p>
-                     </div>
+                     <a href="{{route('shop.dashboard.customer.profile.edit')}}"><p class="card-title font-family" style="float: right; color:#ffcc00;">Edit</p></a>
+                    </div>
                   </div>
                   <div class="row mt-2 ">
                     <div class="col-3">
@@ -49,9 +49,10 @@
                      <h4 class="card-title font-family" style="font-weight:bold; font-size:18pt;">Value Records</h4>
                     </div>
                     <div class="col-6 ">
-                     <p class="card-title font-family" style="float: right; color:#ffcc00;">Show More</p>
-                     </div>
+                     <a href="{{route('shop.customer.orders')}}"><p class="card-title font-family" style="float: right; color:#ffcc00;">Show More</p></a>
+                    </div>
                   </div>
+                @if(!$purchases->isEmpty())
                   @foreach ($purchases as $purchase)
                    @foreach ($purchase->orders as $order)
                     @foreach ($order->items as $item)
@@ -63,7 +64,7 @@
                         <p class="font-family"><b>{{ $item->product->parentProduct->name}}</b></p>
                     </div>
                     <div class="col-4 mt-3">
-                        <p class="font-family" style="float: right;">
+                        <p class="font-family" style="float: right; font-weight:bold;">
                           @if ($order->order_status === 1000)
                            Record Created
                           @elseif ($order->order_status === 1001)
@@ -79,6 +80,17 @@
                   @endforeach
                   @endforeach       
                   @endforeach
+                  @else
+                   <div class="row mt-1">
+                     <div class="col-6 mt-1">
+                      <strong class="font-family" style="font-size: 11pt;">There are no orders found.</strong>
+                     </div>
+                     <div class="offset-1 col-5">
+                      <a class="btn bjsh-btn-gradient font-family" href="/shop">Continue Shopping</a>
+                     </div>
+                    
+                   </div>
+                  @endif
                   {{-- <div class="row mt-1">
                        <div class="col-3">
                         <img src="{{asset('/storage/uploads/images/products/bedsheet-moderate/bedsheet-moderate_5.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
@@ -113,8 +125,8 @@
                      <h4 class="card-title font-family" style="font-weight:bold; font-size:18pt;">Perfect List</h4>
                     </div>
                     <div class="col-6 ">
-                     <p class="card-title font-family" style="float: right; color:#ffcc00;">Show More</p>
-                     </div>
+                     <a href="{{route('shop.wishlist.home')}}"><p class="card-title font-family" style="float: right; color:#ffcc00;">Show More</p></a>
+                    </div>
                   </div>
                   <div class="row mt-2">
                     <div class="col-3">
@@ -123,7 +135,7 @@
                     <div class="col-5 mt-3">
                         <p class="font-family"><b>ALES Anti Mosquito</b></p>
                     </div>
-                    <div class="col-4 mt-3">
+                    <div class="col-4 mt-3" style="font-weight: bold;">
                         RM73.80 
                         <img src="{{asset('/storage/customer/add-to-cart.png')}}" alt="product-image" >   
                     </div>
@@ -136,7 +148,7 @@
                        <div class="col-5 mt-3">
                            <p class="font-family"><b>ALES Anti Mosquito Hybrid</b></p>
                        </div>
-                       <div class="col-4 mt-3">
+                       <div class="col-4 mt-3" style="font-weight: bold;">
                         RM86.00
                         <img src="{{asset('/storage/customer/add-to-cart.png')}}" alt="product-image" >   
                        </div>      
@@ -148,7 +160,7 @@
                        <div class="col-5 mt-3">
                            <p class="font-family"><b>ALES Weathercoat Hybrid</b></p>
                        </div>
-                       <div class="col-4 mt-3">
+                       <div class="col-4 mt-3" style="font-weight: bold;">
                         RM43.00
                         <img src="{{asset('/storage/customer/add-to-cart.png')}}" alt="product-image" >   
                        </div>      

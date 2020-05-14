@@ -1,7 +1,7 @@
 <div class="wrapper" style="height: 100%; ">
 <div class="sidebar sidebar-bg-color">
     <nav class="sidebar-nav">
-        <ul class="nav sidebar-margin-top">
+        <ul class="nav sidebar-margin-top-customer">
 
             <li class="nav-item"  >
                 <div class="icon-text-align">
@@ -15,7 +15,7 @@
 
             <li class="nav-item" >
               <div class="icon-text-align">
-                 <a class="nav-link " href="/shop/dashboard/orders/index">
+                 <a class="nav-link " href="{{route('shop.customer.orders')}}">
                     <img class="img-avatar" src="{{asset('/storage/customer/value-records.png')}}" alt="My Orders" style="height: 100px; width: 100px; ">
                  </a>          
              </div>
@@ -24,7 +24,7 @@
   
             <li class="nav-item">
              <div class="icon-text-align">
-                 <a class="nav-link" href="/shop/dashboard/wishlist/index">
+                 <a class="nav-link" href="{{route('shop.wishlist.home')}}">
                     <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/perfect-list.png')}}" alt="Wish List" style="height: 100px; width: 100px; ">
                  </a>
            
