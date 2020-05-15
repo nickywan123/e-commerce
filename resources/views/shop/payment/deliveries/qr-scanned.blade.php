@@ -131,7 +131,7 @@
 
                     <!-- Rate Panel -->
                     <div>
-                        <form action="{{route('update.order.panel.received.date',[$order->order_number])}}" method="POST">
+                        <form action="{{route('guest.order-received.post',['orderNumber' => $order->order_number])}}" method="POST">
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="text-center text-md-left">
