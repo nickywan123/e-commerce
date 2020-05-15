@@ -93,7 +93,7 @@ Route::get('/order-received/{orderNum}', 'Purchase\PurchaseController@qrScanned'
 /**
  * Public Routes.
  */
-Route::post('/order-received', 'Purchase\PurchaseController@qrSubmit')
+Route::put('/order-received/{orderNumber}', 'Purchase\PurchaseController@qrSubmit')
     ->name('guest.order-received.post');
 
 // Authentication routes. Verification is set to true.

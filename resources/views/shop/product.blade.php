@@ -5,19 +5,34 @@
     <div class="card w-100" style="border-radius: 0;">
         <div class="">
             <div class="row no-gutters">
-                <div class="col-12 col-md-4 p-2">
-                    <div class="slider slider-single">
-                        @foreach($product->images as $image)
-                        <div>
-                            <img class="mw-100" src="{{ asset('storage/' . $image->path . '/' . $image->filename) }}" alt="">
+                <div class="col-12 col-md-4 p-2 text-center">
+                    <div style="max-width: 25rem; height: auto; margin: 0 auto;">
+                        <div class="slider slider-single">
+                            @foreach($product->images as $image)
+                            <div>
+                                <img class="mw-100" src="{{ asset('storage/' . $image->path . '/' . $image->filename) }}" alt="">
+                            </div>
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
+                    <p class="text-capitalize text-muted mt-3 mb-1 text-muted text-center p-1" style="font-size: 0.9rem;">
+                        By - {{ $panelProduct->panel->company_name }}
+                    </p>
+
+                    <!-- Description -->
+                    <p class="mt-2 mb-3 p-1 text-center font-weight-bold" style="font-size: 0.9rem;">
+                        {!! $product->details !!}
+                    </p>
                 </div>
 
-                <div class="col-12 col-md-5 p-2 text-center text-md-left">
-                    <h1 class="pl-0 pr-0 text-capitalize" style="font-size: 1.5rem; margin: 0;">{{ $product->name }}</h1>
-                    <p class="text-capitalize text-muted mt-3 mb-1 text-muted" style="font-size: 1.1rem;">Sold by - {{ $panelProduct->panel->company_name }}</p>
+                <div class="col-12 col-md-5 pl-2 pr-2 pt-3 pb-3 text-center text-md-left">
+                    <h1 class="pl-0 pr-0 mt-3 text-capitalize my-auto" style="font-size: 1.5rem; margin: 0;">
+                        {{ $product->name }}
+                        <span style="font-size: 0.7rem; background-color: #fff000; padding: 5px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin: auto; font-weight: 600;">
+                            {{ $product->quality->name }}
+                        </span>
+                    </h1>
+
 
                     <!-- Ratings -->
                     <div class="text-center text-md-left my-auto">
@@ -38,7 +53,7 @@
                         </span>
                         @endforeach
 
-                        <span class="align-middle ml-2"><small>490 ratings</small></span>
+                        <span class="align-middle ml-2"><small>0 ratings</small></span>
                     </div>
 
                     <!-- Price -->
@@ -59,14 +74,9 @@
 
                     <hr class="mt-1">
 
-                    <!-- Description -->
-                    <p class="mb-3 text-justify">
-                        {!! $product->details !!}
-                    </p>
-
                     <!-- Colors -->
                     @if($panelProduct->colorAttributes->count() > 0)
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-12">
                             <p class="mb-1">Colors</p>
                             <div class="boxed">
@@ -94,7 +104,7 @@
 
                     <!-- Sizes -->
                     @if($panelProduct->sizeAttributes->count() > 0)
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-12">
                             <p class="mb-1">Sizes</p>
                             <div class="boxed">
@@ -122,7 +132,7 @@
 
                     <!-- Light Temperatures -->
                     @if($panelProduct->lightTemperatureAttributes->count() > 0)
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-12">
                             <p class="mb-1 text-muted">Color Temperature</p>
                             <div class="boxed">
@@ -325,24 +335,42 @@
                                     <div class="card-body">
                                         <div class="p-4 product-details text-justify">
                                             @if ($panelProduct->sizeAttributes->count() > 0)
-                                            <p class="mb-3 font-weight-bold">Sizes</p>
-                                            @foreach($panelProduct->sizeAttributes as $sizeAttribute)
-                                            <span class="p-2 rounded shadow-sm" style="background-color: #ffff00;">{{ $sizeAttribute->attribute_name }}</span>
-                                            @endforeach
+                                            <p class="mb-1 font-weight-bold">Sizes</p>
+                                            <ul class="list-unstyled">
+                                                @foreach($panelProduct->sizeAttributes as $sizeAttribute)
+                                                <li class="mx-1 p-1">
+                                                    <span class="p-1 rounded shadow-sm" style="background-color: #ffff00;">
+                                                        {{ $sizeAttribute->attribute_name }}
+                                                    </span>
+                                                </li>
+                                                @endforeach
+                                            </ul>
                                             @endif
 
                                             @if ($panelProduct->colorAttributes->count() > 0)
-                                            <p class="mb-3 font-weight-bold">Colors</p>
-                                            @foreach($panelProduct->colorAttributes as $colorAttribute)
-                                            <span class="p-2 rounded shadow-sm" style="background-color: #ffff00;">{{ $colorAttribute->attribute_name }}</span>
-                                            @endforeach
+                                            <p class="mb-1 font-weight-bold">Colors</p>
+                                            <ul class="list-unstyled">
+                                                @foreach($panelProduct->colorAttributes as $colorAttribute)
+                                                <li class="mx-1 p-1">
+                                                    <span class="p-1 rounded shadow-sm" style="background-color: #ffff00;">
+                                                        {{ $colorAttribute->attribute_name }}
+                                                    </span>
+                                                </li>
+                                                @endforeach
+                                            </ul>
                                             @endif
 
                                             @if ($panelProduct->lightTemperatureAttributes->count() > 0)
-                                            <p class="mb-3 font-weight-bold">Light Temperature</p>
-                                            @foreach($panelProduct->lightTemperatureAttributes as $lightTemperatureAttribute)
-                                            <span class="p-2 rounded shadow-sm" style="background-color: #ffff00;">{{ $lightTemperatureAttribute->attribute_name }}</span>
-                                            @endforeach
+                                            <p class="mb-1 font-weight-bold">Light Temperature</p>
+                                            <ul class="list-unstyled">
+                                                @foreach($panelProduct->lightTemperatureAttributes as $lightTemperatureAttribute)
+                                                <li class="mx-1 p-1">
+                                                    <span class="p-1 rounded shadow-sm" style="background-color: #ffff00;">
+                                                        {{ $lightTemperatureAttribute->attribute_name }}
+                                                    </span>
+                                                </li>
+                                                @endforeach
+                                            </ul>
                                             @endif
                                         </div>
                                     </div>
@@ -464,6 +492,17 @@
 
 @push('style')
 <style>
+    .slick-dots {
+        position: absolute;
+        bottom: 0;
+        list-style: none;
+        display: block;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
     @media (max-width: 576px) {
         .width-80 {
             width: 100%;
@@ -916,6 +955,9 @@
             inputColor = $('#product_attribute_color');
             inputSize = $('#product_attribute_size');
             inputTemperature = $('#product_attribute_temperature');
+            inputBuyColor = $('#product_attribute_color_buyNow');
+            inputBuySize = $('#product_attribute_size_buyNow');
+            inputBuyTemperature = $('#product_attribute_temperature_buyNow');
 
             if ($('input[name="color"]:checked').val()) {
                 panelColor = $('input[name="color"]:checked').val();
@@ -959,6 +1001,9 @@
             inputColor.val(panelColor);
             inputSize.val(panelSize);
             inputTemperature.val(panelTemperature);
+            inputBuyColor.val(panelColor);
+            inputBuySize.val(panelSize);
+            inputBuyTemperature.val(panelTemperature);
 
             if (priceByAttr != 0) {
                 priceTag.text('RM ' + priceByAttr);

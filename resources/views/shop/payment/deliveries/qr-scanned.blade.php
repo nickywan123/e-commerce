@@ -107,7 +107,7 @@
 
                         <div class="row no-gutters">
                             <div class="col-4 col-md-2 pl-1 pr-1">
-                                <img class="mw-100 rounded d-inline" src="{{ asset('storage/' . $item->product->parentProduct->defaultImage->path . '/' . $item->product->parentProduct->defaultImage->filename) }}" alt="">
+                                <img class="mw-100 rounded d-inline" src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . '/' . $item->product->parentProduct->images[0]->filename) }}" alt="">
                             </div>
                             <div class="col-8 col-md-10 pl-1 pr-1">
                                 <p class="text-left mb-1">
@@ -131,7 +131,7 @@
 
                     <!-- Rate Panel -->
                     <div>
-                        <form action="{{route('update.order.panel.received.date',[$order->order_number])}}" method="POST">
+                        <form action="{{route('guest.order-received.post',['orderNumber' => $order->order_number])}}" method="POST">
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="text-center text-md-left">

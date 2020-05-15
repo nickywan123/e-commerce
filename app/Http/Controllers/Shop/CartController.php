@@ -163,36 +163,14 @@ class CartController extends Controller
                 $productInformation['product_temperature'] = $temperature->attribute_name;
             }
 
-            // if ($color != null) {
-            //     if ($color->price != 0) {
-            //         $price = $color->price;
-            //     } else {
-            //         $price = $product->price;
-            //     }
-            // } elseif ($size != null) {
-            //     if ($size->price != 0) {
-            //         $price = $size->price;
-            //     } else {
-            //         $price = $product->price;
-            //     }
-            // } elseif ($temperature != null) {
-            //     if ($temperature->price != 0) {
-            //         $price = $temperature->price;
-            //     } else {
-            //         $price = $product->price;
-            //     }
-            // } else {
-            //     $price = $product->price;
-            // }
-
             if ($size != null) {
                 if ($size->price != 0) {
-                    $price = $size->price;
+                    $price = $size->member_price; // $price = $size->price;  TODO: Temporary default to member price.
                 } else {
-                    $price = $product->price;
+                    $price = $product->member_price; // $price = $product->price; TODO: Temporary default to member price.
                 }
             } else {
-                $price = $product->price;
+                $price = $product->member_price; // $price = $product->price; TODO: Temporary default to member price.
             }
 
             $newCartItem->product_information = $productInformation;
@@ -312,26 +290,36 @@ class CartController extends Controller
                 $productInformation['product_temperature'] = $temperature->attribute_name;
             }
 
-            if ($color != null) {
-                if ($color->price != 0) {
-                    $price = $color->price;
-                } else {
-                    $price = $product->price;
-                }
-            } elseif ($size != null) {
+            // if ($color != null) {
+            //     if ($color->price != 0) {
+            //         $price = $color->member_price;
+            //     } else {
+            //         $price = $product->member_price; // $price = $product->price; TODO: Temporary default to member price.
+            //     }
+            // } elseif ($size != null) {
+            //     if ($size->price != 0) {
+            //         $price = $size->member_price;
+            //     } else {
+            //         $price = $product->member_price; // $price = $product->price; TODO: Temporary default to member price.
+            //     }
+            // } elseif ($temperature != null) {
+            //     if ($temperature->price != 0) {
+            //         $price = $temperature->member_price;
+            //     } else {
+            //         $price = $product->member_price; // $price = $product->price; TODO: Temporary default to member price.
+            //     }
+            // } else {
+            //     $price = $product->member_price; // $price = $product->price; TODO: Temporary default to member price.
+            // }
+
+            if ($size != null) {
                 if ($size->price != 0) {
-                    $price = $size->price;
+                    $price = $size->member_price; // $price = $size->price;  TODO: Temporary default to member price.
                 } else {
-                    $price = $product->price;
-                }
-            } elseif ($temperature != null) {
-                if ($temperature->price != 0) {
-                    $price = $temperature->price;
-                } else {
-                    $price = $product->price;
+                    $price = $product->member_price; // $price = $product->price; TODO: Temporary default to member price.
                 }
             } else {
-                $price = $product->price;
+                $price = $product->member_price; // $price = $product->price; TODO: Temporary default to member price.
             }
 
             $newCartItem->product_information = $productInformation;
