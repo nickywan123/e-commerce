@@ -28,13 +28,13 @@
         </div>
         <div class="container-fluid" style="margin-top:20px;">
             <a href="/shop/dashboard/orders/index" class="orders-text-style font-family"
-                style="border-bottom: 2px solid rgb(250, 172, 24);" ><i><strong>All
-                        Orders</strong></i></a>
-            <a href="/shop/dashboard/orders/open-orders" class="orders-text-style font-family" ><i><strong>Open Orders</strong></i></a>
-            <a href="/shop/dashboard/orders/order-status" class="orders-text-style font-family" ><i><strong>Order
-                        Status</strong></i></a>
-            {{-- <a href="#" class="orders-text-style"><i><strong>Return Orders</strong></i></a> --}}
-            <a href="#" class="orders-text-style font-family"><i><strong>Pending Star Ratings</strong></i></a>
+                style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>All
+                        Orders</strong></a>
+            <a href="/shop/dashboard/orders/open-orders" class="orders-text-style font-family" ><strong>Open Orders</strong></a>
+            <a href="/shop/dashboard/orders/order-status" class="orders-text-style font-family" ><strong>Order
+                        Status</strong></a>
+            {{-- <a href="#" class="orders-text-style"><strong>Return Orders</strong></a> --}}
+            <a href="#" class="orders-text-style font-family"><strong>Pending Star Ratings</strong></a>
         </div>
         <hr>
         @if(!$purchases->isEmpty())

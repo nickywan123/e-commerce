@@ -18,7 +18,7 @@ var myChart = new Chart(ctx,{
       datasets: [
         {
           label: "Monthly Revenue",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+          backgroundColor: ["#fbcc34","#fbcc34","#fbcc34","#fbcc34"],
           data: [2478,5267,534,784]
         }
       ]
@@ -155,7 +155,7 @@ var myChart = new Chart(ctx,{
                             </div>
                             <div class="col-7 ml-5 mt-2" style="line-height: 20px;">   
                              <p class="card-title" style="font-weight:bold; font-size:30pt;">RM 28,888</P>
-                             <p style="color: #939598;">Daily Revenue: 08/05/2020</p>
+                             <p style="color: #939598;">Daily Revenue: 15/5/2020</p>
                             </div>
                           </div>       
                         </div>

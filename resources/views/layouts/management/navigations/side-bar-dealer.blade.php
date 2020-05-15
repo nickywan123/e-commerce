@@ -7,9 +7,9 @@
          <h4 class="font-family" style="color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
          
          
-         <li>
+         {{-- <li>
           <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Profile</a>
-         </li>
+         </li> --}}
          <li>
             <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Sales Summary</a>
          </li>

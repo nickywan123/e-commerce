@@ -34,7 +34,9 @@ class ManagementController extends Controller
 
 
         // return view("management.panel.index")->with('customerOrders', $customerOrders);
-
+        // $now = Carbon::now();
+        // $format = 'dd/mm/YYYY';
+        // $date = Carbon::createFromFormat($format, $now);
         return view('management.panel.home');
     }
 
