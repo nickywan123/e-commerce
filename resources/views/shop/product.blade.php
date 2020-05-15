@@ -955,6 +955,9 @@
             inputColor = $('#product_attribute_color');
             inputSize = $('#product_attribute_size');
             inputTemperature = $('#product_attribute_temperature');
+            inputBuyColor = $('#product_attribute_color_buyNow');
+            inputBuySize = $('#product_attribute_size_buyNow');
+            inputBuyTemperature = $('#product_attribute_temperature_buyNow');
 
             if ($('input[name="color"]:checked').val()) {
                 panelColor = $('input[name="color"]:checked').val();
@@ -998,6 +1001,9 @@
             inputColor.val(panelColor);
             inputSize.val(panelSize);
             inputTemperature.val(panelTemperature);
+            inputBuyColor.val(panelColor);
+            inputBuySize.val(panelSize);
+            inputBuyTemperature.val(panelTemperature);
 
             if (priceByAttr != 0) {
                 priceTag.text('RM ' + priceByAttr);
