@@ -1,40 +1,43 @@
 
 
 <div class="sidebar sidebar-bg-color-panel font-family" style=" width: 240px;">
-    <nav class="sidebar-nav">
-      <ul class="list-unstyled components" style="padding-left: 10px;">
+    <nav class="sidebar-nav ">
+      <ul class="list-unstyled components" >
          <br>
          <h4 style="color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
          
          
-         <li>
+         {{-- <li>
           <a href="#" class="sidebar-text-color">Profile</a>
-         </li>
-         <li>
+         </li> --}}
+         <li class="text-hover">
             <a href="#" class="sidebar-text-color">Value Tracking</a>
          </li>
          <li>
             <a href="#" class="sidebar-text-color">Products</a>
-                <ul class="list-unstyled components sidebar-text-color" >
-                    <li>
-                        <a class="sidebar-text-color" href="#">New Products</a>
+                <ul class="list-unstyled components " >
+                    <li class="text-hover" style="font-size:15pt;">
+                        <a href="#" style="color: black;">New Products</a>
                     </li>
-                    <li>
-                        <a class="sidebar-text-color" href="#">Update Products</a>
+                    <li class="text-hover" style="font-size:15pt;">
+                        <a  href="#" style="color: black;">Update Products</a>
                     </li>
-                    <li>
-                        <a class="sidebar-text-color" href="#">Product Expired</a>
+                    <li class="text-hover" style="font-size:15pt;">
+                        <a  href="#" style="color: black;">Product Expired</a>
                     </li>         
                 </ul>
          </li>
-         <li>
+         <li class="text-hover">
             <a href="#" class="sidebar-text-color">KPIR</a>
          </li>
-         <li>
+         <li class="text-hover">
             <a href="#" class="sidebar-text-color">Notice</a>
          </li>
-         <li>
+         <li class="text-hover">
             <a href="#" class="sidebar-text-color">Promotion/Special Offer</a>
+         </li>
+         <li class="text-hover">
+            <a href="/shop" class="sidebar-text-color">Continue Shopping</a>
          </li>
          
       </ul>
@@ -118,7 +121,15 @@
 
 <style>
 
-   
+  .text-hover:hover{
+      color: black;
+      background: #fff;
+      text-decoration:  none!important;
+  }
+  a:hover{
+     color: black;
+     text-decoration: none;
+  }
 
     .sidebar-text-color{
       

@@ -1,4 +1,4 @@
-@extends('layouts.management.main-dealer')
+@extends('layouts.management.main-customer')
 
 
 

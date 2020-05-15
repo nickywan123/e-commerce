@@ -7,7 +7,7 @@
 <br>
 
 <div class="row font-family">
-    <div class="offset-1 col-11">
+    <div class="col-12">
         <h2><strong>Perfect List</strong></h2>
     </div> 
 </div>
@@ -16,19 +16,19 @@
 
 
 <div class="row font-family">
-    <div class="offset-1 col-2">
+    <div class="col-2">
         <a href="#" class="header-text-style"
         style="border-bottom: 2px solid rgb(250, 172, 24);">
-        <i><strong >My Favourite</strong></i>
+        <strong >My Favourite</strong>
         </a>
     </div>
 
     <div class="col-2">
-        <a href="#" class="header-text-style"><i><strong>My Home List</strong></i>
+        <a href="#" class="header-text-style"><strong>My Home List</strong>
         </a>
     </div>
     <div class="col-3">
-        <a href="#" class="header-text-style"><i><strong>Perfect Home List</strong></i>
+        <a href="#" class="header-text-style"><strong>Perfect Home List</strong>
         </a>
     
     </div>  

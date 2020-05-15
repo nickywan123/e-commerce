@@ -1,4 +1,4 @@
-@extends('layouts.management.main-dealer')
+@extends('layouts.management.main-customer')
 
 
 
@@ -28,7 +28,23 @@
         
         <div class="row">
             <div class="offset-1 col-12 col-md-10">
-                <h4 class="text-capitalize text-dark">Dealer Profile</h4>
+                <div class="row">
+                    <div class="col-2">
+                     <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header font-family"
+                     ><strong>User Profile</strong></a>
+                    </div>
+                    @hasrole('dealer')
+                    <div class="col-2">
+                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header font-family" style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Dealer Information</strong></a>
+                    </div>
+                    @endhasrole
+                    @hasrole('panel')
+                    <div class="col-4">
+                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header font-family" ><strong>Panel: Company Information</strong></a>
+                    </div>
+                    @endhasrole          
+                </div>
+                <hr>
                 <div class="card shadow-sm">
                     <div class="card-body">
 
@@ -393,7 +409,10 @@
 
 
 <style>
-
+.text-color-header{
+    color:black;
+    font-size: 12pt;
+}
 
 .text-bold{
   font-weight: bold;

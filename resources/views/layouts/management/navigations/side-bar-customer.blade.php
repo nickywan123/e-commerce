@@ -1,22 +1,22 @@
-<div class="wrapper" style="height: 100%; ">
-<div class="sidebar sidebar-bg-color">
-    <nav class="sidebar-nav">
+<div class="wrapper" style="height: 100%;  ">
+ <div class="sidebar sidebar-bg-color    ">
+    <nav class="sidebar-nav" >
         <ul class="nav sidebar-margin-top-customer">
 
-            <li class="nav-item"  >
+            {{-- <li class="nav-item"  >
                 <div class="icon-text-align">
                    <a class="nav-link " href="{{ route('shop.dashboard.customer.profile') }}">
                       <img class="img-avatar" src="{{asset('/storage/customer/profile.png')}}" alt="Profile" style="height: 100px; width: 100px; ">
                    </a>          
                </div>
               </li>
-           
+            --}}
     
 
             <li class="nav-item" >
               <div class="icon-text-align">
                  <a class="nav-link " href="{{route('shop.customer.orders')}}">
-                    <img class="img-avatar" src="{{asset('/storage/customer/value-records.png')}}" alt="My Orders" style="height: 100px; width: 100px; ">
+                    <img class="img-avatar" src="{{asset('/storage/customer/sidebar-icons/value-records.png')}}" alt="My Orders" style="height: 100px; width: 100px; ">
                  </a>          
              </div>
             </li>
@@ -25,7 +25,7 @@
             <li class="nav-item">
              <div class="icon-text-align">
                  <a class="nav-link" href="{{route('shop.wishlist.home')}}">
-                    <img class="img-avatar" src="{{asset('/storage/panel-dashboard-icons/perfect-list.png')}}" alt="Wish List" style="height: 100px; width: 100px; ">
+                    <img class="img-avatar" src="{{asset('/storage/customer/sidebar-icons/perfect-list.png')}}" alt="Wish List" style="height: 100px; width: 100px; ">
                  </a>
            
             </div>
@@ -44,24 +44,34 @@
             <li class="nav-item" >
               <div class="icon-text-align">
                  <a class="nav-link" href="/shop">
-                  <img class="img-avatar" src="{{asset('/storage/customer/continue-shopping.png')}}" alt="Shop" style="height: 100px; width: 100px; ">
+                  <img class="img-avatar" src="{{asset('/storage/customer/sidebar-icons/continue-shopping.png')}}" alt="Shop" style="height: 100px; width: 100px; ">
                  </a>
                 
               </div>          
             </li>
-
-            @hasrole('panel')
+            @hasrole('dealer')
             <li class="nav-item">
                 <div class="icon-text-align">
-                   <a class="nav-link" href="/management/panel/orders">
-                    <img class="img-avatar" src="{{asset('/storage/customer/panel.png')}}" alt="Panel" style="height: 100px; width: 100px; ">
+                   <a class="nav-link" href="{{route('management.dealer.home')}}">
+                    <img class="img-avatar" src="{{asset('/storage/customer/sidebar-icons/dealer.png')}}" alt="Dealer" style="height: 100px; width: 100px; ">
                    </a>
                  
                 </div>          
               </li>
             @endhasrole
 
-            <li class="nav-item" >
+            @hasrole('panel')
+            <li class="nav-item">
+                <div class="icon-text-align">
+                   <a class="nav-link" href="/management/panel/orders">
+                    <img class="img-avatar" src="{{asset('/storage/customer/sidebar-icons/panel-page.png')}}" alt="Panel" style="height: 100px; width: 100px; ">
+                   </a>
+                 
+                </div>          
+              </li>
+            @endhasrole
+
+            {{-- <li class="nav-item" >
                 <div class="icon-text-align">
                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();">
@@ -71,7 +81,7 @@
                     @csrf
                 </form>
                 </div>
-              </li>
+              </li> --}}
 
         </ul>
     </nav>
@@ -92,18 +102,25 @@
 
     .text-color{
       
-        font-family:Corbel;
+       
         font-size: 10pt;
         color: #ffcc00;
     }
 
   .sidebar .sidebar-nav {
     width: 120px;
+    
    }
 
    .sidebar{
        height: 1160px;
    }
+
+.ps--active-x > .ps__rail-x,
+.ps--active-y >.ps__rail-y {
+  display: hidden;
+  background-color: transparent;
+}
 
  
 </style>

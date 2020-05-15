@@ -1,4 +1,4 @@
-@extends('layouts.management.main-panel')
+@extends('layouts.management.main-customer')
 
 
 
@@ -290,7 +290,7 @@
 
                         <div class="form-group row ">
 
-                            <div class="offset-9 col-md-2" style="margin-left: 890px;">
+                            <div class="offset-9 col-md-2 " >
                                 <input type="submit" class="bjsh-btn-gradient" value="Update Profile">
                             </div>
 

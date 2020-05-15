@@ -33557,7 +33557,7 @@ a.text-dark:focus {
 
 .ps--active-x > .ps__rail-x,
 .ps--active-y > .ps__rail-y {
-  display: block;
+  display: hidden;
   background-color: transparent;
 }
 
@@ -51061,7 +51061,7 @@ a.text-dark:focus {
 
 .ps--active-x > .ps__rail-x,
 .ps--active-y > .ps__rail-y {
-  display: block;
+  display: hidden;
   background-color: transparent;
 }
 

@@ -21,18 +21,18 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine&display=swap" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine&display=swap" rel="stylesheet"> --}}
 </head>
 
-<body class="app header-fixed aside-menu-fixed sidebar-lg-show">
+<body class="app header-fixed aside-menu-fixed sidebar-lg-show ">
     @include('layouts.management.navigations.navigation-bar-customer')
-    <div class="app-body">
+    <div class="app-body ">
         @include('layouts.management.navigations.side-bar-customer')
-        <main class="main">
+        <main class="main ">
 
             @yield('breadcrumbs')
             <div class="container-fluid">
@@ -49,5 +49,6 @@
     @stack('script')
  
 </body>
+
 
 </html>
