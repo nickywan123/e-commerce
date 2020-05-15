@@ -107,7 +107,7 @@
 
                         <div class="row no-gutters">
                             <div class="col-4 col-md-2 pl-1 pr-1">
-                                <img class="mw-100 rounded d-inline" src="{{ asset('storage/' . $item->product->parentProduct->defaultImage->path . '/' . $item->product->parentProduct->defaultImage->filename) }}" alt="">
+                                <img class="mw-100 rounded d-inline" src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . '/' . $item->product->parentProduct->images[0]->filename) }}" alt="">
                             </div>
                             <div class="col-8 col-md-10 pl-1 pr-1">
                                 <p class="text-left mb-1">
