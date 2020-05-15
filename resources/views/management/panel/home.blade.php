@@ -122,9 +122,9 @@ var myChart = new Chart(ctx,{
                   <div class="row mt-3">
                     <div class="col-12" style="font-size: 11pt;">
                         <p style="color: black; line-height:10px;">Billing Address:</p>
-                        <p style=" font-weight:bold; line-height: 1px;">Manas Hotel 285-287, Jalan Tunku Abdul Rahman 50100</p>
-                        <p style=" font-weight:bold; line-height: 1px;">Kuala Lumpur,Malaysia</p>
-                        <p style=" font-weight:bold; line-height: 1px;">012-2351232</p>
+                        <p class="font-size" style=" font-weight:bold; line-height: 1px;">Manas Hotel 285-287, Jalan Tunku Abdul Rahman 50100</p>
+                        <p class="font-size" style=" font-weight:bold; line-height: 1px;">Kuala Lumpur,Malaysia</p>
+                        <p class="font-size" style=" font-weight:bold; line-height: 1px;">012-2351232</p>
                     </div>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ var myChart = new Chart(ctx,{
                              <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
                             </div>
                             <div class="col-7 ml-5 mt-2" style="line-height: 20px;">   
-                             <p class="card-title" style="font-weight:bold; font-size:30pt;">RM 28,888</P>
+                             <p class="card-title" style="font-weight:bold; font-size:20pt;">RM 28,888</P>
                              <p style="color: #939598;">Daily Revenue: 15/5/2020</p>
                             </div>
                           </div>       
@@ -178,7 +178,7 @@ var myChart = new Chart(ctx,{
                              <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
                             </div>
                             <div class="col-7 ml-5 mt-2" style="line-height: 20px;">
-                             <p class="card-title" style="font-weight:bold; font-size:30pt;">RM 88,888</p>
+                             <p class="card-title" style="font-weight:bold; font-size:20pt;">RM 88,888</p>
                              <p style="color: #939598;"> Monthly Revenue: May 2020</p>
                             </div>
                           </div> 
@@ -243,25 +243,25 @@ var myChart = new Chart(ctx,{
                          
                           <div class="row mt-3">
                              <div class="offset-1 col-3">
-                                <div class="card" style="width:70%; max-height:40%; border-radius:10px; background-color:#ffcc00;" >
+                                <div class="card card-size" style=" border-radius:10px; background-color:#ffcc00;" >
                                     <div class="card-body">
-                                        <p style="font-size: 15px;"><b>20</b></p>
+                                        <p class="text-size"><b>20</b></p>
                                     </div>
                                 </div>
                                 <p>Pending Delivery</p>
                              </div>
                              <div class="offset-1 col-3">
-                                <div class="card" style="width:70%; max-height:40%; border-radius:10px; background-color:#ffcc00;" >
+                                <div class="card card-size" style=" border-radius:10px; background-color:#ffcc00;" >
                                     <div class="card-body">
-                                        <p style="font-size: 15px;"><b>5</b></p>
+                                        <p class="text-size"><b>5</b></p>
                                     </div>
                                 </div>
                                 <p>Set Delivery Date</p>
                              </div>
                              <div class="offset-1 col-3">
-                                <div class="card" style="width:70%; max-height:40%; border-radius:10px; background-color:#ffcc00;" >
+                                <div class="card card-size" style=" border-radius:10px; background-color:#ffcc00;" >
                                     <div class="card-body">
-                                        <p style="font-size: 15px;"><b>1</b></p>
+                                        <p class="text-size"><b>1</b></p>
                                     </div>
                                 </div>
                                 <p>Pending Claim</p>
@@ -588,23 +588,6 @@ var myChart = new Chart(ctx,{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
 
 #rcorners {
@@ -640,9 +623,35 @@ var myChart = new Chart(ctx,{
      .hidden-md {
                display: none;
               }
+
+    .card-size{
+      width:70%;
+      height:40%;
+    }
+
+    .text-size{
+      font-size:20px;
+    }
          }
         
         
+
+@media (max-width: 1800px) and (min-width: 1200px){
+      .font-size{
+        font-size: 9pt;
+      }
+
+      .card-size{
+      width:100%;
+      height:35%;
+    }
+    .text-size{
+      font-size:15px;
+    }
+
+     }
+
+  
 </style>
 
 

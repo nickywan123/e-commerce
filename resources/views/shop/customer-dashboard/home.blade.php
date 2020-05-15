@@ -15,7 +15,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-6">
-                     <h4 class="card-title font-family" style="font-weight:bold; font-size:18pt;">Profile</h4>
+                     <h4 class="card-title font-family font-size" style="font-weight:bold; ">Profile</h4>
                     </div>
                     <div class="col-6 ">
                      <a href="{{route('shop.dashboard.customer.profile.edit')}}"><p class="card-title font-family" style="float: right; color:#ffcc00;">Edit</p></a>
@@ -26,7 +26,7 @@
                       <img src="{{asset('/storage/dealer/icons/img_avatar.png')}}" style="border-radius:50%; max-width: 70px;" alt="Dealer-Image">
                     </div>
                     <div class="col-9 mt-3"> 
-                       <p class="font-family" style="font-size:15pt;"><b>{{$userProfile->full_name}}</b></p>
+                       <p class="font-family font-size"><b>{{$userProfile->full_name}}</b></p>
                     </div>
                   </div>
                   <div class="row mt-3 ">
@@ -42,11 +42,11 @@
          </div>
 
          <div class="row ml-1">
-            <div class="card border-radius-card shadow" style="width:100%;height: 100%; max-width:470px;" >
+            <div class="card border-radius-card shadow" style="width:100%;height: 100%; " >
               <div class="card-body">
                   <div class="row">
                     <div class="col-6">
-                     <h4 class="card-title font-family" style="font-weight:bold; font-size:18pt;">Value Records</h4>
+                     <h4 class="card-title font-family font-size" style="font-weight:bold; ">Value Records</h4>
                     </div>
                     <div class="col-6 ">
                      <a href="{{route('shop.customer.orders')}}"><p class="card-title font-family" style="float: right; color:#ffcc00;">Show More</p></a>
@@ -82,13 +82,12 @@
                   @endforeach
                   @else
                    <div class="row mt-1">
-                     <div class="col-6 mt-1">
+                     <div class="col-5 col-md-6 mt-1">
                       <strong class="font-family" style="font-size: 11pt;">There are no orders found.</strong>
                      </div>
-                     <div class="offset-1 col-5">
-                      <a class="btn bjsh-btn-gradient font-family" href="/shop">Continue Shopping</a>
-                     </div>
-                    
+                     <div class="col-2 col-md-5 offset-md-1 ">
+                      <a class="btn bjsh-btn-gradient font-family padding-sm  button-size-laptop" href="/shop">Continue Shopping</a>
+                     </div>       
                    </div>
                   @endif
                   {{-- <div class="row mt-1">
@@ -118,11 +117,11 @@
          </div>  
          
         <div class="row ml-1">
-             <div class="card border-radius-card shadow" style="width:100%;height: 345px; max-width:470px;" >
+             <div class="card border-radius-card shadow" style="width:100%;height: 100%; max-width:470px;" >
                 <div class="card-body">
                   <div class="row">
                     <div class="col-6">
-                     <h4 class="card-title font-family" style="font-weight:bold; font-size:18pt;">Perfect List</h4>
+                     <h4 class="card-title font-family font-size" style="font-weight:bold; ">Perfect List</h4>
                     </div>
                     <div class="col-6 ">
                      <a href="{{route('shop.wishlist.home')}}"><p class="card-title font-family" style="float: right; color:#ffcc00;">Show More</p></a>
@@ -174,10 +173,10 @@
 
     <div class="col-9">
         <div class="row ml-3">
-            <img src="{{asset('/storage/customer/welcome-banner.png')}}" alt="Welcome-Banner">
+            <img src="{{asset('/storage/customer/welcome-banner.png')}}" alt="Welcome-Banner" style="width:100%; height:100%;">
         </div>
         <div class="row ml-3 mt-3">
-            <img src="{{asset('/storage/customer/ramadan-sale-banner.png')}}" alt="Welcome-Banner">
+            <img src="{{asset('/storage/customer/ramadan-sale-banner.png')}}" alt="Welcome-Banner" style="width:100%; height:100%;">
         </div>
     </div>
 
@@ -284,7 +283,7 @@
            <div class="card-body">
              <div class="row">
                <div class="col-6">
-                <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Perfect List</h4>
+                <h4 class="card-title font-family " style="font-weight:bold; font-size:15pt;">Perfect List</h4>
                </div>
                <div class="col-6 ">
                 <p class="card-title font-family" style="float: right;margin-right:30px; color:#ffcc00;">Show More</p>
@@ -339,6 +338,8 @@
 
 <style>
 
+ 
+
     .border-radius-card{
       border-radius: 15px;
     
@@ -362,6 +363,21 @@
        .hidden-md {
            display: none;
           }
+          .font-size{
+            font-size: 15pt;
+          }
+     }
+
+     /*Laptop screen*/
+     @media (max-width: 1800px) and (min-width: 1200px){
+      .font-size{
+        font-size: 13pt;
+      }
+
+      .button-size-laptop{
+        font-size: 7pt;
+      }
+
      }
     
     
