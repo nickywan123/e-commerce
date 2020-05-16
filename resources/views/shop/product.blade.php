@@ -5,7 +5,7 @@
     <div class="card w-100" style="border-radius: 0;">
         <div class="">
             <div class="row no-gutters">
-                <div class="col-12 col-md-4 p-2 text-center">
+                <div class="col-12 col-md-4 p-2 text-center mb-0">
                     <div style="max-width: 25rem; height: auto; margin: 0 auto;">
                         <div class="slider slider-single">
                             @foreach($product->images as $image)
