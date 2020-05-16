@@ -223,31 +223,6 @@ class RegisterController extends Controller
                     'required',
                     'min:10'
                 ],
-                'spouse_full_name' => [
-                    'required'
-                ],
-                'spouse_nric' => [
-                    'required'
-                ],
-                'spouse_date_of_birth' => [
-                    'required'
-                ],
-                'spouse_occupation' => [
-                    'required'
-                ],
-                'spouse_contact_office' => [
-                    'required',
-                    'min:10'
-                ],
-                'spouse_contact_mobile' => [
-                    'required',
-                    'min:10'
-                ],
-                'spouse_email' => [
-                    'required',
-                    'string',
-                    'email'
-                ],
                 'employment_id' => [
                     'required'
                 ],

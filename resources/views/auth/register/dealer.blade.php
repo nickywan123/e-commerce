@@ -494,38 +494,6 @@
             existing_customer: {
                 required: true
             },
-            spouse_full_name: {
-                required: true,
-                minlength: 3
-            },
-            spouse_nric: {
-                required: true,
-                minlength: 12,
-                maxlength: 12
-            },
-            spouse_date_of_birth: {
-                required: true,
-            },
-            spouse_occupation: {
-                required: true,
-                minlength: 3
-            },
-            spouse_contact_office: {
-                required: true,
-                digits: true,
-                minlength: 10,
-                maxlength: 15
-            },
-            spouse_contact_mobile: {
-                required: true,
-                digits: true,
-                minlength: 10,
-                maxlength: 15
-            },
-            spouse_email: {
-                required: true,
-                email: true
-            },
             employment_id: {
                 required: true,
             },
