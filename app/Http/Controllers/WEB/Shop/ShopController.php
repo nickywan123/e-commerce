@@ -45,7 +45,7 @@ class ShopController extends Controller
             });
         }
 
-        $products = $products->get();
+        $products = $products->has('productSoldByPanels', '>', 0)->get();
 
         $products = $products->where('product_status', 1);
 
