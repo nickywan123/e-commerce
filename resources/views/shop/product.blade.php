@@ -15,8 +15,9 @@
                             @endforeach
                         </div>
                     </div>
-                    <p class="text-capitalize text-muted mt-3 mb-1 text-muted text-center p-1" style="font-size: 0.9rem;">
-                        by {{ $panelProduct->panel->company_name }}
+                    <p class="text-capitalize text-muted mt-3 mb-1 text-muted text-center p-1" style="font-size: 0.95rem;">
+                        <img class="h-100" src="{{ asset('assets/images/miscellaneous/supplied.png') }}" alt="" style="padding-bottom: 1px;">
+                        <span style="text-transform: none;">by</span> {{ $panelProduct->panel->company_name }}
                     </p>
 
                     <!-- Description -->
