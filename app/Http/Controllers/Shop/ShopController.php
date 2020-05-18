@@ -50,26 +50,12 @@ class ShopController extends Controller
      */
     public function index()
     {
-        // Author Nick : Display image for promo page slider
-
-        // return view('shop.index')->with('data', $data);
-        // Get all categories and subcategories with its image.
-        // $categories = Category::with('image')->with('subcategories.image')->get();
-
-        // Get user
-        $user = User::find(Auth::user()->id);
-        // Check if the exact item is already in the cart..
-        $getCartQuantity = new Cart;
-
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
-
 
         $data = Banner::all();
         $popularCategories = Category::take(6)->get();
 
         return view('shop.index')->with('data', $data)
-            ->with('popularCategories', $popularCategories)
-            ->with('getCartQuantity', $getCartQuantity);
+            ->with('popularCategories', $popularCategories);
     }
 
     /**
@@ -77,14 +63,6 @@ class ShopController extends Controller
      */
     public function category($categorySlug)
     {
-
-        // Get user
-        $user = User::find(Auth::user()->id);
-        // Check if the exact item is already in the cart..
-        $getCartQuantity = new Cart;
-
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
-
         // Get matching category with related products and their images.
         $category = Category::where('slug', $categorySlug)->with('products.images')->first();
 
@@ -93,8 +71,7 @@ class ShopController extends Controller
 
         return view('shop.catalog.category')
             ->with('category', $category)
-            ->with('allCategories', $allCategories)
-            ->with('getCartQuantity', $getCartQuantity);
+            ->with('allCategories', $allCategories);
     }
 
     /**
@@ -147,12 +124,6 @@ class ShopController extends Controller
      */
     public function product(Request $request, $slug)
     {
-        // Get user
-        $user = User::find(Auth::user()->id);
-        // Check if the exact item is already in the cart..
-        $getCartQuantity = new Cart;
-
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
         $panelId = $request->query('panel');
 
         $product = Product::where('name_slug', $slug)
@@ -163,15 +134,15 @@ class ShopController extends Controller
             ->where('panel_account_id', $panelId)
             ->firstOrFail();
 
-        $category = Category::where('slug', 'lightings')->firstOrFail();
+        $category = $product->categories->first();
 
-        $products = $category->products;
+        $relatedProducts = $category->products->where('name_slug', '!=', $slug)->take(6);
 
         return view('shop.product')
             ->with('product', $product)
             ->with('panelProduct', $panelProduct)
-            ->with('getCartQuantity', $getCartQuantity)
-            ->with('products', $products);
+            ->with('relatedProducts', $relatedProducts);
+        // ->with('products', $products);
     }
 
     /**
