@@ -38,9 +38,9 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                         <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user" style="color:#fbcc34;"></i> Profile </a>
-                                        <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> Value Records </a>
+                                        <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> My Dashboard </a>
                                         @hasrole('panel')
-                                        <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
+                                        <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Company Dashboard</a>
                                         @endhasrole
                                         @hasrole('dealer')
                                         <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
@@ -111,14 +111,14 @@
                         <div class="dropdown show">
                             <!-- TODO: Create a class for the style -->
                             <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse font-family" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px; margin-left: 30px;">
-                               <b> MY ACCOUNT</b>
+                                <b> MY ACCOUNT</b>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user " style="color:#fbcc34;"></i> Profile </a>
-                                <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> Value Records </a>
+                                <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Dashboard</a>
 
                                 @hasrole('panel')
-                                <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel</a>
+                                <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Company Dashboard</a>
                                 @endhasrole
                                 @hasrole('dealer')
                                 <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
@@ -174,16 +174,16 @@
 </div> -->
 
 <style>
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: white;
-  border-radius: 50%;
-  display: inline-block;
-  text-align: center;
-  color: black;
-  font-weight: bold;
-}
+    .dot {
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+    }
 </style>
 
 
