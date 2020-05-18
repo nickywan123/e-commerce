@@ -623,7 +623,7 @@
             // <a> tag is used here, prevent it from linking to another page or refreshing the page.
             e.preventDefault();
 
-            $("#catalog-quality-all").prop("checked", true);
+            $("#catalog-quality-premium").prop("checked", true);
 
 
             categorySlug = $(this).data('value');
