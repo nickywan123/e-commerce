@@ -20,6 +20,7 @@ var myChart = new Chart(ctx,{
           label: "Monthly Revenue",
           backgroundColor: ["#fbcc34","#fbcc34","#fbcc34","#fbcc34"],
           data: [2478,5267,534,784]
+         
         }
       ]
     },
@@ -27,7 +28,8 @@ var myChart = new Chart(ctx,{
       legend: { display: false },
       title: {
         display: true,
-        text: 'Monthly Revenue: May 2020'
+        text: ['Monthly Revenue: May 2020'],
+        fontSize:15
       },
       scales: {
         xAxes: [{
@@ -39,7 +41,11 @@ var myChart = new Chart(ctx,{
         yAxes: [{
             gridLines: {
                 display:false
-            }   
+            },
+           
+            categoryPercentage: 0.9,
+            barPercentage: 1.0
+            
         }]
     }
 
@@ -59,6 +65,7 @@ var myChart = new Chart(ctx,{
           label: "Monthly Revenue",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
           data: [2478,5267,534,784]
+         
         }
       ]
     },
@@ -280,6 +287,11 @@ var myChart = new Chart(ctx,{
                             </div>
                             <div class="col-6 ">
                              <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="offset-5 col-4">
+                              <h1><strong>65%</strong></h1>
                             </div>
                           </div>
                           <div class="row">

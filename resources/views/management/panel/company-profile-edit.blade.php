@@ -14,7 +14,22 @@
 
 {{--Desktop Layout--}}
 <div class="hidden-sm font-family">
-    <h4 class="text-capitalize text-dark">Edit Company Profile</h4>
+    <div class="row">
+        <div class="col-3">
+         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family"
+         ><strong style="color:black; font-size:15pt;">Edit Profile</strong></a>
+        </div>
+        @hasrole('dealer')
+        <div class="col-3">
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
+        </div>
+        @endhasrole
+        @hasrole('panel')
+        <div class="col-3">
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family"  style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
+        </div>
+        @endhasrole          
+    </div> <br>
 
     <form action="{{route('management.company.profile.update',[$companyProfile->account_id])}}" method="POST">
         <input type="hidden" name="_method" value="PATCH">
@@ -316,7 +331,22 @@
 
 
 <div class="mt-4 hidden-md">
-    <h4 class="text-capitalize text-dark font-family-style">Edit Company Profile</h4>
+    <div class="row">
+        <div class="col-3">
+         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family"
+         ><strong style="color:black; font-size:15pt;">Edit Profile</strong></a>
+        </div>
+        @hasrole('dealer')
+        <div class="col-3">
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
+        </div>
+        @endhasrole
+        @hasrole('panel')
+        <div class="col-3">
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family"  style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
+        </div>
+        @endhasrole          
+    </div> 
 
     <form action="{{route('management.company.profile.update',[$companyProfile->account_id])}}" method="POST">
         <input type="hidden" name="_method" value="PATCH">

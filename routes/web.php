@@ -109,7 +109,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['prefix' => 'management', 'middleware' => ['role:dealer|panel|administrator']], function () {
 
         // Dashboard-Panel
-        Route::get('/panel/orders', 'Management\ManagementController@index')->name('management.home');
+        Route::get('/panel/home', 'Management\ManagementController@index')->name('management.panel.home');
         Route::put('/panel/update-order/{order_num}', 'Management\ManagementController@updateOrder')->name('update.order.panel');
         Route::put('/panel/update-qr-submitted/{order_num}', 'Purchase\PurchaseController@qrSubmit')->name('update.order.panel.received.date');
         Route::get('/panel/company-profile', 'Management\ManagementController@companyProfile')->name('management.company.profile');
@@ -120,7 +120,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::post('/panel/change-password', 'Management\ChangePasswordController@store')->name('change.password');
 
         Route::get('/panel/orders/purchase-order-pdf/{order_num}', 'Management\ManagementController@viewPurchaseOrder');
-
+        Route::get('/panel/value-tracking/index', 'Management\ManagementController@valueTracking')->name('management.panel.value-tracking');
         Route::get('/orders/all', 'Management\ManagementController@allOrders');
         Route::get('/orders/open', 'Management\ManagementController@openOrders');
         Route::get('/orders/in-progress', 'Management\ManagementController@inProgressOrders');

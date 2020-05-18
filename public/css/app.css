@@ -60639,7 +60639,7 @@ a.hover-white:hover {
 
 .img-logo-resize {
   min-width: 60%;
-  min-height: 100%;
+  min-height: 90%;
 }
 
 .img-logo-margin-left {
@@ -60649,7 +60649,6 @@ a.hover-white:hover {
 @media (max-width: 767px) {
   .margin-right-logo-mobile {
     margin-right: 100px;
-    margin-top: 20px;
   }
 
   .welcome-panel-text {

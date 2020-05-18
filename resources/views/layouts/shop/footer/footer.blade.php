@@ -39,7 +39,7 @@
         </div>
 
         <div class="col-6 col-md-2 text-center text-md-left">
-            <ul class="list-unstyled pr-2 pl-2">
+            <ul class="list-unstyled pr-2 pl-2 font-family">
                 <li>
                     <p class="bujishu-gold mb-1 font-family" style="font-size: 0.9rem;"><b>OUR LOCATION</b></p>
                     <p class="bujishu-white mb-1 font-family" style="font-size: 0.9rem;">
@@ -50,7 +50,7 @@
                     </p>
                 </li>
                 <li>
-                    <p class="bujishu-white mb-1 font-family" style="font-size: 0.9rem;">Tel: TBA</p>
+                    <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">Tel: TBA</p>
                 </li>
                 <li>
                     <a class="bujishu-white " href="">Contact Us</a>
@@ -68,9 +68,23 @@
                 </a>
             </div>
         </div>
+
+       
+        <div class="col-8 offset-4 offset-md-2 col-md-2 text-center text-md-left reserved-text">
+            <div style="padding-top:100px;">
+                <h6 class="text-right mb-0 pt-1 pb-1 font-family" style="color:white;">@ 2020 Bujishu. All Rights Reserved</h6>
+            </div>
+        </div>
+
     </div>
 </footer>
 
-<section class="container-fluid" style="background-color: #000;">
+{{-- <section class="container-fluid mobile-text" style="background-color: #000;">
     <h6 class="text-right mb-0 pt-1 pb-1 font-family" style="color:white;">@ 2020 Bujishu. All Rights Reserved</h6>
-</section>
+</section> --}}
+
+
+<style>
+
+
+</style>

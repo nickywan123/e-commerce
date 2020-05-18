@@ -11,7 +11,7 @@
           <a href="#" class="sidebar-text-color">Profile</a>
          </li> --}}
          <li class="text-hover">
-            <a href="#" class="sidebar-text-color">Value Tracking</a>
+            <a href="{{route('management.panel.value-tracking')}}" class="sidebar-text-color">Value Tracking</a>
          </li>
          <li>
             <a href="#" class="sidebar-text-color">Products</a>
@@ -120,6 +120,10 @@
 
 
 <style>
+
+   li{
+      padding-bottom: 10px;
+   }
 
   .text-hover:hover{
       color: black;

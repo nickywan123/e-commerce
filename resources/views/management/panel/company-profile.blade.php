@@ -225,7 +225,22 @@
 
 
  <div class="mt-4 hidden-md">
-    <h4 class="text-capitalize text-dark font-family-style">Company Profile</h4>
+    <div class="row">
+        <div class="col-4">
+         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header font-family"  
+         ><strong>User Profile</strong></a>
+        </div>
+        @hasrole('dealer')
+        <div class="col-4">
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header font-family" ><strong>Dealer Information</strong></a>
+        </div>
+        @endhasrole
+        @hasrole('panel')
+        <div class="col-4">
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header font-family"  style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Panel: Company Information</strong></a>
+        </div>
+        @endhasrole          
+    </div>
     <div class="row">
         <div class="col-12 col-md-10">
             <div class="card shadow-sm">

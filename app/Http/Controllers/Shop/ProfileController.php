@@ -42,30 +42,33 @@ class ProfileController extends Controller
         });
     }
 
-    /***Handles shop->customer profile ***/ 
+    /***Handles shop->customer profile ***/
 
-    public function index(){
-        $customerInfo= User::find(Auth::user()->id);
+    public function index()
+    {
+        $customerInfo = User::find(Auth::user()->id);
         //$customerInfo= $customerInfo->userInfo->account_id;
-      
+
         //$customerInfo= $customerInfo->where('bujishu_id',$bujishu_id)->first();
-        
-        return view('shop.customer-dashboard.profile.index')->with('customerInfo',$customerInfo);
+
+        return view('shop.customer-dashboard.profile.index')->with('customerInfo', $customerInfo);
     }
 
     // Returns edit page for user profile 
 
-    public function edit(){
+    public function edit()
+    {
 
-        $customerInfo= User::find(Auth::user()->id);
-        return view('shop.customer-dashboard.profile.edit')->with('customerInfo',$customerInfo);
+        $customerInfo = User::find(Auth::user()->id);
+        return view('shop.customer-dashboard.profile.edit')->with('customerInfo', $customerInfo);
     }
 
     // Update user profile information
-    public function updateProfile(Request $request,$id){
+    public function updateProfile(Request $request, $id)
+    {
 
         $this->validate($request, array(
-           
+
             'billing_address_1' => 'required',
             'billing_address_2' => 'required',
             'billing_address_3' => 'required',
@@ -79,50 +82,43 @@ class ProfileController extends Controller
             'mobile_phone' => 'required|digits:10'
         ));
 
-        
-    $customerInfo = User::findOrFail($id);
+
+        $customerInfo = User::findOrFail($id);
 
 
-    $name=$customerInfo->userInfo;
-    $shipTo = $customerInfo->userInfo->shippingAddress;
-    $billTo=$customerInfo->userInfo->mailingAddress;
-    $contact= $customerInfo->userInfo->mobileContact;
+        $name = $customerInfo->userInfo;
+        $shipTo = $customerInfo->userInfo->shippingAddress;
+        $billTo = $customerInfo->userInfo->mailingAddress;
+        $contact = $customerInfo->userInfo->mobileContact;
 
-    $name->full_name = $request->input('full_name');
-    $name->save();
-   
-       
-     $billTo->address_1 = $request->input('billing_address_1');
-     $billTo->address_2 = $request->input('billing_address_2');
-     $billTo->address_3 = $request->input('billing_address_3');
-     $billTo->postcode = $request->input('billing_postcode');
-     $billTo->city = $request->input('billing_city');
-     $billTo->save();
+        $name->full_name = $request->input('full_name');
+        $name->save();
 
-    $shipTo->address_1 = $request->input('shipping_address_1');
-    $shipTo->address_2 = $request->input('shipping_address_2');
-    $shipTo->address_3 = $request->input('shipping_address_3');
-    $shipTo->postcode = $request->input('shipping_postcode');
-    $shipTo->city = $request->input('shipping_city');
-    $shipTo->save();
 
-    $contact->contact_num=$request->input('mobile_phone');
-    $contact->save();
+        $billTo->address_1 = $request->input('billing_address_1');
+        $billTo->address_2 = $request->input('billing_address_2');
+        $billTo->address_3 = $request->input('billing_address_3');
+        $billTo->postcode = $request->input('billing_postcode');
+        $billTo->city = $request->input('billing_city');
+        $billTo->save();
 
- 
- 
-       
+        $shipTo->address_1 = $request->input('shipping_address_1');
+        $shipTo->address_2 = $request->input('shipping_address_2');
+        $shipTo->address_3 = $request->input('shipping_address_3');
+        $shipTo->postcode = $request->input('shipping_postcode');
+        $shipTo->city = $request->input('shipping_city');
+        $shipTo->save();
+
+        $contact->contact_num = $request->input('mobile_phone');
+        $contact->save();
+
+
+
+
         if ($name && $billTo && $shipTo && $contact) {
-            return view('shop.customer-dashboard.profile.index')->with(['successful_message' => 'Profile updated successfully'])->with('customerInfo',$customerInfo);
+            return redirect()->route('shop.dashboard.customer.profile')->with(['successful_message' => 'Profile updated successfully'])->with('customerInfo', $customerInfo);
         } else {
-            return  view('shop.customer-dashboard.profile.index')->with(['error_message' => 'Failed to update profile'])->with('customerInfo',$customerInfo);
+            return redirect()->route('shop.dashboard.customer.profile')->with(['error_message' => 'Failed to update profile'])->with('customerInfo', $customerInfo);
         }
-
     }
-
-
-
-
-
-    
 }
