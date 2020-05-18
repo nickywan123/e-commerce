@@ -84,6 +84,7 @@
         function onPageLoadGetQuantity() {
             let getQuantityURL = "{{ route('web.shop.cart.quantity', ['id' => Auth::user()->id]) }}";
             const cartQuantityElement = $('#cart-quantity');
+            const cartQuantityElementMobile = $('#cart-quantity-mobile');
 
             $.ajax({
                 async: true,
@@ -97,6 +98,7 @@
                 type: 'GET',
                 success: function(response) {
                     cartQuantityElement.text(response.data);
+                    cartQuantityElementMobile.text(response.data);
                 },
                 error: function(response) {
                     console.log('Error');
