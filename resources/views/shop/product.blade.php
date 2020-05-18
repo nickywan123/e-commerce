@@ -21,7 +21,7 @@
                     </p>
 
                     <!-- Description -->
-                    <p class="mt-2 mb-3 p-1 text-center" style="font-size: 0.9rem;">
+                    <p class="mt-2 mb-3 p-1 text-justify" style="font-size: 0.9rem;">
                         {!! $product->details !!}
                     </p>
                 </div>
