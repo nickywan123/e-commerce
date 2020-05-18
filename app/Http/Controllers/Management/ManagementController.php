@@ -40,6 +40,22 @@ class ManagementController extends Controller
         return view('management.panel.home');
     }
 
+    // Return Value Tracking -> Show Customer Orders
+    public function valueTracking()
+    {
+        $status = [1001, 1002, 1003];
+        // Get panel
+
+        $panel_id = User::find(Auth::user()->id);
+
+        $panel_id = $panel_id->panelInfo->account_id;
+        $customerOrders = new Order;
+        $customerOrders = $customerOrders->where('panel_id', $panel_id)->whereIn('order_status', $status)->get();
+
+
+
+        return view("management.panel.index")->with('customerOrders', $customerOrders);
+    }
 
     /***Return purchase order(pdf) for the order  **/
 
@@ -252,48 +268,33 @@ class ManagementController extends Controller
 
         $this->validate($request, array(
 
-            'dealer_billing_address_1' => 'required',
-            'dealer_billing_address_2' => 'required',
-            'dealer_billing_address_3' => 'required',
-            'dealer_billing_postcode' => 'required|digits:5',
-            'dealer_billing_city' => 'required',
-            'dealer_shipping_address_1' => 'required',
-            'dealer_shipping_address_2' => 'required',
-            'dealer_shipping_address_3' => 'required',
-            'dealer_shipping_postcode' => 'required|digits:5',
-            'dealer_shipping_city' => 'required',
-            'dealer_mobile_contact' => 'required|digits:10'
+            'dealer_company_name' => 'required',
+            'dealer_company_address_1' => 'required',
+            'dealer_company_postcode' => 'required|digits:5',
+            'dealer_company_city' => 'required'
         ));
 
 
         $dealerProfile = new DealerInfo();
         $dealerProfile = $dealerProfile->where('account_id', $id)->first();
-        $dealerProfile->full_name = $request->input('dealer_name');
-        $dealerProfile->save();
+        // $dealerProfile->full_name = $request->input('dealer_name');
+        // $dealerProfile->save();
 
-        $billing_address = $dealerProfile->billingAddress;
-        $billing_address->address_1 = $request->input('dealer_billing_address_1');
-        $billing_address->address_2 = $request->input('dealer_billing_address_2');
-        $billing_address->address_3 = $request->input('dealer_billing_address_3');
-        $billing_address->postcode = $request->input('dealer_billing_postcode');
-        $billing_address->city = $request->input('dealer_billing_city');
-        $billing_address->save();
-
-
-
-
-        $shipping_address = $dealerProfile->shippingAddress;
-        $shipping_address->address_1 = $request->input('dealer_shipping_address_1');
-        $shipping_address->address_2 = $request->input('dealer_shipping_address_2');
-        $shipping_address->address_3 = $request->input('dealer_shipping_address_3');
-        $shipping_address->postcode = $request->input('dealer_shipping_postcode');
-        $shipping_address->city = $request->input('dealer_shipping_city');
-        $shipping_address->save();
+        $dealer_employment_address = $dealerProfile->employmentAddress;
+        $dealer_employment_address->company_name = $request->input('dealer_company_name');
+        $dealer_employment_address->company_address_1 = $request->input('dealer_company_address_1');
+        $dealer_employment_address->company_address_2 = $request->input('dealer_company_address_2');
+        $dealer_employment_address->company_address_3 = $request->input('dealer_company_address_3');
+        $dealer_employment_address->company_postcode = $request->input('dealer_company_postcode');
+        $dealer_employment_address->company_city = $request->input('dealer_company_city');
+        $dealer_employment_address->save();
 
 
-        $dealer_mobile_contact = $dealerProfile->dealerMobileContact;
-        $dealer_mobile_contact->contact_num = $request->input('dealer_mobile_contact');
-        $dealer_mobile_contact->save();
+
+
+        // $dealer_mobile_contact = $dealerProfile->dealerMobileContact;
+        // $dealer_mobile_contact->contact_num = $request->input('dealer_mobile_contact');
+        // $dealer_mobile_contact->save();
 
 
 
@@ -303,7 +304,7 @@ class ManagementController extends Controller
 
 
 
-        if ($dealerProfile && $billing_address && $shipping_address && $dealer_mobile_contact) {
+        if ($dealer_employment_address) {
             return redirect()->route('shop.dashboard.dealer.profile')->with('dealerProfile', $dealerProfile)->with(['successful_message' => 'Profile updated successfully']);
         } else {
             return redirect()->route('shop.dashboard.dealer.profile')->with('dealerProfile', $dealerProfile)->with(['error_message' => 'Failed to update profile']);

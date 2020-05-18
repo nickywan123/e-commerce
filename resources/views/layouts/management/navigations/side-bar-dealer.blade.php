@@ -106,7 +106,15 @@
 
 <style>
 
-   
+   li{
+      padding-bottom: 10px;
+   }
+
+   a:hover{
+      color: black;
+      text-decoration: none;
+   }
+  
 
     .sidebar-text-color{
       

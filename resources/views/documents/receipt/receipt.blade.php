@@ -8354,30 +8354,29 @@
                             </td>
                         </tr>
                         <tr>
-                            @foreach ($purchase->orders as $order)
+                          
 
                             <td colspan="4" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $order->panel->company_name }}
+                                {{ $purchase->user->userInfo->full_name }}
                             </td>
                         </tr>
                         <tr>
                             <td colspan="4" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $order->panel->correspondenceAddress->address_1 }}
+                                {{ $purchase->user->userInfo->shippingAddress->address_1}},{{ $purchase->user->userInfo->shippingAddress->address_2}},{{ $purchase->user->userInfo->shippingAddress->address_3}}
                             </td>
                         </tr>
                         <tr>
                             <td colspan="4" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $order->panel->correspondenceAddress->postcode }},
-                                {{ $order->panel->correspondenceAddress->city }}
+                                {{$purchase->user->userInfo->shippingAddress->postcode }},
+                                {{ $purchase->user->userInfo->shippingAddress->city }}
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="4" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                state,
+                            <td colspan="4" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">                              
                                 Malaysia
                             </td>
 
-                            @endforeach
+                           
                         </tr>
 
                         <tr>
@@ -8385,14 +8384,14 @@
                                 Agent Code:
                             </td>
                             <td style="font-size: 9pt; padding: 35px 4px 10px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->full_name }}
+                                {{ $purchase->dealer_id}}
                             </td>
 
                             <td style="font-size: 9pt;  padding:35px 4px 10px;">
                                 Area:
                             </td>
                             <td style="font-size: 9pt; padding:35px 4px 10px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->mobileContact->contact_num }}
+                                {{$purchase->user->userInfo->shippingAddress->postcode }}
                             </td>
                         </tr>
                         {{-- <tr>
@@ -8564,9 +8563,37 @@
                         <td style="padding: 6px; vertical-align: top;">
                             {{$purchase->getFormattedNumber()}}
                         </td>
+                       
                         <td style="padding: 6px; vertical-align: top; ">
-                            Partial Payment
+                        @foreach ($purchase->orders as $order)
+                        @foreach($order->items as $item)
+                        <table>
+                            <tr style="font-size: 10pt;">
+                                <td style="padding: 4px; vertical-align: top;">
+                                    <img src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . '/' . $item->product->parentProduct->images[0]->filename) }}" alt="{{ $item->product->parentProduct->name }}" style="width: 60px; height: 60px; border-radius: 10px;">
+                                </td>
+                                <td style="padding: 14px; vertical-align: top;">
+                                    <p style="margin-bottom: 10px;">
+                                        {{ $item->quantity }} x {{ $item->product->parentProduct->name }}
+                                    </p>
+                                    <p style="margin: 0;">
+                                        @if(array_key_exists('product_color_name', $item->product_information))
+                                        Color: {{ $item->product_information['product_color_name'] }}
+                                        @endif
+                                        @if(array_key_exists('product_size', $item->product_information))
+                                        Color Temperature: {{ $item->product_information['product_size'] }}
+                                        @endif
+                                        @if(array_key_exists('product_temperature', $item->product_information))
+                                        Color Temperature: {{ $item->product_information['product_temperature'] }}
+                                        @endif
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                        @endforeach
+                        @endforeach
                         </td>
+                       
                         <td style="padding: 6px; text-align: center; vertical-align: top;">
                             {{ number_format(($purchase->purchase_amount / 100), 2)}}
                         </td>

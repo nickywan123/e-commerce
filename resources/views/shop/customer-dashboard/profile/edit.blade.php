@@ -10,7 +10,22 @@
 {{--Desktop layout--}}
 
 <div class="mt-3 mt-md-0 hidden-sm font-family">
-    <h4 class="text-capitalize text-dark">Edit Your Profile</h4>
+    <div class="row">
+        <div class="col-3">
+         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family" style="border-bottom: 2px solid rgb(250, 172, 24);"
+         ><strong style="color:black; font-size:15pt;">Edit Profile</strong></a>
+        </div>
+        @hasrole('dealer')
+        <div class="col-3">
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header font-family"  ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
+        </div>
+        @endhasrole
+        @hasrole('panel')
+        <div class="col-3">
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
+        </div>
+        @endhasrole          
+    </div> <br>
     {{-- @if(session()->has('message'))
     <div class="alert alert-success">
         {{ session()->get('message') }}
@@ -306,7 +321,7 @@
 
                 <div class="form-group row ">
 
-                    <div class="offset-9 col-md-2" style="margin-left: 890px;">
+                    <div class="offset-10 col-md-2" >
                         <input type="submit" class="bjsh-btn-gradient" value="Update Profile">
                     </div>
 
@@ -326,7 +341,23 @@
 
 
 <div class="mt-3 mt-md-0 hidden-md font-family">
-    <h4 class="text-capitalize text-dark text-font-family">Edit Your Profile</h4>
+    <div class="row">
+        <div class="col-4">
+         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family" style="border-bottom: 2px solid rgb(250, 172, 24);" 
+         ><strong style="color:black;">Edit User Profile</strong></a>
+        </div>
+        @hasrole('dealer')
+        <div class="col-4">
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black;">Edit Dealer Information</strong></a>
+        </div>
+        @endhasrole
+        @hasrole('panel')
+        <div class="col-4">
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black;">Edit Panel Information</strong></a>
+        </div>
+        @endhasrole          
+    </div>
+
     {{-- @if(session()->has('message'))
     <div class="alert alert-success">
         {{ session()->get('message') }}

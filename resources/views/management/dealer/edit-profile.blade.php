@@ -30,27 +30,42 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         
             <div class="row">
-            <div class="offset-1 col-12 col-md-10">
-                <h4 class="text-capitalize text-dark">Edit Dealer Profile</h4>
+            <div class="col-12 col-md-10">
+                <div class="row">
+                    <div class="col-3">
+                     <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family"
+                     ><strong style="color:black; font-size:15pt;">Edit Profile</strong></a>
+                    </div>
+                    @hasrole('dealer')
+                    <div class="col-3">
+                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header font-family" style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
+                    </div>
+                    @endhasrole
+                    @hasrole('panel')
+                    <div class="col-3">
+                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
+                    </div>
+                    @endhasrole          
+                </div> <br>
                 
                 <div class="card shadow-sm">
                     <div class="card-body">
-
                         <div class="form-group row ">
-                            <label for="dealer_name" class="col-md-2 col-form-label">Dealer Name</label>
                             <div class="col-md-4">
-                                <input type="text" name="dealer_name" id="dealer_name"
-                                    value="{{$dealerProfile->full_name}}"
-                                    class="form-control @error('full_name') is-invalid @enderror"
-                                    value="{{ old('full_name') }}" >
+                             <h4>Dealer Information</h4>
                             </div>
-                           
-                          
                         </div>
-
-
-
-
+                        <hr>
+                        <div class="form-group row ">
+                            <label for="dealer_id" class="col-md-2 col-form-label">Dealer ID</label>
+                            <div class="col-md-4">
+                                <input type="text" name="dealer_id" id="dealer_id"
+                                    value="{{$dealerProfile->account_id}}"
+                                    class="form-control @error('dealer_id') is-invalid @enderror"
+                                    value="{{ old('dealer_id') }}" readonly >
+                            </div>
+                        </div>
+                       
                         <div class="form-group row ">
                             <label for="gender" class="col-md-2 col-form-label">Gender</label>
                             <div class="col-md-9">
@@ -65,8 +80,6 @@
 
                             </div>
                          
-
-
                             @error('gender')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
@@ -74,45 +87,53 @@
 
 
                         <div class="form-group row ">
-                            <label for="user_id" class="col-md-2 col-form-label">User ID</label>
                             <div class="col-md-4">
-                                <input type="text" name="user_id"
-                                    value="{{$dealerProfile->account_id}}" id="user_id"
-                                    class="form-control @error('user_id') is-invalid @enderror"
-                                    value="{{ old('user_id') }}" readonly>
+                             <h4>Employment Details</h4>
                             </div>
-
-
-                            @error('user_id')
-                            <small class="form-text text-danger">{{ $message }}</small>
-                            @enderror
                         </div>
-
+                        <hr>
                         <div class="form-group row ">
-                            <label for="dealer_billing_address_1" class="col-md-2 col-form-label">Billing Address</label>
+                            <label for="dealer_company_name" class="col-md-2 col-form-label">Company Name</label>
                             <div class="col-md-9">
-                                <input type="text" name="dealer_billing_address_1" id="dealer_billing_address_1"
-                                    value="{{$dealerProfile->billingAddress->address_1}}"
-                                    class="form-control @error('dealer_billing_address_1') is-invalid @enderror"
-                                    value="{{ old('dealer_billing_address_1') }}" >
+                                <input type="text" name="dealer_company_name" id="dealer_company_name"
+                                    value="{{$dealerProfile->employmentAddress->company_name}}"
+                                    class="form-control @error('dealer_company_name') is-invalid @enderror"
+                                    value="{{ old('dealer_company_name') }}" >
+                            </div>
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
+                            </div>
+ 
+                        </div>
+                        <div class="form-group row ">
+                            <label for="dealer_company_address_1" class="col-md-2 col-form-label">Company Address</label>
+                            <div class="col-md-9">
+                                <input type="text" name="dealer_company_address_1" id="dealer_company_address_1"
+                                    value="{{$dealerProfile->employmentAddress->company_address_1}}"
+                                    class="form-control @error('dealer_company_address_1') is-invalid @enderror"
+                                    value="{{ old('dealer_company_address_1') }}" >
                             </div>
                           
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
+                            </div>
 
-
-                            @error('dealer_billing_address_1')
+                            @error('dealer_company_address_1')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-group row ">                         
                             <div class="offset-2 col-md-9">
-                                <input type="text" name="dealer_billing_address_2" id="dealer_billing_address_2"
-                                    value="{{$dealerProfile->billingAddress->address_2}}"
-                                    class="form-control @error('dealer_billing_address_2') is-invalid @enderror"
-                                    value="{{ old('dealer_billing_address_2') }}" >
+                                <input type="text" name="dealer_company_address_2" id="dealer_company_address_2"
+                                    value="{{$dealerProfile->employmentAddress->company_address_2}}"
+                                    class="form-control @error('dealer_company_address_2') is-invalid @enderror"
+                                    value="{{ old('dealer_company_address_2') }}" >
                             </div>
-                          
-                            @error('dealer_billing_address_2')
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
+                            </div>
+                            @error('dealer_company_address_2')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -120,13 +141,15 @@
                         
                         <div class="form-group row ">                         
                             <div class="offset-2 col-md-9">
-                                <input type="text" name="dealer_billing_address_3" id="dealer_billing_address_3"
-                                    value="{{$dealerProfile->billingAddress->address_3}}"
-                                    class="form-control @error('dealer_billing_address_3') is-invalid @enderror"
-                                    value="{{ old('dealer_billing_address_3') }}" >
+                                <input type="text" name="dealer_company_address_3" id="dealer_company_address_3"
+                                    value="{{$dealerProfile->employmentAddress->company_address_3}}"
+                                    class="form-control @error('dealer_company_address_3') is-invalid @enderror"
+                                    value="{{ old('dealer_company_address_3') }}" >
                             </div>
-                          
-                            @error('dealer_billing_address_3')
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
+                            </div>
+                            @error('dealer_company_address_3')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -134,165 +157,113 @@
 
                         
                         <div class="form-group row ">
-                            <label for="dealer_billing_postcode" class="col-md-2 col-form-label">Billing
+                            <label for="dealer_company_postcode" class="col-md-2 col-form-label">Company
                                 Postcode</label>
                             <div class="col-md-4">
-                                <input type="text" name="dealer_billing_postcode" id="dealer_billing_postcode"
-                                    value="{{$dealerProfile->billingAddress->postcode}}"
-                                    class="form-control @error('dealer_billing_postcode') is-invalid @enderror"
-                                    value="{{ old('dealer_billing_postcode') }}" >
+                                <input type="text" name="dealer_company_postcode" id="dealer_company_postcode"
+                                    value="{{$dealerProfile->employmentAddress->company_postcode}}"
+                                    class="form-control @error('dealer_company_postcode') is-invalid @enderror"
+                                    value="{{ old('dealer_company_postcode') }}" >
                             </div>
-
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
+                            </div>
    
-                            @error('dealer_billing_postcode')
+                            @error('dealer_company_postcode')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-group row ">
-                            <label for="dealer_billing_city" class="col-md-2 col-form-label">Billing
+                            <label for="dealer_company_city" class="col-md-2 col-form-label">Company
                                 City</label>
                             <div class="col-md-4">
-                                <input type="text" name="dealer_billing_city" id="dealer_billing_city"
-                                    value="{{$dealerProfile->billingAddress->city}}"
-                                    class="form-control @error('dealer_billing_city') is-invalid @enderror"
-                                    value="{{ old('dealer_billing_city') }}" >
+                                <input type="text" name="dealer_company_city" id="dealer_company_city"
+                                    value="{{$dealerProfile->employmentAddress->company_city}}"
+                                    class="form-control @error('dealer_company_city') is-invalid @enderror"
+                                    value="{{ old('dealer_company_city') }}" >
                             </div>
 
-   
-                            @error('dealer_billing_city')
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
+                            </div>
+                            @error('dealer_company_city')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-
-
-
+                        
+                        <div class="form-group row ">
+                            <div class="col-md-4">
+                             <h4>Spouse Information</h4>
+                            </div>
+                        </div>
+                        <hr>
 
                         <div class="form-group row ">
-                            <label for="dealer_shipping_address_1" class="col-md-2 col-form-label">Shipping Address</label>
+                            <label for="spouse_name" class="col-md-2 col-form-label">Spouse Name</label>
                             <div class="col-md-9">
-                                <input type="text" name="dealer_shipping_address_1" id="dealer_shipping_address_1"
-                                    value="{{$dealerProfile->shippingAddress->address_1}}"
-                                    class="form-control @error('dealer_shipping_address_1') is-invalid @enderror"
-                                    value="{{ old('dealer_shipping_address_1') }}" >
+                                <input type="text" name="spouse_name" id="spouse_name"
+                                    value="{{$dealerProfile->dealerSpouse->spouse_name}}"
+                                    class="form-control @error('spouse_name') is-invalid @enderror"
+                                    value="{{ old('spouse_name') }}" readonly >
                             </div>
-                          
-
-
-                            @error('dealer_shipping_address_1')
-                            <small class="form-text text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-
-                        
-                        <div class="form-group row ">
                            
-                            <div class="offset-2 col-md-9">
-                                <input type="text" name="dealer_shipping_address_2" id="dealer_shipping_address_2"
-                                    value="{{$dealerProfile->shippingAddress->address_2}}"
-                                    class="form-control @error('dealer_shipping_address_2') is-invalid @enderror"
-                                    value="{{ old('dealer_shipping_address_2') }}" >
-                            </div>
-                          
-
-
-                            @error('dealer_shipping_address_2')
+                            @error('spouse_name')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-group row ">
+                            <label for="spouse_occupation" class="col-md-2 col-form-label">Spouse Occupation</label>
+                            <div class="col-md-9">
+                                <input type="text" name="spouse_occupation" id="spouse_occupation"
+                                    value="{{$dealerProfile->dealerSpouse->spouse_occupation}}"
+                                    class="form-control @error('spouse_occupation') is-invalid @enderror"
+                                    value="{{ old('spouse_occupation') }}" readonly >
+                            </div>
+                          
+                            @error('spouse_occupation')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+
+                        <div class="form-group row ">
+                            <label for="spouse_contact" class="col-md-2 col-form-label">Spouse Contact</label>
+                            <div class="col-md-9">
+                                <input type="text" name="spouse_contact" id="spouse_contact"
+                                    value="{{$dealerProfile->dealerSpouse->spouse_contact_mobile}}"
+                                    class="form-control @error('spouse_contact') is-invalid @enderror"
+                                    value="{{ old('spouse_contact') }}" readonly >
+                            </div>
                            
-                            <div class="offset-2 col-md-9">
-                                <input type="text" name="dealer_shipping_address_3" id="dealer_shipping_address_3"
-                                    value="{{$dealerProfile->shippingAddress->address_3}}"
-                                    class="form-control @error('dealer_shipping_address_3') is-invalid @enderror"
-                                    value="{{ old('dealer_shipping_address_3') }}" >
-                            </div>
-                          
-
-
-                            @error('dealer_shipping_address_3')
+                            @error('spouse_contact')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-
-                     
-
-
-                        
-                        <div class="form-group row ">
-                            <label for="dealer_shipping_postcode" class="col-md-2 col-form-label">Shipping
-                                Postcode</label>
-                            <div class="col-md-4">
-                                <input type="text" name="dealer_shipping_postcode" id="dealer_shipping_postcode"
-                                    value="{{$dealerProfile->shippingAddress->postcode}}"
-                                    class="form-control @error('dealer_shipping_postcode') is-invalid @enderror"
-                                    value="{{ old('dealer_shipping_postcode') }}" >
-                            </div>
-
-   
-                            @error('dealer_shipping_postcode')
-                            <small class="form-text text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-
-
-                          
-                        <div class="form-group row ">
-                            <label for="dealer_shipping_city" class="col-md-2 col-form-label">Shipping
-                                City</label>
-                            <div class="col-md-4">
-                                <input type="text" name="dealer_shipping_city" id="dealer_shipping_city"
-                                    value="{{$dealerProfile->shippingAddress->city}}"
-                                    class="form-control @error('dealer_shipping_city') is-invalid @enderror"
-                                    value="{{ old('dealer_shipping_city') }}" >
-                            </div>
-
-   
-                            @error('dealer_shipping_city')
-                            <small class="form-text text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-
 
                         <div class="form-group row ">
-                            <label for="dealer_mobile_contact" class="col-md-2 col-form-label">Mobile Contact
-                                </label>
-                            <div class="col-md-4">
-                                <input type="text" name="dealer_mobile_contact" id="dealer_mobile_contact"
-                                    value="{{$dealerProfile->dealerMobileContact->contact_num}}"
-                                    class="form-control @error('dealer_mobile_contact') is-invalid @enderror"
-                                    value="{{ old('dealer_mobile_contact') }}" >
+                            <label for="spouse_email" class="col-md-2 col-form-label">Spouse Email</label>
+                            <div class="col-md-9">
+                                <input type="text" name="spouse_email" id="spouse_email"
+                                    value="{{$dealerProfile->dealerSpouse->spouse_email}}"
+                                    class="form-control @error('spouse_email') is-invalid @enderror"
+                                    value="{{ old('spouse_email') }}" readonly>
                             </div>
-
-                           
-
-   
-                            @error('dealer_mobile_contact')
+                            @error('spouse_email')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-
-                      
      
                         <div class="form-group row ">
-
-                            <div class="offset-9 col-md-2" style="margin-left: 850px;">
+                            <div class="offset-10 col-md-2" >
                                 <input type="submit" class="bjsh-btn-gradient" value="Update Profile">
                             </div>
-
                         </div>
-
-
-                    </div>
                 </div>
             </div>
-
-
+          </div>
         </div>
-        </form>
-
+    </form>
 </div>
 
 
@@ -303,21 +274,41 @@
     <form action="{{route('shop.dashboard.dealer.profile.update',[$dealerProfile->account_id])}}" method="POST">
         <input type="hidden" name="_method" value="PATCH">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <h4 class="text-capitalize text-dark font-family-style">Edit Dealer Profile</h4>
+        <div class="row">
+            <div class="col-4">
+             <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family"  
+             ><strong style="color:black;">Edit User Profile</strong></a>
+            </div>
+            @hasrole('dealer')
+            <div class="col-4">
+             <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" style="border-bottom: 2px solid rgb(250, 172, 24);" class="text-color-header font-family" ><strong style="color:black;">Edit Dealer Information</strong></a>
+            </div>
+            @endhasrole
+            @hasrole('panel')
+            <div class="col-4">
+             <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black;">Edit Panel Information</strong></a>
+            </div>
+            @endhasrole          
+        </div>
     <div class="row">
         <div class="col-12 col-md-10">
             <div class="card shadow-sm">
                 <div class="card-body">
 
-
+                    <div class="form-group row ">
+                        <div class="col-md-4">
+                         <h4>Dealer Information</h4>
+                        </div>
+                    </div>
+                    <hr>
 
                     <div class="form-group row ">
-                        <label for="dealer_name" class="col-md-2 col-form-label">Dealer Name</label>
+                        <label for="dealer_id" class="col-md-2 col-form-label">Dealer ID</label>
                         <div class="col-md-4">
-                            <input type="text" name="dealer_name" id="dealer_name"
-                                value="{{$dealerProfile->full_name}}"
-                                class="form-control @error('dealer_name') is-invalid @enderror"
-                                value="{{ old('dealer_name') }}" >
+                            <input type="text" name="dealer_id" id="dealer_id"
+                                value="{{$dealerProfile->account_id}}"
+                                class="form-control @error('dealer_id') is-invalid @enderror"
+                                value="{{ old('dealer_id') }}" >
                         </div>
                      
                     </div>
@@ -326,7 +317,7 @@
 
 
                     <div class="form-group row ">
-                        <label for="gender" class="col-md-2 col-form-label"> Gender</label>
+                        <label for="gender" class="col-md-2 col-form-label">Gender</label>
                         <div class="col-md-4">
                             <input type="text" name="gender"
                                @if($dealerProfile->gender_id===1)
@@ -340,181 +331,162 @@
                         </div>                 
                     </div>
 
-
                     <div class="form-group row ">
-                        <label for="dealer_billing_address_1" class="col-md-2 col-form-label">Billing Address</label>
-                        <div class="col-md-9">
-                            <input type="text" name="dealer_billing_address_1" id="dealer_billing_address_1"
-                                value="{{$dealerProfile->billingAddress->address_1}}"
-                                class="form-control @error('dealer_billing_address_1') is-invalid @enderror"
-                                value="{{ old('dealer_billing_address_1') }}" >
-
+                        <div class="col-md-4">
+                         <h4>Employment Information</h4>
                         </div>
-                                          
                     </div>
+                    <hr>
 
                     <div class="form-group row ">
-                     
+                        <label for="dealer_company_name" class="col-md-2 col-form-label">Company Name</label>
                         <div class="col-md-9">
-                            <input type="text" name="dealer_billing_address_2"
-                                value="{{$dealerProfile->billingAddress->address_2}}"
-                                class="form-control @error('dealer_billing_address_2') is-invalid @enderror"
-                                value="{{ old('dealer_billing_address_2') }}" >
-
+                            <input type="text" name="dealer_company_name" id="dealer_company_name"
+                                value="{{$dealerProfile->employmentAddress->company_name}}"
+                                class="form-control @error('dealer_company_name') is-invalid @enderror"
+                                value="{{ old('dealer_company_name') }}" >
                         </div>
-                                          
-                    </div>
-
-                    <div class="form-group row ">
                        
+
+                    </div>
+                    <div class="form-group row ">
+                        <label for="dealer_company_address_1" class="col-md-2 col-form-label">Company Address</label>
                         <div class="col-md-9">
-                            <input type="text"  name="dealer_billing_address_3"
-                                value="{{$dealerProfile->billingAddress->address_3}}"
-                                class="form-control @error('dealer_billing_address_3') is-invalid @enderror"
-                                value="{{ old('dealer_billing_address_3') }}" >
-
+                            <input type="text" name="dealer_company_address_1" id="dealer_company_address_1"
+                                value="{{$dealerProfile->employmentAddress->company_address_1}}"
+                                class="form-control @error('dealer_company_address_1') is-invalid @enderror"
+                                value="{{ old('dealer_company_address_1') }}" >
                         </div>
-                                          
-                    </div>
+                      
+                      
 
-               
-
-
-                    <div class="form-group row ">
-                        <label for="dealer_billing_postcode" class="col-md-2 col-form-label">Billing Postcode</label>
-                        <div class="col-md-4">
-                            <input type="text" name="dealer_billing_postcode"
-                                value="{{$dealerProfile->billingAddress->postcode}}" id="dealer_billing_postcode"
-                                class="form-control @error('dealer_billing_postcode') is-invalid @enderror"
-                                value="{{ old('dealer_billing_postcode') }}" >
-                        </div>                 
-                        @error('dealer_billing_postcode')
+                        @error('dealer_company_address_1')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
-                                    
                     </div>
 
-
-                    <div class="form-group row ">
-                        <label for="dealer_billing_city" class="col-md-2 col-form-label">Billing City</label>
-                        <div class="col-md-4">
-                            <input type="text" name="dealer_billing_city"
-                                value="{{$dealerProfile->billingAddress->postcode}}" id="dealer_billing_city"
-                                class="form-control @error('dealer_billing_city') is-invalid @enderror"
-                                value="{{ old('dealer_billing_city') }}" >
-                        </div>                 
-                        @error('dealer_billing_city')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                        @enderror
-                                    
-                    </div>
-
-
-                    <div class="form-group row ">
-                        <label for="dealer_shipping_address" class="col-md-2 col-form-label">Shipping Address</label>
+                    <div class="form-group row ">                         
                         <div class="col-md-9">
-                            <input type="text" name="dealer_shipping_address_1" id="dealer_shipping_address_1"
-                                value="{{$dealerProfile->shippingAddress->address_1}}"
-                                class="form-control @error('dealer_shipping_address_1') is-invalid @enderror"
-                                value="{{ old('dealer_shipping_address_1') }}" >
+                            <input type="text" name="dealer_company_address_2" id="dealer_company_address_2"
+                                value="{{$dealerProfile->employmentAddress->company_address_2}}"
+                                class="form-control @error('dealer_company_address_2') is-invalid @enderror"
+                                value="{{ old('dealer_company_address_2') }}" >
                         </div>
-                        @error('dealer_shipping_address_1')
+                       
+                        @error('dealer_company_address_2')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
-                                     
                     </div>
 
                     
-                    <div class="form-group row ">
+                    <div class="form-group row ">                         
+                        <div class="col-md-9">
+                            <input type="text" name="dealer_company_address_3" id="dealer_company_address_3"
+                                value="{{$dealerProfile->employmentAddress->company_address_3}}"
+                                class="form-control @error('dealer_company_address_3') is-invalid @enderror"
+                                value="{{ old('dealer_company_address_3') }}" >
+                        </div>
                         
-                        <div class="col-md-9">
-                            <input type="text" name="dealer_shipping_address_2"
-                                value="{{$dealerProfile->shippingAddress->address_2}}"
-                                class="form-control @error('dealer_shipping_address_2') is-invalid @enderror"
-                                value="{{ old('dealer_shipping_address_2') }}" >
-                        </div>
-                        @error('dealer_shipping_address_2')
+                        @error('dealer_company_address_3')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
-                                             
                     </div>
+
 
                     
                     <div class="form-group row ">
-                        
-                        <div class="col-md-9">
-                            <input type="text" name="dealer_shipping_address_3"
-                                value="{{$dealerProfile->shippingAddress->address_3}}"
-                                class="form-control @error('dealer_shipping_address_3') is-invalid @enderror"
-                                value="{{ old('dealer_shipping_address_3') }}" >
-                        </div>
-                        @error('dealer_shipping_address_3')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                        @enderror
-                                    
-                    </div>
-
-                    
-             
-
-                    
-                    <div class="form-group row ">
-                        <label for="dealer_shipping_postcode" class="col-md-2 col-form-label">Shipping
+                        <label for="dealer_company_postcode" class="col-md-2 col-form-label">Company
                             Postcode</label>
                         <div class="col-md-4">
-                            <input type="text" name="dealer_shipping_postcode" id="dealer_shipping_postcode"
-                                value="{{$dealerProfile->shippingAddress->postcode}}"
-                                class="form-control @error('dealer_shipping_postcode') is-invalid @enderror"
-                                value="{{ old('dealer_shipping_postcode') }}" >
+                            <input type="text" name="dealer_company_postcode" id="dealer_company_postcode"
+                                value="{{$dealerProfile->employmentAddress->company_postcode}}"
+                                class="form-control @error('dealer_company_postcode') is-invalid @enderror"
+                                value="{{ old('dealer_company_postcode') }}" >
                         </div>
-                        @error('dealer_shipping_postcode')
+                       
+
+                        @error('dealer_company_postcode')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
-
-                     
                     </div>
 
-
                     <div class="form-group row ">
-                        <label for="dealer_shipping_city" class="col-md-2 col-form-label">Shipping
+                        <label for="dealer_company_city" class="col-md-2 col-form-label">Company
                             City</label>
-                        <div class="col-md-9">
-                            <input type="text" name="dealer_shipping_city"
-                                value="{{$dealerProfile->shippingAddress->city}}"
-                                class="form-control @error('dealer_shipping_city') is-invalid @enderror"
-                                value="{{ old('dealer_shipping_city') }}" >
+                        <div class="col-md-4">
+                            <input type="text" name="dealer_company_city" id="dealer_company_city"
+                                value="{{$dealerProfile->employmentAddress->company_city}}"
+                                class="form-control @error('dealer_company_city') is-invalid @enderror"
+                                value="{{ old('dealer_company_city') }}" >
                         </div>
-                        @error('dealer_shipping_city')
+
+                       
+                        @error('dealer_company_city')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
-                                       
                     </div>
-
+                    
+                    <div class="form-group row ">
+                        <div class="col-md-4">
+                         <h4>Spouse Information</h4>
+                        </div>
+                    </div>
+                    <hr>
 
                     <div class="form-group row ">
-                        <label for="dealer_mobile_contact" class="col-md-2 col-form-label">Mobile Contact</label>
+                        <label for="spouse_name" class="col-md-2 col-form-label">Spouse Name</label>
                         <div class="col-md-9">
-                            <input type="text" name="dealer_mobile_contact" id="dealer_mobile_contact" value="{{$dealerProfile->dealerMobileContact->contact_num}}"
-                                class="form-control @error('dealer_mobile_contact') is-invalid @enderror"
-                                value="{{ old('dealer_mobile_contact') }}" >
-                        </div>            
-                        @error('dealer_mobile_contact')
+                            <input type="text" name="spouse_name" id="spouse_name"
+                                value="{{$dealerProfile->dealerSpouse->spouse_name}}"
+                                class="form-control @error('spouse_name') is-invalid @enderror"
+                                value="{{ old('spouse_name') }}" readonly >
+                        </div>
+                       
+                        @error('spouse_name')
                         <small class="form-text text-danger">{{ $message }}</small>
-                        @enderror        
+                        @enderror
                     </div>
-
-                 
 
                     <div class="form-group row ">
-                        <label for="dealer_information" class="col-md-2 col-form-label">ID Information</label>
+                        <label for="spouse_occupation" class="col-md-2 col-form-label">Spouse Occupation</label>
                         <div class="col-md-9">
-                            <input type="text" name="dealer_information" id="dealer_information" value="WIP"
-                                class="form-control @error('dealer_information') is-invalid @enderror"
-                                value="{{ old('dealer_information') }}" readonly>
-                        </div>                    
+                            <input type="text" name="spouse_occupation" id="spouse_occupation"
+                                value="{{$dealerProfile->dealerSpouse->spouse_occupation}}"
+                                class="form-control @error('spouse_occupation') is-invalid @enderror"
+                                value="{{ old('spouse_occupation') }}" readonly >
+                        </div>
+                      
+                        @error('spouse_occupation')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                        @enderror
                     </div>
 
-                  
+                    <div class="form-group row ">
+                        <label for="spouse_contact" class="col-md-2 col-form-label">Spouse Contact</label>
+                        <div class="col-md-9">
+                            <input type="text" name="spouse_contact" id="spouse_contact"
+                                value="{{$dealerProfile->dealerSpouse->spouse_contact_mobile}}"
+                                class="form-control @error('spouse_contact') is-invalid @enderror"
+                                value="{{ old('spouse_contact') }}" readonly >
+                        </div>
+                       
+                        @error('spouse_contact')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row ">
+                        <label for="spouse_email" class="col-md-2 col-form-label">Spouse Email</label>
+                        <div class="col-md-9">
+                            <input type="text" name="spouse_email" id="spouse_email"
+                                value="{{$dealerProfile->dealerSpouse->spouse_email}}"
+                                class="form-control @error('spouse_email') is-invalid @enderror"
+                                value="{{ old('spouse_email') }}" readonly>
+                        </div>
+                        @error('spouse_email')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
                              
                     <div class="form-group row ">
                         <div class="offset-6 col-2">

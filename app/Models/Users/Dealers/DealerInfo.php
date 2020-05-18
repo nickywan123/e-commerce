@@ -45,6 +45,14 @@ class DealerInfo extends Model
     }
 
     /**
+     * Get dealer employment address.
+     */
+    public function employmentAddress()
+    {
+        return $this->hasOne('App\Models\Users\Dealers\DealerEmployment', 'account_id', 'account_id');
+    }
+
+    /**
      * Get dealer billing address.
      */
     public function billingAddress()
@@ -84,5 +92,13 @@ class DealerInfo extends Model
     {
         // return $this->where('account_id', 'LIKE', '1911%')->max('account_id');
         return $query->max('account_id');
+    }
+
+    /**
+     * Get dealer spouse information.
+     */
+    public function dealerSpouse()
+    {
+        return $this->hasOne('App\Models\Users\Dealers\DealerSpouse', 'account_id', 'account_id');
     }
 }
