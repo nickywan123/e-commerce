@@ -162,7 +162,7 @@ var myChart = new Chart(ctx,{
                             </div>
                             <div class="col-7 ml-5 mt-2" style="line-height: 20px;">   
                              <p class="card-title" style="font-weight:bold; font-size:20pt;">RM 28,888</P>
-                             <p style="color: #939598;">Daily Revenue: 15/5/2020</p>
+                             <p style="color: #939598;">Daily Revenue:  {{ date('d/m/yy') }}</p>
                             </div>
                           </div>       
                         </div>
@@ -186,7 +186,7 @@ var myChart = new Chart(ctx,{
                             </div>
                             <div class="col-7 ml-5 mt-2" style="line-height: 20px;">
                              <p class="card-title" style="font-weight:bold; font-size:20pt;">RM 88,888</p>
-                             <p style="color: #939598;"> Monthly Revenue: May 2020</p>
+                             <p style="color: #939598;"> Monthly Revenue:  {{ date('m yy ') }}</p>
                             </div>
                           </div> 
                         </div>

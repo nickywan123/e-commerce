@@ -58,7 +58,7 @@
             </ul>
         </div>
 
-        <div class="col-6 col-md-2 text-center text-md-left">
+        {{-- <div class="col-6 col-md-2 text-center text-md-left">
             <div style="display: flex; justify-content: start;">
                 <a target="_blank" href="https://facebook.com/DelhubDigital/">
                     <span class="bujishu-white p-2 font-family" style="font-size: 1rem;"><i class="fab fa-facebook-square bujishu-gold"></i> Facebook</span>
@@ -67,10 +67,18 @@
                     <span class="bujishu-white p-2 font-family" style="font-size: 1rem;"><i class="fab fa-instagram-square bujishu-gold"></i> Instagram</span>
                 </a>
             </div>
-        </div>
+        </div> --}}
 
        
-        <div class="col-8 offset-4 offset-md-2 col-md-2 text-center text-md-left reserved-text">
+        <div class="col-8 offset-4 offset-md-4 col-md-2 text-center text-md-left reserved-text">
+            <div style="float:right;">
+                <a target="_blank" href="https://facebook.com/DelhubDigital/">
+                    <span class="bujishu-white p-2 font-family" style="font-size: 1rem;"><i class="fab fa-facebook-square bujishu-gold"></i> Facebook</span>
+                </a>
+                <a href="">
+                    <span class="bujishu-white p-2 font-family" style="font-size: 1rem;"><i class="fab fa-instagram-square bujishu-gold"></i> Instagram</span>
+                </a>
+            </div>
             <div style="padding-top:100px;">
                 <h6 class="text-right mb-0 pt-1 pb-1 font-family" style="color:white;">@ 2020 Bujishu. All Rights Reserved</h6>
             </div>
