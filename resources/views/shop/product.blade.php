@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <p class="text-capitalize text-muted mt-3 mb-1 text-muted text-center p-1" style="font-size: 0.9rem;">
-                        By - {{ $panelProduct->panel->company_name }}
+                        by {{ $panelProduct->panel->company_name }}
                     </p>
 
                     <!-- Description -->
