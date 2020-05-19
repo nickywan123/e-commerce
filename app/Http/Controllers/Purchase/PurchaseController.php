@@ -183,7 +183,7 @@ class PurchaseController extends Controller
         // Initialize an empty array of PO Numbers
         $po_numbers = array(); // ['PO#1', 'PO#2', 'PO#3'];
 
-        $invoiceSequence = Purchase::all()->count() + 1;
+        $invoiceSequence = Purchase::all()->count() + 500;
 
         // Create a new purchase record.
         $purchase = new Purchase;
