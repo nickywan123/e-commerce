@@ -428,22 +428,3 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
     // End Web
 });
-
-// Test Routes
-Route::get('/administrator', function () {
-    return view('layouts.administrator.main');
-});
-
-Route::get('/delete-image', function () {
-    $product = Product::findOrFail(62);
-    $path = public_path('/storage/uploads/images/products/' . $product->id . '/');
-    $filename = '62-1588318949.png';
-    $imagePath = $path . $filename;
-    if (File::exists($path . $filename)) {
-        File::delete($path . $filename);
-        $message = 'true';
-    } else {
-        $message = 'false';
-    }
-    return $message;
-});
