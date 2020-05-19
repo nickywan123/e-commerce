@@ -4,7 +4,7 @@
             <p class="pr-1 pl-1 bujishu-gold mb-1 font-family" style="font-size: 1.1rem;"><i class="fa fa-home my-auto" style="color: #fccb34; font-size: 1.1rem;"></i> <b>WE ARE BUJISHU</b></p>
             <ul class="list-unstyled pr-2 pl-2 bujishu-white font-family">
                 <li>
-                    <a class="bujishu-white" href="">About Us</a>
+                    <a class="bujishu-white" href="{{route('shop.about.us')}}">About Us</a>
                 </li>
                 <li>
                     <a class="bujishu-white" href="">Our Vision, Culture, Value</a>
@@ -38,7 +38,7 @@
             </ul>
         </div>
 
-        <div class="col-6 col-md-2 text-center text-md-left">
+        <div class="col-6 col-md-3 text-center text-md-left">
             <ul class="list-unstyled pr-2 pl-2 font-family">
                 <li>
                     <p class="bujishu-gold mb-1 font-family" style="font-size: 0.9rem;"><b>OUR LOCATION</b></p>
@@ -70,13 +70,13 @@
         </div> --}}
 
        
-        <div class="col-8 offset-4 offset-md-4 col-md-2 text-center text-md-left reserved-text">
+        <div class="col-8 offset-4 offset-md-2 col-md-3 text-center text-md-left ">
             <div style="float:right;">
                 <a target="_blank" href="https://facebook.com/DelhubDigital/">
-                    <span class="bujishu-white p-2 font-family" style="font-size: 1rem;"><i class="fab fa-facebook-square bujishu-gold"></i> Facebook</span>
+                    <span class="bujishu-white p-2 font-family" style="font-size: 1rem;"><img src="{{asset('/storage/footer/icons/fb-01.png')}}" alt="fb-icon"> Facebook</span>
                 </a>
                 <a href="">
-                    <span class="bujishu-white p-2 font-family" style="font-size: 1rem;"><i class="fab fa-instagram-square bujishu-gold"></i> Instagram</span>
+                    <span class="bujishu-white p-2 font-family" style="font-size: 1rem;"><img src="{{asset('/storage/footer/icons/IG-01.png')}}" alt="insta-icon"> Instagram</span>
                 </a>
             </div>
             <div style="padding-top:100px;">

@@ -287,6 +287,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // Home/Index page for shop.
         Route::get('/', 'Shop\ShopController@index')->name('shop.index');
 
+        // About Us Page
+        Route::get('/about-us', 'Shop\ShopController@aboutUs')->name('shop.about.us');
+
         Route::group(['prefix' => 'category'], function () {
             Route::get(
                 '/renovations',

@@ -1,5 +1,5 @@
 {{---Mobile Layout--}}
-<div class="middleBar" style="border-bottom: 1px solid #fccb34;">
+<div class="middleBar font-family" style="border-bottom: 1px solid #fccb34;">
     <div class="container-90">
         <div class="row d-flex">
             <div class="col-sm-2 vertical-align mt-2 mb-3">
@@ -77,7 +77,7 @@
             <!-- end col -->
 
             {{--Desktop layout---}}
-            <div class="col-sm-8 vertical-align text-center my-auto">
+            <div class="col-sm-8 vertical-align text-center my-auto font-family">
                 <form>
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto display-same-row">
@@ -144,7 +144,6 @@
                             <i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i>
                             <span class="icon-attributes" id="cart-quantity"></span>
                         </a>
-
                     </div>
 
                 </ul>

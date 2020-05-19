@@ -58,6 +58,14 @@ class ShopController extends Controller
             ->with('popularCategories', $popularCategories);
     }
 
+    /****
+     * Shows About Us
+     * ****/
+    public function aboutUs()
+    {
+        return view('shop.about-us.about-us');
+    }
+
     /**
      * Handles /shop/category/{category-slug}
      */
