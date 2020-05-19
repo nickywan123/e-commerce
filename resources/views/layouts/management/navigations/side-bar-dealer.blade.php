@@ -4,26 +4,26 @@
     <nav class="sidebar-nav">
       <ul class="list-unstyled components" style="padding-left: 10px;">
          <br>
-         <h4 class="font-family" style="color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
+         <h4 style="color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
          
          
          {{-- <li>
-          <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Profile</a>
+          <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Profile</a>
          </li> --}}
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Sales Summary</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Sales Summary</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Monthly Income</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Monthly Income</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Notice</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Notice</a>
          </li>
          <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color font-family">Promotion/Special Offer</a>
+            <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Promotion/Special Offer</a>
          </li>
          <li>
-            <a href="/shop" class="sidebar-text-color font-family">Continue Shopping</a>
+            <a href="/shop" class="sidebar-text-color ">Continue Shopping</a>
          </li>
       </ul>
     </nav> 
@@ -118,7 +118,7 @@
 
     .sidebar-text-color{
       
-        font-family:'Lato', sans-serif;
+       
         font-size: 14pt;
         color: black;
         margin-left:10px;

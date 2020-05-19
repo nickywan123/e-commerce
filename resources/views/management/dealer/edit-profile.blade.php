@@ -24,7 +24,7 @@
 
     {{---Desktop Layout----}}
 
-    <div class="hidden-sm font-family">
+    <div class="hidden-sm ">
         <form action="{{route('shop.dashboard.dealer.profile.update',[$dealerProfile->account_id])}}" method="POST">
             <input type="hidden" name="_method" value="PATCH">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -33,17 +33,17 @@
             <div class="col-12 col-md-10">
                 <div class="row">
                     <div class="col-3">
-                     <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family"
+                     <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header "
                      ><strong style="color:black; font-size:15pt;">Edit Profile</strong></a>
                     </div>
                     @hasrole('dealer')
                     <div class="col-3">
-                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header font-family" style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
+                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
                     </div>
                     @endhasrole
                     @hasrole('panel')
                     <div class="col-3">
-                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
+                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
                     </div>
                     @endhasrole          
                 </div> <br>
@@ -276,17 +276,17 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
             <div class="col-4">
-             <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family"  
+             <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header "  
              ><strong style="color:black;">Edit User Profile</strong></a>
             </div>
             @hasrole('dealer')
             <div class="col-4">
-             <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" style="border-bottom: 2px solid rgb(250, 172, 24);" class="text-color-header font-family" ><strong style="color:black;">Edit Dealer Information</strong></a>
+             <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" style="border-bottom: 2px solid rgb(250, 172, 24);" class="text-color-header " ><strong style="color:black;">Edit Dealer Information</strong></a>
             </div>
             @endhasrole
             @hasrole('panel')
             <div class="col-4">
-             <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black;">Edit Panel Information</strong></a>
+             <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong style="color:black;">Edit Panel Information</strong></a>
             </div>
             @endhasrole          
         </div>

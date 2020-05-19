@@ -1,7 +1,7 @@
-<div class="wrapper" style="height: 100%;  ">
- <div class="sidebar sidebar-bg-color    ">
+<div class="wrapper" style="height: 100%;">
+ <div class="sidebar sidebar-bg-color">
     <nav class="sidebar-nav" >
-        <ul class="nav sidebar-margin-top-customer">
+        <ul class="nav" style="margin-top: 2rem;">
 
             {{-- <li class="nav-item"  >
                 <div class="icon-text-align">

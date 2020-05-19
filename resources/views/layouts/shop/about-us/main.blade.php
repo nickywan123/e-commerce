@@ -32,7 +32,7 @@
     @stack('style')
 </head>
 
-<body class="promo-page-background-color font-family">
+<body class="promo-page-background-color">
 
     <!-- Navigation bar -->
     @include('layouts.shop.navigation.navigation')

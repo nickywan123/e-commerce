@@ -4,21 +4,23 @@
 
 @section('content')
 
-<br>
+
 
 {{----------Desktop Layout---------------------}}
-<div class="row hidden-sm font-family">
 
-    <div class="col-3">
-         <div class="row ml-1">
-            <div class="card border-radius-card shadow" style="width:100%;height: 100%; max-width:470px;" >
+ <div class="row hidden-sm ">
+    <div class="col-5">
+
+         {{-- <div class="row ml-1">
+           <div class="col-12">
+            <div class="card border-radius-card shadow" >
                 <div class="card-body">
                   <div class="row">
                     <div class="col-6">
-                     <h4 class="card-title font-family font-size" style="font-weight:bold; ">Profile</h4>
+                     <h4 class="card-title  font-size" style="font-weight:700; ">Profile</h4>
                     </div>
                     <div class="col-6 ">
-                     <a href="{{route('shop.dashboard.customer.profile.edit')}}"><p class="card-title font-family" style="float: right; color:#ffcc00;">Edit</p></a>
+                     <a href="{{route('shop.dashboard.customer.profile.edit')}}"><p class="card-title " style="float: right; color:#ffcc00;">Edit</p></a>
                     </div>
                   </div>
                   <div class="row mt-2 ">
@@ -26,30 +28,32 @@
                       <img src="{{asset('/storage/dealer/icons/img_avatar.png')}}" style="border-radius:50%; max-width: 70px;" alt="Dealer-Image">
                     </div>
                     <div class="col-9 mt-3"> 
-                       <p class="font-family font-size"><b>{{$userProfile->full_name}}</b></p>
+                       <p class="font-size"><b>{{$userProfile->full_name}}</b></p>
                     </div>
                   </div>
                   <div class="row mt-3 ">
                     <div class="col-12">
-                        <p class="font-family" style="color: black; line-height:10px; font-size:14pt;">Billing Address:</p>
-                        <p class="font-family" style="font-size:10pt; font-weight:bold; line-height: 1px;">{{$userProfile->mailingAddress->address_1}},{{$userProfile->mailingAddress->address_2}},{{$userProfile->mailingAddress->address_3}}</p>
-                        <p class="font-family" style="font-size:10pt; font-weight:bold; line-height: 1px;">{{$userProfile->mailingAddress->postcode}},{{$userProfile->mailingAddress->city}},Malaysia</p>
-                        <p class="font-family" style="font-size:10pt; font-weight:bold; line-height: 1px;">{{$userProfile->mobileContact->contact_num}}</p>
+                        <p  style="color: black; line-height:10px; font-size:14pt;">Billing Address:</p>
+                        <p  style="font-size:10pt; font-weight:700; line-height: 1px;">{{$userProfile->mailingAddress->address_1}},{{$userProfile->mailingAddress->address_2}},{{$userProfile->mailingAddress->address_3}}</p>
+                        <p  style="font-size:10pt; font-weight:700; line-height: 1px;">{{$userProfile->mailingAddress->postcode}},{{$userProfile->mailingAddress->city}},Malaysia</p>
+                        <p  style="font-size:10pt; font-weight:700; line-height: 1px;">{{$userProfile->mobileContact->contact_num}}</p>
                     </div>
                   </div>
                 </div>
+                </div>
             </div>  
-         </div>
+         </div> --}}
 
          <div class="row ml-1">
-            <div class="card border-radius-card shadow" style="width:100%;height: 100%; " >
+           <div class="col-12">
+            <div class="card border-radius-card shadow" >
               <div class="card-body">
                   <div class="row">
                     <div class="col-6">
-                     <h4 class="card-title font-family font-size" style="font-weight:bold; ">Value Records</h4>
+                     <h4 class="card-title  font-size" style="font-weight:700; ">Value Records</h4>
                     </div>
                     <div class="col-6 ">
-                     <a href="{{route('shop.customer.orders')}}"><p class="card-title font-family" style="float: right; color:#ffcc00;">Show More</p></a>
+                     <a href="{{route('shop.customer.orders')}}"><p class="card-title " style="float: right; color:#ffcc00;">Show More</p></a>
                     </div>
                   </div>
                 @if(!$purchases->isEmpty())
@@ -61,10 +65,10 @@
                      <img src="{{asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename)}}" alt="product-image" style="width: 80px; height:80px;">
                     </div>
                     <div class="col-5 mt-3">
-                        <p class="font-family"><b>{{ $item->product->parentProduct->name}}</b></p>
+                        <p class=""><b>{{ $item->product->parentProduct->name}}</b></p>
                     </div>
                     <div class="col-4 mt-3">
-                        <p class="font-family" style="float: right; font-weight:bold;">
+                        <p class="" style="float: right; font-weight:700;">
                           @if ($order->order_status === 1000)
                            Record Created
                           @elseif ($order->order_status === 1001)
@@ -83,48 +87,28 @@
                   @else
                    <div class="row mt-1">
                      <div class="col-5 col-md-6 mt-1">
-                      <strong class="font-family" style="font-size: 11pt;">There are no orders found.</strong>
+                      <strong class="" style="font-size: 11pt;">There are no orders found.</strong>
                      </div>
                      <div class="col-2 col-md-5 offset-md-1 ">
-                      <a class="btn bjsh-btn-gradient font-family padding-sm  button-size-laptop" href="/shop">Continue Shopping</a>
+                      <a class="btn bjsh-btn-gradient  padding-sm  button-size-laptop" href="/shop">Continue Shopping</a>
                      </div>       
                    </div>
                   @endif
-                  {{-- <div class="row mt-1">
-                       <div class="col-3">
-                        <img src="{{asset('/storage/uploads/images/products/bedsheet-moderate/bedsheet-moderate_5.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
-                       </div>
-                       <div class="col-5 mt-3">
-                           <p><b>Bedsheet Premium</b></p>
-                       </div>
-                       <div class="col-4 mt-3">
-                           <p>Order Shipping</p>
-                       </div>      
-                  </div>
-                  <div class="row mt-1">
-                       <div class="col-3">
-                        <img src="{{asset('/storage/uploads/images/products/bedsheet-moderate/bedsheet-moderate_3.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
-                       </div>
-                       <div class="col-5 mt-3">
-                           <p><b>Bedsheet Yamato</b></p>
-                       </div>
-                       <div class="col-4 mt-3">
-                           <p>Order Shipping</p>
-                       </div>      
-                  </div> --}}
+                </div>
               </div>
             </div>
          </div>  
          
         <div class="row ml-1">
-             <div class="card border-radius-card shadow" style="width:100%;height: 100%; max-width:470px;" >
+          <div class="col-12">
+             <div class="card border-radius-card shadow"  >
                 <div class="card-body">
                   <div class="row">
                     <div class="col-6">
-                     <h4 class="card-title font-family font-size" style="font-weight:bold; ">Perfect List</h4>
+                     <h4 class="card-title  font-size" style="font-weight:700; ">Perfect List</h4>
                     </div>
                     <div class="col-6 ">
-                     <a href="{{route('shop.wishlist.home')}}"><p class="card-title font-family" style="float: right; color:#ffcc00;">Show More</p></a>
+                     <a href="{{route('shop.wishlist.home')}}"><p class="card-title " style="float: right; color:#ffcc00;">Show More</p></a>
                     </div>
                   </div>
                   <div class="row mt-2">
@@ -132,9 +116,9 @@
                      <img src="{{asset('/storage/uploads/images/products/ales-weathercoat-hybrid/ales-weathercoat-hybrid_1.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                     </div>
                     <div class="col-5 mt-3">
-                        <p class="font-family"><b>ALES Anti Mosquito</b></p>
+                        <p class=""><b>ALES Anti Mosquito</b></p>
                     </div>
-                    <div class="col-4 mt-3" style="font-weight: bold;">
+                    <div class="col-4 mt-3" style="font-weight: 700;">
                         RM73.80 
                         <img src="{{asset('/storage/customer/add-to-cart.png')}}" alt="product-image" >   
                     </div>
@@ -145,9 +129,9 @@
                         <img src="{{asset('/storage/uploads/images/products/ales-weathercoat-hybrid/ales-weathercoat-hybrid_1.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                        </div>
                        <div class="col-5 mt-3">
-                           <p class="font-family"><b>ALES Anti Mosquito Hybrid</b></p>
+                           <p class=""><b>ALES Anti Mosquito Hybrid</b></p>
                        </div>
-                       <div class="col-4 mt-3" style="font-weight: bold;">
+                       <div class="col-4 mt-3" style="font-weight: 700;">
                         RM86.00
                         <img src="{{asset('/storage/customer/add-to-cart.png')}}" alt="product-image" >   
                        </div>      
@@ -157,31 +141,36 @@
                         <img src="{{asset('/storage/uploads/images/products/ales-anti-mosq/ales-anti-mosq_1.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                        </div>
                        <div class="col-5 mt-3">
-                           <p class="font-family"><b>ALES Weathercoat Hybrid</b></p>
+                           <p class=""><b>ALES Weathercoat Hybrid</b></p>
                        </div>
-                       <div class="col-4 mt-3" style="font-weight: bold;">
+                       <div class="col-4 mt-3" style="font-weight: 700;">
                         RM43.00
                         <img src="{{asset('/storage/customer/add-to-cart.png')}}" alt="product-image" >   
                        </div>      
                     </div>
                   </div>
+                </div>
             </div>
         </div>  
     </div>
    
 
 
-    <div class="col-9">
-        <div class="row ml-3">
-            <img src="{{asset('/storage/customer/welcome-banner.png')}}" alt="Welcome-Banner" style="width:100%; height:100%;">
+    <div class="col-7">
+        <div class="row">
+          <div class="col-12 col-md-12">
+            <img class="img-fluid" src="{{asset('/storage/customer/welcome-banner.png')}}" alt="Welcome-Banner" >
+          </div>
+            
         </div>
-        <div class="row ml-3 mt-3">
-            <img src="{{asset('/storage/customer/ramadan-sale-banner.png')}}" alt="Welcome-Banner" style="width:100%; height:100%;">
+        <div class="row mt-3">
+           <div class="col-12 col-md-12">
+            <img class="img-fluid" src="{{asset('/storage/customer/ramadan-sale-new.jpg')}}" alt="Ramadan-Banner" >
+           </div>
         </div>
     </div>
-
-
-</div>
+    
+ </div>
 
 
 
@@ -201,10 +190,10 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-6">
-                 <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Profile</h4>
+                 <h4 class="card-title " style="font-weight:700; font-size:15pt;">Profile</h4>
                 </div>
                 <div class="col-6 ">
-                 <p class="card-title font-family" style="float: right;margin-right:30px; color:#ffcc00;">Edit</p>
+                 <p class="card-title " style="float: right;margin-right:30px; color:#ffcc00;">Edit</p>
                  </div>
               </div>
               <div class="row mt-2">
@@ -212,15 +201,15 @@
                   <img src="{{asset('/storage/dealer/icons/img_avatar.png')}}" style="border-radius:50%; max-width: 70px;" alt="Dealer-Image">
                 </div>
                 <div class="col-9 mt-3"> 
-                   <p class="font-family"><b>Customer XXX</b></p>
+                   <p class=""><b>Customer XXX</b></p>
                 </div>
               </div>
               <div class="row mt-5">
                 <div class="col-12">
-                    <p class="font-family" style="color: #d6d4d4; line-height:10px;">Billing Address:</p>
-                    <p class="font-family" style="font-size:11px; font-weight:bold; line-height: 1px;">Manas Hotel 285-287, Jalan Tunku Abdul Rahman 50100</p>
-                    <p class="font-family" style="font-size:11px; font-weight:bold; line-height: 1px;">Kuala Lumpur,Malaysia</p>
-                    <p class="font-family" style="font-size:11px; font-weight:bold; line-height: 1px;">012-2351232</p>
+                    <p class="" style="color: #d6d4d4; line-height:10px;">Billing Address:</p>
+                    <p class="" style="font-size:11px; font-weight:700; line-height: 1px;">Manas Hotel 285-287, Jalan Tunku Abdul Rahman 50100</p>
+                    <p class="" style="font-size:11px; font-weight:700; line-height: 1px;">Kuala Lumpur,Malaysia</p>
+                    <p class="" style="font-size:11px; font-weight:700; line-height: 1px;">012-2351232</p>
                 </div>
               </div>
             </div>
@@ -233,10 +222,10 @@
           <div class="card-body">
               <div class="row">
                 <div class="col-6">
-                 <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Value Records</h4>
+                 <h4 class="card-title " style="font-weight:700; font-size:15pt;">Value Records</h4>
                 </div>
                 <div class="col-6 ">
-                 <p class="card-title font-family" style="float: right;margin-right:30px; color:#ffcc00;">Show More</p>
+                 <p class="card-title " style="float: right;margin-right:30px; color:#ffcc00;">Show More</p>
                  </div>
               </div>
               <div class="row mt-2">
@@ -244,10 +233,10 @@
                  <img src="{{asset('/storage/uploads/images/products/bedsheet-moderate/bedsheet-moderate_1.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                 </div>
                 <div class="col-5 mt-3">
-                    <p class="font-family"><b>Bedsheet Moderate</b></p>
+                    <p class=""><b>Bedsheet Moderate</b></p>
                 </div>
                 <div class="col-4 mt-3">
-                    <p class="font-family">Order Delivered</p>
+                    <p class="">Order Delivered</p>
                 </div>
               </div>
               <div class="row mt-1">
@@ -255,10 +244,10 @@
                     <img src="{{asset('/storage/uploads/images/products/bedsheet-moderate/bedsheet-moderate_5.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                    </div>
                    <div class="col-5 mt-3">
-                       <p class="font-family"><b>Bedsheet Premium</b></p>
+                       <p class=""><b>Bedsheet Premium</b></p>
                    </div>
                    <div class="col-4 mt-3">
-                       <p class="font-family">Order Shipping</p>
+                       <p class="">Order Shipping</p>
                    </div>      
               </div>
               <div class="row mt-1">
@@ -266,10 +255,10 @@
                     <img src="{{asset('/storage/uploads/images/products/bedsheet-moderate/bedsheet-moderate_3.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                    </div>
                    <div class="col-5 mt-3">
-                       <p class="font-family"><b>Bedsheet Yamato</b></p>
+                       <p class=""><b>Bedsheet Yamato</b></p>
                    </div>
                    <div class="col-4 mt-3">
-                       <p class="font-family">Order Shipping</p>
+                       <p class="">Order Shipping</p>
                    </div>      
             </div>
           </div>
@@ -283,10 +272,10 @@
            <div class="card-body">
              <div class="row">
                <div class="col-6">
-                <h4 class="card-title font-family " style="font-weight:bold; font-size:15pt;">Perfect List</h4>
+                <h4 class="card-title  " style="font-weight:700; font-size:15pt;">Perfect List</h4>
                </div>
                <div class="col-6 ">
-                <p class="card-title font-family" style="float: right;margin-right:30px; color:#ffcc00;">Show More</p>
+                <p class="card-title " style="float: right;margin-right:30px; color:#ffcc00;">Show More</p>
                 </div>
              </div>
              <div class="row mt-2">
@@ -294,7 +283,7 @@
                 <img src="{{asset('/storage/uploads/images/products/ales-weathercoat-hybrid/ales-weathercoat-hybrid_1.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                </div>
                <div class="col-5 mt-3">
-                   <p class="font-family"><b>ALES Anti Mosquito</b></p>
+                   <p class=""><b>ALES Anti Mosquito</b></p>
                </div>
                <div class="col-4 mt-3">
                    RM73.80 
@@ -307,7 +296,7 @@
                    <img src="{{asset('/storage/uploads/images/products/ales-weathercoat-hybrid/ales-weathercoat-hybrid_1.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                   </div>
                   <div class="col-5 mt-3">
-                      <p class="font-family"><b>ALES Anti Mosquito Hybrid</b></p>
+                      <p class=""><b>ALES Anti Mosquito Hybrid</b></p>
                   </div>
                   <div class="col-4 mt-3">
                    RM86.00
@@ -319,7 +308,7 @@
                    <img src="{{asset('/storage/uploads/images/products/ales-anti-mosq/ales-anti-mosq_1.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                   </div>
                   <div class="col-5 mt-3">
-                      <p class="font-family"><b>ALES Weathercoat Hybrid</b></p>
+                      <p class=""><b>ALES Weathercoat Hybrid</b></p>
                   </div>
                   <div class="col-4 mt-3">
                    RM43.00
@@ -344,11 +333,7 @@
       border-radius: 15px;
     
     }
-    
-    .text-bold{
-      font-weight: bold;
-    }
-    
+        
     .sub-border-color{
       border: 2pt solid #fbcc34;
     }

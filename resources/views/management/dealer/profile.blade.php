@@ -24,23 +24,23 @@
 
     {{---Desktop Layout----}}
 
-    <div class="hidden-sm font-family">
+    <div class="hidden-sm">
         
         <div class="row">
             <div class="offset-1 col-12 col-md-10">
                 <div class="row">
                     <div class="col-2">
-                     <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header font-family"
+                     <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header"
                      ><strong>User Profile</strong></a>
                     </div>
                     @hasrole('dealer')
                     <div class="col-2">
-                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header font-family" style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Dealer Information</strong></a>
+                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header" style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Dealer Information</strong></a>
                     </div>
                     @endhasrole
                     @hasrole('panel')
                     <div class="col-4">
-                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header font-family" ><strong>Panel: Company Information</strong></a>
+                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header" ><strong>Panel: Company Information</strong></a>
                     </div>
                     @endhasrole          
                 </div>
@@ -319,17 +319,17 @@
  <div class="mt-4 hidden-md">
     <div class="row">
         <div class="col-4">
-         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header font-family"  
+         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header "  
          ><strong>User Profile</strong></a>
         </div>
         @hasrole('dealer')
         <div class="col-4">
-         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header font-family" style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Dealer Information</strong></a>
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Dealer Information</strong></a>
         </div>
         @endhasrole
         @hasrole('panel')
         <div class="col-4">
-         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header font-family" ><strong>Panel: Company Information</strong></a>
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header " ><strong>Panel: Company Information</strong></a>
         </div>
         @endhasrole          
     </div>

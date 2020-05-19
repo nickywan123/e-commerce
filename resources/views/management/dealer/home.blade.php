@@ -291,7 +291,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
 
 {{------------------DESKTOP Layout-----------------------}}
 
-<div class="hidden-sm font-family" >
+<div class="hidden-sm " >
  <div class="row">
   <div class="row">
    <div class="col-12 col-md-12">
@@ -305,10 +305,10 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
          <div class="card-body" style="height: 150px;">
              <div class="row">
               <div class="col-6 col-md-6">
-              <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Today Sales</h4>
+              <h4 class="card-title " style="font-weight:bold; font-size:15pt;">Today Sales</h4>
               </div>
               <div class="col-6 col-md-6">
-               <p class="card-title font-family" style="float: right; color:#ffcc00;">Show more</p>
+               <p class="card-title " style="float: right; color:#ffcc00;">Show more</p>
               </div>
              </div>
           
@@ -317,8 +317,8 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
               <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
              </div>
              <div class="col-7 col-md-7 ml-4 mt-2" style="line-height: 20px;">   
-              <p class="card-title font-family" style="font-weight:bold; font-size:20pt;">RM 28,888</P>
-              <p class="font-family">Daily Revenue: 08/05/2020</p>
+              <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 28,888</P>
+              <p class="">Daily Revenue: 08/05/2020</p>
              </div>
             </div> 
          </div>
@@ -328,10 +328,10 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
           <div class="card-body" style="height: 150px;">
             <div class="row">
               <div class="col-6 col-md-6">
-               <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Sales Summary</h4>
+               <h4 class="card-title " style="font-weight:bold; font-size:15pt;">Sales Summary</h4>
               </div>
               <div class="col-6 col-md-6">
-               <p class="card-title font-family" style="float: right; color:#ffcc00;">Show more</p>
+               <p class="card-title " style="float: right; color:#ffcc00;">Show more</p>
               </div>
             </div>
            
@@ -340,7 +340,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
                <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
               </div>
               <div class="col-7 col-md-7 ml-4 mt-2" style="line-height: 20px;">
-               <p class="card-title font-family" style="font-weight:bold; font-size:20pt;">RM 88,888</P>
+               <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 88,888</P>
                Month Revenue: May 2020
               </div>
             </div> 
@@ -353,10 +353,10 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
             <div class="card-body" style="min-height: 325px;">
               <div class="row">
                 <div class="col-6 col-md-6">
-                  <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Monthly Income</h4>
+                  <h4 class="card-title " style="font-weight:bold; font-size:15pt;">Monthly Income</h4>
                 </div>
                 <div class="col-6 col-md-6">
-                 <p class="card-title font-family" style="float: right; color:#ffcc00;">Show more</p>
+                 <p class="card-title " style="float: right; color:#ffcc00;">Show more</p>
                 </div>
               </div>
               <div class="row">
@@ -373,35 +373,35 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
   <div class="col-4 col-md-4 ml-5">
     <div class="row" >
       <div class="col-12 col-md-12">
-       <p class="text-bold font-family" style="font-size:15pt; border-bottom:1px solid black;">Announcement</p>
+       <p class="text-bold " style="font-size:15pt; border-bottom:1px solid black;">Announcement</p>
       </div>
     </div>
 
     <div class="row">
       <div class="col-12 col-md-12">
-        <p class="font-family" style="color:#d6d4d4;">4 minutes ago</p>
-        <p class="text-bold font-family" style="line-height: 1px; font-size:20px;">Message Title</p>
-        <p class="font-family" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+        <p class="" style="color:#d6d4d4;">4 minutes ago</p>
+        <p class="text-bold " style="line-height: 1px; font-size:20px;">Message Title</p>
+        <p class="" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
         <p style="border-bottom:1px solid black;"></p>
       </div>
     </div>
 
     <div class="row">
       <div class="col-12 col-md-12">
-        <p class="font-family" style="color:#d6d4d4;">1.00 PM</p>
-        <p class="text-bold font-family" style="line-height: 1px; font-size:20px;">Message Title</p>
-        <p class="font-family" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+        <p class="" style="color:#d6d4d4;">1.00 PM</p>
+        <p class="text-bold " style="line-height: 1px; font-size:20px;">Message Title</p>
+        <p class="" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
         <p style="border-bottom:1px solid black;"></p>
       </div>
     </div>
 
     <div class="row">
       <div class="col-12 col-md-12">
-        <p class="font-family" style="color:#d6d4d4;">Yesterday 10.00 AM</p>
-        <p class="text-bold font-family" style="line-height: 1px; font-size:20px;">Message Title</p>
-        <p class="font-family" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-        <p class="font-family"  style="border-bottom:1px solid black;"></p>
-        <p class="font-family"  style="color:#ffcc00; text-align:center;">Show more</p>
+        <p class="" style="color:#d6d4d4;">Yesterday 10.00 AM</p>
+        <p class="text-bold " style="line-height: 1px; font-size:20px;">Message Title</p>
+        <p class="" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+        <p class=""  style="border-bottom:1px solid black;"></p>
+        <p class=""  style="color:#ffcc00; text-align:center;">Show more</p>
       </div>
     </div>
   </div>
@@ -414,15 +414,15 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
     <div class="card border-radius-card shadow" >
       <div class="card-body">
         <div class="row">
-          <div class="col-8 col-md-8 font-family">
+          <div class="col-8 col-md-8 ">
            <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Group Performance</h4>
           </div>
-          <div class="col-4 col-md-4 font-family">
+          <div class="col-4 col-md-4 ">
            <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
            </div>
         </div>
         <div class="row">
-          <div class="col-6 col-md-6 text-bold font-family" >
+          <div class="col-6 col-md-6 text-bold " >
             <p class="ml-2">Member A</p>
             <div class="card border-radius-card mt-1  sub-border-color" >
               <div class="card-body" style="max-height: 200px;">  
@@ -437,7 +437,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-6 text-bold font-family" >
+          <div class="col-6 col-md-6 text-bold " >
             <p class="ml-2">Member B</p>
             <div class="card border-radius-card mt-1  sub-border-color" >
               <div class="card-body" style="max-height: 200px;">        
@@ -457,7 +457,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
      </div>  
    </div>
 
-   <div class="col-4 font-family">
+   <div class="col-4 ">
     <div class="card border-radius-card shadow" style="width:490px;height: 345px;" >
       <div class="card-body">
         <div class="row">
@@ -490,7 +490,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
    </div>
 
 
-  <div class="col-4 col-md-4 font-family">
+  <div class="col-4 col-md-4 ">
     <div class="card border-radius-card shadow" style="height:340px; ">
       <div class="card-body">
         <div class="row">
@@ -753,7 +753,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
 {{-------------------------Laptop layout----------------------------}}
 
 
-<div class="hidden-laptop font-family">
+<div class="hidden-laptop ">
   <div class="row">
     <div class="col-8">
       <div class="row ml-2">
@@ -766,10 +766,10 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
               <div class="card-body" style="height: 100%;">
                   <div class="row">
                    <div class="col-6 col-md-6">
-                   <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Today Sales</h4>
+                   <h4 class="card-title " style="font-weight:bold; font-size:15pt;">Today Sales</h4>
                    </div>
                    <div class="col-6 col-md-6">
-                    <p class="card-title font-family" style="float: right; color:#ffcc00;">Show more</p>
+                    <p class="card-title " style="float: right; color:#ffcc00;">Show more</p>
                    </div>
                   </div>
                
@@ -778,8 +778,8 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
                    <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
                   </div>
                   <div class="col-7 col-md-7 ml-5 mt-2" style="line-height: 20px;">   
-                   <p class="card-title font-family" style="font-weight:bold; font-size:20pt;">RM 8,888</P>
-                   <p class="font-family">Daily Revenue: 08/05/2020</p>
+                   <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 8,888</P>
+                   <p class="">Daily Revenue: 08/05/2020</p>
                   </div>
                  </div> 
               </div>
@@ -790,10 +790,10 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
               <div class="card-body" style="height: 100%">
                   <div class="row">
                    <div class="col-6 col-md-6">
-                   <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Sales Summary</h4>
+                   <h4 class="card-title " style="font-weight:bold; font-size:15pt;">Sales Summary</h4>
                    </div>
                    <div class="col-6 col-md-6">
-                    <p class="card-title font-family" style="float: right; color:#ffcc00;">Show more</p>
+                    <p class="card-title " style="float: right; color:#ffcc00;">Show more</p>
                    </div>
                   </div>
                
@@ -802,8 +802,8 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
                    <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
                   </div>
                   <div class="col-7 col-md-7 ml-5 mt-2" style="line-height: 20px;">   
-                   <p class="card-title font-family" style="font-weight:bold; font-size:20pt;">RM 28,888</P>
-                   <p class="font-family">Daily Revenue: 08/05/2020</p>
+                   <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 28,888</P>
+                   <p class="">Daily Revenue: 08/05/2020</p>
                   </div>
                  </div> 
               </div>
@@ -815,10 +815,10 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
             <div class="card-body" >
               <div class="row">
                 <div class="col-6 col-md-6">
-                  <h4 class="card-title font-family" style="font-weight:bold; font-size:15pt;">Monthly Income</h4>
+                  <h4 class="card-title " style="font-weight:bold; font-size:15pt;">Monthly Income</h4>
                 </div>
                 <div class="col-6 col-md-6">
-                 <p class="card-title font-family" style="float: right; color:#ffcc00;">Show more</p>
+                 <p class="card-title " style="float: right; color:#ffcc00;">Show more</p>
                 </div>
               </div>
               <div class="row">
@@ -834,35 +834,35 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
     <div class="col-4">
         <div class="row" >
         <div class="col-12 col-md-12">
-         <p class="text-bold font-family" style="font-size:15pt; border-bottom:1px solid black;">Announcement</p>
+         <p class="text-bold " style="font-size:15pt; border-bottom:1px solid black;">Announcement</p>
         </div>
       </div>
   
       <div class="row">
         <div class="col-12 col-md-12">
-          <p class="font-family" style="color:#d6d4d4;">4 minutes ago</p>
-          <p class="text-bold font-family" style="line-height: 1px; font-size:20px;">Message Title</p>
-          <p class="font-family" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+          <p class="" style="color:#d6d4d4;">4 minutes ago</p>
+          <p class="text-bold " style="line-height: 1px; font-size:20px;">Message Title</p>
+          <p class="" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
           <p style="border-bottom:1px solid black;"></p>
         </div>
       </div>
   
       <div class="row">
         <div class="col-12 col-md-12">
-          <p class="font-family" style="color:#d6d4d4;">1.00 PM</p>
-          <p class="text-bold font-family" style="line-height: 1px; font-size:20px;">Message Title</p>
-          <p class="font-family" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+          <p class="" style="color:#d6d4d4;">1.00 PM</p>
+          <p class="text-bold " style="line-height: 1px; font-size:20px;">Message Title</p>
+          <p class="" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
           <p style="border-bottom:1px solid black;"></p>
         </div>
       </div>
   
       <div class="row">
         <div class="col-12 col-md-12">
-          <p class="font-family" style="color:#d6d4d4;">Yesterday 10.00 AM</p>
-          <p class="text-bold font-family" style="line-height: 1px; font-size:20px;">Message Title</p>
-          <p class="font-family" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-          <p class="font-family"  style="border-bottom:1px solid black;"></p>
-          <p class="font-family"  style="color:#ffcc00; text-align:center;">Show more</p>
+          <p class="" style="color:#d6d4d4;">Yesterday 10.00 AM</p>
+          <p class="text-bold " style="line-height: 1px; font-size:20px;">Message Title</p>
+          <p class="" style="font-size:15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+          <p class=""  style="border-bottom:1px solid black;"></p>
+          <p class=""  style="color:#ffcc00; text-align:center;">Show more</p>
         </div>
       </div>
     </div>
@@ -873,15 +873,15 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
       <div class="card border-radius-card shadow" style="width:100%; height:100%;" >
         <div class="card-body">
           <div class="row">
-            <div class="col-8 col-md-8 font-family">
+            <div class="col-8 col-md-8 ">
              <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Group Performance</h4>
             </div>
-            <div class="col-4 col-md-4 font-family">
+            <div class="col-4 col-md-4 ">
              <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
              </div>
           </div>
           <div class="row">
-            <div class="col-6 col-md-6 text-bold font-family" >
+            <div class="col-6 col-md-6 text-bold " >
               <p class="ml-2">Member A</p>
               <div class="card border-radius-card mt-1  sub-border-color" >
                 <div class="card-body" style="max-height: 200px;">  
@@ -896,7 +896,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
                 </div>
               </div>
             </div>
-            <div class="col-6 col-md-6 text-bold font-family" >
+            <div class="col-6 col-md-6 text-bold " >
               <p class="ml-2">Member B</p>
               <div class="card border-radius-card mt-1  sub-border-color" >
                 <div class="card-body" style="max-height: 200px;">        

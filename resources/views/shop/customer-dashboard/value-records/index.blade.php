@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9 mt-4">
-                <h3 style="font-size:40px;" class="font-family"><strong>Value Records</strong></h3>
+                <h3 style="font-size:40px;" ><strong>Value Records</strong></h3>
             </div>
 
 
@@ -27,18 +27,18 @@
 
         </div>
         <div class="container-fluid" style="margin-top:20px;">
-            <a href="/shop/dashboard/orders/index" class="orders-text-style font-family"
+            <a href="/shop/dashboard/orders/index" class="orders-text-style"
                 style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>All
                         Orders</strong></a>
-            <a href="/shop/dashboard/orders/open-orders" class="orders-text-style font-family" ><strong>Open Orders</strong></a>
-            <a href="/shop/dashboard/orders/order-status" class="orders-text-style font-family" ><strong>Order
+            <a href="/shop/dashboard/orders/open-orders" class="orders-text-style" ><strong>Open Orders</strong></a>
+            <a href="/shop/dashboard/orders/order-status" class="orders-text-style" ><strong>Order
                         Status</strong></a>
             {{-- <a href="#" class="orders-text-style"><strong>Return Orders</strong></a> --}}
-            <a href="#" class="orders-text-style font-family"><strong>Pending Star Ratings</strong></a>
+            <a href="#" class="orders-text-style"><strong>Pending Star Ratings</strong></a>
         </div>
         <hr>
         @if(!$purchases->isEmpty())
-        <div class="card shadow-sm font-family">
+        <div class="card shadow-sm">
             <div class="card-body">
                 @foreach($purchases as $purchase)
                 <h4 style="font-weight:bold; color:rgb(250, 172, 24);">Purchase #: {{ $purchase->getFormattedNumber()}}
@@ -119,7 +119,7 @@
                                     <p>Quantity: {{$item->quantity}}</p>
                                 </div>
                                 <div class="col-12 ">
-                                    <p style="font-family:cursive;">Estimate Delivery Date: {{$order->delivery_date}}
+                                    <p >Estimate Delivery Date: {{$order->delivery_date}}
                                     </p>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@
         </div>
         @else
         <div>
-        <strong class="mr-2 font-family" style="font-size:15pt;"> There are no orders found.</strong>
+        <strong class="mr-2 " style="font-size:15pt;"> There are no orders found.</strong>
         <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
         </div>
         @endif
@@ -164,12 +164,12 @@
 
 
 
-<div class="mt-3 mt-md-0 hidden-md font-family" style="min-height: 100vh;">
+<div class="mt-3 mt-md-0 hidden-md " style="min-height: 100vh;">
     <div class="container" style="margin-top: 50px;">
         <div class="row">        
             <div class="row">
                 <div class="col-7  mt-4">
-                    <h3 style="font-size:20px; font-family: Nunito; "><strong class="text-font-family">Value
+                    <h3 style="font-size:20px;"><strong >Value
                             Records</strong></h3>          
                 </div>
                 <div class="dropdown col-4 mt-3">
@@ -301,7 +301,7 @@
                    
                         <div class="row ">
                             <div class="col-12 ">
-                                <p style="font-family:cursive;">Estimate Delivery Date: {{$order->delivery_date}} </p>
+                                <p >Estimate Delivery Date: {{$order->delivery_date}} </p>
                             </div>
                         </div>
                   
@@ -395,10 +395,7 @@
         }
 
 
-        .text-font-family {
-            font-family: 'Nunito', sans-serif;
-        }
-
+       
 
         @media (min-width:800px) and (max-width:1030px) {
             .card-body{

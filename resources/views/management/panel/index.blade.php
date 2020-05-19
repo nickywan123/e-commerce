@@ -23,7 +23,7 @@
 @endif
 
 {{--Desktop layout--}}
-<div class="hidden-sm font-family" style="font-size:small;">
+<div class="hidden-sm" style="font-size:small;">
   <div class="row">
     <div class="col-12 mb-3">
       <h1 style="font-weight:bold;">Value Tracking</h1>
@@ -128,21 +128,21 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="row">
-          <div class="col-12 font-family-style text-bold">
+          <div class="col-12  text-bold">
             PO No:
             <a href="/management/panel/orders/purchase-order-pdf/{{$customerOrder->order_number}}">{{$customerOrder->order_number}}</a>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-12 font-family-style text-bold">
+          <div class="col-12  text-bold">
             Product ID:
             {{ $item->product->parentProduct->product_code }}
           </div>
         </div>
 
         <div class="row">
-          <div class="col-12 font-family-style text-bold" style="margin-bottom:0px;">
+          <div class="col-12  text-bold" style="margin-bottom:0px;">
             Product Description:
           </div>
           <div class="col-12 text-bold">
@@ -151,14 +151,14 @@
         </div>
 
         <div class="row">
-          <div class="col-12 font-family-style text-bold">
+          <div class="col-12  text-bold">
             Order Date:
             {{$customerOrder->getFormattedDate()}}
           </div>
         </div>
 
         <div class="row">
-          <div class="col-12 font-family-style text-bold">
+          <div class="col-12  text-bold">
             Estimate Delivery Date:
             <input name='delivery_date' value="{{$customerOrder->delivery_date}}" class="date form-control" type="text" placeholder="Select delivery date" required autocomplete="off">
           </div>
@@ -166,14 +166,14 @@
         </div>
 
         <div class="row">
-          <div class="col-12 font-family-style text-bold">
+          <div class="col-12  text-bold">
             Pending Days:
             {{$customerOrder->getPendingAttribute()}}
           </div>
         </div>
 
         <div class="row">
-          <div class="col-12 font-family-style text-bold">
+          <div class="col-12  text-bold">
             Product Status:
             @if ($customerOrder->order_status === 1000)
             Record Created
@@ -188,7 +188,7 @@
         </div>
 
         <div class="row">
-          <div class="col-12 font-family-style text-bold">
+          <div class="col-12  text-bold">
             Order Received Date:
             {{$customerOrder->received_date}}
           </div>
@@ -196,7 +196,7 @@
 
 
         <div class="row">
-          <div class="col-12 font-family-style text-bold">
+          <div class="col-12  text-bold">
             Claim Status:
             {{$customerOrder->claim_status}}
           </div>
@@ -227,10 +227,7 @@
     font-weight: bold;
   }
 
-  .font-family-style {
-    font-family: 'Nunito', sans-serif;
-  }
-
+  
   .orders-text-style {
     color: rgb(250, 172, 24);
     margin-right: 45px;

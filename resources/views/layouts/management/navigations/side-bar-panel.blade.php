@@ -1,6 +1,6 @@
 
 
-<div class="sidebar sidebar-bg-color-panel font-family" style=" width: 240px;">
+<div class="sidebar sidebar-bg-color-panel " style=" width: 240px;">
     <nav class="sidebar-nav ">
       <ul class="list-unstyled components" >
          <br>

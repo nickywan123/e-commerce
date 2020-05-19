@@ -6,7 +6,7 @@
 
 <br>
 
-<div class="row font-family">
+<div class="row ">
     <div class="col-12">
         <h2><strong>Perfect List</strong></h2>
     </div> 
@@ -15,7 +15,7 @@
 <br>
 
 
-<div class="row font-family">
+<div class="row ">
     <div class="col-2">
         <a href="#" class="header-text-style"
         style="border-bottom: 2px solid rgb(250, 172, 24);">
@@ -41,7 +41,7 @@
 {{--Template for wish list--}}
 
 
-<div class="card shadow-sm font-family">
+<div class="card shadow-sm ">
     <div class="card-body">
        
         {{-- <h4 style="font-weight:bold; color:rgb(250, 172, 24);">Purchase #: 

@@ -9,20 +9,20 @@
 
 {{--Desktop layout--}}
 
-<div class="mt-3 mt-md-0 hidden-sm font-family">
+<div class="mt-3 mt-md-0 hidden-sm ">
     <div class="row">
         <div class="col-3">
-         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family" style="border-bottom: 2px solid rgb(250, 172, 24);"
+         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);"
          ><strong style="color:black; font-size:15pt;">Edit Profile</strong></a>
         </div>
         @hasrole('dealer')
         <div class="col-3">
-         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header font-family"  ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header "  ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
         </div>
         @endhasrole
         @hasrole('panel')
         <div class="col-3">
-         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
         </div>
         @endhasrole          
     </div> <br>
@@ -36,7 +36,7 @@
 <form action="{{route('profile.update',[$customerInfo->id])}}" method="POST">
     <input type="hidden" name="_method" value="PATCH">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <div class="row font-family">
+    <div class="row ">
         <div class="col-12 col-md-10">
             <div class="card shadow-sm">
                 <div class="card-body">
@@ -340,20 +340,20 @@
 {{------MOBILE LAYOUT-------}}
 
 
-<div class="mt-3 mt-md-0 hidden-md font-family">
+<div class="mt-3 mt-md-0 hidden-md ">
     <div class="row">
         <div class="col-4">
-         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header font-family" style="border-bottom: 2px solid rgb(250, 172, 24);" 
+         <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" 
          ><strong style="color:black;">Edit User Profile</strong></a>
         </div>
         @hasrole('dealer')
         <div class="col-4">
-         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black;">Edit Dealer Information</strong></a>
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " ><strong style="color:black;">Edit Dealer Information</strong></a>
         </div>
         @endhasrole
         @hasrole('panel')
         <div class="col-4">
-         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header font-family" ><strong style="color:black;">Edit Panel Information</strong></a>
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong style="color:black;">Edit Panel Information</strong></a>
         </div>
         @endhasrole          
     </div>
@@ -368,12 +368,12 @@
 <form action="{{route('profile.update',[$customerInfo->id])}}" method="POST">
     <input type="hidden" name="_method" value="PATCH">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <div class="row font-family">
+    <div class="row ">
         <div class="col-12 col-md-10">
             <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="form-group row ">
-                        <label for="avatar" class="col-md-2 col-form-label text-font-family">Avatar:</label>
+                        <label for="avatar" class="col-md-2 col-form-label ">Avatar:</label>
                         <div class="col-md-1">
                             <img src="{{asset('/storage/avatar/default-avatar.jpg')}}"
                                 style="max-width:80px; max-height:80px;" alt="avatar">
@@ -389,7 +389,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="account_id" class="col-md-2 col-form-label text-font-family">Bujishu ID</label>
+                        <label for="account_id" class="col-md-2 col-form-label ">Bujishu ID</label>
                         <div class="col-md-9">
                             <input type="text" name="account_id" value="{{$customerInfo->userInfo->account_id}}"
                                 class="form-control @error('account_id') is-invalid @enderror"
@@ -403,7 +403,7 @@
 
 
                     <div class="form-group row ">
-                        <label for="full_name" class="col-md-2 col-form-label text-font-family">Full Name(NRIC)</label>
+                        <label for="full_name" class="col-md-2 col-form-label ">Full Name(NRIC)</label>
                         <div class="col-md-3">
                             <input type="text" name="full_name" value="{{$customerInfo->userInfo->full_name}}"
                                 class="form-control @error('full_name') is-invalid @enderror"
@@ -420,7 +420,7 @@
                     </div>
 
                     <div class="form-group row ">
-                        <label for="billing_address_1" class="col-md-2 col-form-label text-font-family">Billing Address
+                        <label for="billing_address_1" class="col-md-2 col-form-label ">Billing Address
                         </label>
                         <div class="col-md-9">
                             <input type="text" name="billing_address_1"
@@ -474,7 +474,7 @@
 
 
                     <div class="form-group row ">
-                        <label for="billing_postcode" class="col-md-2 col-form-label text-font-family">Billing
+                        <label for="billing_postcode" class="col-md-2 col-form-label ">Billing
                             Postcode</label>
                         <div class="col-md-4">
                             <input type="text" name="billing_postcode"
@@ -493,7 +493,7 @@
                     </div>
 
                     <div class="form-group row ">
-                        <label for="billing_city" class="col-md-2 col-form-label text-font-family">Billing City</label>
+                        <label for="billing_city" class="col-md-2 col-form-label ">Billing City</label>
                         <div class="col-md-4">
                             <input type="text" name="billing_city"
                                 value="{{$customerInfo->userInfo->mailingAddress->city}}"
@@ -512,7 +512,7 @@
 
 
                     <div class="form-group row ">
-                        <label for="company_address" class="col-md-2 col-form-label text-font-family">Shipping Address
+                        <label for="company_address" class="col-md-2 col-form-label ">Shipping Address
                         </label>
                         <div class="col-md-9">
                             <input type="text" name="shipping_address_1"
@@ -567,7 +567,7 @@
                     </div>
 
                     <div class="form-group row ">
-                        <label for="company_address" class="col-md-2 col-form-label text-font-family">Shipping
+                        <label for="company_address" class="col-md-2 col-form-label ">Shipping
                             Postcode</label>
                         <div class="col-md-4">
                             <input type="text" name="shipping_postcode"
@@ -585,7 +585,7 @@
                     </div>
 
                     <div class="form-group row ">
-                        <label for="shipping_city" class="col-md-2 col-form-label text-font-family">Shipping City
+                        <label for="shipping_city" class="col-md-2 col-form-label ">Shipping City
                         </label>
                         <div class="col-md-4">
                             <input type="text" name="shipping_city"
@@ -603,7 +603,7 @@
 
 
                     <div class="form-group row ">
-                        <label for="mobile_phone" class="col-md-2 col-form-label text-font-family">Mobile Phone</label>
+                        <label for="mobile_phone" class="col-md-2 col-form-label ">Mobile Phone</label>
                         <div class="col-md-4">
                             <input type="text" name="mobile_phone"
                                 value="{{$customerInfo->userInfo->mobileContact->contact_num}}"
@@ -629,7 +629,7 @@
 
                 <div class="form-group row">
 
-                    <label for="email" class="col-md-2 col-form-label text-font-family">Email Address</label>
+                    <label for="email" class="col-md-2 col-form-label ">Email Address</label>
                     <div class="col-md-4">
                         <input type="text" name="email" value="{{$customerInfo->email}}"
                             class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"
@@ -643,7 +643,7 @@
                 </div>
 
                 <div class="form-group row ">
-                    <label for="id_information" class="col-md-2 col-form-label text-font-family">ID Information</label>
+                    <label for="id_information" class="col-md-2 col-form-label ">ID Information</label>
                     <div class="col-md-9">
                         <input type="text" name="id_information" value="WIP"
                             class="form-control @error('id_information') is-invalid @enderror" readonly>
@@ -702,9 +702,6 @@
     }
 
 
-    .text-font-family {
-        font-family: cursive;
-    }
 
 </style>
 @endsection

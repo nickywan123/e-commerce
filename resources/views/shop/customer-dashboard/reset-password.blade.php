@@ -40,13 +40,13 @@
     {{-- {{$resetPassword}} --}}
     
 
-    <div class="container font-family" style="position: relative; top: 150px;">
+    <div class="container " style="position: relative; top: 150px;">
         <div class="row justify-content-center" align="center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" style="color:rgba(255, 202, 5, 1)">{{ __('Reset Password') }}</div>
     
-                    <div class="card-body" style="font-family:cursive;">
+                    <div class="card-body" >
                        <div class="form-group row">
                         The reset password link has been sent to your email address.
                        </div>

@@ -6,7 +6,7 @@
 
 {{--Desktop layout--}}
 
-<div class="mt-3 hidden-sm font-family" style="min-height: 100vh; margin-right: 120px;">
+<div class="mt-3 hidden-sm " style="min-height: 100vh; margin-right: 120px;">
     <div class="container">
         <div class="row">
             <div class="col-md-9 mt-4">
@@ -115,7 +115,7 @@
                                     <p>Quantity: {{$item->quantity}}</p>
                                 </div>
                                 <div class="col-12 ">
-                                    <p style="font-family:cursive;">Estimate Delivery Date: {{$order->delivery_date}}
+                                    <p >Estimate Delivery Date: {{$order->delivery_date}}
                                     </p>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
             </div>
         </div>
         @else
-        <strong class="mr-2 font-family" style="font-size:15pt;"> There are no orders found.</strong>
+        <strong class="mr-2 font-size:15pt;"> There are no orders found.</strong>
         <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
         @endif
     </div>
@@ -164,7 +164,7 @@
         <div class="row">        
             <div class="row">
                 <div class="col-7  mt-4">
-                    <h3 style="font-size:20px; font-family: Nunito; "><strong class="text-font-family">Value
+                    <h3 style="font-size:20px;  "><strong >Value
                             Records</strong></h3>          
                 </div>
                 <div class="dropdown col-4 mt-3">
@@ -390,9 +390,7 @@
         }
 
 
-        .text-font-family {
-            font-family: 'Nunito', sans-serif;
-        }
+        
 
 
         @media (min-width:800px) and (max-width:1030px) {

@@ -32,10 +32,10 @@
     @include('layouts.management.navigations.navigation-bar-customer')
     <div class="app-body ">
         @include('layouts.management.navigations.side-bar-customer')
-        <main class="main ">
+        <main class="main">
 
             @yield('breadcrumbs')
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding:3rem">
                 <div class="animated fadeIn">
                     <!-- Content Here -->
                     @yield('content')

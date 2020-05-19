@@ -41,15 +41,15 @@
 
 <body>
 
-    <div class="bg-md bg-sm font-family">
+    <div class="bg-md bg-sm ">
         <div class="row">
             <div class="col-6 offset-3 col-md-4 offset-md-4 text-center">
                 <img class="mw-100 w-50-md" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="">
             </div>
         </div>
-        <div class="font-family">
+        <div class="">
             <div class="card border-rounded-0 bg-bujishu-gold mt-4 guests-card" style="border-radius: 10px;">
-                <h5 class="text-center bujishu-gold form-card-title font-family" style="border-radius: 10px;"><b>SIGN IN</b></h5>
+                <h5 class="text-center bujishu-gold form-card-title " style="border-radius: 10px;"><b>SIGN IN</b></h5>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

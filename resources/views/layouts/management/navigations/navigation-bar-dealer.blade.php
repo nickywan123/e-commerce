@@ -19,7 +19,7 @@
   
 
     <ul class="nav navbar-nav ml-auto">      
-      <h5 style="margin-right:10px" class="welcome-text font-family"  >{{Auth::user()->userInfo->full_name}}</h5> 
+      <h5 style="margin-right:10px" class="welcome-text "  >{{Auth::user()->userInfo->full_name}}</h5> 
       <li class="nav-item dropdown">
          <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
            <img class="img-avatar" src="{{asset('storage/avatar/default-avatar.jpg')}}" alt="{{ Auth::user()->userInfo->full_name }}">

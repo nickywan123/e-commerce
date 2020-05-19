@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="backgroundImg-about-us font-family" >
+<div class="backgroundImg-about-us " >
 
 <div class="row m-0">
     <div class="offset-3 col-9 mt-5">

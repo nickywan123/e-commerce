@@ -1,5 +1,5 @@
 {{---Mobile Layout--}}
-<div class="middleBar font-family" style="border-bottom: 1px solid #fccb34;">
+<div class="middleBar " style="border-bottom: 1px solid #fccb34;">
     <div class="container-90">
         <div class="row d-flex">
             <div class="col-sm-2 vertical-align mt-2 mb-3">
@@ -77,12 +77,12 @@
             <!-- end col -->
 
             {{--Desktop layout---}}
-            <div class="col-sm-8 vertical-align text-center my-auto font-family">
+            <div class="col-sm-8 vertical-align text-center my-auto ">
                 <form>
                     <div class="row grid-space-1">
                         <div class="col-12 my-auto display-same-row">
                             <div class="pb-2 nav-content-sidebar-collapse">
-                                <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size font-family" name="category">
+                                <select class="form-control navigation-input input-lg w-25 hidden-sm border-left-rounded-10 margin-right-negative-with-border margin-right-border-color search-bar-size " name="category">
                                     <option value="all">All Categories </option>
                                     <!-- <optgroup label="Mens">
 
@@ -110,7 +110,7 @@
                     <li class="nav-item m-1">
                         <div class="dropdown show">
                             <!-- TODO: Create a class for the style -->
-                            <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse font-family" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px; margin-left: 30px;">
+                            <a class="btn btn-secondary dropdown-toggle my-account-button nav-content-sidebar-collapse " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FBCC34; background-color: #000000; border: 1px solid #FBCC34; padding-right: 40px; margin-left: 30px;">
                                 <b> MY ACCOUNT</b>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

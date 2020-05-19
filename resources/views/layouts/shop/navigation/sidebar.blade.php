@@ -8,7 +8,7 @@
     </div>
 
     <ul class="list-unstyled components ">
-        <h4 class="font-family" style="color: #212529; padding: 5px 10px;"><strong>Shop By Category</strong></h4>
+        <h4 style="color: #212529; padding: 5px 10px;"><strong>Shop By Category</strong></h4>
         <li>
             <a  href="/shop/product/panel-registration?panel=1918000101">Panel Registration</a>
             @foreach($categories as $category)

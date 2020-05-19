@@ -11,9 +11,9 @@
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   </head>
-<body class="font-family">
+<body >
     <div class="container">
-        <div class="">
+        <div >
       
       <div class="container">
         <span class="float-left " > <img src="{{ asset('images/Invoice-Logo.png') }}" style="width:50%;" alt="No Logo"></span>

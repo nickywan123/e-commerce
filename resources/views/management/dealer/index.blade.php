@@ -6,7 +6,7 @@
 
 <br>
 
-<div class="row font-family">
+<div class="row ">
  <div class="offset-1 col-10">
      <h3>Monthly Statement</h3>
  </div>
@@ -14,7 +14,7 @@
 
 <br>
 
-<div class="row font-family">
+<div class="row ">
  <div class="offset-1 col-11">
     <table class="table">
         <thead>

@@ -24,7 +24,7 @@
 
     <div class="backgroundImage">
         <div class="text-right p-3">
-            <a href="/register-dealer " class="btn p-2 bjsh-btn-gradient font-family"><b>{{ __('BE A DEALER') }}</b></a>
+            <a href="/register-dealer " class="btn p-2 bjsh-btn-gradient "><b>{{ __('BE A DEALER') }}</b></a>
         </div>
 
 
@@ -39,7 +39,7 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12 col-md-8 offset-md-2 text-center">
-                    <h2 class="bujishu-motto font-family">
+                    <h2 class="bujishu-motto ">
                         A home is made of
                         <i>
                             <p class="bujishu-recursive">hopes</p>
@@ -49,7 +49,7 @@
                             <p class="bujishu-recursive">dreams</p>
                         </i>
                     </h2>
-                    <h2 class="bujishu-motto font-family">
+                    <h2 class="bujishu-motto ">
                         Let us
                         <i>
                             <p class="bujishu-recursive">inspire</p>
@@ -62,8 +62,8 @@
 
             <div class="row mt-4">
                 <div class="col-12 col-md-4 offset-md-4 text-center">
-                    <a href="/login " class="btn  grad2 bjsh-btn-gradient btn-small-screen font-family "><b>{{ __('LOGIN') }}</b></a>
-                    <a href="/register" class="btn  grad2 bjsh-btn-gradient btn-small-screen font-family"><b> {{ __('SIGN UP') }}</b></a>
+                    <a href="/login " class="btn  grad2 bjsh-btn-gradient btn-small-screen  "><b>{{ __('LOGIN') }}</b></a>
+                    <a href="/register" class="btn  grad2 bjsh-btn-gradient btn-small-screen "><b> {{ __('SIGN UP') }}</b></a>
                 </div>
             </div>
         </div>
