@@ -16,7 +16,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet'>
 
 
@@ -36,7 +36,6 @@
 
     <!-- Navigation bar -->
     @include('layouts.shop.navigation.navigation')
-    {{-- @livewire('counter') --}}
 
     <!-- Side bar -->
     @include('layouts.shop.navigation.sidebar')
