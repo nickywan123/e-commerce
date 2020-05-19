@@ -78,7 +78,7 @@
         <div class="card shadow-sm border-rounded-0 bg-bujishu-gold">
             <div class="card-body">
                 <div class="text-center pt-3 pb-3">
-                    <h2>Sorry, this page has been disabled.</h2>
+                    <h2>Sorry, this page has been temporarily disabled.</h2>
                 </div>
                 <div class="text-center">
                     <a href="/" class="btn" style="background-color: #ffffff;">Go Home</a>
