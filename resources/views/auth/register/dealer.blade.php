@@ -387,6 +387,42 @@
 
 @push('script')
 <script>
+
+    // Disable spouse information if marital status is single
+    $(document).on('change', 'select[name=marital_id]', function(e) {
+    var el = $(this);
+
+    if (el.val() == '1' || el.val() == '3') {
+        
+        //reset spouse fields to empty if user input changes to 1 or 3
+         $('input[name=spouse_full_name').val('');
+         $('input[name=spouse_nric').val('');
+         $('input[name=spouse_full_name').val('');
+         $('input[name=spouse_date_of_birth').val('');
+         $('input[name=spouse_occupation').val('');
+         $('input[name=spouse_contact_office').val('');
+         $('input[name=spouse_contact_mobile').val('');
+         $('input[name=spouse_email').val('');
+       
+        //disable spouse information if single
+         $('#spouse_full_name').prop('readonly', true);
+         $('#spouse_nric').prop('readonly', true);
+         $('#spouse_date_of_birth').prop('readonly', true);
+         $('#spouse_occupation').prop('readonly', true);
+         $('#spouse_contact_office').prop('readonly', true);
+         $('#spouse_contact_mobile').prop('readonly', true);
+         $('#spouse_email').prop('readonly', true);
+    } else {
+         $('#spouse_full_name').prop('readonly',false);
+         $('#spouse_nric').prop('readonly',false);
+         $('#spouse_date_of_birth').prop('readonly',false);
+         $('#spouse_occupation').prop('readonly',false);
+         $('#spouse_contact_office').prop('readonly',false);
+         $('#spouse_contact_mobile').prop('readonly',false);
+         $('#spouse_email').prop('readonly',false);
+    }
+});
+
     let currentTab = $('.nav-tabs > .active');
     let nextTab = currentTab.next('li');
 
@@ -461,14 +497,7 @@
                 required: true,
                 minlength: 3
             },
-            address_2: {
-                required: true,
-                minlength: 3
-            },
-            address_3: {
-                required: false,
-                minlength: 3
-            },
+          
             postcode: {
                 required: true,
                 postcode: true
@@ -494,6 +523,7 @@
             existing_customer: {
                 required: true
             },
+          
             employment_id: {
                 required: true,
             },
@@ -565,12 +595,7 @@
             address_1: {
                 required: "Please enter your address"
             },
-            address_2: {
-                required: "Please enter your address"
-            },
-            address_3: {
-                required: "Please enter your address"
-            },
+           
             postcode: {
                 required: "Please enter your postcode"
             },
@@ -682,20 +707,18 @@
             $("#register-form").validate().element('#race_id') &&
             $("#register-form").validate().element('#marital_id') &&
             $("#register-form").validate().element('#address_1') &&
-            $("#register-form").validate().element('#address_2') &&
-            $("#register-form").validate().element('#address_3') &&
             $("#register-form").validate().element('#postcode') &&
             $("#register-form").validate().element('#city') &&
             $("#register-form").validate().element('#state') &&
             $("#register-form").validate().element('#contact_number_home') &&
             $("#register-form").validate().element('#contact_number_mobile') &&
-            $("#register-form").validate().element('#spouse_full_name') &&
-            $("#register-form").validate().element('#spouse_nric') &&
-            $("#register-form").validate().element('#spouse_date_of_birth') &&
-            $("#register-form").validate().element('#spouse_occupation') &&
-            $("#register-form").validate().element('#spouse_contact_office') &&
-            $("#register-form").validate().element('#spouse_contact_mobile') &&
-            $("#register-form").validate().element('#spouse_email') &&
+            // $("#register-form").validate().element('#spouse_full_name') &&
+            // $("#register-form").validate().element('#spouse_nric') &&
+            // $("#register-form").validate().element('#spouse_date_of_birth') &&
+            // $("#register-form").validate().element('#spouse_occupation') &&
+            // $("#register-form").validate().element('#spouse_contact_office') &&
+            // $("#register-form").validate().element('#spouse_contact_mobile') &&
+            // $("#register-form").validate().element('#spouse_email') &&
             $("#register-form").validate().element('#employment_name') &&
             $("#register-form").validate().element('#company_address_1') &&
             $("#register-form").validate().element('#company_address_2') &&
@@ -721,20 +744,18 @@
             $("#register-form").validate().element('#race_id') &&
             $("#register-form").validate().element('#marital_id') &&
             $("#register-form").validate().element('#address_1') &&
-            $("#register-form").validate().element('#address_2') &&
-            $("#register-form").validate().element('#address_3') &&
             $("#register-form").validate().element('#postcode') &&
             $("#register-form").validate().element('#city') &&
             $("#register-form").validate().element('#state') &&
             $("#register-form").validate().element('#contact_number_home') &&
             $("#register-form").validate().element('#contact_number_mobile') &&
-            $("#register-form").validate().element('#spouse_full_name') &&
-            $("#register-form").validate().element('#spouse_nric') &&
-            $("#register-form").validate().element('#spouse_date_of_birth') &&
-            $("#register-form").validate().element('#spouse_occupation') &&
-            $("#register-form").validate().element('#spouse_contact_office') &&
-            $("#register-form").validate().element('#spouse_contact_mobile') &&
-            $("#register-form").validate().element('#spouse_email') &&
+            // $("#register-form").validate().element('#spouse_full_name') &&
+            // $("#register-form").validate().element('#spouse_nric') &&
+            // $("#register-form").validate().element('#spouse_date_of_birth') &&
+            // $("#register-form").validate().element('#spouse_occupation') &&
+            // $("#register-form").validate().element('#spouse_contact_office') &&
+            // $("#register-form").validate().element('#spouse_contact_mobile') &&
+            // $("#register-form").validate().element('#spouse_email') &&
             $("#register-form").validate().element('#employment_name') &&
             $("#register-form").validate().element('#company_address_1') &&
             $("#register-form").validate().element('#company_address_2') &&

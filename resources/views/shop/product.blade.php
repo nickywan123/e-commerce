@@ -15,13 +15,13 @@
                             @endforeach
                         </div>
                     </div>
-                    <p class="text-capitalize text-muted mt-3 mb-1 text-muted text-center p-1" style="font-size: 0.75rem;">
+                    <p class="text-capitalize text-muted mt-3 mb-1 text-muted text-center p-1" style="font-size: 11px;">
                         <img class="h-100" src="{{ asset('assets/images/miscellaneous/supplied.png') }}" alt="" style="padding-bottom: 1px;">
                         <span style="text-transform: none;">by</span> {{ $panelProduct->panel->company_name }}
                     </p>
 
                     <!-- Description -->
-                    <p class="mt-2 mb-3 p-1 text-justify" style="font-size: 0.9rem;">
+                    <p class="mt-2 mb-3 p-1 text-justify" style="font-size: 17px;">
                         {!! $product->details !!}
                     </p>
                 </div>

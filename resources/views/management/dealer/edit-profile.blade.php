@@ -100,9 +100,7 @@
                                     class="form-control @error('dealer_company_name') is-invalid @enderror"
                                     value="{{ old('dealer_company_name') }}" >
                             </div>
-                            <div class="col-md-1 col-form-label">
-                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
-                            </div>
+                           
  
                         </div>
                         <div class="form-group row ">
@@ -114,9 +112,7 @@
                                     value="{{ old('dealer_company_address_1') }}" >
                             </div>
                           
-                            <div class="col-md-1 col-form-label">
-                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
-                            </div>
+                           
 
                             @error('dealer_company_address_1')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -130,9 +126,7 @@
                                     class="form-control @error('dealer_company_address_2') is-invalid @enderror"
                                     value="{{ old('dealer_company_address_2') }}" >
                             </div>
-                            <div class="col-md-1 col-form-label">
-                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
-                            </div>
+                           
                             @error('dealer_company_address_2')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
@@ -146,9 +140,7 @@
                                     class="form-control @error('dealer_company_address_3') is-invalid @enderror"
                                     value="{{ old('dealer_company_address_3') }}" >
                             </div>
-                            <div class="col-md-1 col-form-label">
-                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
-                            </div>
+                           
                             @error('dealer_company_address_3')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
@@ -165,9 +157,7 @@
                                     class="form-control @error('dealer_company_postcode') is-invalid @enderror"
                                     value="{{ old('dealer_company_postcode') }}" >
                             </div>
-                            <div class="col-md-1 col-form-label">
-                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
-                            </div>
+                           
    
                             @error('dealer_company_postcode')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -184,9 +174,7 @@
                                     value="{{ old('dealer_company_city') }}" >
                             </div>
 
-                            <div class="col-md-1 col-form-label">
-                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
-                            </div>
+                           
                             @error('dealer_company_city')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror

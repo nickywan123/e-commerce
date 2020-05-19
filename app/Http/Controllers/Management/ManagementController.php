@@ -30,13 +30,8 @@ class ManagementController extends Controller
         // $panel_id = $panel_id->panelInfo->account_id;
         // $customerOrders = new Order;
         // $customerOrders = $customerOrders->where('panel_id', $panel_id)->whereIn('order_status', $status)->get();
-
-
-
         // return view("management.panel.index")->with('customerOrders', $customerOrders);
-        // $now = Carbon::now();
-        // $format = 'dd/mm/YYYY';
-        // $date = Carbon::createFromFormat($format, $now);
+      
         return view('management.panel.home');
     }
 
@@ -117,14 +112,10 @@ class ManagementController extends Controller
 
         $this->validate($request, array(
 
-            'company_billing_address_1' => 'required',
-            'company_billing_address_2' => 'required',
-            'company_billing_address_3' => 'required',
+            'company_billing_address_1' => 'required', 
             'company_billing_postcode' => 'required|digits:5',
             'company_billing_city' => 'required',
             'company_address_1' => 'required',
-            'company_address_2' => 'required',
-            'company_address_3' => 'required',
             'postcode' => 'required|digits:5',
             'city' => 'required',
             'company_phone_number' => 'required|digits:10'
@@ -213,7 +204,7 @@ class ManagementController extends Controller
     }
 
 
-    // Home Page -Dealer
+    // Home Page-Dealer
 
     public function homeDealer()
     {
@@ -261,7 +252,7 @@ class ManagementController extends Controller
         return view('management.dealer.edit-profile')->with('dealerProfile', $dealerProfile);
     }
 
-    /** Update company profile**/
+    /** Update dealer profile**/
 
     public function updateDealerProfile(Request $request, $id)
     {

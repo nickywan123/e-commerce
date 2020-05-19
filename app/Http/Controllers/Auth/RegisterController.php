@@ -88,7 +88,7 @@ class RegisterController extends Controller
      */
     public function showDealerRegistrationForm()
     {
-        return $this->pageDisabled(); // TODO: Temporary disabled.
+         return $this->pageDisabled(); // TODO: Temporary disabled.
 
         $genders = Gender::all();
         $races = Race::all();
@@ -148,9 +148,7 @@ class RegisterController extends Controller
                 'address_1' => [
                     'required'
                 ],
-                'address_2' => [
-                    'required'
-                ],
+               
                 'postcode' => [
                     'required'
                 ],
@@ -211,9 +209,7 @@ class RegisterController extends Controller
                 'address_1' => [
                     'required'
                 ],
-                'address_2' => [
-                    'required'
-                ],
+             
                 'postcode' => [
                     'required'
                 ],
@@ -290,7 +286,7 @@ class RegisterController extends Controller
             // Generating new customer account id.
             $largestCustomerId = 0;
             if (UserInfo::all()->count() == 0) {
-                $largestCustomerId = 1913000001;
+                $largestCustomerId = 1913000101;
             } else {
                 $largestCustomerId = UserInfo::largestCustomerId() + 1;
             }
@@ -363,7 +359,7 @@ class RegisterController extends Controller
             // Generating new customer account id.
             $largestCustomerId = 0;
             if (UserInfo::all()->count() == 0) {
-                $largestCustomerId = 1913000001;
+                $largestCustomerId = 1913000101;
             } else {
                 $largestCustomerId = UserInfo::largestCustomerId() + 1;
             }
@@ -371,7 +367,7 @@ class RegisterController extends Controller
             // Generating new dealer account id.
             $largestDealerId = 0;
             if (DealerInfo::all()->count() == 0) {
-                $largestDealerId = 1911000001;
+                $largestDealerId = 1911000101;
             } else {
                 $largestDealerId = DealerInfo::largestDealerId() + 1;
             }
@@ -463,7 +459,7 @@ class RegisterController extends Controller
                 $dealerContactHome->is_home = 1;
                 $dealerContactHome->save();
             }
-
+            // Dealer_spouse table
             $dealerSpouse = new DealerSpouse;
             $dealerSpouse->account_id = $userInfo->account_id;
             $dealerSpouse->spouse_name = $data['spouse_full_name'];
@@ -474,7 +470,7 @@ class RegisterController extends Controller
             $dealerSpouse->spouse_contact_mobile = $data['spouse_contact_mobile'];
             $dealerSpouse->spouse_email = $data['spouse_email'];
             $dealerSpouse->save();
-
+            // Dealer_employment
             $dealerEmployment = new DealerEmployment;
             $dealerEmployment->account_id = $userInfo->account_id;
             $dealerEmployment->employment_type = $data['employment_id'];

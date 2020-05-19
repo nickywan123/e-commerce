@@ -77,9 +77,7 @@
                                 class="form-control @error('full_name') is-invalid @enderror"
                                 value="{{ old('full_name') }}">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
 
 
                         @error('full_name')
@@ -95,9 +93,7 @@
                                 class="form-control @error('billing_address_1') is-invalid @enderror"
                                 value="{{ old('billing_address_1') }}">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
 
 
                         @error('billing_address_1')
@@ -112,9 +108,7 @@
                                 value="{{$customerInfo->userInfo->mailingAddress->address_2}}"
                                 class="form-control @error('billing_address_2') is-invalid @enderror">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
 
 
                         @error('billing_address_2')
@@ -129,9 +123,7 @@
                                 value="{{$customerInfo->userInfo->mailingAddress->address_3}}"
                                 class="form-control @error('billing_address_3') is-invalid @enderror">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
 
 
                         @error('billing_address_3')
@@ -148,9 +140,7 @@
                                 class="form-control @error('billing_postcode') is-invalid @enderror"
                                 value="{{ old('billing_postcode') }}">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
 
 
                         @error('billing_postcode')
@@ -166,9 +156,7 @@
                                 class="form-control @error('billing_city') is-invalid @enderror"
                                 value="{{ old('billing_city') }}">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
 
 
                         @error('billing_city')
@@ -185,9 +173,7 @@
                                 class="form-control @error('shipping_address_1') is-invalid @enderror"
                                 value="{{ old('shipping_address_1') }}">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
 
 
                         @error('shipping_address_1')
@@ -203,9 +189,7 @@
                                 class="form-control @error('shipping_address_2') is-invalid @enderror"
                                 value="{{ old('shipping_address_2') }}">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
 
 
                         @error('shipping_address_2')
@@ -221,9 +205,7 @@
                                 class="form-control @error('shipping_address_3') is-invalid @enderror"
                                 value="{{ old('shipping_address_3') }}">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
 
 
                         @error('shipping_address_3')
@@ -240,9 +222,7 @@
                                 value="{{ old('shipping_postcode') }}">
                         </div>
 
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
                         @error('shipping_postcode')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
@@ -256,9 +236,7 @@
                                 class="form-control @error('shipping_city') is-invalid @enderror"
                                 value="{{ old('shipping_city') }}">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
                         @error('shipping_city')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
@@ -273,9 +251,7 @@
                                 class="form-control @error('mobile_phone') is-invalid @enderror"
                                 value="{{ old('mobile_phone') }}">
                         </div>
-                        <div class="col-md-1 col-form-label">
-                            <i class="fa fa-pencil bujishu-gold"></i>
-                        </div>
+                        
                         {{-- <label for="gender" class="col-md-2 col-form-label">Gender</label>
                             <div class="col-md-3">
                                 <input type="text" name="gender"

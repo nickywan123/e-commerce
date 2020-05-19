@@ -70,13 +70,9 @@ class ProfileController extends Controller
         $this->validate($request, array(
 
             'billing_address_1' => 'required',
-            'billing_address_2' => 'required',
-            'billing_address_3' => 'required',
             'billing_postcode' => 'required|digits:5',
             'billing_city' => 'required',
             'shipping_address_1' => 'required',
-            'shipping_address_2' => 'required',
-            'shipping_address_3' => 'required',
             'shipping_postcode' => 'required|digits:5',
             'shipping_city' => 'required',
             'mobile_phone' => 'required|digits:10'

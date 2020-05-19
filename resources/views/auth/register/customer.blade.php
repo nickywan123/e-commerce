@@ -649,14 +649,7 @@
                 required: true,
                 minlength: 3
             },
-            address_2: {
-                required: true,
-                minlength: 3
-            },
-            address_3: {
-                required: false,
-                minlength: 3
-            },
+           
             postcode: {
                 required: true,
                 postcode: true
@@ -712,12 +705,7 @@
             address_1: {
                 required: "Please enter your address"
             },
-            address_2: {
-                required: "Please enter your address"
-            },
-            address_3: {
-                required: "Please enter your address"
-            },
+           
             postcode: {
                 required: "Please enter your postcode"
             },
@@ -762,8 +750,6 @@
             $("#register-form").validate().element('#full_name') &&
             $("#register-form").validate().element('#nric') &&
             $("#register-form").validate().element('#address_1') &&
-            $("#register-form").validate().element('#address_2') &&
-            $("#register-form").validate().element('#address_3') &&
             $("#register-form").validate().element('#postcode') &&
             $("#register-form").validate().element('#city') &&
             $("#register-form").validate().element('#state') &&

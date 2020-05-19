@@ -58,12 +58,12 @@
                  
                 </div>          
               </li>
-            @endhasrole
+         @endhasrole
 
             @hasrole('panel')
             <li class="nav-item">
                 <div class="icon-text-align">
-                   <a class="nav-link" href="/management/panel/orders">
+                   <a class="nav-link" href="{{route('management.panel.home')}}">
                     <img class="img-avatar" src="{{asset('/storage/customer/sidebar-icons/panel-page.png')}}" alt="Panel" style="height: 100px; width: 100px; ">
                    </a>
                  
