@@ -63,7 +63,9 @@ class Purchase extends Model
         return $this->belongsTo('App\Models\Globals\Status', 'purchase_status');
     }
 
-    /***Get dealer info */
+    /**
+     * Get dealer info 
+     */
     public function dealerInfo()
     {
         return $this->hasOne('App\Models\Users\Dealers\DealerInfo', 'dealer_id');

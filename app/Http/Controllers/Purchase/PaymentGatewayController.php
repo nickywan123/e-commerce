@@ -119,11 +119,9 @@ class PaymentGatewayController extends Controller
         if ($paymentOption == 'offline') {
             $file = $request->file('payment_proof');
             $fileExtension = $file->getClientOriginalExtension();
-            $fileName = $purchase->purchase_number . '-payment' . '.' . $fileExtension;
+            $fileName = $purchase->getFormattedNumber() . '-payment' . '.' . $fileExtension;
             $destinationPath =
                 public_path('/storage/uploads/images/users/' . $purchase->user->userInfo->account_id . '/payments');
-
-            $filename = $purchase->purchase_number . 'payment-proof';
 
             if (!File::isDirectory($destinationPath)) {
                 File::makeDirectory($destinationPath, 0777, true);
@@ -140,7 +138,7 @@ class PaymentGatewayController extends Controller
 
             $purchase->save();
 
-            $purchaseNumberFormatted = $str2 = substr($purchase->purchase_number, 7);
+            $purchaseNumberFormatted = $purchase->getFormattedNumber();
 
             // TODO: Move this to OfflinePaymentController later!
             // Admin is supposed to verify offline payment first before it is labeled success.
@@ -165,7 +163,7 @@ class PaymentGatewayController extends Controller
                 // Get PDF content.
                 $content = $pdf->download()->getOriginalContent();
                 // Set path to store PDF file.
-                $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/purchase-orders/');
+                $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->getFormattedNumber() . '/purchase-orders/');
                 // Set PDF file name.
                 $pdfName = $order->order_number;
                 // Check if directory exist or not.
@@ -186,9 +184,9 @@ class PaymentGatewayController extends Controller
             // Get PDF content.
             $content = $pdf->download()->getOriginalContent();
             // Set path to store PDF file.
-            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->getFormattedNumber() . '/');
             // Set PDF file name.
-            $pdfName = $purchase->purchase_number;
+            $pdfName = $purchase->getFormattedNumber();
             // Check if directory exist or not.
             if (!File::isDirectory($pdfDestination)) {
                 // If not exist, create the directory.
@@ -203,9 +201,9 @@ class PaymentGatewayController extends Controller
             // Get PDF content.
             $content = $pdf->download()->getOriginalContent();
             // Set path to store PDF file.
-            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->getFormattedNumber() . '/');
             // Set PDF file name.
-            $pdfName = $purchase->purchase_number . '-receipt';
+            $pdfName = $purchase->getFormattedNumber() . '-receipt';
             // Check if directory exist or not.
             if (!File::isDirectory($pdfDestination)) {
                 // If not exist, create the directory.
@@ -272,7 +270,7 @@ class PaymentGatewayController extends Controller
                 // Get PDF content.
                 $content = $pdf->download()->getOriginalContent();
                 // Set path to store PDF file.
-                $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/purchase-orders/');
+                $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->getFormattedNumber() . '/purchase-orders/');
                 // Set PDF file name.
                 $pdfName = $order->order_number;
                 // Check if directory exist or not.
@@ -298,9 +296,9 @@ class PaymentGatewayController extends Controller
             // Get PDF content.
             $content = $pdf->download()->getOriginalContent();
             // Set path to store PDF file.
-            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->getFormattedNumber() . '/');
             // Set PDF file name.
-            $pdfName = $purchase->purchase_number;
+            $pdfName = $purchase->getFormattedNumber();
             // Check if directory exist or not.
             if (!File::isDirectory($pdfDestination)) {
                 // If not exist, create the directory.
@@ -315,9 +313,9 @@ class PaymentGatewayController extends Controller
             // Get PDF content.
             $content = $pdf->download()->getOriginalContent();
             // Set path to store PDF file.
-            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->purchase_number . '/');
+            $pdfDestination = public_path('/storage/documents/invoice/' . $purchase->getFormattedNumber() . '/');
             // Set PDF file name.
-            $pdfName = $purchase->purchase_number . '-receipt';
+            $pdfName = $purchase->getFormattedNumber() . '-receipt';
             // Check if directory exist or not.
             if (!File::isDirectory($pdfDestination)) {
                 // If not exist, create the directory.
@@ -328,7 +326,7 @@ class PaymentGatewayController extends Controller
 
             SendInvoiceAndReceiptEmail::dispatch($user->email, $purchase);
 
-            $purchaseNumberFormatted = $str2 = substr($purchase->purchase_number, 7);
+            $purchaseNumberFormatted = $purchase->getFormattedNumber();
 
             return view('shop.payment.success')
                 ->with('purchase', $purchase)
