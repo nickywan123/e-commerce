@@ -67,13 +67,14 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        // TODO: Change to auth/register/customer.
-        // return view('auth.register.customer');
+        return $this->pageDisabled(); // TODO: Temporary disabled.
+
         $genders = Gender::all();
         $races = Race::all();
         $states = State::all();
         $maritals = Marital::all();
         $employments = Employment::all();
+
         return view('auth.register.customer')
             ->with('genders', $genders)
             ->with('races', $races)
@@ -87,11 +88,14 @@ class RegisterController extends Controller
      */
     public function showDealerRegistrationForm()
     {
+        return $this->pageDisabled(); // TODO: Temporary disabled.
+
         $genders = Gender::all();
         $races = Race::all();
         $states = State::all();
         $maritals = Marital::all();
         $employments = Employment::all();
+
         return view('auth.register.dealer')
             ->with('genders', $genders)
             ->with('races', $races)
