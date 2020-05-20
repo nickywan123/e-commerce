@@ -44,12 +44,12 @@
                         <div class="animated-product-information-container">
                             <p class="product-name">{{ $product->name }}</p>
                             @if($product->categories->where('name', 'Paints')->count() > 0)
-                            <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                            <p class="mb-1 text-muted" style="font-size: 0.9rem;">
                                 1 Liter
                             </p>
                             @elseif($product->categories->where('name', 'Carpets')->count() > 0)
                             @if($product->productSoldByPanels[0]->sizeAttributes->count() > 0)
-                            <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                            <p class="mb-1 text-muted" style="font-size: 0.9rem;">
                                 {{ $product->productSoldByPanels[0]->sizeAttributes->first()->attribute_name }}
                             </p>
                             @endif
@@ -213,12 +213,12 @@
                         <p class="product-name">{{ $product->name }}</p>
                         <div class="mt-2 mb-1">
                             @if($product->categories->where('name', 'Paints')->count() > 0)
-                            <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                            <p class="mb-1 text-muted" style="font-size: 0.9rem;">
                                 1 Liter
                             </p>
                             @elseif($product->categories->where('name', 'Carpets')->count() > 0)
                             @if($product->productSoldByPanels[0]->sizeAttributes->count() > 0)
-                            <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                            <p class="mb-1 text-muted" style="font-size: 0.9rem;">
                                 {{ $product->productSoldByPanels[0]->sizeAttributes->first()->attribute_name }}
                             </p>
                             @endif
