@@ -196,7 +196,7 @@ class ShopController extends Controller
     {
         $panelId = $request->query('panel');
 
-        $product = Product::where('name_slug', 'interior-design')
+        $product = Product::where('name_slug', 'renovation')
             ->with('images')
             ->firstOrFail();
 
@@ -206,7 +206,7 @@ class ShopController extends Controller
 
         $category = $product->categories->first();
 
-        $relatedProducts = $category->products->where('name_slug', '!=', 'interior-design')->take(6);
+        $relatedProducts = $category->products->where('name_slug', '!=', 'renovation')->take(6);
 
         return view('.shop.temp.interior-design')
             ->with('product', $product)
