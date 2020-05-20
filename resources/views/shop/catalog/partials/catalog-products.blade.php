@@ -43,6 +43,17 @@
 
                         <div class="animated-product-information-container">
                             <p class="product-name">{{ $product->name }}</p>
+                            @if($product->categories->where('name', 'Paints')->count() > 0)
+                            <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                                1 Liter
+                            </p>
+                            @elseif($product->categories->where('name', 'Carpets')->count() > 0)
+                            @if($product->sizeAttributes->count() > 0)
+                            <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                                {{ $product->sizeAttributes->first()->attribute_name }}
+                            </p>
+                            @endif
+                            @endif
                             <div class="mt-2 mb-1">
                                 @if ($product->productSoldByPanels->count() > 1)
                                 @if ($product->productSoldByPanels->min('price') == $product->productSoldByPanels->max('price'))
@@ -202,9 +213,15 @@
                         <p class="product-name">{{ $product->name }}</p>
                         <div class="mt-2 mb-1">
                             @if($product->categories->where('name', 'Paints')->count() > 0)
-                            <p class="mb-0" style="font-size: 1.05rem;">
+                            <p class="mb-0 text-muted" style="font-size: 0.9rem;">
                                 1 Liter
                             </p>
+                            @elseif($product->categories->where('name', 'Carpets')->count() > 0)
+                            @if($product->sizeAttributes->count() > 0)
+                            <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                                {{ $product->sizeAttributes->first()->attribute_name }}
+                            </p>
+                            @endif
                             @endif
                             <p class="mb-1">
                                 <span class="text-muted" style="font-size: 1.2rem; font-weight: 600;">
