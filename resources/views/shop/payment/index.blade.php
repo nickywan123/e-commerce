@@ -54,6 +54,22 @@
             right: 15px;
             margin-top: 0;
         }
+
+        .nav-link .hide-inactive {
+            display: none;
+        }
+
+        .nav-link .hide-active {
+            display: block;
+        }
+
+        .nav-link.active .hide-active {
+            display: none;
+        }
+
+        .nav-link.active .hide-inactive {
+            display: block;
+        }
     </style>
 </head>
 
@@ -176,20 +192,23 @@
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link text-center" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                                <img style="width: 72px; height: 72px;" src="{{ asset('storage/icons/payments/payment-card.png') }}" alt="">
+                                <img class="hide-active mx-auto" style="width: 64px; height: 64px;" src="{{ asset('storage/icons/payments/credit-debit-card-02.png') }}" alt="">
+                                <img class="hide-inactive mx-auto" style="width: 64px; height: 64px;" src="{{ asset('storage/icons/payments/credit-debit-card-01.png') }}" alt="">
                                 <p class="mt-2 mb-0">Credit/Debit Card</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-center disabled" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                                <img style="width: 72px; height: 72px;" src="{{ asset('storage/icons/payments/payment-fpx.png') }}" alt="">
+                                <img class="hide-active mx-auto" style="width: 64px; height: 64px;" src="{{ asset('storage/icons/payments/online-banking-02.png') }}" alt="">
+                                <img class="hide-inactive mx-auto" style="width: 64px; height: 64px;" src="{{ asset('storage/icons/payments/online-banking-01.png') }}" alt="">
                                 <p class="mt-2 mb-0">Online Banking</p>
                                 <p>(Not Available)</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-center" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                                <img style="width: 72px; height: 72px;" src="{{ asset('storage/icons/payments/payment-offline.png') }}" alt="">
+                                <img class="hide-active mx-auto" style="width: 64px; height: 64px;" src="{{ asset('storage/icons/payments/offline-payment-02.png') }}" alt="">
+                                <img class="hide-inactive mx-auto" style="width: 64px; height: 64px;" src="{{ asset('storage/icons/payments/offline-payment-01.png') }}" alt="">
                                 <p class="mt-2">Offline Payment</p>
                             </a>
                         </li>
