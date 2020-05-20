@@ -296,7 +296,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
                 'Shop\ShopController@renovationCategory'
             );
 
-            Route::get('/{topLevelCategorySlug}', 'Shop\ShopController@topLevelCategory')->name('shop.category.first');
+            Route::get(
+                '/{topLevelCategorySlug}',
+                'Shop\ShopController@topLevelCategory'
+            )->name('shop.category.first');
 
             Route::get(
                 '/{topLevelCategorySlug}/{secondLevelCategorySlug}',
@@ -334,6 +337,12 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 
         // Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders');
+
+        // TODO: Temporary. For interior-design payment.
+        Route::get('/product/interior-design', 'Shop\ShopController@interiorDesign');
+
+        // TODO: Temporary. For interior-design post payment.
+        Route::post('/product/interior-design/store', 'Shop\ShopController@interiorDesignStore');
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 

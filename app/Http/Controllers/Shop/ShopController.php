@@ -50,7 +50,6 @@ class ShopController extends Controller
      */
     public function index()
     {
-
         $data = Banner::all();
         $popularCategories = Category::take(6)->get();
 
@@ -60,71 +59,10 @@ class ShopController extends Controller
 
     /****
      * Shows About Us
-     * ****/
+     */
     public function aboutUs()
     {
         return view('shop.about-us.about-us');
-    }
-
-    /**
-     * Handles /shop/category/{category-slug}
-     */
-    public function category($categorySlug)
-    {
-        // Get matching category with related products and their images.
-        $category = Category::where('slug', $categorySlug)->with('products.images')->first();
-
-        // Get all categories for tree view.
-        $allCategories = Category::all();
-
-        return view('shop.catalog.category')
-            ->with('category', $category)
-            ->with('allCategories', $allCategories);
-    }
-
-    /**
-     * Handles /shop/category/{category-slug}/{subcategory-slug}
-     */
-    public function subcategory($categorySlug, $subcategorySlug)
-    {
-        // Get matching category with related products and their images.
-        $subcategory = SubCategory::where('slug', $subcategorySlug)->with('products.images')->first();
-
-        // Get parent category of the subcategory.
-        $category = $subcategory->parentCategory;
-
-        // Get all categories for tree view.
-        $allCategories = Category::all();
-
-        return view('shop.catalog.subcategory')
-            ->with('subcategory', $subcategory)
-            ->with('category', $category)
-            ->with('allCategories', $allCategories);
-    }
-
-    /**
-     * Handles /shop/product/{category-slug}/{product-type-slug}
-     */
-    // /category/{categorySlug}/{subcategorySlug}/{productTypeSlug}
-    public function productType($categorySlug, $subcategorySlug, $productTypeSlug)
-    {
-        // Get matching product type with related products and their images.
-        $type = ProductType::where('slug', $productTypeSlug)->with('products.images')->first();
-
-        // Get parent subcategory of the product type.
-        $subcategory = $type->parentSubcategory;
-
-        // Get parent category of the product type.
-        $category = $subcategory->parentCategory;
-
-        // Get all categories for tree view.
-        $allCategories = Category::all();
-
-        return view('shop.catalog.type')
-            ->with('type', $type)
-            ->with('subcategory', $subcategory)
-            ->with('category', $category)
-            ->with('allCategories', $allCategories);
     }
 
     /**
@@ -249,5 +187,86 @@ class ShopController extends Controller
 
         return view('shop.renovation.renovation')
             ->with('getCartQuantity', $getCartQuantity);
+    }
+
+    /**
+     * Handles /shop/product/interior-design
+     */
+    public function interiorDesign(Request $request)
+    {
+        $panelId = $request->query('panel');
+
+        $product = Product::where('name_slug', 'interior-design')
+            ->with('images')
+            ->firstOrFail();
+
+        $panelProduct = PanelProduct::where('global_product_id', $product->id)
+            ->where('panel_account_id', $panelId)
+            ->firstOrFail();
+
+        $category = $product->categories->first();
+
+        $relatedProducts = $category->products->where('name_slug', '!=', 'interior-design')->take(6);
+
+        return view('.shop.temp.interior-design')
+            ->with('product', $product)
+            ->with('panelProduct', $panelProduct)
+            ->with('relatedProducts', $relatedProducts);
+    }
+
+    /**
+     * Handles /shop/product/interior-design/store
+     */
+    public function interiorDesignStore(Request $request)
+    {
+        // Get user
+        $user = User::find(Auth::user()->id);
+
+        // Get product
+        $product = PanelProduct::find($request->input('product_id'));
+
+        // Check if the exact item is already in the cart..
+        $existingCartItem = new Cart;
+
+        $existingCartItem = $existingCartItem->where('user_id', $user->id);
+
+        $existingCartItem->where('product_id', $product->id);
+
+        $existingCartItem = $existingCartItem->where('status', 2001)->first();
+
+        // If item doesn't exist in cart..
+        if ($existingCartItem == null) {
+            // Initialize product information array.
+            $productInformation = array();
+
+            // Create a new cart item.
+            $newCartItem = new Cart;
+            $newCartItem->user_id = $user->id;
+            $newCartItem->product_id = $product->id;
+
+            $price = $request->input('price');
+            $price = str_replace('.', '', $price);
+
+            $newCartItem->product_information = $productInformation;
+            $newCartItem->quantity = 1;
+            $newCartItem->delivery_fee = $product->delivery_fee;
+            $newCartItem->installation_fee = $product->installation_fee;
+            $newCartItem->unit_price = $price;
+            $newCartItem->subtotal_price = $price;
+            $newCartItem->save();
+
+            $cartItemId = $newCartItem->id;
+        } else {
+            // If item exist in cart..
+            // Add to the existing quantity.
+            $existingCartItem->quantity = $existingCartItem->quantity + 1;
+            // Re calculate the total price.
+            $existingCartItem->subtotal_price = $existingCartItem->quantity * $existingCartItem->unit_price;
+            $existingCartItem->save();
+
+            $cartItemId = $existingCartItem->id;
+        }
+
+        return redirect('/shop/cart?buynow=' . $cartItemId);
     }
 }

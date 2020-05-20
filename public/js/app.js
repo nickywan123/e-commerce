@@ -96772,11 +96772,10 @@ __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
 
 __webpack_require__(/*! bootstrap-colorpicker */ "./node_modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js");
 
-__webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
-
 window.Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
 window.toastr = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
 window.DataTable = __webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+window.Inputmask = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -96941,8 +96940,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\programs\Laragon\www\bujishu\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\programs\Laragon\www\bujishu\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Programs\Laragon\www\bujishu\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Programs\Laragon\www\bujishu\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

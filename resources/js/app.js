@@ -13,11 +13,11 @@ require("ion-rangeslider");
 require("select2");
 require("dropzone");
 require("bootstrap-colorpicker");
-require("inputmask");
 
 window.Dropzone = require('dropzone');
 window.toastr = require('toastr');
 window.DataTable = require('datatables.net-bs4');
+window.Inputmask = require('inputmask');
 window.Vue = require('vue');
 
 /**
