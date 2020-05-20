@@ -82,7 +82,7 @@ class ShopController extends Controller
 
         $category = $product->categories->first();
 
-        $relatedProducts = $category->products->where('name_slug', '!=', $slug)->take(6);
+        $relatedProducts = $category->products->where('name_slug', '!=', $slug)->where('product_status', 1)->take(6);
 
         return view('shop.product')
             ->with('product', $product)
