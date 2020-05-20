@@ -339,7 +339,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders');
 
         // TODO: Temporary. For interior-design payment.
-        Route::get('/renovation', 'Shop\ShopController@interiorDesign');
+        Route::get('/product/temp/renovation', 'Shop\ShopController@interiorDesign');
 
         // TODO: Temporary. For interior-design post payment.
         Route::post('/product/interior-design/store', 'Shop\ShopController@interiorDesignStore');
