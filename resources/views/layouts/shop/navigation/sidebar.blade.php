@@ -11,7 +11,7 @@
         <h4 style="color: #212529; padding: 5px 10px;"><strong>Shop By Category</strong></h4>
         <li>
             <a href="/shop/product/panel-registration?panel=1918000101">Panel Registration</a>
-            <a href="/product/temp/renovation">Renovation</a>
+            <a href="/shop/product/temp/renovation">Renovation</a>
             @foreach($categories as $category)
             <a href="/shop/category/{{ $category->slug }}">{{ $category->name }}</a>
             @endforeach
