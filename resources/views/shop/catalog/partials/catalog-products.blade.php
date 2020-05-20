@@ -48,9 +48,9 @@
                                 1 Liter
                             </p>
                             @elseif($product->categories->where('name', 'Carpets')->count() > 0)
-                            @if($product->sizeAttributes->count() > 0)
+                            @if($product->productSoldByPanels[0]->sizeAttributes->count() > 0)
                             <p class="mb-0 text-muted" style="font-size: 0.9rem;">
-                                {{ $product->sizeAttributes->first()->attribute_name }}
+                                {{ $product->productSoldByPanels[0]->sizeAttributes->first()->attribute_name }}
                             </p>
                             @endif
                             @endif
@@ -217,9 +217,9 @@
                                 1 Liter
                             </p>
                             @elseif($product->categories->where('name', 'Carpets')->count() > 0)
-                            @if($product->sizeAttributes->count() > 0)
+                            @if($product->productSoldByPanels[0]->sizeAttributes->count() > 0)
                             <p class="mb-0 text-muted" style="font-size: 0.9rem;">
-                                {{ $product->sizeAttributes->first()->attribute_name }}
+                                {{ $product->productSoldByPanels[0]->sizeAttributes->first()->attribute_name }}
                             </p>
                             @endif
                             @endif
