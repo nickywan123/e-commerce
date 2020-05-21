@@ -169,6 +169,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // Administrator
     Route::group(['prefix' => 'administrator', 'middleware' => ['role:administrator']], function () {
 
+        Route::get('/', 'Administrator\AdministratorController@index');
+
         // User management.
         Route::group(['prefix' => 'users'], function () {
             // Panel.
