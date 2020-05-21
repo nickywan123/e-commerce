@@ -56,7 +56,7 @@ class CategoryController extends Controller
         if ($category->save() && $request->file('category_icon')) {
             $image = $request->file('category_icon');
             $imageDestination = public_path('/storage/uploads/images/categories/' . $category->id . '/');
-            $imageName = $category->slug();
+            $imageName = $category->slug;
             $imageName = $imageName . '.' . $image->getClientOriginalExtension();
             $image->move($imageDestination, $imageName);
 
