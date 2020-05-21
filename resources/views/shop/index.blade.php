@@ -66,7 +66,7 @@
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#e0b555;" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
+            <a style=" color:#e0b555;" href=" /shop/category/curtains-blinds"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text " style="font-size:15px; "><b>CURTAINS</b></h5>
             </a>
 
