@@ -67,7 +67,7 @@
                     <div class="row mb-5">
                         <div class="col-2 my-auto">
                             <a
-                                href="/shop/product/">
+                                href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
                                 <img class="responsive-img p-1"
                                     style="height:200px;width:200px; max-width:300px;"
                                     src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename)}}"
@@ -76,9 +76,11 @@
                         </div>
                         <div class="col-6 my-auto">
 
-                        <h4>{{ $item->product->parentProduct->name}}</h4>
+                        
                             <a style="color:black; font-weight:bold;"
-                                href="/shop/product/"></a>
+                                href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
+                                <h4>{{ $item->product->parentProduct->name}}</h4>
+                            </a>
 
                             <p class="text-capitalize">Sold by: {{$item->product->panel->company_name}}
                                </p>
@@ -100,15 +102,21 @@
                         <div class="col-1">
                             <button class="text-capitalize bjsh-btn-gradient btn-size"><a
                                 style="color:black; text-decoration:none;"
-                                href="/shop/product/">
+                                href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
                                 Buy Now</a>
                             </button>
-                            
-                            <button class="text-capitalize bjsh-btn-gradient btn-size mt-4"><a
-                                style="color:black; text-decoration:none;"
-                                href="/shop/product/">
-                               Add to Cart</a>
+                            <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.add-item') }}">
+                                @method('POST')
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $item->product_id }}">
+                                <input type="hidden" id="product_attribute_color" name="product_attribute_color" value="">
+                                <input type="hidden" id="product_attribute_size" name="product_attribute_size" value="">
+                                <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
+                                <input type="hidden" name="productQuantity" value="1">
+                            <button type="submit" class="text-capitalize bjsh-btn-gradient btn-size mt-4" style="color:black; text-decoration:none;">
+                             Add to Cart
                             </button>
+                            </form>
                            
                             <i class="fa fa-trash-o fa-2x text-muted mt-4 ml-5"></i>
                         </div>
@@ -165,4 +173,134 @@
 </style>
 
 
+<script>
+
+// function onPageload() {
+           
+
+//             inputColor = $('#product_attribute_color');
+//             inputSize = $('#product_attribute_size');
+//             inputTemperature = $('#product_attribute_temperature');
+
+//             priceTag = $('#price_tag');
+//             memberPriceTag = $('#member_price_tag');
+
+//             if ($('input[name="color"]:checked').val()) {
+//                 panelColor = $('input[name="color"]:checked').val();
+//             } else {
+//                 panelColor = null;
+//             }
+
+//             if ($('input[name="size"]:checked').val()) {
+//                 panelSize = $('input[name="size"]:checked').val();
+//             } else {
+//                 panelSize = null;
+//             }
+
+//             if ($('input[name="temperature"]:checked').val()) {
+//                 panelTemperature = $('input[name="temperature"]:checked').val();
+//             } else {
+//                 panelTemperature = null;
+//             }
+
+//             let priceByAttr;
+//             let mmbrPriceByAttr;
+
+//             if (
+//                 $('input[name="color"]:checked').data('price')) {
+//                 priceByAttr = $('input[name="color"]:checked').data('price');
+//             } else if ($('input[name="size"]:checked').data('price')) {
+//                 priceByAttr = $('input[name="size"]:checked').data('price');
+//             } else if ($('input[name="temperature"]:checked').data('price')) {
+//                 priceByAttr = $('input[name="temperature"]:checked').data('price')
+//             } else {
+//                 priceByAttr = 0;
+//             }
+
+//             if ($('input[name="color"]:checked').data('member-price')) {
+//                 mmbrPriceByAttr = $('input[name="color"]:checked').data('member-price');
+//             } else if ($('input[name="size"]:checked').data('price')) {
+//                 mmbrPriceByAttr = $('input[name="size"]:checked').data('member-price');
+//             } else if ($('input[name="temperature"]:checked').data('member-price')) {
+//                 mmbrPriceByAttr = $('input[name="temperature"]:checked').data('member-price')
+//             } else {
+//                 mmbrPriceByAttr = 0;
+//             }
+
+//             inputColor.val(panelColor);
+//             inputSize.val(panelSize);
+//             inputTemperature.val(panelTemperature);
+
+
+//             if (priceByAttr != 0) {
+//                 priceTag.text('RM ' + priceByAttr);
+//             }
+
+//             if (mmbrPriceByAttr != 0) {
+//                 memberPriceTag.text('RM ' + mmbrPriceByAttr);
+//             }
+//         }
+
+//         $('.panel-product-attributes').on('click', function(e) {
+//             inputColor = $('#product_attribute_color');
+//             inputSize = $('#product_attribute_size');
+//             inputTemperature = $('#product_attribute_temperature');
+           
+
+//             if ($('input[name="color"]:checked').val()) {
+//                 panelColor = $('input[name="color"]:checked').val();
+//             } else {
+//                 panelColor = null;
+//             }
+
+//             if ($('input[name="size"]:checked').val()) {
+//                 panelSize = $('input[name="size"]:checked').val();
+//             } else {
+//                 panelSize = null;
+//             }
+
+//             if ($('input[name="temperature"]:checked').val()) {
+//                 panelTemperature = $('input[name="temperature"]:checked').val();
+//             } else {
+//                 panelTemperature = null;
+//             }
+
+//             if (
+//                 $('input[name="color"]:checked').data('price')) {
+//                 priceByAttr = $('input[name="color"]:checked').data('price');
+//             } else if ($('input[name="size"]:checked').data('price')) {
+//                 priceByAttr = $('input[name="size"]:checked').data('price');
+//             } else if ($('input[name="temperature"]:checked').data('price')) {
+//                 priceByAttr = $('input[name="temperature"]:checked').data('price')
+//             } else {
+//                 priceByAttr = 0;
+//             }
+
+//             if ($('input[name="color"]:checked').data('member-price')) {
+//                 mmbrPriceByAttr = $('input[name="color"]:checked').data('member-price');
+//             } else if ($('input[name="size"]:checked').data('price')) {
+//                 mmbrPriceByAttr = $('input[name="size"]:checked').data('member-price');
+//             } else if ($('input[name="temperature"]:checked').data('member-price')) {
+//                 mmbrPriceByAttr = $('input[name="temperature"]:checked').data('member-price')
+//             } else {
+//                 mmbrPriceByAttr = 0;
+//             }
+
+//             inputColor.val(panelColor);
+//             inputSize.val(panelSize);
+//             inputTemperature.val(panelTemperature);
+          
+
+//             if (priceByAttr != 0) {
+//                 priceTag.text('RM ' + priceByAttr);
+//             }
+
+//             if (mmbrPriceByAttr != 0) {
+//                 memberPriceTag.text('RM ' + mmbrPriceByAttr);
+//             }
+//         });
+
+//         onPageload();
+
+</script>
 @endsection
