@@ -183,15 +183,15 @@ class PurchaseController extends Controller
         // Initialize an empty array of PO Numbers
         $po_numbers = array(); // ['PO#1', 'PO#2', 'PO#3'];
 
-        $invoiceSequence = Purchase::all()->count() + 500;
+        $invoiceSequence = Purchase::largestPurchaseNumber();
+        $invoiceSequence++;
 
         // Create a new purchase record.
         $purchase = new Purchase;
         // Assign user to the purchase record.
         $purchase->user_id = $user->id;
         // Generate a unique number used to identify the purchase.
-        $purchase->purchase_number =
-            '0000000BJN' . Carbon::now()->format('Y') . str_pad($invoiceSequence, 6, "0", STR_PAD_LEFT);
+        $purchase->purchase_number = $invoiceSequence;
 
         // Assign a status to the purchase. Unpaid, paid.
         $purchase->purchase_status = 3000;
