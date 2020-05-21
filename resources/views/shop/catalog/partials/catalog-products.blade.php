@@ -2,6 +2,7 @@
     Check if product is more than 0.
     If equals 0 or less than 0 there's no product to show.
  -->
+<input type="hidden" id="current-catalog-quality" value="{{ $quality }}">
 @if ($products->count() > 0)
 <!-- Products -->
 <div class="row no-gutters">

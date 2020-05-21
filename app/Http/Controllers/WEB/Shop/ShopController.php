@@ -14,12 +14,59 @@ class ShopController extends Controller
     {
         $category = Category::where('slug', $categorySlug)->first();
 
-        $products = $category->products;
+        $products = new Product;
+
+        $products = $products->whereHas('categories', function ($query) use ($categorySlug) {
+            $query->where('slug', $categorySlug);
+        });
+
+        $quality = 'premium';
+
+        $products->whereHas('quality', function ($query) use ($quality) {
+            $query->where('name', $quality);
+        });
+
+        $products = $products->has('productSoldByPanels', '>', 0);
+
+        if ($products->count() == 0) {
+            $products = new Product;
+
+            $products = $products->whereHas('categories', function ($query) use ($categorySlug) {
+                $query->where('slug', $categorySlug);
+            });
+
+            $quality = 'moderate';
+
+            $products->whereHas('quality', function ($query) use ($quality) {
+                $query->where('name', $quality);
+            });
+
+            $products = $products->has('productSoldByPanels', '>', 0);
+
+            if ($products->count() == 0) {
+                $products = new Product;
+
+                $products = $products->whereHas('categories', function ($query) use ($categorySlug) {
+                    $query->where('slug', $categorySlug);
+                });
+
+                $quality = 'standard';
+
+                $products->whereHas('quality', function ($query) use ($quality) {
+                    $query->where('name', $quality);
+                });
+
+                $products = $products->has('productSoldByPanels', '>', 0);
+            }
+        }
+
+        $products = $products->get();
 
         $products = $products->where('product_status', 1);
 
         return view('shop.catalog.partials.catalog-products')
-            ->with('products', $products);
+            ->with('products', $products)
+            ->with('quality', $quality);
     }
 
     public function categoryFilter(Request $request, $categorySlug)
@@ -50,7 +97,8 @@ class ShopController extends Controller
         $products = $products->where('product_status', 1);
 
         return view('shop.catalog.partials.catalog-products')
-            ->with('products', $products);
+            ->with('products', $products)
+            ->with('quality', $quality);
     }
 
     public function product(Request $request, $productSlug)
