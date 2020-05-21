@@ -1,6 +1,19 @@
 @extends('layouts.shop.main')
 
 @section('content')
+@if(Session::has('successful_message'))
+<div class="alert alert-success">
+{{ Session::get('successful_message') }}
+</div>
+@endif
+
+@if(Session::has('error_message'))
+<div class="alert alert-danger">
+{{ Session::get('error_message') }}
+</div>
+@endif
+
+
 <div class="width-80">
     <div class="card w-100" style="border-radius: 0;">
         <div class="">
@@ -29,7 +42,7 @@
                 <div class="col-12 col-md-5 pl-2 pr-2 pt-3 pb-3 text-center text-md-left">
                     <h1 class="pl-0 pr-0 mt-3 text-capitalize my-auto" style="font-size: 1.5rem; margin: 0;">
                         {{ $product->name }}
-                        <span style="font-size: 0.7rem; background-color: #fff000; padding: 5px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin: auto; font-weight: 600;">
+                        <span style="font-size: 0.6rem; background-color: #ffbf00; padding: 5px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin: auto; ">
                             {{ $product->quality->name }}
                         </span>
                     </h1>
@@ -69,7 +82,7 @@
                     <div>
                         <span class="text-muted">DC Customer Price</span>
                         <br>
-                        <h4 id="member_price_tag" style="display: inline-block; font-weight: 700; color: #cccc00;" class="mt-1 mb-3">RM {{ number_format(($panelProduct->member_price / 100), 2) }}</h4>
+                        <h4 id="member_price_tag" style="display: inline-block; font-weight: 700; color: #ffbf00;" class="mt-1 mb-3">RM {{ number_format(($panelProduct->member_price / 100), 2) }}</h4>
                     </div>
                     @endif
 
@@ -161,14 +174,15 @@
 
                     <div class="row mb-3">
                         <div class="col-12">
-                            <p class="mb-3 text-muted">Quantity</p>
+                            {{-- <p class="mb-3 text-muted">Quantity</p> --}}
                             <div class="input-group mx-auto-sm" style="max-width: 50%;">
+                                <p class="mt-2 text-muted">Quantity</p>
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
                                         <span class="fa fa-minus"></span>
                                     </button>
                                 </span>
-                                <input type=" text" name="quant[1]" class="form-control input-number" value="1" min="1" max="50">
+                                <input type=" text" name="quant[1]" class="form-control input-number" value="1" min="1" max="50" style="font-weight: 700; text-align:center; max-width:25%">
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
                                         <span class="fa fa-plus"></span>
@@ -178,9 +192,9 @@
                         </div>
                     </div>
 
-                    <!-- Add to cart / buy now -->
+                    <!-- Add to cart / buy now / add to perfect list -->
                     <div class="row no-gutters">
-                        <div class="col-6 p-1 m-0">
+                        <div class="col-4 p-1 m-0">
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.buy-now') }}">
                                 @method('POST')
                                 @csrf
@@ -190,10 +204,10 @@
                                 <input type="hidden" id="product_attribute_temperature_buyNow" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-lg bjsh-btn-gradient font-weight-bold w-100" style="color: #1a1a1a;">Buy Now</button>
+                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 " style="border:0px; color: #1a1a1a;">Buy Now</button>
                             </form>
                         </div>
-                        <div class="col-6 p-1 m-0">
+                        <div class="col-4 p-1 m-0">
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.add-item') }}">
                                 @method('POST')
                                 @csrf
@@ -204,7 +218,15 @@
                                 <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-lg bjsh-btn-gradient font-weight-bold w-100" style="color: #1a1a1a;">Add To Cart</button>
+                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 " style="color: #1a1a1a; border:0px;">Add To Cart</button>
+                            </form>
+                        </div>
+                        <div class="col-4 p-1 m-0">
+                            <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{route('shop.add-perfect-list',[$panelProduct->id])}}">
+                                @method('POST')
+                                @csrf
+         
+                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 " style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
                             </form>
                         </div>
                     </div>
@@ -231,7 +253,7 @@
                             <div class="ml-4 mt-2">
                                 @if($panelProduct->availableIn->count() > 0)
                                 @foreach($panelProduct->availableIn as $availableIn)
-                                <span class="d-inline-block shadow-sm" style="background-color: #ffff33; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->name }}</span>
+                                <span class="d-inline-block" style="font-weight:700; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->name }}</span>
                                 @endforeach
                                 @endif
                             </div>
@@ -790,6 +812,12 @@
 
 @push('style')
 <style>
+
+
+    .w-65{
+        width: 70%;
+    }
+
     .slick-dots {
         position: absolute;
         bottom: 0;

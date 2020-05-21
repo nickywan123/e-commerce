@@ -27,8 +27,12 @@ class ValueRecordsController extends Controller
         $purchases = Purchase::where('user_id', $user->id)->whereIn('purchase_status', $statuses)
             ->withCount('orders')->take(3)->get();
 
+        //Get first 3 perfect list from user
+        //$user = User::find(Auth::user()->id);
+        //Get favourite item for user
+        $favourite = $user->favorites->take(3);
 
-        return view('shop.customer-dashboard.home')->with('userProfile', $userProfile)->with('purchases', $purchases);
+        return view('shop.customer-dashboard.home')->with('userProfile', $userProfile)->with('purchases', $purchases)->with('favourite', $favourite);
     }
 
     /****Return All Orders in customer dashboard  ****/

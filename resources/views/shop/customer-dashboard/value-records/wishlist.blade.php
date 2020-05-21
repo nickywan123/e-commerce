@@ -4,18 +4,18 @@
 
 @section('content')
 
-<br>
 
-<div class="row ">
+
+<div class="row mt-3">
     <div class="col-12">
-        <h2><strong>Perfect List</strong></h2>
+        <h3 style="font-size:25pt; font-weight:700;">Perfect List</h3>
     </div> 
 </div>
 
 <br>
 
 
-<div class="row ">
+{{-- <div class="row ">
     <div class="col-2">
         <a href="#" class="header-text-style"
         style="border-bottom: 2px solid rgb(250, 172, 24);">
@@ -32,8 +32,17 @@
         </a>
     
     </div>  
-</div>
+</div> --}}
 
+
+<div class="container-fluid m-2 p-0" >
+    <a href="#" class="text-style"
+        style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>My Favourite
+               </strong></a>
+    <a href="#" class="text-style" ><strong>My Home List</strong></a>
+    <a href="#" class="text-style" ><strong>Perfect Home List</strong></a>
+   
+</div>
 
 <hr>
 
@@ -85,7 +94,7 @@
                         </div>
 
                         <div class="offset-2 col-1 mt-4">
-                            Quantity: xx
+                            {{-- Quantity: xx --}}
                         </div>
 
                         <div class="col-1">
@@ -111,8 +120,9 @@
             <!-- Ending Item Template -->
             @else
             <div class="row">
-                <div class="col-6">
-                    <strong style="font-size: 15pt;">Your Perfect List is empty</strong>
+                <div class="col-12">
+                    <strong class="mr-2 " style="font-size:15pt;"> Your Perfect List is empty.</strong>
+                    <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
                 </div>
                
             </div>
@@ -128,8 +138,15 @@
 
 <style>
 
+.text-style {
+            color: rgb(250, 172, 24);
+            margin-right: 45px;
+
+        }
+
+
 .header-text-style{
-    color:black;
+    color: rgb(250, 172, 24);
 }
 
 

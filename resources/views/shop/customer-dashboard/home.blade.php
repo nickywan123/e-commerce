@@ -89,7 +89,7 @@
                      <div class="col-5 col-md-6 mt-1">
                       <strong class="" style="font-size: 11pt;">There are no orders found.</strong>
                      </div>
-                     <div class="col-2 col-md-5 offset-md-1 ">
+                     <div class="col-2 col-md-3 offset-md-3 ">
                       <a class="btn bjsh-btn-gradient  padding-sm  button-size-laptop" href="/shop">Continue Shopping</a>
                      </div>       
                    </div>
@@ -111,20 +111,29 @@
                      <a href="{{route('shop.wishlist.home')}}"><p class="card-title " style="float: right; color:#ffcc00;">Show More</p></a>
                     </div>
                   </div>
+                  @if(count($favourite))
+                  @foreach ($favourite as $item)   
                   <div class="row mt-2">
                     <div class="col-3">
-                     <img src="{{asset('/storage/uploads/images/products/ales-weathercoat-hybrid/ales-weathercoat-hybrid_1.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
+                     <img src="{{asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename)}}" alt="product-image" style="width: 80px; height:80px;">
                     </div>
                     <div class="col-5 mt-3">
-                        <p class=""><b>ALES Anti Mosquito</b></p>
+                        <p class=""><b>{{$item->product->parentProduct->name}}</b></p>
                     </div>
                     <div class="col-4 mt-3" style="font-weight: 700;">
-                        RM73.80 
-                        <img src="{{asset('/storage/customer/add-to-cart.png')}}" alt="product-image" >   
-                    </div>
-                   
+                      <?php echo 'RM ' . number_format(($item->product->price / 100), 2); ?>
+                        <img src="{{asset('/storage/customer/add-to-cart.png')}}"  alt="product-image" >   
+                    </div>         
                   </div>
-                  <div class="row mt-1">
+                  @endforeach
+                  @else
+                  <div class="row mt-2">
+                    <div class="col-12">
+                      <h5>No Perfect List</h5>
+                    </div>
+                  </div>
+                  @endif
+                  {{-- <div class="row mt-1">
                     <div class="col-3">
                         <img src="{{asset('/storage/uploads/images/products/ales-weathercoat-hybrid/ales-weathercoat-hybrid_1.jpg')}}" alt="product-image" style="width: 80px; height:80px;">
                        </div>
@@ -147,7 +156,7 @@
                         RM43.00
                         <img src="{{asset('/storage/customer/add-to-cart.png')}}" alt="product-image" >   
                        </div>      
-                    </div>
+                    </div> --}}
                   </div>
                 </div>
             </div>

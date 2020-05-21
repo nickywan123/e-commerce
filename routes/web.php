@@ -287,6 +287,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // Home/Index page for shop.
         Route::get('/', 'Shop\ShopController@index')->name('shop.index');
 
+        // Add item to perfect list
+        Route::post('/perfect-list/{product_id}', 'Shop\WishListController@store')->name('shop.add-perfect-list');
+
         // About Us Page
         Route::get('/about-us', 'Shop\ShopController@aboutUs')->name('shop.about.us');
 

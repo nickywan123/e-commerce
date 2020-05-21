@@ -6,11 +6,11 @@
 
 {{--Desktop layout--}}
 
-<div class="mt-3 hidden-sm" style="min-height: 100vh; margin-right: 120px;">
-    <div class="container">
+<div class="hidden-sm" style="min-height: 100vh; ">
+    <div>
         <div class="row">
             <div class="col-md-9 mt-4">
-                <h3 style="font-size:40px;" ><strong>Value Records</strong></h3>
+                <h3 style="font-size:25pt; font-weight:700;" >Value Records</h3>
             </div>
 
 
@@ -26,7 +26,7 @@
 
 
         </div>
-        <div class="container-fluid" style="margin-top:20px;">
+        <div class="container-fluid m-2 p-0" >
             <a href="/shop/dashboard/orders/index" class="orders-text-style"
                 style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>All
                         Orders</strong></a>

@@ -108,13 +108,13 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                                             <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user"></i> Profile</a>
-                                            <a class="dropdown-item" href="/shop/dashboard/orders/index"><i class="fa fa-credit-card"></i> Value Records</a>
+                                            <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card"></i> My Dashboard</a>
                                             <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
                                             @hasrole('panel')
-                                            <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check"></i> Panel</a>
+                                            <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check"></i> Panel Dashboard</a>
                                             @endhasrole
                                             @hasrole('dealer')
-                                            <a href="/management" class="dropdown-item"><i class="fa fa-user-check"></i> Dealer</a>
+                                            <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check"></i>Dealer Dashboard</a>
                                             @endhasrole
                                             <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -155,12 +155,12 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user" style="color: #fbcc34;"></i> Profile</a>
-                                    <a class="dropdown-item" href="/shop/dashboard/orders/index"><i class="fa fa-credit-card" style="color: #fbcc34;"></i> Value Records</a>
+                                    <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card" style="color: #fbcc34;"></i>My Dashboard</a>
                                     @hasrole('panel')
-                                    <a href="/management/panel/orders" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel</a>
+                                    <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i>Panel Dashboard</a>
                                     @endhasrole
                                     @hasrole('dealer')
-                                    <a href="/management" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
+                                    <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i>Dealer Dashboard</a>
                                     @endhasrole
                                     <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

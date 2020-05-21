@@ -29,7 +29,7 @@
 
 .backgroundImg-about-us{
 
-    background-image: url(/images/about-us/about-us-2.png);
+    background-image: url(/images/about-us/about-us.png);
     background-repeat: no-repeat;
     background-position: fixed;
     background-size: cover;

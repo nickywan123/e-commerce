@@ -1,5 +1,5 @@
-<div class="wrapper" style="height: 100%;">
- <div class="sidebar sidebar-bg-color">
+<div class="wrapper" >
+ <div class="sidebar sidebar-bg-color h-100">
     <nav class="sidebar-nav" >
         <ul class="nav" style="margin-top: 2rem;">
 
@@ -100,7 +100,7 @@
       
     }
 
-    .text-color{
+.text-color{
       
        
         font-size: 10pt;
@@ -111,10 +111,10 @@
     width: 120px;
     
    }
-
+/* 
    .sidebar{
        height: 1160px;
-   }
+   } */
 
 .ps--active-x > .ps__rail-x,
 .ps--active-y >.ps__rail-y {
