@@ -177,15 +177,8 @@
             "pageLength": 25,
         });
 
-        // Category Edit URL - GET
-        let editURL = "{{ route('administrator.categories.edit', ['id' => 'id']) }}";
         // Category Store URL - POST
         let storeURL = "{{ route('administrator.categories.store') }}";
-        // Category Update URL - PUT
-        let updateURL = "{{ route('administrator.categories.update', ['id' => 'id']) }}";
-        // Category Delete URL - DELETE
-        let deleteURL = "{{ route('administrator.categories.delete', ['id' => 'id']) }}";
-
 
         // Setup ajax to include csrf token.
         $.ajaxSetup({
@@ -270,8 +263,17 @@
             });
         });
 
+        let editURL;
+        let updateURL;
+
         // Handles edit button clicks.
         $('#app').on('click', '.edit-categories', function() {
+            // Category Edit URL - GET
+            editURL = "{{ route('administrator.categories.edit', ['id' => 'id']) }}";
+            // Category Update URL - PUT
+            updateURL = "{{ route('administrator.categories.update', ['id' => 'id']) }}";
+
+
             let id = $(this).data('category-id');
             editURL = editURL.replace('id', id);
             updateURL = updateURL.replace('id', id);
@@ -292,6 +294,8 @@
                 url: editURL,
                 type: 'GET',
                 success: function(response) {
+                    $('#categoriesModal .modal-body').empty();
+
                     // Change modal title
                     $('#categoriesModal .modal-title').text('Edit Category')
                     // Add response in Modal body
@@ -373,6 +377,9 @@
         // Handles delete button clicks.
         $('#app').on('submit', '.delete-category-form', function(event) {
             event.preventDefault();
+            // Category Delete URL - DELETE
+            let deleteURL = "{{ route('administrator.categories.delete', ['id' => 'id']) }}";
+
             let id = $(this).find('button.delete-category').data('category-id');
             deleteURL = deleteURL.replace('id', id);
 

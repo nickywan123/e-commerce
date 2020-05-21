@@ -61,4 +61,21 @@ class CartController extends Controller
 
         return $cartItem;
     }
+
+    /**
+     * Update checked status.
+     */
+    public function toggleSelectItem(Request $request, $id)
+    {
+        $cartItem = Cart::findOrFail($id);
+
+        if ($cartItem->selected == 0) {
+            $cartItem->selected = 1;
+        } else {
+            $cartItem->selected = 0;
+        }
+        $cartItem->save();
+
+        return response()->json($cartItem, 200);
+    }
 }

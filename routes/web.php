@@ -169,6 +169,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // Administrator
     Route::group(['prefix' => 'administrator', 'middleware' => ['role:administrator']], function () {
 
+        Route::get('/', 'Administrator\AdministratorController@index');
+
         // User management.
         Route::group(['prefix' => 'users'], function () {
             // Panel.
@@ -418,6 +420,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
             // Remove user's cart quantity.
             Route::put('/remove-cart/{id}', 'WEB\Shop\CartController@removeCartQuantity');
+
+            // Toggle checked state.
+            Route::post('/select-item/{id}', 'WEB\Shop\CartController@toggleSelectItem')
+                ->name('web.shop.cart.toggle-select');
         });
 
         Route::group(['prefix' => 'shop'], function () {

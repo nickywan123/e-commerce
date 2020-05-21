@@ -47,7 +47,7 @@ class Purchase extends Model
 
     public function getFormattedNumber()
     {
-        return substr($this->purchase_number, 7);
+        return substr($this->purchase_number, 6);
     }
 
     public function getFormattedDate()
@@ -69,5 +69,13 @@ class Purchase extends Model
     public function dealerInfo()
     {
         return $this->hasOne('App\Models\Users\Dealers\DealerInfo', 'dealer_id');
+    }
+
+    /**
+     * Get largest purchase number.
+     */
+    public function scopeLargestPurchaseNumber($query)
+    {
+        return $query->max('purchase_number');
     }
 }

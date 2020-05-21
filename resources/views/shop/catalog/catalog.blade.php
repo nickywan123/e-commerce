@@ -529,51 +529,6 @@
 
         // Make an ajax request to get all product beloging to a category.
         function onPageLoad() {
-            // $.ajax({
-            //     async: true,
-            //     beforeSend: function() {
-            //         // Show loading spinner.
-            //         loading.show();
-            //         ItemContainer.hide();
-            //     },
-            //     complete: function() {
-            //         // Hid loading spinner.
-            //         loading.hide();
-            //         ItemContainer.show();
-            //     },
-            //     url: "{{ route('web.shop.category', ['categorySlug' => $category->slug])}}",
-            //     type: "GET",
-            //     success: function(result) {
-            //         // Load response into specified element.
-            //         ItemContainer.html(result);
-
-            //         // Assign element with left/right class into a variable.
-            //         left = ItemContainer.find('.left');
-            //         right = ItemContainer.find('.right')
-
-            //         // Initialize mCustomScrollbar
-            //         left.mCustomScrollbar({
-            //             'theme': 'minimal'
-            //         });
-
-            //         // Initialize mCustomScrollbar
-            //         right.mCustomScrollbar({
-            //             'theme': 'minimal'
-            //         });
-            //     },
-            //     error: function(result) {
-            //         // Log into console if there's an error.
-            //         console.log(result.status + ' ' + result.statusText);
-            //     }
-            // });
-
-            // Get checked radio button value and put into a variable.
-            productQuality = $('input[name="catalog-quality"]:checked').val();
-
-            let baseUrl = '{{ route("web.shop.category.filter", ["categorySlug" => ":categorySlug"]) }}';
-
-            baseUrl = baseUrl.replace(':categorySlug', categorySlug);
-
             $.ajax({
                 async: true,
                 beforeSend: function() {
@@ -582,18 +537,14 @@
                     ItemContainer.hide();
                 },
                 complete: function() {
-                    // Hide loading spinner.
+                    // Hid loading spinner.
                     loading.hide();
                     ItemContainer.show();
                 },
-                url: baseUrl,
-                type: "POST",
-                data: {
-                    // POST data.
-                    quality: productQuality,
-                },
+                url: "{{ route('web.shop.category', ['categorySlug' => $category->slug])}}",
+                type: "GET",
                 success: function(result) {
-                    // Load ajax response into specified element.
+                    // Load response into specified element.
                     ItemContainer.html(result);
 
                     // Assign element with left/right class into a variable.
@@ -609,6 +560,9 @@
                     right.mCustomScrollbar({
                         'theme': 'minimal'
                     });
+
+                    let currentQuality = ItemContainer.find('#current-catalog-quality').val();
+                    $("#catalog-quality-" + currentQuality).prop("checked", true);
                 },
                 error: function(result) {
                     // Log into console if there's an error.
@@ -653,6 +607,25 @@
                 success: function(result) {
                     // Load ajax response into specified element.
                     ItemContainer.html(result);
+
+
+                    // Assign element with left/right class into a variable.
+                    left = ItemContainer.find('.left');
+                    right = ItemContainer.find('.right')
+
+                    // Initialize mCustomScrollbar
+                    left.mCustomScrollbar({
+                        'theme': 'minimal'
+                    });
+
+                    // Initialize mCustomScrollbar
+                    right.mCustomScrollbar({
+                        'theme': 'minimal'
+                    });
+
+                    let currentQuality = ItemContainer.find('#current-catalog-quality').val();
+                    $("#catalog-quality-" + currentQuality).prop("checked", true);
+
                     $('html, body').stop().animate({
                         scrollTop: new_position.top
                     }, 500);
