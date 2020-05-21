@@ -321,9 +321,12 @@
 
                                         <div class="form-row mt-2">
                                             <div class="col-12">
-                                                <p>
-                                                    By clicking Pay Now, I hereby agrees with the <a href="" data-toggle="modal" data-target="#purchaseAgreementModal">terms and conditions</a> set forth by Bujishu Sdn Bhd.
-                                                </p>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="credit-debit-agree">
+                                                    <label class="custom-control-label" for="credit-debit-agree">
+                                                        I agree to the <a href="" data-toggle="modal" data-target="#purchaseAgreementModal">terms and conditions</a>.
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -340,7 +343,7 @@
                                         <div class="form-row mt-2">
                                             <div class="col-12">
                                                 <input type="hidden" name="payment_option" value="card">
-                                                <button class="btn btn-warning btn-block" type="submit">Pay Now</button>
+                                                <button id="pay-now-button" class="btn btn-warning btn-block" type="submit" disabled>Pay Now</button>
                                             </div>
                                         </div>
                                     </form>
@@ -431,16 +434,19 @@
 
                                             <div class="form-row mt-2">
                                                 <div class="col-12">
-                                                    <p>
-                                                        By clicking Submit Payment, I hereby agrees with the <a href="" data-toggle="modal" data-target="#purchaseAgreementModal">terms and conditions</a> set forth by Bujishu Sdn Bhd.
-                                                    </p>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="offline-agree">
+                                                        <label class="custom-control-label" for="offline-agree">
+                                                            I agree to the <a href="" data-toggle="modal" data-target="#purchaseAgreementModal">terms and conditions</a>.
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-row mt-2">
                                                 <div class="col-12">
                                                     <input type="hidden" name="payment_option" value="offline">
-                                                    <button class="btn btn-warning btn-block" type="submit">Submit Payment</button>
+                                                    <button id="submit-payment-button" class="btn btn-warning btn-block" type="submit" disabled>Submit Payment</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -1208,6 +1214,22 @@
             });
             // End Offline JS
             // End Form Validation - Offline
+
+            $('#credit-debit-agree').on('change', function() {
+                if ($('#credit-debit-agree').prop('checked', true)) {
+                    $('#pay-now-button').prop('disabled', false);
+                } else {
+                    $('#pay-now-button').prop('disabled', true);
+                }
+            });
+
+            $('#offline-agree').on('change', function() {
+                if ($('#offline-agree').prop('checked', true)) {
+                    $('#submit-payment-button').prop('disabled', false);
+                } else {
+                    $('#submit-payment-button').prop('disabled', true);
+                }
+            });
 
             /* End Author */
 
