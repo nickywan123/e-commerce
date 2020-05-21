@@ -263,16 +263,18 @@
             });
         });
 
+        let editURL;
+        let updateURL;
+
         // Handles edit button clicks.
         $('#app').on('click', '.edit-categories', function() {
             // Category Edit URL - GET
-            let editURL = "{{ route('administrator.categories.edit', ['id' => 'id']) }}";
+            editURL = "{{ route('administrator.categories.edit', ['id' => 'id']) }}";
             // Category Update URL - PUT
-            let updateURL = "{{ route('administrator.categories.update', ['id' => 'id']) }}";
+            updateURL = "{{ route('administrator.categories.update', ['id' => 'id']) }}";
 
 
             let id = $(this).data('category-id');
-            alert(id);
             editURL = editURL.replace('id', id);
             updateURL = updateURL.replace('id', id);
 

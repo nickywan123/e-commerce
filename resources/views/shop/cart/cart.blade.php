@@ -358,8 +358,36 @@
         let checkedCartItem = [];
 
         ItemContainer.on('change', '.item-checkbox', function() {
-            checkedCartItem = [];
+            let itemId = $(this).val();
 
+            let baseUrl = '{{ route("web.shop.cart.toggle-select", ["id" => ":id"]) }}';
+
+            baseUrl = baseUrl.replace(':id', itemId);
+
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    // Show loading spinner.
+                    loading.show();
+                    ItemContainer.hide();
+                },
+                complete: function() {
+                    // Hide loading spinner.
+                    loading.hide();
+                    ItemContainer.show();
+                },
+                url: baseUrl,
+                type: "POST",
+                success: function(result) {
+                    console.log(result);
+                },
+                error: function(result) {
+                    // Log into console if there's an error.
+                    console.log(result.status + ' ' + result.statusText);
+                }
+            });
+
+            checkedCartItem = [];
 
             let subtotalPrice = 0;
             let shippingPrice = 0;
@@ -371,8 +399,6 @@
                 shippingPrice = shippingPrice + $(this).data('shipping-price');
                 installationPrice = installationPrice + $(this).data('installation-price');
             });
-
-            console.log(checkedCartItem.length);
 
             if (checkedCartItem.length == 0) {
                 $('#proceed-to-checkout-button').addClass('disabled')

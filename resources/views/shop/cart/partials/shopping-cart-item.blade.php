@@ -27,11 +27,11 @@ $totalPrice = 10000;
     <div class="row no-gutters">
         <div class="col-12 mb-1 px-1">
             <span class="custom-control custom-checkbox my-auto d-inline">
-                <input type="checkbox" name="cartItemId[]" class="custom-control-input item-checkbox" id="item-{{ $cartItem->id }}" value="{{ $cartItem->id }}" data-unit-price="{{ $cartItem->unit_price }}" data-quantity="{{ $cartItem->quantity }}" data-shipping-price="{{ $cartItem->delivery_fee }}" data-installation-price="{{ $cartItem->installation_fee }}">
+                <input type="checkbox" name="cartItemId[]" class="custom-control-input item-checkbox" id="item-{{ $cartItem->id }}" value="{{ $cartItem->id }}" data-unit-price="{{ $cartItem->unit_price }}" data-quantity="{{ $cartItem->quantity }}" data-shipping-price="{{ $cartItem->delivery_fee }}" data-installation-price="{{ $cartItem->installation_fee }}" {{ ($cartItem->selected == 1) ? 'checked' : '' }}>
                 <label class="custom-control-label" for="item-{{ $cartItem->id }}"></label>
             </span>
             <span>
-                Sold by - {{ $cartItem->product->panel->company_name }}
+                {{ $cartItem->product->panel->company_name }}
             </span>
         </div>
     </div>
@@ -60,7 +60,7 @@ $totalPrice = 10000;
         </div>
         <div class="col-6 col-md-2 px-2 text-center my-auto">
             <p style="font-size: 1.1rem; color: #f0c230;" class="font-weight-bold my-1">
-                RM {{ number_format(($cartItem->unit_price / 100), 2) }}
+                RM {{ number_format(($cartItem->subtotal_price / 100), 2) }}
             </p>
             <p class="my-1">
                 <span class="mx-2">
