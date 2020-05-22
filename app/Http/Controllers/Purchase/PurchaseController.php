@@ -214,14 +214,14 @@ class PurchaseController extends Controller
 
         // $purchase->receipt_number = 'BOR20 ' . str_pad($invoiceSequence, 7, "0", STR_PAD_LEFT);
         $purchase->receipt_number = $receiptSequence;
-        $purchase->attention_to = $user->userInfo->full_name;
-        $purchase->contact_number = $user->userInfo->mobileContact->contact_num;
-        $purchase->address_1 = $user->userInfo->shippingAddress->address_1;
-        $purchase->address_2 = $user->userInfo->shippingAddress->address_2;
-        $purchase->address_3 = $user->userInfo->shippingAddress->address_3;
-        $purchase->postcode = $user->userInfo->shippingAddress->postcode;
-        $purchase->city = $user->userInfo->shippingAddress->city;
-        $purchase->state_id = $user->userInfo->shippingAddress->state_id;
+        $purchase->ship_full_name = $user->userInfo->full_name;
+        $purchase->ship_contact_num = $user->userInfo->mobileContact->contact_num;
+        $purchase->ship_address_1 = $user->userInfo->shippingAddress->address_1;
+        $purchase->ship_address_2 = $user->userInfo->shippingAddress->address_2;
+        $purchase->ship_address_3 = $user->userInfo->shippingAddress->address_3;
+        $purchase->ship_postcode = $user->userInfo->shippingAddress->postcode;
+        $purchase->ship_city = $user->userInfo->shippingAddress->city;
+        $purchase->ship_state_id = $user->userInfo->shippingAddress->state_id;
         $purchase->save();
 
         $price = 0;
