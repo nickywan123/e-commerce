@@ -17,9 +17,9 @@
                 <li class="nav-item">
                     <a class="nav-link register-tab-active " id="profile-tab" data-toggle="tab" href="#information" role="tab" aria-controls="profile" aria-selected="false">Information</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link register-tab-active " id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="agreement" aria-selected="false">Agreement</a>
-                </li>
+                </li> --}}
             </ul>
             <div class="card-body">
 
@@ -170,7 +170,11 @@
                             <!-- Next Button -->
                             <div class="text-right">
                                 <!-- <a class="btn btn-secondary next-button" id="agreement-tab" data-toggle="tab" href="#agreement" role="tab" aria-controls="profile" aria-selected="false">Next</a> -->
-                                <a class="btn btn-secondary next-button bjsh-btn-gradient " id="next-btn2"><b>Next</b></a>
+                                {{-- <a class="btn btn-secondary next-button bjsh-btn-gradient " id="next-btn2"><b>Next</b></a> --}}
+                                 <!-- Submit Button -->
+
+                            <input type="hidden" name="registrationFor" value="customer">
+                            <button type="submit" id="submit" class=" btn next-button bjsh-btn-gradient text-right"><b>Sign Up</b></button>       
                             </div>
                         </div>
 
@@ -481,10 +485,10 @@
                             <div class="row">
                                 <div class="col-12 mb-0 pt-2">
                                     <!-- Submit Button -->
-                                    <div class="text-right">
+                                    {{-- <div class="text-right">
                                         <input type="hidden" name="registrationFor" value="customer">
                                         <button type="submit" id="submit" class=" btn next-button bjsh-btn-gradient text-right "><b>Sign Up</b></button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -567,12 +571,12 @@
 @push('script')
 <script>
     // Variablie initialization.
-    var canvas = document.querySelector("canvas");
-    // let canvas = document.querySelector('.signature-pad');
-    // const signatureSaveButton = document.getElementById("saveSignature");
-    const signatureResetButton = document.getElementById("resetSignature");
-    const signatureError = document.getElementById("signatureError");
-    const signatureInput = document.getElementById("signatureInput");
+    // var canvas = document.querySelector("canvas");
+    // // let canvas = document.querySelector('.signature-pad');
+    // // const signatureSaveButton = document.getElementById("saveSignature");
+    // const signatureResetButton = document.getElementById("resetSignature");
+    // const signatureError = document.getElementById("signatureError");
+    // const signatureInput = document.getElementById("signatureInput");
 
     let currentTab = $('.nav-tabs > .active');
     let nextTab = currentTab.next('li');
@@ -596,12 +600,12 @@
     // });
 
     // Initialize a new signaturePad instance.
-    let signaturePad = new SignaturePad(canvas);
+    // let signaturePad = new SignaturePad(canvas);
 
-    // Clear signature pad.
-    signatureResetButton.addEventListener("click", function(event) {
-        signaturePad.clear();
-    });
+    // // Clear signature pad.
+    // signatureResetButton.addEventListener("click", function(event) {
+    //     signaturePad.clear();
+    // });
 
     // TODO: Not needed as submiting the form will automatically inject the signature into an input field.
     // Save signature pad as data url.
@@ -675,9 +679,9 @@
             // existing_customer: {
             //     required: true
             // },
-            signatureError: {
-                required: true
-            },
+            // signatureError: {
+            //     required: true
+            // },
         },
         messages: {
             email: {
@@ -745,7 +749,23 @@
     });
 
     // validate fields in 2nd tab
-    $('#next-btn2').click(function() {
+    // $('#next-btn2').click(function() {
+    //     if (
+    //         $("#register-form").validate().element('#full_name') &&
+    //         $("#register-form").validate().element('#nric') &&
+    //         $("#register-form").validate().element('#address_1') &&
+    //         $("#register-form").validate().element('#postcode') &&
+    //         $("#register-form").validate().element('#city') &&
+    //         $("#register-form").validate().element('#state') &&
+    //         $("#register-form").validate().element('#contact_number_home') &&
+    //         $("#register-form").validate().element('#contact_number_mobile')
+    //     ) {
+    //         nextTab.find('a').trigger('click');
+    //     }
+    // });
+
+    // Validate the signature pad before submitting form.
+    $('#submit').click(function(e) {
         if (
             $("#register-form").validate().element('#full_name') &&
             $("#register-form").validate().element('#nric') &&
@@ -753,23 +773,21 @@
             $("#register-form").validate().element('#postcode') &&
             $("#register-form").validate().element('#city') &&
             $("#register-form").validate().element('#state') &&
-            $("#register-form").validate().element('#contact_number_home') &&
             $("#register-form").validate().element('#contact_number_mobile')
         ) {
-            nextTab.find('a').trigger('click');
-        }
-    });
-
-    // Validate the signature pad before submitting form.
-    $('#submit').click(function(e) {
-        if (signaturePad.isEmpty()) {
-            signatureError.style.display = "block";
-            return false;
-        } else {
-            signatureUrl = signaturePad.toDataURL();
-            signatureInput.value = signatureUrl;
             return true;
+        }else{
+            return false;
         }
+       
+        // if (signaturePad.isEmpty()) {
+        //     signatureError.style.display = "block";
+        //     return false;
+        // } else {
+        //     signatureUrl = signaturePad.toDataURL();
+        //     signatureInput.value = signatureUrl;
+        //     return true;
+        // }
     });
 </script>
 @endpush

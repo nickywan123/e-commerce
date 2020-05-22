@@ -88,7 +88,7 @@ class RegisterController extends Controller
      */
     public function showDealerRegistrationForm()
     {
-        return $this->pageDisabled(); // TODO: Temporary disabled.
+        //return $this->pageDisabled(); // TODO: Temporary disabled.
 
         $genders = Gender::all();
         $races = Race::all();
@@ -167,10 +167,8 @@ class RegisterController extends Controller
                 ],
                 'existing_customer' => [
                     'required'
-                ],
-                'signature' => [
-                    'required'
                 ]
+
             ]);
         } elseif ($data['registrationFor'] == 'dealer') {
             // Validation for dealer registration.
@@ -343,22 +341,23 @@ class RegisterController extends Controller
             $userInfo->full_name = $data['full_name'];
             $userInfo->nric = $data['nric'];
             $userInfo->referrer_id = 0;
-            // Signature to image.
-            $base64_image = $data['signature'];
 
-            $name = $userInfo->account_id . '-signature.png';
-            $destinationPath = public_path('/storage/uploads/images/users/' . $userInfo->account_id);
+            // // Signature to image.
+            // $base64_image = $data['signature'];
 
-            if (preg_match('/^data:image\/(\w+);base64,/', $base64_image)) {
-                $image = substr($base64_image, strpos($base64_image, ',') + 1);
+            // $name = $userInfo->account_id . '-signature.png';
+            // $destinationPath = public_path('/storage/uploads/images/users/' . $userInfo->account_id);
 
-                $image = base64_decode($image);
-                if (!File::isDirectory($destinationPath)) {
-                    File::makeDirectory($destinationPath, 0777, true);
-                }
-                $imageFile = File::put($destinationPath . '/' . $name, $image);
-            }
-            $userInfo->signature = 'storage/uploads/images/users/' . $userInfo->account_id . '/' .  $name;
+            // if (preg_match('/^data:image\/(\w+);base64,/', $base64_image)) {
+            //     $image = substr($base64_image, strpos($base64_image, ',') + 1);
+
+            //     $image = base64_decode($image);
+            //     if (!File::isDirectory($destinationPath)) {
+            //         File::makeDirectory($destinationPath, 0777, true);
+            //     }
+            //     $imageFile = File::put($destinationPath . '/' . $name, $image);
+            // }
+            // $userInfo->signature = 'storage/uploads/images/users/' . $userInfo->account_id . '/' .  $name;
             $userInfo->save();
 
             // User_addresses table.
