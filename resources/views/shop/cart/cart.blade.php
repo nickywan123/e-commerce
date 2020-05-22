@@ -170,16 +170,20 @@
 
                     buttonNumber = $(result).filter('.btn-number');
 
-                    if ($("input[name='cartItemId[]']:checked")) {
-                        $.each($("input[name='cartItemId[]']:checked"), function() {
-                            checkedCartItem.push($(this).val());
-                            subtotalPrice = subtotalPrice + $(this).data('unit-price') * $(this).data('quantity');
-                            shippingPrice = shippingPrice + $(this).data('shipping-price');
-                            installationPrice = installationPrice + $(this).data('installation-price');
-                        });
+                    $.each($("input[name='cartItemId[]']:checked"), function() {
+                        checkedCartItem.push($(this).val());
+                        subtotalPrice = subtotalPrice + $(this).data('unit-price') * $(this).data('quantity');
+                        shippingPrice = shippingPrice + $(this).data('shipping-price');
+                        installationPrice = installationPrice + $(this).data('installation-price');
+                    });
 
-                        updatePrice(subtotalPrice, shippingPrice, installationPrice);
+                    if (checkedCartItem.length == 0) {
+                        $('#proceed-to-checkout-button').addClass('disabled')
+                    } else {
+                        $('#proceed-to-checkout-button').removeClass('disabled')
                     }
+
+                    updatePrice(subtotalPrice, shippingPrice, installationPrice);
                 },
                 error: function(result) {
                     // Log into console if there's an error.
@@ -355,8 +359,6 @@
             grandTotalPriceTag.text((grandTotal == 0) ? 'RM 0.00' : 'RM ' + grandTotal);
         }
 
-        let checkedCartItem = [];
-
         ItemContainer.on('change', '.item-checkbox', function() {
             let itemId = $(this).val();
 
@@ -389,9 +391,9 @@
 
             checkedCartItem = [];
 
-            let subtotalPrice = 0;
-            let shippingPrice = 0;
-            let installationPrice = 0;
+            subtotalPrice = 0;
+            shippingPrice = 0;
+            installationPrice = 0;
 
             $.each($("input[name='cartItemId[]']:checked"), function() {
                 checkedCartItem.push($(this).val());
