@@ -14,9 +14,9 @@
     <div class="card-body">
         <div class="row">
             <div class="col-12">
-                <h5>
+                <h4>
                     Product Information
-                </h5>
+                </h4>
             </div>
             <div class="col-12">
                 <div class="row">
@@ -48,6 +48,10 @@
                     <div class="col-12 col-md-10 offset-md-1">
                         <form action="">
                             <div class="row">
+                                <div class="col-12">
+                                    <h5 class="mb-3">Product By Panel ..</h5>
+                                </div>
+
                                 <div class="col-12 col-md-4 text-md-right my-auto">
                                     <p>
                                         Panel Account ID <small class="text-danger">*</small>
@@ -174,7 +178,47 @@
                                 </div>
                             </div>
 
+                            <hr>
+
+                            <h5 class="mb-3">Product Variations ..</h5>
+
                             <div class="row">
+                                <div class="col-12 col-md-2 text-md-right my-auto">
+                                    <p>
+                                        Variations <small class="text-danger">*</small>
+                                    </p>
+                                </div>
+                                <div class="col-12 col-md-10" id="variationContainer">
+                                    <div class="row no-gutters default-item p-2 mb-1" style="border: 1px solid #b3b3b3; border-radius: 5px;">
+                                        <div class="col-12 col-md-3 form-group p-1">
+                                            <select name="product_variation[]" id="product_variation" class="select2 form-control">
+                                                <option value="">Color</option>
+                                                <option value="">Size</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-3 form-group p-1">
+                                            <input type="text" name="product_variation_name[]" id="product_variation_name" class="form-control" placeholder="Name">
+                                        </div>
+                                        <div class="col-12 col-md-6 form-group p-1">
+                                            <input type="text" name="product_variation_price[]" id="product_variation_price" class="form-control input-mask-price d-inline" placeholder="Price" style="width: 49.3%;">
+
+                                            <input type="text" name="product_variation_member_price[]" id="product_variation_member_price" class="form-control input-mask-price d-inline" placeholder="DC Customer Price" style="width: 49.3%;">
+                                        </div>
+
+                                        <div class="col-6 p-1">
+                                            <button type="button" class="btn btn-danger d-none" style="width: 20%;" onclick="removeProductVariationElement(this);">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-success" style="width: 20%;" onclick="addMoreProductVariationElement();">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
                                 <div class="col-12 text-right">
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
@@ -193,22 +237,92 @@
 <script>
     function addMoreAvailableInElement() {
         let availableInContainer = $('#availableInContainer')
+
         let currentItem = availableInContainer.find('.default-item');
 
+        currentItem.find('select.select2').select2('destroy');
         currentItem.find('.btn.btn-danger').removeClass('d-none');
         currentItem.find('.btn.btn-success').addClass('d-none');
         currentItem.removeClass('default-item');
 
-        let cloneItem = currentItem.clone();
+        let cloneItem = currentItem.clone(false).hide();
 
+        cloneItem.find('select.select2').removeAttr('data-select2-id').removeAttr('id');
+        cloneItem.find('option').removeAttr('data-select2-id');
         cloneItem.addClass('default-item');
         cloneItem.find('.btn.btn-danger').addClass('d-none');
         cloneItem.find('.btn.btn-success').removeClass('d-none');
-        cloneItem.appendTo(availableInContainer).show();
+        cloneItem.appendTo(availableInContainer);
+        cloneItem.slideDown();
+
+        availableInContainer.find('select.select2').select2({
+            theme: 'bootstrap4',
+        });
+
+        let priceSelectors = document.getElementsByClassName('input-mask-price');
+
+        let priceInputMask = new Inputmask({
+            'mask': '9999.99',
+            'numericInput': true,
+            'digits': 2,
+            'digitsOptional': false,
+            'placeholder': '0'
+        });
+
+        for (var i = 0; i < priceSelectors.length; i++) {
+            priceInputMask.mask(priceSelectors.item(i));
+        }
     }
 
     function removeAvailableInElement(element) {
-        $(element).parent().parent().remove();
+        $(element).parent().parent().slideUp(500, function() {
+            $(this).remove();
+        });
+    }
+
+    function addMoreProductVariationElement() {
+        let availableInContainer = $('#variationContainer')
+
+        let currentItem = availableInContainer.find('.default-item');
+
+        currentItem.find('select.select2').select2('destroy');
+        currentItem.find('.btn.btn-danger').removeClass('d-none');
+        currentItem.find('.btn.btn-success').addClass('d-none');
+        currentItem.removeClass('default-item');
+
+        let cloneItem = currentItem.clone(false).hide();
+
+        cloneItem.find('select.select2').removeAttr('data-select2-id').removeAttr('id');
+        cloneItem.find('option').removeAttr('data-select2-id');
+        cloneItem.addClass('default-item');
+        cloneItem.find('.btn.btn-danger').addClass('d-none');
+        cloneItem.find('.btn.btn-success').removeClass('d-none');
+        cloneItem.appendTo(availableInContainer);
+        cloneItem.slideDown();
+
+        availableInContainer.find('select.select2').select2({
+            theme: 'bootstrap4',
+        });
+
+        let priceSelectors = document.getElementsByClassName('input-mask-price');
+
+        let priceInputMask = new Inputmask({
+            'mask': '9999.99',
+            'numericInput': true,
+            'digits': 2,
+            'digitsOptional': false,
+            'placeholder': '0'
+        });
+
+        for (var i = 0; i < priceSelectors.length; i++) {
+            priceInputMask.mask(priceSelectors.item(i));
+        }
+    }
+
+    function removeProductVariationElement(element) {
+        $(element).parent().parent().slideUp(500, function() {
+            $(this).remove();
+        });
     }
 
     $(document).ready(function() {
