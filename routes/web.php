@@ -446,3 +446,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     });
     // End Web
 });
+
+Route::group(['prefix' => 'development'], function () {
+    Route::get('/administrator/products/panel/edit', function () {
+        return view('administrator.products.panel.v1.edit');
+    });
+});
