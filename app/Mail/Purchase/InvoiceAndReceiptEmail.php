@@ -35,10 +35,10 @@ class InvoiceAndReceiptEmail extends Mailable
             ->view('emails.purchases.invoice-receipt-email')
             ->with('purchase', $this->purchase)
             ->attach(public_path(
-                '/storage/documents/invoice/' . $this->purchase->purchase_number . '/' . $this->purchase->purchase_number . '.pdf'
+                '/storage/documents/invoice/' . $this->purchase->getFormattedNumber() . '/' . $this->purchase->getFormattedNumber() . '.pdf'
             ))
             ->attach(public_path(
-                '/storage/documents/invoice/' . $this->purchase->purchase_number . '/' . $this->purchase->purchase_number . '-receipt.pdf'
+                '/storage/documents/invoice/' . $this->purchase->getFormattedNumber() . '/' . $this->purchase->getFormattedNumber() . '-receipt.pdf'
             ));
     }
 }
