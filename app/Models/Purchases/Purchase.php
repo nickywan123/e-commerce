@@ -78,4 +78,20 @@ class Purchase extends Model
     {
         return $query->max('purchase_number');
     }
+
+    /**
+     * Get largest receipt number.
+     */
+    public function scopeLargestReceiptNumber($query)
+    {
+        return $query->max('receipt_number');
+    }
+
+    /**
+     * Get state.
+     */
+    public function state()
+    {
+        return $this->belongsTo('App\Models\Globals\State', 'state_id');
+    }
 }

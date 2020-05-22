@@ -209,7 +209,19 @@ class PurchaseController extends Controller
         $purchase->purchase_amount = $purchase_amount;
         // $purchase->dealer_id =  $user->dealerInfo->account_id;
 
-        $purchase->receipt_number = 'BOR20 ' . str_pad($invoiceSequence, 7, "0", STR_PAD_LEFT);
+        $receiptSequence = Purchase::largestReceiptNumber();
+        $receiptSequence++;
+
+        // $purchase->receipt_number = 'BOR20 ' . str_pad($invoiceSequence, 7, "0", STR_PAD_LEFT);
+        $purchase->receipt_number = $receiptSequence;
+        $purchase->attention_to = $user->userInfo->full_name;
+        $purchase->contact_number = $user->userInfo->mobileContact->contact_num;
+        $purchase->address_1 = $user->userInfo->shippingAddress->address_1;
+        $purchase->address_2 = $user->userInfo->shippingAddress->address_2;
+        $purchase->address_3 = $user->userInfo->shippingAddress->address_3;
+        $purchase->postcode = $user->userInfo->shippingAddress->postcode;
+        $purchase->city = $user->userInfo->shippingAddress->city;
+        $purchase->state_id = $user->userInfo->shippingAddress->state_id;
         $purchase->save();
 
         $price = 0;
@@ -330,29 +342,41 @@ class PurchaseController extends Controller
             ->with('states', $states);
     }
 
-    public function updateCustomerPaymentDetail(Request $request)
+    public function updateCustomerPaymentDetail(Request $request, $purchaseNumber)
     {
         $user = User::find(Auth::user()->id);
 
         $userInfo = $user->userInfo;
 
-        $userInfo->full_name = $request->input('attention_to');
-        $userInfo->save();
+        $purchase = Purchase::where('purchase_number', $purchaseNumber)->first();
 
-        $userMobileContact = $user->userInfo->mobileContact;
+        $purchase->attention_to = $request->input('attention_to');
+        $purchase->contact_number = $request->input('attention_contact');
+        $purchase->address_1 = $request->input('attention_address_1');
+        $purchase->address_2 = $request->input('attention_address_2');
+        $purchase->address_3 = $request->input('attention_address_3');
+        $purchase->postcode = $request->input('attention_postcode');
+        $purchase->city = $request->input('attention_city');
+        $purchase->state_id = $request->input('state');
+        $purchase->save();
 
-        $userMobileContact->contact_num = $request->input('attention_contact');
-        $userMobileContact->save();
+        // $userInfo->full_name = $request->input('attention_to');
+        // $userInfo->save();
 
-        $userAddress = $user->userInfo->shippingAddress;
+        // $userMobileContact = $user->userInfo->mobileContact;
 
-        $userAddress->address_1 = $request->input('attention_address_1');
-        $userAddress->address_2 = $request->input('attention_address_2');
-        $userAddress->address_3 = $request->input('attention_address_3');
-        $userAddress->postcode = $request->input('attention_postcode');
-        $userAddress->city = $request->input('attention_city');
-        $userAddress->state_id = $request->input('state');
-        $userAddress->save();
+        // $userMobileContact->contact_num = $request->input('attention_contact');
+        // $userMobileContact->save();
+
+        // $userAddress = $user->userInfo->shippingAddress;
+
+        // $userAddress->address_1 = $request->input('attention_address_1');
+        // $userAddress->address_2 = $request->input('attention_address_2');
+        // $userAddress->address_3 = $request->input('attention_address_3');
+        // $userAddress->postcode = $request->input('attention_postcode');
+        // $userAddress->city = $request->input('attention_city');
+        // $userAddress->state_id = $request->input('state');
+        // $userAddress->save();
 
         return redirect('/payment/cashier?orderId=' . $request->input('orderId'));
     }

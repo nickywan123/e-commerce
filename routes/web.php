@@ -391,8 +391,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // View for user to select payment option and provide their payment information.
         Route::get('/cashier', 'Purchase\PurchaseController@paymentOption');
 
-        Route::put('/update-customer-details/{id}', 'Purchase\PurchaseController@updateCustomerPaymentDetail')
-            ->name('payment.update-details');
+        Route::put(
+            '/update-customer-details/{purchaseNumber}',
+            'Purchase\PurchaseController@updateCustomerPaymentDetail'
+        )->name('payment.update-details');
 
         // Handle POST request after user selected payment option and provided their payment information.
         Route::post('/', 'Purchase\PaymentGatewayController@paymentGatewayRequest');

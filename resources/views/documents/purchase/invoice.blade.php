@@ -8412,23 +8412,43 @@
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                                @if ($purchase->address_1)
+                                {{ $purchase->address_1 }}
+                                @else
                                 {{ $purchase->user->userInfo->shippingAddress->address_1 }}
+                                @endif
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                                @if ($purchase->address_2)
+                                {{ $purchase->address_2 }}
+                                @else
                                 {{ $purchase->user->userInfo->shippingAddress->address_2 }}
+                                @endif
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{ $purchase->user->userInfo->shippingAddress->postcode }},
+                                @if ($purchase->postcode)
+                                {{ $purchase->postcode }},
+                                @else
+                                {{ $purchase->user->userInfo->shippingAddress->postcode }}
+                                @endif
+                                @if ($purchase->city)
+                                {{ $purchase->city }}
+                                @else
                                 {{ $purchase->user->userInfo->shippingAddress->city }}
+                                @endif
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                                @if ($purchase->postcode)
+                                {{ $purchase->state->name }},
+                                @else
                                 {{ $purchase->user->userInfo->shippingAddress->state->name }},
+                                @endif
                                 Malaysia
                             </td>
                         </tr>
@@ -8437,7 +8457,11 @@
                                 Attention To
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                                @if ($purchase->attention_to)
+                                {{ $purchase->attention_to }}
+                                @else
                                 {{ $purchase->user->userInfo->full_name }}
+                                @endif
                             </td>
                         </tr>
                         <tr>
@@ -8445,7 +8469,11 @@
                                 Contact No.
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
+                                @if ($purchase->contact_number)
+                                {{ $purchase->contact_number }}
+                                @else
                                 {{ $purchase->user->userInfo->mobileContact->contact_num }}
+                                @endif
                             </td>
                         </tr>
                         <tr>

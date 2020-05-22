@@ -222,7 +222,7 @@
                                             <div class="col-12 form-group">
                                                 <label>Name</label>
                                                 <p id="attention_to_tag" class="mb-0" style="border: 2px solid #f4f4f4; border-radius: 5px; padding: 10px;">
-                                                    {{ $user->userInfo->full_name }}
+                                                    {{ $purchase->attention_to }}
                                                 </p>
                                             </div>
                                         </div>
@@ -231,7 +231,7 @@
                                             <div class="col-12 form-group">
                                                 <label>Contact (Mobile)</label>
                                                 <p id="attention_contact_tag" class="mb-0" style="border: 2px solid #f4f4f4; border-radius: 5px; padding: 10px;">
-                                                    {{ $user->userInfo->mobileContact->contact_num }}
+                                                    {{ $purchase->contact_number }}
                                                 </p>
                                             </div>
                                         </div>
@@ -240,17 +240,17 @@
                                             <div class="col-12 form-group">
                                                 <label>Shipping Address</label>
                                                 <p id="attention_address_tag" class="mb-0" style="border: 2px solid #f4f4f4; border-radius: 5px; padding: 10px;">
-                                                    {{ $user->userInfo->shippingAddress->address_1 }},
+                                                    {{ $purchase->address_1 }},
                                                     <br>
-                                                    {{ $user->userInfo->shippingAddress->address_2 }},
+                                                    {{ $purchase->address_2 }},
                                                     <br>
-                                                    @if ($user->userInfo->shippingAddress->address_3)
-                                                    {{ $user->userInfo->shippingAddress->address_3 }},
+                                                    @if ($purchase->address_3)
+                                                    {{ $purchase->address_3 }},
                                                     <br>
                                                     @endif
-                                                    {{ $user->userInfo->shippingAddress->postcode }}, {{ $user->userInfo->shippingAddress->city }}
+                                                    {{ $purchase->postcode }}, {{ $purchase->city }}
                                                     <br>
-                                                    {{ $user->userInfo->shippingAddress->state->name }}, Malaysia
+                                                    {{ $purchase->state->name }}, Malaysia
                                                 </p>
                                             </div>
                                         </div>
@@ -366,7 +366,7 @@
                                                 <div class="col-12 form-group">
                                                     <label>Name</label>
                                                     <p id="attention_to_tag" class="mb-0" style="border: 2px solid #f4f4f4; border-radius: 5px; padding: 10px;">
-                                                        {{ $user->userInfo->full_name }}
+                                                        {{ $purchase->attention_to }}
                                                     </p>
                                                 </div>
                                             </div>
@@ -375,7 +375,7 @@
                                                 <div class="col-12 form-group">
                                                     <label>Contact (Mobile)</label>
                                                     <p id="attention_contact_tag" class="mb-0" style="border: 2px solid #f4f4f4; border-radius: 5px; padding: 10px;">
-                                                        {{ $user->userInfo->mobileContact->contact_num }}
+                                                        {{ $purchase->contact_number }}
                                                     </p>
                                                 </div>
                                             </div>
@@ -384,17 +384,17 @@
                                                 <div class="col-12 form-group">
                                                     <label>Shipping Address</label>
                                                     <p id="attention_address_tag" class="mb-0" style="border: 2px solid #f4f4f4; border-radius: 5px; padding: 10px;">
-                                                        {{ $user->userInfo->shippingAddress->address_1 }},
+                                                        {{ $purchase->address_1 }},
                                                         <br>
-                                                        {{ $user->userInfo->shippingAddress->address_2 }},
+                                                        {{ $purchase->address_2 }},
                                                         <br>
-                                                        @if ($user->userInfo->shippingAddress->address_3)
-                                                        {{ $user->userInfo->shippingAddress->address_3 }},
+                                                        @if ($purchase->address_3)
+                                                        {{ $purchase->address_3 }},
                                                         <br>
                                                         @endif
-                                                        {{ $user->userInfo->shippingAddress->postcode }}, {{ $user->userInfo->shippingAddress->city }}
+                                                        {{ $purchase->postcode }}, {{ $purchase->city }}
                                                         <br>
-                                                        {{ $user->userInfo->shippingAddress->state->name }}, Malaysia
+                                                        {{ $purchase->state->name }}, Malaysia
                                                     </p>
                                                 </div>
                                             </div>
@@ -510,7 +510,7 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="update-customer-detail" action="/payment/update-customer-details/{{ $user->id }}" method="POST">
+                <form id="update-customer-detail" action="/payment/update-customer-details/{{ $purchase->purchase_number }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="modal-header">
@@ -525,7 +525,7 @@
                                 <div class="form-row">
                                     <div class="col-12 form-group">
                                         <label for="attention_to">Name</label>
-                                        <input type="text" name="attention_to" id="attention_to" class="form-control" value="{{ $user->userInfo->full_name }}">
+                                        <input type="text" name="attention_to" id="attention_to" class="form-control" value="{{ $purchase->attention_to }}">
                                         <div class="valid-feedback feedback-icon">
                                             <i class="fa fa-check"></i>
                                         </div>
@@ -538,7 +538,7 @@
                                 <div class="form-row">
                                     <div class="col-12 form-group">
                                         <label for="attention_contact">Contact</label>
-                                        <input type="text" name="attention_contact" id="attention_contact" class="form-control" value="{{ $user->userInfo->mobileContact->contact_num }}">
+                                        <input type="text" name="attention_contact" id="attention_contact" class="form-control" value="{{ $purchase->contact_number }}">
                                         <div class="valid-feedback feedback-icon">
                                             <i class="fa fa-check"></i>
                                         </div>
@@ -551,7 +551,7 @@
                                 <div class="form-row">
                                     <div class="col-12 form-group">
                                         <label for="attention_address_1">Address Line 1</label>
-                                        <input type="text" name="attention_address_1" id="attention_address_1" class="form-control" value="{{ $user->userInfo->shippingAddress->address_1 }}">
+                                        <input type="text" name="attention_address_1" id="attention_address_1" class="form-control" value="{{ $purchase->address_1 }}">
                                         <div class="valid-feedback feedback-icon">
                                             <i class="fa fa-check"></i>
                                         </div>
@@ -564,7 +564,7 @@
                                 <div class="form-row">
                                     <div class="col-12 form-group">
                                         <label for="attention_address_2">Address Line 2</label>
-                                        <input type="text" name="attention_address_2" id="attention_address_2" class="form-control" value="{{ $user->userInfo->shippingAddress->address_2 }}">
+                                        <input type="text" name="attention_address_2" id="attention_address_2" class="form-control" value="{{ $purchase->address_2 }}">
                                         <div class="valid-feedback feedback-icon">
                                             <i class="fa fa-check"></i>
                                         </div>
@@ -577,7 +577,7 @@
                                 <div class="form-row">
                                     <div class="col-12 form-group">
                                         <label for="attention_address_3">Address Line 3</label>
-                                        <input type="text" name="attention_address_3" id="attention_address_3" class="form-control" value="{{ $user->userInfo->shippingAddress->address_3 }}">
+                                        <input type="text" name="attention_address_3" id="attention_address_3" class="form-control" value="{{ $purchase->address_3 }}">
                                         <div class="valid-feedback feedback-icon">
                                             <i class="fa fa-check"></i>
                                         </div>
@@ -590,7 +590,7 @@
                                 <div class="form-row">
                                     <div class="col-6 form-group">
                                         <label for="attention_postcode">Postcode</label>
-                                        <input type="text" name="attention_postcode" id="attention_postcode" class="form-control" value="{{ $user->userInfo->shippingAddress->postcode }}">
+                                        <input type="text" name="attention_postcode" id="attention_postcode" class="form-control" value="{{ $purchase->postcode }}">
                                         <div class="valid-feedback feedback-icon">
                                             <i class="fa fa-check"></i>
                                         </div>
@@ -601,7 +601,7 @@
 
                                     <div class="col-6 form-group">
                                         <label for="attention_city">City</label>
-                                        <input type="text" name="attention_city" id="attention_city" class="form-control" value="{{ $user->userInfo->shippingAddress->city }}">
+                                        <input type="text" name="attention_city" id="attention_city" class="form-control" value="{{ $purchase->city }}">
                                         <div class="valid-feedback feedback-icon">
                                             <i class="fa fa-check"></i>
                                         </div>
@@ -617,7 +617,7 @@
                                         <select name="state" id="state" class="form-control @error('state') is-invalid @enderror">
                                             <option disabled selected>Choose your state..</option>
                                             @foreach($states as $state)
-                                            <option class="text-capitalize" value="{{ $state->id }}" {{ ($state->id == $user->userInfo->shippingAddress->state_id) ? 'selected' : '' }}>{{ $state->name }}</option>
+                                            <option class="text-capitalize" value="{{ $state->id }}" {{ ($state->id == $purchase->state_id) ? 'selected' : '' }}>{{ $state->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
