@@ -174,6 +174,7 @@ class PaymentGatewayController extends Controller
                 // Place the PDF into directory.
                 File::put($pdfDestination . $pdfName . '.pdf', $content);
 
+
                 // Queue PO email to panels.
                 SendPurchaseOrderEmail::dispatch($order->panel->company_email, $order);
             }

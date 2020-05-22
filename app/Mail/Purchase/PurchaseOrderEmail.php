@@ -36,7 +36,7 @@ class PurchaseOrderEmail extends Mailable
             ->view('emails.purchases.po-email')
             ->with('order', $this->order)
             ->attach(public_path(
-                '/storage/documents/invoice/' . $this->order->purchase->purchase_number . '/purchase-orders/' . $this->order->order_number . '.pdf'
+                '/storage/documents/invoice/' . $this->order->purchase->getFormattedNumber() . '/purchase-orders/' . $this->order->order_number . '.pdf'
             ));
     }
 }
