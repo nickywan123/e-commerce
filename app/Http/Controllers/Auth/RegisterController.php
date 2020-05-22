@@ -88,7 +88,7 @@ class RegisterController extends Controller
      */
     public function showDealerRegistrationForm()
     {
-         return $this->pageDisabled(); // TODO: Temporary disabled.
+        return $this->pageDisabled(); // TODO: Temporary disabled.
 
         $genders = Gender::all();
         $races = Race::all();
@@ -148,7 +148,7 @@ class RegisterController extends Controller
                 'address_1' => [
                     'required'
                 ],
-               
+
                 'postcode' => [
                     'required'
                 ],
@@ -161,6 +161,9 @@ class RegisterController extends Controller
                 'contact_number_mobile' => [
                     'required',
                     'min:10'
+                ],
+                'contact_number_home' => [
+                    'min:9'
                 ],
                 'existing_customer' => [
                     'required'
@@ -171,94 +174,136 @@ class RegisterController extends Controller
             ]);
         } elseif ($data['registrationFor'] == 'dealer') {
             // Validation for dealer registration.
-            return Validator::make($data, [
-                'email' => [
-                    'required',
-                    'string',
-                    'email',
-                    'max:255',
-                    'unique:users'
+            return Validator::make(
+                $data,
+                [
+                    'email' => [
+                        'required',
+                        'string',
+                        'email',
+                        'max:255',
+                        'unique:users'
+                    ],
+                    'password' => [
+                        'required',
+                        'string',
+                        'min:8',
+                        'confirmed'
+                    ],
+                    'full_name' => [
+                        'required',
+                        'string'
+                    ],
+                    'nric' => [
+                        'required',
+                        'min:12',
+                        'max:12'
+                    ],
+                    'date_of_birth' => [
+                        'required'
+                    ],
+                    'gender_id' => [
+                        'required'
+                    ],
+                    'race_id' => [
+                        'required'
+                    ],
+                    'marital_id' => [
+                        'required'
+                    ],
+                    'address_1' => [
+                        'required'
+                    ],
+
+                    'postcode' => [
+                        'required'
+                    ],
+                    'city' => [
+                        'required'
+                    ],
+                    'state' => [
+                        'required'
+                    ],
+                    'contact_number_mobile' => [
+                        'required',
+                        'min:10'
+                    ],
+                    'contact_number_home' => [
+                        'min:9'
+                    ],
+                    'spouse_full_name' => [
+                        'required_if:marital_id,2'
+                    ],
+                    'spouse_nric' => [
+                        'required_if:marital_id,2',
+                        'min:12',
+                        'max:12'
+                    ],
+                    'spouse_date_of_birth' => [
+                        'required_if:marital_id,2'
+                    ],
+                    'spouse_occupation' => [
+                        'required_if:marital_id,2'
+                    ],
+                    'spouse_contact_office' => [
+                        'required_if:marital_id,2',
+                        'min:9'
+                    ],
+                    'spouse_contact_mobile' => [
+                        'required_if:marital_id,2',
+                        'min:10'
+                    ],
+                    'spouse_email' => [
+                        'required_if:marital_id,2'
+                    ],
+                    'employment_id' => [
+                        'required'
+                    ],
+                    'employment_name' => [
+                        'required'
+                    ],
+                    'company_address_1' => [
+                        'required'
+                    ],
+
+                    'company_postcode' => [
+                        'required'
+                    ],
+                    'company_city' => [
+                        'required'
+                    ],
+                    'company_state' => [
+                        'required'
+                    ],
+                    'introducer_name' => [
+                        'required'
+                    ],
+                    'introducer_account_id' => [
+                        'required',
+                        'min:10',
+                        'max:10'
+                    ],
+                    'payment_proof' => [
+                        'required',
+                        'image',
+                        'mimes:jpeg,png,jpg',
+                        'max:2048'
+                    ]
                 ],
-                'password' => [
-                    'required',
-                    'string',
-                    'min:8',
-                    'confirmed'
-                ],
-                'full_name' => [
-                    'required',
-                    'string'
-                ],
-                'nric' => [
-                    'required',
-                    'min:12',
-                    'max:12'
-                ],
-                'date_of_birth' => [
-                    'required'
-                ],
-                'gender_id' => [
-                    'required'
-                ],
-                'race_id' => [
-                    'required'
-                ],
-                'marital_id' => [
-                    'required'
-                ],
-                'address_1' => [
-                    'required'
-                ],
-             
-                'postcode' => [
-                    'required'
-                ],
-                'city' => [
-                    'required'
-                ],
-                'state' => [
-                    'required'
-                ],
-                'contact_number_mobile' => [
-                    'required',
-                    'min:10'
-                ],
-                'employment_id' => [
-                    'required'
-                ],
-                'employment_name' => [
-                    'required'
-                ],
-                'company_address_1' => [
-                    'required'
-                ],
-                'company_address_2' => [
-                    'required'
-                ],
-                'company_postcode' => [
-                    'required'
-                ],
-                'company_city' => [
-                    'required'
-                ],
-                'company_state' => [
-                    'required'
-                ],
-                'introducer_name' => [
-                    'required'
-                ],
-                'introducer_account_id' => [
-                    'required',
-                    'min:10',
-                    'max:10'
-                ],
-                'payment_proof' => [
-                    'required',
-                    'image',
-                    'mimes:jpeg,png,jpg',
-                    'max:2048'
+                [
+
+                    'spouse_full_name.required_if' => 'Please enter the spouse name',
+                    'spouse_nric.required_if' => 'Please enter your spouse NRIC',
+                    'spouse_date_of_birth.required_if' => 'Please enter your spouse date of birth',
+                    'spouse_occupation.required_if' => 'Please enter spouse occupation',
+                    'spouse_contact_office.required_if' => 'Please enter spouse contact office',
+                    'spouse_contact_mobile.required_if' => 'Please enter spouse mobile number',
+                    'spouse_email.required_if' => 'Please enter spouse email'
+
+
+
                 ]
-            ]);
+            );
         } elseif ($data['registrationFor'] == 'panel') {
             // Validation for panel registration.
         }

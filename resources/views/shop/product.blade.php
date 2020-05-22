@@ -42,7 +42,7 @@
                 <div class="col-12 col-md-5 pl-2 pr-2 pt-3 pb-3 text-center text-md-left">
                     <h1 class="pl-0 pr-0 mt-3 text-capitalize my-auto" style="font-size: 1.5rem; margin: 0;">
                         {{ $product->name }}
-                        <span style="font-size: 0.6rem; background-color: #ffbf00; padding: 5px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin: auto; ">
+                        <span style="font-size: 0.6rem; background-color: #ffbf00; padding: 5px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin: auto; background: linear-gradient(to right, #ffbf00 40%,#ffd800 95%); ">
                             {{ $product->quality->name }}
                         </span>
                     </h1>
@@ -204,7 +204,7 @@
                                 <input type="hidden" id="product_attribute_temperature_buyNow" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 " style="border:0px; color: #1a1a1a;">Buy Now</button>
+                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="border:0px; color: #1a1a1a;">Buy Now</button>
                             </form>
                         </div>
                         <div class="col-4 p-1 m-0">
@@ -218,7 +218,7 @@
                                 <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 " style="color: #1a1a1a; border:0px;">Add To Cart</button>
+                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="color: #1a1a1a; border:0px;">Add To Cart</button>
                             </form>
                         </div>
                         <div class="col-4 p-1 m-0">
@@ -226,7 +226,7 @@
                                 @method('POST')
                                 @csrf
          
-                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 " style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
+                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
                             </form>
                         </div>
                     </div>
@@ -837,6 +837,10 @@
 
         .mx-auto-sm {
             margin: 0 auto;
+        }
+
+        .bjsh-button-mobile{
+            font-size:7pt;
         }
     }
 

@@ -663,7 +663,7 @@
             contact_number_home: {
                 required: false,
                 digits: true,
-                minlength: 10,
+                minlength: 9,
                 maxlength: 15
             },
             contact_number_mobile: {
@@ -718,7 +718,7 @@
             contact_number_home: {
                 required: "Please enter your home number.",
                 digits: "Please enter number only.",
-                minlength: "Contact number must at least be 10 digits.",
+                minlength: "Contact number must at least be 9 digits.",
                 maxlength: "Please enter a valid contact number."
             },
             contact_number_mobile: {
