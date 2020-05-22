@@ -244,8 +244,10 @@
                                                     <br>
                                                     {{ $user->userInfo->shippingAddress->address_2 }},
                                                     <br>
+                                                    @if ($user->userInfo->shippingAddress->address_3)
                                                     {{ $user->userInfo->shippingAddress->address_3 }},
                                                     <br>
+                                                    @endif
                                                     {{ $user->userInfo->shippingAddress->postcode }}, {{ $user->userInfo->shippingAddress->city }}
                                                     <br>
                                                     {{ $user->userInfo->shippingAddress->state->name }}, Malaysia
@@ -386,8 +388,10 @@
                                                         <br>
                                                         {{ $user->userInfo->shippingAddress->address_2 }},
                                                         <br>
+                                                        @if ($user->userInfo->shippingAddress->address_3)
                                                         {{ $user->userInfo->shippingAddress->address_3 }},
                                                         <br>
+                                                        @endif
                                                         {{ $user->userInfo->shippingAddress->postcode }}, {{ $user->userInfo->shippingAddress->city }}
                                                         <br>
                                                         {{ $user->userInfo->shippingAddress->state->name }}, Malaysia
@@ -988,16 +992,6 @@
                 }
             });
 
-            $('#attention_address_3').on('keyup', function() {
-                if ($(this).val().length == 0) {
-                    $(this).removeClass('is-valid');
-                    $(this).addClass('is-invalid');
-                } else {
-                    $(this).removeClass('is-invalid');
-                    $(this).addClass('is-valid');
-                }
-            });
-
             $('#attention_postcode').on('keyup', function() {
                 if ($(this).val().length < 5 || $(this).val().length > 5) {
                     $(this).removeClass('is-valid');
@@ -1034,10 +1028,6 @@
                 }
 
                 if ($('#attention_address_2').val().length == 0) {
-                    error = error + 1;
-                }
-
-                if ($('#attention_address_3').val().length == 0) {
                     error = error + 1;
                 }
 
