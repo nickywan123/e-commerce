@@ -178,6 +178,12 @@
                             installationPrice = installationPrice + $(this).data('installation-price');
                         });
 
+                        if (checkedCartItem.length == 0) {
+                            $('#proceed-to-checkout-button').addClass('disabled')
+                        } else {
+                            $('#proceed-to-checkout-button').removeClass('disabled')
+                        }
+
                         updatePrice(subtotalPrice, shippingPrice, installationPrice);
                     }
                 },
