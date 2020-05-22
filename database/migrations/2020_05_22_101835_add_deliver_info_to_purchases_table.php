@@ -14,14 +14,14 @@ class AddDeliverInfoToPurchasesTable extends Migration
     public function up()
     {
         Schema::table('purchases', function (Blueprint $table) {
-            $table->string('attention_to')->nullable()->after('receipt_number');
-            $table->string('contact_number')->nullable()->after('attention_to');
-            $table->string('address_1')->nullable()->after('contact_number');
-            $table->string('address_2')->nullable()->after('address_1');
-            $table->string('address_3')->nullable()->after('address_2');
-            $table->integer('postcode')->nullable()->after('address_3');
-            $table->string('city')->nullable()->after('postcode');
-            $table->integer('state_id')->nullable()->after('city');
+            $table->string('ship_full_name')->nullable()->after('receipt_number');
+            $table->string('ship_contact_num')->nullable()->after('ship_full_name');
+            $table->string('ship_address_1')->nullable()->after('ship_contact_num');
+            $table->string('ship_address_2')->nullable()->after('ship_address_1');
+            $table->string('ship_address_3')->nullable()->after('ship_address_2');
+            $table->integer('ship_postcode')->nullable()->after('ship_address_3');
+            $table->string('ship_city')->nullable()->after('ship_postcode');
+            $table->integer('ship_state_id')->nullable()->after('ship_city');
         });
     }
 

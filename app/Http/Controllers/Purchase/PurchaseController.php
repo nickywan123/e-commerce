@@ -350,14 +350,14 @@ class PurchaseController extends Controller
 
         $purchase = Purchase::where('purchase_number', $purchaseNumber)->first();
 
-        $purchase->attention_to = $request->input('attention_to');
-        $purchase->contact_number = $request->input('attention_contact');
-        $purchase->address_1 = $request->input('attention_address_1');
-        $purchase->address_2 = $request->input('attention_address_2');
-        $purchase->address_3 = $request->input('attention_address_3');
-        $purchase->postcode = $request->input('attention_postcode');
-        $purchase->city = $request->input('attention_city');
-        $purchase->state_id = $request->input('state');
+        $purchase->ship_full_name = $request->input('attention_to');
+        $purchase->ship_contact_num = $request->input('attention_contact');
+        $purchase->ship_address_1 = $request->input('attention_address_1');
+        $purchase->ship_address_2 = $request->input('attention_address_2');
+        $purchase->ship_address_3 = $request->input('attention_address_3');
+        $purchase->ship_postcode = $request->input('attention_postcode');
+        $purchase->ship_city = $request->input('attention_city');
+        $purchase->ship_state_id = $request->input('state');
         $purchase->save();
 
         // $userInfo->full_name = $request->input('attention_to');

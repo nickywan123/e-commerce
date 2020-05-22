@@ -8412,8 +8412,8 @@
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                @if ($purchase->address_1)
-                                {{ $purchase->address_1 }}
+                                @if ($purchase->ship_address_1)
+                                {{ $purchase->ship_address_1 }}
                                 @else
                                 {{ $purchase->user->userInfo->shippingAddress->address_1 }}
                                 @endif
@@ -8421,8 +8421,8 @@
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                @if ($purchase->address_2)
-                                {{ $purchase->address_2 }}
+                                @if ($purchase->ship_address_2)
+                                {{ $purchase->ship_address_2 }}
                                 @else
                                 {{ $purchase->user->userInfo->shippingAddress->address_2 }}
                                 @endif
@@ -8430,13 +8430,13 @@
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                @if ($purchase->postcode)
-                                {{ $purchase->postcode }},
+                                @if ($purchase->ship_postcode)
+                                {{ $purchase->ship_postcode }},
                                 @else
                                 {{ $purchase->user->userInfo->shippingAddress->postcode }}
                                 @endif
-                                @if ($purchase->city)
-                                {{ $purchase->city }}
+                                @if ($purchase->ship_city)
+                                {{ $purchase->ship_city }}
                                 @else
                                 {{ $purchase->user->userInfo->shippingAddress->city }}
                                 @endif
@@ -8444,7 +8444,7 @@
                         </tr>
                         <tr>
                             <td colspan="2" style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                @if ($purchase->postcode)
+                                @if ($purchase->ship_state_id)
                                 {{ $purchase->state->name }},
                                 @else
                                 {{ $purchase->user->userInfo->shippingAddress->state->name }},
@@ -8457,8 +8457,8 @@
                                 Attention To
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                @if ($purchase->attention_to)
-                                {{ $purchase->attention_to }}
+                                @if ($purchase->ship_full_name)
+                                {{ $purchase->ship_full_name }}
                                 @else
                                 {{ $purchase->user->userInfo->full_name }}
                                 @endif
@@ -8469,8 +8469,8 @@
                                 Contact No.
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                @if ($purchase->contact_number)
-                                {{ $purchase->contact_number }}
+                                @if ($purchase->ship_contact_num)
+                                {{ $purchase->ship_contact_num }}
                                 @else
                                 {{ $purchase->user->userInfo->mobileContact->contact_num }}
                                 @endif

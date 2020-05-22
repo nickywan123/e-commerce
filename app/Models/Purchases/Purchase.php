@@ -92,6 +92,6 @@ class Purchase extends Model
      */
     public function state()
     {
-        return $this->belongsTo('App\Models\Globals\State', 'state_id');
+        return $this->belongsTo('App\Models\Globals\State', 'ship_state_id');
     }
 }
