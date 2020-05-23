@@ -194,7 +194,7 @@
 
                     <!-- Add to cart / buy now / add to perfect list -->
                     <div class="row no-gutters">
-                        <div class="col-4 p-1 m-0">
+                        <div class="col-6 col-md-4 p-1 m-0">
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.buy-now') }}">
                                 @method('POST')
                                 @csrf
@@ -207,7 +207,7 @@
                                 <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="border:0px; color: #1a1a1a;">Buy Now</button>
                             </form>
                         </div>
-                        <div class="col-4 p-1 m-0">
+                        <div class="col-6 col-md-4 p-1 m-0">
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.add-item') }}">
                                 @method('POST')
                                 @csrf
@@ -221,7 +221,7 @@
                                 <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="color: #1a1a1a; border:0px;">Add To Cart</button>
                             </form>
                         </div>
-                        <div class="col-4 p-1 m-0">
+                        <div class="col-6 offset-3 offset-md-0 col-md-4 p-1 ">
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{route('shop.add-perfect-list',[$panelProduct->id])}}">
                                 @method('POST')
                                 @csrf
