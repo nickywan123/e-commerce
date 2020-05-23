@@ -3,13 +3,13 @@
 @section('content')
 @if(Session::has('successful_message'))
 <div class="alert alert-success">
-{{ Session::get('successful_message') }}
+    {{ Session::get('successful_message') }}
 </div>
 @endif
 
 @if(Session::has('error_message'))
 <div class="alert alert-danger">
-{{ Session::get('error_message') }}
+    {{ Session::get('error_message') }}
 </div>
 @endif
 
@@ -97,13 +97,13 @@
                                 @foreach($panelProduct->colorAttributes as $key => $colorAttribute)
                                 <?php
                                 if ($colorAttribute->price != 0) {
-                                    $attributePrice = number_format(($sizeAttribute->price / 100), 2);
+                                    $attributePrice = number_format(($colorAttribute->price / 100), 2);
                                 } else {
                                     $attributePrice = 0;
                                 }
 
                                 if ($colorAttribute->member_price != 0) {
-                                    $attributeMemberPrice = number_format(($sizeAttribute->member_price / 100), 2);
+                                    $attributeMemberPrice = number_format(($colorAttribute->member_price / 100), 2);
                                 } else {
                                     $attributeMemberPrice = 0;
                                 }
@@ -225,7 +225,7 @@
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{route('shop.add-perfect-list',[$panelProduct->id])}}">
                                 @method('POST')
                                 @csrf
-         
+
                                 <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
                             </form>
                         </div>
@@ -812,9 +812,7 @@
 
 @push('style')
 <style>
-
-
-    .w-65{
+    .w-65 {
         width: 70%;
     }
 
@@ -839,8 +837,8 @@
             margin: 0 auto;
         }
 
-        .bjsh-button-mobile{
-            font-size:7pt;
+        .bjsh-button-mobile {
+            font-size: 7pt;
         }
     }
 
