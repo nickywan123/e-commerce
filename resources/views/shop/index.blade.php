@@ -23,15 +23,15 @@
 
 
 <section id="slideshow" class="hidden-sm">
-    <div class="slick ">
+    <div class="slick">
         <div>
-            <img class="image-slideshow" src="{{asset('/storage/banner/Banner-01.jpg')}}" alt="">
+            <img class="image-slideshow ml-5" src="{{asset('/storage/banner/Banner_1540x500-01.jpg')}}" alt="">
         </div>
         <div>
-            <img class="image-slideshow" src="{{asset('/storage/banner/Banner-02.jpg')}}" alt="">
+            <img class="image-slideshow ml-5" src="{{asset('/storage/banner/Banner_1540x500-02.jpg')}}" alt="">
         </div>
         <div>
-            <img class="image-slideshow" src="{{asset('/storage/banner/Banner-03.jpg')}}" alt="">
+            <img class="image-slideshow ml-5" src="{{asset('/storage/banner/Banner_1540x500-03.jpg')}}" alt="">
         </div>
 
     </div>
@@ -40,13 +40,13 @@
 <section id="slideshow" class="hidden-md">
     <div class="slick ">
         <div>
-            <img class="image-slideshow" src="{{asset('/storage/banner/Banner-01-mobile.jpg')}}" alt="">
+            <img class="image-slideshow" src="{{asset('/storage/banner/Banner_1200x500_Mobile-01.jpg')}}" alt="">
         </div>
         <div>
-            <img class="image-slideshow" src="{{asset('/storage/banner/Banner-02-mobile.jpg')}}" alt="">
+            <img class="image-slideshow" src="{{asset('/storage/banner/Banner_1200x500_Mobile-02.jpg')}}" alt="">
         </div>
         <div>
-            <img class="image-slideshow" src="{{asset('/storage/banner/Banner-03-mobile.jpg')}}" alt="">
+            <img class="image-slideshow" src="{{asset('/storage/banner/Banner_1200x500_Mobile-03.jpg')}}" alt="">
         </div>
 
     </div>
@@ -121,10 +121,7 @@
 
 
 
-    .image-slideshow {
-        width: 100%;
-        height: auto;
-    }
+   
 
     .promo-page-background-color {
         background-color: black;
@@ -180,6 +177,11 @@
         .margin-bottom-md {
             margin-bottom: 20px;
         }
+
+        .image-slideshow {
+        width: 95%;
+        height: auto;
+    }
     }
 
 

@@ -204,7 +204,7 @@
                                 <input type="hidden" id="product_attribute_temperature_buyNow" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="border:0px; color: #1a1a1a;">Buy Now</button>
+                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="border:0px; color: #1a1a1a;">Buy Now</button>
                             </form>
                         </div>
                         <div class="col-4 p-1 m-0">
@@ -218,15 +218,15 @@
                                 <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="color: #1a1a1a; border:0px;">Add To Cart</button>
+                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="color: #1a1a1a; border:0px;">Add To Cart</button>
                             </form>
                         </div>
                         <div class="col-4 p-1 m-0">
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{route('shop.add-perfect-list',[$panelProduct->id])}}">
                                 @method('POST')
                                 @csrf
-
-                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
+                               
+                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile" style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
                             </form>
                         </div>
                     </div>
@@ -839,6 +839,7 @@
 
         .bjsh-button-mobile {
             font-size: 7pt;
+            /* white-space: nowrap; */
         }
     }
 

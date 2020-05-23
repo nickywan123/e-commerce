@@ -65,8 +65,7 @@
         @if(count($favourite))
          @foreach ($favourite as $item)   
             <tr>
-                <td  class="align-top" style="max-width: 400px; border-top:white;">
-
+                <td class="align-top" style="max-width: 400px; border-top:white;">
                     <div class="row mb-5">
                         <div class="col-2 my-auto">
                             <a
@@ -98,11 +97,11 @@
                             <p style="margin-top: 100px;">Added on: {{$item->created_at}}</p>
                         </div>
 
-                        <div class="offset-2 col-1 mt-4">
+                        <div class="offset-2 mt-4">
                             {{-- Quantity: xx --}}
                         </div>
 
-                        <div class="col-1">
+                        <div class="col-2 col-md-2">
                             <button class="text-capitalize bjsh-btn-gradient btn-size"><a
                                 style="color:black; text-decoration:none;"
                                 href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
@@ -121,23 +120,28 @@
                             </button>
                             </form>
                            
-                            <i class="fa fa-trash-o fa-2x text-muted mt-4 ml-5"></i>
+                           <div class="row">
+                               <div class="offset-2 col-5">
+                                <i class="fa fa-trash-o fa-2x text-muted mt-4 ml-5"></i>
+                               </div>
+                           </div>
                         </div>
                     </div>
+                    
                 </td>
             </tr>
-          
+           
             @endforeach
+            
             <!-- Ending Item Template -->
             @else
             <div class="row">
                 <div class="col-12">
                     <strong class="mr-2 " style="font-size:15pt;"> Your Perfect List is empty.</strong>
                     <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
-                </div>
-               
+                </div>       
             </div>
-            @endif
+            @endif    
         </table>
      
     </div>
@@ -249,9 +253,10 @@
                             </div>
                            
                         </div>
+                      
                     </td>
                 </tr>
-              
+                
                 @endforeach
                 <!-- Ending Item Template -->
                 @else
@@ -263,7 +268,9 @@
                    
                 </div>
                 @endif
-            </table>   
+               
+            </table>
+            <hr>
         </div>
     </div>
 

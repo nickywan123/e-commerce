@@ -1,7 +1,7 @@
 <footer id="footer-content-collapse-sidebar" style="max-width:100%; overflow: hidden; border-top: 1px solid #fbcc34; padding-top: 0.5rem; background-color: #000;">
     <div class="row pl-2 pr-2">
         <div class="col-6 col-md-2 text-center text-md-left">
-            <p class="pr-1 pl-1 bujishu-gold mb-1 " style="font-size: 0.9rem;"><i class="fa fa-home my-auto" style="color: #fccb34; font-size: 0.9rem;"></i> <b>WE ARE BUJISHU</b></p>
+            <p class="pr-1 pl-1 bujishu-gold mb-1 " style="font-size: 0.9rem;"><img width="17" class="mb-1" src="{{asset('/storage/footer/icons/home.png')}}" alt="home-icon"> <b>WE ARE BUJISHU</b></p>
             <ul class="list-unstyled pr-2 pl-2 bujishu-white ">
                 <li>
                     <a class="bujishu-white" href="{{route('shop.about.us')}}">About Us</a>
@@ -18,7 +18,7 @@
             </ul>
         </div>
         <div class="col-6 col-md-2 text-center text-md-left">
-            <h5 class="pr-1 pl-1 bujishu-gold " style="font-size: 0.9rem;"><b>CUSTOMER SERVICE</b></h5>
+            <h5 class="pr-1 pl-1 bujishu-gold " style="font-size: 0.9rem;"><img class="mr-1" src="{{asset('/storage/footer/icons/phone.png')}}" alt="phone-icon"><b>CUSTOMER SERVICE</b></h5>
             <ul class="list-unstyled pr-2 pl-2 " >
                 <li>
                     <a class="bujishu-white" href="">Bujishu Service</a>
@@ -41,7 +41,7 @@
         <div class="col-6 col-md-3 text-center text-md-left">
             <ul class="list-unstyled pr-2 pl-2 ">
                 <li>
-                    <p class="bujishu-gold mb-1 " style="font-size: 0.9rem;"><b>OUR LOCATION</b></p>
+                    <p class="bujishu-gold mb-1 " style="font-size: 0.9rem;"><img class="mr-1" src="{{asset('/storage/footer/icons/location.png')}}" alt="Home-Icon"><b>OUR LOCATION</b></p>
                     <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">
                         1.26.5,
                         Menara Bangkok Bank
