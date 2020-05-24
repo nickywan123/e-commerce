@@ -102,11 +102,13 @@
                         </div>
 
                         <div class="col-2 col-md-2">
-                            <button class="text-capitalize bjsh-btn-gradient btn-size"><a
+                            <button class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile"><a
                                 style="color:black; text-decoration:none;"
                                 href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
                                 Buy Now</a>
                             </button>
+                            
+                           
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{ route('shop.cart.add-item') }}">
                                 @method('POST')
                                 @csrf
@@ -115,7 +117,7 @@
                                 <input type="hidden" id="product_attribute_size" name="product_attribute_size" value="">
                                 <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
                                 <input type="hidden" name="productQuantity" value="1">
-                            <button type="submit" class="text-capitalize bjsh-btn-gradient btn-size mt-4" style="color:black; text-decoration:none;">
+                            <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile mt-4" style="color:black; text-decoration:none;">
                              Add to Cart
                             </button>
                             </form>
