@@ -12,7 +12,7 @@
    
 
     <a class="navbar-brand " href="/shop">
-        <img class="navbar-brand-full margin-logo-mobile " src="{{asset('storage/logo/Bujishu-logo.png')}}" width="100" height="65" alt="Bujishu Logo">
+        <img class="navbar-brand-full margin-logo-mobile margin-tablet" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="100" height="65" alt="Bujishu Logo">
         <img class="navbar-brand-minimized" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
 
@@ -64,3 +64,18 @@
     
   
 </header>
+
+<style>
+
+@media(min-width:760px) and (max-width:800px){
+
+    .margin-tablet{
+
+        margin-right: 30rem;
+        margin-top: 2rem;
+
+}
+
+}
+
+</style>

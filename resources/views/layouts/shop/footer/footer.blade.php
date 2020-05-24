@@ -41,16 +41,18 @@
         <div class="col-6 col-md-3 text-center text-md-left">
             <ul class="list-unstyled pr-2 pl-2 ">
                 <li>
-                    <p class="bujishu-gold mb-1 " style="font-size: 0.9rem;"><img class="mr-1" src="{{asset('/storage/footer/icons/location.png')}}" alt="Home-Icon"><b>OUR LOCATION</b></p>
+                    <p class="bujishu-gold mb-1 " style="font-size: 0.9rem;"><b>OUR LOCATION</b></p>
                     <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">
-                        1.26.5,
+                        <img class="mr-1" src="{{asset('/storage/footer/icons/location.png')}}" alt="Home-Icon">  1.26.5,
                         Menara Bangkok Bank
                         <br>
                         Kuala Lumpur, Malaysia
                     </p>
                 </li>
                 <li>
-                    <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">Tel: TBA</p>
+                    <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">
+                        <img class="mr-1" src="{{asset('/storage/footer/icons/phone.png')}}" alt="phone-Icon">  Tel: 017-582 4257
+                    </p>
                 </li>
                 <li>
                     <a class="bujishu-white " href="">Contact Us</a>

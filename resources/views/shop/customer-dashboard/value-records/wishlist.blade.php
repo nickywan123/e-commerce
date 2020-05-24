@@ -76,7 +76,7 @@
                                     alt="Product Image">
                             </a>
                         </div>
-                        <div class="col-6 my-auto">
+                        <div class="col-6 my-auto padding-left-md">
 
                         
                             <a style="color:black; font-weight:bold;"
@@ -101,7 +101,7 @@
                             {{-- Quantity: xx --}}
                         </div>
 
-                        <div class="col-2 col-md-2">
+                        <div class="col-2 col-md-2 padding-button">
                             <button class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile"><a
                                 style="color:black; text-decoration:none;"
                                 href="/shop/product/{{ $item->product->parentProduct->name_slug}}?panel={{$item->product->panel_account_id}}">
@@ -124,7 +124,7 @@
                            
                            <div class="row">
                                <div class="offset-2 col-5">
-                                <i class="fa fa-trash-o fa-2x text-muted mt-4 ml-5"></i>
+                                <i class="fa fa-trash-o fa-2x text-muted mt-4 padding-left-icon"></i>
                                </div>
                            </div>
                         </div>
@@ -282,6 +282,15 @@
 
 <style>
 
+@media(min-width:1320px) and (max-width:1500px){
+    .padding-left-md{
+        padding-left: 6rem !important;
+    }
+    .padding-left-icon{
+        padding-left: 3rem !important;
+    }
+}
+
 .text-style {
             color: rgb(250, 172, 24);
             margin-right: 45px;
@@ -316,7 +325,28 @@
     .hidden-md {
                 display: none;
             }
+
         }
+
+@media(min-width: 760px) and (max-width:1200px){
+    .padding-left-md{
+        padding-left: 8rem !important;
+    }
+    .padding-button{
+        padding: 0px;
+        
+    }
+    .padding-left-icon{
+        padding-left: 1rem;
+    }
+}
+
+@media(min-width:1500px){
+            .padding-left-icon{
+        padding-left: 4rem !important;
+    }
+        }
+
 
 
 </style>
