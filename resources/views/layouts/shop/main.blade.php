@@ -106,9 +106,40 @@
             });
         }
 
+          // function to get perfect list quantity
+          function onPageLoadGetPerfectListQuantity(){
+            let getQuantityURL = "{{ route('shop.perfect-list.quantity', ['id' => Auth::user()->id]) }}";
+            const perfectListQuantityElement = $('#perfect-list-quantity');
+            const perfectListQuantityMobileElement = $('#perfect-list-quantity-mobile');
+            $.ajax({
+                async: true,
+                beforeSend: function() {
+                    console.log('Request starting.');
+                },
+                complete: function() {
+                    console.log('Request complete.');
+                },
+                url: getQuantityURL,
+                type: 'GET',
+                success: function(response) {
+                    perfectListQuantityElement.text(response.data);
+                    perfectListQuantityMobileElement.text(response.data);
+                },
+                error: function(response) {
+                    console.log('Error');
+                    console.log(response);
+                }
+            });
+
+
+          }
+
         $(document).ready(function() {
             onPageLoadGetQuantity();
+            onPageLoadGetPerfectListQuantity();
         });
+
+      
     </script>
     @stack('script')
 </body>

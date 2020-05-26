@@ -64,7 +64,7 @@
                         </ul>
 
 
-                        <a style="color:#fbcc34; margin-left: 20px;" href="#"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:x-large;"></i> </a>
+                        <a style="color:#fbcc34; margin-left: 20px;" href="#"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:x-large;"></i> <span class="icon-attributes" id="perfect-list-quantity-mobile"> </a>
                         <a style="color:#fbcc34; margin-left: 10px;" href="/shop/cart"><i class="fa fa-shopping-cart " style="color:#fbcc34;  font-size: 1rem;"></i>
                             <span class="icon-attributes" id="cart-quantity-mobile"></a>
 
@@ -139,7 +139,7 @@
                     </li>
 
                     <div style="margin-top:10px; margin-left: 50px;">
-                        <a style="color:#fbcc34; margin-right:20px;" href="{{route('shop.wishlist.home')}}"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span class="icon-attributes">0</span></a>
+                        <a style="color:#fbcc34; margin-right:20px;" href="{{route('shop.wishlist.home')}}"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:30px;"></i> <span id="perfect-list-quantity" class="icon-attributes"></span></a>
                         <a style="color:#fbcc34;" href="/shop/cart">
                             <i class="fa fa-shopping-cart " style="color:#fbcc34; font-size:30px;"></i>
                             <span class="icon-attributes" id="cart-quantity"></span>

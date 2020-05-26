@@ -75,6 +75,7 @@
                                     src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . $item->product->parentProduct->images[0]->filename)}}"
                                     alt="Product Image">
                             </a>
+                            
                         </div>
                         <div class="col-6 my-auto padding-left-md">
 
@@ -123,8 +124,13 @@
                             </form>
                            
                            <div class="row">
-                               <div class="offset-2 col-5">
-                                <i class="fa fa-trash-o fa-2x text-muted mt-4 padding-left-icon"></i>
+                               <div class="offset-2 col-5">         
+                                    <a href="{{route('shop.perfect-list.destroy',[$item->product->id])}}" onclick="event.preventDefault(); document.getElementById('submit-form-{{ $loop->index }}').submit();"> <i class="fa fa-trash-o fa-2x text-muted mt-4 padding-left-icon"></i></a>
+                                    <form id="submit-form-{{ $loop->index }}" action="{{ route('shop.perfect-list.destroy',[ $item->product->id]) }}" method="POST" class="hidden">
+                                      @csrf
+
+                                      @method('DELETE')
+                                    </form>
                                </div>
                            </div>
                         </div>
@@ -248,7 +254,14 @@
                                 </form>
                                 <div class="row">
                                     <div class="offset-4 offset-sm-3 col-3">
-                                        <i class="fa fa-trash-o fa-2x text-muted mt-4 "></i>
+                                        <a href="{{route('shop.perfect-list.destroy',[$item->product->id])}}" onclick="event.preventDefault(); document.getElementById('submit-form-{{ $loop->index }}').submit();">
+                                             <i class="fa fa-trash-o fa-2x text-muted mt-4 "> </i></a>
+                                            <form id="submit-form-{{ $loop->index }}" action="{{ route('shop.perfect-list.destroy',[ $item->product->id]) }}" method="POST" class="hidden">
+                                          @csrf
+    
+                                          @method('DELETE')
+                                        </form>
+                                      
                                     </div>
                                 </div>
                                

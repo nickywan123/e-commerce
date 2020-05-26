@@ -30,4 +30,31 @@ class WishListController extends Controller
             return back()->with(['error_message' => 'Please try again']);
         }
     }
+
+
+    // Get quantity of perfect list
+
+    public function getQuantity($id){
+
+        $user = User::find($id);
+        $perfectListQuantity = $user->favorites->where('user_id', $id)->count();
+
+        $data['status'] = 'OK';
+        $data['message'] = 'Get request successful.';
+        $data['data'] = $perfectListQuantity;
+
+        return response()->json($data, 200);
+
+    }
+
+
+    //Remove the specified item from storage.
+    public function destroy($product_id){
+        // $userID = Auth::user()->id;
+        // $perfectList = new Favorite;
+       // $perfectList = $perfectList->where('user_id',$userID)->where('product_id',$product_id)->take(1);
+       Favorite::where('user_id', Auth::id())->where('product_id', $product_id)->firstOrFail()->delete();
+       return back();
+    }
+
 }
