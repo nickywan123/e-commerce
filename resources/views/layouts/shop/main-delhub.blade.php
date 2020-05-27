@@ -33,13 +33,8 @@
     @stack('style')
 </head>
 
-<body class="promo-page-background-color " >
+<body>
 
-    <!-- Navigation bar -->
-    {{-- @include('layouts.shop.navigation.navigation-delhub') --}}
-
-    <!-- Side bar -->
-    {{-- @include('layouts.shop.navigation.sidebar') --}}
 
     <main id="body-content-collapse-sidebar">
         <div id="app">
@@ -47,11 +42,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    {{-- @include('layouts.shop.footer.footer-delhub') --}}
-
-    <!-- Custom Scrollbar CDN -->
-    <!-- TODO: Import using mix. -->
+  
     
 </body>
 
@@ -60,12 +51,14 @@
 .delhub-digital-bg-img{
 background-image: url(/images/delhub/delhub-digital-bg.jpg);
 background-repeat: no-repeat;
-background-position: fixed;
+background-position: center;
 background-size: cover;
+
 /* background-size: 100vw 100vh; */
-background-size:fixed;
+/* background-size:fixed; */
 /* width: 100vw;
 height: 100vh; */
+
 }
 
 .delhub-digital-bg-mobile-img{
