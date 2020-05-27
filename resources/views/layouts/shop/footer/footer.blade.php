@@ -24,7 +24,7 @@
                     <a class="bujishu-white" href="">Bujishu Service</a>
                 </li>
                 <li>
-                    <a class="bujishu-white" href="">Privacy Policy</a>
+                    <a class="bujishu-white" href="{{route('shop.privacy.policy')}}">Privacy Policy</a>
                 </li>
                 <li>
                     <a class="bujishu-white" href="/shop/dashboard/orders/order-status">Track an Order</a>

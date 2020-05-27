@@ -88,28 +88,28 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="gender">Gender</label>
-                                    <select class="form-control" id="gender_id" name="gender_id">
+                                    <select class="form-control text-capitalize" id="gender_id" name="gender_id">
                                         <option disabled selected value="default">Choose your gender..</option>
                                         @foreach($genders as $gender)
-                                        <option class="text-capitalize" value="{{ $gender->id }}">{{ ucfirst($gender->name) }}</option>
+                                        <option  value="{{ $gender->id }}">{{ $gender->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="race_id">Race</label>
-                                    <select name="race_id" id="race_id" class="form-control">
+                                    <select name="race_id" id="race_id" class="form-control text-capitalize">
                                         <option disabled selected value="default">Choose your race..</option>
                                         @foreach($races as $race)
-                                        <option class="text-capitalize" value="{{ $race->id }}">{{ ucfirst($race->name) }}</option>
+                                        <option  value="{{ $race->id }}">{{$race->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="marital_id">Marital Status</label>
-                                    <select name="marital_id" id="marital_id" class="form-control">
+                                    <select name="marital_id" id="marital_id" class="form-control text-capitalize">
                                         <option disabled selected value="default">Choose your marital status..</option>
                                         @foreach($maritals as $marital)
-                                        <option class="text-capitalize" value="{{ $marital->id }}">{{ ucfirst($marital->name) }}</option>
+                                        <option value="{{ $marital->id }}">{{ $marital->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

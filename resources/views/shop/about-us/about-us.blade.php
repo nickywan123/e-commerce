@@ -1,8 +1,8 @@
-@extends('layouts.shop.about-us.main')
+@extends('layouts.shop.main')
 
 @section('content')
 
-<div class="backgroundImg-about-us " >
+<div class="backgroundImg-about-us" >
 
 <div class="row m-0">
     <div class="offset-3 col-9 mt-5">

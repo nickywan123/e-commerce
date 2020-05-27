@@ -291,15 +291,18 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         // Add item to perfect list
         Route::post('/perfect-list/{product_id}', 'Shop\WishListController@store')->name('shop.add-perfect-list');
-        
+
         //Get total quantity of perfect list
-        Route::get('/get-quantity-perfect-list/{id}','Shop\WishListController@getQuantity')->name('shop.perfect-list.quantity');
+        Route::get('/get-quantity-perfect-list/{id}', 'Shop\WishListController@getQuantity')->name('shop.perfect-list.quantity');
 
         //Remove perfect list 
-        Route::delete('/remove/{product_id}','Shop\WishListController@destroy')->name('shop.perfect-list.destroy');
+        Route::delete('/remove/{product_id}', 'Shop\WishListController@destroy')->name('shop.perfect-list.destroy');
 
         // About Us Page
         Route::get('/about-us', 'Shop\ShopController@aboutUs')->name('shop.about.us');
+
+        //Privacy Policy Page
+        Route::get('/privacy-policy', 'Shop\ShopController@privacyPolicy')->name('shop.privacy.policy');
 
         Route::group(['prefix' => 'category'], function () {
             Route::get(

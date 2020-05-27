@@ -65,6 +65,13 @@ class ShopController extends Controller
         return view('shop.about-us.about-us');
     }
 
+    /***Return privacy policy**/
+
+    public function privacyPolicy()
+    {
+        return view('shop.privacy-policy.privacy-policy');
+    }
+
     /**
      * Handles /shop/product/{product-slug}
      */
