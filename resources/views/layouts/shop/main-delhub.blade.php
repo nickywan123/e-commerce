@@ -33,7 +33,7 @@
     @stack('style')
 </head>
 
-<body class="promo-page-background-color height-mobile" >
+<body class="promo-page-background-color " >
 
     <!-- Navigation bar -->
     {{-- @include('layouts.shop.navigation.navigation-delhub') --}}
@@ -62,10 +62,10 @@ background-image: url(/images/delhub/delhub-digital-bg.jpg);
 background-repeat: no-repeat;
 background-position: fixed;
 background-size: cover;
-background-size: 100vw 100vh;
+/* background-size: 100vw 100vh; */
 background-size:fixed;
-width: 100vw;
-height: 100vh;
+/* width: 100vw;
+height: 100vh; */
 }
 
 .delhub-digital-bg-mobile-img{
@@ -78,9 +78,9 @@ background-size: 100% 100%;
 
 }
 
-body{
+/* body{
     height: 100%;
-}
+} */
 
 
 </style>

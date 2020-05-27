@@ -150,9 +150,7 @@
         .hidden-sm {
             display: none;
         }
-        .height-mobile{
-            height:100%;
-        }
+        
       
     }
 
@@ -160,12 +158,11 @@
         .hidden-md {
             display: none;
         }
-        body{
-            overflow: hidden;
-        }
+       
         .footer-margin{
             margin-top: 10rem;
         }
+        
     }
 
 
