@@ -276,4 +276,10 @@ class ShopController extends Controller
 
         return redirect('/shop/cart?buynow=' . $cartItemId);
     }
+
+
+    public function delhubdigital()
+    {
+        return view('shop.delhub-digital');
+    }
 }

@@ -7,7 +7,7 @@
                     <a class="bujishu-white" href="{{route('shop.about.us')}}">About Us</a>
                 </li>
                 <li>
-                    <a class="bujishu-white" href="">Our Vision, Culture, Value</a>
+                    <a class="bujishu-white" href="{{route('delhub.digital')}}">Our Vision, Culture, Value</a>
                 </li>
                 <li>
                     <a class="bujishu-white" href="">Partner Engagement</a>

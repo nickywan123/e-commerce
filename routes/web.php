@@ -284,6 +284,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         });
     });
 
+    // Delhub Digital
+    Route::get('/delhub-digital', 'Shop\ShopController@delhubdigital')->name('delhub.digital');
+
     // Shop
     Route::group(['prefix' => 'shop'], function () {
         // Home/Index page for shop.
