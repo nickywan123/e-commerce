@@ -18,7 +18,9 @@ class Image extends Model
     // Set mass assignable columns
     protected $fillable = [
         'path',
-        'filename'
+        'filename',
+        'default',
+        'brand'
     ];
 
     /**

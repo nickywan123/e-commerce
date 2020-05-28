@@ -211,7 +211,9 @@
                         <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
                     </div>
                     <div class="animated-product-information-container">
-                        <p class="product-name">{{ $product->name }}</p>
+                        <p class="product-name">
+                            {{ $product->name }}
+                        </p>
                         <div class="mt-2 mb-1">
                             @if($product->categories->where('name', 'Paints')->count() > 0)
                             <p class="mb-1 text-muted" style="font-size: 0.9rem;">
