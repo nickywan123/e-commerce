@@ -60,11 +60,10 @@
 
                                 </div>
                             </li>
-
                         </ul>
 
 
-                        <a style="color:#fbcc34; margin-left: 20px;" href="#"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:x-large;"></i> <span class="icon-attributes" id="perfect-list-quantity-mobile"> </a>
+                        <a style="color:#fbcc34; margin-left: 20px;" href="{{route('shop.wishlist.home')}}"><i class="fa fa-heart-o" style="color:#fbcc34; font-size:x-large;"></i> <span class="icon-attributes" id="perfect-list-quantity-mobile"> </a>
                         <a style="color:#fbcc34; margin-left: 10px;" href="/shop/cart"><i class="fa fa-shopping-cart " style="color:#fbcc34;  font-size: 1rem;"></i>
                             <span class="icon-attributes" id="cart-quantity-mobile"></a>
 
