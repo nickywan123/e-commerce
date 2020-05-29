@@ -55,7 +55,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 style="color: #ffcc00; font-size: 1.9rem;" ><b>Hot Selections</b></h1>
+            <h1 style="color: #ffcc00; font-size: 1.9rem;"><b>Hot Selections</b></h1>
             <div style="border-top: 1px solid #ffcc00;" class="w-150-md w-100-sm margin-bottom-md">
             </div>
         </div>
@@ -66,7 +66,7 @@
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#e0b555;" href=" /shop/category/curtains-blinds"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
+            <a style=" color:#e0b555;" href=" /shop/category/curtains"><img class="icon-image" src="{{asset('/storage/icons/curtain-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text " style="font-size:15px; "><b>CURTAINS</b></h5>
             </a>
 
@@ -80,7 +80,7 @@
         </div>
         <div class="col-4 col-md-2 text-alignment">
             <a style=" color:#e0b555; " href="/wip"><img class="icon-image" src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
-                <h5 style="font-size:15px;" ><b>RENOVATION</b></h5>
+                <h5 style="font-size:15px;"><b>RENOVATION</b></h5>
             </a>
 
         </div>
@@ -91,7 +91,7 @@
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style="color:#e0b555;" href="/shop/category/products-and-services"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
+            <a style="color:#e0b555;" href="/shop/category/products-and-services/paints"><img class="icon-image" src="{{asset('/storage/icons/paint-icon.png')}}" alt="Icon">
                 <h5 class="margin-left-text " style="font-size:15px; "><b>PAINT</b></h5>
             </a>
 
@@ -121,7 +121,7 @@
 
 
 
-   
+
 
     .promo-page-background-color {
         background-color: black;
@@ -179,9 +179,9 @@
         }
 
         .image-slideshow {
-        width: 95%;
-        height: auto;
-    }
+            width: 95%;
+            height: auto;
+        }
     }
 
 
