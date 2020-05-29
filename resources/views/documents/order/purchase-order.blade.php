@@ -8314,7 +8314,14 @@
         .pr-1 {
             padding-right: .8rem;
         }
+    
+        .page{
+            page-break-before: always;
+        }
+       
     </style>
+
+    
 </head>
 
 <body>
@@ -8329,6 +8336,9 @@
     );
     ?>
     <!-- Logo / Letterhead -->
+    @foreach($order->items->chunk(5) as $page)
+    
+   
     <table style="table-layout: fixed; border-collapse: collapse; width: 100%;">
         <tr>
             <td>
@@ -8342,7 +8352,7 @@
     <!-- End Logo / Letterhead -->
 
     <!-- Document Header -->
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="row">
             <!-- 1st Box -->
             <div class="col-xs-3 pl-1 pr-1">
@@ -8552,9 +8562,10 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-12 pl-1 pr-1">
+           
+            <div class="col-xs-12 pl-1 pr-1 page">
                 <div style="border: 1px solid #000; width: 100%; height: 625px;">
-                    <table style="width: 100%;">
+                    <table style="width: 100%; ">
                         <tr style="text-align: center; font-weight: 600;">
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 5%;">
                                 <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
@@ -8582,14 +8593,14 @@
                         <?php
                         $iterationNo = 0;
                         ?>
-
-                        @foreach($order->items as $item)
+                       @foreach($page as $item)
+                       
                         <tr style="font-size: 10pt;">
                             <td style="padding: 16px; text-align: center; vertical-align: top;">
                                 <?php
                                 $iterationNo = $iterationNo + 1;
                                 ?>
-                                {{ $iterationNo }}
+                                {{ $loop->iteration + ($loop->parent->index * 5) }}
                             </td>
                             <td style="padding: 16px; vertical-align: top;">
                                 {{ $item->product->parentProduct->product_code }}
@@ -8631,10 +8642,15 @@
                         </tr>
                         @endforeach
                     </table>
+                   
                 </div>
+               
             </div>
-
-
+            @if (! $loop->last)
+         <div style="page-break-before:always;">
+            @endif
+            @endforeach
+           
             <div class="col-xs-12 pl-1 pr-1">
                 <div style="width: 100%;">
                     <table style="width: 100%; font-size: 10pt;">
