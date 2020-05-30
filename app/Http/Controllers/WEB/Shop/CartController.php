@@ -42,11 +42,40 @@ class CartController extends Controller
      */
     public function remove($id)
     {
-        $item = Cart::find($id);
-        $item->status = 2002;
-        $item->save();
+        $cartItem = Cart::find($id);
+        $cartItem->status = 2002;
+        $cartItem->save();
 
-        return $item;
+        // Get user
+        $user = User::find(Auth::user()->id);
+
+        $panel = $cartItem->product->panel;
+
+        $activeCartItems = Cart::where('user_id', $user->id)->where('status', 2001)->whereHas('product.panel', function ($q) use ($panel) {
+            $q->where('account_id', $panel->account_id);
+        })->get();
+
+        $totalSubtotalPrice = 0;
+
+        foreach ($activeCartItems as $activeCartItem) {
+            $totalSubtotalPrice = $totalSubtotalPrice + $activeCartItem->subtotal_price;
+        }
+
+        if ($totalSubtotalPrice >= $panel->min_price) {
+            foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->disabled = 0;
+                $activeCartItem->selected = 1;
+                $activeCartItem->save();
+            }
+        } else {
+            foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->disabled = 1;
+                $activeCartItem->selected = 0;
+                $activeCartItem->save();
+            }
+        }
+
+        return $cartItem;
     }
 
     /**
@@ -58,6 +87,35 @@ class CartController extends Controller
         $cartItem->quantity = $request->input('quantity');
         $cartItem->subtotal_price = $cartItem->quantity * $cartItem->unit_price;
         $cartItem->save();
+
+        // Get user
+        $user = User::find(Auth::user()->id);
+
+        $panel = $cartItem->product->panel;
+
+        $activeCartItems = Cart::where('user_id', $user->id)->where('status', 2001)->whereHas('product.panel', function ($q) use ($panel) {
+            $q->where('account_id', $panel->account_id);
+        })->get();
+
+        $totalSubtotalPrice = 0;
+
+        foreach ($activeCartItems as $activeCartItem) {
+            $totalSubtotalPrice = $totalSubtotalPrice + $activeCartItem->subtotal_price;
+        }
+
+        if ($totalSubtotalPrice >= $panel->min_price) {
+            foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->disabled = 0;
+                $activeCartItem->selected = 1;
+                $activeCartItem->save();
+            }
+        } else {
+            foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->disabled = 1;
+                $activeCartItem->selected = 0;
+                $activeCartItem->save();
+            }
+        }
 
         return $cartItem;
     }

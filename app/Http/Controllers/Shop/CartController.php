@@ -81,6 +81,26 @@ class CartController extends Controller
         // Get product
         $product = PanelProduct::find($request->input('product_id'));
 
+        $panel = $product->panel;
+
+        $activeCartItems = Cart::where('user_id', $user->id)->where('status', 2001)->whereHas('product.panel', function ($q) use ($panel) {
+            $q->where('account_id', $panel->account_id);
+        })->get();
+
+        $totalSubtotalPrice = 0;
+
+        foreach ($activeCartItems as $activeCartItem) {
+            $totalSubtotalPrice = $totalSubtotalPrice + $activeCartItem->subtotal_price;
+        }
+
+        $disabled = 0;
+
+        if ($totalSubtotalPrice >= $panel->min_price) {
+            $disabled = 0;
+        } else {
+            $disabled = 1;
+        }
+
         // Variables initiliazation.
         $color = null;
         $size = null;
@@ -179,6 +199,10 @@ class CartController extends Controller
             $newCartItem->installation_fee = $product->installation_fee;
             $newCartItem->unit_price = $price;
             $newCartItem->subtotal_price = $price * $request->input('productQuantity');
+            if ($disabled == 1) {
+                $newCartItem->selected = 0;
+            }
+            $newCartItem->disabled = $disabled;
             $newCartItem->save();
         } else {
             // If item exist in cart..
@@ -186,7 +210,29 @@ class CartController extends Controller
             $existingCartItem->quantity = $existingCartItem->quantity + $request->input('productQuantity');
             // Re calculate the total price.
             $existingCartItem->subtotal_price = $existingCartItem->quantity * $existingCartItem->unit_price;
+            if ($disabled == 1) {
+                $existingCartItem->selected = 0;
+            }
+            $existingCartItem->disabled = $disabled;
             $existingCartItem->save();
+        }
+
+        $activeCartItems = Cart::where('user_id', $user->id)->where('status', 2001)->whereHas('product.panel', function ($q) use ($panel) {
+            $q->where('account_id', $panel->account_id);
+        })->get();
+
+        $totalSubtotalPrice = 0;
+
+        foreach ($activeCartItems as $activeCartItem) {
+            $totalSubtotalPrice = $totalSubtotalPrice + $activeCartItem->subtotal_price;
+        }
+
+        if ($totalSubtotalPrice >= $panel->min_price) {
+            foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->disabled = 0;
+                $activeCartItem->selected = 1;
+                $activeCartItem->save();
+            }
         }
 
         return redirect()->back();
@@ -202,6 +248,26 @@ class CartController extends Controller
 
         // Get product
         $product = PanelProduct::find($request->input('product_id'));
+
+        $panel = $product->panel;
+
+        $activeCartItems = Cart::where('user_id', $user->id)->where('status', 2001)->whereHas('product.panel', function ($q) use ($panel) {
+            $q->where('account_id', $panel->account_id);
+        })->get();
+
+        $totalSubtotalPrice = 0;
+
+        foreach ($activeCartItems as $activeCartItem) {
+            $totalSubtotalPrice = $totalSubtotalPrice + $activeCartItem->subtotal_price;
+        }
+
+        $disabled = 0;
+
+        if ($totalSubtotalPrice >= $panel->min_price) {
+            $disabled = 0;
+        } else {
+            $disabled = 1;
+        }
 
         // Variables initiliazation.
         $color = null;
@@ -225,8 +291,6 @@ class CartController extends Controller
             // Set dimension id for checking purposes.
             $sizeId = $size->id;
         }
-
-
 
         // If the post request has product length id value in it..
         if ($request->input('product_attribute_temperature') != null) {
@@ -256,9 +320,6 @@ class CartController extends Controller
         }
 
         $existingCartItem = $existingCartItem->where('status', 2001)->first();
-
-
-
 
         // If item doesn't exist in cart..
         if ($existingCartItem == null) {
@@ -328,6 +389,11 @@ class CartController extends Controller
             $newCartItem->installation_fee = $product->installation_fee;
             $newCartItem->unit_price = $price;
             $newCartItem->subtotal_price = $price * $request->input('productQuantity');
+            $newCartItem->subtotal_price = $price * $request->input('productQuantity');
+            if ($disabled == 1) {
+                $newCartItem->selected = 0;
+            }
+            $newCartItem->disabled = $disabled;
             $newCartItem->save();
 
             $cartItemId = $newCartItem->id;
@@ -337,9 +403,31 @@ class CartController extends Controller
             $existingCartItem->quantity = $existingCartItem->quantity + $request->input('productQuantity');
             // Re calculate the total price.
             $existingCartItem->subtotal_price = $existingCartItem->quantity * $existingCartItem->unit_price;
+            if ($disabled == 1) {
+                $existingCartItem->selected = 0;
+            }
+            $existingCartItem->disabled = $disabled;
             $existingCartItem->save();
 
             $cartItemId = $existingCartItem->id;
+        }
+
+        $activeCartItems = Cart::where('user_id', $user->id)->where('status', 2001)->whereHas('product.panel', function ($q) use ($panel) {
+            $q->where('account_id', $panel->account_id);
+        })->get();
+
+        $totalSubtotalPrice = 0;
+
+        foreach ($activeCartItems as $activeCartItem) {
+            $totalSubtotalPrice = $totalSubtotalPrice + $activeCartItem->subtotal_price;
+        }
+
+        if ($totalSubtotalPrice >= $panel->min_price) {
+            foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->disabled = 0;
+                $activeCartItem->selected = 1;
+                $activeCartItem->save();
+            }
         }
 
         return redirect('/shop/cart?buynow=' . $cartItemId);

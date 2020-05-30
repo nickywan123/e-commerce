@@ -3,13 +3,13 @@
 @section('content')
 @if(Session::has('successful_message'))
 <div class="alert alert-success">
-{{ Session::get('successful_message') }}
+    {{ Session::get('successful_message') }}
 </div>
 @endif
 
 @if(Session::has('error_message'))
 <div class="alert alert-danger">
-{{ Session::get('error_message') }}
+    {{ Session::get('error_message') }}
 </div>
 @endif
 
@@ -225,7 +225,7 @@
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{route('shop.add-perfect-list',[$panelProduct->id])}}">
                                 @method('POST')
                                 @csrf
-         
+
                                 <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 " style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
                             </form>
                         </div>
@@ -251,8 +251,8 @@
                             <i class="fas fa-globe-asia mr-2 text-muted"></i>
                             <span>Available in:</span>
                             <div class="ml-4 mt-2">
-                                @if($panelProduct->availableIn->count() > 0)
-                                @foreach($panelProduct->availableIn as $availableIn)
+                                @if($panelProduct->deliveries->count() > 0)
+                                @foreach($panelProduct->deliveries as $availableIn)
                                 <span class="d-inline-block" style="font-weight:700; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->name }}</span>
                                 @endforeach
                                 @endif
@@ -472,8 +472,8 @@
                                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionAvailability">
                                     <div class="card-body">
                                         <div class="p-4 product-details text-justify">
-                                            @if($panelProduct->availableIn->count() > 0)
-                                            @foreach($panelProduct->availableIn as $availableIn)
+                                            @if($panelProduct->deliveries->count() > 0)
+                                            @foreach($panelProduct->deliveries as $availableIn)
                                             <span class="d-inline-block shadow-sm" style="background-color: #ffff33; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->name }}</span>
                                             @endforeach
                                             @endif
@@ -812,9 +812,7 @@
 
 @push('style')
 <style>
-
-
-    .w-65{
+    .w-65 {
         width: 70%;
     }
 

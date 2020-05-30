@@ -27,12 +27,17 @@ $totalPrice = 10000;
     <div class="row no-gutters">
         <div class="col-12 mb-1 px-1">
             <span class="custom-control custom-checkbox my-auto d-inline">
-                <input type="checkbox" name="cartItemId[]" class="custom-control-input item-checkbox" id="item-{{ $cartItem->id }}" value="{{ $cartItem->id }}" data-unit-price="{{ $cartItem->unit_price }}" data-quantity="{{ $cartItem->quantity }}" data-shipping-price="{{ $cartItem->delivery_fee }}" data-installation-price="{{ $cartItem->installation_fee }}" {{ ($cartItem->selected == 1) ? 'checked' : '' }}>
+                <input type="checkbox" name="cartItemId[]" class="custom-control-input item-checkbox" id="item-{{ $cartItem->id }}" value="{{ $cartItem->id }}" data-unit-price="{{ $cartItem->unit_price }}" data-quantity="{{ $cartItem->quantity }}" data-shipping-price="{{ $cartItem->delivery_fee }}" data-installation-price="{{ $cartItem->installation_fee }}" {{ ($cartItem->selected == 1) ? 'checked' : '' }} {{ ($cartItem->disabled == 1) ? 'disabled' : '' }}>
                 <label class="custom-control-label" for="item-{{ $cartItem->id }}"></label>
             </span>
             <span>
                 {{ $cartItem->product->panel->company_name }}
             </span>
+            @if($cartItem->disabled == 1)
+            <span class="text-danger ml-1" style="font-size: .8rem;">
+                The seller requires a minimum purchase of RM {{ number_format (($cartItem->product->panel->min_price / 100), 2) }}.
+            </span>
+            @endif
         </div>
     </div>
     <hr class="m-0">

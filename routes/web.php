@@ -492,6 +492,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 use App\Models\Globals\Products\Product as GlobalProducts;
 use App\Http\Resources\Product\Product as ProductResource;
 use App\Http\Resources\Product\ProductCollection as ProductCollectionResource;
+use App\Models\Users\Customers\Cart;
+use App\Models\Users\User;
 
 Route::group(['prefix' => 'development'], function () {
 
@@ -513,5 +515,14 @@ Route::group(['prefix' => 'development'], function () {
 
     Route::get('/administrator/products/panel/edit', function () {
         return view('administrator.products.panel.v1.edit');
+    });
+
+    Route::get('/cart/test-1', function () {
+        $user = User::find(Auth::user()->id);
+        $cart = Cart::where('user_id', $user->id)->whereHas('product.panel', function ($q) {
+            $q->where('panel_account_id', '1918000105');
+        })->get();
+
+        return $cart;
     });
 });

@@ -144,6 +144,7 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <textarea name="product_description" id="product_description" cols="30" rows="10" class="form-control summernote">
+                                    {!! $product->product_description !!}
                                     </textarea>
                                 </div>
                             </div>
@@ -156,6 +157,7 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <textarea name="product_material" id="product_material" cols="30" rows="10" class="form-control summernote">
+                                        {!! $product->product_material !!}
                                     </textarea>
                                 </div>
                             </div>
@@ -168,6 +170,7 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <textarea name="product_consistency" id="product_consistency" cols="30" rows="10" class="form-control summernote">
+                                        {!! $product->product_consistency !!}
                                     </textarea>
                                 </div>
                             </div>
@@ -180,6 +183,7 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <textarea name="product_package" id="product_package" cols="30" rows="10" class="form-control summernote">
+                                        {!! $product->product_package !!}
                                     </textarea>
                                 </div>
                             </div>

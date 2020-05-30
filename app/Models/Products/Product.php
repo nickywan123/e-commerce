@@ -77,16 +77,11 @@ class Product extends Model
     }
 
     /**
-     * Get the states the product is available in.
+     * Get the states and delivery fee the product is available in.
      */
-    public function availableIn()
+    public function deliveries()
     {
-        return $this->belongsToMany(
-            'App\Models\Globals\State',
-            'piv_product_state',
-            'product_id',
-            'state_id'
-        );
+        return $this->hasMany('App\Models\Products\ProductDelivery', 'panel_product_id');
     }
 
     /**
