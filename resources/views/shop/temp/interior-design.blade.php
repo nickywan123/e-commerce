@@ -104,9 +104,9 @@
                             <i class="fas fa-globe-asia mr-2 text-muted"></i>
                             <span>Available in:</span>
                             <div class="ml-4 mt-2">
-                                @if($panelProduct->availableIn->count() > 0)
-                                @foreach($panelProduct->availableIn as $availableIn)
-                                <span class="d-inline-block shadow-sm" style="background-color: #ffff33; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->name }}</span>
+                                @if($panelProduct->deliveries->count() > 0)
+                                @foreach($panelProduct->deliveries as $availableIn)
+                                <span class="d-inline-block shadow-sm" style="background-color: #ffff33; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->state->name }}</span>
                                 @endforeach
                                 @endif
                             </div>
