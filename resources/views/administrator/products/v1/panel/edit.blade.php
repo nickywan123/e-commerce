@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        <a href="" class="btn btn-dark" style="border-radius: 0.25rem; color: #ffffff;">Go Back</a>
+        <a href="/administrator/products/panels" class="btn btn-dark" style="border-radius: 0.25rem; color: #ffffff;">Go Back</a>
     </div>
 </div>
 <div class="card shadow-sm mt-3">
@@ -21,7 +21,7 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-12 col-md-2">
-                        <img src="@if ($product->defaultImage) !Default Image Here ! @else {{ asset('assets/images/errors/image-not-found.png') }} @endif" class="mw-100" alt="">
+                        <img src="@if ($product->defaultImage) {{ asset('storage/' . $product->defaultImage->path . $product->defaultImage->filename) }} @else {{ asset('assets/images/errors/image-not-found.png') }} @endif" class="mw-100" alt="">
                     </div>
                     <div class="col-12 col-md-10">
                         <div class="row">
@@ -192,18 +192,60 @@
 
                             <h5 class="mb-3">Product Variations ..</h5>
 
+
                             <div class="row">
                                 <div class="col-12 col-md-2 text-md-right my-auto">
                                     <p>
                                         Variations <small class="text-danger">*</small>
                                     </p>
                                 </div>
+
                                 <div class="col-12 col-md-10" id="variationContainer">
+                                    @if($product->attributes->count() > 0)
+                                    @foreach($product->attributes as $attribute)
+                                    <div class="row no-gutters @if ($loop->last) default-item @endif p-2 mb-1" style="border: 1px solid #b3b3b3; border-radius: 5px;">
+                                        <div class="col-12 col-md-3 form-group p-1">
+                                            <select name="product_variation[]" id="product_variation" class="select2 form-control">
+                                                <option value="">Select a variation type..</option>
+                                                <option value="color" {{ ($attribute->attribute_type == 'color') ? 'selected' : '' }}>Color</option>
+                                                <option value="size" {{ ($attribute->attribute_type == 'size') ? 'selected' : '' }}>Size</option>
+                                                <option value="light-temperature" {{ ($attribute->attribute_type == 'light-temperature') ? 'selected' : '' }}>Light Temperature</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-3 form-group p-1">
+                                            <input type="text" name="product_variation_name[]" id="product_variation_name" class="form-control" placeholder="Name" value="{{ $attribute->attribute_name }}">
+                                        </div>
+                                        <div class="col-12 col-md-6 form-group p-1">
+                                            <input type="text" name="product_variation_price[]" id="product_variation_price" class="form-control input-mask-price d-inline" placeholder="Price" style="width: 49.3%;" value="{{ $attribute->price }}">
+
+                                            <input type="text" name="product_variation_member_price[]" id="product_variation_member_price" class="form-control input-mask-price d-inline" placeholder="DC Customer Price" style="width: 49.3%;" value="{{ $attribute->member_price }}">
+                                        </div>
+
+                                        <div class="col-6 p-1">
+                                            @if(!$loop->last)
+                                            <button type="button" class="btn btn-danger" style="width: 20%;" onclick="removeProductVariationElement(this);">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            @else
+                                            <button type="button" class="btn btn-danger d-none" style="width: 20%;" onclick="removeProductVariationElement(this);">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-success" style="width: 20%;" onclick="addMoreProductVariationElement();">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    @else
                                     <div class="row no-gutters default-item p-2 mb-1" style="border: 1px solid #b3b3b3; border-radius: 5px;">
                                         <div class="col-12 col-md-3 form-group p-1">
                                             <select name="product_variation[]" id="product_variation" class="select2 form-control">
-                                                <option value="">Color</option>
-                                                <option value="">Size</option>
+                                                <option value="">Select a variation type..</option>
+                                                <option value="color">Color</option>
+                                                <option value="size">Size</option>
+                                                <option value="light-temperature">Light Temperature</option>
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-3 form-group p-1">
@@ -225,6 +267,7 @@
                                             </button>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
 

@@ -224,7 +224,7 @@ class AuthController extends ResponseController
             'nric' => 'required|string|min:12|max:12',
             'address1' => 'required|string|max:255',
             'address2' => 'required|string|max:255',
-            'postcode' => 'required|integer|min:5|max:5',
+            'postcode' => 'required|integer|min:5',
             'city' => 'required|string|max:255',
             'state' => 'required|integer',
             'contactMobile' => 'required|string|min:10|max:15',
@@ -276,7 +276,7 @@ class AuthController extends ResponseController
         $userAddress->is_mailing_address = 1;
         $userAddress->save();
 
-        if ($data['contactHome'] != null) {
+        if (array_key_exists('contactHome', $data)) {
             // User_contacts table (Home).
             $userContactHome = new UserContact;
             $userContactHome->account_id = $userInfo->account_id;
