@@ -43,7 +43,24 @@
                         </div>
 
                         <div class="animated-product-information-container">
-                            <p class="product-name">{{ $product->name }}</p>
+                            @if($product->brandImage)
+                            <div class="row no-gutters">
+                                <div class="col-9 mb-0" style="padding-right: .25rem;">
+                                    <p class="product-name">
+                                        {{ $product->name }}
+                                    </p>
+                                </div>
+
+                                <div class="col-3 mb-0 text-right">
+                                    <img class="w-100" src="{{ asset('storage/' . $product->brandImage->path . $product->brandImage->filename) }}" alt="">
+                                </div>
+
+                            </div>
+                            @else
+                            <p class="product-name">
+                                {{ $product->name }}
+                            </p>
+                            @endif
                             @if($product->categories->where('name', 'Paints')->count() > 0)
                             <p class="mb-1 text-muted" style="font-size: 0.9rem;">
                                 1 Liter
@@ -211,26 +228,48 @@
                         <img src="{{ asset('storage/' . $product->images[0]->path . '/' . $product->images[0]->filename) }}" alt="{{ $product->name }}">
                     </div>
                     <div class="animated-product-information-container">
-                        <p class="product-name">{{ $product->name }}</p>
+                        @if($product->brandImage)
+                        <div class="row no-gutters">
+                            <div class="col-9 mb-0" style="padding-right: .25rem;">
+                                <p class="product-name">
+                                    {{ $product->name }}
+                                </p>
+                            </div>
+
+                            <div class="col-3 mb-0 text-right">
+                                <img class="w-100" src="{{ asset('storage/' . $product->brandImage->path . $product->brandImage->filename) }}" alt="">
+                            </div>
+
+                        </div>
+                        @else
+                        <p class="product-name">
+                            {{ $product->name }}
+                        </p>
+                        @endif
+                        <!-- @if($product->brandImage)
+                        <span>
+                            <img src="{{ asset('storage/' . $product->brandImage->path . $product->brandImage->filename) }}" alt="">
+                        </span>
+                        @endif -->
                         <div class="mt-2 mb-1">
                             @if($product->categories->where('name', 'Paints')->count() > 0)
                             <p class="mb-1 text-muted" style="font-size: 0.9rem;">
                                 1 Liter
                             </p>
                             @elseif($product->categories->where('name', 'Carpets')->count() > 0)
-                            @if($product->productSoldByPanels[0]->sizeAttributes->count() > 0)
-                            <p class="mb-1 text-muted" style="font-size: 0.9rem;">
-                                {{ $product->productSoldByPanels[0]->sizeAttributes->first()->attribute_name }}
-                            </p>
-                            @endif
-                            @endif
-                            <p class="mb-1">
-                                <span class="text-muted" style="font-size: 1.2rem; font-weight: 600;">
-                                    RM {{ number_format(($product->productSoldByPanels->min('price') / 100), 2) }}
-                                </span>
-                            </p>
-                            <!-- TODO: Will use later. -->
-                            <!-- <ul class="list-unstyled product-rating mb-1">
+                            @if($product->productSoldByPanels[0]->sizeAttributes->count() < 2 && $product->productSoldByPanels[0]->sizeAttributes->count() > 0)
+                                <p class="mb-1 text-muted" style="font-size: 0.9rem;">
+                                    {{ $product->productSoldByPanels[0]->sizeAttributes->first()->attribute_name }}
+                                </p>
+                                @endif
+                                @endif
+                                <p class="mb-1">
+                                    <span class="text-muted" style="font-size: 1.2rem; font-weight: 600;">
+                                        RM {{ number_format(($product->productSoldByPanels->min('price') / 100), 2) }}
+                                    </span>
+                                </p>
+                                <!-- TODO: Will use later. -->
+                                <!-- <ul class="list-unstyled product-rating mb-1">
                                 <li>
                                     <i class="fa fa-star checked"></i>
                                 </li>

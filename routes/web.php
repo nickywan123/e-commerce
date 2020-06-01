@@ -11,12 +11,6 @@
 |
 */
 
-// Route for QR Code
-
-use App\Models\Globals\Products\Product;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-
 Route::get('qr-code-g', function () {
     QrCode::size(500)
         ->format('png')
@@ -191,6 +185,56 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         // Products
         Route::group(['prefix' => 'products'], function () {
+            // V1
+            Route::group(['prefix' => 'v1'], function () {
+                // Index
+                Route::get('/', 'Administrator\v1\Product\ProductController@index')
+                    ->name('administrator.v1.products');
+
+                // Edit
+                Route::get('/edit/{id}', 'Administrator\v1\Product\ProductController@edit')
+                    ->name('administrator.v1.products.edit');
+
+                // Update
+                Route::put('/edit/{id}/update', 'Administrator\v1\Product\ProductController@update')
+                    ->name('administrator.v1.products.update');
+
+                // Image Get (Dropzone)
+                Route::get('/image-get/{id}', 'Administrator\v1\Product\ProductController@getImage')
+                    ->name('administrator.v1.products.get-image');
+
+                // Image upload (Dropzone).
+                Route::post('/image-upload/{id}', 'Administrator\v1\Product\ProductController@storeImage')
+                    ->name('administrator.v1.products.store-image');
+
+                // Image delete (Dropzone).
+                Route::post('/image-delete/{id}', 'Administrator\v1\Product\ProductController@deleteImage')
+                    ->name('administrator.v1.products.delete-image');
+
+                //  Product by panels.
+                Route::group(['prefix' => 'panels'], function () {
+                    // Index
+                    Route::get('/', 'Administrator\v1\Product\ProductByPanelController@index')
+                        ->name('administrator.v1.products.panels');
+
+                    // Create
+                    Route::get('/create', 'Administrator\v1\Product\ProductByPanelController@create')
+                        ->name('administrator.v1.products.panels.create');
+
+                    // Store
+                    Route::post('/store', 'Administrator\v1\Product\ProductByPanelController@store')
+                        ->name('administrator.v1.products.panels.store');
+
+                    // Edit
+                    Route::get('/edit/{id}', 'Administrator\v1\Product\ProductByPanelController@edit')
+                        ->name('administrator.v1.products.panels.edit');
+
+                    // Update
+                    Route::put('/edit/{id}/update', 'Administrator\v1\Product\ProductByPanelController@update')
+                        ->name('administrator.v1.products.panels.update');
+                });
+            });
+
             // Product index.
             Route::get('/', 'Administrator\Product\ProductController@index')
                 ->name('administrator.products');
@@ -255,6 +299,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
                     ->name('administrator.products.panels.delete');
             });
         });
+        // End Administrator
 
         // Category
         Route::group(['prefix' => 'categories'], function () {
@@ -331,6 +376,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         Route::get('/dashboard/profile/index', 'Shop\ProfileController@index')->name('shop.dashboard.customer.profile');
         Route::get('/dashboard/profile/edit', 'Shop\ProfileController@edit')->name('shop.dashboard.customer.profile.edit');
+
         Route::patch('dashboard/profile/update/{id}', 'Shop\ProfileController@updateProfile')->name('profile.update');
 
         Route::get('/dashboard/home', 'Shop\ValueRecordsController@homePageCustomer')->name('shop.dashboard.customer.home');
@@ -343,17 +389,12 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         // Return Customer -> Orders Status
         Route::get('/dashboard/orders/order-status', 'Shop\ValueRecordsController@orderStatus')->name('shop.customer.order-status');
 
-
-
         // Return My Perfect List
         Route::get('/dashboard/wishlist/index', 'Shop\ValueRecordsController@wishlist')->name('shop.wishlist.home');
 
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
         Route::get('/dashboard/reset-password', 'Shop\ForgotPasswordController@sendEmailReset')->name('shop.forgot.password');
-
-
-        // Route::get('/dashboard/orders/index', 'Shop\OrderController@customerAllOrders');
 
         // TODO: Temporary. For interior-design payment.
         Route::get('/product/temp/renovation', 'Shop\ShopController@interiorDesign');
@@ -461,8 +502,41 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // End Web
 });
 
+// Development Routes
+use App\Models\Globals\Products\Product as GlobalProducts;
+use App\Http\Resources\Product\Product as ProductResource;
+use App\Http\Resources\Product\ProductCollection as ProductCollectionResource;
+use App\Models\Users\Customers\Cart;
+use App\Models\Users\User;
+
 Route::group(['prefix' => 'development'], function () {
+
+    Route::get('/administrator/products', function () {
+        $products = new ProductCollectionResource(GlobalProducts::all());
+        return view('administrator.products.global.v1.index')
+            ->with('products', $products);
+    });
+
+    Route::get('/administrator/products/create', function () {
+        return view('administrator.products.v1.global.create');
+    });
+
+    Route::get('/administrator/products/edit', function () {
+        $product = GlobalProducts::find(1);
+        return view('administrator.products.v1.global.edit')
+            ->with('product', $product);
+    });
+
     Route::get('/administrator/products/panel/edit', function () {
         return view('administrator.products.panel.v1.edit');
+    });
+
+    Route::get('/cart/test-1', function () {
+        $user = User::find(Auth::user()->id);
+        $cart = Cart::where('user_id', $user->id)->whereHas('product.panel', function ($q) {
+            $q->where('panel_account_id', '1918000105');
+        })->get();
+
+        return $cart;
     });
 });

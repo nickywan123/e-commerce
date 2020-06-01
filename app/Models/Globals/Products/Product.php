@@ -52,6 +52,15 @@ class Product extends Model
     }
 
     /**
+     * Get brand image of a product.
+     */
+    public function brandImage()
+    {
+        return $this->morphOne('App\Models\Globals\Image', 'imageable')
+            ->where('brand', 1);
+    }
+
+    /**
      *  Get product's categories.
      */
     public function categories()

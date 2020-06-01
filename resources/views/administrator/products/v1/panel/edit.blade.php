@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        <a href="" class="btn btn-dark" style="border-radius: 0.25rem; color: #ffffff;">Go Back</a>
+        <a href="/administrator/products/panels" class="btn btn-dark" style="border-radius: 0.25rem; color: #ffffff;">Go Back</a>
     </div>
 </div>
 <div class="card shadow-sm mt-3">
@@ -21,21 +21,21 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-12 col-md-2">
-                        <img src="https://via.placeholder.com/1024" class="mw-100" alt="">
+                        <img src="@if ($product->defaultImage) {{ asset('storage/' . $product->defaultImage->path . $product->defaultImage->filename) }} @else {{ asset('assets/images/errors/image-not-found.png') }} @endif" class="mw-100" alt="">
                     </div>
                     <div class="col-12 col-md-10">
                         <div class="row">
                             <div class="col-12 col-md-4 form-group">
                                 <label for="productName">Product Name</label>
-                                <input type="text" id="productName" class="form-control" disabled value="Product Name" style="background-color: #ffffff;">
+                                <input type="text" id="productName" class="form-control" disabled value="{{ $parentProduct->name }}" style="background-color: #ffffff;">
                             </div>
                             <div class="col-12 col-md-4 form-group">
                                 <label for="productQuality">Product Quality</label>
-                                <input type="text" id="productQuality" class="form-control" disabled value="Premium" style="background-color: #ffffff;">
+                                <input type="text" id="productQuality" class="form-control" disabled value="{{ $parentProduct->quality->name }}" style="background-color: #ffffff;">
                             </div>
                             <div class="col-12 col-md-4 form-group">
                                 <label for="productCode">Product Code</label>
-                                <input type="text" id="productCode" class="form-control" disabled value="bjs-product-code" style="background-color: #ffffff;">
+                                <input type="text" id="productCode" class="form-control" disabled value="{{ $parentProduct->product_code }}" style="background-color: #ffffff;">
                             </div>
                         </div>
                     </div>
@@ -59,8 +59,10 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <select name="panel_id" id="panel_id" class="select2 form-control">
-                                        <option value="">Option 1</option>
-                                        <option value="">Option 2</option>
+                                        <option value="default">Please choose a panel.</option>
+                                        @foreach($panels as $panel)
+                                        <option value="{{ $panel->account_id }}" {{ ($product->panel_account_id == $panel->account_id) ? 'selected' : '' }}>{{ $panel->account_id }} - {{ $panel-> company_name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -68,22 +70,22 @@
                             <div class="row">
                                 <div class="col-12 col-md-4 text-md-right my-auto">
                                     <p>
-                                        Price <small class="text-danger">*</small>
+                                        Price (RM) <small class="text-danger">*</small>
                                     </p>
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
-                                    <input type="text" name="price" id="price" class="form-control input-mask-price">
+                                    <input type="text" name="price" id="price" class="form-control input-mask-price" value="{{ $product->price }}">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-12 col-md-4 text-md-right my-auto">
                                     <p>
-                                        DC Customer's Price <small class="text-danger">*</small>
+                                        DC Customer's Price (RM) <small class="text-danger">*</small>
                                     </p>
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
-                                    <input type="text" name="member_price" id="member_price" class="form-control input-mask-price">
+                                    <input type="text" name="member_price" id="member_price" class="form-control input-mask-price" value="{{ $product->member_price }}">
                                 </div>
                             </div>
 
@@ -95,8 +97,10 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <select name="ships_from" id="ships_from" class="select2 form-control">
-                                        <option value="">Option 1</option>
-                                        <option value="">Option 2</option>
+                                        <option value="default">Please choose origin state..</option>
+                                        @foreach($states as $state)
+                                        <option value="{{ $state->id }}" {{ ($product->origin_state_id == $state->id) ? 'selected' : '' }}>{{ $state->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -111,8 +115,10 @@
                                     <div class="row no-gutters default-item">
                                         <div class="col-12 col-md-6 form-group p-1">
                                             <select name="available_in[]" id="available_in" class="select2 form-control">
-                                                <option value="">West Malaysia</option>
-                                                <option value="">East Malaysia</option>
+                                                <option value="default">Please choose a state..</option>
+                                                @foreach($states as $state)
+                                                <option value="{{ $state->id }}">{{ $state->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-10 col-md-6 form-group p-1">
@@ -138,6 +144,7 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <textarea name="product_description" id="product_description" cols="30" rows="10" class="form-control summernote">
+                                    {!! $product->product_description !!}
                                     </textarea>
                                 </div>
                             </div>
@@ -150,6 +157,7 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <textarea name="product_material" id="product_material" cols="30" rows="10" class="form-control summernote">
+                                        {!! $product->product_material !!}
                                     </textarea>
                                 </div>
                             </div>
@@ -162,6 +170,7 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <textarea name="product_consistency" id="product_consistency" cols="30" rows="10" class="form-control summernote">
+                                        {!! $product->product_consistency !!}
                                     </textarea>
                                 </div>
                             </div>
@@ -174,6 +183,7 @@
                                 </div>
                                 <div class="col-12 col-md-8 form-group">
                                     <textarea name="product_package" id="product_package" cols="30" rows="10" class="form-control summernote">
+                                        {!! $product->product_package !!}
                                     </textarea>
                                 </div>
                             </div>
@@ -182,18 +192,60 @@
 
                             <h5 class="mb-3">Product Variations ..</h5>
 
+
                             <div class="row">
                                 <div class="col-12 col-md-2 text-md-right my-auto">
                                     <p>
                                         Variations <small class="text-danger">*</small>
                                     </p>
                                 </div>
+
                                 <div class="col-12 col-md-10" id="variationContainer">
+                                    @if($product->attributes->count() > 0)
+                                    @foreach($product->attributes as $attribute)
+                                    <div class="row no-gutters @if ($loop->last) default-item @endif p-2 mb-1" style="border: 1px solid #b3b3b3; border-radius: 5px;">
+                                        <div class="col-12 col-md-3 form-group p-1">
+                                            <select name="product_variation[]" id="product_variation" class="select2 form-control">
+                                                <option value="">Select a variation type..</option>
+                                                <option value="color" {{ ($attribute->attribute_type == 'color') ? 'selected' : '' }}>Color</option>
+                                                <option value="size" {{ ($attribute->attribute_type == 'size') ? 'selected' : '' }}>Size</option>
+                                                <option value="light-temperature" {{ ($attribute->attribute_type == 'light-temperature') ? 'selected' : '' }}>Light Temperature</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-3 form-group p-1">
+                                            <input type="text" name="product_variation_name[]" id="product_variation_name" class="form-control" placeholder="Name" value="{{ $attribute->attribute_name }}">
+                                        </div>
+                                        <div class="col-12 col-md-6 form-group p-1">
+                                            <input type="text" name="product_variation_price[]" id="product_variation_price" class="form-control input-mask-price d-inline" placeholder="Price" style="width: 49.3%;" value="{{ $attribute->price }}">
+
+                                            <input type="text" name="product_variation_member_price[]" id="product_variation_member_price" class="form-control input-mask-price d-inline" placeholder="DC Customer Price" style="width: 49.3%;" value="{{ $attribute->member_price }}">
+                                        </div>
+
+                                        <div class="col-6 p-1">
+                                            @if(!$loop->last)
+                                            <button type="button" class="btn btn-danger" style="width: 20%;" onclick="removeProductVariationElement(this);">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            @else
+                                            <button type="button" class="btn btn-danger d-none" style="width: 20%;" onclick="removeProductVariationElement(this);">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-success" style="width: 20%;" onclick="addMoreProductVariationElement();">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    @else
                                     <div class="row no-gutters default-item p-2 mb-1" style="border: 1px solid #b3b3b3; border-radius: 5px;">
                                         <div class="col-12 col-md-3 form-group p-1">
                                             <select name="product_variation[]" id="product_variation" class="select2 form-control">
-                                                <option value="">Color</option>
-                                                <option value="">Size</option>
+                                                <option value="">Select a variation type..</option>
+                                                <option value="color">Color</option>
+                                                <option value="size">Size</option>
+                                                <option value="light-temperature">Light Temperature</option>
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-3 form-group p-1">
@@ -215,6 +267,7 @@
                                             </button>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
 

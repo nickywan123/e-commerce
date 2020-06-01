@@ -47,7 +47,7 @@
                             </ul>
                         </td>
                         <td style="width: 20%;">
-                            <a style="color: white; font-style: normal; border-radius: 5px;" href="/administrator/products/edit/{{ $product->id }}" class="btn btn-primary shadow-sm">Edit</a>
+                            <a style="color: white; font-style: normal; border-radius: 5px;" href="/administrator/products/v1/edit/{{ $product->id }}" class="btn btn-primary shadow-sm">Edit</a>
 
                             @if($product->product_status == 1)
                             <a style="color: white; font-style: normal; border-radius: 5px;" href="/administrator/products/product-unpublish/{{ $product->id }}" class="btn btn-danger shadow-sm">Disable</a>

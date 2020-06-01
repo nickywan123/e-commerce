@@ -47,7 +47,7 @@ class ProductController extends Controller
         $newProduct->product_status = 0;
         $newProduct->save();
 
-        return redirect(route('administrator.products.edit', ['productId' => $newProduct->id]));
+        return redirect(route('administrator.v1.products.edit', ['productId' => $newProduct->id]));
     }
 
     /**
