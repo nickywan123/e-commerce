@@ -232,8 +232,50 @@
                     </div>
                 </div>
 
+                <?php
+                $userShippingAddress = Auth::user()->userInfo->shippingAddress;
+                $deliveryInformation = $panelProduct->deliveries->where('state_id', $userShippingAddress->state_id)->first();
+                ?>
+
                 <!-- Extra details column -->
                 <div class="col-12 col-md-3 pt-2 pb-2 pl-3 pr-2 hidden-sm" style="background-color: #f2f2f2;">
+                    <section>
+                        <div class="mb-3">
+                            <p class="mb-1 text-muted">
+                                Your Shipping Address
+                            </p>
+                            <div class="card">
+                                <div class="card-body p-2">
+                                    <div class="row">
+                                        <div class="col-12 col-md-8">
+                                            <p class="mb-1" style="font-size: .85rem; font-weight: 600;">
+                                                {{ $userShippingAddress->postcode }}, {{ $userShippingAddress->city }}, {{ $userShippingAddress->state->name }}
+                                            </p>
+                                        </div>
+                                        <div class="col-12 col-md-4 text-right">
+                                            <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#editAddressModal">Edit</button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="editAddressModal" tabindex="-1" role="dialog" aria-labelledby="editAddressModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            ...
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Modal -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <section>
                         <div class="mb-3 text-muted">
                             <i class="fa fa-truck mr-2" style="font-size: 0.65rem;"></i>
@@ -243,7 +285,7 @@
                         <!-- Ships from -->
                         <div class="mb-2">
                             <i class="fas fa-globe-asia mr-2 text-muted"></i>
-                            <span>Ships from Selangor</span>
+                            <span>Ships from {{ $panelProduct->originState->name }}</span>
                         </div>
 
                         <!-- Available in -->
@@ -253,7 +295,7 @@
                             <div class="ml-4 mt-2">
                                 @if($panelProduct->deliveries->count() > 0)
                                 @foreach($panelProduct->deliveries as $availableIn)
-                                <span class="d-inline-block" style="font-weight:700; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->name }}</span>
+                                <span class="d-inline-block" style="font-weight:700; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->state->name }}</span>
                                 @endforeach
                                 @endif
                             </div>
@@ -264,10 +306,12 @@
                         <div class="row no-gutters">
                             <div class="col-8">
                                 <i class="fas fa-truck-loading mr-2 text-muted"></i>
-                                <span>Delivery Fee</span>
+                                <span>
+                                    Delivery Fee
+                                </span>
                             </div>
                             <div class="col-4 text-right">
-                                <p class="font-weight-bold">RM {{ $panelProduct->getDecimalDeliveryFee() }}</p>
+                                <p class="font-weight-bold"> {{ ($deliveryInformation != null) ? 'RM ' . number_format(($deliveryInformation->delivery_fee / 100), 2) : 'Not Available' }}</p>
                             </div>
                         </div>
 
@@ -705,11 +749,11 @@
                     </div>
                     @endif
                     <!-- Modal -->
-                    <div class="modal fade" id="modal-{{ $product->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal fade" id="modal-{{ $product->id }}" tabindex="-1" role="dialog" aria-labelledby="editAddressModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content" style="background-color: #444444;">
                                 <div class="modal-header" style="border: none;">
-                                    <h5 class="modal-title text-light" id="exampleModalLongTitle">Panels Selling - {{ $product->name }}</h5>
+                                    <h5 class="modal-title text-light" id="editAddressModalLongTitle">Panels Selling - {{ $product->name }}</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>

@@ -46,7 +46,9 @@
                 <div class="row">
                     <!-- Start Form -->
                     <div class="col-12 col-md-10 offset-md-1">
-                        <form action="">
+                        <form action="{{ route('administrator.v1.products.panels.update', ['id' => $product->id]) }}" method="POST">
+                            @csrf
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-12">
                                     <h5 class="mb-3">Product By Panel ..</h5>
@@ -112,9 +114,40 @@
                                     </p>
                                 </div>
                                 <div class="col-12 col-md-8" id="availableInContainer">
+                                    @if($product->deliveries->count() > 0)
+                                    @foreach($product->deliveries as $delivery)
+                                    <div class="row no-gutters @if($loop->last) default-item @endif">
+                                        <div class="col-12 col-md-6 form-group p-1">
+                                            <select name="available_in[]" class="select2 form-control">
+                                                <option value="default">Please choose a state..</option>
+                                                @foreach($states as $state)
+                                                <option value="{{ $state->id }}" {{ ($delivery->state_id == $state->id) ? 'selected' : '' }}>{{ $state->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-10 col-md-6 form-group p-1">
+                                            <input type="text" name="available_in_price[]" class="form-control input-mask-price d-inline-block" style="width: 75%;" value="{{ $delivery->delivery_fee }}">
+
+                                            @if(!$loop->last)
+                                            <button type="button" class="btn btn-danger" style="width: 20%;" onclick="removeAvailableInElement(this);">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                            @else
+                                            <button type="button" class="btn btn-danger d-none" style="width: 20%;" onclick="removeAvailableInElement(this);">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-success" style="width: 20%;" onclick="addMoreAvailableInElement();">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    @else
                                     <div class="row no-gutters default-item">
                                         <div class="col-12 col-md-6 form-group p-1">
-                                            <select name="available_in[]" id="available_in" class="select2 form-control">
+                                            <select name="available_in[]" class="select2 form-control">
                                                 <option value="default">Please choose a state..</option>
                                                 @foreach($states as $state)
                                                 <option value="{{ $state->id }}">{{ $state->name }}</option>
@@ -122,7 +155,7 @@
                                             </select>
                                         </div>
                                         <div class="col-10 col-md-6 form-group p-1">
-                                            <input type="text" name="available_in_price[]" id="available_in_price" class="form-control input-mask-price d-inline-block" style="width: 75%;">
+                                            <input type="text" name="available_in_price[]" class="form-control input-mask-price d-inline-block" style="width: 75%;">
 
                                             <button type="button" class="btn btn-danger d-none" style="width: 20%;" onclick="removeAvailableInElement(this);">
                                                 <i class="fa fa-minus"></i>
@@ -133,6 +166,7 @@
                                             </button>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
 
@@ -203,9 +237,9 @@
                                 <div class="col-12 col-md-10" id="variationContainer">
                                     @if($product->attributes->count() > 0)
                                     @foreach($product->attributes as $attribute)
-                                    <div class="row no-gutters @if ($loop->last) default-item @endif p-2 mb-1" style="border: 1px solid #b3b3b3; border-radius: 5px;">
+                                    <div class="row no-gutters @if($loop->last) default-item @endif p-2 mb-1" style="border: 1px solid #b3b3b3; border-radius: 5px;">
                                         <div class="col-12 col-md-3 form-group p-1">
-                                            <select name="product_variation[]" id="product_variation" class="select2 form-control">
+                                            <select name="product_variation[]" class="select2 form-control">
                                                 <option value="">Select a variation type..</option>
                                                 <option value="color" {{ ($attribute->attribute_type == 'color') ? 'selected' : '' }}>Color</option>
                                                 <option value="size" {{ ($attribute->attribute_type == 'size') ? 'selected' : '' }}>Size</option>
@@ -213,12 +247,12 @@
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-3 form-group p-1">
-                                            <input type="text" name="product_variation_name[]" id="product_variation_name" class="form-control" placeholder="Name" value="{{ $attribute->attribute_name }}">
+                                            <input type="text" name="product_variation_name[]" class="form-control" placeholder="Name" value="{{ $attribute->attribute_name }}">
                                         </div>
                                         <div class="col-12 col-md-6 form-group p-1">
-                                            <input type="text" name="product_variation_price[]" id="product_variation_price" class="form-control input-mask-price d-inline" placeholder="Price" style="width: 49.3%;" value="{{ $attribute->price }}">
+                                            <input type="text" name="product_variation_price[]" class="form-control input-mask-price d-inline" placeholder="Price" style="width: 49.3%;" value="{{ $attribute->price }}">
 
-                                            <input type="text" name="product_variation_member_price[]" id="product_variation_member_price" class="form-control input-mask-price d-inline" placeholder="DC Customer Price" style="width: 49.3%;" value="{{ $attribute->member_price }}">
+                                            <input type="text" name="product_variation_member_price[]" class="form-control input-mask-price d-inline" placeholder="DC Customer Price" style="width: 49.3%;" value="{{ $attribute->member_price }}">
                                         </div>
 
                                         <div class="col-6 p-1">
@@ -241,7 +275,7 @@
                                     @else
                                     <div class="row no-gutters default-item p-2 mb-1" style="border: 1px solid #b3b3b3; border-radius: 5px;">
                                         <div class="col-12 col-md-3 form-group p-1">
-                                            <select name="product_variation[]" id="product_variation" class="select2 form-control">
+                                            <select name="product_variation[]" class="select2 form-control">
                                                 <option value="">Select a variation type..</option>
                                                 <option value="color">Color</option>
                                                 <option value="size">Size</option>
@@ -249,12 +283,12 @@
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-3 form-group p-1">
-                                            <input type="text" name="product_variation_name[]" id="product_variation_name" class="form-control" placeholder="Name">
+                                            <input type="text" name="product_variation_name[]" class="form-control" placeholder="Name">
                                         </div>
                                         <div class="col-12 col-md-6 form-group p-1">
-                                            <input type="text" name="product_variation_price[]" id="product_variation_price" class="form-control input-mask-price d-inline" placeholder="Price" style="width: 49.3%;">
+                                            <input type="text" name="product_variation_price[]" class="form-control input-mask-price d-inline" placeholder="Price" style="width: 49.3%;">
 
-                                            <input type="text" name="product_variation_member_price[]" id="product_variation_member_price" class="form-control input-mask-price d-inline" placeholder="DC Customer Price" style="width: 49.3%;">
+                                            <input type="text" name="product_variation_member_price[]" class="form-control input-mask-price d-inline" placeholder="DC Customer Price" style="width: 49.3%;">
                                         </div>
 
                                         <div class="col-6 p-1">
@@ -394,7 +428,7 @@
             priceInputMask.mask(priceSelectors.item(i));
         }
 
-        $('.select2').select2({
+        $('select.select2').select2({
             theme: 'bootstrap4',
         });
 

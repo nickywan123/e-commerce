@@ -77,6 +77,14 @@ class Product extends Model
     }
 
     /**
+     * Get origin state of the product.
+     */
+    public function originState()
+    {
+        return $this->belongsTo('App\Models\Globals\State', 'origin_state_id');
+    }
+
+    /**
      * Get the states and delivery fee the product is available in.
      */
     public function deliveries()
