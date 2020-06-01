@@ -225,10 +225,8 @@
                             <form id="add-to-cart-form" style="display: inline;" method="POST" action="{{route('shop.add-perfect-list',[$panelProduct->id])}}">
                                 @method('POST')
                                 @csrf
-                               
-                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile" style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
 
-                                <button type="submit" class="btn btn-lg bjsh-btn-product-page font-weight-bold w-100 " style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
+                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile" style="color: #1a1a1a; border:0px;">Add To Perfect List</button>
                             </form>
                         </div>
                     </div>
