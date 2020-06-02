@@ -29,12 +29,12 @@
             <div class="col-12 offset-1 col-md-10">  
                 
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-4">
                      <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header "
                      ><strong>User Profile</strong></a>
                     </div>
                     @hasrole('dealer')
-                    <div class="col-2">
+                    <div class="col-4">
                      <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header " ><strong>Dealer Information</strong></a>
                     </div>
                     @endhasrole

@@ -121,7 +121,7 @@ new Chart(document.getElementById("doughnut-chart"), {
 <div class="row ">   
      <div class="col-6">         
         <div class="card">      
-          <div class="card-body"  style="height:550px;">
+          <div class="card-body"  style="height:600px;">
                     <div class="d-flex justify-content-between">
                      <div>
                       <h4 class="card-title mb-0">Overview</h4>              
@@ -145,15 +145,15 @@ new Chart(document.getElementById("doughnut-chart"), {
                    </div>
 
 
-                    <div class="c-chart-wrapper" style="height:300px;margin-top:40px;">
+                    <div class="c-chart-wrapper" style="height:350px;margin-top:40px;">
                         <canvas id="myChart"></canvas>
                     </div>
                    
                     
             
-                    <div class="card-body">
-                     <div class="row text-center">
-                      <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                    <div class="card-body mt-3">
+                     <div class="row text-center ">
+                      <div class="col-12 col-sm-12 col-md mb-sm-2 mb-0">
                         <div class="card">
                             <div class="card-body">
                               <h5 class="card-text">24</h5>
@@ -162,7 +162,7 @@ new Chart(document.getElementById("doughnut-chart"), {
                         </div>
                       </div>
 
-                      <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                      <div class="col-12 col-sm-12 col-md mb-sm-2 mb-0">
                         <div class="card">
                          <div class="card-body">
                             <h5 class="card-text">51</h5>
@@ -172,7 +172,7 @@ new Chart(document.getElementById("doughnut-chart"), {
                  
                       </div>
 
-                      <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                      <div class="col-12 col-sm-12 col-md mb-sm-2 mb-0">
                         <div class="card">
                          <div class="card-body">
                           <h5 class="card-text">12</h5>
@@ -181,7 +181,7 @@ new Chart(document.getElementById("doughnut-chart"), {
                         </div>
                       </div>
 
-                      <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                      <div class="col-12 col-sm-12 col-md mb-sm-2 mb-0">
                         <div class="card">
                            <div class="card-body">
                             <h5 class="card-text">33</h5>

@@ -25,29 +25,12 @@
            <img class="img-avatar" src="{{asset('storage/avatar/default-avatar.jpg')}}" alt="{{ Auth::user()->userInfo->full_name }}">
          </a>
             <div class="dropdown-menu dropdown-menu-right">
-                {{-- <div class="dropdown-header text-center">
-                    <strong>Settings</strong>
-                </div>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-user"></i> Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-usd"></i> Payments
-                    <span class="badge badge-secondary">42</span>
-                </a>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-file"></i> Projects
-                    <span class="badge badge-primary">42</span>
-                </a>
-                <div class="divider"></div>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-shield"></i> Lock Account</a> --}}
-                {{-- <a class="dropdown-item" href="#">
-                    <i class="fa fa-lock"></i> Logout</a> --}}
-                    
-
+         
                 <a class="dropdown-item" href="{{ route('management.company.profile') }}">
-                    <i class="fa fa-user" style="color:#fbcc34;"></i> Company Profile             
+                    <i class="fa fa-user" style="color:#fbcc34;"></i> Panel Profile             
+                </a>
+                <a class="dropdown-item" href="{{ route('shop.dashboard.customer.home') }}">
+                    <i class="fa fa-user" style="color:#fbcc34;"></i> My Dashboard         
                 </a>
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -44,8 +44,9 @@
         </main>
         {{-- @include('layouts.management.components.aside') --}}
     </div>
-    @include('layouts.management.components.footer')
-
+    {{-- @include('layouts.management.components.footer') --}}
+    @include('layouts.shop.footer.footer')
+    
     @stack('script')
  
 </body>

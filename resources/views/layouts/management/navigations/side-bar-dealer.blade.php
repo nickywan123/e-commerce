@@ -1,8 +1,8 @@
 
 
-<div class="sidebar sidebar-bg-color-dealer" style=" width: 240px;">
+<div class="sidebar sidebar-bg-color-dealer" style=" width: 240px; margin-top: 1rem;">
     <nav class="sidebar-nav">
-      <ul class="list-unstyled components" style="padding-left: 10px;">
+      <ul class="list-unstyled components">
          <br>
          <h4 style="color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
          
@@ -10,19 +10,27 @@
          {{-- <li>
           <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Profile</a>
          </li> --}}
-         <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Sales Summary</a>
+         <li class="text-hover">
+            <a href="{{route('management.dealer.home')}}" class="sidebar-text-color ">Overview</a>
          </li>
-         <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Monthly Income</a>
+         <li class="text-hover">
+            <a href="{{route('dealer.sales.summary')}}" class="sidebar-text-color ">Sales Summary</a>
          </li>
-         <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Notice</a>
+         <li class="text-hover">
+            <a href="{{route('management.dealer.statement.home')}}" class="sidebar-text-color ">Monthly Income</a>
          </li>
-         <li>
-            <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Promotion/Special Offer</a>
+         <li class="text-hover">
+            <a href="/wip" class="sidebar-text-color ">Notice</a>
          </li>
-         <li>
+         <li class="text-hover">
+            <a href="/wip" class="sidebar-text-color ">Promotion/Special Offer</a>
+         </li>
+         @hasrole('panel')
+         <li class="text-hover">
+            <a href="{{route('management.panel.home')}}" class="sidebar-text-color ">Panel Dashboard</a>
+         </li>
+         @endhasrole
+         <li class="text-hover">
             <a href="/shop" class="sidebar-text-color ">Continue Shopping</a>
          </li>
       </ul>
@@ -109,6 +117,13 @@
    li{
       padding-bottom: 10px;
    }
+
+   .text-hover:hover{
+      color: black;
+      background: #fbcc34;
+      text-decoration:  none!important;
+  }
+
 
    a:hover{
       color: black;

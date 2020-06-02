@@ -61,8 +61,8 @@
         <form action="{{route('update.order.panel',[$customerOrder->order_number])}}" method="POST">
           <input type="hidden" name="_method" value="PUT">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <td><a href="/management/panel/orders/purchase-order-pdf/{{$customerOrder->order_number}}">{{$customerOrder->order_number}}</a></td>
-          {{-- <td><a href="{{asset('/storage/documents/invoice/'.$customerOrder->purchase->getFormattedNumber().'/purchase-orders/'.$customerOrder->order_number.'.pdf')}}">{{$customerOrder->order_number}}</a></td> --}}
+          {{-- <td><a href="/management/panel/orders/purchase-order-pdf/{{$customerOrder->order_number}}">{{$customerOrder->order_number}}</a></td> --}}
+          <td><a href="{{asset('/storage/documents/invoice/'.$customerOrder->purchase->getFormattedNumber().'/purchase-orders/'.$customerOrder->order_number.'.pdf')}}">{{$customerOrder->order_number}}</a></td>
           <td> {{ $item->product->parentProduct->product_code }}</td>
           <td>{{$item->product->parentProduct->name}}</td>
           <td>{{$customerOrder->getFormattedDate()}}</td>

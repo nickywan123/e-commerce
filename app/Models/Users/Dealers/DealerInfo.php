@@ -76,7 +76,6 @@ class DealerInfo extends Model
         return $this->hasMany('App\Models\Users\Dealers\DealerContact', 'account_id', 'account_id');
     }
 
-
     /*****
      * Get mobile contact number of dealer
      ***/
