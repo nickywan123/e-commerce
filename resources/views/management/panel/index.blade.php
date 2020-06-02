@@ -26,7 +26,7 @@
 <div class="hidden-sm" style="font-size:small;">
   <div class="row">
     <div class="col-12 mb-3">
-      <h1 style="font-weight:bold;">Value Tracking</h1>
+      <h1 style="font-weight:bold;">Sales Tracking</h1>
     </div>
   </div>
 
@@ -96,7 +96,7 @@
 <div class="hidden-md">
   <div class="row">
     <div class="col-7  mt-4">
-      <h3 style="font-size:20px; font-family: Nunito; "><strong class="text-font-family">Order
+      <h3 style="font-size:20px; font-family: Nunito; "><strong class="text-font-family">Sales
           Tracking</strong></h3>
     </div>
     <div class="dropdown col-4 mt-3">

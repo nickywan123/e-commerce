@@ -318,7 +318,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
              </div>
              <div class="col-7 col-md-7 ml-4 mt-2" style="line-height: 20px;">   
               <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 28,888</P>
-              <p class="">Daily Revenue: 08/05/2020</p>
+              <p class="">Daily Revenue: {{ date('d/m/yy') }}</p>
              </div>
             </div> 
          </div>
@@ -341,7 +341,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
               </div>
               <div class="col-7 col-md-7 ml-4 mt-2" style="line-height: 20px;">
                <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 88,888</P>
-               Month Revenue: May 2020
+               Month Revenue:  {{ date('F Y') }}
               </div>
             </div> 
           </div>
@@ -552,7 +552,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
           </div>
           <div class="col-7 ml-4" style="line-height: 20px;">   
            <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 28,888</P>
-           <p>Daily Revenue: 08/05/2020</p>
+           <p>Daily Revenue: {{ date('d/m/yy') }}</p>
           </div>
         </div> 
       </div>
@@ -577,7 +577,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
           </div>
           <div class="col-7 ml-4" style="line-height: 20px;">
            <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 88,888</P>
-           Month Revenue: May 2020
+           Month Revenue:  {{ date('F Y') }}
           </div>
         </div> 
       </div>
@@ -779,7 +779,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
                   </div>
                   <div class="col-7 col-md-7 ml-5 mt-2" style="line-height: 20px;">   
                    <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 8,888</P>
-                   <p class="">Daily Revenue: 08/05/2020</p>
+                   <p class="">Daily Revenue: {{ date('d/m/yy') }}</p>
                   </div>
                  </div> 
               </div>
@@ -803,7 +803,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
                   </div>
                   <div class="col-7 col-md-7 ml-5 mt-2" style="line-height: 20px;">   
                    <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 28,888</P>
-                   <p class="">Daily Revenue: 08/05/2020</p>
+                   <p class="">Monthly Revenue:  {{ date('F Y') }}</p>
                   </div>
                  </div> 
               </div>
