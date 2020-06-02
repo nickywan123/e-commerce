@@ -703,13 +703,14 @@
                         </p>
                         <p class="paragraph">
                             The address is as follows: 
+                            1-26-05 Menara Bangkok Bank, Berjaya Central Park, No 105, Jalan Ampang, 50450 Kuala Lumpur, Malaysia
                         </p>
                         <p class="paragraph">
-                            Email Address:  
+                            Email Address: bujishu-cs@delhubdigital.com  
                         </p>
                         <p class="paragraph">
-                            For enquiries, please contact Bujishu Customer Hotline 
-
+                            For enquiries, please contact Bujishu Customer Hotline:
+                            03-2181 8821
                         </p>
                     </li>
                     
