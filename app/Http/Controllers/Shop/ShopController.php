@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Categories\ProductType;
 use App\Models\Categories\SubCategory;
 use App\Models\Globals\Products\Product;
+use App\Models\Globals\State;
 use Illuminate\Support\Facades\View;
 use App\Models\Users\User;
 use App\Models\PromotionPage\Banner;
@@ -91,11 +92,38 @@ class ShopController extends Controller
 
         $relatedProducts = $category->products->where('name_slug', '!=', $slug)->where('product_status', 1)->take(6);
 
+        $user = User::find(Auth::user()->id);
+
+        $customer = $user->userInfo;
+
+        $states = State::all();
+
         return view('shop.product')
             ->with('product', $product)
             ->with('panelProduct', $panelProduct)
-            ->with('relatedProducts', $relatedProducts);
+            ->with('relatedProducts', $relatedProducts)
+            ->with('customer', $customer)
+            ->with('states', $states);
         // ->with('products', $products);
+    }
+
+    /**
+     * Handles editing address on shop page.
+     */
+    public function productChangeAddress(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+        $userAddress = $user->userInfo->shippingAddress;
+
+        $userAddress->address_1 = $request->input('address_1');
+        $userAddress->address_2 = $request->input('address_2');
+        $userAddress->address_3 = $request->input('address_3');
+        $userAddress->postcode = $request->input('postcode');
+        $userAddress->city = $request->input('city');
+        $userAddress->state_id = $request->input('state_id');
+        $userAddress->save();
+
+        return redirect()->back();
     }
 
     /**

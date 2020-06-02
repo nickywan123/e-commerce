@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Str;
+use File;
 
-use App\Models\Globals\Products\Product as GlobalProducts;
+use App\Models\Globals\Products\Product as GlobalProduct;
 use App\Models\Categories\Category;
 use App\Models\Globals\Quality;
 
@@ -22,7 +23,7 @@ class ProductController extends Controller
     {
         // Handles AJAX request if it exists.
         if ($request->ajax()) {
-            $products = new ProductCollectionResource(GlobalProducts::all());
+            $products = new ProductCollectionResource(GlobalProduct::all());
 
             return response()->json($products, 200);
         }
@@ -73,7 +74,7 @@ class ProductController extends Controller
     {
         $qualities = Quality::all();
         $categories = Category::all();
-        $product = GlobalProducts::findOrFail($id);
+        $product = GlobalProduct::findOrFail($id);
 
         return view('administrator.products.v1.global.edit')
             ->with('qualities', $qualities)
@@ -92,7 +93,7 @@ class ProductController extends Controller
     {
         $categories =  $request->input('categories');
 
-        $product = GlobalProducts::findOrFail($id);
+        $product = GlobalProduct::findOrFail($id);
         $product->name = $request->input('productName');
         $product->name_slug = Str::slug($request->input('productName'), '-');
         $product->product_code = $request->input('productCode');
@@ -167,7 +168,7 @@ class ProductController extends Controller
      */
     public function getImage(Request $request, $id)
     {
-        $product = GlobalProducts::find($id);
+        $product = GlobalProduct::find($id);
         $result  = array();
         $storeFolder = public_path('/storage/uploads/images/products/' . $product->id . '/');
 
@@ -191,7 +192,7 @@ class ProductController extends Controller
      */
     public function storeImage(Request $request, $id)
     {
-        $product = Product::findOrFail($id);
+        $product = GlobalProduct::findOrFail($id);
 
         $image = $request->file('file');
         $imageDestination = public_path('/storage/uploads/images/products/' . $product->id . '/');
@@ -212,7 +213,7 @@ class ProductController extends Controller
      */
     public function deleteImage(Request $request, $id)
     {
-        $product = Product::findOrFail($id);
+        $product = GlobalProduct::findOrFail($id);
         $path = public_path('/storage/uploads/images/products/' . $product->id . '/');
         $filename = $request->input('filename');
         if (File::exists($path . $filename)) {

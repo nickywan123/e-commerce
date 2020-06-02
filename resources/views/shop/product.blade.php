@@ -218,7 +218,7 @@
                                 <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="color: #1a1a1a; border:0px;">Add To Cart</button>
+                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile" style="color: #1a1a1a; border:0px;">Add To Cart</button>
                             </form>
                         </div>
                         <div class="col-6 offset-3 offset-md-0 col-md-4 p-1 ">
@@ -252,20 +252,68 @@
                                                 {{ $userShippingAddress->postcode }}, {{ $userShippingAddress->city }}, {{ $userShippingAddress->state->name }}
                                             </p>
                                         </div>
-                                        <div class="col-12 col-md-4 text-right">
-                                            <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#editAddressModal">Edit</button>
+                                        <div class="col-12 col-md-4">
+                                            <div class="text-right">
+                                                <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#editAddressModal">Edit</button>
+                                            </div>
 
                                             <!-- Modal -->
                                             <div class="modal fade" id="editAddressModal" tabindex="-1" role="dialog" aria-labelledby="editAddressModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
-                                                        <div class="modal-body">
-                                                            ...
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                                        </div>
+                                                        <form action="{{ route('shop.product.edit-address') }}" method="POST">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <div class="modal-body">
+                                                                <div class="form-row">
+                                                                    <div class="col-12 form-group">
+                                                                        <label for="address_1">Address 1</label>
+                                                                        <input type="text" name="address_1" id="address_1" class="form-control" value="{{ $customer->shippingAddress->address_1 }}">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-row">
+                                                                    <div class="col-12 form-group">
+                                                                        <label for="address_2">Address 2</label>
+                                                                        <input type="text" name="address_2" id="address_2" class="form-control" value="{{ $customer->shippingAddress->address_2 }}">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-row">
+                                                                    <div class="col-12 form-group">
+                                                                        <label for="address_2">Address 3</label>
+                                                                        <input type="text" name="address_3" id="address_2" class="form-control" value="{{ $customer->shippingAddress->address_3 }}">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-row">
+                                                                    <div class="col-12 col-md-6 form-group">
+                                                                        <label for="postcode">Postcode</label>
+                                                                        <input type="text" name="postcode" id="postcode" class="form-control" value="{{ $customer->shippingAddress->postcode }}">
+                                                                    </div>
+
+                                                                    <div class="col-12 col-md-6 form-group">
+                                                                        <label for="city">City</label>
+                                                                        <input type="text" name="city" id="City" class="form-control" value="{{ $customer->shippingAddress->city }}">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-row">
+                                                                    <div class="col-12 form-group">
+                                                                        <label for="state_id">State</label>
+                                                                        <select name="state_id" id="state_id" class="select2 form-control" style="width: 100%;">
+                                                                            @foreach($states as $state)
+                                                                            <option value="{{ $state->id }}" {{ ($state->id == $customer->shippingAddress->state_id) ? 'selected' : '' }}>{{ $state->name }}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                                <button class="btn bjsh-btn-product-page">Save changes</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -285,12 +333,14 @@
                         <!-- Ships from -->
                         <div class="mb-2">
                             <i class="fas fa-globe-asia mr-2 text-muted"></i>
+                            @if ($panelProduct->originState)
                             <span>Ships from {{ $panelProduct->originState->name }}</span>
+                            @endif
                         </div>
 
                         <!-- Available in -->
                         <div>
-                            <i class="fas fa-globe-asia mr-2 text-muted"></i>
+                            <i class=" fas fa-globe-asia mr-2 text-muted"></i>
                             <span>Available in:</span>
                             <div class="ml-4 mt-2">
                                 @if($panelProduct->deliveries->count() > 0)
@@ -1399,6 +1449,10 @@
 
 
         $('.color-options').tooltip()
+
+        $('select.select2').select2({
+            theme: 'bootstrap4',
+        });
         /* End Author */
 
     });
