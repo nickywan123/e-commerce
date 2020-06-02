@@ -404,6 +404,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         Route::get('/product/{productNameSlug}', 'Shop\ShopController@product')->name('shop.product');
 
+        Route::put('/product/edit-address', 'Shop\ShopController@productChangeAddress')
+            ->name('shop.product.edit-address');
+
         Route::group(['prefix' => 'cart'], function () {
             Route::get('/', 'Shop\CartController@index');
 
