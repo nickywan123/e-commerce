@@ -8314,6 +8314,16 @@
         .pr-1 {
             padding-right: .8rem;
         }
+
+
+        .page {
+            page-break-after: always;
+            page-break-inside: avoid;
+    }
+
+    /* table { page-break-inside:auto }
+    tr { page-break-inside:avoid; page-break-after:auto } */
+
     </style>
 </head>
 
@@ -8329,6 +8339,8 @@
     );
     ?>
     <!-- Logo / Letterhead -->
+    @foreach($purchase->orders as $order)
+    @foreach($order->items->chunk(5) as $page)
     <table style="table-layout: fixed; border-collapse: collapse; width: 100%;">
         <tr>
             <td>
@@ -8550,29 +8562,32 @@
 
         </div>
 
-        <div class="row">
+        <div class="row ">
+            
             <div class="col-xs-12 pl-1 pr-1">
-                <div style="border: 1px solid #000; width: 100%; height: 625px;">
-                    <table style="width: 100%;">
+             
+                <div style="border: 1px solid #000; width: 100%; height:625px;">
+                  
+                    <table style="width: 100%;" >
                         <tr style="text-align: center; font-weight: 600;">
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 5%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 625px;"></div>
                                 No.
                             </td>
                             <td style="position:relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 12%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 625px;"></div>
                                 Product Code
                             </td>
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 53%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 625px;"></div>
                                 Description
                             </td>
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 6%">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 625px;"></div>
                                 Quantity
                             </td>
                             <td style="position: relative; font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; border-right: 1px solid #000000; width: 12%;">
-                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 624px;"></div>
+                                <div style="position: absolute; top: 0; right: 0; margin-right: -1px; border-right: 1px solid #000000; height: 625px;"></div>
                                 Unit Price (RM)
                             </td>
                             <td style="font-size: 10pt; padding: 4px; border-bottom: 1px solid #000000; width: 12%;">Amount (RM)</td>
@@ -8581,14 +8596,21 @@
                         <?php
                         $iterationNo = 0;
                         ?>
-                        @foreach($purchase->orders as $order)
-                        @foreach($order->items as $item)
-                        <tr style="font-size: 10pt;">
+                        
+                       
+                        {{---Iterate each page--}}
+                        @foreach ($page as $item)
+                        <?php
+                        $iterationNo = $iterationNo + 1;
+                        
+                         ?>
+                        <tr style="font-size: 10pt;">  
+                        
                             <td style="padding: 16px; text-align: center; vertical-align: top;">
-                                <?php
-                                $iterationNo = $iterationNo + 1;
-                                ?>
-                                {{ $iterationNo }}
+                                
+                                {{ $iterationNo}}
+                                
+                                
                             </td>
                             <td style="padding: 16px; vertical-align: top;">
                                 {{ $item->product->parentProduct->product_code }}
@@ -8597,6 +8619,7 @@
                                 <table>
                                     <tr style="font-size: 10pt;">
                                         <td style="padding: 4px; vertical-align: top;">
+                                          
                                             <img src="{{ asset('storage/' . $item->product->parentProduct->images[0]->path . '/' . $item->product->parentProduct->images[0]->filename) }}" alt="{{ $item->product->parentProduct->name }}" style="width: 105px; height: 90px; border-radius: 10px;">
                                         </td>
                                         <td style="padding: 14px; vertical-align: top;">
@@ -8628,13 +8651,18 @@
                                 {{ number_format(($item->subtotal_price / 100), 2) }}
                             </td>
                         </tr>
-                        @endforeach
-                        @endforeach
+                       
+                        @endforeach     
                     </table>
-                </div>
+                    
+                </div>    
             </div>
-
-
+            <div style="page-break-before:always;">                   
+            </div>
+            
+            @endforeach
+            @endforeach
+            
             <div class="col-xs-12 pl-1 pr-1">
                 <div style="width: 100%;">
                     <table style="width: 100%; font-size: 10pt;">
@@ -8791,6 +8819,7 @@
                             </td>
                         </tr>
                     </table>
+                    
                 </div>
             </div>
         </div>
@@ -8850,6 +8879,11 @@
             </div>
         </div>
     </div>
+
+    {{------------------------------------NEXT PAGE-------------------------------------------}}
+
+
+   
 
 </body>
 

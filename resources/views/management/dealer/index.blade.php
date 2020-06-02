@@ -7,7 +7,7 @@
 <br>
 
 <div class="row ">
- <div class="offset-1 col-10">
+ <div class="col-10">
      <h3>Monthly Statement</h3>
  </div>
 </div>
@@ -15,7 +15,7 @@
 <br>
 
 <div class="row ">
- <div class="offset-1 col-11">
+ <div class="col-12">
     <table class="table">
         <thead>
           <tr class="text-align-center" >

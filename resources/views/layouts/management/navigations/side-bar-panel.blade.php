@@ -11,31 +11,39 @@
           <a href="#" class="sidebar-text-color">Profile</a>
          </li> --}}
          <li class="text-hover">
-            <a href="{{route('management.panel.value-tracking')}}" class="sidebar-text-color">Value Tracking</a>
+            <a href="{{route('management.panel.value-tracking')}}" class="sidebar-text-color">Sales Tracking</a>
          </li>
          <li>
             <a href="#" class="sidebar-text-color">Products</a>
                 <ul class="list-unstyled components " >
                     <li class="text-hover" style="font-size:15pt;">
-                        <a href="#" style="color: black;">New Products</a>
+                        <a href="/wip" style="color: black;">Add Products</a>
                     </li>
                     <li class="text-hover" style="font-size:15pt;">
-                        <a  href="#" style="color: black;">Update Products</a>
+                        <a  href="/wip" style="color: black;">Update Products</a>
                     </li>
                     <li class="text-hover" style="font-size:15pt;">
-                        <a  href="#" style="color: black;">Product Expired</a>
+                        <a  href="/wip" style="color: black;">Product Expired</a>
                     </li>         
                 </ul>
          </li>
          <li class="text-hover">
-            <a href="#" class="sidebar-text-color">KPIR</a>
+            <a href="/wip" class="sidebar-text-color">Claim</a>
          </li>
          <li class="text-hover">
-            <a href="#" class="sidebar-text-color">Notice</a>
+            <a href="/wip" class="sidebar-text-color">KPIR</a>
          </li>
          <li class="text-hover">
-            <a href="#" class="sidebar-text-color">Promotion/Special Offer</a>
+            <a href="/wip" class="sidebar-text-color">Notice</a>
          </li>
+         <li class="text-hover">
+            <a href="/wip" class="sidebar-text-color">Promotion/Special Offer</a>
+         </li>
+         @hasrole('dealer')
+         <li class="text-hover">
+            <a href="{{route('management.dealer.home')}}" class="sidebar-text-color">Dealer Dashboard</a>
+         </li>
+         @endhasrole
          <li class="text-hover">
             <a href="/shop" class="sidebar-text-color">Continue Shopping</a>
          </li>

@@ -31,7 +31,7 @@ class ManagementController extends Controller
         // $customerOrders = new Order;
         // $customerOrders = $customerOrders->where('panel_id', $panel_id)->whereIn('order_status', $status)->get();
         // return view("management.panel.index")->with('customerOrders', $customerOrders);
-      
+
         return view('management.panel.home');
     }
 
@@ -112,7 +112,7 @@ class ManagementController extends Controller
 
         $this->validate($request, array(
 
-            'company_billing_address_1' => 'required', 
+            'company_billing_address_1' => 'required',
             'company_billing_postcode' => 'required|digits:5',
             'company_billing_city' => 'required',
             'company_address_1' => 'required',
@@ -232,23 +232,28 @@ class ManagementController extends Controller
     // Profile for Dealer
     public function dealerProfile()
     {
-        $dealer_id = User::find(Auth::user()->id);
-        $dealer_id = $dealer_id->dealerInfo->account_id;
-        $dealerProfile = new DealerInfo();
-        $dealerProfile = $dealerProfile->where('account_id', $dealer_id)->first();
+        // $dealer_id = User::find(Auth::user()->id);
+        // $dealer_id = $dealer_id->dealerInfo->account_id;
+        // $dealerProfile = new DealerInfo();
+        // $dealerProfile = $dealerProfile->where('account_id', $dealer_id)->first();
 
-        return view('management.dealer.profile')->with('dealerProfile', $dealerProfile);
+        $user = User::find(Auth::user()->id);
+        $dealerProfile = $user->dealerInfo;
+
+        return view('management.dealer.profile')
+            ->with('dealerProfile', $dealerProfile);
     }
 
 
     //Edit Profile for Dealer
     public function editdealerProfile()
     {
-        $dealer_id = User::find(Auth::user()->id);
-        $dealer_id = $dealer_id->dealerInfo->account_id;
-        $dealerProfile = new DealerInfo();
-        $dealerProfile = $dealerProfile->where('account_id', $dealer_id)->first();
-
+        // $dealer_id = User::find(Auth::user()->id);
+        // $dealer_id = $dealer_id->dealerInfo->account_id;
+        // $dealerProfile = new DealerInfo();
+        // $dealerProfile = $dealerProfile->where('account_id', $dealer_id)->first();
+        $user = User::find(Auth::user()->id);
+        $dealerProfile = $user->dealerInfo;
         return view('management.dealer.edit-profile')->with('dealerProfile', $dealerProfile);
     }
 

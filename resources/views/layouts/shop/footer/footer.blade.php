@@ -7,6 +7,9 @@
                     <a class="bujishu-white" href="{{route('shop.about.us')}}">About Us</a>
                 </li>
                 <li>
+                    <a class="bujishu-white" href="">Our Vision, Culture, Value</a>
+                </li>
+                <li>
                     <a class="bujishu-white" href="">Partner Engagement</a>
                 </li>
                 <li>
@@ -17,6 +20,8 @@
         <div class="col-6 col-md-2 text-center text-md-left">
             <h5 class="pr-1 pl-1 bujishu-gold " style="font-size: 0.9rem;"><img class="mr-1" src="{{asset('/storage/footer/icons/phone.png')}}" alt="phone-icon"><b>CUSTOMER SERVICE</b></h5>
             <ul class="list-unstyled pr-2 pl-2 ">
+            <h5 class="pr-1 pl-1 bujishu-gold " style="font-size: 0.9rem;"><img class="mr-1" src="{{asset('/storage/footer/icons/person.png')}}" alt="phone-icon"><b>CUSTOMER SERVICE</b></h5>
+            <ul class="list-unstyled pr-2 pl-2 " >
                 <li>
                     <a class="bujishu-white" href="">Bujishu Service</a>
                 </li>
@@ -54,6 +59,13 @@
                 </li>
                 <li>
                     <a class="bujishu-white" href="mailto:enquiry@delhubdigital.com">Contact Us</a>
+                        <img class="mr-1" src="{{asset('/storage/footer/icons/phone.png')}}" alt="phone-Icon">  Tel: 016-4752613
+                    </p>
+                </li>
+                <li>
+                    <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">
+                    <img class="mr-1" src="{{asset('/storage/footer/icons/email.png')}}" alt="phone-Icon"> Email: enquiry@delhubdigital.com
+                    </p>
                 </li>
             </ul>
         </div>

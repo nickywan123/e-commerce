@@ -96,7 +96,7 @@
                             <label for="dealer_company_name" class="col-md-2 col-form-label">Company Name</label>
                             <div class="col-md-9">
                                 <input type="text" name="dealer_company_name" id="dealer_company_name"
-                                    value="{{$dealerProfile->employmentAddress->company_name}}"
+                                value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_name : '' }}"
                                     class="form-control @error('dealer_company_name') is-invalid @enderror"
                                     value="{{ old('dealer_company_name') }}" >
                             </div>
@@ -107,7 +107,7 @@
                             <label for="dealer_company_address_1" class="col-md-2 col-form-label">Company Address</label>
                             <div class="col-md-9">
                                 <input type="text" name="dealer_company_address_1" id="dealer_company_address_1"
-                                    value="{{$dealerProfile->employmentAddress->company_address_1}}"
+                                value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_address_1 : '' }} "
                                     class="form-control @error('dealer_company_address_1') is-invalid @enderror"
                                     value="{{ old('dealer_company_address_1') }}" >
                             </div>
@@ -122,7 +122,7 @@
                         <div class="form-group row ">                         
                             <div class="offset-2 col-md-9">
                                 <input type="text" name="dealer_company_address_2" id="dealer_company_address_2"
-                                    value="{{$dealerProfile->employmentAddress->company_address_2}}"
+                                    value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_address_2 : '' }}"
                                     class="form-control @error('dealer_company_address_2') is-invalid @enderror"
                                     value="{{ old('dealer_company_address_2') }}" >
                             </div>
@@ -136,7 +136,7 @@
                         <div class="form-group row ">                         
                             <div class="offset-2 col-md-9">
                                 <input type="text" name="dealer_company_address_3" id="dealer_company_address_3"
-                                    value="{{$dealerProfile->employmentAddress->company_address_3}}"
+                                    value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_address_3 : '' }}"
                                     class="form-control @error('dealer_company_address_3') is-invalid @enderror"
                                     value="{{ old('dealer_company_address_3') }}" >
                             </div>
@@ -153,7 +153,7 @@
                                 Postcode</label>
                             <div class="col-md-4">
                                 <input type="text" name="dealer_company_postcode" id="dealer_company_postcode"
-                                    value="{{$dealerProfile->employmentAddress->company_postcode}}"
+                                    value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_postcode : '' }}"
                                     class="form-control @error('dealer_company_postcode') is-invalid @enderror"
                                     value="{{ old('dealer_company_postcode') }}" >
                             </div>
@@ -169,7 +169,7 @@
                                 City</label>
                             <div class="col-md-4">
                                 <input type="text" name="dealer_company_city" id="dealer_company_city"
-                                    value="{{$dealerProfile->employmentAddress->company_city}}"
+                                    value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_city: '' }}"
                                     class="form-control @error('dealer_company_city') is-invalid @enderror"
                                     value="{{ old('dealer_company_city') }}" >
                             </div>
@@ -191,7 +191,7 @@
                             <label for="spouse_name" class="col-md-2 col-form-label">Spouse Name</label>
                             <div class="col-md-9">
                                 <input type="text" name="spouse_name" id="spouse_name"
-                                    value="{{$dealerProfile->dealerSpouse->spouse_name}}"
+                                    value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_name : '' }}"
                                     class="form-control @error('spouse_name') is-invalid @enderror"
                                     value="{{ old('spouse_name') }}" readonly >
                             </div>
@@ -205,7 +205,7 @@
                             <label for="spouse_occupation" class="col-md-2 col-form-label">Spouse Occupation</label>
                             <div class="col-md-9">
                                 <input type="text" name="spouse_occupation" id="spouse_occupation"
-                                    value="{{$dealerProfile->dealerSpouse->spouse_occupation}}"
+                                    value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_occupation : '' }}"
                                     class="form-control @error('spouse_occupation') is-invalid @enderror"
                                     value="{{ old('spouse_occupation') }}" readonly >
                             </div>
@@ -219,7 +219,7 @@
                             <label for="spouse_contact" class="col-md-2 col-form-label">Spouse Contact</label>
                             <div class="col-md-9">
                                 <input type="text" name="spouse_contact" id="spouse_contact"
-                                    value="{{$dealerProfile->dealerSpouse->spouse_contact_mobile}}"
+                                    value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_contact_mobile : '' }}"
                                     class="form-control @error('spouse_contact') is-invalid @enderror"
                                     value="{{ old('spouse_contact') }}" readonly >
                             </div>
@@ -233,7 +233,7 @@
                             <label for="spouse_email" class="col-md-2 col-form-label">Spouse Email</label>
                             <div class="col-md-9">
                                 <input type="text" name="spouse_email" id="spouse_email"
-                                    value="{{$dealerProfile->dealerSpouse->spouse_email}}"
+                                    value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_email : '' }}"
                                     class="form-control @error('spouse_email') is-invalid @enderror"
                                     value="{{ old('spouse_email') }}" readonly>
                             </div>
@@ -263,17 +263,17 @@
         <input type="hidden" name="_method" value="PATCH">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
-            <div class="col-4">
+            <div class="col-6">
              <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header "  
              ><strong style="color:black;">Edit User Profile</strong></a>
             </div>
             @hasrole('dealer')
-            <div class="col-4">
-             <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" style="border-bottom: 2px solid rgb(250, 172, 24);" class="text-color-header " ><strong style="color:black;">Edit Dealer Information</strong></a>
+            <div class="col-6">
+             <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" style="border-bottom: 2px solid rgb(250, 172, 24);" class="text-color-header " ><strong style="color:black;">Edit Dealer Info</strong></a>
             </div>
             @endhasrole
             @hasrole('panel')
-            <div class="col-4">
+            <div class="col-12">
              <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong style="color:black;">Edit Panel Information</strong></a>
             </div>
             @endhasrole          
@@ -330,7 +330,7 @@
                         <label for="dealer_company_name" class="col-md-2 col-form-label">Company Name</label>
                         <div class="col-md-9">
                             <input type="text" name="dealer_company_name" id="dealer_company_name"
-                                value="{{$dealerProfile->employmentAddress->company_name}}"
+                                value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_name : '' }}"
                                 class="form-control @error('dealer_company_name') is-invalid @enderror"
                                 value="{{ old('dealer_company_name') }}" >
                         </div>
@@ -341,7 +341,7 @@
                         <label for="dealer_company_address_1" class="col-md-2 col-form-label">Company Address</label>
                         <div class="col-md-9">
                             <input type="text" name="dealer_company_address_1" id="dealer_company_address_1"
-                                value="{{$dealerProfile->employmentAddress->company_address_1}}"
+                                value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_address_1 : '' }}"
                                 class="form-control @error('dealer_company_address_1') is-invalid @enderror"
                                 value="{{ old('dealer_company_address_1') }}" >
                         </div>
@@ -356,7 +356,7 @@
                     <div class="form-group row ">                         
                         <div class="col-md-9">
                             <input type="text" name="dealer_company_address_2" id="dealer_company_address_2"
-                                value="{{$dealerProfile->employmentAddress->company_address_2}}"
+                                value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_address_2 : '' }}"
                                 class="form-control @error('dealer_company_address_2') is-invalid @enderror"
                                 value="{{ old('dealer_company_address_2') }}" >
                         </div>
@@ -370,7 +370,7 @@
                     <div class="form-group row ">                         
                         <div class="col-md-9">
                             <input type="text" name="dealer_company_address_3" id="dealer_company_address_3"
-                                value="{{$dealerProfile->employmentAddress->company_address_3}}"
+                                value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_address_3 : '' }}"
                                 class="form-control @error('dealer_company_address_3') is-invalid @enderror"
                                 value="{{ old('dealer_company_address_3') }}" >
                         </div>
@@ -387,7 +387,7 @@
                             Postcode</label>
                         <div class="col-md-4">
                             <input type="text" name="dealer_company_postcode" id="dealer_company_postcode"
-                                value="{{$dealerProfile->employmentAddress->company_postcode}}"
+                                value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_postcode : '' }}"
                                 class="form-control @error('dealer_company_postcode') is-invalid @enderror"
                                 value="{{ old('dealer_company_postcode') }}" >
                         </div>
@@ -403,7 +403,7 @@
                             City</label>
                         <div class="col-md-4">
                             <input type="text" name="dealer_company_city" id="dealer_company_city"
-                                value="{{$dealerProfile->employmentAddress->company_city}}"
+                                value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_city : '' }}"
                                 class="form-control @error('dealer_company_city') is-invalid @enderror"
                                 value="{{ old('dealer_company_city') }}" >
                         </div>
@@ -425,7 +425,7 @@
                         <label for="spouse_name" class="col-md-2 col-form-label">Spouse Name</label>
                         <div class="col-md-9">
                             <input type="text" name="spouse_name" id="spouse_name"
-                                value="{{$dealerProfile->dealerSpouse->spouse_name}}"
+                                value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_name : '' }}"
                                 class="form-control @error('spouse_name') is-invalid @enderror"
                                 value="{{ old('spouse_name') }}" readonly >
                         </div>
@@ -439,7 +439,7 @@
                         <label for="spouse_occupation" class="col-md-2 col-form-label">Spouse Occupation</label>
                         <div class="col-md-9">
                             <input type="text" name="spouse_occupation" id="spouse_occupation"
-                                value="{{$dealerProfile->dealerSpouse->spouse_occupation}}"
+                                value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_occupation : '' }}"
                                 class="form-control @error('spouse_occupation') is-invalid @enderror"
                                 value="{{ old('spouse_occupation') }}" readonly >
                         </div>
@@ -453,7 +453,7 @@
                         <label for="spouse_contact" class="col-md-2 col-form-label">Spouse Contact</label>
                         <div class="col-md-9">
                             <input type="text" name="spouse_contact" id="spouse_contact"
-                                value="{{$dealerProfile->dealerSpouse->spouse_contact_mobile}}"
+                                value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_contact_mobile : '' }}"
                                 class="form-control @error('spouse_contact') is-invalid @enderror"
                                 value="{{ old('spouse_contact') }}" readonly >
                         </div>
@@ -467,7 +467,7 @@
                         <label for="spouse_email" class="col-md-2 col-form-label">Spouse Email</label>
                         <div class="col-md-9">
                             <input type="text" name="spouse_email" id="spouse_email"
-                                value="{{$dealerProfile->dealerSpouse->spouse_email}}"
+                                value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_email : '' }}"
                                 class="form-control @error('spouse_email') is-invalid @enderror"
                                 value="{{ old('spouse_email') }}" readonly>
                         </div>

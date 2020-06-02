@@ -11,7 +11,7 @@
     </button> --}}
    
 
-    <a class="navbar-brand img-logo-margin-left" href="/management/dealer/home">
+    <a class="navbar-brand img-logo-margin-left" href="/shop">
         <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="40" height="40" alt="Bujishu Logo">
         <img class="navbar-brand-minimized" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
@@ -44,10 +44,13 @@
                     <i class="fa fa-shield"></i> Lock Account</a> --}}
                 {{-- <a class="dropdown-item" href="#">
                     <i class="fa fa-lock"></i> Logout</a> --}}
-                    <a class="dropdown-item" href="{{ route('shop.dashboard.dealer.profile') }}">
-                        <i class="fa fa-user" style="color:#fbcc34;"></i> Dealer Profile
-                        
-                    </a>
+                  
+                <a class="dropdown-item" href="{{ route('shop.dashboard.dealer.profile') }}">
+                   <i class="fa fa-user" style="color:#fbcc34;"></i> Dealer Profile         
+                </a>
+                <a class="dropdown-item" href="{{ route('shop.dashboard.customer.home') }}">
+                    <i class="fa fa-user" style="color:#fbcc34;"></i> My Dashboard         
+                </a>
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                   <i class="fa fa-lock" style="color:#fbcc34;"></i>  {{ __('Logout') }}
