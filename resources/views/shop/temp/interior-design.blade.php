@@ -96,7 +96,9 @@
                         <!-- Ships from -->
                         <div class="mb-2">
                             <i class="fas fa-globe-asia mr-2 text-muted"></i>
-                            <span>Ships from Selangor</span>
+                            @if($panelProduct->originState)
+                            <span>Ships from {{ $panelProduct->originState->name }}</span>
+                            @endif
                         </div>
 
                         <!-- Available in -->

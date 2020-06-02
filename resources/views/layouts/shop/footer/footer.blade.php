@@ -7,9 +7,6 @@
                     <a class="bujishu-white" href="{{route('shop.about.us')}}">About Us</a>
                 </li>
                 <li>
-                    <a class="bujishu-white" href="{{route('delhub.digital')}}">Our Vision, Culture, Value</a>
-                </li>
-                <li>
                     <a class="bujishu-white" href="">Partner Engagement</a>
                 </li>
                 <li>
@@ -19,7 +16,7 @@
         </div>
         <div class="col-6 col-md-2 text-center text-md-left">
             <h5 class="pr-1 pl-1 bujishu-gold " style="font-size: 0.9rem;"><img class="mr-1" src="{{asset('/storage/footer/icons/phone.png')}}" alt="phone-icon"><b>CUSTOMER SERVICE</b></h5>
-            <ul class="list-unstyled pr-2 pl-2 " >
+            <ul class="list-unstyled pr-2 pl-2 ">
                 <li>
                     <a class="bujishu-white" href="">Bujishu Service</a>
                 </li>
@@ -43,7 +40,7 @@
                 <li>
                     <p class="bujishu-gold mb-1 " style="font-size: 0.9rem;"><b>OUR LOCATION</b></p>
                     <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">
-                        <img class="mr-1" src="{{asset('/storage/footer/icons/location.png')}}" alt="Home-Icon">  1.26.5,
+                        <img class="mr-1" src="{{asset('/storage/footer/icons/location.png')}}" alt="Home-Icon"> 1.26.5,
                         Menara Bangkok Bank
                         <br>
                         Kuala Lumpur, Malaysia
@@ -51,11 +48,12 @@
                 </li>
                 <li>
                     <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">
-                        <img class="mr-1" src="{{asset('/storage/footer/icons/phone.png')}}" alt="phone-Icon">  Tel: 017-582 4257
+                        <img class="mr-1" src="{{asset('storage/footer/icons/phone.png')}}" alt="phone-icon">
+                        Tel: 016 475 2613
                     </p>
                 </li>
                 <li>
-                    <a class="bujishu-white " href="">Contact Us</a>
+                    <a class="bujishu-white" href="mailto:enquiry@delhubdigital.com">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -71,7 +69,7 @@
             </div>
         </div> --}}
 
-       
+
         <div class="col-8 offset-4 offset-md-2 col-md-3 text-center text-md-left ">
             <div style="float:right;">
                 <a target="_blank" href="https://facebook.com/DelhubDigital/">
