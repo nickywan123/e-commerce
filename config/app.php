@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Kuala_Lumpur',
 
     /*
     |--------------------------------------------------------------------------
@@ -183,9 +183,9 @@ return [
         Barryvdh\Snappy\ServiceProvider::class,
         //QR Code to to update status when scanned
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
-        
-       
-      
+
+
+
 
 
     ],
@@ -242,7 +242,7 @@ return [
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-        
+
     ],
 
 ];
