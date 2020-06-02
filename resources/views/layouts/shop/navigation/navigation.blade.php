@@ -43,7 +43,7 @@
                                         <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Company Dashboard</a>
                                         @endhasrole
                                         @hasrole('dealer')
-                                        <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer</a>
+                                        <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer Dashboard</a>
                                         @endhasrole
                                         @hasrole('administrator')
                                         <a href="/administrator" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Administrator</a>

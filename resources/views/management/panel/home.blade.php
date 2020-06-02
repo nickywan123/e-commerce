@@ -186,7 +186,7 @@ var myChart = new Chart(ctx,{
                             </div>
                             <div class="col-7 ml-5 mt-2" style="line-height: 20px;">
                              <p class="card-title" style="font-weight:bold; font-size:20pt;">RM 88,888</p>
-                             <p style="color: #939598;"> Monthly Revenue:  {{ date('m yy ') }}</p>
+                             <p style="color: #939598;"> Monthly Revenue:  {{ date('F Y') }}</p>
                             </div>
                           </div> 
                         </div>
@@ -241,7 +241,7 @@ var myChart = new Chart(ctx,{
                         <div class="card-body" >
                           <div class="row">
                             <div class="col-6">
-                             <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Value Tracking</h4>
+                             <h4 class="card-title" style="font-weight:bold; font-size:15pt;">Sales Tracking</h4>
                             </div>
                             <div class="col-6">
                              <p class="card-title" style="float: right; color:#ffcc00;">Show more</p>
@@ -401,7 +401,7 @@ var myChart = new Chart(ctx,{
                 </div>
                 <div class="col-7 ml-4" style="line-height: 20px;">   
                  <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 28,888</P>
-                 <p>Daily Revenue: 08/05/2020</p>
+                 <p>Daily Revenue: {{ date('d/m/yy') }}</p>
                 </div>
               </div>       
             </div>
@@ -427,7 +427,7 @@ var myChart = new Chart(ctx,{
                 </div>
                 <div class="col-7 ml-4" style="line-height: 20px;">
                  <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 88,888</P>
-                 Month Revenue: May 2020
+                 Month Revenue: {{ date('F Y') }}
                 </div>
               </div> 
             </div>
