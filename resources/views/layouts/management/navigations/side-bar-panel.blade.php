@@ -11,6 +11,9 @@
           <a href="#" class="sidebar-text-color">Profile</a>
          </li> --}}
          <li class="text-hover">
+            <a href="{{ route('management.panel.home') }}" class="sidebar-text-color">Overview</a>
+         </li>
+         <li class="text-hover">
             <a href="{{route('management.panel.value-tracking')}}" class="sidebar-text-color">Sales Tracking</a>
          </li>
          <li>

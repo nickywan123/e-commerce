@@ -32,6 +32,11 @@
                 <a class="dropdown-item" href="{{ route('shop.dashboard.customer.home') }}">
                     <i class="fa fa-user" style="color:#fbcc34;"></i> My Dashboard         
                 </a>
+                @hasrole('dealer')
+                <a class="dropdown-item" href="{{ route('management.dealer.home') }}">
+                    <i class="fa fa-user" style="color:#fbcc34;"></i> Dealer Dashboard         
+                </a>
+                @endhasrole
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                   <i class="fa fa-lock" style="color:#fbcc34;"></i>  {{ __('Logout') }}
