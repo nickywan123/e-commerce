@@ -355,6 +355,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         //Workforce Page
         Route::get('/workforce', 'Shop\ShopController@workforce')->name('shop.workforce');
 
+        //Bujishu Service Page
+        Route::get('/bujishu-service', 'Shop\ShopController@bujishuService')->name('shop.bujishu.service');
+
         Route::group(['prefix' => 'category'], function () {
             Route::get(
                 '/renovations',

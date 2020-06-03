@@ -22,7 +22,7 @@
             <h5 class="pr-1 pl-1 bujishu-gold " style="font-size: 0.9rem;"><img class="mr-1" src="{{asset('/storage/footer/icons/person.png')}}" alt="phone-icon"><b>CUSTOMER SERVICE</b></h5>
             <ul class="list-unstyled pr-2 pl-2 " >
                 <li>
-                    <a class="bujishu-white" href="">Bujishu Service</a>
+                    <a class="bujishu-white" href="{{route('shop.bujishu.service')}}">Bujishu Service</a>
                 </li>
                 <li>
                     <a class="bujishu-white" href="{{route('shop.privacy.policy')}}">Privacy Policy</a>
