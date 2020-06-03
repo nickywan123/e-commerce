@@ -72,6 +72,12 @@ class ShopController extends Controller
         return view('shop.footer-pages.workforce');
     }
 
+    /*Show Bujishu Service Page**/
+    public function bujishuService()
+    {
+        return view('shop.footer-pages.bujishu-service');
+    }
+
     /***Return privacy policy**/
 
     public function privacyPolicy()
