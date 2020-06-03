@@ -4,7 +4,7 @@
 
 @section('content')
 
-<br>
+
 
  
 
@@ -48,22 +48,7 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
 
-                        {{-- <div class="form-group row ">
-                            <label for="dealer_name" class="col-md-2 col-form-label">Dealer Name</label>
-                            <div class="col-md-4">
-                                <input type="text" name="dealer_name" id="dealer_name"
-                                    value="{{$dealerProfile->full_name}}"
-                                    class="form-control @error('full_name') is-invalid @enderror"
-                                    value="{{ old('full_name') }}" readonly>
-                            </div>
-                            <div class="col-md-1 col-form-label">
-                            <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
-                             </div> 
-                          
-                        </div>
- --}}
-
- 
+                  
                     <div class="form-group row ">
                        <div class="col-md-4">
                         <h4>Dealer Information</h4>
@@ -209,9 +194,7 @@
                 </div>
             </div>
 
-
         </div>
-
 </div>
 
 
@@ -220,17 +203,17 @@
 
  <div class="mt-4 hidden-md">
     <div class="row">
-        <div class="col-6">
+        <div class="col-4">
          <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header "  
          ><strong>User Profile</strong></a>
         </div>
         @hasrole('dealer')
-        <div class="col-6">
-         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Dealer Info</strong></a>
+        <div class="col-4">
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Dealer Information</strong></a>
         </div>
         @endhasrole
         @hasrole('panel')
-        <div class="col-12 ml-3">
+        <div class="col-4">
          <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header " ><strong>Panel: Company Information</strong></a>
         </div>
         @endhasrole          

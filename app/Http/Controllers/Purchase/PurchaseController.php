@@ -22,6 +22,7 @@ use App\Models\Globals\State;
 use App\Models\Purchases\Rating;
 use App\Models\Users\Panels\PanelInfo;
 use App\Models\Products\Product as PanelProduct;
+use App\Models\Users\Dealers\DealerSales;
 use File;
 
 class PurchaseController extends Controller
@@ -260,6 +261,29 @@ class PurchaseController extends Controller
 
             $order->save();
 
+            //Create new record for dealer sales tracking
+            $dealer_sales = new DealerSales;
+
+            //Assign PO number to order
+            $dealer_sales->order_number = $po_number;
+
+
+            //Assign purchase id to dealer sales
+            $dealer_sales->purchase_id = $purchase->id;
+
+            //Assign dealer id to the order record
+            $dealer_sales->account_id = $user->dealerInfo->account_id;
+
+            //Assign empty value for order amount first
+            $dealer_sales->order_amount = $orderAmount;
+
+            // Assign a status for the order. Placed, Shipped, Delivered.
+            $dealer_sales->order_status = 1000;
+
+            //dd($dealer_sales);
+            // $dealer_sales->save();
+
+
             $panelId = $key;
 
             // Foreach item in the cart..
@@ -301,6 +325,9 @@ class PurchaseController extends Controller
 
             $order->order_amount = $orderAmount;
             $order->save();
+
+            $dealer_sales->order_amount = $orderAmount;
+            $dealer_sales->save();
 
             // //Send the email to panel after placing order (attach with PO)
             // Mail::to($order->panel->company_email)->send(new CheckoutOrder($order));

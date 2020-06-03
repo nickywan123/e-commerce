@@ -6,9 +6,8 @@
 
 
 
-
 {{--Template for desktop screen--}}
-<div class="mt-3 mt-md-0 hidden-sm">
+
    
 
 
@@ -24,9 +23,9 @@
     </div>
     @endif
 
+    <div class="mt-3 mt-md-0 hidden-sm">
 
-
-    <div class="row ">
+     <div class="row">
         <div class="col-12 offset-1 col-md-10">
            <div class="row">
                <div class="col-4">
@@ -54,7 +53,7 @@
                             <img src="{{asset('/storage/avatar/default-avatar.jpg')}}"
                                 style="max-width:80px; max-height:80px;" alt="avatar">
                         </div>
-                        <div class="col-1 col-md-1 mt-3 col-form-label-md">
+                        <div class="col-1 col-md-1 mt-3 col-form-label">
                             <a href="{{route('shop.dashboard.customer.profile.edit')}}"><i
                                     class="fa fa-pencil bujishu-gold"></i></a>
                         </div>

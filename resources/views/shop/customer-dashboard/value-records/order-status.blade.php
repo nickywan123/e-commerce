@@ -23,7 +23,7 @@
 
 
         </div>
-        <div class="container-fluid" style="margin-top:20px;">
+        <div class="container-fluid m-2 p-0" >
             <a href="/shop/dashboard/orders/index" class="orders-text-style ">
                 <strong>All Orders</strong>
             </a>

@@ -13,7 +13,7 @@
                     <a class="bujishu-white" href="">Partner Engagement</a>
                 </li>
                 <li>
-                    <a class="bujishu-white" href="">Workforce</a>
+                    <a class="bujishu-white" href="{{route('shop.workforce')}}">Workforce</a>
                 </li>
             </ul>
         </div>

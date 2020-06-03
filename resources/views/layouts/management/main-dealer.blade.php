@@ -43,9 +43,10 @@
                 </div>
             </div>
         </main>
-        {{-- @include('layouts.management.components.aside') --}}
+       
     </div>
     @include('layouts.shop.footer.footer')
+    
 
     @stack('script')
  

@@ -161,7 +161,7 @@ var myChart = new Chart(ctx,{
                              <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
                             </div>
                             <div class="col-7 ml-5 mt-2" style="line-height: 20px;">   
-                             <p class="card-title" style="font-weight:bold; font-size:20pt;">RM 28,888</P>
+                             <p class="card-title" style="font-weight:bold; font-size:20pt;">RM {{number_format($todayOrders)}}</P>
                              <p style="color: #939598;">Daily Revenue:  {{ date('d/m/yy') }}</p>
                             </div>
                           </div>       
@@ -185,7 +185,7 @@ var myChart = new Chart(ctx,{
                              <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
                             </div>
                             <div class="col-7 ml-5 mt-2" style="line-height: 20px;">
-                             <p class="card-title" style="font-weight:bold; font-size:20pt;">RM 88,888</p>
+                             <p class="card-title" style="font-weight:bold; font-size:20pt;">RM {{number_format($monthlyOrders)}}</p>
                              <p style="color: #939598;"> Monthly Revenue:  {{ date('F Y') }}</p>
                             </div>
                           </div> 
@@ -207,10 +207,10 @@ var myChart = new Chart(ctx,{
                          
                           <div class="row" style="border-bottom: 1px solid #ffcc00; ">
                             <div class="col-6">
-                                <p >New Products</p>                     
+                                <p >Add Products</p>                     
                             </div>
                             <div class="offset-5 col-1">
-                                <p>2</p>
+                                <p>-</p>
                             </div>
                           </div> 
                           <div class="row mt-3" style="border-bottom: 1px solid #ffcc00; ">
@@ -252,7 +252,7 @@ var myChart = new Chart(ctx,{
                              <div class="offset-1 col-3">
                                 <div class="card card-size" style=" border-radius:10px; background-color:#ffcc00;" >
                                     <div class="card-body">
-                                        <p class="text-size"><b>20</b></p>
+                                        <p class="text-size"><b>{{$totalDelivery}}</b></p>
                                     </div>
                                 </div>
                                 <p>Pending Delivery</p>
@@ -260,7 +260,7 @@ var myChart = new Chart(ctx,{
                              <div class="offset-1 col-3">
                                 <div class="card card-size" style=" border-radius:10px; background-color:#ffcc00;" >
                                     <div class="card-body">
-                                        <p class="text-size"><b>5</b></p>
+                                        <p class="text-size"><b>{{$totalPendingDelivery}}</b></p>
                                     </div>
                                 </div>
                                 <p>Set Delivery Date</p>
@@ -268,7 +268,7 @@ var myChart = new Chart(ctx,{
                              <div class="offset-1 col-3">
                                 <div class="card card-size" style=" border-radius:10px; background-color:#ffcc00;" >
                                     <div class="card-body">
-                                        <p class="text-size"><b>1</b></p>
+                                        <p class="text-size"><b>{{$totalPendingClaim}}</b></p>
                                     </div>
                                 </div>
                                 <p>Pending Claim</p>
@@ -400,7 +400,7 @@ var myChart = new Chart(ctx,{
                  <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
                 </div>
                 <div class="col-7 ml-4" style="line-height: 20px;">   
-                 <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 28,888</P>
+                 <p class="card-title" style="font-weight:bold; font-size:15pt;">RM {{number_format($todayOrders)}}</P>
                  <p>Daily Revenue: {{ date('d/m/yy') }}</p>
                 </div>
               </div>       
@@ -426,7 +426,7 @@ var myChart = new Chart(ctx,{
                  <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
                 </div>
                 <div class="col-7 ml-4" style="line-height: 20px;">
-                 <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 88,888</P>
+                 <p class="card-title" style="font-weight:bold; font-size:15pt;">RM {{number_format($monthlyOrders)}}</P>
                  Month Revenue: {{ date('F Y') }}
                 </div>
               </div> 
@@ -450,10 +450,10 @@ var myChart = new Chart(ctx,{
              
               <div class="row" style="border-bottom: 1px solid #ffcc00; ">
                 <div class="col-6">
-                    <p >New Products</p>                     
+                    <p >Add Products</p>                     
                 </div>
                 <div class="offset-3 col-1">
-                    <p>2</p>
+                    <p>-</p>
                 </div>
               </div> 
               <div class="row mt-3" style="border-bottom: 1px solid #ffcc00; ">
@@ -499,7 +499,7 @@ var myChart = new Chart(ctx,{
                     <div class="offset-2 col-4 ">
                         <div class="card" style="width:80%; height:50%; border-radius:10px; background-color:#ffcc00;" >
                             <div class="card-body">
-                                <p style="font-size: 10px;"><b>20</b></p>
+                                <p style="font-size: 10px;"><b>{{$totalDelivery}}</b></p>
                             </div>
                         </div>    
                     </div>       
@@ -513,7 +513,7 @@ var myChart = new Chart(ctx,{
                 <div class="offset-2 col-4 ">
                     <div class="card" style="width:80%; height:50%; border-radius:10px; background-color:#ffcc00;" >
                         <div class="card-body">
-                            <p style="font-size: 10px;"><b>5</b></p>
+                            <p style="font-size: 10px;"><b>{{$totalPendingDelivery}}</b></p>
                         </div>
                     </div>    
                 </div>       
@@ -526,7 +526,7 @@ var myChart = new Chart(ctx,{
             <div class="offset-2 col-4 ">
                 <div class="card" style="width:80%; height:50%; border-radius:10px; background-color:#ffcc00;" >
                     <div class="card-body">
-                        <p style="font-size: 10px;"><b>1</b></p>
+                        <p style="font-size: 10px;"><b>{{$totalPendingClaim}}</b></p>
                     </div>
                 </div>    
             </div>       

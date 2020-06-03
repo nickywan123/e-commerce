@@ -12,11 +12,11 @@
    
 
     <a class="navbar-brand img-logo-margin-left" href="/shop">
-        <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="40" height="40" alt="Bujishu Logo">
-        <img class="navbar-brand-minimized" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="30" height="30" alt="Bujishu Logo">
+        <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('storage/logo/bujishu-logo-2020.png')}}" width="40" height="40" alt="Bujishu Logo">
+        <img class="navbar-brand-minimized" src="{{asset('storage/logo/bujishu-logo-2020.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
 
-  
+    <h4 style="color:#fbcc34;">Welcome to Dealer Dashboard</h4>
 
     <ul class="nav navbar-nav ml-auto">      
       <h5 style="margin-right:10px" class="welcome-text "  >{{Auth::user()->userInfo->full_name}}</h5> 

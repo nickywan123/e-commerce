@@ -317,7 +317,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
               <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
              </div>
              <div class="col-7 col-md-7 ml-4 mt-2" style="line-height: 20px;">   
-              <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 28,888</P>
+              <p class="card-title " style="font-weight:bold; font-size:20pt;">RM {{number_format($todaySales)}}</p>
               <p class="">Daily Revenue: {{ date('d/m/yy') }}</p>
              </div>
             </div> 
@@ -340,7 +340,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
                <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:60px; width:60px;" alt="sales-icon">
               </div>
               <div class="col-7 col-md-7 ml-4 mt-2" style="line-height: 20px;">
-               <p class="card-title " style="font-weight:bold; font-size:20pt;">RM 88,888</P>
+               <p class="card-title " style="font-weight:bold; font-size:20pt;">RM {{number_format($monthlySales)}}</P>
                Month Revenue:  {{ date('F Y') }}
               </div>
             </div> 
@@ -551,7 +551,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
            <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
           </div>
           <div class="col-7 ml-4" style="line-height: 20px;">   
-           <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 28,888</P>
+           <p class="card-title" style="font-weight:bold; font-size:15pt;">RM {{number_format($todaySales)}}</P>
            <p>Daily Revenue: {{ date('d/m/yy') }}</p>
           </div>
         </div> 
@@ -576,7 +576,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
            <img src="{{asset('/storage/dealer/icons/sales-icon.png')}}" style="height:50px; width:50px;" alt="sales-icon">
           </div>
           <div class="col-7 ml-4" style="line-height: 20px;">
-           <p class="card-title" style="font-weight:bold; font-size:15pt;">RM 88,888</P>
+           <p class="card-title" style="font-weight:bold; font-size:15pt;">RM {{number_format($monthlySales)}}</P>
            Month Revenue:  {{ date('F Y') }}
           </div>
         </div> 
@@ -753,7 +753,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
 {{-------------------------Laptop layout----------------------------}}
 
 
-<div class="hidden-laptop ">
+{{-- <div class="hidden-laptop ">
   <div class="row">
     <div class="col-8">
       <div class="row ml-2">
@@ -982,7 +982,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
 
 
 
-</div>
+</div> --}}
 
 
 <style>

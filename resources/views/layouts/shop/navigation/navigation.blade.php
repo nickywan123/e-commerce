@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-3 col-md-6 text-right my-auto">
                         <a href="/shop">
-                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="">
+                            <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu-logo-2020.png') }}" alt="">
                         </a>
                     </div>
                     <div class="col-6 hidden-md my-auto">
@@ -40,7 +40,7 @@
                                         <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user" style="color:#fbcc34;"></i> Profile </a>
                                         <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card" style="color:#fbcc34;"></i> My Dashboard </a>
                                         @hasrole('panel')
-                                        <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Company Dashboard</a>
+                                        <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Panel Dashboard</a>
                                         @endhasrole
                                         @hasrole('dealer')
                                         <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i> Dealer Dashboard</a>
@@ -117,7 +117,7 @@
                                 <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card " style="color:#fbcc34;"></i> My Dashboard</a>
 
                                 @hasrole('panel')
-                                <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Company Dashboard</a>
+                                <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check " style="color:#fbcc34;"></i> Panel Dashboard</a>
                                 @endhasrole
                                 @hasrole('dealer')
                                 <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check" style="color:#fbcc34;"></i>Dealer Dashboard</a>

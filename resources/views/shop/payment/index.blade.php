@@ -81,7 +81,7 @@
                     <div class="row">
                         <div class="col-4 col-md-6 text-right my-auto">
                             <a href="/shop">
-                                <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="">
+                                <img class="navigation-logo" style="margin-right: 30px;" src="{{ asset('storage/logo/bujishu-logo-2020.png') }}" alt="">
                             </a>
                         </div>
                         <div class="col-4 hidden-md my-auto">
@@ -182,7 +182,7 @@
         </div>
     </div>
     <main class="mt-3 ml-3 mr-3" id="body-content-collapse-sidebar">
-        <div class="container">
+        <div class="container" style="min-height: 75vh;">
 
             <div class="row">
                 <div class="col-12 col-md-8">

@@ -12,6 +12,7 @@ use App\Models\Purchases\Purchase;
 use App\Http\Controllers\Controller;
 use App\Models\Users\Panels\PanelInfo;
 use App\Models\Users\Dealers\DealerInfo;
+use App\Models\Users\Dealers\DealerSales;
 use App\Models\Users\Dealers\Statement;
 use App\Users\Dealers\Statement as DealersStatement;
 
@@ -21,18 +22,42 @@ class ManagementController extends Controller
     // Return Shop -> Panel -> All Orders-> index
     public function index()
     {
+        $user = User::find(Auth::user()->id);
+        $panel_id = $user->panelInfo->account_id;
 
-        // $status = [1001, 1002, 1003];
-        // // Get panel
+        //Get today sales for panel
+        $todayOrders = new Order;
+        $todayOrders = $todayOrders->where('panel_id', $panel_id)->whereDate('created_at', Carbon::today())->sum('order_amount');
 
-        // $panel_id = User::find(Auth::user()->id);
-        // //wrong filter
-        // $panel_id = $panel_id->panelInfo->account_id;
-        // $customerOrders = new Order;
-        // $customerOrders = $customerOrders->where('panel_id', $panel_id)->whereIn('order_status', $status)->get();
-        // return view("management.panel.index")->with('customerOrders', $customerOrders);
+        // Get current month
+        $now = Carbon::now();
+        $month = $now->format('m');
 
-        return view('management.panel.home');
+        //Get monthly sales for panel
+        $monthlyOrders = new Order;
+        $monthlyOrders = $monthlyOrders->where('panel_id', $panel_id)->whereMonth('created_at', $month)->sum('order_amount');
+
+        // Get total number of pending delivery orders for panel
+        $totalPendingDelivery = new Order;
+        $totalPendingDelivery = $totalPendingDelivery->where('panel_id', $panel_id)->where('delivery_date', 'Pending')->count();
+
+        //Get total number of delivery orders yet to be delivered for panel
+        $status = [1000, 1001, 1002];
+        $totalDelivery = new Order;
+        $totalDelivery = $totalDelivery->where('panel_id', $panel_id)->whereIn('order_status', $status)->count();
+
+        //Get total number of pending claim
+        $totalPendingClaim = new Order;
+        $totalPendingClaim = $totalPendingClaim->where('panel_id', $panel_id)->where('claim_status', '0')->count();
+
+        //dd($totalPendingClaim);
+
+        return view('management.panel.home')
+            ->with('todayOrders', $todayOrders)
+            ->with('monthlyOrders', $monthlyOrders)
+            ->with('totalPendingDelivery', $totalPendingDelivery)
+            ->with('totalDelivery', $totalDelivery)
+            ->with('totalPendingClaim', $totalPendingClaim);
     }
 
     // Return Value Tracking -> Show Customer Orders
@@ -208,7 +233,25 @@ class ManagementController extends Controller
 
     public function homeDealer()
     {
-        return view('management.dealer.home');
+        //Get dealer account id
+        $dealer_id = User::find(Auth::user()->id);
+        $dealer_id = $dealer_id->dealerInfo->account_id;
+
+        //Get today sales for dealer
+        $todaySales = new DealerSales;
+        $todaySales = $todaySales->where('account_id', $dealer_id)->whereDate('created_at', Carbon::today())->sum('order_amount');
+
+        // Get current month
+        $now = Carbon::now();
+        $month = $now->format('m');
+
+        //Get monthly sales for panel
+        $monthlySales = new DealerSales;
+        $monthlySales = $monthlySales->where('account_id', $dealer_id)->whereMonth('created_at', $month)->sum('order_amount');
+
+        return view('management.dealer.home')
+            ->with('todaySales', $todaySales)
+            ->with('monthlySales', $monthlySales);
     }
 
     // Statement Summary Page for Dealer

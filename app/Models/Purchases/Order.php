@@ -44,6 +44,12 @@ class Order extends Model
         return $this->belongsTo('App\Models\Users\Panels\PanelInfo', 'panel_id', 'account_id');
     }
 
+    /*Get orders belonging to dealer sales**/
+    public function dealerSales()
+    {
+        return $this->hasMany('App\Models\Users\Dealers\DealerSales', 'order_number', 'order_number');
+    }
+
     /**
      * Get order status.
      */
@@ -60,13 +66,12 @@ class Order extends Model
             $date = Carbon::parse($this->created_at);
             $updated_date = Carbon::parse($this->updated_at);
             return $diff = $date->diffInDays($updated_date);
-        }else{
+        } else {
 
             $date = Carbon::parse($this->created_at);
             $now = Carbon::now();
             return $diff = $date->diffInDays($now);
         }
- 
     }
 
     /**Get Order Date */

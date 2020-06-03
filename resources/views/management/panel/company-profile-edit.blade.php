@@ -4,7 +4,7 @@
 
 @section('content')
 
-<br>
+
 
 @if(session()->has('message'))
 <div class="alert alert-success">
@@ -14,28 +14,31 @@
 
 {{--Desktop Layout--}}
 <div class="hidden-sm ">
+
+<div class="row">
+    <div class="col-12 offset-1 col-md-10">   
     <div class="row">
-        <div class="col-3">
+        <div class="col-4">
          <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header "
-         ><strong style="color:black; font-size:15pt;">Edit Profile</strong></a>
+         ><strong>Edit Profile</strong></a>
         </div>
         @hasrole('dealer')
-        <div class="col-3">
-         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
+        <div class="col-4">
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " ><strong>Edit Dealer Information</strong></a>
         </div>
         @endhasrole
         @hasrole('panel')
-        <div class="col-3">
-         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header "  style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
+        <div class="col-4">
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header "  style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong> Edit Panel Information</strong></a>
         </div>
         @endhasrole          
-    </div> <br>
+    </div> 
+    <hr>
 
     <form action="{{route('management.company.profile.update',[$companyProfile->account_id])}}" method="POST">
         <input type="hidden" name="_method" value="PATCH">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="row">
-            <div class="col-12 col-md-10">
+    
                 <div class="card shadow-sm">
                     <div class="card-body">
 
@@ -283,25 +286,18 @@
 
                         <div class="form-group row ">
 
-                            <div class="offset-9 col-md-2 " >
+                            <div class="offset-10 col-md-2 " >
                                 <input type="submit" class="bjsh-btn-gradient" value="Update Profile">
                             </div>
 
                         </div>
 
-
-
-
-
                     </div>
-                </div>
-            </div>
-
-
-        </div>
+                </div>         
     </form>
+  </div>
+ </div>
 </div>
-
 
 {{------Mobile Layout----}}
 
@@ -310,18 +306,18 @@
 
 <div class="mt-4 hidden-md">
     <div class="row">
-        <div class="col-3">
+        <div class="col-4">
          <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header "
-         ><strong style="color:black; font-size:15pt;">Edit Profile</strong></a>
+         ><strong>Edit Profile</strong></a>
         </div>
         @hasrole('dealer')
-        <div class="col-3">
-         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
+        <div class="col-4">
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " ><strong>Edit Dealer Information</strong></a>
         </div>
         @endhasrole
         @hasrole('panel')
-        <div class="col-3">
-         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header "  style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
+        <div class="col-4">
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header "  style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong> Edit Panel Information</strong></a>
         </div>
         @endhasrole          
     </div> 
@@ -604,6 +600,11 @@
 
 
 <style>
+
+.text-color-header{
+    color:black;
+    font-size: 12pt;
+}
 
   .text-bold{
       font-weight: bold;

@@ -23,7 +23,7 @@
 
 
         </div>
-        <div class="container-fluid" style="margin-top:20px;">
+        <div class="container-fluid m-2 p-0" >
             <a href="/shop/dashboard/orders/index" class="orders-text-style ">
                 <strong>All Orders</strong>
             </a>
@@ -33,9 +33,7 @@
             <a href="/shop/dashboard/orders/order-status" class="orders-text-style">
                 <strong>Order Status</strong>
             </a>
-            {{-- <a href="#" class="orders-text-style">
-                <strong>Return Orders</strong>
-            </a> --}}
+         
             <a href="#" class="orders-text-style">
                 <strong>Pending Star Ratings</strong>
             </a>
@@ -171,7 +169,7 @@
                         Open Orders <i style="font-size: 10px;" class="fa fa-arrow-down"> </i>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">All Orders</a>
+                        <a class="dropdown-item" href="/shop/dashboard/orders/index">All Orders</a>
                         {{-- <a class="dropdown-item" href="#">Open Orders</a> --}}
                         <a class="dropdown-item" href="/shop/dashboard/orders/order-status">Order Status</a>
                         {{-- <a class="dropdown-item" href="#">Return Orders</a> --}}

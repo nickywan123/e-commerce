@@ -4,7 +4,7 @@
 
 @section('content')
 
-<br>
+
 
  
 
@@ -48,24 +48,6 @@
 
                 <div class="card shadow-sm">
                     <div class="card-body">
-
-
-                        {{-- <div class="form-group row ">
-                            <label for="company_propaganda" class="col-md-2 col-form-label">Company Propaganda</label>
-                            <div class="col-md-9">
-                                <input type="text" name="company_propaganda" id="company_propaganda" value="WIP"
-                                    class="form-control @error('company_propaganda') is-invalid @enderror"
-                                    value="{{ old('company_propaganda') }}" readonly>
-                            </div>
-
-
-                            @error('company_propaganda')
-                            <small class="form-text text-danger">{{ $message }}</small>
-                            @enderror
-                        </div> --}}
-
-
-
 
                         <div class="form-group row ">
                             <label for="company_name" class="col-md-2 col-form-label">Company Name</label>
@@ -214,10 +196,7 @@
                     </div>
                 </div>
             </div>
-
-
-        </div>
-
+    </div>
 </div>
 
 

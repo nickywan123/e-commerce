@@ -72,7 +72,7 @@
 <body>
     <div class="container">
         <div class="text-center logo-container">
-            <img class="mw-100 bujishu-logo" src="{{ asset('assets/images/logos/bujishu-logo-sparks.png') }}" alt="">
+            <img class="mw-100 bujishu-logo" src="{{ asset('storage/logo/bujishu-logo-2020.png') }}" alt="">
         </div>
 
         <div class="card shadow-sm border-rounded-0 bg-bujishu-gold">

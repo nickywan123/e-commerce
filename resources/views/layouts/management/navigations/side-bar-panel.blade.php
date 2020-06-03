@@ -132,7 +132,7 @@
 
 <style>
 
-   li{
+   .text-hover{
       padding-bottom: 10px;
    }
 

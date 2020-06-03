@@ -12,11 +12,11 @@
    
 
     <a class="navbar-brand " href="/shop">
-        <img class="navbar-brand-full margin-logo-mobile margin-tablet" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="100" height="65" alt="Bujishu Logo">
-        <img class="navbar-brand-minimized" src="{{asset('storage/logo/Bujishu-logo.png')}}" width="30" height="30" alt="Bujishu Logo">
+        <img class="navbar-brand-full margin-logo-mobile margin-tablet" src="{{asset('storage/logo/bujishu-logo-2020.png')}}" width="100" height="65" alt="Bujishu Logo">
+        <img class="navbar-brand-minimized" src="{{asset('storage/logo/bujishu-logo-2020.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
 
-  
+    <h4 style="color:#fbcc34;">Welcome to My Dashboard</h4>
 
     <ul class="nav navbar-nav ml-auto">      
       <h5 style="margin-right:10px" class="welcome-text ">{{Auth::user()->userInfo->full_name}}</h5> 

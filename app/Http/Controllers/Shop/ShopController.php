@@ -59,18 +59,24 @@ class ShopController extends Controller
     }
 
     /****
-     * Shows About Us
+     * Show About Us
      */
     public function aboutUs()
     {
-        return view('shop.about-us.about-us');
+        return view('shop.footer-pages.about-us');
+    }
+
+    /**Show Workforce Page***/
+    public function workforce()
+    {
+        return view('shop.footer-pages.workforce');
     }
 
     /***Return privacy policy**/
 
     public function privacyPolicy()
     {
-        return view('shop.privacy-policy.privacy-policy');
+        return view('shop.footer-pages.privacy-policy');
     }
 
     /**

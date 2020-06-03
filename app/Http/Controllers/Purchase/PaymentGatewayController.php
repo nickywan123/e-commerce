@@ -15,6 +15,7 @@ use App\Models\Users\User;
 use Auth;
 use Illuminate\Support\Facades\URL;
 use App\Models\Categories\Category;
+use App\Models\Users\Dealers\DealerSales;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 use PDF;
@@ -261,7 +262,9 @@ class PaymentGatewayController extends Controller
             $purchase->purchase_status = 3001;
             $purchase->save();
 
+
             foreach ($purchase->orders as $order) {
+
                 $order->order_status = 1001;
                 $order->save();
 

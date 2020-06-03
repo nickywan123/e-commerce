@@ -100,4 +100,10 @@ class DealerInfo extends Model
     {
         return $this->hasOne('App\Models\Users\Dealers\DealerSpouse', 'account_id', 'account_id');
     }
+
+    /**Get dealer sales information**/
+    public function dealerSales()
+    {
+        return $this->hasMany('App\Models\Users\Dealers\DealerSales', 'account_id', 'account_id');
+    }
 }

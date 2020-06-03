@@ -44,7 +44,7 @@
     <div class="bg-md bg-sm ">
         <div class="row">
             <div class="col-6 offset-3 col-md-4 offset-md-4 text-center">
-                <img class="mw-100 w-50-md" src="{{ asset('storage/logo/Bujishu-logo.png') }}" alt="">
+                <img class="mw-100 w-50-md" src="{{ asset('storage/logo/bujishu-logo-2020.png') }}" alt="">
             </div>
         </div>
         <div class="">

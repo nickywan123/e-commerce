@@ -4,7 +4,7 @@
 
 @section('content')
 
-<br>
+
 
  
 
@@ -30,23 +30,24 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         
             <div class="row">
-            <div class="col-12 col-md-10">
+             <div class="offset-md-1 col-12 col-md-10">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-4">
                      <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header "
-                     ><strong style="color:black; font-size:15pt;">Edit Profile</strong></a>
+                     ><strong>Edit Profile</strong></a>
                     </div>
                     @hasrole('dealer')
-                    <div class="col-3">
-                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong style="color:black; font-size:15pt;">Edit Dealer Information</strong></a>
+                    <div class="col-4">
+                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Edit Dealer Information</strong></a>
                     </div>
                     @endhasrole
                     @hasrole('panel')
-                    <div class="col-3">
-                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong style="color:black; font-size:15pt;"> Edit Panel Information</strong></a>
+                    <div class="col-4">
+                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong> Edit Panel Information</strong></a>
                     </div>
                     @endhasrole          
-                </div> <br>
+                </div> 
+                <hr>
                 
                 <div class="card shadow-sm">
                     <div class="card-body">
@@ -263,17 +264,17 @@
         <input type="hidden" name="_method" value="PATCH">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="row">
-            <div class="col-6">
+            <div class="col-4">
              <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header "  
              ><strong style="color:black;">Edit User Profile</strong></a>
             </div>
             @hasrole('dealer')
-            <div class="col-6">
-             <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" style="border-bottom: 2px solid rgb(250, 172, 24);" class="text-color-header " ><strong style="color:black;">Edit Dealer Info</strong></a>
+            <div class="col-4">
+             <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" style="border-bottom: 2px solid rgb(250, 172, 24);" class="text-color-header " ><strong style="color:black;">Edit Dealer Information</strong></a>
             </div>
             @endhasrole
             @hasrole('panel')
-            <div class="col-12">
+            <div class="col-4">
              <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong style="color:black;">Edit Panel Information</strong></a>
             </div>
             @endhasrole          
@@ -500,7 +501,10 @@
 
 
 <style>
-
+.text-color-header{
+    color:black;
+    font-size: 12pt;
+}
 
 .text-bold{
   font-weight: bold;

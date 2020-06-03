@@ -352,6 +352,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         //Privacy Policy Page
         Route::get('/privacy-policy', 'Shop\ShopController@privacyPolicy')->name('shop.privacy.policy');
 
+        //Workforce Page
+        Route::get('/workforce', 'Shop\ShopController@workforce')->name('shop.workforce');
+
         Route::group(['prefix' => 'category'], function () {
             Route::get(
                 '/renovations',
