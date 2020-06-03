@@ -123,6 +123,22 @@ class ShopController extends Controller
         $userAddress->state_id = $request->input('state_id');
         $userAddress->save();
 
+        $cartItems = $user->carts;
+
+        foreach ($cartItems as $cartItem) {
+            $product = $cartItem->product;
+            $deliveryFee = $product->deliveries->where('state_id', $userAddress->state_id)->first();
+
+            if ($deliveryFee) {
+                $cartItem->delivery_fee = $deliveryFee->delivery_fee * $cartItem->quantity;
+            } else {
+                $cartItem->delivery_fee = 0;
+                $cartItem->disabled = 2;
+            }
+
+            $cartItem->save();
+        }
+
         return redirect()->back();
     }
 

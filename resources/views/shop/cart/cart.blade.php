@@ -27,7 +27,27 @@
 
                         </div>
 
+
+
                         <div class="col-12 col-md-4 p-1 m-0">
+                            <div class="card mb-1">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 col-md-8">
+                                            <p class="mb-1 text-muted">
+                                                Ship to: <span class="text-dark font-weight-bold">{{ $shippingAddress->state->name }}</span>
+                                            </p>
+                                        </div>
+
+                                        <div class="col-6 col-md-4">
+                                            <div class="text-right">
+                                                <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#editAddressModal">Edit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="card border-radius-0">
                                 <div class="card-body">
                                     <div class="row">
@@ -107,6 +127,68 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="editAddressModal" tabindex="-1" role="dialog" aria-labelledby="editAddressModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="{{ route('shop.product.edit-address') }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="col-12 form-group">
+                            <label for="address_1">Address 1</label>
+                            <input type="text" name="address_1" id="address_1" class="form-control" value="{{ $shippingAddress->address_1 }}">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-12 form-group">
+                            <label for="address_2">Address 2</label>
+                            <input type="text" name="address_2" id="address_2" class="form-control" value="{{ $shippingAddress->address_2 }}">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-12 form-group">
+                            <label for="address_2">Address 3</label>
+                            <input type="text" name="address_3" id="address_2" class="form-control" value="{{ $shippingAddress->address_3 }}">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 form-group">
+                            <label for="postcode">Postcode</label>
+                            <input type="text" name="postcode" id="postcode" class="form-control" value="{{ $shippingAddress->postcode }}">
+                        </div>
+
+                        <div class="col-12 col-md-6 form-group">
+                            <label for="city">City</label>
+                            <input type="text" name="city" id="City" class="form-control" value="{{ $shippingAddress->city }}">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-12 form-group">
+                            <label for="state_id">State</label>
+                            <select name="state_id" id="state_id" class="select2 form-control" style="width: 100%;">
+                                @foreach($states as $state)
+                                <option value="{{ $state->id }}" {{ ($state->id == $shippingAddress->state_id) ? 'selected' : '' }}>{{ $state->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn bjsh-btn-product-page">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
 @endsection
 
 @push('style')
@@ -135,6 +217,8 @@
         const installationPriceTag = $('#installation_price_tag');
         const grandTotalPriceTag = $('#grand_total_tag');
 
+        let checkedCartItem = [];
+
         // Setup ajax to include csrf token.
         $.ajaxSetup({
             headers: {
@@ -145,7 +229,7 @@
         // Function that make an ajax request to get cart items after the page loads.
         function onPageLoad() {
             console.log('This is onPageLoad');
-            let checkedCartItem = [];
+            checkedCartItem = [];
             let subtotalPrice = 0;
             let shippingPrice = 0;
             let installationPrice = 0;
@@ -411,13 +495,19 @@
             updatePrice(subtotalPrice, shippingPrice, installationPrice);
         });
 
-        $('#checkout-form').on('submit', function() {
-            if (checkedCartItem.length == 0) {
+        $('#proceed-to-checkout-button').on('click', function(event) {
+            console.log(checkedCartItem.length);
+            if (checkedCartItem.length == 0 || checkedCartItem == null) {
                 $('#exampleModal').modal('show')
                 return false;
             } else {
                 return true;
             }
+        });
+
+        $('select.select2').select2({
+            dropdownParent: $('#editAddressModal'),
+            theme: 'bootstrap4',
         });
         /* End Author */
     });
