@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Users\Customers\Cart;
 use App\Models\Users\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Products\Product as PanelProduct;
+use App\Models\Products\ProductDelivery;
 
 class CartController extends Controller
 {
@@ -84,12 +86,25 @@ class CartController extends Controller
     public function updateQuantity(Request $request, $id)
     {
         $cartItem = Cart::find($id);
-        $cartItem->quantity = $request->input('quantity');
-        $cartItem->subtotal_price = $cartItem->quantity * $cartItem->unit_price;
-        $cartItem->save();
 
         // Get user
         $user = User::find(Auth::user()->id);
+
+        // Get product
+        $product = PanelProduct::find($cartItem->product_id);
+
+        //
+        $userInfo = $user->userInfo;
+
+        // 
+        $userShipping = $userInfo->shippingAddress;
+
+        $deliveryFee = $product->deliveries->where('state_id', $userShipping->state_id)->first();
+
+        $cartItem->quantity = $request->input('quantity');
+        $cartItem->subtotal_price = $cartItem->quantity * $cartItem->unit_price;
+        $cartItem->delivery_fee = $deliveryFee->delivery_fee * $request->input('quantity');
+        $cartItem->save();
 
         $panel = $cartItem->product->panel;
 
@@ -135,5 +150,13 @@ class CartController extends Controller
         $cartItem->save();
 
         return response()->json($cartItem, 200);
+    }
+
+    /**
+     * Update address.
+     */
+    public function updateAddress(Request $request)
+    {
+        // 
     }
 }

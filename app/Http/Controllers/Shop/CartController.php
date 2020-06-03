@@ -10,6 +10,8 @@ use App\Models\Products\Product as PanelProduct;
 use App\Models\Users\Customers\Cart;
 use App\Models\Users\User;
 use App\Models\Categories\Category;
+use App\Models\Globals\State;
+use App\Models\Products\ProductDelivery;
 use Illuminate\Support\Facades\View;
 
 class CartController extends Controller
@@ -48,13 +50,15 @@ class CartController extends Controller
     {
         // Get user
         $user = User::find(Auth::user()->id);
-        // Check if the exact item is already in the cart..
-        $getCartQuantity = new Cart;
 
-        $getCartQuantity = $getCartQuantity->where('user_id', $user->id)->where('status', 2001)->sum('quantity');
+        $customer = $user->userInfo;
+        $shippingAddress = $customer->shippingAddress;
+
+        $states = State::all();
 
         return view('shop.cart.cart')
-            ->with('getCartQuantity', $getCartQuantity);
+            ->with('shippingAddress', $shippingAddress)
+            ->with('states', $states);
     }
 
     /**
@@ -80,6 +84,14 @@ class CartController extends Controller
 
         // Get product
         $product = PanelProduct::find($request->input('product_id'));
+
+        //
+        $userInfo = $user->userInfo;
+
+        // 
+        $userShipping = $userInfo->shippingAddress;
+
+        $deliveryFee = $product->deliveries->where('state_id', $userShipping->state_id)->first();
 
         $panel = $product->panel;
 
@@ -199,6 +211,7 @@ class CartController extends Controller
             $newCartItem->installation_fee = $product->installation_fee;
             $newCartItem->unit_price = $price;
             $newCartItem->subtotal_price = $price * $request->input('productQuantity');
+            $newCartItem->delivery_fee = $deliveryFee->delivery_fee * $request->input('productQuantity');
             if ($disabled == 1) {
                 $newCartItem->selected = 0;
             }
@@ -210,6 +223,7 @@ class CartController extends Controller
             $existingCartItem->quantity = $existingCartItem->quantity + $request->input('productQuantity');
             // Re calculate the total price.
             $existingCartItem->subtotal_price = $existingCartItem->quantity * $existingCartItem->unit_price;
+            $existingCartItem->delivery_fee = $deliveryFee->delivery_fee * $existingCartItem->quantity;
             if ($disabled == 1) {
                 $existingCartItem->selected = 0;
             }
@@ -248,6 +262,16 @@ class CartController extends Controller
 
         // Get product
         $product = PanelProduct::find($request->input('product_id'));
+
+        $panel = $product->panel;
+
+        //
+        $userInfo = $user->userInfo;
+
+        // 
+        $userShipping = $userInfo->shippingAddress;
+
+        $deliveryFee = $product->deliveries->where('state_id', $userShipping->state_id)->first();
 
         $panel = $product->panel;
 
@@ -389,7 +413,7 @@ class CartController extends Controller
             $newCartItem->installation_fee = $product->installation_fee;
             $newCartItem->unit_price = $price;
             $newCartItem->subtotal_price = $price * $request->input('productQuantity');
-            $newCartItem->subtotal_price = $price * $request->input('productQuantity');
+            $newCartItem->delivery_fee = $deliveryFee->delivery_fee * $request->input('productQuantity');
             if ($disabled == 1) {
                 $newCartItem->selected = 0;
             }
@@ -403,6 +427,7 @@ class CartController extends Controller
             $existingCartItem->quantity = $existingCartItem->quantity + $request->input('productQuantity');
             // Re calculate the total price.
             $existingCartItem->subtotal_price = $existingCartItem->quantity * $existingCartItem->unit_price;
+            $existingCartItem->delivery_fee = $deliveryFee->delivery_fee * $existingCartItem->quantity;
             if ($disabled == 1) {
                 $existingCartItem->selected = 0;
             }

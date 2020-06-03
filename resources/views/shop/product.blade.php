@@ -13,6 +13,10 @@
 </div>
 @endif
 
+<?php
+$userShippingAddress = Auth::user()->userInfo->shippingAddress;
+$deliveryInformation = $panelProduct->deliveries->where('state_id', $userShippingAddress->state_id)->first();
+?>
 
 <div class="width-80">
     <div class="card w-100" style="border-radius: 0;">
@@ -204,7 +208,7 @@
                                 <input type="hidden" id="product_attribute_temperature_buyNow" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="border:0px; color: #1a1a1a;">Buy Now</button>
+                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="border:0px; color: #1a1a1a;" {{ ($deliveryInformation == null) ? 'disabled' : '' }}>Buy Now</button>
                             </form>
                         </div>
                         <div class="col-6 col-md-4 p-1 m-0">
@@ -218,7 +222,7 @@
                                 <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile" style="color: #1a1a1a; border:0px;">Add To Cart</button>
+                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile" style="color: #1a1a1a; border:0px;" {{ ($deliveryInformation == null) ? 'disabled' : '' }}>Add To Cart</button>
                             </form>
                         </div>
                         <div class="col-6 offset-3 offset-md-0 col-md-4 p-1 ">
@@ -231,11 +235,6 @@
                         </div>
                     </div>
                 </div>
-
-                <?php
-                $userShippingAddress = Auth::user()->userInfo->shippingAddress;
-                $deliveryInformation = $panelProduct->deliveries->where('state_id', $userShippingAddress->state_id)->first();
-                ?>
 
                 <!-- Extra details column -->
                 <div class="col-12 col-md-3 pt-2 pb-2 pl-3 pr-2 hidden-sm" style="background-color: #f2f2f2;">
@@ -372,7 +371,9 @@
                                 <span>Installation Fee</span>
                             </div>
                             <div class="col-4 text-right">
-                                <p class="font-weight-bold">RM {{ $panelProduct->getDecimalInstallationFee() }}</p>
+                                <p class="font-weight-bold">
+                                    RM {{ $panelProduct->getDecimalInstallationFee() }}
+                                </p>
                             </div>
                         </div>
                     </section>

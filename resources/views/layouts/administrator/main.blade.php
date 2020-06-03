@@ -69,7 +69,7 @@
                 <li class="breadcrumb-item active">Dashboard</li>
             </ol>
             <div class="container-fluid">
-                <div id="app" class="animated fadeIn">
+                <div id="app" class="animated">
                     @yield('content')
                 </div>
             </div>
