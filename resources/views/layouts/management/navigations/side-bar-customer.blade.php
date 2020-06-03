@@ -49,7 +49,7 @@
                 
               </div>          
             </li>
-            @hasrole('dealer')
+            {{-- @hasrole('dealer')
             <li class="nav-item">
                 <div class="icon-text-align">
                    <a class="nav-link" href="{{route('management.dealer.home')}}">
@@ -69,7 +69,7 @@
                  
                 </div>          
               </li>
-            @endhasrole
+            @endhasrole --}}
 
             {{-- <li class="nav-item" >
                 <div class="icon-text-align">

@@ -27,7 +27,7 @@
             <div class="dropdown-menu dropdown-menu-right">
          
                 <a class="dropdown-item" href="{{ route('management.company.profile') }}">
-                    <i class="fa fa-user" style="color:#fbcc34;"></i> Panel Profile             
+                    <i class="fa fa-user" style="color:#fbcc34;"></i>Profile             
                 </a>
                 <a class="dropdown-item" href="{{ route('shop.dashboard.customer.home') }}">
                     <i class="fa fa-user" style="color:#fbcc34;"></i> My Dashboard         

@@ -45,7 +45,7 @@
                 {{-- <a class="dropdown-item" href="#">
                     <i class="fa fa-lock"></i> Logout</a> --}}
                     <a class="dropdown-item" href="{{ route('shop.dashboard.customer.profile') }}">
-                        <i class="fa fa-user" style="color:#fbcc34;"></i> My Profile
+                        <i class="fa fa-user" style="color:#fbcc34;"></i>Profile
                     </a>
                     <a class="dropdown-item" href="{{ route('shop.dashboard.customer.home') }}">
                         <i class="fa fa-user" style="color:#fbcc34;"></i> My Dashboard         

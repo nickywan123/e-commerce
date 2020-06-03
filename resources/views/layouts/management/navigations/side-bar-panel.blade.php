@@ -39,11 +39,11 @@
          <li class="text-hover">
             <a href="/wip" class="sidebar-text-color">Promotion/Special Offer</a>
          </li>
-         @hasrole('dealer')
+         {{-- @hasrole('dealer')
          <li class="text-hover">
             <a href="{{route('management.dealer.home')}}" class="sidebar-text-color">Dealer Dashboard</a>
          </li>
-         @endhasrole
+         @endhasrole --}}
          <li class="text-hover">
             <a href="/shop" class="sidebar-text-color">Continue Shopping</a>
          </li>

@@ -25,11 +25,11 @@
          <li class="text-hover">
             <a href="/wip" class="sidebar-text-color ">Promotion/Special Offer</a>
          </li>
-         @hasrole('panel')
+         {{-- @hasrole('panel')
          <li class="text-hover">
             <a href="{{route('management.panel.home')}}" class="sidebar-text-color ">Panel Dashboard</a>
          </li>
-         @endhasrole
+         @endhasrole --}}
          <li class="text-hover">
             <a href="/shop" class="sidebar-text-color ">Continue Shopping</a>
          </li>
