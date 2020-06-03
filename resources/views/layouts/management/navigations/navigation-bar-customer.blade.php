@@ -16,10 +16,10 @@
         <img class="navbar-brand-minimized" src="{{asset('storage/logo/bujishu-logo-2020.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
 
-    <h4 style="color:#fbcc34;">Welcome to My Dashboard</h4>
+    <h4 style="color:#ffcc00;">Welcome to My Dashboard</h4>
 
     <ul class="nav navbar-nav ml-auto">      
-      <h5 style="margin-right:10px" class="welcome-text ">{{Auth::user()->userInfo->full_name}}</h5> 
+      <h5 style="margin-right:10px; color:#ffcc00;" class="welcome-text ">{{Auth::user()->userInfo->full_name}}</h5> 
       <li class="nav-item dropdown">
          <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
            <img class="img-avatar" src="{{asset('storage/avatar/default-avatar.jpg')}}" alt="{{ Auth::user()->userInfo->full_name }}">
