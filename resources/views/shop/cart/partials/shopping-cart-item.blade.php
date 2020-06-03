@@ -27,7 +27,7 @@ $totalPrice = 10000;
     <div class="row no-gutters">
         <div class="col-12 mb-1 px-1">
             <span class="custom-control custom-checkbox my-auto d-inline">
-                <input type="checkbox" name="cartItemId[]" class="custom-control-input item-checkbox" id="item-{{ $cartItem->id }}" value="{{ $cartItem->id }}" data-unit-price="{{ $cartItem->unit_price }}" data-quantity="{{ $cartItem->quantity }}" data-shipping-price="{{ $cartItem->delivery_fee }}" data-installation-price="{{ $cartItem->installation_fee }}" {{ ($cartItem->selected == 1) ? 'checked' : '' }} {{ ($cartItem->disabled == 1 || $cartItem->disabled == 2) ? 'disabled' : '' }}>
+                <input type="checkbox" name="cartItemId[]" class="custom-control-input item-checkbox" id="item-{{ $cartItem->id }}" value="{{ $cartItem->id }}" data-unit-price="{{ $cartItem->unit_price }}" data-quantity="{{ $cartItem->quantity }}" data-shipping-price="{{ $cartItem->delivery_fee }}" data-installation-price="{{ $cartItem->installation_fee }}" {{ ($cartItem->selected == 1 && $cartItem->disabled != 1 && $cartItem->disabled != 2) ? 'checked' : '' }} {{ ($cartItem->disabled == 1 || $cartItem->disabled == 2) ? 'disabled' : '' }}>
                 <label class="custom-control-label" for="item-{{ $cartItem->id }}"></label>
             </span>
             <span>

@@ -108,6 +108,7 @@ class ProductByPanelController extends Controller
             $attribute->attribute_name = $request->input('product_variation_name')[$key];
             $attribute->price = ($request->input('product_variation_price')[$key] != null) ? str_replace('.', '', $request->input('product_variation_price')[$key]) : 0;
             $attribute->member_price = ($request->input('product_variation_member_price')[$key] != null) ? str_replace('.', '', $request->input('product_variation_member_price')[$key]) : 0;
+            $attribute->color_hex = $request->input('product_variation_color_hex')[$key];
             $attribute->save();
         }
 
@@ -123,6 +124,15 @@ class ProductByPanelController extends Controller
             $delivery->panel_product_id = $product->id;
             $delivery->delivery_fee = ($request->input('available_in_price')[$key] != null) ? str_replace('.', '', $request->input('available_in_price')[$key]) : 0;
             $delivery->save();
+        }
+
+        if ($product->save()) {
+            return redirect('/administrator/products/panels')
+                ->with('success', 'Product saved successfully');
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', 'Something went wrong.');
         }
     }
 

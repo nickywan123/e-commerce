@@ -131,6 +131,7 @@ class ShopController extends Controller
 
             if ($deliveryFee) {
                 $cartItem->delivery_fee = $deliveryFee->delivery_fee * $cartItem->quantity;
+                $cartItem->disabled = 0;
             } else {
                 $cartItem->delivery_fee = 0;
                 $cartItem->disabled = 2;

@@ -46,7 +46,7 @@
                 <div class="row">
                     <!-- Start Form -->
                     <div class="col-12 col-md-10 offset-md-1">
-                        <form action="{{ route('administrator.v1.products.panels.update', ['id' => $product->id]) }}" method="POST">
+                        <form action="{{ route('administrator.v1.products.panels.update', ['id' => $product->id]) }}" method="POST" id="edit-panel-product-form">
                             @csrf
                             @method('PUT')
                             <div class="row">
@@ -118,7 +118,7 @@
                                     @foreach($product->deliveries as $delivery)
                                     <div class="row no-gutters @if($loop->last) default-item @endif">
                                         <div class="col-12 col-md-6 form-group p-1">
-                                            <select name="available_in[]" class="select2 form-control">
+                                            <select name="available_in[]" class="select2 form-control available-in">
                                                 <option value="default">Please choose a state..</option>
                                                 @foreach($states as $state)
                                                 <option value="{{ $state->id }}" {{ ($delivery->state_id == $state->id) ? 'selected' : '' }}>{{ $state->name }}</option>
@@ -147,7 +147,7 @@
                                     @else
                                     <div class="row no-gutters default-item">
                                         <div class="col-12 col-md-6 form-group p-1">
-                                            <select name="available_in[]" class="select2 form-control">
+                                            <select name="available_in[]" class="select2 form-control available-in">
                                                 <option value="default">Please choose a state..</option>
                                                 @foreach($states as $state)
                                                 <option value="{{ $state->id }}">{{ $state->name }}</option>
@@ -254,6 +254,9 @@
 
                                             <input type="text" name="product_variation_member_price[]" class="form-control input-mask-price d-inline" placeholder="DC Customer Price" style="width: 49.3%;" value="{{ $attribute->member_price }}">
                                         </div>
+                                        <div class="col-12 col-md-3 form-group p-1">
+                                            <input type="text" name="product_variation_color_hex[]" class="form-control d-inline" value="{{ $attribute->color_hex }}">
+                                        </div>
 
                                         <div class="col-6 p-1">
                                             @if(!$loop->last)
@@ -334,8 +337,11 @@
 
         let cloneItem = currentItem.clone(false).hide();
 
+        cloneItem.find('select.select2').removeAttr('id')
         cloneItem.find('select.select2').removeAttr('data-select2-id').removeAttr('id');
         cloneItem.find('option').removeAttr('data-select2-id');
+        cloneItem.find('select.select2').removeClass('is-invalid')
+        cloneItem.find('select.select2').removeClass('is-valid')
         cloneItem.addClass('default-item');
         cloneItem.find('.btn.btn-danger').addClass('d-none');
         cloneItem.find('.btn.btn-success').removeClass('d-none');
@@ -436,6 +442,98 @@
             height: 200, // set editor height
             minHeight: null, // set minimum height of editor
             maxHeight: null, // set maximum height of editor
+        });
+
+        // Variables Initialization
+        // Input Into Variables.
+        const panelAccountId = $('#panel_id');
+        const price = $('#price');
+        const memberPrice = $('#member_price');
+        const shipFrom = $('#ships_from');
+        let delivery = $('.available-in');
+        console.log(delivery);
+
+        panelAccountId.on('change', function() {
+            if ($(this).val() == 'default') {
+                $(this).removeClass('is-valid');
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+                $(this).addClass('is-valid');
+            }
+        });
+
+        price.on('keyup', function() {
+            if ($(this).val() == 0) {
+                $(this).removeClass('is-valid');
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+                $(this).addClass('is-valid');
+            }
+        });
+
+        memberPrice.on('keyup', function() {
+            if ($(this).val() == 0) {
+                $(this).removeClass('is-valid');
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+                $(this).addClass('is-valid');
+            }
+        });
+
+        shipFrom.on('change', function() {
+            if ($(this).val() == 'default') {
+                $(this).removeClass('is-valid');
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid');
+                $(this).addClass('is-valid');
+            }
+        });
+
+        $('#edit-panel-product-form').on('submit', function(event) {
+            let errors = 0;
+
+            // Validation
+            if (panelAccountId.val() == 'default') {
+                errors = errors + 1;
+                panelAccountId.removeClass('is-valid');
+                panelAccountId.addClass('is-invalid');
+            }
+            if (price.val() == 0) {
+                errors = errors + 1;
+                price.removeClass('is-valid');
+                price.addClass('is-invalid');
+            }
+            if (memberPrice.val() == 0) {
+                errors = errors + 1;
+                memberPrice.removeClass('is-valid');
+                memberPrice.addClass('is-invalid');
+            }
+            if (shipFrom.val() == 'default') {
+                errors = errors + 1;
+                shipFrom.removeClass('is-valid');
+                shipFrom.addClass('is-invalid');
+            }
+
+            delivery = $('.available-in');
+
+            delivery.each(function() {
+                if ($(this).val() == 'default') {
+                    errors = errors + 1;
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                }
+            });
+
+            if (errors > 0) {
+                toastr.error('Please make sure the input highlighted in RED is correctly filled in.');
+                return false;
+            } else {
+                return true;
+            }
         });
     });
 </script>

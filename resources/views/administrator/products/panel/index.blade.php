@@ -89,7 +89,7 @@
                             {{ $product->panel->company_name }}
                         </td>
                         <td style="width: 20%;">
-                            <a style="color: white; font-style: normal; border-radius: 5px;" href="/administrator/products/panels/edit/{{ $product->id }}" class="btn btn-primary shadow-sm">Edit</a>
+                            <a style="color: white; font-style: normal; border-radius: 5px;" href="/administrator/products/v1/panels/edit/{{ $product->id }}" class="btn btn-primary shadow-sm">Edit</a>
 
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $product->id }}">
