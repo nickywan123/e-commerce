@@ -753,7 +753,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
 {{-------------------------Laptop layout----------------------------}}
 
 
-{{-- <div class="hidden-laptop ">
+ <div class="hidden-laptop ">
   <div class="row">
     <div class="col-8">
       <div class="row ml-2">
@@ -982,7 +982,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
 
 
 
-</div> --}}
+</div>
 
 
 <style>
