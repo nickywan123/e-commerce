@@ -15,6 +15,7 @@ use App\Models\Users\Dealers\DealerInfo;
 use App\Models\Users\Dealers\DealerSales;
 use App\Models\Users\Dealers\Statement;
 use App\Users\Dealers\Statement as DealersStatement;
+use App\Models\Globals\Marital;
 
 class ManagementController extends Controller
 {
@@ -279,25 +280,27 @@ class ManagementController extends Controller
         // $dealer_id = $dealer_id->dealerInfo->account_id;
         // $dealerProfile = new DealerInfo();
         // $dealerProfile = $dealerProfile->where('account_id', $dealer_id)->first();
+        $maritals = Marital::all();
 
         $user = User::find(Auth::user()->id);
         $dealerProfile = $user->dealerInfo;
 
         return view('management.dealer.profile')
-            ->with('dealerProfile', $dealerProfile);
+            ->with('dealerProfile', $dealerProfile)
+            ->with('maritals', $maritals);
     }
 
 
     //Edit Profile for Dealer
     public function editdealerProfile()
     {
-        // $dealer_id = User::find(Auth::user()->id);
-        // $dealer_id = $dealer_id->dealerInfo->account_id;
-        // $dealerProfile = new DealerInfo();
-        // $dealerProfile = $dealerProfile->where('account_id', $dealer_id)->first();
+        $maritals = Marital::all();
+
         $user = User::find(Auth::user()->id);
         $dealerProfile = $user->dealerInfo;
-        return view('management.dealer.edit-profile')->with('dealerProfile', $dealerProfile);
+        return view('management.dealer.edit-profile')
+            ->with('dealerProfile', $dealerProfile)
+            ->with('maritals', $maritals);
     }
 
     /** Update dealer profile**/
@@ -311,6 +314,8 @@ class ManagementController extends Controller
             'dealer_company_address_1' => 'required',
             'dealer_company_postcode' => 'required|digits:5',
             'dealer_company_city' => 'required'
+
+
         ));
 
 

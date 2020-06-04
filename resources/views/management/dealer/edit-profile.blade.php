@@ -86,6 +86,31 @@
                             @enderror
                         </div>
 
+                        <div class="form-group row">
+                            
+                            <label for="marital_id" class="col-md-2 col-form-label">Marital Status</label>
+                            <div class="col-md-9">
+                                
+                                <select name="marital_id" id="marital_id" class="form-control text-capitalize">
+                                    <option disabled selected style="display: none;" >
+                                        @if($dealerProfile->marital_id===1)
+                                        Single
+                                        @elseif($dealerProfile->marital_id===2)
+                                        Married
+                                        @else
+                                        Divorced    
+                                        @endif
+                                    </option>
+                                   
+                                    @foreach($maritals as $marital)
+                                    <option value="{{ $marital->id }}">{{ $marital->name }}</option>
+                                    @endforeach
+                                    
+                                </select>
+                            </div>
+                             
+                        </div>
+
 
                         <div class="form-group row ">
                             <div class="col-md-4">
@@ -194,7 +219,7 @@
                                 <input type="text" name="spouse_name" id="spouse_name"
                                     value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_name : '' }}"
                                     class="form-control @error('spouse_name') is-invalid @enderror"
-                                    value="{{ old('spouse_name') }}" readonly >
+                                    value="{{ old('spouse_name') }}"  >
                             </div>
                            
                             @error('spouse_name')
@@ -208,7 +233,7 @@
                                 <input type="text" name="spouse_occupation" id="spouse_occupation"
                                     value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_occupation : '' }}"
                                     class="form-control @error('spouse_occupation') is-invalid @enderror"
-                                    value="{{ old('spouse_occupation') }}" readonly >
+                                    value="{{ old('spouse_occupation') }}"  >
                             </div>
                           
                             @error('spouse_occupation')
@@ -222,7 +247,7 @@
                                 <input type="text" name="spouse_contact" id="spouse_contact"
                                     value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_contact_mobile : '' }}"
                                     class="form-control @error('spouse_contact') is-invalid @enderror"
-                                    value="{{ old('spouse_contact') }}" readonly >
+                                    value="{{ old('spouse_contact') }}"  >
                             </div>
                            
                             @error('spouse_contact')
@@ -236,7 +261,7 @@
                                 <input type="text" name="spouse_email" id="spouse_email"
                                     value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_email : '' }}"
                                     class="form-control @error('spouse_email') is-invalid @enderror"
-                                    value="{{ old('spouse_email') }}" readonly>
+                                    value="{{ old('spouse_email') }}" >
                             </div>
                             @error('spouse_email')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -428,7 +453,7 @@
                             <input type="text" name="spouse_name" id="spouse_name"
                                 value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_name : '' }}"
                                 class="form-control @error('spouse_name') is-invalid @enderror"
-                                value="{{ old('spouse_name') }}" readonly >
+                                value="{{ old('spouse_name') }}"  >
                         </div>
                        
                         @error('spouse_name')
@@ -442,7 +467,7 @@
                             <input type="text" name="spouse_occupation" id="spouse_occupation"
                                 value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_occupation : '' }}"
                                 class="form-control @error('spouse_occupation') is-invalid @enderror"
-                                value="{{ old('spouse_occupation') }}" readonly >
+                                value="{{ old('spouse_occupation') }}">
                         </div>
                       
                         @error('spouse_occupation')
@@ -456,7 +481,7 @@
                             <input type="text" name="spouse_contact" id="spouse_contact"
                                 value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_contact_mobile : '' }}"
                                 class="form-control @error('spouse_contact') is-invalid @enderror"
-                                value="{{ old('spouse_contact') }}" readonly >
+                                value="{{ old('spouse_contact') }}"  >
                         </div>
                        
                         @error('spouse_contact')
@@ -470,7 +495,7 @@
                             <input type="text" name="spouse_email" id="spouse_email"
                                 value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_email : '' }}"
                                 class="form-control @error('spouse_email') is-invalid @enderror"
-                                value="{{ old('spouse_email') }}" readonly>
+                                value="{{ old('spouse_email') }}" >
                         </div>
                         @error('spouse_email')
                         <small class="form-text text-danger">{{ $message }}</small>
@@ -526,5 +551,48 @@
         }
 
 </style>
+@push('script')
+<script>
+
+
+ // Disable spouse information if marital status is single
+ $(document).on('change', 'select[name=marital_id]', function(e) {
+    var el = $(this);
+
+    if (el.val() == '1' || el.val() == '3') {
+        
+        //reset spouse fields to empty if user input changes to 1 or 3
+         $('input[name=spouse_name').val('');
+         $('input[name=spouse_occupation').val('');
+         $('input[name=spouse_contact').val('');
+         $('input[name=spouse_email').val('');
+       
+        //disable spouse information if single or divorced
+         $('#spouse_name').prop('readonly', true);
+         $('#spouse_occupation').prop('readonly', true);
+         $('#spouse_contact').prop('readonly', true);
+         $('#spouse_email').prop('readonly', true);
+    } else {
+         $('#spouse_name').prop('readonly',false);
+         $('#spouse_occupation').prop('readonly',false);
+        
+         $('#spouse_contact').prop('readonly',false);
+         $('#spouse_email').prop('readonly',false);
+    }
+});
+
+
+$(document).ready(function() {
+           if( $('input[name=marital_id').val('Single')){
+                 //disable spouse information if single or divorced
+                 $('#spouse_name').prop('readonly', true);
+                 $('#spouse_occupation').prop('readonly', true);
+                 $('#spouse_contact').prop('readonly', true);
+                 $('#spouse_email').prop('readonly', true);
+           }
+        });
+
+</script>
+@endpush('script')
 
 @endsection

@@ -85,7 +85,26 @@
 
                             </div>  
                         </div>
-                        <br>
+                        <div class="form-group row">
+                            {{-- <label for="marital_id">Marital Status</label> --}}
+                            <label for="marital_id" class="col-md-2 col-form-label">Marital Status</label>
+                            <div class="col-md-9">
+                                <input type="text" name="marital_id" id="marital_id"
+                                    @if($dealerProfile->marital_id===1)
+                                    value="Single"
+                                    @elseif($dealerProfile->marital_id===2)
+                                    value="Married"
+                                    @else
+                                    value="Divorced"    
+                                    @endif
+                                 class="form-control @error('marital_id') is-invalid @enderror"
+                                 value="{{ old('marital_id') }}" readonly>
+
+                            </div>
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
+                            </div>  
+                        </div>
 
 
                         <div class="form-group row ">
@@ -154,7 +173,9 @@
                                     class="form-control @error('spouse_name') is-invalid @enderror"
                                     value="{{ old('spouse_name') }}" readonly>
                             </div>
-                          
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
+                            </div>
                         </div>
 
                         <div class="form-group row ">
@@ -164,6 +185,9 @@
                                     value="{{ ($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_occupation : '' }}"
                                     class="form-control @error('spouse_occupation') is-invalid @enderror"
                                     value="{{ old('spouse_occupation') }}" readonly>
+                            </div>
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
                             </div>
                           
                         </div>
@@ -176,6 +200,9 @@
                                     class="form-control @error('spouse_contact') is-invalid @enderror"
                                     value="{{ old('spouse_contact') }}" readonly>
                             </div>
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
+                            </div>
                            
                         </div>
 
@@ -186,6 +213,9 @@
                                     value="{{ ($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_email : '' }}"
                                     class="form-control @error('spouse_email') is-invalid @enderror"
                                     value="{{ old('spouse_email') }}" readonly>
+                            </div>
+                            <div class="col-md-1 col-form-label">
+                                <a href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
                             </div>
                            
                         </div>
