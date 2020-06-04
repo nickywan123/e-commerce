@@ -31,7 +31,7 @@
                     <a class="bujishu-white" href="/shop/dashboard/orders/order-status">Track an Order</a>
                 </li>
                 <li>
-                    <a class="bujishu-white" href="">FAQ</a>
+                    <a class="bujishu-white" href="{{route('shop.faq')}}">FAQ</a>
                 </li>
                 {{-- <li>
                     <a class="bujishu-gold " href="">Contact Us</a>

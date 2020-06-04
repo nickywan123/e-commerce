@@ -34,16 +34,16 @@
                 <div class="row">
                     <div class="col-4">
                      <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header "
-                     ><strong>Edit Profile</strong></a>
+                     ><strong>Edit My Profile</strong></a>
                     </div>
                     @hasrole('dealer')
                     <div class="col-4">
-                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Edit Dealer Information</strong></a>
+                     <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Edit Dealer Profile</strong></a>
                     </div>
                     @endhasrole
                     @hasrole('panel')
                     <div class="col-4">
-                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong> Edit Panel Information</strong></a>
+                     <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong> Edit Panel Profile</strong></a>
                     </div>
                     @endhasrole          
                 </div> 
@@ -266,16 +266,16 @@
         <div class="row">
             <div class="col-4">
              <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile.edit')}}" class="text-color-header "  
-             ><strong style="color:black;">Edit User Profile</strong></a>
+             ><strong style="color:black;">Edit My Profile</strong></a>
             </div>
             @hasrole('dealer')
             <div class="col-4">
-             <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" style="border-bottom: 2px solid rgb(250, 172, 24);" class="text-color-header " ><strong style="color:black;">Edit Dealer Information</strong></a>
+             <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" style="border-bottom: 2px solid rgb(250, 172, 24);" class="text-color-header " ><strong style="color:black;">Edit Dealer Profile</strong></a>
             </div>
             @endhasrole
             @hasrole('panel')
             <div class="col-4">
-             <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong style="color:black;">Edit Panel Information</strong></a>
+             <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile.edit')}}" class="text-color-header " ><strong style="color:black;">Edit Panel Profile</strong></a>
             </div>
             @endhasrole          
         </div>

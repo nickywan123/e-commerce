@@ -358,6 +358,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         //Bujishu Service Page
         Route::get('/bujishu-service', 'Shop\ShopController@bujishuService')->name('shop.bujishu.service');
 
+        //FAQ Page
+        Route::get('/faq', 'Shop\ShopController@faq')->name('shop.faq');
+
         Route::group(['prefix' => 'category'], function () {
             Route::get(
                 '/renovations',

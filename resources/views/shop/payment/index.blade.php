@@ -1071,15 +1071,15 @@
                 }
             });
 
-            $('#attention_address_2').on('keyup', function() {
-                if ($(this).val().length == 0) {
-                    $(this).removeClass('is-valid');
-                    $(this).addClass('is-invalid');
-                } else {
-                    $(this).removeClass('is-invalid');
-                    $(this).addClass('is-valid');
-                }
-            });
+            // $('#attention_address_2').on('keyup', function() {
+            //     if ($(this).val().length == 0) {
+            //         $(this).removeClass('is-valid');
+            //         $(this).addClass('is-invalid');
+            //     } else {
+            //         $(this).removeClass('is-invalid');
+            //         $(this).addClass('is-valid');
+            //     }
+            // });
 
             $('#attention_postcode').on('keyup', function() {
                 if ($(this).val().length < 5 || $(this).val().length > 5) {
@@ -1116,9 +1116,9 @@
                     error = error + 1;
                 }
 
-                if ($('#attention_address_2').val().length == 0) {
-                    error = error + 1;
-                }
+                // if ($('#attention_address_2').val().length == 0) {
+                //     error = error + 1;
+                // }
 
                 if ($('#attention_postcode').val().length < 5 || $('#attention_postcode').val().length > 5) {
                     error = error + 1;

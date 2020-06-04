@@ -67,7 +67,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return $this->pageDisabled(); // TODO: Temporary disabled.
+        //return $this->pageDisabled(); // TODO: Temporary disabled.
 
         $genders = Gender::all();
         $races = Race::all();
@@ -233,9 +233,8 @@ class RegisterController extends Controller
                         'required_if:marital_id,2'
                     ],
                     'spouse_nric' => [
-                        'required_if:marital_id,2',
-                        'min:12',
-                        'max:12'
+                        'required_if:marital_id,2|min:12|max:12',
+
                     ],
                     'spouse_date_of_birth' => [
                         'required_if:marital_id,2'
@@ -244,12 +243,12 @@ class RegisterController extends Controller
                         'required_if:marital_id,2'
                     ],
                     'spouse_contact_office' => [
-                        'required_if:marital_id,2',
-                        'min:9'
+                        'required_if:marital_id,2|min:9',
+
                     ],
                     'spouse_contact_mobile' => [
-                        'required_if:marital_id,2',
-                        'min:10'
+                        'required_if:marital_id,2|min:10',
+
                     ],
                     'spouse_email' => [
                         'required_if:marital_id,2'
@@ -360,19 +359,32 @@ class RegisterController extends Controller
             // $userInfo->signature = 'storage/uploads/images/users/' . $userInfo->account_id . '/' .  $name;
             $userInfo->save();
 
-            // User_addresses table.
-            $userAddress = new UserAddress;
-            $userAddress->account_id = $userInfo->account_id;
-            $userAddress->address_1 = $data['address_1'];
-            $userAddress->address_2 = $data['address_2'];
-            $userAddress->address_3 = $data['address_3'];
-            $userAddress->postcode = $data['postcode'];
-            $userAddress->city = $data['city'];
-            $userAddress->state_id = $data['state'];
-            $userAddress->is_shipping_address = 1;
-            $userAddress->is_residential_address = 1;
-            $userAddress->is_mailing_address = 1;
-            $userAddress->save();
+            // User_addresses table(two records - billing address and shipping address)
+            $userAddress_billing_address = new UserAddress;
+            $userAddress_billing_address->account_id = $userInfo->account_id;
+            $userAddress_billing_address->address_1 = $data['address_1'];
+            $userAddress_billing_address->address_2 = $data['address_2'];
+            $userAddress_billing_address->address_3 = $data['address_3'];
+            $userAddress_billing_address->postcode = $data['postcode'];
+            $userAddress_billing_address->city = $data['city'];
+            $userAddress_billing_address->state_id = $data['state'];
+            $userAddress_billing_address->is_shipping_address = 0;
+            $userAddress_billing_address->is_residential_address = 0;
+            $userAddress_billing_address->is_mailing_address = 1;
+            $userAddress_billing_address->save();
+
+            $userAddress_shipping_Address = new UserAddress;
+            $userAddress_shipping_Address->account_id = $userInfo->account_id;
+            $userAddress_shipping_Address->address_1 = $data['address_1'];
+            $userAddress_shipping_Address->address_2 = $data['address_2'];
+            $userAddress_shipping_Address->address_3 = $data['address_3'];
+            $userAddress_shipping_Address->postcode = $data['postcode'];
+            $userAddress_shipping_Address->city = $data['city'];
+            $userAddress_shipping_Address->state_id = $data['state'];
+            $userAddress_shipping_Address->is_shipping_address = 1;
+            $userAddress_shipping_Address->is_residential_address = 0;
+            $userAddress_shipping_Address->is_mailing_address = 0;
+            $userAddress_shipping_Address->save();
 
             if ($data['contact_number_home'] != null) {
                 // User_contacts table (Home).
@@ -453,24 +465,37 @@ class RegisterController extends Controller
             $dealerAddress->postcode = $data['postcode'];
             $dealerAddress->city = $data['city'];
             $dealerAddress->state_id = $data['state'];
-            $dealerAddress->is_shipping_address = 1;
-            $dealerAddress->is_residential_address = 1;
+            $dealerAddress->is_shipping_address = 0;
+            $dealerAddress->is_residential_address = 0;
             $dealerAddress->is_mailing_address = 1;
             $dealerAddress->save();
 
-            // User_addresses table.
-            $userAddress = new UserAddress;
-            $userAddress->account_id = $userInfo->account_id;
-            $userAddress->address_1 = $data['address_1'];
-            $userAddress->address_2 = $data['address_2'];
-            $userAddress->address_3 = $data['address_3'];
-            $userAddress->postcode = $data['postcode'];
-            $userAddress->city = $data['city'];
-            $userAddress->state_id = $data['state'];
-            $userAddress->is_shipping_address = 1;
-            $userAddress->is_residential_address = 1;
-            $userAddress->is_mailing_address = 1;
-            $userAddress->save();
+            // User_addresses table (create two rows for billing address and shipping address)
+            $userAddress_billing_address = new UserAddress;
+            $userAddress_billing_address->account_id = $userInfo->account_id;
+            $userAddress_billing_address->address_1 = $data['address_1'];
+            $userAddress_billing_address->address_2 = $data['address_2'];
+            $userAddress_billing_address->address_3 = $data['address_3'];
+            $userAddress_billing_address->postcode = $data['postcode'];
+            $userAddress_billing_address->city = $data['city'];
+            $userAddress_billing_address->state_id = $data['state'];
+            $userAddress_billing_address->is_shipping_address = 0;
+            $userAddress_billing_address->is_residential_address = 0;
+            $userAddress_billing_address->is_mailing_address = 1;
+            $userAddress_billing_address->save();
+
+            $userAddress_shipping_address = new UserAddress;
+            $userAddress_shipping_address->account_id = $userInfo->account_id;
+            $userAddress_shipping_address->address_1 = $data['address_1'];
+            $userAddress_shipping_address->address_2 = $data['address_2'];
+            $userAddress_shipping_address->address_3 = $data['address_3'];
+            $userAddress_shipping_address->postcode = $data['postcode'];
+            $userAddress_shipping_address->city = $data['city'];
+            $userAddress_shipping_address->state_id = $data['state'];
+            $userAddress_shipping_address->is_shipping_address = 1;
+            $userAddress_shipping_address->is_residential_address = 0;
+            $userAddress_shipping_address->is_mailing_address = 0;
+            $userAddress_shipping_address->save();
 
             // User_contacts table (Home).
             if ($data['contact_number_home'] != null) {
@@ -490,7 +515,7 @@ class RegisterController extends Controller
 
             // Dealer_contacts table (Mobile).
             $dealerContactMobile = new DealerContact;
-            $dealerContactMobile->account_id = $userInfo->account_id;
+            $dealerContactMobile->account_id = $largestDealerId;
             $dealerContactMobile->contact_num = $data['contact_number_mobile'];
             $dealerContactMobile->is_mobile = 1;
             $dealerContactMobile->save();
@@ -498,14 +523,14 @@ class RegisterController extends Controller
             // Dealer_contacts table (Home).
             if ($data['contact_number_home'] != null) {
                 $dealerContactHome = new DealerContact;
-                $dealerContactHome->account_id = $userInfo->account_id;
+                $dealerContactHome->account_id = $largestDealerId;
                 $dealerContactHome->contact_num = $data['contact_number_home'];
                 $dealerContactHome->is_home = 1;
                 $dealerContactHome->save();
             }
             // Dealer_spouse table
             $dealerSpouse = new DealerSpouse;
-            $dealerSpouse->account_id = $userInfo->account_id;
+            $dealerSpouse->account_id = $largestDealerId;
             $dealerSpouse->spouse_name = $data['spouse_full_name'];
             $dealerSpouse->spouse_nric = $data['spouse_nric'];
             $dealerSpouse->spouse_date_of_birth = $data['spouse_date_of_birth'];
@@ -516,7 +541,7 @@ class RegisterController extends Controller
             $dealerSpouse->save();
             // Dealer_employment
             $dealerEmployment = new DealerEmployment;
-            $dealerEmployment->account_id = $userInfo->account_id;
+            $dealerEmployment->account_id = $largestDealerId;
             $dealerEmployment->employment_type = $data['employment_id'];
             $dealerEmployment->company_name = $data['employment_name'];
             $dealerEmployment->company_address_1 = $data['company_address_1'];
