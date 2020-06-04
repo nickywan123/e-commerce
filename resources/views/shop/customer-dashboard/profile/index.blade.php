@@ -30,16 +30,16 @@
            <div class="row">
                <div class="col-4">
                 <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header "
-               style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>User Profile</strong></a>
+               style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>My Profile</strong></a>
                </div>
                @hasrole('dealer')
                <div class="col-4">
-                <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header " ><strong>Dealer Information</strong></a>
+                <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header " ><strong>Dealer Profile</strong></a>
                </div>
                @endhasrole
                @hasrole('panel')
                <div class="col-4">
-                <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header " ><strong>Panel: Company Information</strong></a>
+                <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header " ><strong>Panel Profile</strong></a>
                </div>
                @endhasrole          
            </div>
@@ -102,7 +102,8 @@
                         <label for="company_address" class="col-md-2 col-form-label">Billing Address</label>
                         <div class="col-md-9">
                             <input type="text" name="company_name" id="company_name"
-                                value="{{$customerInfo->userInfo->mailingAddress->address_1}},{{$customerInfo->userInfo->mailingAddress->address_2}},{{$customerInfo->userInfo->mailingAddress->address_3}},{{$customerInfo->userInfo->mailingAddress->postcode}},{{$customerInfo->userInfo->mailingAddress->city}},Malaysia"
+                           
+                                value="{{$customerInfo->userInfo->mailingAddress->address_1}} {{$customerInfo->userInfo->mailingAddress->address_2}} {{$customerInfo->userInfo->mailingAddress->address_3}} {{$customerInfo->userInfo->mailingAddress->postcode}} {{$customerInfo->userInfo->mailingAddress->city}},Malaysia"
                                 class="form-control  @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
@@ -138,7 +139,7 @@
                         <label for="company_address" class="col-md-2 col-form-label">Shipping Address</label>
                         <div class="col-md-9">
                             <input type="text" name="company_name" id="company_name"
-                                value="{{$customerInfo->userInfo->shippingAddress->address_1}},{{$customerInfo->userInfo->shippingAddress->address_2}},{{$customerInfo->userInfo->shippingAddress->address_3}},{{$customerInfo->userInfo->shippingAddress->postcode}},{{$customerInfo->userInfo->shippingAddress->city}},Malaysia"
+                                value="{{$customerInfo->userInfo->shippingAddress->address_1}} {{$customerInfo->userInfo->shippingAddress->address_2}} {{$customerInfo->userInfo->shippingAddress->address_3}} {{$customerInfo->userInfo->shippingAddress->postcode}} {{$customerInfo->userInfo->shippingAddress->city}},Malaysia"
                                 class="form-control  @error('company_name') is-invalid @enderror"
                                 value="{{ old('company_name') }}" readonly>
                         </div>
@@ -243,16 +244,16 @@
     <div class="row">
         <div class="col-4">
          <i class="fa fa-user mr-1"></i> <a href="{{route('shop.dashboard.customer.profile')}}" class="text-color-header " style="border-bottom: 2px solid rgb(250, 172, 24);" 
-         ><strong>User Profile</strong></a>
+         ><strong>My Profile</strong></a>
         </div>
         @hasrole('dealer')
         <div class="col-4">
-         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header " ><strong>Dealer Information</strong></a>
+         <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header " ><strong>Dealer Profile</strong></a>
         </div>
         @endhasrole
         @hasrole('panel')
         <div class="col-4">
-         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header " ><strong>Panel: Company Information</strong></a>
+         <i class="fa fa-building-o mr-1"></i><a href="{{route('management.company.profile')}}" class="text-color-header " ><strong>Panel Profile</strong></a>
         </div>
         @endhasrole          
     </div>

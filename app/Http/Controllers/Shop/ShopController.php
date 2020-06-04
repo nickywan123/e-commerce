@@ -78,6 +78,12 @@ class ShopController extends Controller
         return view('shop.footer-pages.bujishu-service');
     }
 
+    /*Show FAQ Page**/
+    public function faq()
+    {
+        return view('shop.footer-pages.faq');
+    }
+
     /***Return privacy policy**/
 
     public function privacyPolicy()
