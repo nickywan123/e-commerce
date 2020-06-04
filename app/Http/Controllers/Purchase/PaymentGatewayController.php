@@ -15,6 +15,7 @@ use App\Models\Users\User;
 use Auth;
 use Illuminate\Support\Facades\URL;
 use App\Models\Categories\Category;
+use App\Models\Users\Customers\Cart;
 use App\Models\Users\Dealers\DealerSales;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
@@ -220,7 +221,17 @@ class PaymentGatewayController extends Controller
             // TODO: Move this to OfflinePaymentController later!
             // Admin is supposed to verify offline payment first before it is labeled success.
             // Temporary solution for deadlines on 17/04/2020.
-            foreach ($user->carts as $cartItem) {
+            $productIds = [];
+            foreach ($purchase->orders as $orderKey => $order) {
+                foreach ($order->items as $itemKey => $item) {
+                    $productIds[$itemKey] = $item->product_id;
+                }
+            }
+            $cartItems = Cart::where('user_id', $user->id)
+                ->where('status', 2001)
+                ->whereIn('product_id', $productIds)
+                ->get();
+            foreach ($cartItems as $cartItem) {
                 $cartItem->status = 2003;
                 $cartItem->save();
             }

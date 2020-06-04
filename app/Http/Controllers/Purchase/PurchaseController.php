@@ -267,22 +267,19 @@ class PurchaseController extends Controller
             //Assign PO number to order
             $dealer_sales->order_number = $po_number;
 
-
             //Assign purchase id to dealer sales
             $dealer_sales->purchase_id = $purchase->id;
 
             //Assign dealer id to the order record
-            $dealer_sales->account_id = $user->dealerInfo->account_id;
+            // FIXME: What if the customer is not a dealer?
+            // Wan replaced with refferer_id instead of using dealer ID from dealer account.
+            $dealer_sales->account_id = $user->userInfo->referrer_id;
 
             //Assign empty value for order amount first
             $dealer_sales->order_amount = $orderAmount;
 
             // Assign a status for the order. Placed, Shipped, Delivered.
             $dealer_sales->order_status = 1000;
-
-            //dd($dealer_sales);
-            // $dealer_sales->save();
-
 
             $panelId = $key;
 
