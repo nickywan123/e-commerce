@@ -35,7 +35,7 @@
         <main class="main">
 
             @yield('breadcrumbs')
-            <div class="container-fluid" style="padding:3rem">
+            <div class="container-fluid" style="padding-top:3rem">
                 <div class="animated fadeIn">
                     <!-- Content Here -->
                     @yield('content')

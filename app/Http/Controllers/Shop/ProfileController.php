@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Shop;
 use Auth;
 use App\Models\Users\User;
 use Illuminate\Http\Request;
+use App\Models\Globals\State;
 use App\Models\Categories\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
@@ -58,9 +59,11 @@ class ProfileController extends Controller
 
     public function edit()
     {
-
+        $states= State::all();
         $customerInfo = User::find(Auth::user()->id);
-        return view('shop.customer-dashboard.profile.edit')->with('customerInfo', $customerInfo);
+        return view('shop.customer-dashboard.profile.edit')
+                ->with('customerInfo', $customerInfo)
+                ->with('states',$states);
     }
 
     // Update user profile information
@@ -78,24 +81,22 @@ class ProfileController extends Controller
             'mobile_phone' => 'required|digits:10'
         ));
 
-
+        //Get user info
         $customerInfo = User::findOrFail($id);
-
-
         $name = $customerInfo->userInfo;
-        $shipTo = $customerInfo->userInfo->shippingAddress;
         $billTo = $customerInfo->userInfo->mailingAddress;
+        $shipTo = $customerInfo->userInfo->shippingAddress;
         $contact = $customerInfo->userInfo->mobileContact;
 
         $name->full_name = $request->input('full_name');
         $name->save();
-
 
         $billTo->address_1 = $request->input('billing_address_1');
         $billTo->address_2 = $request->input('billing_address_2');
         $billTo->address_3 = $request->input('billing_address_3');
         $billTo->postcode = $request->input('billing_postcode');
         $billTo->city = $request->input('billing_city');
+        $billTo->state_id = $request->input('billing_state');
         $billTo->save();
 
         $shipTo->address_1 = $request->input('shipping_address_1');
@@ -103,6 +104,7 @@ class ProfileController extends Controller
         $shipTo->address_3 = $request->input('shipping_address_3');
         $shipTo->postcode = $request->input('shipping_postcode');
         $shipTo->city = $request->input('shipping_city');
+        $shipTo->state_id = $request->input('shipping_state');
         $shipTo->save();
 
         $contact->contact_num = $request->input('mobile_phone');

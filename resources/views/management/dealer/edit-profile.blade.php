@@ -16,8 +16,7 @@
     
 <form action="{{route('shop.dashboard.dealer.profile.update',[$dealerProfile->account_id])}}" method="POST">
  <input type="hidden" name="_method" value="PATCH">
- <input type="hidden" name="_token" value="{{ csrf_token() }}">
-   
+ <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
   <div class="row">
     <div class="offset-md-1 col-12 col-md-10">
         <div class="row">
@@ -38,13 +37,13 @@
         <div class="card shadow-sm">
           <div class="card-body">
             <div class="form-group row ">
-                <div class="col-md-4">
+                <div class="col-md-4 m-0">
                   <h4>Dealer Information</h4>
                 </div>
             </div><hr>
             <div class="form-group row ">
                 <label for="dealer_id" class="col-md-2 col-form-label">Dealer ID</label>
-                <div class="col-md-4">
+                <div class="col-md-4 m-0">
                   <input type="text" name="dealer_id" id="dealer_id"
                          value="{{$dealerProfile->account_id}}"
                          class="form-control @error('dealer_id') is-invalid @enderror"
@@ -53,7 +52,7 @@
             </div>           
             <div class="form-group row ">
                 <label for="gender" class="col-md-2 col-form-label">Gender</label>
-                <div class="col-md-9">
+                <div class="col-md-9 m-0">
                   <input type="text" name="gender" id="gender"
                         @if($dealerProfile->gender_id===1)
                         value="Male"
@@ -75,16 +74,19 @@
                      <option value="{{ $marital->id }}" {{ ($marital->id == $dealerProfile->marital_id)? 'selected' : '' }}>{{ $marital->name }}</option>
                     @endforeach
                   </select>
-                </div>    
+                </div>
+                @error('marital_id')
+                <small class="form-text text-danger">{{ $message }}</small>
+                @enderror    
             </div>
             <div class="form-group row ">
-                <div class="col-md-4">
+                <div class="col-md-4 m-0 mt-md-2">
                   <h4>Employment Details</h4>
                 </div>
             </div><hr>
             <div class="form-group row ">
                 <label for="dealer_company_name" class="col-md-2 col-form-label">Company Name</label>
-                <div class="col-md-9">
+                <div class="col-md-9 m-0">
                     <input type="text" name="dealer_company_name" id="dealer_company_name"
                            value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_name : '' }}"
                            class="form-control @error('dealer_company_name') is-invalid @enderror"
@@ -93,7 +95,7 @@
             </div>
             <div class="form-group row ">
                 <label for="dealer_company_address_1" class="col-md-2 col-form-label">Company Address</label>
-                <div class="col-md-9">
+                <div class="col-md-9 m-0">
                     <input type="text" name="dealer_company_address_1" id="dealer_company_address_1"
                            value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_address_1 : '' }} "
                            class="form-control @error('dealer_company_address_1') is-invalid @enderror"
@@ -104,7 +106,7 @@
                             @enderror
             </div>
             <div class="form-group row ">                         
-                <div class="offset-2 col-md-9">
+                <div class="offset-md-2 col-md-9">
                 <input type="text" name="dealer_company_address_2" id="dealer_company_address_2"
                        value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_address_2 : '' }}"
                        class="form-control @error('dealer_company_address_2') is-invalid @enderror"
@@ -115,7 +117,7 @@
                        @enderror
             </div>
             <div class="form-group row ">                         
-                <div class="offset-2 col-md-9">
+                <div class="offset-md-2 col-md-9">
                   <input type="text" name="dealer_company_address_3" id="dealer_company_address_3"
                          value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_address_3 : '' }}"
                          class="form-control @error('dealer_company_address_3') is-invalid @enderror"
@@ -127,7 +129,7 @@
             </div>
             <div class="form-group row ">
               <label for="dealer_company_city" class="col-md-2 col-form-label">Company City</label>
-              <div class="col-md-4">
+              <div class="col-md-9 m-0">
                   <input type="text" name="dealer_company_city" id="dealer_company_city"
                          value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_city: '' }}"
                          class="form-control @error('dealer_company_city') is-invalid @enderror"
@@ -139,7 +141,7 @@
             </div>
             <div class="form-group row ">
               <label for="dealer_company_postcode" class="col-md-2 col-form-label">Company Postcode</label>
-              <div class="col-md-4">
+              <div class="col-md-9 m-0">
                 <input type="text" name="dealer_company_postcode" id="dealer_company_postcode"
                                    value="{{($dealerProfile->employmentAddress) ? $dealerProfile->employmentAddress->company_postcode : '' }}"
                                    class="form-control @error('dealer_company_postcode') is-invalid @enderror"
@@ -150,13 +152,26 @@
                         @enderror
             </div>
             <div class="form-group row ">
-              <div class="col-md-4">
+              <label for="dealer_company_state" class="col-md-2 col-form-label">Company State</label>
+              <div class="col-md-9">
+                <select name="dealer_company_state" id="dealer_company_state" class="form-control text-capitalize">
+                  @foreach($states as $state)
+                   <option value="{{ $state->id}}" {{ ($state->id == $dealerProfile->employmentAddress->company_state_id)? 'selected' : '' }}>{{$state->name}}</option>
+                  @endforeach
+                </select>
+              </div>
+                        @error('dealer_company_state')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                        @enderror
+            </div>
+            <div class="form-group row ">
+              <div class="col-md-4  m-0 mt-md-2">
                 <h4>Spouse Information</h4>
               </div>
             </div><hr>
             <div class="form-group row ">
               <label for="spouse_name" class="col-md-2 col-form-label">Spouse Name</label>
-              <div class="col-md-9">
+              <div class="col-md-9 m-0">
                 <input type="text" name="spouse_name" id="spouse_name"
                                    value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_name : '' }}"
                                    class="form-control @error('spouse_name') is-invalid @enderror"
@@ -168,7 +183,7 @@
             </div>
             <div class="form-group row ">
               <label for="spouse_occupation" class="col-md-2 col-form-label">Spouse Occupation</label>
-                <div class="col-md-9">
+                <div class="col-md-9 m-0">
                   <input type="text" name="spouse_occupation" id="spouse_occupation"
                                    value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_occupation : '' }}"
                                    class="form-control @error('spouse_occupation') is-invalid @enderror"
@@ -180,7 +195,7 @@
             </div>
             <div class="form-group row ">
               <label for="spouse_contact" class="col-md-2 col-form-label">Spouse Contact</label>
-                <div class="col-md-9">
+                <div class="col-md-9 m-0">
                   <input type="text" name="spouse_contact" id="spouse_contact"
                                     value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_contact_mobile : '' }}"
                                     class="form-control @error('spouse_contact') is-invalid @enderror"
@@ -192,7 +207,7 @@
             </div>
             <div class="form-group row ">
               <label for="spouse_email" class="col-md-2 col-form-label">Spouse Email</label>
-              <div class="col-md-9">
+              <div class="col-md-9 m-0">
                   <input type="text" name="spouse_email" id="spouse_email"
                                     value="{{($dealerProfile->dealerSpouse) ? $dealerProfile->dealerSpouse->spouse_email : '' }}"
                                     class="form-control @error('spouse_email') is-invalid @enderror"
@@ -203,8 +218,8 @@
                         @enderror
             </div>
             <div class="form-group row">
-                <div class="offset-md-10 col-md-2" >
-                  <input type="submit" class="btn grad2 bjsh-btn-gradient btn-small-screen"
+                <div class="offset-5 offset-md-7 col-md-5">
+                  <input type="submit" class="btn grad2 bjsh-btn-gradient btn-small-screen margin-left-md margin-left-sm margin-left-xs margin-left-tablet margin-left-phone"
                          value="Update Profile">
                 </div>
             </div>
@@ -228,6 +243,38 @@
 .font-family-style{
   font-family:cursive;
 }
+
+@media(min-width:300px) and (max-width:699px){
+  .margin-left-phone{
+    margin-left: 30px;
+  }
+}
+
+@media(min-width:700px) and (max-width:999px){
+  .margin-left-tablet{
+    margin-left: 30px;
+  }
+}
+
+@media(min-width:1000px) and (max-width:1199px){
+  .margin-left-xs{
+    margin-left: 70px;
+  }
+}
+
+@media(min-width:1200px) and (max-width:1599px){
+  .margin-left-sm{
+    margin-left: 185px;
+  }
+}
+
+@media(min-width:1600px) and (max-width:2000px){
+  .margin-left-md{
+    margin-left: 330px;
+  }
+}
+
+
 </style>
 
 @push('script')

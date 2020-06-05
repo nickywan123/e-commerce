@@ -7,15 +7,16 @@ use Auth;
 use Carbon\Carbon;
 use App\Models\Users\User;
 use Illuminate\Http\Request;
+use App\Models\Globals\State;
+use App\Models\Globals\Marital;
 use App\Models\Purchases\Order;
 use App\Models\Purchases\Purchase;
 use App\Http\Controllers\Controller;
 use App\Models\Users\Panels\PanelInfo;
+use App\Models\Users\Dealers\Statement;
 use App\Models\Users\Dealers\DealerInfo;
 use App\Models\Users\Dealers\DealerSales;
-use App\Models\Users\Dealers\Statement;
 use App\Users\Dealers\Statement as DealersStatement;
-use App\Models\Globals\Marital;
 
 class ManagementController extends Controller
 {
@@ -295,12 +296,14 @@ class ManagementController extends Controller
     public function editdealerProfile()
     {
         $maritals = Marital::all();
+        $states= State::all();
 
         $user = User::find(Auth::user()->id);
         $dealerProfile = $user->dealerInfo;
         return view('management.dealer.edit-profile')
             ->with('dealerProfile', $dealerProfile)
-            ->with('maritals', $maritals);
+            ->with('maritals', $maritals)
+            ->with('states',$states);
     }
 
     /** Update dealer profile**/
@@ -333,6 +336,7 @@ class ManagementController extends Controller
         $dealer_employment_address->company_address_3 = $request->input('dealer_company_address_3');
         $dealer_employment_address->company_postcode = $request->input('dealer_company_postcode');
         $dealer_employment_address->company_city = $request->input('dealer_company_city');
+        $dealer_employment_address->company_state_id = $request->input('dealer_company_state');
         $dealer_employment_address->save();
 
         //update dealer spouse information
