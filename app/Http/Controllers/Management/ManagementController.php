@@ -307,24 +307,26 @@ class ManagementController extends Controller
 
     public function updateDealerProfile(Request $request, $id)
     {
-
         $this->validate($request, array(
-
             'dealer_company_name' => 'required',
             'dealer_company_address_1' => 'required',
             'dealer_company_postcode' => 'required|digits:5',
-            'dealer_company_city' => 'required'
-
-
+            'dealer_company_city' => 'required',
+            'spouse_name' =>  'required_if:marital_id,2',
+            'spouse_occupation' => 'required_if:marital_id,2',
+            'spouse_contact' => 'required_if:marital_id,2|nullable|min:10',
+            'spouse_email' => 'required_if:marital_id,2|nullable|email|string'
         ));
 
+        $dealerInfo = new DealerInfo();
+        $dealerInfo = $dealerInfo->where('account_id', $id)->first();
 
-        $dealerProfile = new DealerInfo();
-        $dealerProfile = $dealerProfile->where('account_id', $id)->first();
-        // $dealerProfile->full_name = $request->input('dealer_name');
-        // $dealerProfile->save();
+        //update marital status 
+        $dealerInfo->marital_id = $request->input('marital_id');
+        $dealerInfo->save();
 
-        $dealer_employment_address = $dealerProfile->employmentAddress;
+        //update dealer employment address
+        $dealer_employment_address = $dealerInfo->employmentAddress;
         $dealer_employment_address->company_name = $request->input('dealer_company_name');
         $dealer_employment_address->company_address_1 = $request->input('dealer_company_address_1');
         $dealer_employment_address->company_address_2 = $request->input('dealer_company_address_2');
@@ -333,25 +335,21 @@ class ManagementController extends Controller
         $dealer_employment_address->company_city = $request->input('dealer_company_city');
         $dealer_employment_address->save();
 
-
-
-
-        // $dealer_mobile_contact = $dealerProfile->dealerMobileContact;
-        // $dealer_mobile_contact->contact_num = $request->input('dealer_mobile_contact');
-        // $dealer_mobile_contact->save();
-
-
-
-
-
+        //update dealer spouse information
+        $dealer_spouse_information = $dealerInfo->dealerSpouse;
+        $dealer_spouse_information->spouse_name = $request->input('spouse_name');
+        $dealer_spouse_information->spouse_occupation = $request->input('spouse_occupation');
+        $dealer_spouse_information->spouse_contact_mobile = $request->input('spouse_contact');
+        $dealer_spouse_information->spouse_email = $request->input('spouse_email');
+        $dealer_spouse_information->save();
 
 
 
 
-        if ($dealer_employment_address) {
-            return redirect()->route('shop.dashboard.dealer.profile')->with('dealerProfile', $dealerProfile)->with(['successful_message' => 'Profile updated successfully']);
+        if ($dealerInfo && $dealer_employment_address && $dealer_spouse_information) {
+            return redirect()->route('shop.dashboard.dealer.profile')->with('dealerProfile', $dealerInfo)->with(['successful_message' => 'Profile updated successfully']);
         } else {
-            return redirect()->route('shop.dashboard.dealer.profile')->with('dealerProfile', $dealerProfile)->with(['error_message' => 'Failed to update profile']);
+            return redirect()->route('shop.dashboard.dealer.profile')->with('dealerProfile', $dealerInfo)->with(['error_message' => 'Failed to update profile']);
         }
     }
 

@@ -53,7 +53,7 @@
                 <li>
                     <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">
                         <img class="mr-1" src="{{asset('storage/footer/icons/phone.png')}}" alt="phone-icon">
-                         03 2181 8821
+                         03-21818821
                     </p>
                 </li>
                

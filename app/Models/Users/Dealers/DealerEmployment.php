@@ -17,4 +17,12 @@ class DealerEmployment extends Model
 
     // Set mass assignable columns
     protected $fillable = [];
+
+    /**
+     * Get state.
+     */
+    public function state()
+    {
+        return $this->belongsTo('App\Models\Globals\State', 'company_state_id');
+    }
 }
