@@ -23,19 +23,6 @@ class Product extends Model
         'product_rating' => 'double',
     ];
 
-    /**
-     *  Get product's categories.
-     */
-    public function categories()
-    {
-        return $this->belongsToMany(
-            'App\Models\Categories\Category',
-            'piv_category_product',
-            'product_id',
-            'category_id'
-        );
-    }
-
     public function parentProduct()
     {
         return $this->belongsTo('App\Models\Globals\Products\Product', 'global_product_id');

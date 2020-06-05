@@ -434,7 +434,7 @@ class RegisterController extends Controller
             $userInfo->account_id = $largestCustomerId;
             $userInfo->full_name = $data['full_name'];
             $userInfo->nric = $data['nric'];
-            $userInfo->referrer_id = 0;
+            $userInfo->referrer_id = $largestDealerId;
             $userInfo->save();
 
             // Dealer_infos table.

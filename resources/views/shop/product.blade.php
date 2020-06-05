@@ -353,19 +353,38 @@ $deliveryInformation = $panelProduct->deliveries->where('state_id', $userShippin
 
                         <!-- Delivery Fee -->
                         <div class="row no-gutters">
-                            <div class="col-8">
+                            <div class="col-8 mb-1">
                                 <i class="fas fa-truck-loading mr-2 text-muted"></i>
                                 <span>
                                     Delivery Fee
                                 </span>
                             </div>
-                            <div class="col-4 text-right">
-                                <p class="font-weight-bold"> {{ ($deliveryInformation != null) ? 'RM ' . number_format(($deliveryInformation->delivery_fee / 100), 2) : 'Not Available' }}</p>
+                            <div class="col-4 text-right mb-1">
+                                <p class="font-weight-bold mb-0"> {{ ($deliveryInformation != null) ? 'RM ' . number_format(($deliveryInformation->delivery_fee / 100), 2) : 'Not Available' }}</p>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-12">
+                                <?php
+                                $productCategories = $panelProduct->parentProduct->categories;
+
+                                $productCategoriesArray = [];
+
+                                foreach ($productCategories as $key => $productCategory) {
+                                    $productCategoriesArray[$key] = $productCategory->id;
+                                }
+                                ?>
+                                @if($panelProduct->panel->categoriesWithMinPrice->whereIn('category_id', $productCategoriesArray)->first())
+                                <p class="text-muted font-weight-bold">
+                                    Free delivery charges for purchases above RM {{ number_format(($panelProduct->panel->categoriesWithMinPrice->whereIn('category_id', $productCategoriesArray)->first()->free_delivery_min_price / 100), 2) }}
+                                </p>
+                                @endif
                             </div>
                         </div>
 
                         <!-- Installation Fee -->
-                        <div class="row no-gutters">
+                        <!-- TODO: Temporary Hide -->
+                        <!-- <div class="row no-gutters">
                             <div class="col-8">
                                 <i class="fas fa-truck-loading mr-2 text-muted"></i>
                                 <span>Installation Fee</span>
@@ -375,7 +394,7 @@ $deliveryInformation = $panelProduct->deliveries->where('state_id', $userShippin
                                     RM {{ $panelProduct->getDecimalInstallationFee() }}
                                 </p>
                             </div>
-                        </div>
+                        </div> -->
                     </section>
                 </div>
             </div>

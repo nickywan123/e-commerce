@@ -51,11 +51,41 @@ class CartController extends Controller
         // Get user
         $user = User::find(Auth::user()->id);
 
+        $userInfo = $user->userInfo;
+
         $panel = $cartItem->product->panel;
 
-        $activeCartItems = Cart::where('user_id', $user->id)->where('status', 2001)->whereHas('product.panel', function ($q) use ($panel) {
-            $q->where('account_id', $panel->account_id);
-        })->get();
+        $product = PanelProduct::find($cartItem->product_id);
+
+        $userShipping = $userInfo->shippingAddress;
+
+        $productCategories = $product
+            ->parentProduct
+            ->categories;
+
+        $productCategoriesArray = [];
+
+        foreach ($productCategories as $key => $productCategory) {
+            $productCategoriesArray[$key] = $productCategory->id;
+        }
+
+        $freeDeliveryMinPrice = $product
+            ->panel
+            ->categoriesWithMinPrice
+            ->whereIn('category_id', $productCategoriesArray)
+            ->first();
+
+        $activeCartItems = Cart::where('user_id', $user->id)
+            ->where('status', 2001)
+            ->whereHas('product.panel', function ($q) use ($panel) {
+                $q->where('account_id', $panel->account_id);
+            })
+            ->whereHas('product.parentProduct', function ($q) use ($productCategoriesArray) {
+                $q->whereHas('categories', function ($q) use ($productCategoriesArray) {
+                    $q->whereIn('categories.id', $productCategoriesArray);
+                });
+            })
+            ->get();
 
         $totalSubtotalPrice = 0;
 
@@ -63,16 +93,39 @@ class CartController extends Controller
             $totalSubtotalPrice = $totalSubtotalPrice + $activeCartItem->subtotal_price;
         }
 
-        if ($totalSubtotalPrice >= $panel->min_price) {
+        $isDeliveryFree = 0;
+
+        if ($freeDeliveryMinPrice) {
+            if ($totalSubtotalPrice < $freeDeliveryMinPrice->free_delivery_min_price && $freeDeliveryMinPrice->delivery_fee_no_purchase == 1) {
+                $isDeliveryFree = 2;
+            } elseif ($totalSubtotalPrice >= $freeDeliveryMinPrice->free_delivery_min_price) {
+                $isDeliveryFree = 1;
+            } else {
+                $isDeliveryFree = 0;
+            }
+        }
+
+        if ($isDeliveryFree == 1) {
             foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->delivery_fee = 0;
                 $activeCartItem->disabled = 0;
-                $activeCartItem->selected = 1;
+                $activeCartItem->save();
+            }
+        } elseif ($isDeliveryFree == 2) {
+            foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->delivery_fee = 0;
+                $activeCartItem->disabled = 1;
                 $activeCartItem->save();
             }
         } else {
             foreach ($activeCartItems as $activeCartItem) {
-                $activeCartItem->disabled = 1;
-                $activeCartItem->selected = 0;
+                $deliveryFeeForProduct = $activeCartItem
+                    ->product
+                    ->deliveries
+                    ->where('state_id', $userShipping->state_id)
+                    ->first();
+
+                $activeCartItem->delivery_fee = $deliveryFeeForProduct->delivery_fee * $activeCartItem->quantity;
                 $activeCartItem->save();
             }
         }
@@ -100,7 +153,6 @@ class CartController extends Controller
         $userShipping = $userInfo->shippingAddress;
 
         $deliveryFee = $product->deliveries->where('state_id', $userShipping->state_id)->first();
-
         $cartItem->quantity = $request->input('quantity');
         $cartItem->subtotal_price = $cartItem->quantity * $cartItem->unit_price;
         $cartItem->delivery_fee = $deliveryFee->delivery_fee * $request->input('quantity');
@@ -108,9 +160,33 @@ class CartController extends Controller
 
         $panel = $cartItem->product->panel;
 
-        $activeCartItems = Cart::where('user_id', $user->id)->where('status', 2001)->whereHas('product.panel', function ($q) use ($panel) {
-            $q->where('account_id', $panel->account_id);
-        })->get();
+        $productCategories = $product
+            ->parentProduct
+            ->categories;
+
+        $productCategoriesArray = [];
+
+        foreach ($productCategories as $key => $productCategory) {
+            $productCategoriesArray[$key] = $productCategory->id;
+        }
+
+        $freeDeliveryMinPrice = $product
+            ->panel
+            ->categoriesWithMinPrice
+            ->whereIn('category_id', $productCategoriesArray)
+            ->first();
+
+        $activeCartItems = Cart::where('user_id', $user->id)
+            ->where('status', 2001)
+            ->whereHas('product.panel', function ($q) use ($panel) {
+                $q->where('account_id', $panel->account_id);
+            })
+            ->whereHas('product.parentProduct', function ($q) use ($productCategoriesArray) {
+                $q->whereHas('categories', function ($q) use ($productCategoriesArray) {
+                    $q->whereIn('categories.id', $productCategoriesArray);
+                });
+            })
+            ->get();
 
         $totalSubtotalPrice = 0;
 
@@ -118,16 +194,39 @@ class CartController extends Controller
             $totalSubtotalPrice = $totalSubtotalPrice + $activeCartItem->subtotal_price;
         }
 
-        if ($totalSubtotalPrice >= $panel->min_price) {
+        $isDeliveryFree = 0;
+
+        if ($freeDeliveryMinPrice) {
+            if ($totalSubtotalPrice < $freeDeliveryMinPrice->free_delivery_min_price && $freeDeliveryMinPrice->delivery_fee_no_purchase == 1) {
+                $isDeliveryFree = 2;
+            } elseif ($totalSubtotalPrice >= $freeDeliveryMinPrice->free_delivery_min_price) {
+                $isDeliveryFree = 1;
+            } else {
+                $isDeliveryFree = 0;
+            }
+        }
+
+        if ($isDeliveryFree == 1) {
             foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->delivery_fee = 0;
                 $activeCartItem->disabled = 0;
-                $activeCartItem->selected = 1;
+                $activeCartItem->save();
+            }
+        } elseif ($isDeliveryFree == 2) {
+            foreach ($activeCartItems as $activeCartItem) {
+                $activeCartItem->delivery_fee = 0;
+                $activeCartItem->disabled = 1;
                 $activeCartItem->save();
             }
         } else {
             foreach ($activeCartItems as $activeCartItem) {
-                $activeCartItem->disabled = 1;
-                $activeCartItem->selected = 0;
+                $deliveryFeeForProduct = $activeCartItem
+                    ->product
+                    ->deliveries
+                    ->where('state_id', $userShipping->state_id)
+                    ->first();
+
+                $activeCartItem->delivery_fee = $deliveryFeeForProduct->delivery_fee * $activeCartItem->quantity;
                 $activeCartItem->save();
             }
         }

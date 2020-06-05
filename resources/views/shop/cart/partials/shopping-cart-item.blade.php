@@ -1,7 +1,3 @@
-<!-- PHP variables -->
-<?php
-$totalPrice = 10000;
-?>
 <!-- If there's no item in cart, show message -->
 @if($cartItems->count() == 0)
 <div class="col-12 p-1 m-0">
@@ -35,7 +31,7 @@ $totalPrice = 10000;
             </span>
             @if($cartItem->disabled == 1)
             <span class="text-danger ml-1" style="font-size: .8rem;">
-                The seller requires a minimum purchase of RM {{ number_format (($cartItem->product->panel->min_price / 100), 2) }}.
+                Minimum purchase is RM {{ number_format (($cartItem->product->panel->categoriesWithMinPrice[0]->free_delivery_min_price / 100), 2) }}.
             </span>
             @endif
             @if($cartItem->disabled == 2)

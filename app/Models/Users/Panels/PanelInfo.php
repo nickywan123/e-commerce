@@ -38,7 +38,6 @@ class PanelInfo extends Model
         return $this->hasMany('App\Models\Users\UserAddress', 'account_id', 'account_id');
     }
 
-
     /**
      * Get largest panel account id.
      */
@@ -53,10 +52,19 @@ class PanelInfo extends Model
         return $this->hasOne('App\Models\Users\Panels\PanelAddress', 'account_id', 'account_id')
             ->where('is_correspondence_address', 1);
     }
-     /**Get Panel Billing Address**/
-     public function billingAddress()
-     {
-         return $this->hasOne('App\Models\Users\Panels\PanelAddress', 'account_id', 'account_id')
-             ->where('is_billing_address', 1);
-     }
+
+    /**Get Panel Billing Address**/
+    public function billingAddress()
+    {
+        return $this->hasOne('App\Models\Users\Panels\PanelAddress', 'account_id', 'account_id')
+            ->where('is_billing_address', 1);
+    }
+
+    /**
+     * Get panel's categories with its minimum price.
+     */
+    public function categoriesWithMinPrice()
+    {
+        return $this->hasMany('App\Models\Users\Panels\PanelCategories', 'panel_id', 'account_id');
+    }
 }

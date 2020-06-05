@@ -145,11 +145,15 @@ class ShopController extends Controller
 
         foreach ($cartItems as $cartItem) {
             $product = $cartItem->product;
-            $deliveryFee = $product->deliveries->where('state_id', $userAddress->state_id)->first();
+            if ($product->deliveries) {
+                $deliveryFee = $product->deliveries->where('state_id', $userAddress->state_id)->first();
 
-            if ($deliveryFee) {
-                $cartItem->delivery_fee = $deliveryFee->delivery_fee * $cartItem->quantity;
-                $cartItem->disabled = 0;
+                if ($deliveryFee) {
+                    $cartItem->disabled = 0;
+                } else {
+                    $cartItem->delivery_fee = 0;
+                    $cartItem->disabled = 2;
+                }
             } else {
                 $cartItem->delivery_fee = 0;
                 $cartItem->disabled = 2;

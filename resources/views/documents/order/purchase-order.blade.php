@@ -8314,14 +8314,13 @@
         .pr-1 {
             padding-right: .8rem;
         }
-    
-        .page{
+
+        .page {
             page-break-before: always;
         }
-       
     </style>
 
-    
+
 </head>
 
 <body>
@@ -8337,8 +8336,8 @@
     ?>
     <!-- Logo / Letterhead -->
     @foreach($order->items->chunk(5) as $page)
-    
-   
+
+
     <table style="table-layout: fixed; border-collapse: collapse; width: 100%;">
         <tr>
             <td>
@@ -8562,7 +8561,7 @@
         </div>
 
         <div class="row">
-           
+
             <div class="col-xs-12 pl-1 pr-1 page">
                 <div style="border: 1px solid #000; width: 100%; height: 625px;">
                     <table style="width: 100%; ">
@@ -8593,8 +8592,8 @@
                         <?php
                         $iterationNo = 0;
                         ?>
-                       @foreach($page as $item)
-                       
+                        @foreach($page as $item)
+
                         <tr style="font-size: 10pt;">
                             <td style="padding: 16px; text-align: center; vertical-align: top;">
                                 <?php
@@ -8642,213 +8641,213 @@
                         </tr>
                         @endforeach
                     </table>
-                   
+
                 </div>
-               
+
             </div>
             @if (! $loop->last)
-         <div style="page-break-before:always;">
-            @endif
-            @endforeach
-           
-            <div class="col-xs-12 pl-1 pr-1">
-                <div style="width: 100%;">
-                    <table style="width: 100%; font-size: 10pt;">
-                        <tr>
-                            <td style="padding: 4px; width: 5%;">
+            <div style="page-break-before:always;">
+                @endif
+                @endforeach
 
-                            </td>
-                            <td style="padding: 4px; width: 63%;">
+                <div class="col-xs-12 pl-1 pr-1">
+                    <div style="width: 100%;">
+                        <table style="width: 100%; font-size: 10pt;">
+                            <tr>
+                                <td style="padding: 4px; width: 5%;">
 
-                            </td>
-                            <td style="padding: 4px; width: 20.2%">
+                                </td>
+                                <td style="padding: 4px; width: 63%;">
 
-                            </td>
-                            <td style="border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 4px; width: 13%;">
+                                </td>
+                                <td style="padding: 4px; width: 20.2%">
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
+                                </td>
+                                <td style="border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 4px; width: 13%;">
 
-                            </td>
-                            <td rowspan="6" style=" ">
-                                <label for="textarea">Remarks:</label> <br>
-                                <textarea name="remarks" id="" cols="70" rows="8">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td rowspan="6" style=" ">
+                                    <label for="textarea">Remarks:</label> <br>
+                                    <textarea name="remarks" id="" cols="70" rows="8">
                                 </textarea>
-                            </td>
+                                </td>
 
-                            <td style="padding: 6px;">
-                                Subtotal
-                            </td>
-                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
-                                <?php
-                                $subtotal = 0;
+                                <td style="padding: 6px;">
+                                    Subtotal
+                                </td>
+                                <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
+                                    <?php
+                                    $subtotal = 0;
 
-                                foreach ($order->items as $item) {
-                                    $subtotal = $subtotal + $item->subtotal_price;
-                                }
+                                    foreach ($order->items as $item) {
+                                        $subtotal = $subtotal + $item->subtotal_price;
+                                    }
 
-                                ?>
-                                RM {{ number_format(($subtotal / 100), 2)}}
-                            </td>
-                        </tr>
+                                    ?>
+                                    RM {{ number_format(($subtotal / 100), 2)}}
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td>
+                            <tr>
+                                <td>
 
-                            </td>
-                            <td style="padding: 6px;">
-                                Deliver Fee
-                            </td>
-                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
-                                <?php
-                                $deliveryFee = 0;
+                                </td>
+                                <td style="padding: 6px;">
+                                    Deliver Fee
+                                </td>
+                                <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
+                                    <?php
+                                    $deliveryFee = 0;
 
-                                foreach ($order->items as $item) {
-                                    $deliveryFee = $deliveryFee + $item->delivery_fee;
-                                }
+                                    foreach ($order->items as $item) {
+                                        $deliveryFee = $deliveryFee + $item->delivery_fee;
+                                    }
 
-                                ?>
-                                RM {{ number_format(($deliveryFee / 100), 2) }}
-                            </td>
-                        </tr>
+                                    ?>
+                                    RM {{ number_format(($deliveryFee / 100), 2) }}
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td>
+                            <tr>
+                                <td>
 
-                            </td>
-                            <td style="padding: 6px;">
-                                Installation Fee
-                            </td>
-                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
-                                <?php
-                                $installationFee = 0;
+                                </td>
+                                <td style="padding: 6px;">
+                                    Installation Fee
+                                </td>
+                                <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
+                                    <?php
+                                    $installationFee = 0;
 
-                                foreach ($order->items as $item) {
-                                    $installationFee = $installationFee + $item->installation_fee;
-                                }
+                                    foreach ($order->items as $item) {
+                                        $installationFee = $installationFee + $item->installation_fee;
+                                    }
 
-                                ?>
-                                RM {{ number_format(($installationFee / 100), 2) }}
-                            </td>
-                        </tr>
+                                    ?>
+                                    RM {{ number_format(($installationFee / 100), 2) }}
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td>
+                            <tr>
+                                <td>
 
-                            </td>
-                            <td style="padding: 6px;">
-                                Grand Total
-                            </td>
-                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
-                                <?php
-                                $grandTotal = 0;
+                                </td>
+                                <td style="padding: 6px;">
+                                    Grand Total
+                                </td>
+                                <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
+                                    <?php
+                                    $grandTotal = 0;
 
-                                foreach ($order->items as $item) {
-                                    $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
-                                }
+                                    foreach ($order->items as $item) {
+                                        $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
+                                    }
 
-                                ?>
-                                RM {{ number_format(($grandTotal / 100), 2) }}
-                            </td>
-                        </tr>
+                                    ?>
+                                    RM {{ number_format(($grandTotal / 100), 2) }}
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td>
+                            <tr>
+                                <td>
 
-                            </td>
-                            <td style="padding: 6px;">
-                                Amount Paid
-                            </td>
-                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
-                                <?php
-                                $grandTotal = 0;
+                                </td>
+                                <td style="padding: 6px;">
+                                    Amount Paid
+                                </td>
+                                <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
+                                    <?php
+                                    $grandTotal = 0;
 
-                                foreach ($order->items as $item) {
-                                    $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
-                                }
+                                    foreach ($order->items as $item) {
+                                        $grandTotal = $grandTotal + $item->subtotal_price + $item->delivery_fee + $item->installation_fee;
+                                    }
 
-                                ?>
-                                RM {{ number_format(($order->purchase->successfulPayment->amount / 100), 2) }}
-                            </td>
-                        </tr>
+                                    ?>
+                                    RM {{ number_format(($order->purchase->successfulPayment->amount / 100), 2) }}
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td>
+                            <tr>
+                                <td>
 
-                            </td>
-                            <td style="padding: 6px;">
-                                Balance Due
-                            </td>
-                            <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
-                                <?php
-                                $balance = $grandTotal;
-                                $balance = $order->purchase->successfulPayment->amount - $balance;
-                                ?>
-                                RM {{ number_format(($balance / 100) , 2)}}
-                            </td>
-                        </tr>
-                    </table>
+                                </td>
+                                <td style="padding: 6px;">
+                                    Balance Due
+                                </td>
+                                <td style="padding: 4px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000;">
+                                    <?php
+                                    $balance = $grandTotal;
+                                    $balance = $order->purchase->successfulPayment->amount - $balance;
+                                    ?>
+                                    RM {{ number_format(($balance / 100) , 2)}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 45px; width: 100%;">
+
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 pl-1 pr-1">
+                    <p style="font-size: 10pt; font-weight: 600; margin-bottom: 5px;">Terms & Conditions</p>
+                    <p style="font-size: 9pt;">Goods sold are neither returnable nor refundable.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 35px; width: 100%;"></div>
+
+            <div class="row">
+                <div class="col-xs-12 pl-1 pr-1">
+                    <p style="font-size: 9pt; font-weight: 600; text-align: center;">
+                        This is computer generated, no signature is required.
+                    </p>
+                    <div style="width: 100%; border-bottom: 1px solid #000000;">
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 5px; width: 100%;">
+
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4 pl-1 pr-1" style="border-right: 1px solid #000000;">
+                    <p style="padding-top: 5px; margin: 0; font-size: 10pt; font-weight: 600;">
+                        DC SIGNATURE LIVINGSTYLE SDN BHD
+                    </p>
+                    <p style="padding-top: 5px; margin: 0; font-size: 7pt; font-weight: 600;">
+                        Company No: 202001002917 (1359236-K)
+                    </p>
+                </div>
+                <div class="col-xs-8 pl-1 pr-1" style="text-align: center;">
+                    <p style="font-size: 7pt; margin: 0; padding: 5px 0; text-align: center;">
+                        1-26-05 Menara Bangkok Bank, Berjaya Central Park, No 105, Jalan Ampang, 50450 Kuala Lumpur, Malaysia
+                    </p>
+                    <p>
+                        <span style="width: 33%; text-align: center; margin-right: 10px;">
+                            &#9743; 603-2181 8821
+                        </span>
+                        <span style="width: 33%; text-align: center; margin-right: 10px;">
+                            bujishu-cs@delhubdigital.com
+                        </span>
+                        <span style="width: 33%;">
+                            www.bujishu.com
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
-
-        <div style="margin-top: 45px; width: 100%;">
-
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12 pl-1 pr-1">
-                <p style="font-size: 10pt; font-weight: 600; margin-bottom: 5px;">Terms & Conditions</p>
-                <p style="font-size: 9pt;">Goods sold are neither returnable nor refundable.</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 35px; width: 100%;"></div>
-
-        <div class="row">
-            <div class="col-xs-12 pl-1 pr-1">
-                <p style="font-size: 9pt; font-weight: 600; text-align: center;">
-                    This is computer generated, no signature is required.
-                </p>
-                <div style="width: 100%; border-bottom: 1px solid #000000;">
-
-                </div>
-            </div>
-        </div>
-
-        <div style="margin-top: 5px; width: 100%;">
-
-        </div>
-
-        <div class="row">
-            <div class="col-xs-4 pl-1 pr-1" style="border-right: 1px solid #000000;">
-                <p style="padding-top: 5px; margin: 0; font-size: 10pt; font-weight: 600;">
-                    DC SIGNATURE LIVINGSTYLE SDN BHD
-                </p>
-                <p style="padding-top: 5px; margin: 0; font-size: 7pt; font-weight: 600;">
-                    Company No: 202001002917 (1359236-K)
-                </p>
-            </div>
-            <div class="col-xs-8 pl-1 pr-1" style="text-align: center;">
-                <p style="font-size: 7pt; margin: 0; padding: 5px 0; text-align: center;">
-                    1-26-05 Menara Bangkok Bank, Berjaya Central Park, No 105, Jalan Ampang, 50450 Kuala Lumpur, Malaysia
-                </p>
-                <p>
-                    <span style="width: 33%; text-align: center; margin-right: 10px;">
-                        &#9743; 603-2181 8821
-                    </span>
-                    <span style="width: 33%; text-align: center; margin-right: 10px;">
-                        bujishu@gmail.com
-                    </span>
-                    <span style="width: 33%;">
-                        www.bujishu.com
-                    </span>
-                </p>
-            </div>
-        </div>
-    </div>
 
 </body>
 
