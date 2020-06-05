@@ -588,7 +588,7 @@ $deliveryInformation = $panelProduct->deliveries->where('state_id', $userShippin
                                         <div class="p-4 product-details text-justify">
                                             @if($panelProduct->deliveries->count() > 0)
                                             @foreach($panelProduct->deliveries as $availableIn)
-                                            <span class="d-inline-block shadow-sm" style="background-color: #ffff33; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ {{ $availableIn->state->name } }}</span>
+                                            <span class="d-inline-block shadow-sm" style="background-color: #ffff33; padding: 4px 6px; border-radius: 10px; margin: 2px;">{{ $availableIn->state->name }}</span>
                                             @endforeach
                                             @endif
                                         </div>
