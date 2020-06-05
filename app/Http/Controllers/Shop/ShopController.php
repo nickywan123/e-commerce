@@ -145,7 +145,7 @@ class ShopController extends Controller
 
         foreach ($cartItems as $cartItem) {
             $product = $cartItem->product;
-            if ($product->deliveries) {
+            if ($product->deliveries->count() > 0) {
                 $deliveryFee = $product->deliveries->where('state_id', $userAddress->state_id)->first();
 
                 if ($deliveryFee) {
