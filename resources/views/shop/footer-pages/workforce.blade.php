@@ -22,13 +22,13 @@
                   </div>
                   <div class="row">
                       <div class="col-md-12">
-                          <p style="color:#fbcc34">Roles & Responsibilities</p>
+                          <p style="color:#fbcc34; ">Roles & Responsibilities</p>
                           <ul>
                               <li>Very strong in HTML, CSS, JavaScript, Media queries, Bootstrap, Object Oriented JavaScript, Responsive Web Design. </li>
                               <li>Able to create web templates/themes using pure HTML, CSS and JavaScript from scratch based on mock-up designs from Graphic Designer team
                             </li>
                           </ul>
-                          <p style="color:#fbcc34">Job Requirements</p>
+                          <p style="color:#fbcc34;margin-top: 5.3rem;">Job Requirements</p>
                           <ul>
                               <li>
                                 3 to 4 years of experience developing web front-end pages providing cutting-edge UI / UX experience to users.
@@ -51,7 +51,7 @@
                 <div class="card-body">
                   <div class="row">
                       <div class="col-md-12">
-                          <h4 style="font-weight: 700;">Google Flutter Mobile App Developer</h4>
+                          <h4 style="font-weight: 700;">Google Flutter Developer</h4>
                       </div>
                   </div>
                   <div class="row">
@@ -91,12 +91,12 @@
                   </div>
                   <div class="row">
                       <div class="col-md-12">
-                          <p style="color:#fbcc34">Roles & Responsibilities</p>
+                          <p style="color:#fbcc34;">Roles & Responsibilities</p>
                           <ul>
                               <li>To envision how people experience our platform and bring that vision to life in a way that feels inspired and refined.  </li>
                               <li>Take on complex tasks and transform them into intuitive, accessible and easy-to-use solutions.</li>
                           </ul>
-                          <p style="color:#fbcc34">Job Requirements</p>
+                          <p style="color:#fbcc34;margin-top: 6.7rem;">Job Requirements</p>
                           <ul>
                               <li>
                                 Candidate must possess at least a Diploma, Advanced/Higher/Graduate Diploma, Computer Science/Information Technology or equivalent.

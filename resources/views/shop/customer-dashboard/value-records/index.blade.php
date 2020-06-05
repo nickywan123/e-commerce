@@ -7,26 +7,18 @@
 {{--Desktop layout--}}
 
 <div class="hidden-sm" style="min-height: 100vh; ">
-    <div>
-        <div class="row">
-            <div class="col-md-9 mt-4">
+   
+        <div class="row mt-3">
+            <div class="col-md-9">
                 <h3 style="font-size:25pt; font-weight:700;" >Value Records</h3>
             </div>
 
 
-            <div class="col-md-3 mt-5">
-                <strong>
-               {{$purchases->sum('orders_count')}}
-                </strong> orders placed in
-                <select style="background-color:lightgrey" name="year">
-                    <option value="year">2020 </option>
-                  
-                </select>
-            </div>
-
-
+          
         </div>
-        <div class="container-fluid m-2 p-0" >
+        
+        <div class="row container-fluid m-2 p-0" >
+         <div class="col-10 p-0">
             <a href="/shop/dashboard/orders/index" class="orders-text-style"
                 style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>All
                         Orders</strong></a>
@@ -35,7 +27,18 @@
                         Status</strong></a>
             {{-- <a href="#" class="orders-text-style"><strong>Return Orders</strong></a> --}}
             <a href="#" class="orders-text-style"><strong>Pending Star Ratings</strong></a>
+         </div>
+         <div class="col-2">
+                <strong>
+               {{$purchases->sum('orders_count')}}
+                </strong> orders placed in
+                <select style="background-color:lightgrey" name="year">
+                    <option value="year">2020 </option>    
+                </select>
+         </div>
         </div>
+
+        
         <hr>
         @if(!$purchases->isEmpty())
         <div class="card shadow-sm">
@@ -159,7 +162,7 @@
         <a class="btn bjsh-btn-gradient" href="/shop">Continue Shopping</a>
         </div>
         @endif
-    </div>
+    
 </div>
 
 

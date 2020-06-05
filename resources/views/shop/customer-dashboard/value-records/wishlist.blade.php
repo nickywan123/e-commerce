@@ -7,7 +7,7 @@
 
 {{------------------Desktop Layout---------------------}}
 
-<div class="hidden-sm">
+<div class="hidden-sm" style="min-height: 100vh; ">
 
 <div class="row mt-3">
     <div class="col-12">
@@ -15,7 +15,7 @@
     </div> 
 </div>
 
-<br>
+
 
 
 {{-- <div class="row ">

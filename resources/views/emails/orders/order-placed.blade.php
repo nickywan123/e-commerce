@@ -9953,7 +9953,7 @@
 
 <body class="bg-light">
     <div class="container">
-        <img class="mx-auto mt-4 mb-3 d-block" width="126" src="http://bujishu.test/storage/logo/bujishu.png" />
+        <img class="mx-auto mt-4 mb-3 d-block" width="126" src="{{ asset('storage/logo/bujishu-logo-2020.png') }}" />
 
         <div class="card mb-4" style="border-top: 5px solid #ff00bf;">
             <div class="card-body">
