@@ -141,7 +141,7 @@ class ShopController extends Controller
         $userAddress->state_id = $request->input('state_id');
         $userAddress->save();
 
-        $cartItems = $user->carts;
+        $cartItems = $user->carts->where('status', 2001);
 
         foreach ($cartItems as $cartItem) {
             $product = $cartItem->product;
