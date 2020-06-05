@@ -526,9 +526,9 @@
                 </ul>
             </div>
             <div class="col-6 col-md-2 text-center text-md-left">
-             
+
                 <h5 class="pr-1 pl-1 bujishu-gold " style="font-size: 0.9rem;"><img class="mr-1" src="{{asset('/storage/footer/icons/person.png')}}" alt="phone-icon"><b>CUSTOMER SERVICE</b></h5>
-                <ul class="list-unstyled pr-2 pl-2 " >
+                <ul class="list-unstyled pr-2 pl-2 ">
                     <li>
                         <a class="bujishu-white" href="">Bujishu Service</a>
                     </li>
@@ -546,7 +546,7 @@
                     </li> --}}
                 </ul>
             </div>
-    
+
             <div class="col-6 col-md-3 text-center text-md-left">
                 <ul class="list-unstyled pr-2 pl-2 ">
                     <li>
@@ -561,21 +561,21 @@
                     <li>
                         <p class="bujishu-white mb-1 " style="font-size: 0.9rem;">
                             <img class="mr-1" src="{{asset('storage/footer/icons/phone.png')}}" alt="phone-icon">
-                             03 2181 8821
+                            03 2181 8821
                         </p>
                     </li>
-                   
+
                     <li>
                         <a class="bujishu-white mb-1" href="mailto:enquiry@delhubdigital.com" style="font-size: 0.9rem;">
-                        <img class="mr-1" src="{{asset('/storage/footer/icons/email.png')}}" alt="phone-Icon">bujishu-cs@delhubdigital.com
+                            <img class="mr-1" src="{{asset('/storage/footer/icons/email.png')}}" alt="phone-Icon">bujishu-cs@delhubdigital.com
                         </a>
                     </li>
                 </ul>
             </div>
-    
-           
-    
-    
+
+
+
+
             <div class="col-8 offset-4 offset-md-0 col-md-3 text-center text-md-left ">
                 <div style="float:right;">
                     <a target="_blank" href="https://facebook.com/DelhubDigital/">
@@ -589,10 +589,10 @@
                     <h6 class="text-right mb-0 pt-1 pb-1 " style="color:white;">@ 2020 Bujishu. All Rights Reserved</h6>
                 </div>
             </div>
-    
+
         </div>
     </footer>
-    
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -776,15 +776,15 @@
                                             your request to the relevant approved vendor, indicating specific product(s)
                                             and service(s), quantity, price, total purchase price, method of delivery,
                                             requested delivery dates, intended commencement and completion dates
-                                            (for services), and any other special instructions (collectively be reffered to
-                                            as "Purchase Order"). Thereafter, the approved vendor will liase with the
+                                            (for services), and any other special instructions (collectively be referred to
+                                            as "Purchase Order"). Thereafter, the approved vendor will liaise with the
                                             customer directly to confirm the order and to resolve technical and/or other
                                             relevant issues (if any). Then the Company shall receive and order
                                             confirmation from both the approved vendor and the customer.
                                             <strong>
                                                 No cancellation shall be allowed after an order has been confirmed by the
                                                 approved vendor. All payments made by the customers are strictly
-                                                non-refundable and non-trasnferable for any reason whatsoever.
+                                                non-refundable and non-transferable for any reason whatsoever.
                                             </strong>
                                         </p>
                                     </li>
@@ -874,10 +874,10 @@
 
                                     <li>
                                         <p class="paragraph">
-                                            Futher, the Company reserves the right to cancel an order at any time the
+                                            Further, the Company reserves the right to cancel an order at any time the
                                             approved vendor fails to comply with the terms and conditions hereof, the
                                             specific instructions as per the confirmed order, the approved vendor
-                                            becomes bankcrupt or insolvent, the business of the approved vendor is
+                                            becomes bankrupt or insolvent, the business of the approved vendor is
                                             placed under a receiver, assignee or trustee.
                                         </p>
                                     </li>
@@ -885,7 +885,7 @@
                                     <li>
                                         <p class="paragraph">
                                             Any complaints in relation to the product(s) and/or service(s) shall be made
-                                            directly to the approved vendor in writing within fourteen (14) dats from the
+                                            directly to the approved vendor in writing within fourteen (14) days from the
                                             date of acceptance of the product(s) and/or completion of the service(s).
                                             The customer shall give sufficient details of any manufacturing defects on
                                             the product(s) or errors to the approved vendor and the approved vendor
@@ -910,7 +910,7 @@
                                             The company shall not be responsible/liable for all matters in relation to
                                             purchase, manufacture, fabricate, produce, provide, supply and delivery of
                                             all product(s) and/or service(s) purchase by the customers through
-                                            <strong>BUJISHU</strong>. Futher, the Company shall not be held liable for ay claims due
+                                            <strong>BUJISHU</strong>. Further, the Company shall not be held liable for any claims due
                                             to delays, defects, disputes arising between the customers and the
                                             approved vendors. All risk of loss, cost of repair, replacement, make good,
                                             damages (if any) shall not be borne by the Company.
@@ -939,8 +939,8 @@
                                             written agreements and understandings, express or implied. If any of the
                                             terms and conditions above is determined to be invalid, illegal, or
                                             unenforceable, such provisions will be modified only to the extent
-                                            necessarily to make such provices enforcable, and the remaining
-                                            provisions are still valid, legal, and enforcable.
+                                            necessarily to make such provinces enforceable, and the remaining
+                                            provisions are still valid, legal, and enforceable.
                                         </p>
                                     </li>
 
@@ -956,7 +956,7 @@
                                     <li>
                                         <p class="paragraph">
                                             These terms and conditions shall be read together with the order
-                                            form/invoice submittd or to be submitted by you and other relevant
+                                            form/invoice submitted or to be submitted by you and other relevant
                                             documents of the Company, if any. These terms and conditions shall be
                                             supplemental to our order form/invoice.
                                         </p>
@@ -974,10 +974,10 @@
                                             commercially reasonable efforts to mitigate its effects, such party shall give
                                             prompt written notice to the other, its performance shall be excused, and
                                             the time for performance shall be extended for the period of delay or
-                                            inability to perform due to such occurences. Regardless of the excuse of
+                                            inability to perform due to such occurrences. Regardless of the excuse of
                                             Force Majure, if a party is not able to perform within ninety (90) calendar
                                             days after such event, the other may terminate this Agreement. This does
-                                            not apply to oustanding invoices.
+                                            not apply to outstanding invoices.
                                         </p>
                                     </li>
 
@@ -1011,8 +1011,8 @@
 
                                     <li>
                                         <p class="paragraph">
-                                            The terms and conditions stated above shall be governed by and intepreted
-                                            in accordance with the laws of Malaysia and each party hereby agress to
+                                            The terms and conditions stated above shall be governed by and interpreted
+                                            in accordance with the laws of Malaysia and each party hereby agrees to
                                             submit to the exclusive jurisdiction of the Courts of Malaysia.
                                         </p>
                                     </li>
@@ -1028,7 +1028,7 @@
         </div>
     </div>
 
-    
+
 
     <script>
         $(document).ready(function() {

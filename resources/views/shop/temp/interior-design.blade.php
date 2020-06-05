@@ -29,9 +29,9 @@
                 <div class="col-12 col-md-5 pl-2 pr-2 pt-3 pb-3 text-center text-md-left">
                     <h1 class="pl-0 pr-0 mt-3 text-capitalize my-auto" style="font-size: 1.5rem; margin: 0;">
                         {{ $product->name }}
-                        <span style="font-size: 0.7rem; background-color: #fff000; padding: 5px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin: auto; font-weight: 600;">
+                        <span style="font-size: 0.6rem; background-color: #ffbf00; padding: 5px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; margin: auto; background: linear-gradient(to right, #ffbf00 40%,#ffd800 95%); ">
                             {{ $product->quality->name }}
-                        </span>
+                        </span>>
                     </h1>
 
 
