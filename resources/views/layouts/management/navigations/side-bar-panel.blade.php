@@ -20,27 +20,27 @@
             <a href="#" class="sidebar-text-color">Products</a>
                 <ul class="list-unstyled components " >
                     <li class="text-hover" style="font-size:15pt;">
-                        <a href="/wip" style="color: black;">Add Products</a>
+                        <a href="{{route('shop.wip')}}" style="color: black;">Add Products</a>
                     </li>
                     <li class="text-hover" style="font-size:15pt;">
-                        <a  href="/wip" style="color: black;">Update Products</a>
+                        <a  href="{{route('shop.wip')}}" style="color: black;">Update Products</a>
                     </li>
                     <li class="text-hover" style="font-size:15pt;">
-                        <a  href="/wip" style="color: black;">Product Expired</a>
+                        <a  href="{{route('shop.wip')}}"" style="color: black;">Product Expired</a>
                     </li>         
                 </ul>
          </li>
          <li class="text-hover">
-            <a href="/wip" class="sidebar-text-color">Claim</a>
+            <a href="{{route('shop.wip')}}" class="sidebar-text-color">Claim</a>
          </li>
          <li class="text-hover">
-            <a href="/wip" class="sidebar-text-color">KPIR</a>
+            <a href="{{route('shop.wip')}}" class="sidebar-text-color">KPIR</a>
          </li>
          <li class="text-hover">
-            <a href="/wip" class="sidebar-text-color">Notice</a>
+            <a href="{{route('shop.wip')}}" class="sidebar-text-color">Notice</a>
          </li>
          <li class="text-hover">
-            <a href="/wip" class="sidebar-text-color">Promotion/Special Offer</a>
+            <a href="{{route('shop.wip')}}" class="sidebar-text-color">Promotion/Special Offer</a>
          </li>
          {{-- @hasrole('dealer')
          <li class="text-hover">

@@ -184,7 +184,7 @@
 
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" style="color:#f8f9fa; font-size:1.5rem;" href="{{ url('/registrations/dealer') }}">{{ __('Be a Dealer!') }}</a>
+                                <a class="nav-link" style="color:#f8f9fa; font-size:1.5rem;" href="{{ url('/registrations/dealer') }}">{{ __('Be a Agent!') }}</a>
                             </li>
                             @endif
 

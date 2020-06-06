@@ -91,6 +91,16 @@ class ShopController extends Controller
         return view('shop.footer-pages.privacy-policy');
     }
 
+    /***Our Vision,Culture and Value***/
+    public function visionCultureValue(){
+        return view('shop.footer-pages.vision-culture-value');
+    }
+
+    /*****Work in Progress***/
+    public function workInProgress(){
+        return view('shop.work-in-progress');
+    }
+
     /**
      * Handles /shop/product/{product-slug}
      */

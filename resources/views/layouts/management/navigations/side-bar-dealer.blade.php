@@ -20,10 +20,10 @@
             <a href="{{route('management.dealer.statement.home')}}" class="sidebar-text-color ">Monthly Income</a>
          </li>
          <li class="text-hover">
-            <a href="/wip" class="sidebar-text-color ">Notice</a>
+            <a href="{{route('shop.wip')}}" class="sidebar-text-color ">Notice</a>
          </li>
          <li class="text-hover">
-            <a href="/wip" class="sidebar-text-color ">Promotion/Special Offer</a>
+            <a href="{{route('shop.wip')}}" class="sidebar-text-color ">Promotion/Special Offer</a>
          </li>
          {{-- @hasrole('panel')
          <li class="text-hover">

@@ -361,6 +361,12 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         //FAQ Page
         Route::get('/faq', 'Shop\ShopController@faq')->name('shop.faq');
 
+        //Our Vision, Culture and Value
+        Route::get('vision-culture-value','Shop\ShopController@visionCultureValue')->name('shop.vision');
+
+        //Work In Progress Page
+        Route::get('/work-in-progress','Shop\ShopController@workInProgress')->name('shop.wip');
+
         Route::group(['prefix' => 'category'], function () {
             Route::get(
                 '/renovations',

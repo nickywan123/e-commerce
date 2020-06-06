@@ -13,7 +13,7 @@
          </div>
          @hasrole('dealer')
          <div class="col-4">
-          <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header "  ><strong style="color:black; ">Edit Dealer Profile</strong></a>
+          <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile.edit')}}" class="text-color-header "  ><strong style="color:black; ">Edit Agent Profile</strong></a>
          </div>
          @endhasrole
          @hasrole('panel')
