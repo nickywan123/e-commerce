@@ -79,7 +79,7 @@
 
         </div>
         <div class="col-4 col-md-2 text-alignment">
-            <a style=" color:#e0b555; " href="/wip"><img class="icon-image" src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
+            <a style=" color:#e0b555; " href="{{route('shop.wip')}}"><img class="icon-image" src="{{asset('/storage/icons/renovation-icon.png')}}" alt="Icon">
                 <h5 style="font-size:15px;"><b>RENOVATION</b></h5>
             </a>
 

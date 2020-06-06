@@ -2,26 +2,20 @@
 
 @section('content')
 
-
-
-
-
 <div class="container mt-5" style="min-height: 75vh;">
-
     <div class="row">
         <div class="col-12 offset-md-4 col-md-6">
             <h1 style="color:#ffcc00; font-weight:700;">We're here to help</h1>
             <h5 class="ml-md-4" style="color:#ffcc00;">Frequently asked Questions</h5>
         </div>
     </div>
-
     <div class="row mt-md-4">
         <div class="col-12">
             <div class="accordion " id="faqExample">
                 <div class="card" style="border-radius:15px;">
                     <div class="card-header p-2" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn btn-link stretched-link" style="color:black;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-link stretched-link" style="color:black; float:left;" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                               1. How to check my order?
                             </button>
                           </h5>
@@ -38,7 +32,7 @@
                 <div class="card" style="border-radius:15px;">
                     <div class="card-header p-2" id="headingTwo">
                         <h5 class="mb-0">
-                        <button class="btn btn-link collapsed stretched-link" style="color:black;" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="btn btn-link collapsed stretched-link" style="color:black; float:left;" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                           2. How to Contact Bujishu Customer Service?
                         </button>
                       </h5>
@@ -54,7 +48,7 @@
                 <div class="card" style="border-radius:15px;">
                     <div class="card-header p-2" id="headingThree">
                         <h5 class="mb-0">
-                        <button class="btn btn-link collapsed stretched-link" style="color:black;" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="btn btn-link collapsed stretched-link" style="color:black; float:left;" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                           3. How to reset password?
                         </button>
                       </h5>
@@ -71,7 +65,7 @@
                 <div class="card" style="border-radius:15px;">
                     <div class="card-header p-2" id="headingFour">
                         <h5 class="mb-0">
-                        <button class="btn btn-link collapsed stretched-link" style="color:black;" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <button class="btn btn-link collapsed stretched-link" style="color:black; float:left;" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                           4. How to update my personal data?
                         </button>
                       </h5>
@@ -86,7 +80,7 @@
                 <div class="card" style="border-radius:15px; border-bottom:0px;">
                     <div class="card-header p-2" id="headingFive">
                         <h5 class="mb-0">
-                        <button class="btn btn-link collapsed stretched-link" style="color:black;" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <button class="btn btn-link collapsed stretched-link button-left-margin" style="color:black; float:left;" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                            5. Can I change my shipping address after placing an order?
                         </button>
                        </h5>
@@ -105,22 +99,19 @@
                         </div>
                     </div>
                 </div>
-               
-            </div>
-              
-            
+            </div>            
         </div>
     </div>
-
 </div>
 
-
-
-
 <style>
-    .card-border-radius{
-        border-radius: 15px;
-        
+.card-border-radius{
+        border-radius: 15px;    
     }
+@media(max-width:500px){
+        .button-left-margin{
+            margin-left: -1rem;
+    }
+}
 </style>
 @endsection

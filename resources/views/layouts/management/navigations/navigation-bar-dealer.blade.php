@@ -11,12 +11,12 @@
     </button> --}}
    
 
-    <a class="navbar-brand img-logo-margin-left" href="/shop">
-        <img class="navbar-brand-full margin-right-logo-mobile img-logo-resize" src="{{asset('storage/logo/bujishu-logo-2020.png')}}" width="40" height="40" alt="Bujishu Logo">
+    <a class="navbar-brand" href="/shop">
+        <img class="navbar-brand-full margin-logo-mobile img-logo-resize" src="{{asset('storage/logo/bujishu-logo-2020.png')}}" width="40" height="40" alt="Bujishu Logo">
         <img class="navbar-brand-minimized" src="{{asset('storage/logo/bujishu-logo-2020.png')}}" width="30" height="30" alt="Bujishu Logo">
     </a>
 
-    <h4 style="color:#ffcc00;">Welcome to Dealer Dashboard</h4>
+    <h4 class="hidden-sm" style="color:#ffcc00;">Welcome to Agent Dashboard</h4>
 
     <ul class="nav navbar-nav ml-auto">      
       <h5 style="margin-right:10px; color:#ffcc00;" class="welcome-text "  >{{Auth::user()->userInfo->full_name}}</h5> 
@@ -51,6 +51,11 @@
                 <a class="dropdown-item" href="{{ route('shop.dashboard.customer.home') }}">
                     <i class="fa fa-user" style="color:#fbcc34;"></i> My Dashboard         
                 </a>
+                @hasrole('dealer')
+                <a class="dropdown-item" href="{{ route('management.dealer.home') }}">
+                    <i class="fa fa-user" style="color:#fbcc34;"></i> Agent Dashboard         
+                </a>
+                @endhasrole
                 @hasrole('panel')
                 <a class="dropdown-item" href="{{ route('management.panel.home') }}">
                     <i class="fa fa-user" style="color:#fbcc34;"></i> Panel Dashboard         
@@ -72,3 +77,11 @@
     
   
 </header>
+
+<style>
+    @media(max-width:768px){
+    .hidden-sm{
+        display: none;
+    }
+}
+</style>

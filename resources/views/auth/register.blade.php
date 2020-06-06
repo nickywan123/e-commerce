@@ -136,7 +136,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="dealerID" class="col-md-4 col-form-label text-md-right">{{ __('Dealer ID ') }}</label>
+                            <label for="dealerID" class="col-md-4 col-form-label text-md-right">{{ __('Agent ID ') }}</label>
 
                             <div class="col-md-6">
                                 <input id="dealerID" type="text" placeholder="optional" class="form-control @error('dealerID') is-invalid @enderror" name="dealerID" value="{{ old('dealerID') }}" autocomplete="dealerID" autofocus>

@@ -123,11 +123,15 @@ class ManagementController extends Controller
 
     public function editProfile()
     {
+        $states= State::all();
+
         $panel_id = User::find(Auth::user()->id);
         $panel_id = $panel_id->panelInfo->account_id;
         $companyProfile = new PanelInfo();
         $companyProfile = $companyProfile->where('account_id', $panel_id)->first();
-        return view("management.panel.company-profile-edit")->with('companyProfile', $companyProfile);
+        return view("management.panel.company-profile-edit")
+               ->with('companyProfile', $companyProfile)
+               ->with('states',$states);
     }
 
 
@@ -145,7 +149,8 @@ class ManagementController extends Controller
             'company_address_1' => 'required',
             'postcode' => 'required|digits:5',
             'city' => 'required',
-            'company_phone_number' => 'required|digits:10'
+            'company_phone_number' => 'required|digits:10',
+
         ));
 
 
@@ -158,10 +163,9 @@ class ManagementController extends Controller
         $correspondence_address->address_3 = $request->input('company_address_3');
         $correspondence_address->postcode = $request->input('postcode');
         $correspondence_address->city = $request->input('city');
+        $correspondence_address->state_id = $request->input('state');
+
         $correspondence_address->save();
-
-
-
 
         $billing_address = $companyProfile->billingAddress;
         $billing_address->address_1 = $request->input('company_billing_address_1');
@@ -169,6 +173,7 @@ class ManagementController extends Controller
         $billing_address->address_3 = $request->input('company_billing_address_3');
         $billing_address->postcode = $request->input('company_billing_postcode');
         $billing_address->city = $request->input('company_billing_city');
+        $billing_address->state_id = $request->input('billing_state');
         $billing_address->save();
 
 
@@ -176,18 +181,10 @@ class ManagementController extends Controller
         $companyProfile->company_phone = $request->input('company_phone_number');
         $companyProfile->save();
 
-
-
-
-
-
-
-
-
         if ($companyProfile && $correspondence_address && $billing_address) {
-            return view("management.panel.company-profile")->with('companyProfile', $companyProfile)->with(['successful_message' => 'Profile updated successfully']);
+            return redirect()->route('management.company.profile')->with('companyProfile', $companyProfile)->with(['successful_message' => 'Profile updated successfully']);
         } else {
-            return view("management.panel.company-profile")->with('companyProfile', $companyProfile)->with(['error_message' => 'Failed to update profile']);
+            return redirect()->route('management.company.profile')->with('companyProfile', $companyProfile)->with(['error_message' => 'Failed to update profile']);
         }
     }
 
@@ -376,7 +373,7 @@ class ManagementController extends Controller
 
         $dealerProfile = DealerInfo::where('account_id', $dealer_id)->first();
 
-
+        
         $customerPurchase = Purchase::where('dealer_id', $dealer_id)->get();
 
 

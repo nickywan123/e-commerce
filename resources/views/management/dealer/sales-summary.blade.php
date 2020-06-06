@@ -204,7 +204,7 @@ new Chart(document.getElementById("doughnut-chart"), {
                 <thead class="">
                     <tr>
                     <th colspan="5" >
-                        <strong style="font-size: 20px;"> Dealer Performance</strong>
+                        <strong style="font-size: 20px;"> Agent Performance</strong>
                     </th>
            
                          

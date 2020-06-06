@@ -63,7 +63,7 @@
              <td>2020/03/15</td>      
            </tr>
            <tr> 
-             <td>Dealer Code</td>
+             <td>Agent Code</td>
              <td>32362245</td>      
            </tr>
            <tr> 

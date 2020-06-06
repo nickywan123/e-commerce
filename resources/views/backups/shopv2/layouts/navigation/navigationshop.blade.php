@@ -73,7 +73,7 @@
                             <a href="" class=" btn grad1"><b>PANEL</b></a>
                         </li>
                         <li class="nav-item m-1">
-                            <a href="" class="btn grad1"><b>DEALER</b></a>
+                            <a href="" class="btn grad1"><b>AGENT</b></a>
                         </li>
                     </ul>
                 </div>

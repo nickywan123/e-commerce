@@ -473,7 +473,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
             <img src="{{asset('/storage/dealer/icons/img_avatar.png')}}" style="border-radius:50%; max-width: 70px;" alt="Dealer-Image">
           </div>
           <div class="col-9 col-md-9"> 
-              <p class="text-bold" >Dealer</p> 
+              <p class="text-bold" >Agent</p> 
               <p style="color: #d6d4d4; line-height:10px; font-size:14pt;">Billing Address:</p>
               <p style="font-size:11px; font-weight:bold; line-height: 1px; font-size:11pt;">Manas Hotel 285-287, Jalan Tunku Abdul</p>
               <p style="font-size:11px; font-weight:bold; line-height: 1px; font-size:11pt;">Rahman 50100 Kuala Lumpur,Malaysia</p>
@@ -669,7 +669,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
             <img src="{{asset('/storage/dealer/icons/img_avatar.png')}}" style="border-radius:50%; max-width: 70px;" alt="Dealer-Image">
           </div>
           <div class="col-9"> 
-              <p class="text-bold" >Dealer</p> 
+              <p class="text-bold" >Agent</p> 
               <p style="color: #d6d4d4; line-height:10px;">Billing Address:</p>
               <p style="font-size:11px; font-weight:bold; line-height: 1px;">Manas Hotel 285-287, Jalan Tunku Abdul</p>
               <p style="font-size:11px; font-weight:bold; line-height: 1px;">Rahman 50100 Kuala Lumpur,Malaysia</p>
@@ -933,7 +933,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
               <img src="{{asset('/storage/dealer/icons/img_avatar.png')}}" style="border-radius:50%; max-width: 70px;" alt="Dealer-Image">
             </div>
             <div class="col-9 col-md-9"> 
-                <p class="text-bold" >Dealer</p> 
+                <p class="text-bold" >Agent</p> 
                 <p style="color: #d6d4d4; line-height:10px; font-size:14pt;">Billing Address:</p>
                 <p style=" font-weight:bold; line-height: 1px; font-size:10pt;">Manas Hotel 285-287, Jalan Tunku Abdul</p>
                 <p style=" font-weight:bold; line-height: 1px; font-size:10pt;">Rahman 50100 Kuala Lumpur,Malaysia</p>

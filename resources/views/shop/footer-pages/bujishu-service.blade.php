@@ -1,4 +1,4 @@
-@extends('layouts.shop.main')
+@extends('layouts.shop.main-bg-img')
 
 @section('content')
 

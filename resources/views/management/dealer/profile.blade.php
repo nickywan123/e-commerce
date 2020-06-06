@@ -22,7 +22,7 @@
         </div>
         @hasrole('dealer')
         <div class="col-4">
-          <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header" style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Dealer Profile</strong></a>
+          <i class="fa fa-address-book-o mr-1"></i> <a href="{{route('shop.dashboard.dealer.profile')}}" class="text-color-header" style="border-bottom: 2px solid rgb(250, 172, 24);" ><strong>Agent Profile</strong></a>
         </div>
         @endhasrole
         @hasrole('panel')
@@ -35,12 +35,12 @@
       <div class="card-body">   
         <div class="form-group row ">
          <div class="col-md-12 m-0" style="display: flex;">
-            <h4>Dealer Information</h4>
+            <h4>Agent Information</h4>
             <a style="margin-left:1rem;" href="{{route('shop.dashboard.dealer.profile.edit')}}"><i class="fa fa-pencil bujishu-gold"></i></a> 
          </div>
         </div><hr>
         <div class="form-group row ">
-         <label for="user_id" class="col-md-2 col-form-label">Dealer ID</label>
+         <label for="user_id" class="col-md-2 col-form-label">Agent ID</label>
          <div class="col-md-4 m-0">
           <input type="text" name="user_id"
                  value="{{$dealerProfile->account_id}}" id="user_id"
