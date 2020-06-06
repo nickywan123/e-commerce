@@ -268,7 +268,7 @@ class ShopController extends Controller
      */
     public function interiorDesign(Request $request)
     {
-        $panelId = 1918000020;
+        $panelId = 1918000101;
 
         $product = Product::where('name_slug', 'renovation')
             ->with('images')
