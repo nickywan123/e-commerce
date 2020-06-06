@@ -25,7 +25,7 @@ $deliveryInformation = $panelProduct->deliveries->where('state_id', $userShippin
                 <div class="col-12 col-md-4 p-2 text-center mb-0">
                     <div style="max-width: 25rem; height: auto; margin: 0 auto;">
                         <div class="slider slider-single">
-                            @foreach($product->images as $image)
+                            @foreach($product->images->where('brand', '!=', 1) as $image)
                             <div>
                                 <img class="mw-100" src="{{ asset('storage/' . $image->path . '/' . $image->filename) }}" alt="">
                             </div>
