@@ -8367,7 +8367,7 @@
                               ADDRESS
                          </td>
                          <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                              {{$dealerProfile->billingAddress->address_1}}
+                              {{$userInfo->mailingAddress->address_1}}
                          </td>
                        </tr>
            
@@ -8376,7 +8376,7 @@
                                
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{$dealerProfile->billingAddress->address_2}}
+                                {{$userInfo->mailingAddress->address_2}}
                             </td>
                         </tr>
                         <tr>  
@@ -8384,7 +8384,7 @@
                                
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{$dealerProfile->billingAddress->address_3}}
+                                {{$userInfo->mailingAddress->address_3}}
                             </td>
                         </tr>
                         <tr>  
@@ -8392,7 +8392,7 @@
                                
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                 {{$dealerProfile->billingAddress->postcode}}, {{$dealerProfile->billingAddress->city}}
+                                 {{$userInfo->mailingAddress->postcode}}, {{$userInfo->mailingAddress->city}}
                             </td>
                         </tr>
                         <tr>
@@ -8400,7 +8400,7 @@
                                 CONTACT NO.
                             </td>
                             <td style="font-size: 9pt; padding: 2px 4px; border-bottom: 1px solid #cccccc; margin: 0;">
-                                {{$dealerProfile->dealerMobileContact->contact_num}}
+                                {{$userInfo->mobileContact->contact_num}}
                             </td>
                         </tr>
                         

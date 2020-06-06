@@ -87,6 +87,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Models\Users\UserAddress', 'user_id');
     }
 
+     /**
+     * Get the user's billing address.
+     */
+    public function billingAddress()
+    {
+        return $this->hasOne('App\Models\Users\UserAddress', 'account_id')->where('is_mailing_address', 1);
+    }
+
     /**
      * Get the user's shipping address.
      */
@@ -102,6 +110,13 @@ class User extends Authenticatable implements MustVerifyEmail
     public function userContacts()
     {
         return $this->hasMany('App\Models\Users\UserContact', 'user_id');
+    }
+     /**
+     * Get the user's mobile contact.
+     */
+    public function mobileContact()
+    {
+        return $this->hasOne('App\Models\Users\UserContact', 'account_id')->where('is_mobile', 1);
     }
 
     /**

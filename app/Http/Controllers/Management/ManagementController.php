@@ -373,6 +373,7 @@ class ManagementController extends Controller
 
         $dealerProfile = DealerInfo::where('account_id', $dealer_id)->first();
 
+        $userInfo = Auth::user()->userInfo;
         
         $customerPurchase = Purchase::where('dealer_id', $dealer_id)->get();
 
@@ -380,7 +381,7 @@ class ManagementController extends Controller
 
 
 
-        $pdf = PDF::loadView('documents.statement.monthly-statement', compact('dealerProfile', 'customerPurchase', 'month', 'month_num', 'year'))->setPaper('A4');
+        $pdf = PDF::loadView('documents.statement.monthly-statement', compact('dealerProfile', 'customerPurchase','userInfo', 'month', 'month_num', 'year'))->setPaper('A4');
         return $pdf->stream('statement.pdf');
     }
 
