@@ -15,7 +15,7 @@
                     @endif
                     @if(!Request::is('register-dealer'))
                     <li class="nav-item m-1">
-                        <a href="/register-dealer " class="btn  grad2 bjsh-btn-gradient btn-small-screen"><b>{{ __('Be A DEALER') }}</b></a>
+                        <a href="/register-dealer " class="btn  grad2 bjsh-btn-gradient btn-small-screen"><b>{{ __('BE AN AGENT') }}</b></a>
                     </li>
                     @endif
                 </ul>

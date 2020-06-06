@@ -30,7 +30,7 @@ class CartController extends Controller
                 $this->cart = Auth::user()->carts->where('status', 2001);
             }
             // Get all categories, with subcategories and its images.
-            $categories = Category::topLevelCategory();
+            $categories = Category::orderBy('order', 'ASC')->topLevelCategory();
 
             // Share the above variable with all views in this controller.
             View::share('categories', $categories);

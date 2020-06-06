@@ -24,7 +24,7 @@
 
     <div class="backgroundImage">
         <div class="text-right p-3">
-            <a href="/register-dealer " class="btn p-2 bjsh-btn-gradient "><b>{{ __('BE A DEALER') }}</b></a>
+            <a href="/register-dealer " class="btn p-2 bjsh-btn-gradient"><b>BE AN AGENT</b></a>
         </div>
 
 
@@ -58,7 +58,7 @@
                     </h2>
                 </div>
             </div>
- 
+
 
             <div class="row mt-4">
                 <div class="col-12 col-md-4 offset-md-4 text-center">
