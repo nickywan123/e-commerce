@@ -9,7 +9,7 @@
     </div>
     <div>
         <div class="card border-rounded-0 bg-bujishu-gold guests-card " style="border-radius: 10px;">
-            <h5 class="text-center bujishu-gold form-card-title " style="border-radius: 10px;">Dealer Registration</h5>
+            <h5 class="text-center bujishu-gold form-card-title " style="border-radius: 10px;">Agent Registration</h5>
             <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
                 <li class="nav-item active">
                     <a class="nav-link register-tab-active active " id="home-tab" data-toggle="tab" href="#registration" role="tab" aria-controls="registration" aria-selected="true">Registration</a>
@@ -32,7 +32,7 @@
                             <h5 class="text-center " style="background-color: #303030; color: #ffffff; padding: .5rem; border: 1px solid #e5e5e5;"><b>ACCOUNT PARTICULARS</b></h5>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="email" >Email</label>
+                                    <label for="email">Email</label>
                                     <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Email" value="{{ old('email') }}">
                                     @error('email')
                                     <small class="form-text text-danger">{{ $message }}</small>
@@ -40,12 +40,12 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="password" >Password</label>
+                                    <label for="password">Password</label>
                                     <input type="password" name="password" class="form-control" id="password">
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="password-confirm" >Confirm Password</label>
+                                    <label for="password-confirm">Confirm Password</label>
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                     <select class="form-control text-capitalize" id="gender_id" name="gender_id">
                                         <option disabled selected value="default">Choose your gender..</option>
                                         @foreach($genders as $gender)
-                                        <option  value="{{ $gender->id }}">{{ $gender->name }}</option>
+                                        <option value="{{ $gender->id }}">{{ $gender->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -100,7 +100,7 @@
                                     <select name="race_id" id="race_id" class="form-control text-capitalize">
                                         <option disabled selected value="default">Choose your race..</option>
                                         @foreach($races as $race)
-                                        <option  value="{{ $race->id }}">{{$race->name }}</option>
+                                        <option value="{{ $race->id }}">{{$race->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -387,41 +387,40 @@
 
 @push('script')
 <script>
-
     // Disable spouse information if marital status is single
     $(document).on('change', 'select[name=marital_id]', function(e) {
-    var el = $(this);
+        var el = $(this);
 
-    if (el.val() == '1' || el.val() == '3') {
-        
-        //reset spouse fields to empty if user input changes to 1 or 3
-         $('input[name=spouse_full_name').val('');
-         $('input[name=spouse_nric').val('');
-         $('input[name=spouse_full_name').val('');
-         $('input[name=spouse_date_of_birth').val('');
-         $('input[name=spouse_occupation').val('');
-         $('input[name=spouse_contact_office').val('');
-         $('input[name=spouse_contact_mobile').val('');
-         $('input[name=spouse_email').val('');
-       
-        //disable spouse information if single
-         $('#spouse_full_name').prop('readonly', true);
-         $('#spouse_nric').prop('readonly', true);
-         $('#spouse_date_of_birth').prop('readonly', true);
-         $('#spouse_occupation').prop('readonly', true);
-         $('#spouse_contact_office').prop('readonly', true);
-         $('#spouse_contact_mobile').prop('readonly', true);
-         $('#spouse_email').prop('readonly', true);
-    } else {
-         $('#spouse_full_name').prop('readonly',false);
-         $('#spouse_nric').prop('readonly',false);
-         $('#spouse_date_of_birth').prop('readonly',false);
-         $('#spouse_occupation').prop('readonly',false);
-         $('#spouse_contact_office').prop('readonly',false);
-         $('#spouse_contact_mobile').prop('readonly',false);
-         $('#spouse_email').prop('readonly',false);
-    }
-});
+        if (el.val() == '1' || el.val() == '3') {
+
+            //reset spouse fields to empty if user input changes to 1 or 3
+            $('input[name=spouse_full_name').val('');
+            $('input[name=spouse_nric').val('');
+            $('input[name=spouse_full_name').val('');
+            $('input[name=spouse_date_of_birth').val('');
+            $('input[name=spouse_occupation').val('');
+            $('input[name=spouse_contact_office').val('');
+            $('input[name=spouse_contact_mobile').val('');
+            $('input[name=spouse_email').val('');
+
+            //disable spouse information if single
+            $('#spouse_full_name').prop('readonly', true);
+            $('#spouse_nric').prop('readonly', true);
+            $('#spouse_date_of_birth').prop('readonly', true);
+            $('#spouse_occupation').prop('readonly', true);
+            $('#spouse_contact_office').prop('readonly', true);
+            $('#spouse_contact_mobile').prop('readonly', true);
+            $('#spouse_email').prop('readonly', true);
+        } else {
+            $('#spouse_full_name').prop('readonly', false);
+            $('#spouse_nric').prop('readonly', false);
+            $('#spouse_date_of_birth').prop('readonly', false);
+            $('#spouse_occupation').prop('readonly', false);
+            $('#spouse_contact_office').prop('readonly', false);
+            $('#spouse_contact_mobile').prop('readonly', false);
+            $('#spouse_email').prop('readonly', false);
+        }
+    });
 
     let currentTab = $('.nav-tabs > .active');
     let nextTab = currentTab.next('li');
@@ -497,7 +496,7 @@
                 required: true,
                 minlength: 3
             },
-          
+
             postcode: {
                 required: true,
                 postcode: true
@@ -523,7 +522,7 @@
             existing_customer: {
                 required: true
             },
-          
+
             employment_id: {
                 required: true,
             },
@@ -595,7 +594,7 @@
             address_1: {
                 required: "Please enter your address"
             },
-           
+
             postcode: {
                 required: "Please enter your postcode"
             },
