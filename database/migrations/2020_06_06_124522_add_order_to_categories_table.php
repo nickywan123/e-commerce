@@ -14,7 +14,7 @@ class AddOrderToCategoriesTable extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->unsignedBigInteger('order')->after('featured')->default(9999);
+            $table->unsignedBigInteger('position')->after('featured')->default(9999);
         });
     }
 
