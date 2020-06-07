@@ -63,19 +63,24 @@
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="package1" name="customRadio" class="custom-control-input" checked>
                                     <label class="custom-control-label" for="package1">
-                                        <p class="font-weight-bold">Package 1</p>
-                                        <div>
-                                            <ul>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                            </ul>
+                                        <p class="font-weight-bold">套餐一</p>
+                                        <div class="row no-gutters">
+                                            <div class="col-3 px-1">
+                                                <img class="mw-100" src="https://www.lifevisionkeys.com/wp-content/uploads/2019/01/1515513028357-benefits-2.jpg" alt="Package 1">
+                                            </div>
+                                            <div class="col-9 px-1">
+                                                <ol class="px-3 py-2">
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                </ol>
+                                            </div>
                                         </div>
                                     </label>
                                 </div>
@@ -85,19 +90,24 @@
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="package2" name="customRadio" class="custom-control-input">
                                     <label class="custom-control-label" for="package2">
-                                        <p class="font-weight-bold">Package 2</p>
-                                        <div>
-                                            <ul>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                            </ul>
+                                        <p class="font-weight-bold">套餐二</p>
+                                        <div class="row no-gutters">
+                                            <div class="col-3 px-1">
+                                                <img class="mw-100" src="https://www.lifevisionkeys.com/wp-content/uploads/2019/01/1515513028357-benefits-2.jpg" alt="Package 1">
+                                            </div>
+                                            <div class="col-9 px-1">
+                                                <ol class="px-3 py-2">
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                </ol>
+                                            </div>
                                         </div>
                                     </label>
                                 </div>
@@ -107,19 +117,24 @@
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="package3" name="customRadio" class="custom-control-input">
                                     <label class="custom-control-label" for="package3">
-                                        <p class="font-weight-bold">Package 3</p>
-                                        <div>
-                                            <ul>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                            </ul>
+                                        <p class="font-weight-bold">套餐三</p>
+                                        <div class="row no-gutters">
+                                            <div class="col-3 px-1">
+                                                <img class="mw-100" src="https://www.lifevisionkeys.com/wp-content/uploads/2019/01/1515513028357-benefits-2.jpg" alt="Package 1">
+                                            </div>
+                                            <div class="col-9 px-1">
+                                                <ol class="px-3 py-2">
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                </ol>
+                                            </div>
                                         </div>
                                     </label>
                                 </div>
@@ -129,19 +144,24 @@
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="package4" name="customRadio" class="custom-control-input">
                                     <label class="custom-control-label" for="package4">
-                                        <p class="font-weight-bold">Package 4</p>
-                                        <div>
-                                            <ul>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                            </ul>
+                                        <p class="font-weight-bold">套餐四</p>
+                                        <div class="row no-gutters">
+                                            <div class="col-3 px-1">
+                                                <img class="mw-100" src="https://www.lifevisionkeys.com/wp-content/uploads/2019/01/1515513028357-benefits-2.jpg" alt="Package 1">
+                                            </div>
+                                            <div class="col-9 px-1">
+                                                <ol class="px-3 py-2">
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                </ol>
+                                            </div>
                                         </div>
                                     </label>
                                 </div>
@@ -151,19 +171,24 @@
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="package5" name="customRadio" class="custom-control-input">
                                     <label class="custom-control-label" for="package5">
-                                        <p class="font-weight-bold">Package 5</p>
-                                        <div>
-                                            <ul>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                            </ul>
+                                        <p class="font-weight-bold">套餐五</p>
+                                        <div class="row no-gutters">
+                                            <div class="col-3 px-1">
+                                                <img class="mw-100" src="https://www.lifevisionkeys.com/wp-content/uploads/2019/01/1515513028357-benefits-2.jpg" alt="Package 1">
+                                            </div>
+                                            <div class="col-9 px-1">
+                                                <ol class="px-3 py-2">
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                </ol>
+                                            </div>
                                         </div>
                                     </label>
                                 </div>
@@ -173,19 +198,24 @@
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="package6" name="customRadio" class="custom-control-input">
                                     <label class="custom-control-label" for="package6">
-                                        <p class="font-weight-bold">Package 6</p>
-                                        <div>
-                                            <ul>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                                <li>
-                                                    Lorem ipsum dolor sit amet.
-                                                </li>
-                                            </ul>
+                                        <p class="font-weight-bold">套餐六</p>
+                                        <div class="row no-gutters">
+                                            <div class="col-3 px-1">
+                                                <img class="mw-100" src="https://www.lifevisionkeys.com/wp-content/uploads/2019/01/1515513028357-benefits-2.jpg" alt="Package 1">
+                                            </div>
+                                            <div class="col-9 px-1">
+                                                <ol class="px-3 py-2">
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                    <li>
+                                                        Lorem ipsum dolor sit amet.
+                                                    </li>
+                                                </ol>
+                                            </div>
                                         </div>
                                     </label>
                                 </div>
@@ -291,7 +321,7 @@
                                 acceptance to all terms and conditions stated below:
                             </p>
 
-                            <ol>
+                            <ol class="px-3 py-2">
                                 <li>
                                     <p class="paragraph">
                                         The Company shall only serve as a platform provider to assist their
