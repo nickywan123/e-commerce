@@ -110,11 +110,11 @@
                                             <a class="dropdown-item" href="/shop/dashboard/profile/index"><i class="fa fa-user"></i> Profile</a>
                                             <a class="dropdown-item" href="{{route('shop.dashboard.customer.home')}}"><i class="fa fa-credit-card"></i> My Dashboard</a>
                                             <a href="/shop/cart" class="dropdown-item"><i class="fa fa-shopping-cart"></i> My Cart</a>
-                                            @hasrole('panel')
-                                            <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check"></i> Panel Dashboard</a>
-                                            @endhasrole
                                             @hasrole('dealer')
                                             <a href="/management/dealer/home" class="dropdown-item"><i class="fa fa-user-check"></i>Agent Dashboard</a>
+                                            @endhasrole
+                                            @hasrole('panel')
+                                            <a href="{{route('management.panel.home')}}" class="dropdown-item"><i class="fa fa-user-check"></i> Panel Dashboard</a>
                                             @endhasrole
                                             <a class="dropdown-item" href="#" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

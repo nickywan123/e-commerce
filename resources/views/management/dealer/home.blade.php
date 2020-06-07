@@ -12,10 +12,10 @@
   // Graph curve chart - Desktop
       var ctx = document.getElementById('myChart').getContext("2d")
       var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-      gradientStroke.addColorStop(0, "#000000");
-      gradientStroke.addColorStop(0.2, "#000000");
-      gradientStroke.addColorStop(0.5, "#000000");
-      gradientStroke.addColorStop(1, "#000000");
+      gradientStroke.addColorStop(0, "#fccb34");
+      gradientStroke.addColorStop(0.2, "#fccb34");
+      gradientStroke.addColorStop(0.5, "#fccb34");
+      gradientStroke.addColorStop(1, "#fccb34");
       
   
           var myChart = new Chart(ctx, {
@@ -34,8 +34,7 @@
                pointHoverBorderWidth: 1,
                pointRadius: 3,
                fill: false,
-               borderWidth: 4,
-               
+               borderWidth: 4, 
                data: [20, 41, 46, 34, 34, 46, 39,46]
           }]
       },
@@ -99,200 +98,35 @@
       }
       
   });
-  
-
-   // Graph curve chart - Mobile
-   var ctx = document.getElementById('myChartMobile').getContext("2d")
-      var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-      gradientStroke.addColorStop(0, "#fbcc34");
-      gradientStroke.addColorStop(0.2, "#fbcc34");
-      gradientStroke.addColorStop(0.5, "#fbcc34");
-      gradientStroke.addColorStop(1, "#fbcc34");
-  
-          var myChart = new Chart(ctx, {
-           type: 'line',
-           data: {
-              
-              labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov","Dec"],
-              datasets: [{
-                   label: "Sales",
-                  borderColor: gradientStroke,
-                  pointBorderColor: gradientStroke,
-                  pointBackgroundColor: gradientStroke,
-                   pointHoverBackgroundColor: gradientStroke,
-                   pointHoverBorderColor: gradientStroke,
-               pointBorderWidth: 10,
-               pointHoverRadius: 10,
-               pointHoverBorderWidth: 1,
-               pointRadius: 3,
-               fill: false,
-               borderWidth: 4,
-               
-               data: [20, 41, 46, 34, 34, 46, 39,46]
-          }]
-      },
-      options: {
-
-        title: {
-            display: true,
-            text: 'Year 2020'
-        },
-
-          legend: {
-              position: "bottom",
-              display: false
-          },
-
-          annotation: {
-           annotations: [{
-           type: 'line',
-           mode: 'horizontal',
-           scaleID: 'y-axis-0',
-           value: 5,
-           borderColor: 'red',
-           borderWidth: 4,
-          label: {
-          enabled: false,
-          content: 'Test label'
-               }
-      }]
-    },
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      fontColor: "rgba(0,0,0,0.5)",
-                      fontStyle: "bold",
-                     // beginAtZero: 10,
-                      suggestedMin: 10,
-                      suggestedMax: 50,
-                      maxTicksLimit: 5,
-                      padding: 20
-                  },
-                  gridLines: {
-                      drawTicks: false,
-                      display: true,
-                      drawBorder: false,
-                  }
-  }],
-              xAxes: [{
-                  gridLines: {
-                      zeroLineColor: "transparent",
-                      display:false
-  },
-                  ticks: {
-                      padding: 20,
-                      fontColor: "rgba(0,0,0,0.5)",
-                      fontStyle: "bold"
-                  }
-              }]
-          }
-      }
-  });
-
-// Graph curve chart - Laptop
-var ctx = document.getElementById('myChartLaptop').getContext("2d")
-      var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-      gradientStroke.addColorStop(0, "#fbcc34");
-      gradientStroke.addColorStop(0.2, "#fbcc34");
-      gradientStroke.addColorStop(0.5, "#fbcc34");
-      gradientStroke.addColorStop(1, "#fbcc34");
-  
-          var myChart = new Chart(ctx, {
-           type: 'line',
-           data: {
-              
-              labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov","Dec"],
-              datasets: [{
-                   label: "Sales",
-                  borderColor: gradientStroke,
-                  pointBorderColor: gradientStroke,
-                  pointBackgroundColor: gradientStroke,
-                   pointHoverBackgroundColor: gradientStroke,
-                   pointHoverBorderColor: gradientStroke,
-               pointBorderWidth: 10,
-               pointHoverRadius: 10,
-               pointHoverBorderWidth: 1,
-               pointRadius: 3,
-               fill: false,
-               borderWidth: 4,
-               
-               data: [20, 41, 46, 34, 34, 46, 39,46]
-          }]
-      },
-      options: {
-
-        title: {
-            display: true,
-            text: 'Year 2020'
-        },
-
-          legend: {
-              position: "bottom",
-              display: false
-          },
-
-          annotation: {
-           annotations: [{
-           type: 'line',
-           mode: 'horizontal',
-           scaleID: 'y-axis-0',
-           value: 5,
-           borderColor: 'red',
-           borderWidth: 4,
-          label: {
-          enabled: false,
-          content: 'Test label'
-               }
-      }]
-    },
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      fontColor: "rgba(0,0,0,0.5)",
-                      fontStyle: "bold",
-                     // beginAtZero: 10,
-                      suggestedMin: 10,
-                      suggestedMax: 50,
-                      maxTicksLimit: 5,
-                      padding: 20
-                  },
-                  gridLines: {
-                      drawTicks: false,
-                      display: true,
-                      drawBorder: false,
-                  }
-  }],
-              xAxes: [{
-                  gridLines: {
-                      zeroLineColor: "transparent",
-                      display:false
-  },
-                  ticks: {
-                      padding: 20,
-                      fontColor: "rgba(0,0,0,0.5)",
-                      fontStyle: "bold"
-                  }
-              }]
-          }
-      }
-  });
 
   }
    
 </script>
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
+ <!---First Row---->
+<div class="row">
+  <!--Image Column---->
+  <div class="col-md-8">
+    <img src="{{asset('/storage/dealer/banners/welcome-banner.png')}}" alt="welcome-banner" style="width:98%;">
+  </div>
+  <!--Announcement Column---->
+  <div class="col-md-4">
+
+  </div>
+</div>
+
+ <!---Second Row---->
+<div class="row">
+
+</div>
 
 
-<br>
 
 
-{{------------------DESKTOP Layout-----------------------}}
 
-<div class="hidden-sm " >
- <div class="row">
+ {{-- <div class="row">
   <div class="row">
    <div class="col-12 col-md-12">
       <div class="row ml-1">
@@ -521,13 +355,13 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
     </div>
    </div>
   </div>
-</div>
+ --}}
 
 
 
 
 {{------------------Mobile Layout----------------------------------------}}
-
+{{-- 
 <div class="hidden-md">
 
   <div class="row">
@@ -746,11 +580,11 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
        </div>
       </div>  
     </div>
-</div>
+</div> --}}
 
 
 
-{{-------------------------Laptop layout----------------------------}}
+{{-- -----------------------Laptop layout--------------------------
 
 
  <div class="hidden-laptop ">
@@ -982,7 +816,7 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
 
 
 
-</div>
+</div> --}}
 
 
 <style>
@@ -1001,24 +835,24 @@ var ctx = document.getElementById('myChartLaptop').getContext("2d")
 }
 /*Mobile*/
 @media(max-width:767px) {
-  .hidden-sm,.hidden-laptop {
+  .hidden-sm{
     display: none;
      }
   }
  /*Desktop*/
 @media(min-width:1801px) {
-   .hidden-md,.hidden-laptop {
+   .hidden-md {
        display: none;
       }
  }
 /*Laptop*/
- @media (max-width: 1800px) and (min-width: 1200px){
+ /* @media (max-width: 1800px) and (min-width: 1200px){
      .hidden-sm,.hidden-md{
        display: none;
 
      }
 
-     }
+     } */
 
 </style>
 
