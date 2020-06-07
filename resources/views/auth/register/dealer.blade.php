@@ -22,7 +22,6 @@
                 </li>
             </ul>
             <div class="card-body ">
-
                 <!-- Dealer Registration Form -->
                 <form method="POST" action="{{ route('register') }}" id="register-form" enctype="multipart/form-data">
                     @csrf

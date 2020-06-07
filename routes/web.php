@@ -362,10 +362,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/faq', 'Shop\ShopController@faq')->name('shop.faq');
 
         //Our Vision, Culture and Value
-        Route::get('vision-culture-value','Shop\ShopController@visionCultureValue')->name('shop.vision');
+        Route::get('vision-culture-value', 'Shop\ShopController@visionCultureValue')->name('shop.vision');
 
         //Work In Progress Page
-        Route::get('/work-in-progress','Shop\ShopController@workInProgress')->name('shop.wip');
+        Route::get('/work-in-progress', 'Shop\ShopController@workInProgress')->name('shop.wip');
 
         Route::group(['prefix' => 'category'], function () {
             Route::get(
@@ -406,6 +406,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
         // Return My Perfect List
         Route::get('/dashboard/wishlist/index', 'Shop\ValueRecordsController@wishlist')->name('shop.wishlist.home');
+
 
         Route::get('/dashboard/change-password', 'Shop\ChangePasswordController@index');
         Route::post('/dashboard/change-password', 'Shop\ChangePasswordController@store')->name('shop.change.password');
@@ -556,5 +557,9 @@ Route::group(['prefix' => 'development'], function () {
         })->get();
 
         return $cart;
+    });
+
+    Route::get('/register-dealer', function () {
+        return view('auth.register.v1.dealer');
     });
 });
