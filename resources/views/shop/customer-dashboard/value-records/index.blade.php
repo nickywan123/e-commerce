@@ -79,10 +79,10 @@
                         </td>
 
                         <td style="">
-                            {{-- <div><a href="/orders/invoice/{{$purchase->purchase_number}}">Invoice</a></div>
-                            <div><a href="/orders/receipt/{{$purchase->purchase_number}}">Receipt</a></div> --}}
-                            <div><a href="{{asset('/storage/documents/invoice/'.$purchase->getFormattedNumber().'/'.$purchase->getFormattedNumber().'.pdf')}}">Invoice</a></div>
-                            <div><a href="{{asset('/storage/documents/invoice/'.$purchase->getFormattedNumber().'/'.$purchase->getFormattedNumber().'-receipt.pdf')}}">Receipt</a></div>
+                            <div><a href="/orders/invoice/{{$purchase->purchase_number}}">Invoice</a></div>
+                            <div><a href="/orders/receipt/{{$purchase->purchase_number}}">Receipt</a></div>
+                            {{-- <div><a href="{{asset('/storage/documents/invoice/'.$purchase->getFormattedNumber().'/'.$purchase->getFormattedNumber().'.pdf')}}">Invoice</a></div>
+                            <div><a href="{{asset('/storage/documents/invoice/'.$purchase->getFormattedNumber().'/'.$purchase->getFormattedNumber().'-receipt.pdf')}}">Receipt</a></div> --}}
                            
                         </td>
                     </tr>
