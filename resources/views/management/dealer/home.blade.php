@@ -104,7 +104,7 @@
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
+{{-- 
  <!---First Row---->
 <div class="row">
   <!--Image Column---->
@@ -120,13 +120,13 @@
  <!---Second Row---->
 <div class="row">
 
-</div>
+</div> --}}
 
 
 
 
 
- {{-- <div class="row">
+ <div class="row">
   <div class="row">
    <div class="col-12 col-md-12">
       <div class="row ml-1">
@@ -355,13 +355,13 @@
     </div>
    </div>
   </div>
- --}}
+
 
 
 
 
 {{------------------Mobile Layout----------------------------------------}}
-{{-- 
+
 <div class="hidden-md">
 
   <div class="row">
@@ -580,7 +580,7 @@
        </div>
       </div>  
     </div>
-</div> --}}
+</div>
 
 
 
