@@ -37,8 +37,11 @@
 }
 
 @media(max-width:768px){
+    .text-header-font{
+        font-size:15px;;
+    }
     .text-paragraph-font{
-        font-size: 13px;
+        font-size: 1px;
     }
 }
 

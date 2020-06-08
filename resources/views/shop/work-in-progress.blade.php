@@ -26,7 +26,25 @@
 
 
 <style>
-.background-image {
+
+
+@media(max-width:768px){
+    .background-image {
+        background-image: url(/images/wip/coming-soon-mobile.jpg) ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100vw 100vh;
+        width: 100vw;
+        height: 100vh;
+    }  
+
+    .margin-top-text{
+        margin-top: 7rem;
+    }
+}
+
+@media(min-width:769px){
+    .background-image {
         background-image: url(/images/wip/coming-soon.jpg) ;
         background-repeat: no-repeat;
         background-position: center;
@@ -35,13 +53,6 @@
         height: 100vh;
     }  
 
-@media(max-width:768px){
-    .margin-top-text{
-        margin-top: 7rem;
-    }
-}
-
-@media(min-width:769px){
     .text-size-header{
         font-size:4rem;
     }
