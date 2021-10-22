@@ -14,7 +14,7 @@ class AddOriginStateToPanelProductsTable extends Migration
     public function up()
     {
         Schema::table('panel_products', function (Blueprint $table) {
-            $table->integer('origin_state_id')->after('member_price');
+            $table->integer('origin_state_id')->after('member_price')->nullable();
         });
     }
 

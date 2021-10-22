@@ -32,7 +32,7 @@
 
   <div class="row mt-2 mb-3">
     <div class="col-12">
-      <a href="/management/panel/orders" class="orders-text-style " style="border-bottom: 2px solid rgb(250, 172, 24);"><strong>All Orders</strong></a>
+      <a href="/management/panel/value-tracking/index" class="orders-text-style " style="border-bottom: 2px solid rgb(250, 172, 24);"><strong>All Orders</strong></a>
       <a href="#" class="orders-text-style"><strong>New Orders</strong></a>
       <a href="#" class="orders-text-style"><strong>Pending Shipping</strong></a>
       <a href="#" class="orders-text-style"><strong>Pending Receiving</strong></a>

@@ -65,7 +65,7 @@ class ManagementController extends Controller
     // Return Value Tracking -> Show Customer Orders
     public function valueTracking()
     {
-        $status = [1001, 1002, 1003];
+        $status = [1000,1001, 1002, 1003];
         // Get panel
 
         $panel_id = User::find(Auth::user()->id);

@@ -6,10 +6,6 @@
          <br>
          <h4 style="color:black; padding: 5px 10px;"><strong>Dashboard</strong></h4>
          
-         
-         {{-- <li>
-          <a href="/category/bedsheet-mattress" class="sidebar-text-color ">Profile</a>
-         </li> --}}
          <li class="text-hover">
             <a href="{{route('management.dealer.home')}}" class="sidebar-text-color ">Overview</a>
          </li>
@@ -25,11 +21,6 @@
          <li class="text-hover">
             <a href="{{route('shop.wip')}}" class="sidebar-text-color ">Promotion/Special Offer</a>
          </li>
-         {{-- @hasrole('panel')
-         <li class="text-hover">
-            <a href="{{route('management.panel.home')}}" class="sidebar-text-color ">Panel Dashboard</a>
-         </li>
-         @endhasrole --}}
          <li class="text-hover">
             <a href="/shop" class="sidebar-text-color ">Continue Shopping</a>
          </li>

@@ -42,7 +42,7 @@
         <div class="col-12 col-md-3 text-xs-center text-md-left mb-0">
             <ul class="list-unstyled pr-2 pl-2">
                 <li>
-                    <p class="bujishu-gold mb-1 text-font-size"><b>OUR CONTACT</b></p>
+                    <p class="bujishu-gold mb-1"><b>OUR CONTACT</b></p>
                     <p class="bujishu-white mb-1 text-font-size ">
                         <img class="mr-1" src="{{asset('/storage/footer/icons/location.png')}}" alt="Home-Icon"> 1.26.5,
                         Menara Bangkok Bank,

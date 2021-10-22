@@ -47,13 +47,13 @@ class PanelProductsTableSeeder extends Seeder
             'color_hex' => null
         ]);
 
-        $panelProduct1->availableIn()->attach([
-            '1',
-            '2',
-            '3',
-            '4',
-            '5'
-        ]);
+        // $panelProduct1->availableIn()->attach([
+        //     '1',
+        //     '2',
+        //     '3',
+        //     '4',
+        //     '5'
+        // ]);
 
         // Product 1.2
         // $panelProduct1 = new Product;
@@ -133,13 +133,13 @@ class PanelProductsTableSeeder extends Seeder
             'color_hex' => null
         ]);
 
-        $panelProduct2->availableIn()->attach([
-            '5',
-            '10',
-            '9',
-            '4',
-            '7'
-        ]);
+        // $panelProduct2->availableIn()->attach([
+        //     '5',
+        //     '10',
+        //     '9',
+        //     '4',
+        //     '7'
+        // ]);
 
         // Product 2.2
         // $panelProduct2 = new Product;
@@ -219,13 +219,13 @@ class PanelProductsTableSeeder extends Seeder
             'color_hex' => null
         ]);
 
-        $panelProduct3->availableIn()->attach([
-            '10',
-            '11',
-            '9',
-            '2',
-            '4'
-        ]);
+        // $panelProduct3->availableIn()->attach([
+        //     '10',
+        //     '11',
+        //     '9',
+        //     '2',
+        //     '4'
+        // ]);
 
         // Product 4
         $panelProduct4 = new Product;
@@ -262,13 +262,13 @@ class PanelProductsTableSeeder extends Seeder
             'color_hex' => null
         ]);
 
-        $panelProduct4->availableIn()->attach([
-            '13',
-            '4',
-            '5',
-            '6',
-            '10'
-        ]);
+        // $panelProduct4->availableIn()->attach([
+        //     '13',
+        //     '4',
+        //     '5',
+        //     '6',
+        //     '10'
+        // ]);
 
         // Product 5
         $panelProduct5 = new Product;
@@ -305,13 +305,13 @@ class PanelProductsTableSeeder extends Seeder
             'color_hex' => null
         ]);
 
-        $panelProduct5->availableIn()->attach([
-            '12',
-            '14',
-            '16',
-            '13',
-            '1'
-        ]);
+        // $panelProduct5->availableIn()->attach([
+        //     '12',
+        //     '14',
+        //     '16',
+        //     '13',
+        //     '1'
+        // ]);
 
         // Product 6
         $panelProduct6 = new Product;
@@ -348,13 +348,13 @@ class PanelProductsTableSeeder extends Seeder
             'color_hex' => null
         ]);
 
-        $panelProduct6->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct6->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 7
         $panelProduct7 = new Product;
@@ -431,13 +431,13 @@ class PanelProductsTableSeeder extends Seeder
             ],
         ]);
 
-        $panelProduct7->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct7->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 8
         $panelProduct8 = new Product;
@@ -514,13 +514,13 @@ class PanelProductsTableSeeder extends Seeder
             ],
         ]);
 
-        $panelProduct8->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct8->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 9
         $panelProduct9 = new Product;
@@ -597,13 +597,13 @@ class PanelProductsTableSeeder extends Seeder
             ],
         ]);
 
-        $panelProduct9->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct9->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 10
         $panelProduct10 = new Product;
@@ -626,13 +626,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct10->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct10->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 11
         $panelProduct11 = new Product;
@@ -655,13 +655,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct11->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct11->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 12
         $panelProduct12 = new Product;
@@ -709,13 +709,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct12->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct12->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 13
         $panelProduct13 = new Product;
@@ -763,13 +763,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct13->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct13->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 14
         $panelProduct14 = new Product;
@@ -833,13 +833,13 @@ class PanelProductsTableSeeder extends Seeder
             ],
         ]);;
 
-        $panelProduct14->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct14->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 15
         $panelProduct15 = new Product;
@@ -866,13 +866,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct15->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct15->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 16
         $panelProduct16 = new Product;
@@ -899,13 +899,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct16->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct16->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 17
         $panelProduct17 = new Product;
@@ -968,13 +968,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct17->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct17->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 18
         $panelProduct18 = new Product;
@@ -1013,13 +1013,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct18->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct18->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 19
         $panelProduct19 = new Product;
@@ -1078,13 +1078,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct19->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct19->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 20
         $panelProduct20 = new Product;
@@ -1160,13 +1160,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct20->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct20->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 21
         $panelProduct21 = new Product;
@@ -1233,13 +1233,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct21->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct21->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 22
         $panelProduct22 = new Product;
@@ -1295,13 +1295,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct22->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct22->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 23
         $panelProduct23 = new Product;
@@ -1358,13 +1358,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct23->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct23->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 24
         $panelProduct24 = new Product;
@@ -1425,13 +1425,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct24->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct24->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 25
         $panelProduct25 = new Product;
@@ -1495,13 +1495,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct25->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct25->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 26
         $panelProduct26 = new Product;
@@ -1565,13 +1565,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct26->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct26->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 27
         $panelProduct27 = new Product;
@@ -1636,13 +1636,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct27->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct27->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 28
         $panelProduct28 = new Product;
@@ -1731,13 +1731,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct28->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct28->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 29
         $panelProduct29 = new Product;
@@ -1802,13 +1802,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct29->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct29->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 30
         $panelProduct30 = new Product;
@@ -1871,13 +1871,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct30->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct30->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 31
         $panelProduct31 = new Product;
@@ -1937,13 +1937,13 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct31->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct31->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
 
         // Product 32
         $panelProduct32 = new Product;
@@ -2003,12 +2003,12 @@ class PanelProductsTableSeeder extends Seeder
             ]
         ]);
 
-        $panelProduct32->availableIn()->attach([
-            '10',
-            '9',
-            '7',
-            '5',
-            '6'
-        ]);
+        // $panelProduct32->availableIn()->attach([
+        //     '10',
+        //     '9',
+        //     '7',
+        //     '5',
+        //     '6'
+        // ]);
     }
 }

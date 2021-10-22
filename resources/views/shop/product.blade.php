@@ -209,6 +209,7 @@ $deliveryInformation = $panelProduct->deliveries->where('state_id', $userShippin
 
                                 <input type="hidden" name="productQuantity" value="1">
                                 <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="border:0px; color: #1a1a1a;" {{ ($deliveryInformation == null) ? 'disabled' : '' }}>Buy Now</button>
+                                {{-- <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile " style="border:0px; color: #1a1a1a;">Buy Now</button> --}}
                             </form>
                         </div>
                         <div class="col-6 col-md-4 p-1 m-0">
@@ -222,7 +223,8 @@ $deliveryInformation = $panelProduct->deliveries->where('state_id', $userShippin
                                 <input type="hidden" id="product_attribute_temperature" name="product_attribute_temperature" value="">
 
                                 <input type="hidden" name="productQuantity" value="1">
-                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile" style="color: #1a1a1a; border:0px;" {{ ($deliveryInformation == null) ? 'disabled' : '' }}>Add To Cart</button>
+                                {{-- <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile" style="color: #1a1a1a; border:0px;" {{ ($deliveryInformation == null) ? 'disabled' : '' }}>Add To Cart</button> --}}
+                                <button type="submit" class="btn btn-md bjsh-btn-product-page font-weight-bold w-100 bjsh-button-mobile" style="color: #1a1a1a; border:0px;">Add To Cart</button>
                             </form>
                         </div>
                         <div class="col-6 offset-3 offset-md-0 col-md-4 p-1 ">

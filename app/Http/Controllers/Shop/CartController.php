@@ -351,9 +351,10 @@ class CartController extends Controller
 
         // 
         $userShipping = $userInfo->shippingAddress;
+        
 
         $deliveryFee = $product->deliveries->where('state_id', $userShipping->state_id)->first();
-
+        
 
         $panel = $product->panel;
 
@@ -530,6 +531,7 @@ class CartController extends Controller
                 $newCartItem->delivery_fee = 0;
                 $newCartItem->disabled = 1;
             } else {
+                
                 $newCartItem->delivery_fee = $deliveryFee->delivery_fee * $request->input('productQuantity');
             }
             $newCartItem->save();

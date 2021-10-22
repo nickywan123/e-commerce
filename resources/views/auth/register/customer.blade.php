@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="nric">NRIC Number <small>(Numbers Only)</small></label>
-                                    <input type="text" name="nric" class="form-control @error('nric') is-invalid @enderror" id="nric" placeholder="(e.g 930502102342)" value="{{ old('nric') }}">
+                                    <input type="text" name="nric" required class="form-control @error('nric') is-invalid @enderror" id="nric" placeholder="(e.g 930502102342)" value="{{ old('nric') }}">
                                     @error('nric')
                                     <small class="form-text text-danger">{{ $message }}</small>
                                     @enderror
@@ -174,7 +174,7 @@
                                  <!-- Submit Button -->
 
                             <input type="hidden" name="registrationFor" value="customer">
-                            <button type="submit" id="submit" class=" btn next-button bjsh-btn-gradient text-right"><b>Sign Up</b></button>       
+                            <button type="submit" id="submit" class=" btn  bjsh-btn-gradient"><b>Sign Up</b></button>       
                             </div>
                         </div>
 

@@ -13,9 +13,9 @@ class AddColumnDealerIdToPurchasesTable extends Migration
      */
     public function up()
     {
-        Schema::table('purchases', function (Blueprint $table) {
-            $table->integer('dealer_id')->nullable();
-        });
+        // Schema::table('purchases', function (Blueprint $table) {
+        //     $table->integer('dealer_id')->nullable();
+        // });
     }
 
     /**
@@ -25,8 +25,8 @@ class AddColumnDealerIdToPurchasesTable extends Migration
      */
     public function down()
     {
-        Schema::table('purchases', function (Blueprint $table) {
-            $table->dropColumn('dealer_id');
-        });
+        // Schema::table('purchases', function (Blueprint $table) {
+        //     $table->dropColumn('dealer_id');
+        // });
     }
 }

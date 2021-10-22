@@ -16,14 +16,14 @@ class CheckForAdministrationRole
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-        $user = User::find(Auth::user()->id);
+    // public function handle($request, Closure $next)
+    // {
+    //     $user = User::find(Auth::user()->id);
 
-        if (!$user->hasRole(['dealer', 'panel', 'administrator'])) {
-            abort(401, 'Unauthorized action.');
-        } else {
-            return $next($request);
-        }
-    }
+    //     if (!$user->hasRole(['dealer', 'panel', 'administrator'])) {
+    //         abort(401, 'Unauthorized action.');
+    //     } else {
+    //         return $next($request);
+    //     }
+    // }
 }

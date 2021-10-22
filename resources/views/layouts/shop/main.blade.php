@@ -40,7 +40,7 @@
     <!-- Side bar -->
     @include('layouts.shop.navigation.sidebar')
 
-    <main class="mt-3 " id="body-content-collapse-sidebar">
+    <main class="mt-3" id="body-content-collapse-sidebar">
         <div id="app">
             @yield('content')
         </div>

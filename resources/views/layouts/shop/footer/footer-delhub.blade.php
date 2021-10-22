@@ -1,3 +1,5 @@
+
+<!----------NOT IN USE --------->
 <footer>
 <div class="row pl-5 pr-2" style="margin-top: 2rem;">
     <div class="col-6 col-md-3 text-center text-md-left ">
